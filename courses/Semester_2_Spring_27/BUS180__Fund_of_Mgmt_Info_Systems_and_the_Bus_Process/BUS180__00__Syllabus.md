@@ -6,7 +6,7 @@
 
 > ⚠️ Provisional draft: This syllabus is a best guess based on the course title and available course information. The official syllabus for this course is not available yet, and this file will be updated to the most accurate information once it is released.
 
-> [🏚️ README](../../README.md) | [📁 Courses](../../index.md) | [🔖 Bookmark](#bookmark)
+> [🏚️ README](../../../README.md) | [📁 Courses](../../index.md) | [🔖 Bookmark](#bookmark)
 
 # 📘 Course Syllabus: BUS 180 — Fund of Mgmt Info Systems and the Bus Process
 
