@@ -12,10 +12,10 @@ All course materials and syllabi for the A.A.S. in Computer Information Sciences
 
 ## Fall 2026
 
-- [CIS 171 — Linux I](CIS171__Linux_I/CIS171__00__Syllabus.md)
-- [CIS 161 — Introduction to Networking Comm.](CIS161__Introduction_to_Networking_Comm/CIS161__00__Syllabus.md)
-- [CIS 251 — C++ Programming](CIS251__Cpp_Programming/CIS251__00__Syllabus.md)
-- [CIS 268 — Software Support](CIS268__Software_Support/CIS268__00__Syllabus.md)
+- [CIS 171 — Linux I](Semester_1_Fall_26/CIS171__Linux_I/CIS171__00__Syllabus.md)
+- [CIS 161 — Introduction to Networking Comm.](Semester_1_Fall_26/CIS161__Introduction_to_Networking_Comm/CIS161__00__Syllabus.md)
+- [CIS 251 — C++ Programming](Semester_1_Fall_26/CIS251__Cpp_Programming/CIS251__00__Syllabus.md)
+- [CIS 268 — Software Support](Semester_1_Fall_26/CIS268__Software_Support/CIS268__00__Syllabus.md)
 
 ## Spring 2027
 

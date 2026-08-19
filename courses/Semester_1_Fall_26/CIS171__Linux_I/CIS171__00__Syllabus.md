@@ -4,8 +4,8 @@
 <!-- Site Logo -->
 ![Site Logo](/_pix/logos/logo-ehw-kb-h32.png)
 
-> [🏚️ README](../../README.md) | [📁 Courses](../index.md) | [🔖 Bookmark](#bookmark)
-
+> [🏚️ README](../../README.md) | [📁 Courses](../../index.md) | [🔖 Bookmark](#bookmark)
+courses\index.md
 # 📘 Course Syllabus: CIS 171 — Linux I
 
 ## Course Information
