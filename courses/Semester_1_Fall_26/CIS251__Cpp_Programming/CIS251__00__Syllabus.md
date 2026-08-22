@@ -6,7 +6,11 @@
 
 > ⚠️ Provisional draft: This syllabus is a best guess based on the course title and available course information. The official syllabus for this course is not available yet, and this file will be updated to the most accurate information once it is released.
 
-> [🏚️ README](../../../README.md) | [📁 Courses](../../index.md) | [🔖 Bookmark](#bookmark)
+> [🏚️ README](../../../README.md) | [📁 Courses](../../index.md) | [📚 Vocabulary](../../Vocabulary.md) | [🗓️ Assignments Schedule](../Assignments_Schedule.md) | [🔖 Bookmark](#bookmark)
+
+## Mini Index
+
+- [Required Learning Before Graded Work](10__Required%20Learning%20before%20Graded%20Work.md)
 
 # 📘 Course Syllabus: CIS 251 — C++ Programming
 

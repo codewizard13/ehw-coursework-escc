@@ -4,7 +4,7 @@
 <!-- Site Logo -->
 ![Site Logo](/_pix/logos/logo-ehw-kb-h32.png)
 
-> [🏚️ README](../../../README.md) | [📁 Courses](../../index.md) | [🔖 Bookmark](#bookmark)
+> [🏚️ README](../../../README.md) | [📁 Courses](../../index.md) | [📚 Vocabulary](../../Vocabulary.md) | [🗓️ Assignments Schedule](../Assignments_Schedule.md) | [🔖 Bookmark](#bookmark)
 
 # 📘 Course Syllabus: CIS 268 — Software Support
 
