@@ -28,6 +28,15 @@ Code Runner terminal fix
 
 : A configuration change that makes the VS Code Code Runner extension execute programs in the integrated terminal instead of the Output panel. Enable **Run In Terminal** in Code Runner settings, or set `code-runner.runInTerminal` to `true` in VS Code `settings.json`. This lets terminal programs receive input and display interactive output correctly.
 
+`<<` - C++ insertion operator
+
+: Used to output or print text using the `cout` keyword
+
+
+`>>` - C++ extraction operator
+
+: read data from the keyboard or other input source with the `cin` keyword
+
 ---
 
 [🏚️ Back to README](../README.md)

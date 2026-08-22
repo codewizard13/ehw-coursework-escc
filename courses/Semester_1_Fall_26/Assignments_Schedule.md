@@ -40,6 +40,8 @@ Dates marked **week of** are planning dates, not confirmed Canvas due dates. Use
 
 - [x] Create student collab Discord server
 
+#### Environment Setup & Access
+
 - [ ] Accept **Cyber Central** invite ⚠️ #GOTCHA: No invite received - Emailed instructor yesterday and today
 - [x] Installed VSCODE
 - [x] Install [MYSYS2](https://www.msys2.org/) C++ compiler and run this command at the end `pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain`
@@ -49,28 +51,55 @@ Dates marked **week of** are planning dates, not confirmed Canvas due dates. Use
 
 - [x] Install [Microsoft C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) extension  
 - [x] Install [Code Runner (by Jun Han)](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+- [x] Reboot PC for PATH variables to propagate and take effect
 
 **Create and run first program**
 
-```cpp
-#include <iostream>
-
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
-}
-```
-
-📌 #TIP
-
-: The Code Runner "Play" button is not a blue pause (⏸️) emoji, but rather a triangle play button outline that is barely visible in the top right. Easiest to use the keyboard shortcut of `CTRL + ALT + N`
-
-⚠️ #GOTCHA
-
-: Reboot your Windows PC so the systems can register the new path variables, else you might get the 'g++ not found` error when trying to run in console
+- [x] [Hello World](CIS251__Cpp_Programming/cppCourse/main.cpp) |  [Assignment Notes](CIS251__Cpp_Programming/Assignments/00__Intro-Setup.md)
 
 
-- [x] Reboot PC for PATH variables to propagate and take effect
+#### Required Learning Before Graded Work
+
+### 1. C++ Institute assignment
+
+**C++ Essentials 1 — Module 0: Setting Up the Environment; Module 1: compilation, variables, comments, streams/basic I/O, and simple programs.**
+
+### 2. Required W3Schools / Google reading
+
+- [x] 1. **[W3Schools — C++ IntroductionLinks to an external site.](https://www.w3schools.com/cpp/cpp_intro.asp)**  
+    Read the complete page. Be able to explain what C++ is, what a compiler does, and why source code must be compiled before it can run.
+- [x] 2. **[W3Schools — C++ Get StartedLinks to an external site.](https://www.w3schools.com/cpp/cpp_getstarted.asp)**  
+    Read the complete page. Focus on the edit → compile → run cycle and the role of `main()`.
+- [x] 3. **[W3Schools — C++ SyntaxLinks to an external site.](https://www.w3schools.com/cpp/cpp_syntax.asp)**  
+    Study `#include <iostream>`, `using namespace std;` (and the `std::` alternative), `main()`, statements, braces, and semicolons.
+- [x] 4. **[W3Schools — C++ OutputLinks to an external site.](https://www.w3schools.com/cpp/cpp_output.asp)**  
+    Practice `cout`, `<<`, , and `endl`. Type each example.
+- [x] 5. **[W3Schools — C++ VariablesLinks to an external site.](https://www.w3schools.com/cpp/cpp_variables.asp)**  
+    Study declaration, assignment, multiple variables, identifiers, and meaningful variable names.
+- [x] 6. **[W3Schools — C++ User InputLinks to an external site.](https://www.w3schools.com/cpp/cpp_user_input.asp)**  
+    Practice `cin >>` with integers and decimal values; complete the simple-calculator example.
+
+### 3. Required TutorialsPoint reading
+
+- [ ] 1. **[TutorialsPoint — C++ Environment SetupLinks to an external site.](https://www.tutorialspoint.com/cplusplus/cpp_environment_setup.htm)**  
+    Read the compiler/IDE overview so you can distinguish the editor from the compiler.
+- [ ] 2. **[TutorialsPoint — C++ Basic SyntaxLinks to an external site.](https://www.tutorialspoint.com/cplusplus/cpp_basic_syntax.htm)**  
+    Study program structure, identifiers, keywords, statements, and comments.
+- [ ] 3. **[TutorialsPoint — C++ Basic Input/OutputLinks to an external site.](https://www.tutorialspoint.com/cplusplus/cpp_basic_input_output.htm)**  
+    Study standard input/output streams and reproduce the console examples.
+
+### Assigned Videos
+
+### 4. Required video study
+
+- [ ] 1. **[Bro Code — C++ tutorial for beginnersLinks to an external site.](https://www.youtube.com/watch?v=S3nx34WFXjI&list=PLZPZq0r_RZOMHoXIcxze_lP97j2Ase2on)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=S3nx34WFXjI&list=PLZPZq0r_RZOMHoXIcxze_lP97j2Ase2on)**  
+    Watch the full introductory lesson. Pause when the first program is shown and type it yourself.
+- [ ] 2. **[Bro Code — C++ output, comments, and escape sequences (#2)Links to an external site.](https://www.youtube.com/watch?v=d7t02PbCN_o)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=d7t02PbCN_o)**  
+    Focus on `cout`, comments, new lines, tabs, quotes, and escape sequences.
+- [ ] 3. **[Bro Code — C++ variables & data types (#3)Links to an external site.](https://www.youtube.com/watch?v=QANQHxx9I8Y)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=QANQHxx9I8Y)**  
+    Focus on declaring variables and choosing a data type.
+- [ ] 4. **[Bro Code — How to accept user input in C++Links to an external site.](https://www.youtube.com/watch?v=imiIhu9u670)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=imiIhu9u670)**  
+    Type the `cin` examples and test them with your own values.
 
 
 ---
