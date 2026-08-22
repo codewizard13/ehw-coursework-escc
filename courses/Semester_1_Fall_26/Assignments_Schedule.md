@@ -36,6 +36,10 @@ Dates marked **week of** are planning dates, not confirmed Canvas due dates. Use
 
 ### 📘 CIS 251
 
+#### Recommended but Optional:
+
+- [x] Create student collab Discord server
+
 - [ ] Accept **Cyber Central** invite ⚠️ #GOTCHA: No invite received - Emailed instructor yesterday and today
 - [x] Installed VSCODE
 - [x] Install [MYSYS2](https://www.msys2.org/) C++ compiler 
