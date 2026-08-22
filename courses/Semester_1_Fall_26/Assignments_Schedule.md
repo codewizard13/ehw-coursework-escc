@@ -36,6 +36,11 @@ Dates marked **week of** are planning dates, not confirmed Canvas due dates. Use
 
 ### 📘 CIS 251
 
+- [ ] Accept **Cyber Central** invite ⚠️ #GOTCHA: No invite received - Emailed instructor yesterday and today
+- [x] Installed VSCODE
+- [x] Install [MYSYS2](https://www.msys2.org/) C++ compiler 
+---
+
 - [ ] No due date listed | Week 1 Overview — C++ Foundations: Problem Solving, Compilation, and Basic Syntax
 - [ ] No due date listed | Getting Started With C++
 - [ ] No due date listed | Week 1 Reading Tutorial & AI Tutor

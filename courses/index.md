@@ -8,6 +8,8 @@
 
 All course materials and syllabi for the A.A.S. in Computer Information Sciences with Computer Programming Focus at Enterprise State Community College.
 
+- [📚 Vocabulary](Vocabulary.md)
+
 ---
 
 ## Fall 2026
