@@ -42,7 +42,19 @@ Dates marked **week of** are planning dates, not confirmed Canvas due dates. Use
 
 - [ ] Accept **Cyber Central** invite ⚠️ #GOTCHA: No invite received - Emailed instructor yesterday and today
 - [x] Installed VSCODE
-- [x] Install [MYSYS2](https://www.msys2.org/) C++ compiler 
+- [x] Install [MYSYS2](https://www.msys2.org/) C++ compiler and run this command at the end `pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain`
+- [x] Add mysys64 to the Windows PATH environment variable
+
+**Install VSCODE Extensions**
+
+- [x] Install [Microsoft C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) extension  
+- [x] Install [Code Runner (by Jun Han)](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+
+**Create and run first program**
+
+
+
+
 ---
 
 - [ ] No due date listed | Week 1 Overview — C++ Foundations: Problem Solving, Compilation, and Basic Syntax
