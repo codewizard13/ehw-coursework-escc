@@ -16,12 +16,12 @@ Dates marked **week of** are planning dates, not confirmed Canvas due dates. Use
 
 ### 📘 CIS 268
 
-- [ ] Aug 24 | Course overview and syllabus 
-- [ ] Aug 24 | Course schedule and instructor contact information 
-- [ ] Aug 24 | Proctoring policy 
-- [ ] Aug 24 | Attendance verification quiz 
-- [ ] Aug 24 | Obtain course materials 
-- [ ] Aug 24 | Honorlock practice quiz 
+- [x] Aug 24 | Course overview and syllabus 
+- [x] Aug 24 | Course schedule and instructor contact information 
+- [x] Aug 24 | Proctoring policy 
+- [x] Aug 24 | Attendance verification quiz 
+- [x] Aug 24 | Obtain course materials 
+- [x] Aug 24 | Honorlock practice quiz 
 
 ### 📘 CIS 171
 
