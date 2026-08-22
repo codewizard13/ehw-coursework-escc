@@ -28,7 +28,7 @@ The predefined object **cout** is an instance of **ostream** class. The cout obj
 using namespace std;
 
 int main() {
-char str\[\] = "Hello C++";
+char str[] = "Hello C++";
 
 cout << "Value of str is : " << str << endl;
 }
@@ -55,7 +55,7 @@ The predefined object **cin** is an instance of **istream** class. The cin objec
 using namespace std;
 
 int main() {
-char name\[50\];
+char name[50];
 
 cout << "Please enter your name: ";
 cin \>> name;

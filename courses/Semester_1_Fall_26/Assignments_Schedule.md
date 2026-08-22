@@ -92,13 +92,14 @@ Dates marked **week of** are planning dates, not confirmed Canvas due dates. Use
 
 ### 4. Required video study
 
-- [ ] 1. **[Bro Code — C++ tutorial for beginnersLinks to an external site.](https://www.youtube.com/watch?v=S3nx34WFXjI&list=PLZPZq0r_RZOMHoXIcxze_lP97j2Ase2on)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=S3nx34WFXjI&list=PLZPZq0r_RZOMHoXIcxze_lP97j2Ase2on)**  
+- [x] 1. **[Bro Code — C++ tutorial for beginnersLinks to an external site.](https://www.youtube.com/watch?v=S3nx34WFXjI&list=PLZPZq0r_RZOMHoXIcxze_lP97j2Ase2on)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=S3nx34WFXjI&list=PLZPZq0r_RZOMHoXIcxze_lP97j2Ase2on)**  
     Watch the full introductory lesson. Pause when the first program is shown and type it yourself.
-- [ ] 2. **[Bro Code — C++ output, comments, and escape sequences (#2)Links to an external site.](https://www.youtube.com/watch?v=d7t02PbCN_o)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=d7t02PbCN_o)**  
+    - [x] [Hello World / I like Pizza](CIS251__Cpp_Programming/BroCode/Examples/10__Basic-IO-Pizza/helloworld-pizza.cpp)
+- [x] 2. **[Bro Code — C++ output, comments, and escape sequences (#2)Links to an external site.](https://www.youtube.com/watch?v=d7t02PbCN_o)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=d7t02PbCN_o)**  
     Focus on `cout`, comments, new lines, tabs, quotes, and escape sequences.
-- [ ] 3. **[Bro Code — C++ variables & data types (#3)Links to an external site.](https://www.youtube.com/watch?v=QANQHxx9I8Y)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=QANQHxx9I8Y)**  
+- [x] 3. **[Bro Code — C++ variables & data types (#3)Links to an external site.](https://www.youtube.com/watch?v=QANQHxx9I8Y)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=QANQHxx9I8Y)**  
     Focus on declaring variables and choosing a data type.
-- [ ] 4. **[Bro Code — How to accept user input in C++Links to an external site.](https://www.youtube.com/watch?v=imiIhu9u670)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=imiIhu9u670)**  
+- [x] 4. **[Bro Code — How to accept user input in C++Links to an external site.](https://www.youtube.com/watch?v=imiIhu9u670)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=imiIhu9u670)**  
     Type the `cin` examples and test them with your own values.
 
 

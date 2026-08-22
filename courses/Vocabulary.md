@@ -51,6 +51,16 @@ endl
 : used to add a new-line at end of a line; also flushes output buffer
 
 
+iostream
+
+: header file containing basic i/o functions
+
+
+cout
+
+: character output
+
+
 ---
 
 [🏚️ Back to README](../README.md)
