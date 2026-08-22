@@ -8,6 +8,13 @@
 
 Dates marked **week of** are planning dates, not confirmed Canvas due dates. Use Canvas for exact assignment names, links, and deadlines.
 
+## Course Key
+
+- **CIS 161** — Introduction to Networking Comm.
+- **CIS 171** — Linux I
+- **CIS 251** — C++ Programming
+- **CIS 268** — Software Support
+
 ## 📅 Week 1
 
 ### 📘 CIS 161
@@ -29,7 +36,11 @@ Dates marked **week of** are planning dates, not confirmed Canvas due dates. Use
 
 ### 📘 CIS 251
 
-- [ ] Week of Aug 19—24 | Programming exercises and participation/assignments 
+- [ ] No due date listed | Week 1 Overview — C++ Foundations: Problem Solving, Compilation, and Basic Syntax
+- [ ] No due date listed | Getting Started With C++
+- [ ] No due date listed | Week 1 Reading Tutorial & AI Tutor
+- [ ] Aug 23 | Week 1 Discussion — C++ Foundations: Problem Solving, Compilation, and Basic Syntax
+- [ ] Aug 23 | Week 1 Programming Assignment — C++ Foundations: Problem Solving, Compilation, and Basic Syntax
 
 ## 📅 Week 2
 
