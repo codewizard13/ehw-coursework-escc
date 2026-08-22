@@ -1,5 +1,5 @@
 ﻿<!-- 🔗 Custom Stylesheet -->
-<link rel="stylesheet" href="../_css/main.css">
+<link rel="stylesheet" href="../../_css/main.css">
 
 <!-- 🖼️ Site Logo -->
 ![Site Logo](/_pix/logos/logo-ehw-kb-h32.png)
@@ -52,7 +52,25 @@ Dates marked **week of** are planning dates, not confirmed Canvas due dates. Use
 
 **Create and run first program**
 
+```cpp
+#include <iostream>
 
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+}
+```
+
+📌 #TIP
+
+: The Code Runner "Play" button is not a blue pause (⏸️) emoji, but rather a triangle play button outline that is barely visible in the top right. Easiest to use the keyboard shortcut of `CTRL + ALT + N`
+
+⚠️ #GOTCHA
+
+: Reboot your Windows PC so the systems can register the new path variables, else you might get the 'g++ not found` error when trying to run in console
+
+
+- [x] Reboot PC for PATH variables to propagate and take effect
 
 
 ---
