@@ -81,11 +81,11 @@ Dates marked **week of** are planning dates, not confirmed Canvas due dates. Use
 
 ### 3. Required TutorialsPoint reading
 
-- [ ] 1. **[TutorialsPoint — C++ Environment SetupLinks to an external site.](https://www.tutorialspoint.com/cplusplus/cpp_environment_setup.htm)**  
+- [x] 1. **[TutorialsPoint — C++ Environment SetupLinks to an external site.](https://www.tutorialspoint.com/cplusplus/cpp_environment_setup.htm)**  
     Read the compiler/IDE overview so you can distinguish the editor from the compiler.
-- [ ] 2. **[TutorialsPoint — C++ Basic SyntaxLinks to an external site.](https://www.tutorialspoint.com/cplusplus/cpp_basic_syntax.htm)**  
+- [x] 2. **[TutorialsPoint — C++ Basic SyntaxLinks to an external site.](https://www.tutorialspoint.com/cplusplus/cpp_basic_syntax.htm)**  
     Study program structure, identifiers, keywords, statements, and comments.
-- [ ] 3. **[TutorialsPoint — C++ Basic Input/OutputLinks to an external site.](https://www.tutorialspoint.com/cplusplus/cpp_basic_input_output.htm)**  
+- [x] 3. **[TutorialsPoint — C++ Basic Input/OutputLinks to an external site.](https://www.tutorialspoint.com/cplusplus/cpp_basic_input_output.htm)**  
     Study standard input/output streams and reproduce the console examples.
 
 ### Assigned Videos

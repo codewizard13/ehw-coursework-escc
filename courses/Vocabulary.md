@@ -37,6 +37,20 @@ Code Runner terminal fix
 
 : read data from the keyboard or other input source with the `cin` keyword
 
+
+trigraph
+
+: ???
+
+access modifiers
+
+: public, private, protected
+
+endl
+
+: used to add a new-line at end of a line; also flushes output buffer
+
+
 ---
 
 [🏚️ Back to README](../README.md)
