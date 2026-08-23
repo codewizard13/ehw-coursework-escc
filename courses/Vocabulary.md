@@ -60,6 +60,12 @@ cout
 
 : character output
 
+operator overloading
+
+
+std::ostringstream
+
+: ???
 
 ---
 
