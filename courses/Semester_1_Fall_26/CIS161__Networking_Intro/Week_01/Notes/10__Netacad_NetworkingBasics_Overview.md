@@ -6,9 +6,6 @@
 
 # NOTES: Week 1 (CIS 161 - Networking Intro)
 
----
-
-
 # Cisco Networking Basics
 
 >  - #SOLVED: It seems that the **Netacad** course did not open up until the previous video was watched. So, it seems there are `digital prerequisites` for accessing certain courses and platforms, although the ACCESS KEYS have already been entered
