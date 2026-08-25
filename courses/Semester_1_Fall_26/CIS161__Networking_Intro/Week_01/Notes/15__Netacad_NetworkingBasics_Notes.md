@@ -6,9 +6,6 @@
 
 # NOTES: Week 1 (CIS 161 - Networking Intro)
 
----
-
-
 # Cisco Networking Basics
 
 >  This file is a cumulative list of notes taken by Eric Hepperle during the Cisco Networking Basics course
