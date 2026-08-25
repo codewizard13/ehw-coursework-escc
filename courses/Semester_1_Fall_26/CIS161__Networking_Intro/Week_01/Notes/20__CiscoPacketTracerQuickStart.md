@@ -133,10 +133,13 @@ Bottom Right
 
 #### - 1.1.2 Video - Deploying Devices
 
+- https://www.netacad.com/launch?id=1ec81cd9-2178-4cba-9f46-9a69bbf2c458&tab=curriculum&view=14885273-7ede-5880-a335-2f4452f4f159
+
 (stopped here to take BREAK -- 8/24/26)
 
 
-
+- Installed Cisco Packet Tracer 9
+  - Q: Would you like to install multi-user -- I clicked "YES"
 
 
 
