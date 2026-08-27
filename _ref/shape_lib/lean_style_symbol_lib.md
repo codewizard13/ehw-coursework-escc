@@ -46,7 +46,7 @@ A copy-paste symbol and style library for markdown docs, expecially documenting 
 
 > **🏷️ Image Description**:  After the release of Linux in 1991, the two major branches, Debian and Red Hat, followed quickly and generated hundreds of distros.
 
-
+🔖
 
 
 

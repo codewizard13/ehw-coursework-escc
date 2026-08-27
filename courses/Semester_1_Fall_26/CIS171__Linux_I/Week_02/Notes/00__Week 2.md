@@ -196,15 +196,437 @@ By way of comparison, Windows Server also uses shells: the traditional, DOS-like
 
 
 
+<div id="bookmark">🔖 Bookmark: </div>
+
+Lesson 1.1.14 Lesson Review
+
+#CASE_STUDY
+
+> Risha has just rebooted the system after reinstalling an application as part of her solution implementation. As she logs in, she identifies that the application will still not start correctly.
+
+- **bash** stands for 'Bourne again shell'
+
+---
+
+A webmaster is implementing an order processing system on the company's website.
+
+Which of the following server roles should the webmaster implement with the order processing application?
+
+answer
+
+A
+Clustering
+
+
+B
+VPN
+
+
+C
+Monitoring
+
+
+D
+Database
+
+
+---
+
+
+Lesson 1.2
+
+- **privilege escalation:** allows users to perform tasks that require higher permissions
+
+- You'll accomplish this using commands like su (switch user) and sudo (superuser do)
+
+
+---
+
+
+### 🟣 1.2.1 Vim and nano
+
+**VIM**
+
+
+- insert mode
+- command mode
+
+(toggle with `i` key)
+
+- execute mode: enter with `:` colon char
+
+- `:wq`: save and quit in vim
+
+
+- four basic functions: create/open, edit, save, close.
+
+- `shift + r` replaces a text
+- `d`, `w` to delete a word under the cursor
+- `u` to undo last change
+- `dd` cut an entire line
+- `p` paste
+- `/` {word}: search for a word
+- `?` {word}: will search backward
+- `n`: jump to next match
+- `:w`: save changes
+- `:q!`: quit without saving
+
+ - steeper learning curve but advanced features for power users
+
+**NANO**
+
+- Use for quick and simple edits
+
+- simple user friendly editor - doesn't use modes so you can start typing right away, like Notepad or MS Word
+
+- Navigate with arrow keys
+- `ctrl + SHIFT + _`, then `{line number}`: jump to a line
+- home & end keys
+- ctrl > or ctrl <: jump to word
+- ctrl a to mark text
+- ctrl k to cut
+- alt 6 to copy
+- ctrl u to paste
+- ctrl w to search for text
+- ctrl w enter for next occurence
+- ctro o to save changes
+- ctrl x to exit
+
+
+---
+
+### 🟣 1.2.5
+
+Lab: Use the Nano Editor
 
 
 
+#CASE_STUDY
+
+> Configure DNS name resolution on the IT-Laptop computer by replacing existing nameserver info in nano
+
+---
+
+
+### 🟣 1.2.6 su and sudo Commands
+
+- three types of accounts on Linux systems: root, standard user, and service
+- **root:** the default admin account in linux
+
+> - ⚠️ #GOTCHA: Logging in with root grants broad access and for safety/security purposes is not recommended
+
+> - 📌 #BEST_PRACTICE: log on with a standard user account, then if necessary, switch to root using the `su` (substitute/switch user) command.
+
+- `su root`: switches from standard user to root
+- `exit`: leave root user and return to standard user
+- `su - root`: switch from standard user to root with root profile
+
+
+- Sysadmins can edit a file named `/etc/sudoers` to delegate specific tasks to individual users and groups
+
+- **delegation**: good for security
+
+- To accomplish a delegated task, simply precede the command with `sudo`. You will usually be prompted for **your password** and given a warning to be careful on the system.
+
+> - ⚠️ #GOTCHA: Ensure using the `-l` flag when switching to another user, like this `su -l johndoe` to ensure the destination users environment takes place, else it will use the current user's environment variables.
+
+> - ⚠️ #GOTCHA: `root` access is locked by default for new installations of **Ubuntu** since at least 2012
+
+---
+
+
+Live Lab: Exploring the Linux Environment
+
+> The Resources area is used to show the VMs you have available to you plus any downloadable files that may be needed during a lab.
+> 
+> *   You can choose an ISO disc, as instructed to load into the VM by selecting the arrow in the DVD Drive/ No Media button.
+> *   You can open the VM in a new window and access **CTRL + ALT + DEL** for the VM environment as well.
+
+![alt text](image.png)
 
 
 
+![alt text](image-1.png)
+
+
+![alt text](image-2.png)
+
+- `hostname`
+- `ip a`: check network adapter config
+- `ls -a`: Display all files in your home directory, including hidden items
+
+
+![alt text](image-3.png)
+
+
+![alt text](image-4.png)
+
+- `n`: in `man` - navigates to the next instance
+- `SHIFT + n` in `man` - navigates to the previous instance
+
+
+![alt text](image-5.png)
+
+---
+
+## 🟣 1.2.8 Common Directories in Linux
+
+
+With so many Linux distributions available, administrators rely on the Filesystem Hierarchy Standard (FHS) to understand the default location of particular resources. There are three common directories that administrators work with on a regular basis.
+
+*   **`/home/username`** Each standard user has a specific and private directory used to store personal files, profile settings, and other data. These user directories are subdirectories of `/home`.
+*   **`/etc`** Most system configuration files are stored in the `/etc` directory.
+*   **`/var/log`** Log files for the system and applications are stored in the `/var/log` directory.
+
+Figure 1. The /home Directory![A terminal window shows the command, ls forward slash home and its output, which is the directory named student.](https://cdn.testout.com/linux-plus-xk0-006-en-us/content/resources/text/s_use_linux_utilities/8180-1642095265348-ls-homedir.png)
+
+Description
+
+Use the command `ls /home` to display a few existing user directories.
+
+
+---
+
+> - **Filesystem Hierarchy Standard:** A set of guidelines for the names of files and directories and their locations on Linux systems.
+
+- **`/home/username`**: the main place where your data and user files are stored
+- **`/etc`**: most system config files
+- **`/var/log`**: log files for both system and applications
+
+#CASE_STUDY
+
+> You are configuring a Linux server and need to allow a user named evanp to restart the nginx service without granting them full administrative privileges. What should you do?
+
+answer
+
+A
+Edit the /etc/sudoers file to allow evanp to run the systemctl restart nginx command with sudo.
+
+
+B
+Log in as root and restart the service for evanp whenever they need it.
+
+
+C
+Share the root password with evanp so they can use the su-root command to restart the service.
+
+
+D
+Add evanp to the root group so they can restart the service.
+
+
+#CASE_STUDY
+
+> You are a system administrator managing a Linux server. A junior administrator needs to restart the Apache web server service but does not need full root access.
+
+What is the BEST way to grant them the necessary permissions while maintaining security best practices?
+
+answer
+
+A
+Log in as root yourself and restart the service for the junior administrator.
+
+
+B
+Edit the /etc/sudoers file to allow the junior administrator to execute the systemctl restart apache2 command with sudo.
+
+
+C
+Add the junior administrator to the root group to give them full administrative privileges.
+
+
+D
+Provide the junior administrator with the root password so they can use the su - root command to restart the service.
+
+
+#CASE_STUDY
+
+> You are tasked with training a new junior sysadmin on using text editors in a Linux environment. The junior sysadmin asks for your recommendation on whether to use Vim or nano for editing configuration files. Based on the scenario, which of the following would be the most appropriate recommendation and justification?
+
+answer
+
+A
+Recommend nano because it is simpler to use and sufficient for basic editing tasks, which are common for sysadmins.
+
+
+B
+Recommend Vim because it does not require learning any commands or modes, making it easier for beginners.
+
+
+C
+Recommend Vim because it is more powerful and allows for advanced editing features, which are essential for all sysadmins.
+
+
+D
+Recommend nano because it is the only text editor available on all Linux distributions by default.
+
+
+---
+
+### 🟣 1.3 MODULE QUIZ
+
+#CASE_STUDY
+
+> A manager submits a help desk ticket in regards to permissions for a directory. The ticket states that general users should be able to view and change files, a member of the department should be able to view and run programs, and anyone else can only view files. Which permissions does a technician create to satisfy the request?
+
+answer
+
+A
+drw-r-xr--
+
+
+B
+dr-xrw-r-x
+
+
+C
+-r--rw-r-x
+
+
+D
+-rw-r-xr--
+
+
+---
+
+
+#CASE_STUDY
+
+> A company has recently updated its DNS server to include a new hostname, engineering-system56, which resolves to the IP address 192.168.3.109.
+
+However, users are still unable to access the system using the hostname.
+
+What should you do to resolve the issue?
+
+answer
+
+A
+Configure the users’ computers to use a different DNS server.
+
+
+B
+Assign a static IP address to engineering-system56.
+
+
+C
+Reinstall the operating system on engineering-system56.
+
+
+D
+Restart the DNS server to ensure the new entry is applied.
+
+---
+
+
+#CASE_STUDY
+
+
+> You are tasked with editing a configuration file on a Linux server that does not have a graphical interface. The file requires only minor changes, and you are unfamiliar with advanced text editor commands. Which text editor should you use, and why?
+
+answer
+
+A
+nano, because it is simpler and does not require knowledge of multiple modes.
+
+
+B
+nano, because it is the only text editor available on Linux servers.
+
+
+C
+Vim, because it is more powerful and allows for advanced editing features.
+
+
+D
+Vim, because it is the default editor on all Linux distributions.
 
 
 
+---
+
+#CASE_STUDY
+
+> A technician reviews common .mount user files. What file would the technician use to have an absolute path to storage to mount?
+
+
+A
+Naming conventions
+
+
+B
+Where
+
+
+C
+What
+
+
+D
+Options
+
+
+---
+
+
+#CASE_STUDY
+
+> You are tasked with writing a Bash script that continuously checks if a specific file exists in a directory.
+>
+>If the file exists, the script should print a message and stop checking. If the file does not exist, the script should wait for 5 seconds and check again.
+>
+>Which of the following scripts correctly implements this functionality?
+
+answer
+
+A
+while [ ! -f /path/to/file.txt ] do echo "File does not exist. Checking again in 5 seconds..." sleep 5 done echo "File exists."
+
+
+B
+while [ ! -f /path/to/file.txt ] do echo "File exists." sleep 5 done/codeblock>
+
+
+C
+while [ -f /path/to/file.txt ] do echo "File exists." sleep 5 done
+
+
+D
+while [ -f /path/to/file.txt ] do echo "File does not exist. Checking again in 5 seconds..." sleep 5 done echo "File exists."
+
+---
+
+
+#CASE_STUDY
+
+> You have added a new directory /custom/bin to the PATH environment variable using the command export PATH=$PATH:/custom/bin.
+
+However, after closing and reopening the terminal, the change is no longer effective.
+
+What is the MOST likely reason for this behavior?
+
+answer
+
+A
+The PATH variable cannot be modified to include custom directories.
+
+
+B
+The export command only modifies the PATH variable temporarily for the current session.
+
+
+C
+The export command was not executed with administrative privileges.
+
+
+D
+The /custom/bin directory does not contain any executable files.
+
+
+
+---
+
+
+![Linux Profile Assignment](image-6.png)
 
 
 
