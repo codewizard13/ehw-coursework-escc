@@ -52,5 +52,5 @@ A copy-paste symbol and style library for markdown docs, expecially documenting 
 ☑️
 ✔️
 
-
+## 📖 1.2 - Use Linux Basics
 
