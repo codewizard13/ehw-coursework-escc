@@ -109,17 +109,15 @@ The table shows the commonly used units of measure for bandwidth.
 | Gigabits per second | Gbps         | 1 Gbps = 1,000,000,000 bps = 109 bps      |
 | Terabits per second | Tbps         | 1 Tbps = 1,000,000,000,000 bps = 1012 bps |
 
-
 ---
 
 ### 🟣 1.3.2. Throughput
 
-
 Like bandwidth, throughput is the measure of the transfer of bits across the media over a given period of time. However, due to a number of factors, throughput does not usually match the specified bandwidth. Many factors influence throughput including:
 
-*   The amount of data being sent and received over the connection
-*   The types of data being transmitted
-*   The **latency** created by the number of network devices encountered between source and destination
+- The amount of data being sent and received over the connection
+- The types of data being transmitted
+- The **latency** created by the number of network devices encountered between source and destination
 
 Latency refers to the amount of time, including delays, for data to travel from one given point to another.
 
@@ -129,86 +127,598 @@ In an **internetwork** or network with multiple segments, throughput cannot be f
 
 There are many online speed tests that can reveal the throughput of an internet connection.
 
-
 > - ⚠️ #GOTCHA: Throughput doesn't always match the specified bandwidth; amount of data, type of data, and latency of the network combine to cause throughput to not match bandwidth.
 
 ---
-
 
 ### 🟣 1.3.3
 
 - Measure your speed with speedtest.net
 
-
 ---
-
 
 ## 📖 1.4 Communications in a Connected World Summary
 
-- **actuator:** a physical device that takes a digital command from the network and turns it into a physical action in the real world; Ex: 🔌 Common ExamplesSmart Locks: Unlocking a door via an app.Valves: Shutting off a water pipe if a leak is found.Motors: Lowering motorized window blinds automatically.Relays: Turning industrial conveyor belts on or off.
+- **actuator:** a physical device that takes a digital command from the network and turns it into a physical action in the real world;
 
+**🔌 Actuator Examples:**
 
+- Smart Locks: Unlocking a door via an app.
+- Valves: Shutting off a water pipe if a leak is found.
+- Motors: Lowering motorized window blinds automatically.
+- Relays: Turning industrial conveyor belts on or off.
 
 My Quiz Result: 100%
 
 ![alt text](image-1.png)
 
-
 ---
-
-
-
-
 
 ## 📖 2.0 Introduction
 
 ### 🟣 2.0.1 Webster - Why Should I Take this Module?
 
+#CASE_STUDY
+
+> Kishori does not yet understand network infrastructure device roles in the network, including end devices, intermediate devices, and network media. When she first started her nursing career, she was writing patient medical notes in a paper notebook! At home, Kishori only has a laptop, a smartphone, and a tablet. This makes her most familiar with end devices, or hosts. She understands that those devices are connected to the internet somehow through that box in the corner of her living room. At work she uses a laptop, a desktop, a printer, and other network-connected hospital equipment. She wants to learn more about network components and how they all connect.
+>
+> Kishori leaves her patient's room, sets down her laptop, and continues her work on the desktop computer at the nursing station. She wonders how the electronic notes she just took on the laptop appear on the patient’s record on the desktop computer. How are they connected? How does the computer reach the internet in the first place? Kishori has a lot to learn, and you might too! Take this module to learn more.
+
+### 🟣 2.0.2 What Will I Learn in this Module?
+
+**Module Title:** Network Components, Types, and Connections
+
+**Module Objective:** Explain network types, components, and connections.
+
+| Topic Title              | Topic Objective                                        |
+| ------------------------ | ------------------------------------------------------ |
+| Clients and Servers      | Explain the roles of clients and servers in a network. |
+| Network Components       | Explain the roles of network infrastructure devices.   |
+| ISP Connectivity Options | Describe ISP connectivity options.                     |
+
+---
+
+- In modern networks, computers can act as clients, servers, or both
+
+- Client software examples: Web browser (Chrome), email server (MS Outlook); clients can both send and receive messages from the email server
+
+---
+
+### 🟣 2.1.2 Client and Server Roles
+
+All computers connected to a network that participate directly in network communication are classified as hosts. Hosts can send and receive messages on the network. In modern networks, computer hosts can act as a client, a server, or both, as shown in the figure. The software installed on the computer determines which role the computer plays.
+
+![alt text](image-2.png)
+
+Servers are hosts that have software installed which enable them to provide information, like email or web pages, to other hosts on the network. Each service requires separate server software. For example, a host requires web server software in order to provide web services to the network. Every destination that you visit online is provided to you by a server located somewhere on a network that is connected to the global internet.
+
+Clients are computer hosts that have software installed that enables the hosts to request and display the information obtained from the server. An example of client software is a web browser, such as Internet Explorer, Safari, Mozilla Firefox, or Chrome.
+
+| Type  | Description                                                                                                                                                          |
+| ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Email | The email server runs email server software. Clients use mail client software, such as Microsoft Outlook, to access email on the server.                             |
+| Web   | The web server runs web server software. Clients use browser software, such as Windows Internet Explorer, to access web pages on the server.                         |
+| File  | The file server stores corporate and user files in a central location. The client devices access these files with client software such as the Windows File Explorer. |
+
+---
+
+### 🟣 2.1.3 Peer-to-Peer Networks
+
+Client and server software usually run on separate computers, but it is also possible for one computer to run both client and server software at the same time. In small businesses and homes, many computers function as the servers and clients on the network. This type of network is called a peer-to-peer (P2P) network.
+
+The simplest P2P network consists of two directly connected computers using either a wired or wireless connection. Both computers are then able to use this simple network to exchange data and services with each other, acting as either a client or a server as necessary.
+
+Multiple PCs can also be connected to create a larger P2P network, but this requires a network device, such as a **_switch_**, to interconnect the computers.
+
+The main disadvantage of a P2P environment is that the performance of a host can be slowed down if it is acting as both a client and a server at the same time. The figure lists some of the advantages and disadvantages of peer-to-peer networks.
+In larger businesses, because of the potential for high amounts of network traffic, it is often necessary to have dedicated servers to support the number of service requests.
+
+#### P2P Advantages & Disadvantages
+
+The **advantages** of peer-to-peer networking:
+
+- Easy to set up
+- Less complex
+- Lower cost because network devices and dedicated servers may not be required
+- Can be used for simple tasks such as transferring files and sharing printers
+
+The **disadvantages** of peer-to-peer networking:
+
+- No centralized administration
+- Not as secure
+- Not scalable
+- All devices may act as both clients and servers which can slow their performance
+
+> - ⚠️ #GOTCHA: main disadvantage of a P2P environment is that the performance of a host can be slowed down if it is acting as both a client and a server at the same time
+
+---
+
+### 🟣 2.1.4 Peer-to-Peer Applications
+
+A P2P application allows a device to act as both a client and a server within the same communication, as shown in the figure. In this model, every client is a server and every server is a client. P2P applications require that each **end device** provide a user interface and run a background service.
+
+> - **end device:**
+
+Some P2P applications use a **hybrid system** where resource sharing is decentralized, but the indexes that point to resource locations are stored in a centralized directory. In a hybrid system, each peer accesses an **index server** to get the location of a resource stored on another peer.
+
+![alt text](image-3.png)
+
+---
+
+### 🟣 Multiple Roles in the Network
+
+A computer with server software can provide services simultaneously to one or many clients, as shown in the figure.
+
+Additionally, a single computer can run multiple types of server software. In a home or small business, it may be necessary for one computer to act as a file server, a web server, and an email server.
+
+A single computer can also run multiple types of client software. There must be client software for every service required. With multiple clients installed, a host can connect to multiple servers at the same time. For example, a user can check email and view a web page while instant messaging and listening to internet radio.
+
+![alt text](image-4.png)
+
+> - **server:** hosts that have software installed that enable them to provide information, like email or web pages, to other hosts on the network.
+
+> - **client:** computer hosts that have software installed that enable them to request and display the information obtained from the server.
+
+> - **peer-to-peer (P2P) network:** consists of two directly connected computers where both computers are able to exchange data and services with each other, acting as either a client or a server as necessary.
+
+---
+
+## 📖 2.2 Network Components
+
+### 🟣 2.2.1 Video - Network Infrastructure Symbols
+
+**Examples of Intermediate Devices:**
+
+- Router
+- Wireless Router
+- Switch
+- Wireless Access Point (WAP/AP)
+- Call Manager
+- Firewall
+- Service Provider Switch
+
+![alt text](image-5.png)
+
+**Examples of End Devices:**
+
+- Laptop
+- Printer
+- Tablet
+- Smart Phone
+- IP Phone
+- Desktop
+- Server
+
+![alt text](image-6.png)
+
+**Examples of Network Media:**
+
+- LAN media (most commonly ethernet)
+- WAN media (most commonly ISP)
+- Wireless Media
+- Cloud
+
+![alt text](image-7.png)
+
+---
+
+### 🟣 2.2.2 Network Infrastructure
+
+The path that a message takes from its source to destination can be as simple as a single cable connecting one computer to another, or as complex as a network that literally spans the globe. This network infrastructure is the platform that supports the network. It provides the stable and reliable channel over which our communications can occur.
+
+The network infrastructure contains three categories of hardware components, as shown in the figure:
+
+- End devices
+- Intermediate devices
+- Network media
+
+Devices and media are the physical elements, or hardware, of the network. Hardware is often the visible components of the network platform such as a laptop, PC, switch, router, wireless access point, or the cabling used to connect the devices. Occasionally, some components may not be so visible. In the case of wireless media, messages are transmitted through the air using invisible radio frequencies or infrared waves.
+
+> 🎨 **ACTIVITY:**
+>
+> Make a list of the network infrastructure components installed in your home network. Include the cables or wireless access points that provide your network connections.
+>
+> > ---
+
+---
+
+### 🟣 2.2.3 End Devices
+
+The network devices that people are most familiar with are called **end devices**, or **hosts**. These devices form the interface between users and the underlying communication network.
+
+Some examples of end devices are as follows:
+
+- Computers (workstations, laptops, file servers, web servers)
+- Network printers
+- Telephones and teleconferencing equipment
+- Security cameras
+- Mobile devices (such as smart phones, tablets, PDAs, and wireless debit/credit card readers and barcode scanners)
+
+An end device (or host) is either the source or destination of a message transmitted over the network, as shown in the animation. In order to uniquely identify hosts, addresses are used. When a host initiates communication, it uses the address of the destination host to specify where the message should be sent.
+
+Click Play in the figure to see an animation of data flowing through a network.
+
+#CASE_STUDY
+
+> Eilert recently got a job with a computer support services company in his hometown of Falun, Sweden. A customer has asked for someone to come connect their home network to the internet. They only have a cable modem. Which of the following intermediary devices would Eilert most likely take with him to the job?
+
+radio_button_unchecked
+desktop computer
+
+radio_button_unchecked
+multilayer switch
+
+radio_button_unchecked
+wireless router
+
+> Home networks typically connect to the Internet Service Provider using a modem and a router with wireless capabilities. Sometimes these two devices are combined into one device. In this scenario, Eilert will need to bring the wireless router to the customer's home as they only have the modem.
+
+radio_button_unchecked
+LAN switch
+
+radio_button_unchecked
+firewall appliance
+
+#CASE_STUDY
+
+> Rosalía works as a community health worker in Rio Claro, Brazil. Most of her time is spent making home visits to provide primary care to people in her community. However, she requires internet access to maintain her patient records and provide videoconferencing with a doctor, when needed. What end device and media type does Rosalía most likely use? (Choose two.)
+
+> Community health workers that travel from home to home during their daily rounds depend heavily on wireless access. Therefore, Rosalía would most likely use a tablet and wireless media to connect to the internet for updating medical records and videoconferencing with other a doctor, when needed.
+
+---
+
+## 📖 2.3 ISP Connectivity Options
+
+2.3.1 ISP Services
+An Internet Service Provider (ISP) provides the link between the home network and the internet. An ISP can be the local cable provider, a landline telephone service provider, the cellular network that provides your smartphone service, or an independent provider who leases bandwidth on the physical network infrastructure of another company.
+
+**ISP Type Examples:**
+
+- local cable provider
+- landline telephone service provider
+- cellular network that provides your smartphone service (eg, ATT, Verizon, etc)
+- independent provider who leases bandwidth on the physical network infrastructure of another company. (eg, Patriot Mobile)
+
+Many ISPs also offer additional services to their contract subscribers, as shown in the figure. These services can include email accounts, network storage, and website hosting and automated backup or security services.
+
+ISPs are critical to communications across the global internet. Each ISP connects to other ISPs to form a network of links that interconnect users all over the world. ISPs are connected in a hierarchical manner that ensures that internet traffic generally takes the shortest path from the source to the destination.
+
+> - 📌 #TIP: ISPs are connected in a hierarchical manner that ensures that internet traffic generally takes the shortest path from the source to the destination.
+
+The **internet backbone** is like an information super highway that provides high-speed data links to connect the various service provider networks in major metropolitan areas around the world. The primary medium that connects the internet backbone is fiber-optic cable. This cable is typically installed underground to connect cities within continents. Fiber-optic cables also run under the sea to connect continents, countries, and cities.
+
+> - 📌 #TIP: Fiber-optic cable is the primary medium that connects the internet backbone, usually underground, but also under the ocean to connect continents
+
+![alt text](image-8.png)
+
+> - **POP:** Point of Presence; physical location containing networking equipment that allows users to connect to an ISP
+
+---
+
+### 🟣 2.3.2 ISP Connections
+
+The interconnection of ISPs that forms the backbone of the internet is a complex web of fiber-optic cables with expensive networking switches and routers that direct the flow of information between source and destination hosts. Average home users are not aware of the infrastructure outside of their network. For a home user, connecting to the ISP is a fairly uncomplicated process.
+
+The top portion of the figure displays the simplest ISP connection option. It consists of a modem that provides a direct connection between a computer and the ISP. This option should not be used though, because your computer is not protected on the internet.
+
+As shown in the bottom portion of the figure, a router is required to securely connect a computer to an ISP. This is the most common connection option. It consists of using a wireless integrated router to connect to the ISP. The router includes a switch to connect wired hosts and a wireless AP to connect wireless hosts. The router also provides client IP addressing information and security for inside hosts.
+
+![alt text](image-9.png)
+
+> - 📌 #TIP: Wireless routers typically include a switch to connect wired hosts and a wireless AP to connect wireless hosts.
+
+---
+
+### 🟣 2.3.3 Cable and DSL Connections
+
+Most home network users do not connect to their service providers with fiber-optic cables. The figure illustrates common connection options for small office and home users. The two most common methods are as follows:
+
+- **Cable -** Typically offered by cable television service providers, the internet data signal is carried on the same coaxial cable that delivers cable television. It provides a high bandwidth, always on, connection to the internet. A special cable modem separates the internet data signal from the other signals carried on the cable and provides an Ethernet connection to a host computer or LAN.
+- **DSL - Digital Subscriber Line** provides a high bandwidth, always on, connection to the internet. It requires a special high-speed modem that separates the DSL signal from the telephone signal and provides an Ethernet connection to a host computer or LAN. DSL runs over a telephone line, with the line split into three channels. One channel is used for voice telephone calls. This channel allows an individual to receive phone calls without disconnecting from the internet. A second channel is a faster download channel, used to receive information from the internet. The third channel is used for sending or uploading information. This channel is usually slightly slower than the download channel. The quality and speed of the DSL connection depends mainly on the quality of the phone line and the distance from the central office of your phone company **_The farther you are from the central office, the slower the connection._**
+
+![alt text](image-10.png)
+
+---
+
+### 🟣 2.3.4 Additional Connectivity Options
+
+- **Cellular:** uses a cell phone network to connect. Wherever you can get a cellular signal, you can get cellular internet access. Performance will be limited by the capabilities of the phone and the cell tower to which it is connected. The availability of cellular internet access is a real benefit for people in areas that would otherwise have no internet connectivity at all, or for people who are constantly on the move. The downside of cellular connectivity is that the carrier usually meters the bandwidth usage of the connection and may charge extra for bandwidth that exceeds the contract data plan.
+
+- **Satellite:** Satellite service is a good option for homes or offices that do not have access to DSL or cable. Satellite dishes (see figure) require a clear line of sight to the satellite and so might be difficult in heavily wooded areas or places with other overhead obstructions. Speeds will vary depending on the contract, though they are generally good. Equipment and installation costs can be high (although check the provider for special deals), with a moderate monthly fee thereafter. Like cellular access, the availability of satellite internet access is a real benefit in areas that would otherwise have no internet connectivity at all.
+
+- **Dial-up Telephone:** An inexpensive option that uses any phone line and a modem. To connect to the ISP, a user calls the ISP access phone number. The low bandwidth provided by a dial-up modem connection is usually not sufficient for large data transfer, although it is useful for mobile access while traveling. A modem dial-up connection should only be considered when higher speed connection options are not available.
+
+#### Satellite Connection
+
+In metropolitan areas, many apartments and small offices are being connected directly with fiber-optic cables. This enables an internet service provider to provide higher bandwidth speeds and support more services such as internet, phone, and TV.
+
+The choice of connection varies depending on geographical location and service provider availability.
+
+![alt text](image-11.png)
+
+---
+
+> - **DSL:** Digital Subscriber Line (DSL) connection is a service that provides high bandwidth, always on, connection using existing land-line telephone wires.
+
+---
+
+### ➡️ SIDEBAR: P2P Deep-Dive (middle dive?)
+
+Here's a convo I had with Perplexity on my EDU account, based on me getting the P2P question wrong. The issue wasn't misunderstanding what P2P was, but rather mis-reading / mis-understanding one of the answers (the correct one).
+
+> Exactly. Your analogy is spot-on. The key word in option 3 is "shared" — the user's workstation is directly sharing its locally attached printer with other peers on the network, just like a phone sharing its 5G connection as a mobile hotspot. Both are devices acting as both a consumer and a provider of a resource — which is the essence of P2P.
+>
+> Your phone example is actually a great way to think about it:
+>
+> - **Hotspot scenario**: Your phone is both using 5G (client/consumer) and providing WiFi to other devices (server/provider) at the same time
+> - **Option 3 scenario**: Bob's workstation is both doing his normal work (client) and letting others print to his attached printer (server) at the same time
+>
+> That's peer-to-peer in a nutshell — no dedicated middleman device, just peers sharing resources directly with each other.
+
+![QUIZ 2.4.3 Results](image-12.png)
+
+---
+
+## 📖 3.0 Introduction
+
+### 🟣 3.0.2 What Will I Learn in this Module?
+
+**Module Title:** Wireless and Mobile Networks
+
+**Module Objective:** Configure mobile device for wireless access.
+
+| Topic Title                | Topic Objective                                                                  |
+| -------------------------- | -------------------------------------------------------------------------------- |
+| Wireless Networks          | Describe the different types of networks used by cell phones and mobile devices. |
+| Mobile Device Connectivity | Configure mobile devices for wireless connectivity.                              |
+
+---
+
+## 📖 3.1 Wireless Networks
+
+### 🟣 3.1.1 Video - Types of Wireless Networks
+
+![alt text](image-13.png)
+
+### 🟣 Video - Cell Phone Interactions with Different Networks
+
+Things we do on our cell phones:
+- talk on landlines, cell phones, other businesses
+- cell phones contain multiple radios (transmitters & receivers)
+- data - data plan (uses cell phone infrastructure to be able to access the internet)
+- wifi - hot spots, home wireless
+- location services - gps, maps, places near me
+- pay services - cash registers, payment pads
+
+---
+
+### 🟣 3.1.3 Other Wireless Networks
+
+In addition to the GSM and 4G/5G transmitters and receivers, smartphones make connections in a variety of ways.
+
+**Global Positioning System**
+
+The GPS uses satellites to transmit signals that cover the globe. The smartphone can receive these signals and calculate the phone’s location to an **accuracy of within 10 meters**.
+
+The figure shows a smartphone with the Cisco logo connecting to a GPS satellite.
+
+**Wi-Fi**
+
+Wi-Fi transmitters and receivers located within the smartphone enable the phone to connect to local networks and the internet. In order to receive and send data on a Wi-Fi network, the phone needs to be within the range of the signal from a wireless network access point. Wi-Fi networks are **usually privately owned** but often provide guest or public access hotspots. A hotspot is an area where Wi-Fi signals are available. Wi-Fi network connections on the phone are similar to the network connections on a laptop computer.
+
+**Bluetooth**
+
+Bluetooth is a low-power, shorter range wireless technology that is intended to replace wired connectivity for accessories such as speakers, headphones, and microphones. Bluetooth can also be used to connect a smartwatch to a smartphone. Because Bluetooth technology can be used to transmit both data and voice, it can be used to create small local networks. Bluetooth is wireless technology that allows devices to communicate over short distances. Multiple devices can be connected at the same time with Bluetooth.
+
+**NFC**
+
+Near Field Communication (NFC) is a wireless communication technology that enables data to be exchanged by devices that are in very close proximity to each other, **usually less than a few centimeters**. For example, NFC can be used to connect a smartphone and a payment system. NFC uses electromagnetic fields to transmit data.
+
+
+---
+
+
+## 📖 3.2 Mobile Device Connectivity
+
+### 🟣 Mobile Devices and Wi-Fi
+
+Mobile devices give us the freedom to work, learn, play, and communicate wherever we want. People using mobile devices do not need to be tied to a physical location to send and receive voice, video, and data communications. In addition, wireless facilities, such as **internet cafes**, are available in many countries. College campuses use wireless networks to allow students to sign up for classes, watch lectures, and submit assignments in areas where physical connections to the network are unavailable. With mobile devices becoming more powerful, many tasks that needed to be performed on large computers connected to physical networks can now be completed using mobile devices on wireless networks.
+
+Almost all mobile devices are capable of connecting to Wi-Fi networks. It is advisable to connect to Wi-Fi networks when possible because data used over Wi-Fi does not count against the cellular data plan. Also, because ***Wi-Fi radios use less power than cellular radios***, connecting to Wi-Fi networks conserves battery power. Like other Wi-Fi-enabled devices, it is important to use security when connecting to Wi-Fi networks. These precautions should be taken to protect Wi-Fi communications on mobile devices:
+
+*   Never send login or password information using unencrypted text (plaintext).
+*   Use a VPN connection when possible if you are sending sensitive data.
+*   Enable security on home networks.
+*   Use WPA2 or higher encryption for security.
+
+
+---
+
+### 🟣 3.2.2 Wi-Fi Settings
+
+Two of the most popular operating systems for mobile devices are Android and Apple iOS. Each operating system has settings that enable you to configure your device to connect to wireless networks.
+
+To connect an Android or iOS device when it is within the coverage range of a Wi-Fi network, turn on Wi-Fi and the device then searches for all available Wi-Fi networks and displays them in a list. Touch a Wi-Fi network in the list to connect. Enter a password if needed.
+
+When a mobile device is out of the range of the Wi-Fi network, it attempts to connect to another Wi-Fi network in range. If no Wi-Fi networks are in range, the mobile device connects to the cellular data network. When Wi-Fi is on, it will automatically connect to any Wi-Fi network that it has connected to previously. If the network is new, the mobile device either displays a list of available networks that can be used or asks if it should connect to it.
+
+
+---
+
+### 🟣 3.2.3 Configure Mobile Wi-Fi Connectivity
+
+If your mobile device does not prompt to connect to a Wi-Fi network, the network SSID broadcast may be turned off, or the device may not be set to connect automatically. Manually configure the Wi-Fi settings on the mobile device. Remember that SSIDs and passphrases must be typed exactly as entered on the wireless router setup or the device will not connect properly, as shown in the figure. SSID is the name assigned to a wireless network. Passphrase is what we normally use as the “wireless password”.
+
+To connect to a Wi-Fi network manually on an Android device, follow these steps:  
+**Step 1.** Select **Settings > Add network.**  
+**Step 2.** Enter the network SSID.  
+**Step 3.** Touch **Security** and select a security type.  
+**Step 4.** Touch **Password** and enter the password.  
+**Step 5.** Touch **Save.**
+
+Operating systems for mobile devices are updated frequently and may be customized by the device manufacturer. The commands listed above may not be exactly the same on your device. There are online manuals for every type of device which are usually accessible from the website of the manufacturer.
+
+To connect to a Wi-Fi network manually on an iOS device, follow these steps:  
+**Step 1.** Select **Settings > Wi-Fi > Other.**  
+**Step 2.** Enter the network SSID.  
+**Step 3.** Touch **Security** and select a security type.  
+**Step 4.** Touch **Other Network.**  
+**Step 5.** Touch **Password** and enter the password.  
+**Step 6.** Touch **Join.**
+
+
+---
+
+### 🟣 3.2.4 Configure Cellular Data Settings
+
+Cellular data plans are offered by most cell phone carriers, but the bandwidth limitations and charges for usage vary widely by carrier, and by plan within carriers. As a result, many mobile device users only use their cellular data plans when Wi-Fi service is not available.
+
+**Android Cellular Data**
+
+To turn on or off cellular data on an Android device, use the following path:
+
+**Settings >** touch **More** under **Wireless and Networks >** touch **Mobile Networks >** touch **Data enabled**
+
+
+**iOS Cellular Data**
+
+To turn on or off cellular data on an iOS device, use the following path:
+
+**Settings > Cellular Data >** turn cellular data on or off
+
+Mobile devices are preprogrammed to use a Wi-Fi network for internet if one is available and the device can connect to the access point and receive an IP address. If no Wi-Fi network is available, the device uses the cellular data capability if it is configured. Most of the time, transitions from one network to another are not obvious to the user. For example, as a mobile device moves from an area of 4G coverage to 3G coverage, **the 4G radio shuts off and turns on the 3G radio**. Connections are not lost during this transition.
 
 
 
+---
+
+### 🟣 3.2.5 Video - Bluetooth Configuration on a Windows Laptop
+
+- 3 WAYS to connect bluetooth in windows:
+  - Click acction center in the taskbar
+  - Right click for bluetooth settings
+  - Control Panel
+  - Settings > Devices > Bluetooth and other devices
+
+- **adding the bluetooth device**
+  - put device in pairing mode
+  - On computer click "Add bluetooth or other device"
+  - Add a device
 
 
 
+---
+
+### 🟣 3.2.6 Simple Connectivity with Bluetooth
+
+Mobile devices connect using many different methods. Cellular and Wi-Fi can be difficult to configure, and require extra equipment such as towers and access points. Cable connections are not always practical when connecting headsets or speakers. Bluetooth technology provides a simple way for mobile devices to connect to each other and to wireless accessories. Bluetooth is wireless, automatic, and uses very little power, which helps conserve battery life. Up to eight Bluetooth devices can be connected together at any one time.
+
+These are some examples of how devices use Bluetooth:
+
+*   **Hands-free headset** - A small earpiece with a microphone can be used for making and receiving calls.
+*   **Keyboard or mouse** - A keyboard or mouse can be connected to a mobile device to make input easier.
+*   **Stereo control** - A mobile device can connect to a home or car stereo to play music.
+*   **Car speakerphone** - A device that contains a speaker and a microphone can be used for making and receiving calls.
+*   **Tethering** - A mobile device can connect to another mobile device or computer to share a network connection. Tethering can also be performed with a Wi-Fi connection or a cable connection such as USB.
+*   **Mobile speaker** - Portable speakers can connect to mobile devices to provide high-quality audio without a stereo system.
+
+
+> - 📌 #TIP: Up to **eight Bluetooth devices** can be connected together at any one time.
+
+
+---
+
+### 🟣 3.2.7 Bluetooth Pairing
+
+Bluetooth pairing occurs when **two Bluetooth devices establish a connection to share resources**. In order for the devices to pair, the Bluetooth radios are turned on, and one device begins searching for other devices. Other devices must be set to **discoverable mode**, also called visible, so that they can be detected. When a Bluetooth device is in discoverable mode, it transmits the following information when another Bluetooth device requests it:
+
+*   Name
+*   **Bluetooth class**
+*   Services that the device can use
+*   Technical information, such as the features or the Bluetooth specification that it supports
+
+During the pairing process, a personal identification number (PIN) may be requested to authenticate the pairing process. The PIN is often a number, but can also be a numeric code or passkey. The PIN is stored using pairing services, so it does not have to be entered the next time the device tries to connect. This is convenient when using a headset with a smart phone, because they are paired automatically when the headset is turned on and within range.
+
+To pair a Bluetooth device with an Android device, follow these steps:
+
+**Step 1.** Follow the instructions for your device to place it in discoverable mode.
+
+**Step 2.** Check the instructions for your device to find the connection PIN.
+
+**Step 3.** Select **Settings > Wireless and networks.**
+
+**Step 4.** Touch **Bluetooth** to turn it on.
+
+**Step 5.** Touch the **Bluetooth tab.**
+
+**Step 6.** Touch **Scan for devices.**
+
+**Step 7.** Touch the discovered device to select it.
+
+**Step 8.** Type the PIN.
+
+**Step 9.** Touch the device name again to connect to it.
+
+To pair a Bluetooth device with an iOS device, follow these steps:
+
+**Step 1.** Follow the instructions for your device to place it in discoverable mode.
+
+**Step 2.** Check the instructions for your device to find the connection PIN.
+
+**Step 3.** Select **Settings > Bluetooth.**
+
+**Step 4.** Touch **Bluetooth** to turn it on.
+
+**Step 5.** Touch the discovered device to select it.
+
+**Step 6.** Type the PIN.
+
+Remember that mobile device operating systems are updated frequently. Always refer to the documentation of the manufacturer for your specific model device for the latest command reference.
+
+---
+
+### 🟣 3.2.8 Explore Your Network Settings on Your Mobile Device
+
+Now that you have reviewed the steps to configure and verify your Wi-Fi, cellular, and Bluetooth access, explore these settings on your own phone. If you have access to a Bluetooth device, like headphones or a speaker, connect it to your phone. Notice that you can be using all three of these wireless services simultaneously, each serving a different role. You could be listening to music (Bluetooth), researching on the internet (Wi-Fi), and receiving text messages (cellular).
+
+---
+
+## 📖 3.3 Wireless and Mobile Networks Summary
+
+### 🟣 3.3.1 Whast Did I Learn in this Module?
+
+**Wireless Networks**
+
+![alt text](image-14.png)
+
+**Mobile Device Connectivity**
+
+![alt text](image-15.png)
+
+
+---
+
+---
+
+### 🟣 3.3.3 Wireless and Mobile Network Quiz
+
+#COURSE_QUIZ_ERRATA 🐞
+
+![alt text](image-16.png)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Q1 tethering
+Q2 bluetooth
+3. bluetooth
+4. a wireless lan
+5. nfc
+6. BLUETOOTH ?
+7. cellular, wifi
+8. nfc
+9. gps
+10. SSID, pass
+11. bluetooth
 
 
 
