@@ -16,17 +16,25 @@ int main(void) {
 	cin >> i;
 	cout << "Enter j: ";
 	cin >> j;
+
+    // // DEBUGGING: Fixed i, j values
+    // i = 100;
+    // j = 3;
 	
 	// increment i by 2
-    i++;
+    i += 2;
 
-    cout << "i++ = " << i;
+    cout << "i += 2: " << i << endl;
 
 	// decrement j by i
-    j--;
+    j -= i;
+
+    cout << "j -= i: " << j << endl;
 
 	// divide i by j giving k
     k = i/j;
+
+    cout << "k = i/j: " << k << endl;
 
 	// increment k by k
     k += k;
@@ -38,17 +46,17 @@ int main(void) {
     j = k % i;
 
 	// increment k by k added to i
-    k += i;
+    k += k + i;
 
 	// increment k by k divided by j
-    k /= j;
+    k += k/j;
 
 	// assign k times k times k to k
-    k *= k * k * k;
+    k = k * k * k;
 
 	// increment k by i times j
     k += i * j;
 	
-	cout << k;
+	cout << "k = " << k << endl;
 	return 0;
 }

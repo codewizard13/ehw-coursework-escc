@@ -2,11 +2,10 @@
     1.3.19 LAB Floats: operators and expressions
     Student: Eric Hepperle
     Created: 2026-08-29
-    
+
     GitHub: https://github.com/codewizard13
     email: codewizard13@gmail.com
  ************************************************************ */
-
 #include <iostream>
 using namespace std;
 
