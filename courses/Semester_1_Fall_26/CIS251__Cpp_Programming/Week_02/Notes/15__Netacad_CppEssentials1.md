@@ -1010,16 +1010,30 @@ character = '\\';
 ---
 
 
+> - 📌 #TIP: It appears that you only the NUMERATOR (top number) needs to have a decimal point for the result to be a decimal point (float).
+
+
+#ERROR_ENCOUNTERED
+
+![alt text](image-6.png)
 
 
 
+---
+
+Guided Practice #4-5 PROOF:
+
+![alt text](image-7.png)
 
 
+> - ⚠️ #GOTCHA: Integer division always ejects / truncates the decimal portion! Use casting on the denominator explicitly write the denominator as a decimal
+
+---
 
 
+Week 2 Assignment Results:
 
-
-
+![alt text](image-8.png)
 
 
 
