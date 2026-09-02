@@ -483,6 +483,7 @@ Here's a convo I had with Perplexity on my EDU account, based on me getting the 
 ### 🟣 Video - Cell Phone Interactions with Different Networks
 
 Things we do on our cell phones:
+
 - talk on landlines, cell phones, other businesses
 - cell phones contain multiple radios (transmitters & receivers)
 - data - data plan (uses cell phone infrastructure to be able to access the internet)
@@ -514,9 +515,7 @@ Bluetooth is a low-power, shorter range wireless technology that is intended to 
 
 Near Field Communication (NFC) is a wireless communication technology that enables data to be exchanged by devices that are in very close proximity to each other, **usually less than a few centimeters**. For example, NFC can be used to connect a smartphone and a payment system. NFC uses electromagnetic fields to transmit data.
 
-
 ---
-
 
 ## 📖 3.2 Mobile Device Connectivity
 
@@ -524,13 +523,12 @@ Near Field Communication (NFC) is a wireless communication technology that enabl
 
 Mobile devices give us the freedom to work, learn, play, and communicate wherever we want. People using mobile devices do not need to be tied to a physical location to send and receive voice, video, and data communications. In addition, wireless facilities, such as **internet cafes**, are available in many countries. College campuses use wireless networks to allow students to sign up for classes, watch lectures, and submit assignments in areas where physical connections to the network are unavailable. With mobile devices becoming more powerful, many tasks that needed to be performed on large computers connected to physical networks can now be completed using mobile devices on wireless networks.
 
-Almost all mobile devices are capable of connecting to Wi-Fi networks. It is advisable to connect to Wi-Fi networks when possible because data used over Wi-Fi does not count against the cellular data plan. Also, because ***Wi-Fi radios use less power than cellular radios***, connecting to Wi-Fi networks conserves battery power. Like other Wi-Fi-enabled devices, it is important to use security when connecting to Wi-Fi networks. These precautions should be taken to protect Wi-Fi communications on mobile devices:
+Almost all mobile devices are capable of connecting to Wi-Fi networks. It is advisable to connect to Wi-Fi networks when possible because data used over Wi-Fi does not count against the cellular data plan. Also, because **_Wi-Fi radios use less power than cellular radios_**, connecting to Wi-Fi networks conserves battery power. Like other Wi-Fi-enabled devices, it is important to use security when connecting to Wi-Fi networks. These precautions should be taken to protect Wi-Fi communications on mobile devices:
 
-*   Never send login or password information using unencrypted text (plaintext).
-*   Use a VPN connection when possible if you are sending sensitive data.
-*   Enable security on home networks.
-*   Use WPA2 or higher encryption for security.
-
+- Never send login or password information using unencrypted text (plaintext).
+- Use a VPN connection when possible if you are sending sensitive data.
+- Enable security on home networks.
+- Use WPA2 or higher encryption for security.
 
 ---
 
@@ -541,7 +539,6 @@ Two of the most popular operating systems for mobile devices are Android and App
 To connect an Android or iOS device when it is within the coverage range of a Wi-Fi network, turn on Wi-Fi and the device then searches for all available Wi-Fi networks and displays them in a list. Touch a Wi-Fi network in the list to connect. Enter a password if needed.
 
 When a mobile device is out of the range of the Wi-Fi network, it attempts to connect to another Wi-Fi network in range. If no Wi-Fi networks are in range, the mobile device connects to the cellular data network. When Wi-Fi is on, it will automatically connect to any Wi-Fi network that it has connected to previously. If the network is new, the mobile device either displays a list of available networks that can be used or asks if it should connect to it.
-
 
 ---
 
@@ -566,7 +563,6 @@ To connect to a Wi-Fi network manually on an iOS device, follow these steps:
 **Step 5.** Touch **Password** and enter the password.  
 **Step 6.** Touch **Join.**
 
-
 ---
 
 ### 🟣 3.2.4 Configure Cellular Data Settings
@@ -579,7 +575,6 @@ To turn on or off cellular data on an Android device, use the following path:
 
 **Settings >** touch **More** under **Wireless and Networks >** touch **Mobile Networks >** touch **Data enabled**
 
-
 **iOS Cellular Data**
 
 To turn on or off cellular data on an iOS device, use the following path:
@@ -587,8 +582,6 @@ To turn on or off cellular data on an iOS device, use the following path:
 **Settings > Cellular Data >** turn cellular data on or off
 
 Mobile devices are preprogrammed to use a Wi-Fi network for internet if one is available and the device can connect to the access point and receive an IP address. If no Wi-Fi network is available, the device uses the cellular data capability if it is configured. Most of the time, transitions from one network to another are not obvious to the user. For example, as a mobile device moves from an area of 4G coverage to 3G coverage, **the 4G radio shuts off and turns on the 3G radio**. Connections are not lost during this transition.
-
-
 
 ---
 
@@ -605,8 +598,6 @@ Mobile devices are preprogrammed to use a Wi-Fi network for internet if one is a
   - On computer click "Add bluetooth or other device"
   - Add a device
 
-
-
 ---
 
 ### 🟣 3.2.6 Simple Connectivity with Bluetooth
@@ -615,16 +606,14 @@ Mobile devices connect using many different methods. Cellular and Wi-Fi can be d
 
 These are some examples of how devices use Bluetooth:
 
-*   **Hands-free headset** - A small earpiece with a microphone can be used for making and receiving calls.
-*   **Keyboard or mouse** - A keyboard or mouse can be connected to a mobile device to make input easier.
-*   **Stereo control** - A mobile device can connect to a home or car stereo to play music.
-*   **Car speakerphone** - A device that contains a speaker and a microphone can be used for making and receiving calls.
-*   **Tethering** - A mobile device can connect to another mobile device or computer to share a network connection. Tethering can also be performed with a Wi-Fi connection or a cable connection such as USB.
-*   **Mobile speaker** - Portable speakers can connect to mobile devices to provide high-quality audio without a stereo system.
-
+- **Hands-free headset** - A small earpiece with a microphone can be used for making and receiving calls.
+- **Keyboard or mouse** - A keyboard or mouse can be connected to a mobile device to make input easier.
+- **Stereo control** - A mobile device can connect to a home or car stereo to play music.
+- **Car speakerphone** - A device that contains a speaker and a microphone can be used for making and receiving calls.
+- **Tethering** - A mobile device can connect to another mobile device or computer to share a network connection. Tethering can also be performed with a Wi-Fi connection or a cable connection such as USB.
+- **Mobile speaker** - Portable speakers can connect to mobile devices to provide high-quality audio without a stereo system.
 
 > - 📌 #TIP: Up to **eight Bluetooth devices** can be connected together at any one time.
-
 
 ---
 
@@ -632,10 +621,10 @@ These are some examples of how devices use Bluetooth:
 
 Bluetooth pairing occurs when **two Bluetooth devices establish a connection to share resources**. In order for the devices to pair, the Bluetooth radios are turned on, and one device begins searching for other devices. Other devices must be set to **discoverable mode**, also called visible, so that they can be detected. When a Bluetooth device is in discoverable mode, it transmits the following information when another Bluetooth device requests it:
 
-*   Name
-*   **Bluetooth class**
-*   Services that the device can use
-*   Technical information, such as the features or the Bluetooth specification that it supports
+- Name
+- **Bluetooth class**
+- Services that the device can use
+- Technical information, such as the features or the Bluetooth specification that it supports
 
 During the pairing process, a personal identification number (PIN) may be requested to authenticate the pairing process. The PIN is often a number, but can also be a numeric code or passkey. The PIN is stored using pairing services, so it does not have to be entered the next time the device tries to connect. This is convenient when using a headset with a smart phone, because they are paired automatically when the headset is turned on and within range.
 
@@ -695,7 +684,6 @@ Now that you have reviewed the steps to configure and verify your Wi-Fi, cellula
 
 ![alt text](image-15.png)
 
-
 ---
 
 ---
@@ -706,25 +694,12 @@ Now that you have reviewed the steps to configure and verify your Wi-Fi, cellula
 
 ![alt text](image-16.png)
 
-
-
 Q1 tethering
-Q2 bluetooth
-3. bluetooth
-4. a wireless lan
-5. nfc
-6. BLUETOOTH ?
-7. cellular, wifi
-8. nfc
-9. gps
-10. SSID, pass
-11. bluetooth
-
+Q2 bluetooth 3. bluetooth 4. a wireless lan 5. nfc 6. BLUETOOTH ? 7. cellular, wifi 8. nfc 9. gps 10. SSID, pass 11. bluetooth
 
 ---
 
 ## 📖 4.1 Home network Basics
-
 
 ### 🟣 4.1.1 Video - Typical Home Network Setup
 
@@ -732,11 +707,9 @@ Q2 bluetooth
 - many have a built-in wireless access point
 - wireless routers: ports are separated into two separate networks: local and wireless
 
-
 ---
 
 > NOTE: From here on, not going to be too careful about which note goes with which module, for expediency
-
 
 In addition to an integrated router, there are many different types of devices that might be connecting to a home network, as shown in the figure. Here are a few examples:
 
@@ -749,11 +722,9 @@ Security cameras
 Telephones
 Climate control devices
 
-
 ![alt text](image-17.png)
 
 Small business and home routers typically have two primary types of ports:
-
 
 Ethernet Ports
 
@@ -765,11 +736,9 @@ This port is used to connect the device to another network. The internet port co
 
 In addition to the wired ports, many home routers include a radio antenna and a built-in wireless access point. By default, the wireless devices are on the same local network as the devices that are physically plugged into the LAN switch ports. The internet port is the only port that is on a different network in the default configuration.
 
-
 ![alt text](image-18.png)
 
 ---
-
 
 4.2.1 LAN Wireless Frequencies
 The wireless technologies most frequently used in home networks are in the unlicensed 2.4 GHz and 5 GHz frequency ranges.
@@ -782,11 +751,9 @@ The figure shows where wireless technologies exist on the electromagnetic spectr
 
 ![alt text](image-19.png)
 
-
 > #### SIDEBAR: What is NPCS?Definition: A type of FCC-licensed radio frequency spectrum used primarily for two-way paging, text messaging, and data telemetry (such as remote utility meter reading or tracking infrastructure devices).Frequency Bands: It operates within specific ranges of the 900 MHz spectrum (specifically 901–902 MHz, 930–931 MHz, and 940–941 MHz).History: Authorized by the Federal Communications Commission (FCC) in the 1990s, NPCS was historically the first spectrum block ever auctioned off by the agency.Modern Use: While consumer two-way pagers became largely obsolete due to modern smartphones, the licensed spectrum is still repurposed today by companies like Space Data to provide secure, interference-free wireless communication backbones for critical infrastructure industries like oil, gas, and utilities.
 
 ---
-
 
 4.2.2 Wired Network Technologies
 Although many home network devices support wireless communications, there are still a few applications where devices benefit from a wired switch connection that is not shared with other users on the network.
@@ -797,7 +764,6 @@ Directly connected devices use an Ethernet patch cable, usually unshielded twist
 
 Click each wired technology for more information.
 
-
 Category 5e Cable
 ![alt text](image-20.png)
 
@@ -807,12 +773,9 @@ Coaxial Cable
 Fiber-Optic Cable
 ![alt text](image-22.png)
 
-
-
 ---
 
 > Wi-Fi uses two different frequency ranges: 2.4 GHz and 5 GHz. Bluetooth also uses the 2.4 GHz frequency range. However, cordless phones operate at a lower ~900 MHz frequency range.
-
 
 ---
 
@@ -826,17 +789,13 @@ Wireless standards are constantly improving the connectivity and speed of Wi-Fi 
 
 Do you have a wireless network in your home? Do you know what standards are supported by your wireless router?
 
-
 ---
-
-
 
 4.3.2 Wireless Settings
 The Packet Tracer Basic Wireless Settings interface is shown in the figure. Wireless routers using the 802.11 standards have multiple settings that have to be configured. These settings include the following:
 
 Network mode
 Determines the type of technology that must be supported. For example,802.11b,802.11g,802.11n or Mixed Mode.
-
 
 Network Name (SSID)
 Used to identify the WLAN. All devices that wish to participate in the WLAN must have the same SSID.
@@ -853,7 +812,6 @@ Note: SSID stands for Service Set Identifier.
 
 ![alt text](image-23.png)
 
-
 Network Mode
 
 The 802.11 protocol can provide increased throughput based on the wireless network environment. If all wireless devices connect with the same 802.11 standard, maximum speeds can be obtained for that standard. If the access point is configured to accept only one 802.11 standard, devices that do not use that standard cannot connect to the access point.
@@ -869,9 +827,7 @@ We use the SSID to identify a specific wireless network. It is essentially the n
 Disabling SSID broadcasting can make it more difficult for legitimate clients to find the wireless network. However, simply turning off the SSID broadcast is not sufficient to prevent unauthorized clients from connecting to the wireless network. All wireless networks should use the strongest available encryption to restrict unauthorized access.
 
 > - BLUETOOTH is used for low-speed communication between peripheral devices
->
 > - WAN Port - the **internet port** of a wireless router
-
 
 ---
 
@@ -883,7 +839,6 @@ Many wireless routers designed for home use have an automatic setup utility that
 To connect to the router using a wired connection, plug an Ethernet patch cable into the network port on the computer. Plug the other end into a LAN port on the router. Do not plug the cable into the port or interface that is labeled “Internet”. The internet port will connect to the DSL or cable modem. Some home routers may have a built-in modem for internet connections. If this is the case, verify that the type of connection is correct for your internet service. A cable modem connection will have a coaxial terminal to accept a BNC-type connector. A DSL connection will have a port for a telephone-type cable, usually an RJ-11 connector.
 
 After confirming that the computer is connected to the network router and the link lights on the NIC indicate a working connection, the computer needs an IP address. Most network routers are set up so that the computer receives an IP address automatically from a local DHCP server automatically configured on the wireless router. If the computer does not have an IP address, check the router documentation and configure the PC or tablet with a unique IP address, subnet mask, default gateway, and DNS information.
-
 
 ---
 
@@ -898,7 +853,6 @@ Wireless devices contain radio transmitter/receivers that function within a spec
 
 > IEEE **802.11b and 802.11g wireless standards operate exclusively on the 2.4 GHz** radio frequency band (specifically the 2.4 GHz ISM band spanning roughly 2400 MHz to 2484 MHz).
 
-
 How do I add new devices?
 The decision regarding who can access your home network should be determined by how you plan to use the network. On some wireless routers, it is possible to set up guest access. This is a special SSID coverage area that allows open access but restricts that access to using the internet only.
 
@@ -908,13 +862,11 @@ Note: Some wireless routers may label legacy mode as mixed mode.
 
 ![alt text](image-24.png)
 
-
 ---
 
 4.4.3 Video - Wireless Router and Client Configuration
 
 > - routerpasswords.com: find all default passwords
-
 
 - Max num of users: 10
 
@@ -922,11 +874,9 @@ Note: Some wireless routers may label legacy mode as mixed mode.
 
 > - DEFAULT LINKEDIN ROUTER password: admin / admin
 
-
 > - TIP: Click FFW to speed up time
 
 ---
-
 
 4.4.4 Packet Tracer - Configure a Wireless Router and Client
 In this Packet Tracer activity, you will complete the following objectives.
@@ -934,7 +884,6 @@ In this Packet Tracer activity, you will complete the following objectives.
 Part 1: Connect the Devices
 Part 2: Configure the Wireless Router
 Part 3: Configure IP Addressing and Test Connectivity
-
 
 #### INSTRUCTIONS:
 
@@ -1078,27 +1027,21 @@ b.  Close the **IP Configuration** window and open the **Web Browser**. Verify
 
 You have now completed connecting network devices, configuring the router and wireless LAN, and configuring hosts to connect to the network. All devices should be able to connect to the internet. Your job is done and Natsumi has offered to cook dinner for you as a reward for your help.
 
-
 ---
-
 
 #PROOF
 
 ![alt text](image-25.png)
 
-
 ![alt text](image-26.png)
 
->
 > !!! RESUME AT STEP 3!
-
 
 ![alt text](image-27.png)
 
 ![alt text](image-28.png)
 
 ![alt text](image-29.png)
-
 
 > !!! RESUME AT PART 3, Step 2: Test connectivity from the Office PC.
 
@@ -1114,12 +1057,9 @@ You have now completed connecting network devices, configuring the router and wi
 
 ![alt text](image-34.png)
 
-
 ![alt text](image-35.png)
 
 4.5. Build a Home Network Summary
-
-
 
 ---
 
@@ -1135,7 +1075,6 @@ Before entering the configuration utility, or manually configuring the router th
 
 The decision regarding who can access your home network should be determined by how you plan to use the network. Many routers support MAC address filtering. This enables you to specifically identify who is allowed on the wireless network. This makes the wireless network more secure, but it also less flexible when connecting new devices. On some wireless routers, it is possible to set up guest access. This is a special SSID coverage area that allows open access but restricts that access to using the internet only.
 
-
 ---
 
 4.5.3 Build a Home Network Quiz
@@ -1148,22 +1087,18 @@ The decision regarding who can access your home network should be determined by 
 
 ## CHECKPOINT EXAM: Build a Small Network
 
-
-
 > MAC filtering is configured on the wireless router or access point. It checks a device’s **MAC address**—its network adapter’s hardware address—against an allow or deny list.
-> 
+>
 > - An allowed MAC address can join the Wi‑Fi network.
 > - A blocked or unlisted MAC address is denied access, depending on how the filter is configured. [cisco](https://www.cisco.com/c/dam/assets/sol/sb/WAP571_Emulators/WAP571_Emulator_v1-0-0-14/help/en/aa1049274.html)
-> 
+>
 > ## Why the others are wrong
-> 
+>
 > - “It allows only authorized users to detect the network” describes hiding the SSID, not MAC filtering.
 > - “It is configured on the computer rather than on the router” is incorrect; the access point/router maintains the filter list.
 > - “It encrypts data” describes Wi‑Fi security such as WPA2/WPA3, not MAC filtering.
-> 
+>
 > One exam note: MAC filtering provides limited security because MAC addresses can be spoofed, so it should supplement—not replace—WPA2/WPA3 encryption and a strong password. [cisco](https://www.cisco.com/c/en/us/td/docs/wireless/controller/ewc/17-15/config-guide/ewc_cg_17_15/mac_authentication_bypass.html)
-
-
 
 #PROOF Try 1
 
@@ -1179,19 +1114,138 @@ The decision regarding who can access your home network should be determined by 
 
 ![alt text](image-42.png)
 
-
 > #GOTCHA: DSL is considered **"high-speed**
 
-
 ![alt text](image-43.png)
-
 
 #PROOF
 
 ![alt text](image-44.png)
 
-
 ---
 
 5.0. Introduction
 
+5.0.2 What Will I Learn in this Module?
+
+**Module Title:** Communication Principles
+
+**Module Objective:** Explain the importance of standards and protocols in network communications.
+
+| Topic Title                  | Topic Objective                           |
+| ---------------------------- | ----------------------------------------- |
+| Communication Protocols      | Describe network communication protocols. |
+| Communication Standards      | Describe network communication standards. |
+| Network Communication Models | Compare the OSI and TCP/IP models.        |
+
+---
+
+5.1 Communication Protocols
+
+5.1.1 Communication Protocols
+
+Communication in our daily lives takes many forms and occurs in many environments. We have different expectations depending on whether we are chatting via the internet or participating in a job interview. Each situation has its corresponding expected behaviors and styles.
+
+Before beginning to communicate with each other, we establish rules or agreements to govern the conversation. These agreements include the following:
+
+- What method of communication should we use?
+- What language should we use?
+- Do we need to confirm that our messages are received?
+
+These rules, or protocols, must be followed in order for the message to be successfully delivered and understood. Among the protocols that govern successful human communication are these:
+
+- An identified sender and receiver
+- Agreed upon method of communicating (face-to-face, telephone, letter, photograph)
+- Common language and grammar
+- Speed and timing of delivery
+- Confirmation or acknowledgment requirements
+
+The techniques that are used in network communications share these fundamentals with human conversations.
+
+Think about the commonly accepted protocols for sending text messages to your friends.
+
+---
+
+5.1.2 Why Protocols Matter
+
+Just like humans, computers use rules, or protocols, in order to communicate. Protocols are required for computers to properly communicate across the network. In both a wired and wireless environment, a local network is defined as an area where all hosts must "speak the same language", which, in computer terms means they must "share a common protocol".
+
+If everyone in the same room spoke a different language, they would not be able to communicate. Likewise, if devices in a local network did not use the same protocols, they would not be able to communicate.
+
+Networking protocols define many aspects of communication over the local network. As shown in the table, these include message format, message size, timing, encoding, encapsulation, and message patterns.
+
+| Protocol Characteristic | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Message format          | When a message is sent, it must use a specific format or structure. Message formats depend on the type of message and the channel that is used to deliver the message.                                                                                                                                                                                                                                                                                              |
+| Message size            | The rules that govern the size of the pieces communicated across the network are very strict. They can also be different, depending on the channel used. When a long message is sent from one host to another over a network, it may be necessary to break the message into smaller pieces in order to ensure that the message can be delivered reliably.                                                                                                           |
+| Timing                  | Many network communication functions are dependent on timing. Timing determines the speed at which the bits are transmitted across the network. It also affects when an individual host can send data and the total amount of data that can be sent in any one transmission.                                                                                                                                                                                        |
+| Encoding                | Messages sent across the network are first converted into bits by the sending host. Each bit is encoded into a pattern of sounds, light waves, or electrical impulses depending on the network media over which the bits are transmitted. The destination host receives and decodes the signals in order to interpret the message.                                                                                                                                  |
+| Encapsulation           | Each message transmitted on a network must include a header that contains addressing information that identifies the source and destination hosts, otherwise it cannot be delivered. Encapsulation is the process of adding this information to the pieces of data that make up the message. In addition to addressing, there may be other information in the header that ensures that the message is delivered to the correct application on the destination host. |
+| Message pattern         | Some messages require an acknowledgment before the next message can be sent. This type of request/response pattern is a common aspect of many networking protocols. However, there are other types of messages that may be simply streamed across the network, without concern as to whether they reach their destination.                                                                                                                                          |
+
+---
+
+5.1.3 Check Your Understanding - Communication Protocols
+
+> Networking protocols typically specify the maximum size for a message. In the case of Ethernet, there is also a minimum size of 64 bytes. In addition, Ethernet specifies a method for encoding the bits so that the destination can decode the message.
+
+
+
+---
+
+
+5.2 Communication Standards
+
+
+5.2.1 Video - Devices in a Bubble
+
+![alt text](image-45.png)
+
+> The only thing a device knows is its own address information
+
+
+![alt text](image-46.png)
+
+> The answer to these questions is **protocols**
+
+> **packets**
+>
+
+
+> DHCP/ICMPv6 - Protocol examples
+
+![alt text](image-47.png)
+
+
+> TCP is a protocol used to guarantee reliability. If any packets don't make it to the destination, TCP re-sends them
+
+![alt text](image-48.png)
+
+
+---
+
+
+5.2.2 The Internet and Standards
+
+With the increasing number of new devices and technologies coming online, how is it possible to manage all the changes and still reliably deliver services such as email? The answer is internet standards.
+
+A standard is a set of rules that determines how something must be done. Networking and internet standards ensure that all devices connecting to the network implement the same set of rules or protocols in the same manner. Using standards, it is possible for different types of devices to send information to each other over the internet. For example, the way in which an email is formatted, forwarded, and received by all devices is done according to a standard. If one person sends an email via a personal computer, another person can use a mobile phone to receive and read the email as long as the mobile phone uses the same standards as the personal computer.
+
+---
+
+5.2.3 Network Standards Organizations
+An internet standard is the end result of a comprehensive cycle of discussion, problem solving, and testing. These different standards are developed, published, and maintained by a variety of organizations, as shown in the figure. When a new standard is proposed, each stage of the development and approval process is recorded in a numbered **Request for Comments (RFC)** document so that the evolution of the standard is tracked. RFCs for internet standards are published and managed by the Internet Engineering Task Force (IETF).
+
+Other standards organizations that support the internet are shown in the figure.
+
+
+![alt text](image-49.png)
+
+---
+
+5.2.4 Check Your Understanding - Communications Standards
+
+> Protocols are the rules that govern network communications including the message format, message size, timing and encapsulation.
+
+
+---
