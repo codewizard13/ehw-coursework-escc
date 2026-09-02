@@ -847,6 +847,8 @@ Specifies the channel over which communication will occur. By default, this is s
 SSID Broadcast
 Determines if the SSID will be broadcast to all devices within range. By default, set to Enabled.
 
+> SSID set to **ENABLED** by default
+
 Note: SSID stands for Service Set Identifier.
 
 ![alt text](image-23.png)
@@ -860,11 +862,15 @@ A mixed mode wireless network environment can include devices that use any of th
 
 When building a wireless network, it is important that the wireless components connect to the appropriate WLAN. This is done using the SSID.
 
-The SSID is a case-sensitive, alphanumeric string that contains up to 32 characters. It is sent in the header of all frames transmitted over the WLAN. The SSID is used to tell wireless devices, called wireless stations (STAs), which WLAN they belong to and with which other devices they can communicate.
+The SSID is a **case-sensitive**, alphanumeric string that contains up to 32 characters. It is sent in the header of all frames transmitted over the WLAN. The SSID is used to tell wireless devices, called wireless stations (STAs), which WLAN they belong to and with which other devices they can communicate.
 
 We use the SSID to identify a specific wireless network. It is essentially the name of the network. Wireless routers usually broadcast their configured SSIDs by default. The SSID broadcast allows other devices and wireless clients to automatically discover the name of the wireless network. When the SSID broadcast is disabled, you must manually enter the SSID on wireless devices.
 
 Disabling SSID broadcasting can make it more difficult for legitimate clients to find the wireless network. However, simply turning off the SSID broadcast is not sufficient to prevent unauthorized clients from connecting to the wireless network. All wireless networks should use the strongest available encryption to restrict unauthorized access.
+
+> - BLUETOOTH is used for low-speed communication between peripheral devices
+>
+> - WAN Port - the **internet port** of a wireless router
 
 
 ---
@@ -889,6 +895,8 @@ If SSID broadcasting is on, the SSID name will be seen by all wireless clients w
 
 What types of devices will attach to my network?
 Wireless devices contain radio transmitter/receivers that function within a specific frequency range. If a device only has the necessary radio for 802.11 b/g, it will not connect if the wireless router or access point is configured to only accept 802.11n or 802.11ac standards. If all devices support the same standard, the network will work at its optimum speed. If you have devices that do not support the n or ac standards, then you will have to enable legacy mode. A legacy mode wireless network environment varies between router models but can include a combination of 802.11a, 802.11b, 802.11g, 802.11n, and 802.11ac. This environment provides easy access for legacy devices that need a wireless connection.
+
+> IEEE **802.11b and 802.11g wireless standards operate exclusively on the 2.4 GHz** radio frequency band (specifically the 2.4 GHz ISM band spanning roughly 2400 MHz to 2484 MHz).
 
 
 How do I add new devices?
@@ -1085,60 +1093,105 @@ You have now completed connecting network devices, configuring the router and wi
 > !!! RESUME AT STEP 3!
 
 
+![alt text](image-27.png)
+
+![alt text](image-28.png)
+
+![alt text](image-29.png)
+
+
+> !!! RESUME AT PART 3, Step 2: Test connectivity from the Office PC.
+
+![alt text](image-30.png)
+
+![alt text](image-31.png)
+
+![alt text](image-32.png)
+
+![alt text](image-33.png)
+
+#PROOF
+
+![alt text](image-34.png)
+
+
+![alt text](image-35.png)
+
+4.5. Build a Home Network Summary
 
 
 
+---
+
+4.5.1 What Did I Learn in this Module?
+
+Setup a Home Router
+
+Many wireless routers designed for home use have an automatic setup utility that can be used to configure the basic settings on the router. To connect to the router using a wired connection, plug an Ethernet patch cable into the network port on the computer. Plug the other end into a LAN port on the router.
+
+After the computer is connected to the network router and the link lights on the NIC indicate a working connection, the computer needs an IP address. Most network routers are set up so that the computer receives an IP address automatically from a local DHCP server automatically configured on the wireless router.
+
+Before entering the configuration utility, or manually configuring the router through a web browser, you should consider how your network will be used. Consider what you will call your network and what devices should connect to your network. It is not a good practice to include the device model or brand name as part of the SSID since internet searches can expose security weaknesses.
+
+The decision regarding who can access your home network should be determined by how you plan to use the network. Many routers support MAC address filtering. This enables you to specifically identify who is allowed on the wireless network. This makes the wireless network more secure, but it also less flexible when connecting new devices. On some wireless routers, it is possible to set up guest access. This is a special SSID coverage area that allows open access but restricts that access to using the internet only.
+
+
+---
+
+4.5.3 Build a Home Network Quiz
+
+#PROOF
+
+![alt text](image-36.png)
+
+---
+
+## CHECKPOINT EXAM: Build a Small Network
 
 
 
+> MAC filtering is configured on the wireless router or access point. It checks a device’s **MAC address**—its network adapter’s hardware address—against an allow or deny list.
+> 
+> - An allowed MAC address can join the Wi‑Fi network.
+> - A blocked or unlisted MAC address is denied access, depending on how the filter is configured. [cisco](https://www.cisco.com/c/dam/assets/sol/sb/WAP571_Emulators/WAP571_Emulator_v1-0-0-14/help/en/aa1049274.html)
+> 
+> ## Why the others are wrong
+> 
+> - “It allows only authorized users to detect the network” describes hiding the SSID, not MAC filtering.
+> - “It is configured on the computer rather than on the router” is incorrect; the access point/router maintains the filter list.
+> - “It encrypts data” describes Wi‑Fi security such as WPA2/WPA3, not MAC filtering.
+> 
+> One exam note: MAC filtering provides limited security because MAC addresses can be spoofed, so it should supplement—not replace—WPA2/WPA3 encryption and a strong password. [cisco](https://www.cisco.com/c/en/us/td/docs/wireless/controller/ewc/17-15/config-guide/ewc_cg_17_15/mac_authentication_bypass.html)
 
 
 
+#PROOF Try 1
+
+![alt text](image-37.png)
+
+![alt text](image-38.png)
+
+![alt text](image-39.png)
+
+![alt text](image-40.png)
+
+![alt text](image-41.png)
+
+![alt text](image-42.png)
 
 
+> #GOTCHA: DSL is considered **"high-speed**
 
 
+![alt text](image-43.png)
 
 
+#PROOF
+
+![alt text](image-44.png)
 
 
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+5.0. Introduction
 

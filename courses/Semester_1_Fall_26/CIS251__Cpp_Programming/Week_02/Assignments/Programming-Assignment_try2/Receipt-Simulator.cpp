@@ -13,12 +13,13 @@
     Notes:
     - Based on instructor feedback (see try 1), this version ensures 2-digit decimal precision,
       and consistent 10% tax rate for testing. 
-    - Previous rationale comments have been removed from this version
+    - Previous rationale comments have been removed from this version for code hygeine.
 
     GitHub: https://github.com/codewizard13
     email: codewizard13@gmail.com
  ************************************************************ */
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main(void) {
@@ -30,9 +31,11 @@ int main(void) {
 
     const double TAX_RATE = 0.10;
 
+    cout << setprecision(2) << fixed;
+
+    cout << "\n" << "****************************" << "\n";
     cout << "Welcome to Eric Hepperle's Product Purchase Simulator!" << "\n\n";
     cout << "Please enter a product name: ";
-    // cin >> product_name;
     getline(cin, product_name);
 
     cout << "Enter the unit price: $";
@@ -53,6 +56,8 @@ int main(void) {
     cout << "SUBTOTAL:\t$" << subtotal << endl;
     cout << "SALES TAX:\t$" << tax << endl;
     cout << "TOTAL:\t\t$" << total << endl;
+
+    cout << endl;
 
 	return 0;
 }
