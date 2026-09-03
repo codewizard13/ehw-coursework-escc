@@ -1971,13 +1971,18 @@ A switch builds the MAC address table by examining the source MAC address of eac
 
 ---
 
+#PROOF #CISCO_PACKET_TRACER #COURSE_COMPLETION
+
+![alt text](image-77.png)
+
+---
+
+#PROOF #CISCO_NETWORKING_ACADEMY #ACHIEVEMENTS #ASSIGNMENTS
+
+![alt text](image-78.png)
 
 
-
-
-
-
-
+---
 
 
 
