@@ -1304,16 +1304,15 @@ There are two basic types of models that we use to describe the functions that m
 
 The most widely known internetwork reference model was created by the **Open Systems Interconnection** (OSI) project at the International Organization for Standardization (ISO). It is used for **data network design**, **operation specifications**, and **troubleshooting**. This model is commonly referred to as the OSI model.
 
-| OSI Model Layer  | Description                                                                                                                                                                                                         |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| OSI Model Layer  | Description                                                                                                                                                                                                             |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 7 - Application  | The application layer contains protocols used for **process-to-process communications**.                                                                                                                                |
-| 6 - Presentation | The presentation layer provides for common representation of the data transferred between application layer services.                                                                                               |
+| 6 - Presentation | The presentation layer provides for common representation of the data transferred between application layer services.                                                                                                   |
 | 5 - Session      | The session layer **provides services** to the presentation layer to organize its dialogue and to manage data exchange.                                                                                                 |
-| 4 - Transport    | The transport layer defines services to segment, transfer, and reassemble the data for individual communications between the end devices.                                                                           |
-| 3 - Network      | The network layer provides services to exchange the individual pieces of data over the network between identified end devices.                                                                                      |
+| 4 - Transport    | The transport layer defines services to segment, transfer, and reassemble the data for individual communications between the end devices.                                                                               |
+| 3 - Network      | The network layer provides services to exchange the individual pieces of data over the network between identified end devices.                                                                                          |
 | 2 - Data Link    | The data link layer protocols describe **methods for exchanging data frames between devices** over a common media.                                                                                                      |
 | 1 - Physical     | The physical layer protocols describe the **mechanical, electrical, functional, and procedural** means to activate, maintain, and de-activate physical connections for a bit transmission to and from a network device. |
-
 
 > - 2 BASIC types of models: **protocol models** and **reference models**
 
@@ -1331,11 +1330,11 @@ The protocols that make up the TCP/IP protocol suite can be described in terms o
 
 The key similarities are in the transport and network layers; however, the two models differ in how they relate to the layers above and below each layer:
 
-*   OSI Layer 3, the network layer, maps directly to the TCP/IP internet layer. This layer is used to describe protocols that address and route messages through an internetwork.
-*   OSI Layer 4, the transport layer, maps directly to the TCP/IP transport layer. This layer describes general services and functions that provide ordered and reliable delivery of data between source and destination hosts.
-*   The TCP/IP application layer includes several protocols that provide specific functionality to a variety of end user applications. The OSI model Layers 5, 6, and 7 are used as references for application software developers and vendors to produce applications that operate on networks.
-*   Both the TCP/IP and OSI models are commonly used when referring to protocols at various layers. Because the OSI model separates the data link layer from the physical layer, it is commonly used when referring to these lower layers.
-  
+- OSI Layer 3, the network layer, maps directly to the TCP/IP internet layer. This layer is used to describe protocols that address and route messages through an internetwork.
+- OSI Layer 4, the transport layer, maps directly to the TCP/IP transport layer. This layer describes general services and functions that provide ordered and reliable delivery of data between source and destination hosts.
+- The TCP/IP application layer includes several protocols that provide specific functionality to a variety of end user applications. The OSI model Layers 5, 6, and 7 are used as references for application software developers and vendors to produce applications that operate on networks.
+- Both the TCP/IP and OSI models are commonly used when referring to protocols at various layers. Because the OSI model separates the data link layer from the physical layer, it is commonly used when referring to these lower layers.
+
 > - the OSI model separates the data link layer from the physical layer; The OSI model data link and network layers correspond to the network access layer in the TCP/IP model.
 
 > - IP addressing occurs at the network layer.
@@ -1346,35 +1345,640 @@ The key similarities are in the transport and network layers; however, the two m
 
 5.4.3 Communications Principles Quiz
 
-
 > An initialism is an abbreviation made from the first letters of a phrase, where you pronounce each letter separately. [1]  
-> Common Examples 
-> 
-> • FBI: Federal Bureau of Investigation (pronounced F-B-I) 
-> • ATM: Automated Teller Machine (pronounced A-T-M) 
-> • HTML: HyperText Markup Language (pronounced H-T-M-L) [1, 2]  
-> 
-> Initialism vs. Acronym 
-> People often confuse initialisms with acronyms, but they differ in how you say them out loud: 
-> 
-> • Initialism: You say every single letter out loud (for example, DVD is D-V-D). 
-> • Acronym: You say the letters together as one new word (for example, NASA sounds like a regular word, not N-A-S-A). [1, 2]  
-> 
-> Would you like me to give you more examples or show you how to form the plural of an initialism? 
+> Common Examples
+>
+> • FBI: Federal Bureau of Investigation (pronounced F-B-I)
+> • ATM: Automated Teller Machine (pronounced A-T-M)
+> • HTML: HyperText Markup Language (pronounced H-T-M-L) [1, 2]
+>
+> Initialism vs. Acronym
+> People often confuse initialisms with acronyms, but they differ in how you say them out loud:
+>
+> • Initialism: You say every single letter out loud (for example, DVD is D-V-D).
+> • Acronym: You say the letters together as one new word (for example, NASA sounds like a regular word, not N-A-S-A). [1, 2]
+>
+> Would you like me to give you more examples or show you how to form the plural of an initialism?
 > AI can make mistakes, so double-check responses
-> 
+>
 > [2] https://www.grammarly.com/commonly-confused-words/acronym-vs-initialism
 
 ![alt text](image-51.png)
 
 ![alt text](image-52.png)
 
-
 ![alt text](image-53.png)
 
 #PROOF
 
 ![alt text](image-54.png)
+
+---
+
+6.0 Introduction
+
+6.0.2 What Will I Learn in this Module?
+
+**Module Title:** Network Media
+
+**Module Objective:** Describe common network media.
+
+| Topic Title         | Topic Objective                          |
+| ------------------- | ---------------------------------------- |
+| Network Media Types | Describe common types of network cables. |
+
+---
+
+6.1 Network Media Types
+
+6.1.1 Video - Network Media Types
+
+- **network media:** provides the connectivity and path for communications to travel; copper (unshielded twisted pair (UPP)) or wireless
+- **UPP:** unshielded twisted pair (ethernet cable, cat5, cat5e, cat6, etc); each pair is color coded to match up; provided connectivity between a NIC or a port on a router; RJ-45 connector used for almost all types of ethernet connection
+- **Coaxial cable:** copper; BNC or F-type connectors; differs significantly from twisted pair, has single copper core surrounded by plastic insulator and wire mesh shield
+- **Fiber optic cable:** glass or plastic; solid core surrounded by 2nd layer of glass or plastic; carries only light waves; NOT AFFECTED BY ELECTROMAGNETIC INTERFERENCE; CAN CARRY LIGHT SIGNALS longer distances than copper; 
+- There are different types of fiber optics so there are a lot of variations in the types of speed each fiber optic cable will support
+
+
+---
+
+
+6.1.2 Three Media Types
+
+Data is transmitted across a network on media. The media provides the channel over which the message travels from source to destination.
+
+Modern networks primarily use three types of media to interconnect devices, as shown in the figure:
+
+*   **Metal wires within cables** - Data is encoded into electrical impulses.
+*   **Glass or plastic fibers within cables (fiber-optic cable)** - Data is encoded into pulses of light.
+*   **Wireless transmission** - Data is encoded via modulation of specific frequencies of electromagnetic waves.
+   
+![alt text](image-55.png)
+
+The four main criteria for choosing network media are these:
+
+*   What is the maximum distance that the media can successfully carry a signal?
+*   What is the environment in which the media will be installed?
+*   What is the amount of data and at what speed must it be transmitted?
+*   What is the cost of the media and installation?
+   
+
+---
+
+
+6.1.3 Common Network Cables
+The three most common network cables are twisted-pair, coaxial cable, and fiber-optic cable.
+
+Twisted-Pair Cable
+
+Ethernet technology generally uses twisted-pair cables to interconnect devices. Because Ethernet is the foundation for most local networks, twisted-pair is the most commonly encountered type of network cabling.
+
+In twisted-pair, wires are grouped in pairs and twisted together to reduce interference. The pairs of wires are colored so that you can identify the same wire at each end. Typically, in each pair, one of the wires is a solid color and its partner is the same color striped onto a white background.
+
+![alt text](image-56.png)
+
+
+Coaxial Cable
+
+Coaxial was one of the earliest types of network cabling developed. Coaxial cable is the kind of copper cable used by cable TV companies. It is also used for connecting the various components which make up satellite communication systems. Coaxial cable has a single rigid copper core that conducts the signal. This core is typically surrounded by a layer of insulation, braided metal shielding, and a protective jacket. It is used as a **high-frequency** transmission line to carry high-frequency or broadband signals.
+
+![alt text](image-57.png)
+
+Fiber-Optic Cable
+
+Fiber-optic cable can be either glass or plastic with a diameter about the same as a human hair and it can carry digital information at very high speeds over long distances. Because light is used instead of electricity, electrical interference does not affect the signal. Fiber-optic cables have many uses as well as communications. They are also used in **medical imaging, medical treatment, and mechanical engineering inspection**.
+
+They have a ***very high bandwidth***, which enables them to carry very large amounts of data. Fiber is used in **backbone networks**, large **enterprise environments**, and **large data centers**. It is also used extensively by **telephone companies**.
+
+![alt text](image-58.png)
+
+---
+
+6.2. Network Media Summary
+
+**Network Media Types**  
+Communication transmits across a network on media. The media provides the channel over which the message travels from source to destination.
+
+Modern networks primarily use three types of media to interconnect devices are:
+
+*   **Metal wires within cables** - Data is encoded into electrical impulses.
+*   **Glass or plastic fibers within cables (fiber-optic cable)** - Data is encoded into pulses of light.
+*   **Wireless transmission** - Data is encoded via modulation of specific frequencies of electromagnetic waves.
+
+The four main criteria for choosing media are the following:
+
+*   What is the maximum distance that the media can successfully carry a signal?
+*   What is the environment in which the media will be installed?
+*   What is the amount if data and at what speed must is be transmitted?
+*   What is the cost of the media installation?
+
+The three most common network cables are twisted-pair, coaxial cable, and fiber-optic cable. Ethernet technology generally uses twisted-pair cables to interconnect devices. Coaxial cable is the kind of copper cable used by cable TV companies. It is also used for connecting the various components which make up satellite communication systems. Fiber-optic cable can be either glass or plastic with a diameter about the same as a human hair and it can carry digital information at very high speeds over long distances. Because light is used instead of electricity, electrical interference does not affect the signal.
+
+---
+
+#CASE_STUDY
+
+> A network technician is extending the network from the main office building over several hundred meters to a new security station. The security station needs a high speed connection to support video surveillance of the main building. What type of cable is best suited to connect the security station to the rest of the main office network?
+
+
+![alt text](image-59.png)
+
+
+#CASE_STUDY
+
+> A network administrator in a small office is upgrading the local network within the building. New network cables are needed to connect office computers and networking devices. Which network media should the administrator use?
+
+#PROOF
+
+![alt text](image-60.png)
+
+
+
+---
+
+7.0 Introduction
+
+![alt text](image-61.png)
+
+> How does a message get delivered? When you write a letter and place it in the envelope, you need to make sure it has the correct address information to be delivered to the recipient. In your network, the process of placing one message format (the letter) inside another message format (the envelope) is called encapsulation.
+
+7.0.2 What Will I Learn in this Module?
+
+**Module Title:** The Access Layer
+
+**Module Objective:** Explain how communication occurs on Ethernet networks.
+
+| Topic Title | Topic Objective |
+| --- | --- |
+| Encapsulation and the Ethernet Frame | Explain the process of encapsulation and Ethernet framing. |
+| The Access Layer | Explain how to improve network communication at the access layer. |
+
+---
+
+
+7.1 Encapsulation and the Ethernet Frame
+
+
+7.1.1 Video - The Fields of the Ethernet Frame
+
+Ethernet is technology commonly used in local area networks. Devices access the Ethernet LAN using an Ethernet Network Interface Card (NIC). Each Ethernet NIC has a unique address permanently embedded on the card known as a Media Access Control (MAC) address. The MAC address for both the source and destination are fields in an Ethernet frame.
+
+**ETHERNET FRAME:**
+
+![alt text](image-62.png)
+
+- preamble
+- start frame delimiter
+- destination mac address
+- source mac address
+- length or type
+- data (IPv4 or IPv6 packet)
+- frame check sequence (FCS)
+
+
+---
+
+7.1.2 Encapsulation
+
+
+When sending a letter, the letter writer uses an accepted format to ensure that the letter is delivered and understood by the recipient. In the same way, a message that is sent over a computer network follows specific format rules in order for it to be delivered and processed.
+
+The process of placing one message format (the letter) inside another message format (the envelope) is called encapsulation. De-encapsulation occurs when the process is reversed by the recipient and the letter is removed from the envelope. Just as a letter is encapsulated in an envelope for delivery, so computer messages are encapsulated.
+
+Each computer message is encapsulated in a specific format, called a frame, before it is sent over the network. A frame acts like an envelope; it provides the address of the intended destination and the address of the source host. The format and contents of a frame are determined by the type of message being sent and the channel over which it is communicated. Messages that are not correctly formatted are not successfully delivered to or processed by the destination host.
+
+Analogy
+
+A common example of requiring the correct format in human communications is when sending a letter. Click Play in the figure to view an animation of formatting and encapsulating a letter.
+
+An envelope has the address of the sender and receiver, each located at the proper place on the envelope. If the destination address and formatting are not correct, the letter is not delivered.
+
+The process of placing one message format (the letter) inside another message format (the envelope) is called encapsulation. De-encapsulation occurs when the process is reversed by the recipient and the letter is removed from the envelope.
+
+The animation shows an envelope with a stamp, a sender of 4085 SE Pine Street, Ocala, Florida 34471 and a recipient at 1400 Main Street, Canton, Ohio 44203. The envelope opens and shows a letter: dear Jane, I just returned from my trip. I thought you might like to see my pictures. John. A breakout table appears with the following headings: Recipient (destination) location address, sender (source) location address, salutation (start of message indicator), recipient (destination) identifier, content of letter (encapsulated data) sender (source) identifier, end of frame (end of message indicator). The next row has envelope addressing under the first 2 sections, then encapsulated letter under the next 4 sections. The 1400 Main Street Canton, Ohio 44203 goes in a new row under the recipient (destination) and envelope addressing sections. The 4085 SE Pine Street Ocala, Florida 34471 goes under the sender (source) and envelope addressing sections. The dear goes under the salutation (start of message indicator) and encapsulated letter sections. The Jane goes under the recipient (destination) identifier and encapsulated letter sections. The words I just returned from my trip. I thought you might like to see my pictures. Goes under the content of letter (encapsulated data) and encapsulated letter sections. The word John goes under the sender (source) identifier and encapsulated letter sections. The stamp on the letter goes under the end of frame (end of message indicator) section.
+
+![alt text](image-63.png)
+
+---
+
+> - Encapsulation is the process of prepending protocol information with information from another protocol.
+
+> - When an Ethernet frame is sent out an interface, the Destination MAC address indicates the MAC address of the device, which is on this network, that will receive the Ethernet frame.
+
+> - The Preamble and Start Frame Delimiter (SFD) indicate the beginning of an Ethernet frame.
+
+
+
+> The Ethernet protocol primarily operates at Layer 2 (the Data Link Layer) and Layer 1 (the Physical Layer) of the OSI model. [1]  
+> Ethernet Layer Breakdown 
+> 
+> • Layer 2 (Data Link Layer): Handles MAC addresses, framing, and media access control (MAC and LLC sublayers). 
+> • Layer 1 (Physical Layer): Handles the physical media, cables, electrical or optical signals, and binary transmission. [1, 2, 3, 4, 5]  
+> 
+> Would you like to explore how Ethernet frames are structured, or how it compares to the TCP/IP network model? 
+> AI can make mistakes, so double-check responses
+> 
+> [1] https://www.networkacademy.io/ccna/ethernet/ethernet-technologies-overview
+> [2] https://www.reddit.com/r/networking/comments/63zmcq/question_ethernet_is_under_osi_data_link_layer/
+> [3] https://www.professormesser.com/network-plus/n10-008/n10-008-video/understanding-the-osi-model-3/
+> [4] https://www.youtube.com/watch?v=kCuyS7ihr_E
+> [5] https://www.youtube.com/watch?v=v4sRKGarh5Q
+
+
+---
+
+7.2 The Access Layer
+
+7.2.1 Video - Ethernet Switches
+
+![alt text](image-64.png)
+
+- ethernet switches operate at **layer 2 data link** of the OSI models
+- they make forwarding decisions based on layer 2, ethernet header information of the ethernet frame
+- switches have MAC address tables
+
+
+---
+
+7.2.2 Video - MAC Address Tables
+
+- how a switch builds its MAC address table
+- makes decisions based on ethernet header of ethernet frame
+
+> "FA" (or more accurately, "Fa") stands for FastEthernet in network addressing and topology diagrams because it follows the specific interface naming conventions established by Cisco Systems, the industry standard for networking equipment. 
+> While "FE" makes sense as an acronym for the words Fast Ethernet, network operating systems (like Cisco IOS) abbreviate interface types using the first two letters of the primary technology name to keep command-line interface (CLI) commands short and distinct: 
+> 
+> • Fa = FastEthernet (100 Mbps) 
+> • Gi or G = GigabitEthernet (1 Gbps) 
+> • Te or T = TenGigabitEthernet (10 Gbps) 
+> • Eth or E = Ethernet (10 Mbps) 
+> • Se or S = Serial 
+> 
+> Because network diagrams are usually drawn to mirror the exact configuration of the physical hardware ports (such as  for FastEthernet slot 0, port 1), diagram tools and network engineers stick to Fa to maintain consistency between the visual map and the actual device configuration. 
+> Are you building a network diagram for a specific project or studying for a networking certification (like Cisco CCNA)? If you share what you're working on, I can help you clarify other standard interface abbreviations or diagramming symbols. 
+
+
+
+> - **Unknown unicast** is a type of network traffic where a data frame has a specific single destination, but the network switch does not know which port the destination device is on.
+
+> - all devices on the network see the frame, but they ignore it unless it matches their MAC address
+
+> - switches retain their MAC table info for about 5 months
+
+---
+
+7.2.3 Check Your Understanding - The Access Layer
+
+> - Ethernet switches make their forwarding decision based on destination MAC address.
+
+
+> - Ethernet switches add entries to their MAC address table based on the source MAC address.
+
+>Z- When a switch receives an Ethernet frame and the destination MAC address of that frame is not in its MAC address table, the switch will forward the frame out all ports **except in the incoming port**.
+
+
+> ## 💡 Sidebar: “Hub” Does Not Always Mean the Same Thing
+> 
+> The word **hub** simply means a central connection point, but its meaning depends on the technology.
+> 
+> - A **USB hub** adds USB ports to one computer. It is still common for connecting items like keyboards, flash drives, cameras, and external storage.
+> - An **Ethernet hub** was an older network device that connected wired devices but repeated all network traffic to every port. It has largely been replaced by Ethernet switches.
+> - An **Ethernet switch** is the modern wired-network equivalent: it connects devices by Ethernet cable and sends traffic only to the device that should receive it.
+> 
+> **Quick example:** An 8-port USB 3 hub expands a laptop’s USB connections. An 8-port Ethernet switch expands the number of wired devices that can join a home network.
+
+---
+
+7.3. The Access Layer Summary
+
+**Encapsulation and the Ethernet Frame**
+
+The process of placing one message format inside another message format is called encapsulation. De-encapsulation occurs when the process is reversed by the recipient and the letter is removed from the envelope. Just as a letter is encapsulated in an envelope for delivery, so computer messages are encapsulated. A message that is sent over a computer network follows specific format rules for it to be delivered and processed.
+
+The Ethernet protocol standards define many aspects of network communication including frame format, frame size, timing, and encoding. The format for Ethernet frames specifies the location of the destination and source MAC addresses, and additional information including preamble for sequencing and timing, start of frame delimiter, length and type of frame, and frame check sequence (FCS) to detect transmission errors.
+
+
+**The Access Layer**
+
+The access layer is the part of the network in which people gain access to other hosts and to shared files and printers. The access layer provides the first line of networking devices that connect hosts to the wired Ethernet network. Within an Ethernet network, each host can connect directly to an access layer networking device using an Ethernet cable. Ethernet hubs contain multiple ports that are used to connect hosts to the network. Only one message can be sent through an Ethernet hub at a time. Two or more messages sent at the same time will cause a collision. Because excessive retransmissions can clog up the network and slow down network traffic, hubs are now considered obsolete and have been replaced by Ethernet switches.
+
+An Ethernet switch is a device that is used at Layer 2. When a host sends a message to another host connected to the same switched network, the switch accepts and decodes the frames to read the MAC address portion of the message. A table on the switch, called a MAC address table, contains a list of all the active ports and the host MAC addresses that are attached to them. When a message is sent between hosts, the switch checks to see if the destination MAC address is in the table. If it is, the switch builds a temporary connection, called a circuit, between the source and destination ports. Ethernet switches also allow for sending and receiving frames over the same Ethernet cable simultaneously. This improves the performance of the network by eliminating collisions.
+
+A switch builds the MAC address table by examining the source MAC address of each frame that is sent between hosts. When a new host sends a message or responds to a flooded message, the switch immediately learns its MAC address and the port to which it is connected. The table is dynamically updated each time a new source MAC address is read by the switch.
+
+
+---
+
+
+7.3.3 The Access Layer Quiz
+
+> - The purpose of the FCS (Frame Check Sequence) field in a network frame is to detect if any errors occurred during transmission and reception
+
+> - A network switch uses the source MAC address and the incoming port of an incoming data frame to keep its MAC address table current
+
+
+> A network switch uses the source MAC address and the incoming port of an incoming data frame to keep its MAC address table current. [1]  
+> How It Works 
+> 
+> • Learning: When a frame enters a port, the switch reads the source MAC address. 
+> • Recording: If the address is not in the table, the switch adds it along with the port number. 
+> • Refreshing: If the address is already listed, the switch resets its aging timer to keep the entry active. 
+> • Forwarding vs. Maintenance: While the destination MAC address determines where the frame goes next, only the source address and incoming port are used to update the table. [2, 3]  
+> 
+> [1] https://brainly.com/question/31914736
+> [2] https://itexamanswers.net/exam-item/which-information-does-a-switch-use-to-populate-the-mac-address-table
+> [3] https://www.ciscopress.com/articles/article.asp?p=3089352&seqNum=6
+
+
+![alt text](image-65.png)
+
+
+
+#SIDEBAR:
+
+> A host on an Ethernet network will discard the frame if it receives a unicast destination MAC address that does not match its own. [1]  
+> How It Works 
+> 
+> • MAC Checking: The network interface card (NIC) checks the destination MAC address of every incoming frame. 
+> • No Match: If the address does not match the host's physical address, the device drops or ignores the frame. 
+> • No Forwarding: Regular end hosts do not forward or route frames meant for other machines; only network devices like switches or routers do that. 
+> • Efficiency: This action saves system resources and ensures only the intended recipient processes the data. [1, 2, 3, 4]  
+> 
+> If you're studying networking basics, would you like to know what happens if the MAC address does match, or how broadcast frames are handled differently? 
+> 
+> [1] https://brainly.com/question/58604082
+> [2] https://itexamanswers.net/exam-item/what-will-a-host-on-an-ethernet-network-do-if-it-receives-a-frame-with-a-destination-mac-address-that-does-not-match-its-own-mac-address
+> [3] https://www.chegg.com/homework-help/questions-and-answers/host-ethernet-network-receives-frame-unicast-destination-mac-address-match-mac-address-dis-q192796601
+> [4] https://brainly.com/question/43774958
+
+
+
+#SIDEBAR:
+
+> Think of networking addresses like getting a package delivered to you at a hotel room. 
+> Your Logical Address is like your room number. It tells people exactly where you are right now, but it changes if you move to a different hotel. Your Physical Address is like your fingerprint. It belongs to you, it never changes, and it is permanently stamped onto you by nature. 
+> Here is the quick breakdown you need to know for the CompTIA Network+ exam: 
+> 🏢 The Core Differences 
+> 
+> | Feature | Physical Address | Logical Address  |
+> | --- | --- | --- |
+> | Common Name | MAC Address (Media Access Control) | IP Address (Internet Protocol)  |
+> | OSI Layer | Layer 2 (Data Link Layer) | Layer 3 (Network Layer)  |
+> | How it is assigned | Burned into the hardware by the manufacturer. | Given by software or your router (via DHCP).  |
+> | Can it change? | No. It stays the same forever. | Yes. It changes depending on what network you connect to.  |
+> | Example Format | (Hexadecimal) | (IPv4) or  (IPv6)  |
+> 
+> 📦 How They Work Together (The Mail Delivery Metaphor) 
+> Imagine you want to send a letter to a friend named Alice who lives in another state. 
+> 
+> 1. The Envelope (Logical Address / IP): You write Alice's home address on the envelope. This is the Logical Address. The postal service (or routers) uses this long-distance address to get the letter across the country from city to city. This address never changes during the journey. 
+> 2. The Mail Trucks (Physical Address / MAC): To actually move the letter, it goes into a local mail truck. The truck drives it to the airport. The truck has a specific license plate (Physical Address). At the airport, the letter is moved to an airplane (a new Physical Address). 
+> 3. The Hops: Every time the data jumps to a new device (a "hop"), the physical MAC address changes to represent the specific hardware carrying it right then. But inside, the logical IP address on the envelope stays exactly the same so it knows the ultimate destination. [1, 2]  
+> 
+> 🎓 Key Network+ Terms to Remember 
+> 
+> • Switch vs. Router: Switches use Physical (MAC) addresses to send data to the right computer inside a single room or building. Routers use Logical (IP) addresses to send data between entirely different networks across the world. 
+> • ARP (Address Resolution Protocol): This is the glue between both worlds. When your computer knows the destination's IP address (Logical) but needs to know which hardware wire to shoot it down (Physical), it uses ARP to look up the matching MAC address. [1]  
+> 
+> Would you like to practice a couple of multiple-choice exam questions on this topic to see how Network+ will test you? 
+> 
+> AI responses may include mistakes.
+> 
+> [1] https://www.youtube.com/watch?v=kQmO_0mOwG4
+> [2] https://www.cloudi-fi.com/glossary/what-is-a-mac-address
+
+
+![alt text](image-66.png)
+
+![alt text](image-67.png)
+
+![alt text](image-68.png)
+
+![alt text](image-69.png)
+
+![alt text](image-70.png)
+
+## ✅ Correct answer
+
+> **one function of a layer 2 switch: Determines which interface is used to forward a frame based on the destination MAC address.**
+> 
+> A Layer 2 switch receives an Ethernet frame, checks its **destination MAC address**, and looks it up in its MAC address table. If it finds a matching entry, it forwards the frame only through the port connected to that destination device. [ciscopress](https://www.ciscopress.com/articles/article.asp?p=3089352&seqNum=6)
+> 
+> ## 🧠 How the switch learns
+> 
+> A switch builds its MAC address table by looking at the **source MAC address** of incoming frames—not the destination MAC address.
+> 
+> For example:
+> 
+> - A frame enters port 3 with source MAC address `AA:AA:AA:AA:AA:AA`.
+> - The switch records: `AA:AA:AA:AA:AA:AA → Port 3`.
+> - Later, if another device sends a frame *to* `AA:AA:AA:AA:AA:AA`, the switch knows to send it out port 3. [ciscopress](https://www.ciscopress.com/articles/article.asp?p=3089352&seqNum=6)
+> 
+> ## ❌ Why the other choices are wrong
+> 
+> | Choice | Why it is incorrect |
+> |---|---|
+> | Duplicates the electrical signal of each frame to every port | That describes a **hub**, a Layer 1 device. A switch normally sends known unicast traffic only to the correct port. |
+> | Learns the port assigned to a host by examining the destination MAC address | A switch learns host locations from the frame’s **source** MAC address and the incoming port. |
+> | Forwards data based on logical addressing | Logical addressing means an **IP address**, which is a Layer 3 function performed by a router or Layer 3 switch. A Layer 2 switch uses MAC addresses. |
+> 
+> ## ⚠️ One important exception
+> 
+> If the switch does **not** yet have the destination MAC address in its table, it does not know which one port to use. It performs an **unknown-unicast flood**: it sends the frame out all other ports in that VLAN except the port on which the frame arrived. [ciscopress](https://www.ciscopress.com/articles/article.asp?p=3089352&seqNum=6)
+> 
+> **Easy memory tip:**  
+> - **Source MAC = learn**  
+> - **Destination MAC = forward**
+
+
+
+> ## 🔌 What “interface” means here
+> 
+> You are right—the word **interface** can be vague. In this question, **interface** simply means a **physical switch port**: the socket on the switch where an Ethernet cable plugs in.
+> 
+> So this answer:
+> 
+> > “Determines which interface is used to forward a frame based on the destination MAC address”
+> 
+> means:
+> 
+> > **The switch decides which physical Ethernet port to send the frame out of by checking the destination MAC address.**
+> 
+> Cisco often uses *interface* as the general technical name for a network connection point. It can mean a physical Ethernet port, a wireless connection, or even a virtual connection, depending on context. But for this basic Layer 2-switch question, read it as **switch port**.
+> 
+> ## 🧠 Simple example
+> 
+> Imagine a switch with three computers connected:
+> 
+> | Device | Connected switch port | MAC address |
+> |---|---:|---|
+> | PC-A | Port 1 | `AA:AA` |
+> | PC-B | Port 2 | `BB:BB` |
+> | PC-C | Port 3 | `CC:CC` |
+> 
+> If PC-A sends an Ethernet frame to PC-B:
+> 
+> 1. The frame arrives at the switch on **Port 1**.
+> 2. The switch reads the destination MAC address: `BB:BB`.
+> 3. Its MAC address table says `BB:BB` is on **Port 2**.
+> 4. The switch forwards the frame out **Port 2 only**.
+> 
+> In this example, **Port 2 is the interface used to forward the frame.**
+> 
+> ## 🗣️ Better novice wording
+> 
+> A clearer version of the correct choice would be:
+> 
+> > **Uses the destination MAC address to choose the correct switch port for sending a frame.**
+> 
+> That wording says exactly what the question intends without assuming you already know Cisco’s broader use of *interface*.
+
+
+![alt text](image-71.png)
+
+![alt text](image-72.png)
+
+
+> ## 🧭 Physical address
+> 
+> A **physical address** is a device network interface’s **MAC address** (Media Access Control address). It identifies the actual network adapter—such as an Ethernet or Wi‑Fi adapter—on a **local network**.
+> 
+> Example: `00:1A:2B:3C:4D:5E`
+> 
+> MAC addresses operate at **OSI Layer 2 (Data Link)**. They are used to deliver data frames from one device to another on the same local network segment. Although often factory-assigned, MAC addresses can sometimes be changed or spoofed in software. [techtarget](https://www.techtarget.com/whatis/video/MAC-address-vs-IP-address-explained)
+> 
+> ## 🗺️ Logical address
+> 
+> A **logical address** is an **IP address**. It is assigned through network configuration—manually, by DHCP, or other software—and identifies both the network and the device’s location within it.
+> 
+> Examples: `192.168.1.25` (IPv4) or `2001:db8::25` (IPv6)
+> 
+> IP addresses operate at **OSI Layer 3 (Network)** and enable routers to send packets **between different networks**, including across the Internet. They can change when a device joins a different network. [portnox](https://www.portnox.com/cybersecurity-101/authentication/mac-address/)
+> 
+> ## 🚚 Simple analogy
+> 
+> A MAC address is like identifying the specific door for a delivery on the current street; an IP address is the full address that lets the delivery travel through many cities to reach the correct area.
+
+
+![alt text](image-73.png)
+
+![alt text](image-74.png)
+
+![alt text](image-75.png)
+
+
+> ## 🔀 What a switch does
+> 
+> The correct statement is:
+> 
+> > **Frame forwarding decisions are based on MAC address and port mappings in the MAC Address table.**
+> 
+> A switch keeps a **MAC address table** (also called a CAM table). Each entry records:
+> 
+> ```text
+> MAC address → switch port → VLAN
+> ```
+> 
+> When a frame arrives, the switch performs two separate tasks:
+> 
+> 1. **Learn:** It reads the **source MAC address** and associates it with the port where the frame arrived.
+> 2. **Forward:** It reads the **destination MAC address**, looks it up in the table, and decides where—or whether—to send the frame. [cisco](https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/cdp-lldp-mac-udld/cdp-lldp-mac-udld-configuration-guide/c-configure-mac.html)
+> 
+> ## 🧠 Forwarding outcomes
+> 
+> | Destination MAC result | Switch action |
+> |---|---|
+> | Known and located on a different port | Forwards the frame only through that specific port |
+> | Unknown/not in the table | Floods it out all other active ports in the same VLAN—not back through the incoming port |
+> | Known but mapped to the incoming port | Filters/drops it; there is no reason to send it back onto the same network segment |
+> | Broadcast MAC address | Floods it to all ports in the VLAN except the incoming port |
+> 
+> ## ⚠️ Key distinction
+> 
+> The switch learns from the **source** MAC address, not the destination MAC address.
+> 
+> An unknown destination MAC address is **not dropped** under ordinary switching behavior. It is an *unknown unicast* frame, so the switch floods it; once the destination device replies, the switch sees that reply’s source MAC address and learns which port leads to that device. [cisco](https://www.cisco.com/c/en/us/td/docs/switches/lan/c9000/lyr2-fwd/cdp-lldp-mac-udld/cdp-lldp-mac-udld-configuration-guide/c-configure-mac.html)
+
+
+#PROOF
+
+![alt text](image-76.png)
+
+> ## 🧩 Why the Host Discards It
+> 
+> Every Ethernet frame has a **destination MAC address**—the Layer 2 hardware address identifying the intended recipient on the local network.
+> 
+> When a host’s network adapter receives a frame, it checks that destination MAC address first:
+> 
+> - If the address matches the host’s own MAC address, the host accepts the frame and passes its contents up for further processing.
+> - If it is a broadcast address, or a multicast address the host is listening for, the host may also accept it.
+> - If it is a normal **unicast** MAC address belonging to someone else, the host discards the frame.
+> 
+> The host does not first remove the Ethernet header and examine the destination IP address. The destination MAC check happens at the data-link layer before the IP packet would normally be passed to the network layer.
+> 
+> ## 🔀 Easy Mix-Ups
+> 
+> A host is not a switch. A **switch** may forward a received frame to another port based on its MAC address table. A normal host does not forward other hosts’ Ethernet frames.
+> 
+> Also, “receives” does not necessarily mean “accepts for processing.” The network adapter can detect a frame and inspect its destination MAC address, then reject it because the frame was addressed to a different device.
+> 
+> In short: a unicast Ethernet frame addressed to another MAC is not for that host, so it is discarded.
+
+> ## 🗂️ Similar Words, Different Actions
+> 
+> The potentially confusing term you are remembering is probably **filtering**.
+> 
+> In Ethernet-switch terminology, a switch may **filter a frame**—meaning it deliberately does **not forward** that frame out any other switch port. In practice, that outcome is also often described as the switch **dropping** the frame.
+> 
+> A classic case:
+> 
+> - A frame enters a switch on Port 3.
+> - The switch’s MAC address table says the destination MAC is also reachable on Port 3.
+> - Sending the frame back out Port 3 would be pointless.
+> - The switch **filters** the frame: it does not forward it anywhere else.
+> 
+> Cisco-oriented explanations describe that as a switch forwarding/filtering decision, and other networking sources may call the same outcome a “silent drop.” [learningnetwork.cisco](https://learningnetwork.cisco.com/s/question/0D53i00000Kt6XPCAZ/switch-forwarding-and-filtering-logic)
+> 
+> ## ⚠️ Do Not Mix Them Up
+> 
+> | Term | Who does it? | Meaning in this context |
+> |---|---|---|
+> | **Discard** | A host/NIC | The destination unicast MAC is not this host’s MAC, so the NIC does not accept the frame for normal processing. |
+> | **Filter** | Usually a switch/bridge | The switch chooses not to forward a received frame to another port—commonly because the destination is known to be on the ingress port. |
+> | **Drop** | Host, switch, firewall, or other device | General result: the device stops processing or forwarding the frame/packet. The precise reason depends on the device and context. |
+> | **Flood** | A switch/bridge | The destination unicast MAC is unknown to the switch, so it sends the frame out all eligible ports in the VLAN except the arrival port. |
+> | **Forward** | A switch/bridge or router | The device sends traffic onward. A Layer 2 switch forwards a frame; a router removes the incoming frame and sends the IP packet in a newly built outgoing frame. |
+> 
+> ## 🧠 Why “Filter” Is Easy to Misremember
+> 
+> “Filter” sounds like a host checking whether a MAC address matches, which is a reasonable informal description. But in Cisco switching lessons, **filtering** normally labels the switch’s no-forwarding decision—not the end host’s receive decision.
+> 
+> The result can look the same on the wire: the frame goes no farther because of that device. But the reason is different:
+> 
+> - **Host:** “This unicast frame is not addressed to me; do not accept it.”
+> - **Switch:** “The intended device is already on the port where this frame arrived; do not send it out another port.”
+> 
+> ## 🛑 What It Is Not
+> 
+> Terms such as **delete**, **cancel**, or **remove from the media** are not the normal Ethernet terms for the host’s action here.
+> 
+> A host cannot retract a frame from the cable, and it does not erase a frame from the network for other devices. It simply declines to accept that nonmatching unicast frame into its normal protocol stack. Cisco sources distinguish switch behaviors such as forwarding and flooding based on MAC-table lookup outcomes; if the destination MAC is absent, the switch floods rather than discards solely because it does not recognize the address. [cisco](https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus3548/102x/configuration/layer-2-switching/cisco-nexus-3548-nx-os-layer-2-switching-configuration-guide-102x/m-configuring-mac-address-tables.pdf/1000)
+
+
+
+
+
+
+---
+
+
+
+
+
+
+
+
+
 
 
 
