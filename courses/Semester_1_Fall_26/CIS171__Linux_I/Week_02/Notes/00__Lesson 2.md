@@ -315,7 +315,7 @@ useradd -D
 
 ---
 
-## 🧪 2.1.4 Lab: Create a User Account
+### 🧪 2.1.4 Lab: Create a User Account
 
 #CASE_STUDY
 
@@ -490,7 +490,7 @@ All executables have exit codes. Use the `echo $?` command to display the exit s
 
 ---
 
-## 🧪 Lab: Rename a User Account
+### 🧪 Lab: Rename a User Account
 
 #CASE_STUDY
 
@@ -509,7 +509,7 @@ In this lab, your task is to:
 
 ---
 
-## 🧪 2.1.7 Lab: Delete a User
+### 🧪 2.1.7 Lab: Delete a User
 
 #CASE_STUDY
 
@@ -1506,24 +1506,122 @@ LDAP #SOLVED
 ![alt text](image-2.png)
 
 ---
+- - -
 
 ## 📖 Lesson 2.2 Manage Group Accounts
 
-Linux+ (XK0-006) Exam Objectives
-
-*   2.2 **Given a scenario, perform local account management in a Linux environment**
-*   3.3 **Given a scenario, apply operating system (OS) hardening techniques on a Linux system**
+> Linux+ (XK0-006) Exam Objectives
+> 
+> *   2.2 **Given a scenario, perform local account management in a Linux environment**
+> *   3.3 **Given a scenario, apply operating system (OS) hardening techniques on a Linux system**
 
 Managing groups in Linux, much like managing user accounts, requires a solid understanding of the configuration files and commands that control group settings. Groups play a crucial role in organizing users and streamlining administrative tasks. By grouping users together, administrators can efficiently assign permissions and access rights to multiple users at once, rather than configuring them individually. This approach not only saves time but also ensures consistency in how access is granted across the system.
 
 
 -----
 
+### 🟣 2.2.1 Group Configuration Files
+
+Groups are collections of user accounts that have similar security requirements. Groups are a standard administrative tool for controlling access to resources. For example, it is easier to grant permissions to a resource to a single group with five members than it is to grant access to each user account individually.
+
+Like user accounts, Linux stores groups in a file named `/etc/group`. This file lists existing groups and any user accounts that are members of those groups.
+
+One way of displaying the contents of the `/etc/group` is to use the `tail` command. To do this, type `tail /etc/group`.
+
+The output shows the last 10 entries in the file, including the most recently added groups.
+
+Figure 1. Display Group Information![A terminal screen shows the output of the command, tail forward slash, etc, forward slash, group.](https://cdn.testout.com/linux-plus-xk0-006-en-us/content/resources/text/s_manage_group_accounts/5789-1639775239254-etc-group.png)
+
+Description
+
+Output of the `tail /etc/group` command, showing the most recently added groups.
+
+Notice that groups also have both a human-readable name, such as Sales, and a computer-readable unique ID number, such as 1491. This Group ID (GID) helps the Linux system track group membership.
+
+Standard groups typically receive a GID of 1000 or higher when they are created. System groups usually begin their numbering with GID 101. As with system accounts, system groups manage operating system functions, while user groups manage user access to resources. Note that the specific GID ranges vary by distribution.
+
+Groups may have an Effective Group ID (EGID) tied to privilege escalation and the Set Group ID (SGID) special permission. The EGID group identity helps enable access to resources managed by another group if the administrator has configured the appropriate permissions.
+
+---
+
+### 🟣 2.2.2 Group Management Commands
+
+The commands to manage groups are similar to user management commands. Groups have a standard life cycle, including creation, modification, and deletion.
+
+*   `**groupadd**` Creates a new group.
+    
+*   `**groupmod**` Modifies an existing group.
+    
+*   `**groupdel**` Deletes an existing group.
+    
+
+Suppose you must complete two tasks on a Linux server. The first task asks you to change a group's name from marketing to publicity. The second task is to create a new group named sales. You can run the following two commands to complete the service request: `groupmod -n publicity marketing` and `groupadd sales`.
+
+The `-n` option changes the group name.
+
+![Interactive Tablet Placeholder](https://testoutlivecontent.blob.core.windows.net/image/tablet-interactive-placeholder.png)
+
+This content is only available on larger screen sizes. Please revisit this page on a larger device.
+
+When you delete a group, it doesn't remove the user accounts that are part of that group. To the Linux system, a group is a completely different object from a user.
+
+It's important to remember that you can't delete a user's main group without deleting the user account first. To do that, use the `userdel` command.
+
+Some versions of Linux use `addgroup` and `delgroup` to handle groups, which are easier to use than `groupadd` and `groupdel`. If these commands aren't on your system, you can add them.
+
+Before you delete a group, make sure to look for any files or resources linked to it. Set up another group to have access to those resources before you delete the original group.
 
 
+## Verification
 
+Group management commands are usually straightforward, but things can go wrong. The messages printed on the screen should be plenty to guide you toward a solution. However, you can also display the exit values by using the `echo $?` command string.
 
+Exit codes for the `groupadd` command:
 
+*   **`0`** Success.
+    
+*   **`2`** Invalid argument syntax.
+    
+*   **`4`** GID not unique.
+    
+*   **`9`** Group name not unique.
+    
+
+Exit codes for the `groupmod` and `groupdel` commands:
+
+*   **`0`** Success.
+    
+*   **`2`** Invalid command syntax.
+    
+*   **`6`** Specified group doesn't exist.
+    
+*   **`8`** Can't remove user's primary group (for `groupdel`).
+    
+*   **`10`** Can't update group file.
+    
+
+There are many other exit codes. Some exit codes are the same across both group and user management commands. You can view the commands' man pages to see their specific exit code values.
+
+## Add Users to Groups
+
+Adding a user to a group modifies the user, not the group. Use the `usermod` command to add a user to an existing group.
+
+Two specific options are used with `usermod` to manage group membership:
+
+*   **`-a`** Appends the user to the group and maintain any existing group memberships.
+    
+*   **`-G`** Specifies a group to which the user will be added.
+    
+
+If you do not use the `-a` option, the user is removed from all other groups and added only to the specified group. Users can be members of multiple groups, so such a mistake could have drastic consequences.
+
+The syntax for using the `usermod` command is `usermod -options {argument}`.
+
+For example, the command to add Joseph Deng to the sales group while retaining membership in all other groups is `usermod -aG sales jdeng`.
+
+Figure 1. Group Management Lifecycle![A terminal window shows four commands. The commands are sudo useradd, sudo groupadd, sudo usermod, and sudo tail.](https://cdn.testout.com/linux-plus-xk0-006-en-us/content/resources/text/s_manage_group_accounts/7782-1646844691287-jdeng-to-salesgrp.jpg)
+
+---
 
 
 
