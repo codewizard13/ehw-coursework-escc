@@ -7,7 +7,7 @@
 > [🏚️ README](../../../README.md) | [📁 Courses](../../index.md) | [📚 Vocabulary](../../Vocabulary.md) | [🗓️ Assignments Schedule](../Assignments_Schedule.md) | [🔖 Bookmark](#bookmark)
 
 
-# CIS 171 - Linux I:  <br> NOTES: Week 2 - IT Support Fundamentals (Aug 24 - 31)
+# CIS 171 - Linux I:  <br> NOTES: Week 1 - Identifying Basic Linux Concepts
 
 ## ⭐ **This week, you will:**
 
