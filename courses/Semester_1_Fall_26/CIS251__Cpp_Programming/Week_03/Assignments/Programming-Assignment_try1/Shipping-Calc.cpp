@@ -21,9 +21,8 @@ int main(void) {
 
         Get order amount from user
         Get shipping option ( standard, express, overnight) from user
+        Calculate final amout
         Print final amount     
-
-    
     */
 
     // Declare Variables
@@ -68,10 +67,13 @@ int main(void) {
             valid_shipping_choice = false;
     }
 
-    // Only calculate & display final amount if shipping choice is valid
-    // NOTE: The next step here would be loop the program until a
-    //      valid choice is entered, and possibly an option to cancel/abort,
-    //      but we've not covered loops yet.
+    /*
+        NOTE: The next step here would be loop the program until a
+        valid choice is entered, and possibly an option to cancel/abort,
+        but we've not covered loops yet.
+    */
+    
+    // Only calculate & display final amount if shipping choice is valid.
     if (valid_shipping_choice) {
         
         // cout << "Your order amount is $" << order_amount << " and you chose shipping option \"" << shipping_option << "\"" << "\n\n";
@@ -82,7 +84,6 @@ int main(void) {
     }
 
     cout << "*******************\n\n";
-
 
 	return 0;
 }
