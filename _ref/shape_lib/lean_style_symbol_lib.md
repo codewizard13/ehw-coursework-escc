@@ -57,3 +57,7 @@ A copy-paste symbol and style library for markdown docs, expecially documenting 
 ### 🧪 
 
 ### #LESSONS_LEARNED 🧠:
+
+### 🧠 Lesson Review (Quiz)
+
+### 🚀 Exercise
