@@ -1,0 +1,693 @@
+<!-- Custom stylesheet -->
+<link rel="stylesheet" href="../../_css/main.css">
+
+<!-- Site logo -->
+
+![Site Logo](/_pix/logos/logo-ehw-kb-h32.png)
+
+> [🏚️ README](../../../README.md) | [📁 Courses](../../index.md) | [📚 Vocabulary](../../Vocabulary.md) | [🗓️ Assignments Schedule](../Assignments_Schedule.md) | [🔖 Bookmark](#bookmark)
+
+# CIS 161 - Networking Intro — NOTES: Week 2
+
+> The following are my notes on the **Cisco Networking Academy** Networking Basics course
+
+
+---
+
+> ✍🏼 THIS WEEK: 
+> - Module 3 & 4, Checkpoint Exam 1: Build a Small Network
+
+
+
+# MODULE 3: Wireless and Mobile Networks
+
+## 📖 3.0 Introduction
+
+### 🟣 3.0.2 What Will I Learn in this Module?
+
+**Module Title:** Wireless and Mobile Networks
+
+**Module Objective:** Configure mobile device for wireless access.
+
+| Topic Title                | Topic Objective                                                                  |
+| -------------------------- | -------------------------------------------------------------------------------- |
+| Wireless Networks          | Describe the different types of networks used by cell phones and mobile devices. |
+| Mobile Device Connectivity | Configure mobile devices for wireless connectivity.                              |
+
+---
+
+## 📖 3.1 Wireless Networks
+
+### 🟣 3.1.1 Video - Types of Wireless Networks
+
+![alt text](image-13.png)
+
+### 🟣 Video - Cell Phone Interactions with Different Networks
+
+Things we do on our cell phones:
+
+- talk on landlines, cell phones, other businesses
+- cell phones contain multiple radios (transmitters & receivers)
+- data - data plan (uses cell phone infrastructure to be able to access the internet)
+- wifi - hot spots, home wireless
+- location services - gps, maps, places near me
+- pay services - cash registers, payment pads
+
+---
+
+### 🟣 3.1.3 Other Wireless Networks
+
+In addition to the GSM and 4G/5G transmitters and receivers, smartphones make connections in a variety of ways.
+
+**Global Positioning System**
+
+The GPS uses satellites to transmit signals that cover the globe. The smartphone can receive these signals and calculate the phone’s location to an **accuracy of within 10 meters**.
+
+The figure shows a smartphone with the Cisco logo connecting to a GPS satellite.
+
+**Wi-Fi**
+
+Wi-Fi transmitters and receivers located within the smartphone enable the phone to connect to local networks and the internet. In order to receive and send data on a Wi-Fi network, the phone needs to be within the range of the signal from a wireless network access point. Wi-Fi networks are **usually privately owned** but often provide guest or public access hotspots. A hotspot is an area where Wi-Fi signals are available. Wi-Fi network connections on the phone are similar to the network connections on a laptop computer.
+
+**Bluetooth**
+
+Bluetooth is a low-power, shorter range wireless technology that is intended to replace wired connectivity for accessories such as speakers, headphones, and microphones. Bluetooth can also be used to connect a smartwatch to a smartphone. Because Bluetooth technology can be used to transmit both data and voice, it can be used to create small local networks. Bluetooth is wireless technology that allows devices to communicate over short distances. Multiple devices can be connected at the same time with Bluetooth.
+
+**NFC**
+
+Near Field Communication (NFC) is a wireless communication technology that enables data to be exchanged by devices that are in very close proximity to each other, **usually less than a few centimeters**. For example, NFC can be used to connect a smartphone and a payment system. NFC uses electromagnetic fields to transmit data.
+
+---
+
+## 📖 3.2 Mobile Device Connectivity
+
+### 🟣 Mobile Devices and Wi-Fi
+
+Mobile devices give us the freedom to work, learn, play, and communicate wherever we want. People using mobile devices do not need to be tied to a physical location to send and receive voice, video, and data communications. In addition, wireless facilities, such as **internet cafes**, are available in many countries. College campuses use wireless networks to allow students to sign up for classes, watch lectures, and submit assignments in areas where physical connections to the network are unavailable. With mobile devices becoming more powerful, many tasks that needed to be performed on large computers connected to physical networks can now be completed using mobile devices on wireless networks.
+
+Almost all mobile devices are capable of connecting to Wi-Fi networks. It is advisable to connect to Wi-Fi networks when possible because data used over Wi-Fi does not count against the cellular data plan. Also, because **_Wi-Fi radios use less power than cellular radios_**, connecting to Wi-Fi networks conserves battery power. Like other Wi-Fi-enabled devices, it is important to use security when connecting to Wi-Fi networks. These precautions should be taken to protect Wi-Fi communications on mobile devices:
+
+- Never send login or password information using unencrypted text (plaintext).
+- Use a VPN connection when possible if you are sending sensitive data.
+- Enable security on home networks.
+- Use WPA2 or higher encryption for security.
+
+---
+
+### 🟣 3.2.2 Wi-Fi Settings
+
+Two of the most popular operating systems for mobile devices are Android and Apple iOS. Each operating system has settings that enable you to configure your device to connect to wireless networks.
+
+To connect an Android or iOS device when it is within the coverage range of a Wi-Fi network, turn on Wi-Fi and the device then searches for all available Wi-Fi networks and displays them in a list. Touch a Wi-Fi network in the list to connect. Enter a password if needed.
+
+When a mobile device is out of the range of the Wi-Fi network, it attempts to connect to another Wi-Fi network in range. If no Wi-Fi networks are in range, the mobile device connects to the cellular data network. When Wi-Fi is on, it will automatically connect to any Wi-Fi network that it has connected to previously. If the network is new, the mobile device either displays a list of available networks that can be used or asks if it should connect to it.
+
+---
+
+### 🟣 3.2.3 Configure Mobile Wi-Fi Connectivity
+
+If your mobile device does not prompt to connect to a Wi-Fi network, the network SSID broadcast may be turned off, or the device may not be set to connect automatically. Manually configure the Wi-Fi settings on the mobile device. Remember that SSIDs and passphrases must be typed exactly as entered on the wireless router setup or the device will not connect properly, as shown in the figure. SSID is the name assigned to a wireless network. Passphrase is what we normally use as the “wireless password”.
+
+To connect to a Wi-Fi network manually on an Android device, follow these steps:  
+**Step 1.** Select **Settings > Add network.**  
+**Step 2.** Enter the network SSID.  
+**Step 3.** Touch **Security** and select a security type.  
+**Step 4.** Touch **Password** and enter the password.  
+**Step 5.** Touch **Save.**
+
+Operating systems for mobile devices are updated frequently and may be customized by the device manufacturer. The commands listed above may not be exactly the same on your device. There are online manuals for every type of device which are usually accessible from the website of the manufacturer.
+
+To connect to a Wi-Fi network manually on an iOS device, follow these steps:  
+**Step 1.** Select **Settings > Wi-Fi > Other.**  
+**Step 2.** Enter the network SSID.  
+**Step 3.** Touch **Security** and select a security type.  
+**Step 4.** Touch **Other Network.**  
+**Step 5.** Touch **Password** and enter the password.  
+**Step 6.** Touch **Join.**
+
+---
+
+### 🟣 3.2.4 Configure Cellular Data Settings
+
+Cellular data plans are offered by most cell phone carriers, but the bandwidth limitations and charges for usage vary widely by carrier, and by plan within carriers. As a result, many mobile device users only use their cellular data plans when Wi-Fi service is not available.
+
+**Android Cellular Data**
+
+To turn on or off cellular data on an Android device, use the following path:
+
+**Settings >** touch **More** under **Wireless and Networks >** touch **Mobile Networks >** touch **Data enabled**
+
+**iOS Cellular Data**
+
+To turn on or off cellular data on an iOS device, use the following path:
+
+**Settings > Cellular Data >** turn cellular data on or off
+
+Mobile devices are preprogrammed to use a Wi-Fi network for internet if one is available and the device can connect to the access point and receive an IP address. If no Wi-Fi network is available, the device uses the cellular data capability if it is configured. Most of the time, transitions from one network to another are not obvious to the user. For example, as a mobile device moves from an area of 4G coverage to 3G coverage, **the 4G radio shuts off and turns on the 3G radio**. Connections are not lost during this transition.
+
+---
+
+### 🟣 3.2.5 Video - Bluetooth Configuration on a Windows Laptop
+
+- 3 WAYS to connect bluetooth in windows:
+  - Click acction center in the taskbar
+  - Right click for bluetooth settings
+  - Control Panel
+  - Settings > Devices > Bluetooth and other devices
+
+- **adding the bluetooth device**
+  - put device in pairing mode
+  - On computer click "Add bluetooth or other device"
+  - Add a device
+
+---
+
+### 🟣 3.2.6 Simple Connectivity with Bluetooth
+
+Mobile devices connect using many different methods. Cellular and Wi-Fi can be difficult to configure, and require extra equipment such as towers and access points. Cable connections are not always practical when connecting headsets or speakers. Bluetooth technology provides a simple way for mobile devices to connect to each other and to wireless accessories. Bluetooth is wireless, automatic, and uses very little power, which helps conserve battery life. Up to eight Bluetooth devices can be connected together at any one time.
+
+These are some examples of how devices use Bluetooth:
+
+- **Hands-free headset** - A small earpiece with a microphone can be used for making and receiving calls.
+- **Keyboard or mouse** - A keyboard or mouse can be connected to a mobile device to make input easier.
+- **Stereo control** - A mobile device can connect to a home or car stereo to play music.
+- **Car speakerphone** - A device that contains a speaker and a microphone can be used for making and receiving calls.
+- **Tethering** - A mobile device can connect to another mobile device or computer to share a network connection. Tethering can also be performed with a Wi-Fi connection or a cable connection such as USB.
+- **Mobile speaker** - Portable speakers can connect to mobile devices to provide high-quality audio without a stereo system.
+
+> - 📌 #TIP: Up to **eight Bluetooth devices** can be connected together at any one time.
+
+---
+
+### 🟣 3.2.7 Bluetooth Pairing
+
+Bluetooth pairing occurs when **two Bluetooth devices establish a connection to share resources**. In order for the devices to pair, the Bluetooth radios are turned on, and one device begins searching for other devices. Other devices must be set to **discoverable mode**, also called visible, so that they can be detected. When a Bluetooth device is in discoverable mode, it transmits the following information when another Bluetooth device requests it:
+
+- Name
+- **Bluetooth class**
+- Services that the device can use
+- Technical information, such as the features or the Bluetooth specification that it supports
+
+During the pairing process, a personal identification number (PIN) may be requested to authenticate the pairing process. The PIN is often a number, but can also be a numeric code or passkey. The PIN is stored using pairing services, so it does not have to be entered the next time the device tries to connect. This is convenient when using a headset with a smart phone, because they are paired automatically when the headset is turned on and within range.
+
+To pair a Bluetooth device with an Android device, follow these steps:
+
+**Step 1.** Follow the instructions for your device to place it in discoverable mode.
+
+**Step 2.** Check the instructions for your device to find the connection PIN.
+
+**Step 3.** Select **Settings > Wireless and networks.**
+
+**Step 4.** Touch **Bluetooth** to turn it on.
+
+**Step 5.** Touch the **Bluetooth tab.**
+
+**Step 6.** Touch **Scan for devices.**
+
+**Step 7.** Touch the discovered device to select it.
+
+**Step 8.** Type the PIN.
+
+**Step 9.** Touch the device name again to connect to it.
+
+To pair a Bluetooth device with an iOS device, follow these steps:
+
+**Step 1.** Follow the instructions for your device to place it in discoverable mode.
+
+**Step 2.** Check the instructions for your device to find the connection PIN.
+
+**Step 3.** Select **Settings > Bluetooth.**
+
+**Step 4.** Touch **Bluetooth** to turn it on.
+
+**Step 5.** Touch the discovered device to select it.
+
+**Step 6.** Type the PIN.
+
+Remember that mobile device operating systems are updated frequently. Always refer to the documentation of the manufacturer for your specific model device for the latest command reference.
+
+---
+
+### 🟣 3.2.8 Explore Your Network Settings on Your Mobile Device
+
+Now that you have reviewed the steps to configure and verify your Wi-Fi, cellular, and Bluetooth access, explore these settings on your own phone. If you have access to a Bluetooth device, like headphones or a speaker, connect it to your phone. Notice that you can be using all three of these wireless services simultaneously, each serving a different role. You could be listening to music (Bluetooth), researching on the internet (Wi-Fi), and receiving text messages (cellular).
+
+---
+
+## 📖 3.3 Wireless and Mobile Networks Summary
+
+### 🟣 3.3.1 Whast Did I Learn in this Module?
+
+**Wireless Networks**
+
+![alt text](image-14.png)
+
+**Mobile Device Connectivity**
+
+![alt text](image-15.png)
+
+---
+
+---
+
+### 🟣 3.3.3 Wireless and Mobile Network Quiz
+
+#COURSE_QUIZ_ERRATA 🐞
+
+![alt text](image-16.png)
+
+Q1 tethering
+Q2 bluetooth 3. bluetooth 4. a wireless lan 5. nfc 6. BLUETOOTH ? 7. cellular, wifi 8. nfc 9. gps 10. SSID, pass 11. bluetooth
+
+---
+
+# MODULE 4: Build a Home Network
+
+## 📖 4.1 Home network Basics
+
+### 🟣 4.1.1 Video - Typical Home Network Setup
+
+- home modem / gateway / router ports are usually **switched ports**
+- many have a built-in wireless access point
+- wireless routers: ports are separated into two separate networks: local and wireless
+
+---
+
+> NOTE: From here on, not going to be too careful about which note goes with which module, for expediency
+
+In addition to an integrated router, there are many different types of devices that might be connecting to a home network, as shown in the figure. Here are a few examples:
+
+Desktop computers
+Gaming systems
+Smart TV systems
+Printers
+Scanners
+Security cameras
+Telephones
+Climate control devices
+
+![alt text](image-17.png)
+
+Small business and home routers typically have two primary types of ports:
+
+Ethernet Ports
+
+These ports connect to the internal switch portion of the router. These ports are usually labeled “Ethernet” or “LAN”, as shown in the figure. All devices connected to the switch ports are on the same local network.
+
+Internet Port
+
+This port is used to connect the device to another network. The internet port connects the router to a different network than the Ethernet ports. This port is often used to connect to the cable or DSL modem in order to access the internet.
+
+In addition to the wired ports, many home routers include a radio antenna and a built-in wireless access point. By default, the wireless devices are on the same local network as the devices that are physically plugged into the LAN switch ports. The internet port is the only port that is on a different network in the default configuration.
+
+![alt text](image-18.png)
+
+---
+
+### 4.2.1 LAN Wireless Frequencies
+
+The wireless technologies most frequently used in home networks are in the unlicensed 2.4 GHz and 5 GHz frequency ranges.
+
+Bluetooth is a technology that makes use of the 2.4 GHz band. It is limited to low-speed, short-range communications, but has the advantage of communicating with many devices at the same time. This one-to-many communication has made Bluetooth technology the preferred method for connecting computer peripherals such as wireless mice, keyboards and printers. Bluetooth is a good method for transmitting audio to speakers or headphones.
+
+Other technologies that use the 2.4 GHz and 5 GHz bands are the modern wireless LAN technologies that conform to the various IEEE 802.11 standards. Unlike Bluetooth technology, 802.11 devices transmit at a much higher power level giving them a great range and improved throughput. Certain areas of the electromagnetic spectrum can be used without a permit.
+
+The figure shows where wireless technologies exist on the electromagnetic spectrum.
+
+![alt text](image-19.png)
+
+> #### SIDEBAR: What is NPCS?Definition: A type of FCC-licensed radio frequency spectrum used primarily for two-way paging, text messaging, and data telemetry (such as remote utility meter reading or tracking infrastructure devices).Frequency Bands: It operates within specific ranges of the 900 MHz spectrum (specifically 901–902 MHz, 930–931 MHz, and 940–941 MHz).History: Authorized by the Federal Communications Commission (FCC) in the 1990s, NPCS was historically the first spectrum block ever auctioned off by the agency.Modern Use: While consumer two-way pagers became largely obsolete due to modern smartphones, the licensed spectrum is still repurposed today by companies like Space Data to provide secure, interference-free wireless communication backbones for critical infrastructure industries like oil, gas, and utilities.
+
+---
+
+4.2.2 Wired Network Technologies
+Although many home network devices support wireless communications, there are still a few applications where devices benefit from a wired switch connection that is not shared with other users on the network.
+
+The most commonly implemented wired protocol is the Ethernet protocol. Ethernet uses a suite of protocols that allow network devices to communicate over a wired LAN connection. An Ethernet LAN can connect devices using many different types of wiring media.
+
+Directly connected devices use an **Ethernet patch cable**, usually **unshielded twisted pair**. These cables can be purchased with the RJ-45 connectors already installed, and they come in various lengths. Recently constructed homes may have Ethernet jacks already wired in the walls of the home. For those homes that do not have UTP wiring, there are other technologies, such as powerline, that can distribute wired connectivity throughout the premises.
+
+Click each wired technology for more information.
+
+Category 5e Cable
+![alt text](image-20.png)
+
+Coaxial Cable
+![alt text](image-21.png)
+
+Fiber-Optic Cable
+![alt text](image-22.png)
+
+---
+
+> Wi-Fi uses two different frequency ranges: 2.4 GHz and 5 GHz. Bluetooth also uses the 2.4 GHz frequency range. However, cordless phones operate at a lower ~900 MHz frequency range.
+
+---
+
+### 4.3.1 Wi-Fi Networks
+
+A number of standards have been developed to ensure that wireless devices can communicate. They specify the RF spectrum used, data rates, how the information is transmitted, and more. The main organization responsible for the creation of wireless technical standards is the Institute of Electrical and Electronics Engineers (IEEE).
+The IEEE 802.11 standard governs the WLAN environment. There are amendments to the IEEE 802.11 standard that describe characteristics for different standards of wireless communications. Wireless standards for LANs use the 2.4 GHz and 5 GHz frequency bands. Collectively these technologies are referred to as Wi-Fi.
+
+Another organization, known as the Wi-Fi Alliance, is responsible for testing wireless LAN devices from different manufacturers. The Wi-Fi logo on a device means that this equipment meets standards and should operate with other devices that use the same standard.
+
+Wireless standards are constantly improving the connectivity and speed of Wi-Fi networks. It is important to be aware of new standards as they are introduced because manufacturers of wireless devices will implement these standards quickly in their new products.
+
+Do you have a wireless network in your home? Do you know what standards are supported by your wireless router?
+
+---
+
+### 4.3.2 Wireless Settings
+
+The Packet Tracer Basic Wireless Settings interface is shown in the figure. Wireless routers using the 802.11 standards have multiple settings that have to be configured. These settings include the following:
+
+Network mode
+Determines the type of technology that must be supported. For example,802.11b,802.11g,802.11n or Mixed Mode.
+
+Network Name (SSID)
+Used to identify the WLAN. All devices that wish to participate in the WLAN must have the same SSID.
+
+Standard Channel
+Specifies the channel over which communication will occur. By default, this is set to Auto to allow the access point (AP) to determine the optimum channel to use.
+
+SSID Broadcast
+Determines if the SSID will be broadcast to all devices within range. By default, set to Enabled.
+
+> SSID set to **ENABLED** by default
+
+Note: SSID stands for Service Set Identifier.
+
+![alt text](image-23.png)
+
+Network Mode
+
+The 802.11 protocol can provide increased throughput based on the wireless network environment. If all wireless devices connect with the same 802.11 standard, maximum speeds can be obtained for that standard. If the access point is configured to accept only one 802.11 standard, devices that do not use that standard cannot connect to the access point.
+
+A mixed mode wireless network environment can include devices that use any of the existing Wi-Fi standards. This environment provides easy access for older devices that need a wireless connection but do not support the latest standards.
+
+When building a wireless network, it is important that the wireless components connect to the appropriate WLAN. This is done using the SSID.
+
+The SSID is a **case-sensitive**, alphanumeric string that contains up to 32 characters. It is sent in the header of all frames transmitted over the WLAN. The SSID is used to tell wireless devices, called wireless stations (STAs), which WLAN they belong to and with which other devices they can communicate.
+
+We use the SSID to identify a specific wireless network. It is essentially the name of the network. Wireless routers usually broadcast their configured SSIDs by default. The SSID broadcast allows other devices and wireless clients to automatically discover the name of the wireless network. When the SSID broadcast is disabled, you must manually enter the SSID on wireless devices.
+
+Disabling SSID broadcasting can make it more difficult for legitimate clients to find the wireless network. However, simply turning off the SSID broadcast is not sufficient to prevent unauthorized clients from connecting to the wireless network. All wireless networks should use the strongest available encryption to restrict unauthorized access.
+
+> - BLUETOOTH is used for low-speed communication between peripheral devices
+> - WAN Port - the **internet port** of a wireless router
+
+---
+
+## 4.4 Set Up a Home Router
+
+### 4.4.1 First Time Setup
+
+Many wireless routers designed for home use have an automatic setup utility that can be used to configure the basic settings on the router. These utilities usually require a PC or laptop to be connected to a wired port on the router. If no device is available that has a wired connection, it may be necessary to configure the wireless client software on the laptop or tablet first.
+
+To connect to the router using a wired connection, plug an Ethernet patch cable into the network port on the computer. Plug the other end into a LAN port on the router. Do not plug the cable into the port or interface that is labeled “Internet”. The internet port will connect to the DSL or cable modem. Some home routers may have a built-in modem for internet connections. If this is the case, verify that the type of connection is correct for your internet service. A cable modem connection will have a coaxial terminal to accept a **BNC-type connector**. A DSL connection will have a port for a telephone-type cable, usually an RJ-11 connector.
+
+After confirming that the computer is connected to the network router and the link lights on the NIC indicate a working connection, the computer needs an IP address. Most network routers are set up so that the computer receives an IP address automatically from a local DHCP server automatically configured on the wireless router. If the computer does not have an IP address, check the router documentation and configure the PC or tablet with a unique IP address, subnet mask, default gateway, and DNS information.
+
+---
+
+4.4.2 Design Considerations
+Before entering the configuration utility, or manually configuring the router through a web browser, you should consider how your network will be used. You do not want to configure the router and have that configuration limit what you are able to do on the network, nor do you want to leave your network unprotected.
+
+What should my network be called?
+If SSID broadcasting is on, the SSID name will be seen by all wireless clients within your signal range. Many times the SSID gives away too much information about the network to unknown client devices. It is not a good practice to include the device model or brand name as part of the SSID. Wireless devices have default settings that are easy to find on the internet, as well as known security weaknesses.
+
+What types of devices will attach to my network?
+Wireless devices contain radio transmitter/receivers that function within a specific frequency range. If a device only has the necessary radio for 802.11 b/g, it will not connect if the wireless router or access point is configured to only accept 802.11n or 802.11ac standards. If all devices support the same standard, the network will work at its optimum speed. If you have devices that do not support the n or ac standards, then you will have to enable legacy mode. A legacy mode wireless network environment varies between router models but can include a combination of 802.11a, 802.11b, 802.11g, 802.11n, and 802.11ac. This environment provides easy access for legacy devices that need a wireless connection.
+
+> IEEE **802.11b and 802.11g wireless standards operate exclusively on the 2.4 GHz** radio frequency band (specifically the 2.4 GHz ISM band spanning roughly 2400 MHz to 2484 MHz).
+
+How do I add new devices?
+The decision regarding who can access your home network should be determined by how you plan to use the network. On some wireless routers, it is possible to set up guest access. This is a special SSID coverage area that allows open access but restricts that access to using the internet only.
+
+The figure shows a wireless setup screen.
+
+Note: Some wireless routers may label legacy mode as mixed mode.
+
+![alt text](image-24.png)
+
+---
+
+4.4.3 Video - Wireless Router and Client Configuration
+
+> - routerpasswords.com: find all default passwords
+
+- Max num of users: 10
+
+- Change password in the "Administration" menu
+
+> - DEFAULT LINKEDIN ROUTER password: admin / admin
+
+> - TIP: Click FFW to speed up time
+
+---
+
+4.4.4 Packet Tracer - Configure a Wireless Router and Client
+In this Packet Tracer activity, you will complete the following objectives.
+
+Part 1: Connect the Devices
+Part 2: Configure the Wireless Router
+Part 3: Configure IP Addressing and Test Connectivity
+
+#### INSTRUCTIONS:
+
+## Objectives
+
+Part 1: Connect the Devices
+
+Part 2: Configure the Wireless Router
+
+Part 3: Configure IP Addressing and Test Connectivity
+
+## Background / Scenario #CASE_STUDY
+
+> Your friend, Natsumi, heard that you are studying networking. She asked you to come over and help her connect her new home to the cable TV network. You need to connect the correct cables to the correct devices, connect devices to a home wireless router, and configure the router to provide IP addresses to network clients. Natsumi also wants you to setup a wireless LAN for her home network, so you will configure that as well. You are confident that this will be an easy process and the network will be setup in no time!
+
+## Instructions
+
+## Part 1: Connect the Devices
+
+The work area shows the interior of your friend’s house. Scroll the window to get a sense of the layout of the house and the location of the devices. In this part, you will connect all the labeled devices.
+
+### Step 1: Connect the coaxial cables.
+
+> Natsumi's cable company delivers internet and video services to her home through a coaxial cable. The cable is connected to an outlet in her home. A splitter device separates the internet data service from the video service. This enables the two services to be connected to the appropriate devices. You will connect the internet service to the cable modem, and the video service to the television.
+
+a.  In Network Components, click **Connections** (the lightning bolt).
+
+b.  Locate and click the icon for the **Coaxial** cable. It is the blue zigzag icon.
+
+c.  Click the **Cable Splitter** and select the **Coaxial1** port.
+
+d.  Click the **Cable Modem** and select **Port 0**.
+
+e.  Repeat the previous steps to connect **Coaxial2** on the **Cable Splitter** to **Port 0** on the **TV**.
+
+f.   Click the **TV**, and then click **ON** for **Status**. If your connections are correct, you should see an image appear that represents a TV program.
+
+### Step 2: Connect the network cables.
+
+There are two PCs in Natsumi’s house. They don’t have wireless LAN adapters, so they will be connected with Ethernet cables. The home wireless router is the center of the network. It enables devices that are configured on the home network to communicate with each other and the internet. The router includes a network switch that accepts wired connections for up to four hosts. You will connect the PCs to these ports.
+
+For the **Home Wireless Router** to access the internet over the cable TV provider network, the cable modem must be connected to the home wireless router internet port. This is done with a copper straight-through cable.
+
+a.  Click **Connections**, and then **Copper Straight-Through** cable. It looks like a solid black line.
+
+b.  Connect **Port 1** on the **Cable Modem** to the **Internet** port of the **Home Wireless Router**.
+
+c.  Click the **Office PC** and connect the cable to the **FastEthernet0** port. Locate the **Home Wireless Router** and click it. Connect the other end of the cable to the **GigabitEthernet 1** port to complete the connection.
+
+d.  Repeat the previous steps to connect the **Bedroom PC** to the **GigabitEthernet 2** port on the **Home Wireless Router**.
+
+The wired home network is now fully connected to the internet through the cable TV provider network.
+
+## Part 2: Configure the Wireless Router
+
+Most home wireless routers are configured by using a graphical user interface (GUI) that is accessed through your computer's web browser. In this part, you will access the home wireless router through the browser on the **Office PC** and configure Natsumi’s home network.
+
+### Step 1: Access the home wireless router GUI.
+
+a.  Click **Office PC** > **Desktop** tab, and then **IP Configuration**.
+
+b.  Click **DHCP**. DHCP will automatically configure the **Office PC** to be on the same IP network as the **Home Wireless Router**.
+
+c.  After a brief delay, the values for the **IP Configuration** should automatically update. The IPv4 address should start with the number 192. If it does not, click **Fast Forward Time**, which is just below the network topology in the lower left-hand corner. This will speed up the simulation of DHCP.
+
+d.  Make note of the address for the default gateway. The default gateway is the device that provides devices on the home network with access to outside networks, such as the internet. In this case, the default gateway address is the address of the **Home Wireless Router**.
+
+e.  Keeping the **Office PC** window open, close the **IP Configuration** window, and then click **Web Browser**. Enter the IP address of the **Home Wireless Router** (the default gateway address) into the **URL** box and click **Go**.
+
+f.   Newly installed home routers are configured with default credentials. Enter **admin** for both the **User Name** and **Password**. You should now see the GUI for the **Home Wireless Router** appear and are ready to configure Natsumi’s network. Adjust the window size, as necessary, to see more of the interface.
+
+**Note**: Default passwords on real-world devices should be changed immediately because it is widely known, including threat actors.
+
+### Step 2: Configure basic settings.
+
+In this step, you will configure a new username and password for the wireless router and limit the number of IP addresses that DHCP will issue to host that are connected to the network.
+
+Natsumi only has a few devices to that will connect the network, and she will not have a lot of friends visiting. She thinks that no more than 10 devices would connect to her network at any one time. You decide to lower the number of users to 10. Your friend lives in a densely populated part of town, so it is possible that many people could see her wireless network.
+
+a.  You are currently viewing configuration options under the **Setup** tab. Locate the **Network Setup** area. This is where you can configure the router’s DHCP server settings. Locate the **Maximum Number of Users** field, enter **10**. Scroll down to the bottom of the page and click **Save Settings**. You must save settings on every page of the GUI that you make changes.
+
+**Note**: It is possible that you will lose your connection to the router. Click **Go** in the web browser to reload the GUI page. You may need to close the **Web Browser**, click **IP Configuration**, and toggle between **DHCP** and **Static** to refresh the IP addressing for **Office PC**. Then verify the **Office PC** has an IP address configuration that starts with 192, open the **Web Browser** again, enter the router's IP address, and re-authenticate with **admin** as the default credentials.
+
+b.  Click the **Administration** tab. Here, you can change the default **admin** password. Enter and confirm **MyPassword1!** as the new password. Scroll to the bottom of the page and click **Save Settings**.
+
+You will be prompted to login again. Enter **admin** as the User Name and **MyPassword1!** as the new password, and the click **Continue**.
+
+### Step 3: Configure a wireless LAN.
+
+At this point, you are ready to configure Natsumi's wireless network so that she can connect her wireless devices to the internet over Wi-Fi.
+
+a.  Scroll back to the top of the window, and then click the **Wireless** tab.
+
+b.  For the **2.4 GHz** network, click **Enable** to activate the network radio.
+
+c.  Change the **Network Name (SSID)** from **Default** to **MyHome**. When people look for Wi-Fi networks to connect to, they will see this network name. The network name can be hidden, but this can make it a little harder for guests to connect to the network. Scroll to the bottom of the page and click **Save Settings**.
+
+d.  Now you will configure security on the **MyHome** network. This will prevent unauthorized people from connecting to the wireless network. Scroll back to the top of the window, and then click the **Wireless Security** under the **Wireless** tab.
+
+e.  Notice that security is currently disabled on all three wireless networks. You are only using the **2.4 GHz** network. Click the dropdown menu for the **2.4 GHz** network and select **WPA2 Personal**. This is the strongest security that this router offers for wireless networks.
+
+f.   More settings are revealed. WPA2 Personal requires a passphrase that must be entered by anyone who wants to connect to the wireless network. Enter **MyPassPhrase1!** as the **Passphrase**. Note that capitalization is important.
+
+g.  Scroll to the bottom of the page and click **Save Settings**, and then close the **Web Browser** for the Office PC.
+
+## Part 3: Configure IP Addressing and Test Connectivity
+
+Now that the router is configured, in this part you will configure IP addressing for the PCs and laptop and verify that they can connect to the internet.
+
+### Step 1: Connect the laptop to the wireless network.
+
+a.  Click the **Laptop** in the living room, and then the **Desktop** tab > **PC Wireless**.
+
+b.  Click the **Connect** tab. After a short delay you should the wireless network that you configured previously appear in the list of wireless network names.
+
+c.  Click the name of the network that you created, and then click the **Connect** button.
+
+d.  Enter the passphrase that you configured early for the wireless network in the **Pre-shared Key** field, and then click **Connect**.
+
+e.  Click the **Link Information** tab. You should see the message: **You have successfully connected to the access point**.
+
+f.   Click the **More Information** button to see details about the connection. If the IP address does not begin with **192**, click the **Fast Forward Time** several times to speed up the simulation.
+
+g.  Close the **PC Wireless** app and open the **Web Browser**. Verify that the **Laptop** can now connect to **skillsforall.srv**, clicking **Fast Forward Time** until the page loads. This verifies that the **Laptop** has internet connectivity.
+
+### Step 2: Test connectivity from the Office PC.
+
+You know that the Office PC can connect to the network because you used it to configure the router. However, can it also access the internet? If it can, then you will know that the wired network is properly connected and configured.
+
+a.  Click **Office PC** > **Desktop** tab > **Web Browser**.
+
+b.  Enter **skillsforall.srv** and click **Go**. After a brief delay, you should see the webpage appear. If necessary, click **Fast Forward Time** several times to speed up the convergence.
+
+Loading an external website verifies that internet connectivity for the **Office PC**.
+
+### Step 3: Configure the bedroom PC.
+
+a.  For the **Bedroom PC**, open **IP Configuration** and set it to **DHCP**. Verify that the Bedroom PC received an IP address that begins with **192**.
+
+b.  Close the **IP Configuration** window and open the **Web Browser**. Verify that the **Bedroom PC** can now connect to **skillsforall.srv**, clicking **Fast Forward Time** until the page loads. This verifies that the **Bedroom PC** has internet connectivity.
+
+You have now completed connecting network devices, configuring the router and wireless LAN, and configuring hosts to connect to the network. All devices should be able to connect to the internet. Your job is done and Natsumi has offered to cook dinner for you as a reward for your help.
+
+---
+
+#PROOF
+
+![alt text](image-25.png)
+
+![alt text](image-26.png)
+
+> !!! RESUME AT STEP 3!
+
+![alt text](image-27.png)
+
+![alt text](image-28.png)
+
+![alt text](image-29.png)
+
+> !!! RESUME AT PART 3, Step 2: Test connectivity from the Office PC.
+
+![alt text](image-30.png)
+
+![alt text](image-31.png)
+
+![alt text](image-32.png)
+
+![alt text](image-33.png)
+
+#PROOF
+
+![alt text](image-34.png)
+
+![alt text](image-35.png)
+
+4.5. Build a Home Network Summary
+
+---
+
+4.5.1 What Did I Learn in this Module?
+
+Setup a Home Router
+
+Many wireless routers designed for home use have an automatic setup utility that can be used to configure the basic settings on the router. To connect to the router using a wired connection, plug an Ethernet patch cable into the network port on the computer. Plug the other end into a LAN port on the router.
+
+After the computer is connected to the network router and the link lights on the NIC indicate a working connection, the computer needs an IP address. Most network routers are set up so that the computer receives an IP address automatically from a local DHCP server automatically configured on the wireless router.
+
+Before entering the configuration utility, or manually configuring the router through a web browser, you should consider how your network will be used. Consider what you will call your network and what devices should connect to your network. It is not a good practice to include the device model or brand name as part of the SSID since internet searches can expose security weaknesses.
+
+The decision regarding who can access your home network should be determined by how you plan to use the network. Many routers support MAC address filtering. This enables you to specifically identify who is allowed on the wireless network. This makes the wireless network more secure, but it also less flexible when connecting new devices. On some wireless routers, it is possible to set up guest access. This is a special SSID coverage area that allows open access but restricts that access to using the internet only.
+
+---
+
+4.5.3 Build a Home Network Quiz
+
+#PROOF
+
+![alt text](image-36.png)
+
+---
+
+## CHECKPOINT EXAM: Build a Small Network
+
+> MAC filtering is configured on the wireless router or access point. It checks a device’s **MAC address**—its network adapter’s hardware address—against an allow or deny list.
+>
+> - An allowed MAC address can join the Wi‑Fi network.
+> - A blocked or unlisted MAC address is denied access, depending on how the filter is configured. [cisco](https://www.cisco.com/c/dam/assets/sol/sb/WAP571_Emulators/WAP571_Emulator_v1-0-0-14/help/en/aa1049274.html)
+>
+> ## Why the others are wrong
+>
+> - “It allows only authorized users to detect the network” describes hiding the SSID, not MAC filtering.
+> - “It is configured on the computer rather than on the router” is incorrect; the access point/router maintains the filter list.
+> - “It encrypts data” describes Wi‑Fi security such as WPA2/WPA3, not MAC filtering.
+>
+> One exam note: MAC filtering provides limited security because MAC addresses can be spoofed, so it should supplement—not replace—WPA2/WPA3 encryption and a strong password. [cisco](https://www.cisco.com/c/en/us/td/docs/wireless/controller/ewc/17-15/config-guide/ewc_cg_17_15/mac_authentication_bypass.html)
+
+#PROOF Try 1
+
+![alt text](image-37.png)
+
+![alt text](image-38.png)
+
+![alt text](image-39.png)
+
+![alt text](image-40.png)
+
+![alt text](image-41.png)
+
+![alt text](image-42.png)
+
+> #GOTCHA: DSL is considered **"high-speed**
+
+![alt text](image-43.png)
+
+#PROOF
+
+![alt text](image-44.png)
+
+---
