@@ -740,7 +740,8 @@ In addition to the wired ports, many home routers include a radio antenna and a 
 
 ---
 
-4.2.1 LAN Wireless Frequencies
+### 4.2.1 LAN Wireless Frequencies
+
 The wireless technologies most frequently used in home networks are in the unlicensed 2.4 GHz and 5 GHz frequency ranges.
 
 Bluetooth is a technology that makes use of the 2.4 GHz band. It is limited to low-speed, short-range communications, but has the advantage of communicating with many devices at the same time. This one-to-many communication has made Bluetooth technology the preferred method for connecting computer peripherals such as wireless mice, keyboards and printers. Bluetooth is a good method for transmitting audio to speakers or headphones.
@@ -760,7 +761,7 @@ Although many home network devices support wireless communications, there are st
 
 The most commonly implemented wired protocol is the Ethernet protocol. Ethernet uses a suite of protocols that allow network devices to communicate over a wired LAN connection. An Ethernet LAN can connect devices using many different types of wiring media.
 
-Directly connected devices use an Ethernet patch cable, usually unshielded twisted pair. These cables can be purchased with the RJ-45 connectors already installed, and they come in various lengths. Recently constructed homes may have Ethernet jacks already wired in the walls of the home. For those homes that do not have UTP wiring, there are other technologies, such as powerline, that can distribute wired connectivity throughout the premises.
+Directly connected devices use an **Ethernet patch cable**, usually **unshielded twisted pair**. These cables can be purchased with the RJ-45 connectors already installed, and they come in various lengths. Recently constructed homes may have Ethernet jacks already wired in the walls of the home. For those homes that do not have UTP wiring, there are other technologies, such as powerline, that can distribute wired connectivity throughout the premises.
 
 Click each wired technology for more information.
 
@@ -779,7 +780,8 @@ Fiber-Optic Cable
 
 ---
 
-4.3.1 Wi-Fi Networks
+### 4.3.1 Wi-Fi Networks
+
 A number of standards have been developed to ensure that wireless devices can communicate. They specify the RF spectrum used, data rates, how the information is transmitted, and more. The main organization responsible for the creation of wireless technical standards is the Institute of Electrical and Electronics Engineers (IEEE).
 The IEEE 802.11 standard governs the WLAN environment. There are amendments to the IEEE 802.11 standard that describe characteristics for different standards of wireless communications. Wireless standards for LANs use the 2.4 GHz and 5 GHz frequency bands. Collectively these technologies are referred to as Wi-Fi.
 
@@ -791,7 +793,8 @@ Do you have a wireless network in your home? Do you know what standards are supp
 
 ---
 
-4.3.2 Wireless Settings
+### 4.3.2 Wireless Settings
+
 The Packet Tracer Basic Wireless Settings interface is shown in the figure. Wireless routers using the 802.11 standards have multiple settings that have to be configured. These settings include the following:
 
 Network mode
@@ -831,12 +834,13 @@ Disabling SSID broadcasting can make it more difficult for legitimate clients to
 
 ---
 
-4.4 Set Up a Home Router
+## 4.4 Set Up a Home Router
 
-4.4.1 First Time Setup
+### 4.4.1 First Time Setup
+
 Many wireless routers designed for home use have an automatic setup utility that can be used to configure the basic settings on the router. These utilities usually require a PC or laptop to be connected to a wired port on the router. If no device is available that has a wired connection, it may be necessary to configure the wireless client software on the laptop or tablet first.
 
-To connect to the router using a wired connection, plug an Ethernet patch cable into the network port on the computer. Plug the other end into a LAN port on the router. Do not plug the cable into the port or interface that is labeled “Internet”. The internet port will connect to the DSL or cable modem. Some home routers may have a built-in modem for internet connections. If this is the case, verify that the type of connection is correct for your internet service. A cable modem connection will have a coaxial terminal to accept a BNC-type connector. A DSL connection will have a port for a telephone-type cable, usually an RJ-11 connector.
+To connect to the router using a wired connection, plug an Ethernet patch cable into the network port on the computer. Plug the other end into a LAN port on the router. Do not plug the cable into the port or interface that is labeled “Internet”. The internet port will connect to the DSL or cable modem. Some home routers may have a built-in modem for internet connections. If this is the case, verify that the type of connection is correct for your internet service. A cable modem connection will have a coaxial terminal to accept a **BNC-type connector**. A DSL connection will have a port for a telephone-type cable, usually an RJ-11 connector.
 
 After confirming that the computer is connected to the network router and the link lights on the NIC indicate a working connection, the computer needs an IP address. Most network routers are set up so that the computer receives an IP address automatically from a local DHCP server automatically configured on the wireless router. If the computer does not have an IP address, check the router documentation and configure the PC or tablet with a unique IP address, subnet mask, default gateway, and DNS information.
 
@@ -907,7 +911,7 @@ The work area shows the interior of your friend’s house. Scroll the window to 
 
 ### Step 1: Connect the coaxial cables.
 
-Natsumi's cable company delivers internet and video services to her home through a coaxial cable. The cable is connected to an outlet in her home. A splitter device separates the internet data service from the video service. This enables the two services to be connected to the appropriate devices. You will connect the internet service to the cable modem, and the video service to the television.
+> Natsumi's cable company delivers internet and video services to her home through a coaxial cable. The cable is connected to an outlet in her home. A splitter device separates the internet data service from the video service. This enables the two services to be connected to the appropriate devices. You will connect the internet service to the cable modem, and the video service to the television.
 
 a.  In Network Components, click **Connections** (the lightning bolt).
 
@@ -1146,13 +1150,13 @@ The decision regarding who can access your home network should be determined by 
 
 Communication in our daily lives takes many forms and occurs in many environments. We have different expectations depending on whether we are chatting via the internet or participating in a job interview. Each situation has its corresponding expected behaviors and styles.
 
-Before beginning to communicate with each other, we establish rules or agreements to govern the conversation. These agreements include the following:
+Before beginning to communicate with each other, we e**stablish rules or agreements to govern the conversation**. These agreements include the following:
 
 - What method of communication should we use?
 - What language should we use?
 - Do we need to confirm that our messages are received?
 
-These rules, or protocols, must be followed in order for the message to be successfully delivered and understood. Among the protocols that govern successful human communication are these:
+These rules, or **protocols**, must be followed in order for the message to be successfully delivered and understood. Among the protocols that govern successful human communication are these:
 
 - An identified sender and receiver
 - Agreed upon method of communicating (face-to-face, telephone, letter, photograph)
@@ -1215,7 +1219,7 @@ Networking protocols define many aspects of communication over the local network
 
 ---
 
-5.2.2 The Internet and Standards
+### 5.2.2 The Internet and Standards
 
 With the increasing number of new devices and technologies coming online, how is it possible to manage all the changes and still reliably deliver services such as email? The answer is internet standards.
 
@@ -1249,7 +1253,7 @@ Other standards organizations that support the internet are shown in the figure.
 - language, formal/informal, greeting, all protocols that help govern human communication
 - common NETWORK protocols:
   - **Ethernet**: network interface card (NIC) to NIC in the same network
-  - **IP:** governs comms form original source to final destination, using routers
+  - **IP:** governs comms from original source to final destination, using routers
   - **TCP:** transmission control protocol; ensures information gets there reliably, and ensures packets are ordered properly
   - **HTTP:** Hypertext transfer protocol; governs the exchange/transfer of HTML (hyper text markup language)
 
@@ -1271,7 +1275,7 @@ Layers
 
 ---
 
-5.3.3 The TCP/IP Model
+### 5.3.3 The TCP/IP Model
 
 Layered models help us visualize how the various protocols work together to enable network communications. A layered model depicts the operation of the protocols occurring within each layer, as well as the interaction with the layers above and below it. The layered model has many benefits:
 
@@ -1415,6 +1419,8 @@ Modern networks primarily use three types of media to interconnect devices, as s
    
 ![alt text](image-55.png)
 
+**NETWORK MEDIA CRITERIA:**
+
 The four main criteria for choosing network media are these:
 
 *   What is the maximum distance that the media can successfully carry a signal?
@@ -1438,7 +1444,7 @@ In twisted-pair, wires are grouped in pairs and twisted together to reduce inter
 ![alt text](image-56.png)
 
 
-Coaxial Cable
+**Coaxial Cable**
 
 Coaxial was one of the earliest types of network cabling developed. Coaxial cable is the kind of copper cable used by cable TV companies. It is also used for connecting the various components which make up satellite communication systems. Coaxial cable has a single rigid copper core that conducts the signal. This core is typically surrounded by a layer of insulation, braided metal shielding, and a protective jacket. It is used as a **high-frequency** transmission line to carry high-frequency or broadband signals.
 
@@ -1538,7 +1544,7 @@ Ethernet is technology commonly used in local area networks. Devices access the 
 
 ---
 
-7.1.2 Encapsulation
+### 7.1.2 Encapsulation
 
 
 When sending a letter, the letter writer uses an accepted format to ensure that the letter is delivered and understood by the recipient. In the same way, a message that is sent over a computer network follows specific format rules in order for it to be delivered and processed.
@@ -1547,7 +1553,7 @@ The process of placing one message format (the letter) inside another message fo
 
 Each computer message is encapsulated in a specific format, called a frame, before it is sent over the network. A frame acts like an envelope; it provides the address of the intended destination and the address of the source host. The format and contents of a frame are determined by the type of message being sent and the channel over which it is communicated. Messages that are not correctly formatted are not successfully delivered to or processed by the destination host.
 
-Analogy
+**Analogy**
 
 A common example of requiring the correct format in human communications is when sending a letter. Click Play in the figure to view an animation of formatting and encapsulating a letter.
 
@@ -1589,7 +1595,7 @@ The animation shows an envelope with a stamp, a sender of 4085 SE Pine Street, O
 
 7.2 The Access Layer
 
-7.2.1 Video - Ethernet Switches
+### 7.2.1 Video - Ethernet Switches
 
 ![alt text](image-64.png)
 
@@ -1600,7 +1606,7 @@ The animation shows an envelope with a stamp, a sender of 4085 SE Pine Street, O
 
 ---
 
-7.2.2 Video - MAC Address Tables
+### 7.2.2 Video - MAC Address Tables
 
 - how a switch builds its MAC address table
 - makes decisions based on ethernet header of ethernet frame
@@ -1649,13 +1655,13 @@ The animation shows an envelope with a stamp, a sender of 4085 SE Pine Street, O
 
 ---
 
-7.3. The Access Layer Summary
+## 7.3. The Access Layer Summary
 
 **Encapsulation and the Ethernet Frame**
 
 The process of placing one message format inside another message format is called encapsulation. De-encapsulation occurs when the process is reversed by the recipient and the letter is removed from the envelope. Just as a letter is encapsulated in an envelope for delivery, so computer messages are encapsulated. A message that is sent over a computer network follows specific format rules for it to be delivered and processed.
 
-The Ethernet protocol standards define many aspects of network communication including frame format, frame size, timing, and encoding. The format for Ethernet frames specifies the location of the destination and source MAC addresses, and additional information including preamble for sequencing and timing, start of frame delimiter, length and type of frame, and frame check sequence (FCS) to detect transmission errors.
+The Ethernet protocol standards define many aspects of network communication including frame format, **frame size**, timing, and encoding. The format for Ethernet frames specifies the location of the destination and source MAC addresses, and additional information including preamble for sequencing and timing, start of frame delimiter, length and type of frame, and frame check sequence (FCS) to detect transmission errors.
 
 
 **The Access Layer**
@@ -1664,7 +1670,9 @@ The access layer is the part of the network in which people gain access to other
 
 An Ethernet switch is a device that is used at Layer 2. When a host sends a message to another host connected to the same switched network, the switch accepts and decodes the frames to read the MAC address portion of the message. A table on the switch, called a MAC address table, contains a list of all the active ports and the host MAC addresses that are attached to them. When a message is sent between hosts, the switch checks to see if the destination MAC address is in the table. If it is, the switch builds a temporary connection, called a circuit, between the source and destination ports. Ethernet switches also allow for sending and receiving frames over the same Ethernet cable simultaneously. This improves the performance of the network by eliminating collisions.
 
-A switch builds the MAC address table by examining the source MAC address of each frame that is sent between hosts. When a new host sends a message or responds to a flooded message, the switch immediately learns its MAC address and the port to which it is connected. The table is dynamically updated each time a new source MAC address is read by the switch.
+**HOW A SWITCH BUILDS THE MAC ADDRESS TABLE:**
+
+**A switch builds the MAC address table** by examining the source MAC address of each frame that is sent between hosts. When a new host sends a message or responds to a flooded message, the switch immediately learns its MAC address and the port to which it is connected. The table is dynamically updated each time a new source MAC address is read by the switch.
 
 
 ---
@@ -1674,7 +1682,7 @@ A switch builds the MAC address table by examining the source MAC address of eac
 
 > - The purpose of the FCS (Frame Check Sequence) field in a network frame is to detect if any errors occurred during transmission and reception
 
-> - A network switch uses the source MAC address and the incoming port of an incoming data frame to keep its MAC address table current
+> - A network switch uses the ***source MAC address and the incoming port*** of an **incoming data frame** to keep its MAC address table current
 
 
 > A network switch uses the source MAC address and the incoming port of an incoming data frame to keep its MAC address table current. [1]  
@@ -1983,6 +1991,354 @@ A switch builds the MAC address table by examining the source MAC address of eac
 
 
 ---
+
+**TCP/IP MODEL**
+
+![alt text](image-79.png)
+
+- Network Interface layer ~ neighborhood postman; AKA Link Layer; first step of journey
+- Internet IP Layer: POSTAL address checked and best route is chosen, ensureing it moves smothely through customs
+- Transport Layer: TCP Like using a tracking delivery service; UDP is faster and simpler better for livestreaming
+- APPLICATION Layer: THE part you actually interact with; websites, email, videos
+- Makes sure bank app online games and video calls work seamlessly
+
+![alt text](image-80.png)https://www.youtube.com/watch?v=tK61YFdO3Kw
+
+#MNEMONIC
+All Teachers Inspire Networking
+(A.T.I.N.)
+
+> ### Core Elements of Communication
+> 
+> The three elements that all communication methods have in common are:
+> 
+> * **Message source (Sender):** The entity, person, or device that originates the message or data.
+> * **Transmission medium (Channel):** The physical pathway, cable, or wireless frequency over which the message travels.
+> * **Message destination (Receiver):** The final entity, person, or device that receives and interprets the message.
+
+
+
+> ## 🧭 Sidebar: The “Message Data” Trap in Networking Fundamentals
+> 
+> ### ⚠️ The Pitfall
+> 
+> Beginners often assume that **every** communication method must include **message data** (the actual content or payload). This feels intuitive: if two devices are “talking,” there must be *something* being said, right?
+> 
+> In networking fundamentals, that assumption can lead you to pick the wrong answer on concept checks and certification-style questions.
+> 
+> ***
+> 
+> ### 🔑 The Core Idea
+> 
+> All communication methods share **three structural elements**:
+> 
+> - **Message source (sender)** – the originator of the communication  
+> - **Transmission medium (channel)** – the physical or wireless path  
+> - **Message destination (receiver)** – the endpoint that receives/interprets  
+> 
+> These three are **always required**, even if nothing that looks like “real data” is being sent. [itexamanswers](https://itexamanswers.net/module-5-communication-principles-quiz-answers.html)
+> 
+> **Message data**, however, is **not** universal.
+> 
+> ***
+> 
+> ### 🧩 Why “Message Data” Isn’t Always Present
+> 
+> In networking vocabulary:
+> 
+> - **Signal** = the electrical, optical, or radio representation on the medium.   
+> - **Data / message** = the meaningful information or payload that a user or application cares about. 
+> 
+> Many legitimate communication methods exist **only to manage the channel**, not to carry user content:
+> 
+> - **Keepalive signals** that say “I’m still here” with no application payload.   
+> - **Clock/synchronization pulses** that coordinate timing but carry no message.   
+> - **ACK/NACK frames** that confirm receipt or request retransmission, often with minimal or no data field.   
+> - **Simple status indicators** (like a light being on/off) that encode a condition as a signal, not as rich message data. 
+> 
+> In these cases, there is still:
+> 
+> - a **source**,  
+> - a **medium**, and  
+> - a **destination**,  
+> 
+> but there may be **no substantive message data** in the payload sense. [itexamanswers](https://itexamanswers.net/module-5-communication-principles-quiz-answers.html)
+> 
+> ***
+> 
+> ### 🛠 How to Avoid the Trap
+> 
+> When you see questions about “what all communication methods have in common”:
+> 
+> 1. **Think structure, not content.**  
+>    Ask: “What must exist for *any* signal to travel?” → source, medium, destination.
+> 
+> 2. **Treat “message data” as optional payload.**  
+>    Ask: “Could this method work with only control/status information?” If yes, then message data isn’t universal.
+> 
+> 3. **Remember the exam vocabulary:**  
+>    - **Signal** ≠ **message data**  
+>    - **Control/status traffic** can exist without user-level data. 
+> 
+> ***
+> 
+> ### 💡 Quick Mental Model
+> 
+> - **Source + Medium + Destination** = the **road, car, and driver** – always needed.  
+> - **Message data** = the **cargo** – often present, but not required for the vehicle to move.
+> 
+> If you keep that separation clear, you’ll avoid a common newbie mistake in networking fundamentals and certification prep. [itexamanswers](https://itexamanswers.net/module-5-communication-principles-quiz-answers.html)
+
+
+
+
+
+---
+
+![alt text](image-81.png)
+
+A network technician is researching the use of fiber optic cabling in a new technology center. Which two issues should be considered before implementing fiber optic media? (Choose two.)
+
+Fiber optic cabling is susceptible to loss of signal due to RFI.   1 of 5
+
+Fiber optic provides higher data capacity but is more expensive than copper cabling.   2 of 5
+
+Fiber optic cabling requires different termination and splicing expertise from what copper cabling requires.   3 of 5
+
+Fiber optic cabling requires specific grounding to be immune to EMI.   4 of 5
+
+Fiber optic cable is able to withstand rough handling.   5 of 5
+
+> ## ✅ Correct Choices
+> 
+> **B and C** are the correct answers. 
+> 
+> - **B. Fiber optic provides higher data capacity but is more expensive than copper cabling.**  
+>   - Fiber supports much higher bandwidth and longer distances than copper, but the cable, transceivers, and installation labor typically cost more. 
+> 
+> - **C. Fiber optic cabling requires different termination and splicing expertise from what copper cabling requires.**  
+>   - Terminating and splicing fiber uses specialized tools (cleavers, fusion splicers, polishers) and skills different from punching down or crimping copper. 
+> 
+> ## ❌ Why the Other Options Are Wrong
+> 
+> - **A. “Fiber optic cabling is susceptible to loss of signal due to RFI.”**  
+>   - False. Fiber uses light, not electrical signals, so it is immune to RFI and EMI. 
+> 
+> - **D. “Fiber optic cabling requires specific grounding to be immune to EMI.”**  
+>   - False. Fiber doesn’t need grounding for EMI immunity; it’s inherently immune because it carries light, not current. 
+> 
+> - **E. “Fiber optic cable is able to withstand rough handling.”**  
+>   - Generally false as a design assumption. Fiber is more fragile than copper and can be damaged by tight bends, crushing, or rough handling; it must be installed and managed carefully. 
+> 
+> So for the exam question, the two issues to consider are **higher cost** and **different termination/splicing expertise** (B and C).
+
+
+---
+
+How much data can be encapsulated into a normal sized Ethernet frame before it is sent over the network?
+
+0 to 1024 bytes   1 of 4
+
+64 to 1518 bytes   2 of 4
+
+32 to 1500 bytes   3 of 4
+
+46 to 1500 bytes   4 of 4
+
+
+
+> ## ✅ Answer
+> 
+> **1,500 bytes** of payload (data) can be encapsulated into a normal-sized Ethernet frame. 
+> 
+> ## 📘 Explanation
+> 
+> - **Standard Ethernet MTU:** The maximum payload (MTU) for a normal Ethernet frame is **1,500 bytes**.   
+> - **Frame structure (simplified):**
+>   - Preamble + SFD: 8 bytes (physical layer, not counted in “frame size” by some texts)  
+>   - Destination MAC: 6 bytes  
+>   - Source MAC: 6 bytes  
+>   - EtherType/Length: 2 bytes  
+>   - **Payload (data): up to 1,500 bytes** ← what the question is asking  
+>   - Frame Check Sequence (FCS): 4 bytes  
+>   - Total on the wire (excluding preamble/SFD in some definitions): **1,518 bytes**; with preamble/SFD: **1,526 bytes**. 
+> 
+> Many networking courses and exams treat “normal sized Ethernet frame” as meaning the standard MTU of **1,500 bytes of data**. 
+> 
+> If your quiz offers multiple choice, look for **1,500 bytes** as the correct option.
+> 
+> ## ✅ Correct Answer
+> 
+> **46 to 1500 bytes** (option 4) is correct. 
+> 
+> ## 📘 Why 46–1500 Bytes?
+> 
+> - **Maximum payload (MTU):** A standard Ethernet frame can carry up to **1,500 bytes** of data.   
+> - **Minimum payload:** Ethernet requires a **minimum frame size of 64 bytes** from destination MAC through FCS.  
+>   - Header (Dst 6 + Src 6 + Type 2) = 14 bytes  
+>   - FCS = 4 bytes  
+>   - So minimum payload = 64 − 14 − 4 = **46 bytes**.   
+> - If the upper-layer data is less than 46 bytes, the sender adds a **padding** field to reach 46 bytes. 
+> 
+> So the amount of *data* that can be encapsulated in a normal Ethernet frame is **46 to 1500 bytes**.
+
+---
+
+What are two actions performed by a Cisco switch? (Choose two.)
+
+- utilizing the MAC address table to forward frames via the destination MAC address   1 of 5
+- building a routing table that is based on the first IP address in the frame header   2 of 5
+- using the source MAC addresses of frames to build and maintain a MAC address table   3 of 5
+- forwarding frames with unknown destination IP addresses to the default gateway   4 of 5
+- examining the destination MAC address to add new entries to the MAC address table   5 of 5
+
+
+
+
+---
+
+
+> ## 🧭 Short Answer
+> 
+> Even though Linksys was once owned by Cisco, **home Linksys routers do not use Cisco IOS or Cisco interface naming conventions**. They’re consumer products with completely different software and UI, so you won’t see `Fa0/8`–style names on them. 
+> 
+> ## 🏢 vs 🏠 Cisco Enterprise vs Linksys Consumer
+> 
+> ### 1. Ownership and product lines
+> 
+> - **Cisco Systems**  
+>   - Enterprise networking: switches, routers, firewalls running **Cisco IOS / IOS‑XE / NX‑OS**, using CLI with names like `Fa0/1`, `Gi0/24`, etc. 
+> - **Linksys**  
+>   - Originally a Cisco brand for **home/SOHO** gear.  
+>   - Sold by Cisco to Belkin in 2013; now a separate company.  
+>   - Runs consumer firmware with a **web UI / app**, not Cisco IOS. 
+> 
+> So even historically, Linksys was Cisco’s **consumer** line, not their enterprise CLI-based line.
+> 
+> ### 2. Interface naming and configuration
+> 
+> - **Cisco enterprise devices**  
+>   - Configured via CLI (`configure terminal`, `interface Gi0/1`, etc.)  
+>   - Use structured interface names: `Fa`, `Gi`, `Te` + slot/port. 
+> - **Linksys home routers**  
+>   - Configured via browser UI or mobile app.  
+>   - Ports shown as `LAN1–LAN4`, `Internet/WAN`, `Wi‑Fi`, etc.  
+>   - No IOS, no `interface Fa0/8` commands, no Cisco-style MAC table commands. 
+> 
+> Being “a Cisco brand” (and now not even that) never meant Linksys used Cisco’s **enterprise CLI and naming standards**. They were always aimed at non‑technical home users.
+> 
+> ## ✅ Practical takeaway for your studies
+> 
+> - For **Network+ / Cisco-based courses and labs**, assume Cisco naming (`Fa0/8`, `Gi0/1`, etc.) only on **Cisco enterprise gear or simulators** (Packet Tracer, real IOS switches/routers).  
+> - For **home routers/gateways** (Linksys, Netgear, Arris, etc.), expect simple labels like `LAN1–4`, `WAN`, `Wi‑Fi`, and no Cisco-style interface names.
+
+> ## 🧒 ELI‑Novice: What “slot/module” Means Here
+> 
+> You’re **not** being asked to think about NIC cards or PC motherboards. In this context, **“slot/module” just means “which physical card or unit inside the switch.”** 
+> 
+> ## 🧱 Think of a Switch Like a Building
+> 
+> Imagine a switch as a building with floors and rooms:
+> 
+> - **Slot/module** = which **floor** (which card or unit)  
+> - **Port** = which **room** on that floor (which physical jack)
+> 
+> On a small, fixed switch (the kind you’ll mostly see):
+> 
+> - The whole switch is just **one floor** → floor **0**  
+> - All the ports are rooms on that one floor → port **1, 2, 3… 24/48**
+> 
+> So:
+> 
+> - `Fa0/8` =  
+>   - `Fa` = FastEthernet port  
+>   - `0` = the only “floor” (slot 0) in this switch  
+>   - `8` = port number 8 on that floor  
+> 
+> You never have to think about motherboard slots; it’s just Cisco’s way of saying: **“port 8 on module 0.”** 
+> 
+> ## 🏠 Home Router vs Cisco Switch (in this view)
+> 
+> - **Home router**:  
+>   - Labels: `LAN1`, `LAN2`, `LAN3`, `LAN4`  
+>   - No slot/module idea shown to you.
+> - **Cisco switch**:  
+>   - Labels: `Fa0/1`, `Fa0/2`, … `Fa0/24`  
+>   - Internally thinks in “slot/module + port,” but for your class, just treat `0` as “the switch itself” and the second number as “which port.” 
+> 
+> If it helps: for your exams and labs, mentally translate:
+> 
+> - `Fa0/8` → “FastEthernet port 8 on this switch.”
+
+
+![alt text](image-82.png)
+
+
+> ## ✅ Order of Operations on a Cisco Switch
+> 
+> When a frame arrives on a switch port, the switch does this **in order**:
+> 
+> 1. **Learns the source MAC first**  
+>    - It reads the **source MAC address** and the incoming port.  
+>    - It **adds or updates** that MAC → port entry in the MAC address table. 
+> 
+> 2. **Then decides how to forward the frame**  
+>    - It looks up the **destination MAC** in the MAC address table.  
+>    - If the destination MAC is **unknown** (not in the table), it **floods** the frame out all ports in the same VLAN **except the port it came in on**. 
+> 
+> So: **MAC table update (learning) happens before the flooding decision.** 
+> 
+> ## 🧠 Why This Order Matters
+> 
+> - The switch always learns from the **source** MAC, regardless of whether it knows the destination.  
+> - Even if the frame will be flooded, the source MAC is still recorded first so future frames to that MAC can be forwarded intelligently. 
+> 
+> For your quiz:  
+> - The switch **writes/updates the MAC address table using the source MAC first**, then **floods** if the destination MAC is unknown.
+
+---
+
+
+#PROOF
+
+![alt text](image-83.png)
+
+![alt text](image-84.png)
+
+![alt text](image-85.png)
+
+![alt text](image-86.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
