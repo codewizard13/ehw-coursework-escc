@@ -34,6 +34,6 @@
 - [x] Week 2 : Module 3 & 4, Checkpoint Exam 1: Build a Small Network
 - [x] Week 3 : Module 5, 6, 7, Checkpoint Exam 2: Network Access
 - [ ] Week 4 : Module 8, 9, 10, 11, Checkpoint Exam 3: The Internet Protocol
-- [ ] Week 5 : Module 12, 13, 14, Checkpoint Exam 4: Communication Bet[ ] ween Networks
+- [ ] Week 5 : Module 12, 13, 14, Checkpoint Exam 4: Communication Between Networks
 - [ ] Week 6 : Module 15, 16, 17, Checkpoint Exam 5: Protocols for Specific Tasks + FINAL EXAM
 
