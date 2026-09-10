@@ -9,10 +9,11 @@
     Shipping Charge Decision Program: ask for an order amount and shipping option, use if/else and/or switch to select the correct charge from a supplied decision table, and print the final amount. Include boundary tests for every branch.
 
     NOTE this version includes the following updates based on instructor feedback:
-    - Robust input validation that rejects zero, negative numbers, and non-numeric input
+    - Adds input validation that rejects zero, negative numbers, and non-numeric input
+    - Expanded, more detailed algorithm showing decision making and validation process
 
     CHALLENGES:
-    - I had to determine how to test for not a number without using fancy functions we'v not learned yet. I used Perplexity to help me brainstorm this structure: `if (!(cin >> x))`
+    - I had to determine how to test for not a number without using fancy functions we've not learned yet. I used Perplexity to help me brainstorm this structure: `if (!(cin >> x))`
 
     GitHub: https://github.com/codewizard13
     email: codewizard13@gmail.com
@@ -32,7 +33,6 @@ int main(void) {
         Display shipping option menu
         Get shipping option ( standard, express, overnight) from user
             If NOT EXACT a, b, or c chars, then display error msg and end program
-
 
         Calculate final amout
         
