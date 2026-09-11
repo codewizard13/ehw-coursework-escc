@@ -355,18 +355,20 @@ Another example of a hierarchical network is the **telephone system**. With a te
 
 ## 📖 9.0 Introduction
 
-### 🟣 
-
-
-
-## 📖 9.0. Introduction
-
-
 ### 🟣 9.0.1 Webster - Why Should I Take this Module?
 
 
 ### 🟣 9.0.2 What Will I Learn in this Module?
 
+**Module Title:** IPv4 and Network Segmentation
+
+**Module Objective:** Explain how IPv4 addresses are used in network communication and segmentation.
+
+| Topic Title | Topic Objective |
+| --- | --- |
+| IPv4 Unicast, Broadcast, and Multicast | Compare the characteristics and uses of the unicast, broadcast and multicast IPv4 addresses. |
+| Types of IPv4 Addresses | Explain public, private, and reserved IPv4 addresses. |
+| Network Segmentation | Explain how subnetting segments a network to enable better communication. |
 
 
 
@@ -375,33 +377,131 @@ Another example of a hierarchical network is the **telephone system**. With a te
 
 ### 🟣 9.1.1 Video - IPv4 Unicast
 
+- Unicast IP transmission
+- Unicast - packet where desitination IP address is for a single device
+- A source IP address can only be a unicast; a packet can only originate from a single device
+
+> - NOTE: Unicast as opposed to "broadcast" or multicast
+
+
+![alt text](image-95.png)
+
+
 
 ### 🟣 9.1.2 Unicast
 
+In the previous topic you learned about the structure of an IPv4 address; each has a network portion and a host portion. There are different ways to send a packet from a source device, and these different transmissions affect the destination IPv4 addresses.
+
+Unicast transmission refers to one device sending a message to one other device in one-to-one communications.
+
+A unicast packet has a destination IP address that is a unicast address which goes to a single recipient. A source IP address can only be a unicast address, because the packet can only originate from a single source. This is regardless of whether the destination IP address is a unicast, broadcast, or multicast.
+
+> **Note:** In this course, all communication between devices is unicast unless otherwise noted.
+
+IPv4 unicast host addresses are in the address **range of 1.1.1.1 to 223.255.255.255**. However, within this range are many addresses that are reserved for special purposes. These special purpose addresses will be discussed later in this module.
+
+> **Note**: In the animation, notice that the subnet mask for 255.255.255.0 is represented using slash notion or /24. This **indicates that the subnet mask is 24 bits long**. The subnet mask 255.255.255.0 in binary is 11111111.11111111.11111111.00000000.
 
 ### 🟣 9.1.3 Video - IPv4 Broadcast
+
+![alt text](image-96.png)
+
+> - When 255.255.255.255 is the Destination IP that means its destined for ALL DEVICES on the network; broadcast; received by every device on the network; router it won't forward the packet to other networks; floods the packet out all ports except incoming port
+
+- Ethernet switch floods the packet out all ports except the incoming port
 
 
 ### 🟣 9.1.4 Broadcast
 
+Broadcast transmission refers to a device sending a message to all the devices on a network in one-to-all communications.
+
+A broadcast packet has a ***destination IP address with all ones (1s) in the host portion***, or 32 one (1) bits.
+
+> Note: IPv4 uses broadcast packets. However, there are **no broadcast packets with IPv6**.
+
+**A broadcast packet must be processed by all devices in the same broadcast domain**. A broadcast domain identifies all hosts on the same **network segment**. A broadcast may be directed or limited. A directed broadcast is sent to all hosts on a specific network. For example, a host on the 172.16.4.0/24 network sends a packet to 172.16.4.255. A limited broadcast is sent to 255.255.255.255. **By default, routers do not forward broadcasts**.
+
+> - **network segment:** ???
+
+> Broadcast can be **directed** or **limited**
+
+> - **directed broadcast:** sent to ALL HOSTS on a specific network
+
+Broadcast packets use resources on the network and **make every receiving host on the network process the packet**. Therefore, broadcast traffic should be limited so that it does not adversely affect the performance of the network or devices. Because routers separate broadcast domains, subdividing networks can improve network performance by eliminating excessive broadcast traffic.
+
+> - #GOTCHA: Broadcast traffic can adversely affect the performance of the network or devices
 
 ### 🟣 9.1.5 Video - IPv4 Multicast
+
+- multicast transmission is used to send a packet from a single device to a selected group of devices
+- IPv4 multicast address range from: **224.0.0.0 to 239.255.255.255**
+- ONLY members of the multicast group will actually PROCESS the packet, the other devices will ignore it
+
+![alt text](image-97.png)
+
+
 
 
 ### 🟣 9.1.6 Multicast
 
+Multicast transmission reduces traffic by allowing a host to send a single packet to a selected set of hosts that subscribe to a multicast group.
+
+A multicast packet is a packet with a destination IP address that is a multicast address. IPv4 has reserved the 224.0.0.0 to 239.255.255.255 addresses as a multicast range.
+
+Hosts that receive particular multicast packets are called **multicast clients**. The multicast clients use services requested by a client program to subscribe to the multicast group.
+
+> multicast clients use services requested by a client program to subscribe to the multicast group
+
+Each multicast group is represented by a single IPv4 multicast destination address. When an IPv4 host subscribes to a multicast group, the host processes packets addressed to this multicast address, and packets addressed to its uniquely allocated unicast address.
+
+**Routing protocols** such as **OSPF** use multicast transmissions. For example, **routers** enabled with OSPF communicate with each other using the **reserved OSPF multicast address 224.0.0.5**. Only devices enabled with OSPF will process these packets with 224.0.0.5 as the destination IPv4 address. All other devices will ignore these packets.
+
+![alt text](image-98.png)
 
 ### 🟣 9.1.7 Activity - Unicast, Broadcast, or Multicast
 
+**Instructions:**
 
+Click Start to see a destination IP address. Next, click the host or hosts which will receive a packet based on the address type (unicast, broadcast, or multicast). Click **Check** to verify your answer. Click **New Problem** again to get a new problem.
 
 ## 📖 9.2. Types of IPv4 Addresses
 
 
 ### 🟣 9.2.1 Public and Private IPv4 Addresses
 
+Just as there are different ways to transmit an IPv4 packet, there are also different types of IPv4 addresses. Some IPv4 addresses cannot be used to go out to the internet, and others are specifically allocated for routing to the internet. Some are used to verify a connection and others are self-assigned. As a network administrator, you will eventually become very familiar with the types of IPv4 addresses, but for now, you should at least know what they are and when to use them.
+
+**Public IPv4 addresses** are addresses which are **globally routed between internet service provider (ISP) routers**. However, not all available IPv4 addresses can be used on the internet. There are **blocks of addresses called private addresses** that are **used by most organizations to assign IPv4 addresses to internal hosts.**
+
+In the mid-1990s, with the introduction of the World Wide Web (WWW), private IPv4 addresses were introduced because of the depletion of IPv4 address space. Private IPv4 addresses are not unique and can be used internally within any network.
+
+> **Note**: The long-term solution to **IPv4 address depletion** was IPv6.
+
+| Network Address and Prefix | RFC 1918 Private Address Range |
+| --- | --- |
+| 10.0.0.0/8 | 10.0.0.0 - 10.255.255.255 |
+| 172.16.0.0/12 | 172.16.0.0 - 172.31.255.255 |
+| 192.168.0.0/16 | 192.168.0.0 - 192.168.255.255 |
+
+> **Note**: **Private addresses** are defined in **RFC 1918** and sometimes referred to as **RFC 1918 address space**.
+
 
 ### 🟣 9.2.2 Routing to the Internet
+
+#### Private IPv4 Addresses and Network Address Translation (NAT)
+
+Most **internal networks**, from large enterprises to home networks, use **private IPv4 addresses** for addressing **all internal devices** (intranet) including **hosts and routers**. However, **private addresses are not globally routable**.
+
+In the figure, **customer networks** 1, 2, and 3 are sending packets outside their internal networks. These packets have a source IPv4 address that is a private address and a destination IPv4 address that is public (globally routable). Packets with a private address must be filtered (discarded) or translated to a public address before forwarding the packet to an ISP.
+
+> - **filtered packets:** discarded
+
+### Private IPv4 Addresses and Network Address Translation (NAT)
+
+![alt text](image-99.png)
+
+Before the ISP can forward this packet, it must translate the source IPv4 address, which is a private address, to a public IPv4 address using Network Address Translation (NAT). NAT is used to translate between private IPv4 and public IPv4 addresses. This is usually done on the router that connects the internal network to the ISP network. Private IPv4 addresses in the organization’s intranet will be translated to public IPv4 addresses before routing to the internet.
+
 
 
 ### 🟣 9.2.3 Activity - Pass or Block IPv4 Addresses
