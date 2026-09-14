@@ -2,9 +2,8 @@
 
 **Preparation requirement:** Complete the Week 4 readings, videos, [C++ Institute practice,](https://www.netacad.com/courses/c-plus-plus-essentials-1?courseLang=en-US&instance_id=4e9bfae1-812a-47b1-9052-43a5f27db6ff) and guided examples before starting. This assignment intentionally requires only concepts taught in those materials.
 
-### Programming Task
-
-Weekly Sales Analyzer: repeatedly read seven daily sales values with a loop, calculate total and average, count values meeting a stated threshold, and print a simple summary. Use loops and decisions only; no arrays are required yet.
+### Programming Task — **Weekly Sales Analyzer**:
+> repeatedly read seven daily sales values with a loop, calculate total and average, count values meeting a stated threshold, and print a simple summary. Use loops and decisions only; no arrays are required yet.
 
 ### Required Process
 
