@@ -1559,10 +1559,6 @@ Suppose you must complete two tasks on a Linux server. The first task asks you t
 
 The `-n` option changes the group name.
 
-![Interactive Tablet Placeholder](https://testoutlivecontent.blob.core.windows.net/image/tablet-interactive-placeholder.png)
-
-This content is only available on larger screen sizes. Please revisit this page on a larger device.
-
 When you delete a group, it doesn't remove the user accounts that are part of that group. To the Linux system, a group is a completely different object from a user.
 
 It's important to remember that you can't delete a user's main group without deleting the user account first. To do that, use the `userdel` command.
