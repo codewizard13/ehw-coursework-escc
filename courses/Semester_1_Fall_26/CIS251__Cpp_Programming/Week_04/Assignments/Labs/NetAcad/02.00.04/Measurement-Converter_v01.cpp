@@ -8,7 +8,10 @@
 
     VERSION: 1.0
 
-    STATUS: WIP - WORKS but due to a formatting quirk the result_string builds the inches without rounding.
+    STATUS: WIP - WORKS but due to a formatting quirk with to_string() the 
+        result_string builds the inches without rounding. The solution for this intro C++
+        assignment does not allow cmath() so it must require not string building,
+        but instead using a DIRECT cout CHAIN.
 
     Instructions:
     Write a simple "measurement converter". We want it to perform the following actions:
@@ -22,7 +25,19 @@
     - Full instructions: ./00_instructions.md
 
     Lessons Learned:
-    - #GOTCHA: You can't use `<<` in an assignment statement, you need to use `+` instead. However, you cannot add a number and a string -- it will give `integral or unscoped enum type` error. The solution is to convert your numbers to strings by using to_string([my_num]).
+    - #GOTCHA: You can't use `<<` in an assignment statement, you need to use
+      `+` instead. However, you cannot add a number and a string -- it will give
+      `integral or unscoped enum type` error. The solution is to convert your
+      numbers to strings by using to_string([my_num]).
+    - #GOTCHA: to_string() does not inherit cout’s fixed or setprecision 
+      settings; for floating values it follows %f-style formatting, whose
+      default is six digits after the decimal.
+    - C++ stream insertion accepts integers, floating-point values, characters,
+      and strings, so it naturally handles each item in its proper form.
+    - #TIP: Use a direct `cout` chain when the text exists only to be displayed once
+    
+    FUTURE IMPROVEMENTS:
+    - Will create v 2 using the cout chain instead of string-building
 
     GitHub: https://github.com/codewizard13
     email: codewizard13@gmail.com
