@@ -8,7 +8,7 @@
 
     VERSION: 2.0
 
-    STATUS: WIP - Metric branch works; NEXT: finish imperial branch
+    STATUS: FULLY WORKING
 
     Instructions:
     Write a simple "measurement converter". We want it to perform the following actions:
@@ -44,15 +44,15 @@ int main(void) {
 	int sys;
 	float m, ft, in;
 
-    string sys_name, units_used, result_string;
     const float FEET_PER_METER = 3.28084;
+    const float METERS_PER_FOOT = 0.3048;
     float calculated_decimal_feet;
 
 	cout << "Which measurement system (0 = metric, 1 = imperial): ";
 
     // VALIDATE SYS (if not int or 0 or 1)
     if (!(cin >> sys) || !(sys == 0 || sys == 1 )) {
-        cout << "Invalid input.\n";
+        cout << "Invalid input - Only 0 or 1 allowed.\n\n";
         return 0;
     }
 
@@ -63,12 +63,22 @@ int main(void) {
             cin >> m;
             calculated_decimal_feet = m * FEET_PER_METER; 
             ft = (int) calculated_decimal_feet;
-            // cout << m << "m ~= " << ft << " ft" << endl;;
             in = (calculated_decimal_feet - ft) * 12;
-            // cout << "Inches = " << in << endl;
             cout << (int)ft << "'" << in << "\"";
+
             break;
         case 1: // imperial
+            cout << "Please enter the value in feet and inches" << endl;
+            cout << "Feet: ";
+            cin >> ft;
+            cout << "Inches: ";
+            cin >> in;
+
+            // Convert inches to decimal of feet, 
+            m = ( ft + (in/12.0) ) * METERS_PER_FOOT;
+
+            cout << m << "m" << endl;
+
             break;
     }
     
