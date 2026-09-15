@@ -19,7 +19,7 @@ Familiarize the student with:
 
 Have you ever wondered how to find a weekday for any (past or future) date? Okay, you can check it in a calendar (you probably have one on your smartphone), but this is no solution for a coder. We do it the harder and more exciting way – we're going to write a program for it (did you ever suspect we were going to offer you anything else?)
 
-One of the most popular algorithms for this task is the so-called "Zeller's congruence". Sounds complicated? Nothing could be further from the truth, and we're going to show you exactly that. You'll need three values:
+One of the most popular algorithms for this task is the so-called "**Zeller's congruence**". Sounds complicated? Nothing could be further from the truth, and we're going to show you exactly that. You'll need three values:
 
 *   year number (int – let's assume that we're interested only in dates from the 20th and 21st centuries);
 *   month number (int – 1 to 12);

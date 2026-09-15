@@ -46,10 +46,6 @@
 #include <iomanip>
 using namespace std;
 
-#include <iostream>
-
-using namespace std;
-
 int main(void) {
 	int sys;
 	float m, ft, in;

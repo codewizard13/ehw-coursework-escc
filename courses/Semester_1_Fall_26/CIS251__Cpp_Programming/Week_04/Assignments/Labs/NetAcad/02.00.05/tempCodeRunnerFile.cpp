@@ -1,0 +1,1 @@
+(cin >> year_num) && (year_num > 1899 && year_num < 2027)
