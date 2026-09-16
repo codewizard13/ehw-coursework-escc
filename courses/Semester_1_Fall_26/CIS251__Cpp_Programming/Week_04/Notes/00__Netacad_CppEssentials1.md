@@ -622,7 +622,9 @@ do {
 } while(condition);
 ```
 
-If you want to execute a body containing more than one statement, you need to use a block.
+If you want to execute a body containing more than one statement, you need to use a **block**.
+
+> - **block:** ??? (code block?)
 
 Let’s return to the program that searches for the largest number. Firstly, we will use the “`do`” loop instead of “`while`” for teaching purposes. Secondly, we remove the vulnerability involved in the excessive trust in the user’s good will. Our new program won’t be misled by entering the value of `-1` as the first number. Look at the editor. Here's our code.
 
@@ -846,6 +848,62 @@ return 0;
 }
 ```
 
+<br>
+
+> 
+> ## 🧠 You read it correctly
+> 
+> `for (;;)` is an **unconditional loop**: its missing condition is treated as `true`, essentially like:
+> 
+> ```cpp
+> while (true) {
+>     // body
+> }
+> ```
+> 
+> That does **not** mean the program freezes before input. It means the loop keeps repeating unless code inside it exits the loop. An infinite loop can still pause and wait for input, print output, calculate things, etc. [en.cppreference](https://en.cppreference.com/cpp/language/for)
+> 
+> ## 🚪 Why your program stops
+> 
+> Your loop has an explicit exit:
+> 
+> ```cpp
+> if (number == -1)
+>     break;
+> ```
+> 
+> When you enter `-1`, `break` immediately terminates the nearest enclosing loop. Execution then continues after the closing `}` of the loop. [en.cppreference](https://en.cppreference.com/cpp/language/break)
+> 
+> So its real behavior is approximately:
+> 
+> ```cpp
+> while (true) {
+>     cin >> number;
+> 
+>     if (number == -1)
+>         break;  // escape hatch
+> 
+>     counter++;
+> 
+>     if (number > max)
+>         max = number;
+> }
+> ```
+> 
+> ## 🔁 What “infinite” means here
+> 
+> Without the `break`, it would keep asking for/reading numbers forever:
+> 
+> ```cpp
+> for (;;) {
+>     cin >> number;
+> }
+> ```
+> 
+> It would not necessarily consume 100% CPU—it would normally **block** at `cin >> number` until you type input—but it would never reach the `cout` statements after the loop.
+> 
+> Your course’s statement is correct: `for (;;)` has no built-in ending condition. Your `break` supplies the ending condition from inside the loop. 🔑 [en.cppreference](https://en.cppreference.com/cpp/language/for)
+
 
 
 
@@ -853,7 +911,7 @@ return 0;
 
 ### 🟣 2.2.7 LAB Collatz's hypothesis
 
-
+- See [full lab instructions](./../../Week_04/Assignments/Labs/NetAcad/02.02.07/00__instructions.md)
 
 ---
 
