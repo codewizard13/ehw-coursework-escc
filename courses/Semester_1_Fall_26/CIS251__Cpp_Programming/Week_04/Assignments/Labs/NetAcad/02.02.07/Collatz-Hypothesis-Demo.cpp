@@ -8,7 +8,7 @@
 
     VERSION: 1.0
 
-    STATUS: WIP
+    STATUS: FULLY WORKING
 
     Instructions:
      Write a program to demo Collatz's hypothesis which reads one natural
@@ -28,7 +28,8 @@
     - Full instructions: ./00_instructions.md
 
     Lessons Learned:
-    - 
+    - NONE. This was fairly easy using a do-while loop
+    - didn't require break/continue
 
     - Full lessons learned: ./01__lessons-learned.md
     
@@ -44,7 +45,40 @@ using namespace std;
 
 int main() {
 
+    // DEFINE VARIABLES
+    int num;
+    int counter = 0;
 
-    cout << "--- END ---\n\n";
+    int c0;
+
+    // RECEIVE & VALIDATE num
+    cout << endl;
+    cout << "Enter any number greater than zero: ";
+    if (!(cin >> num) || (num <= 0)) {
+        cout << "Invalid input:  Must be number greater than zero.\n\n";
+        return 0;
+    }
+
+    // CALCULATE
+    c0 = num;
+    cout << "You entered " << c0 << "\n\n";
+
+    do {
+
+        if (c0 % 2 == 0) {
+            c0 /= 2;
+        } else {
+            c0 = 3 * c0 + 1;
+        }
+
+        counter++;
+
+        cout << c0 << endl;
+
+    } while (c0 != 1);
+
+    cout << "steps = " << counter;
+
+    // cout << "--- END ---\n\n";
     return 0;
 }
