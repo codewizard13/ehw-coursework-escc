@@ -137,6 +137,8 @@ We can remove the word int and the declaration will preserve its meaning:
 unsigned long big_number;
 ```
 
+![alt text](image-1.png)
+
 A more modest example is here:
 
 ```cpp
@@ -172,21 +174,100 @@ But we need to add an important remark. So far we’ve used integer literals, as
 
 ### 🟣 2.1.2 Another float type
 
+The _short_ modifier cannot be used alongside the `float`, but we may use the _long_ modifier here. It’s assumed that type `long float` is a synonym for another type named `double`. The variables of type `double` may differ from the variables of type `float`, not only in **range**, but also in **accuracy**.
+
+> - #TIP: Long float is synonomy for `double`
+
+What does this mean? The data stored in a floating-point variable has **finite precision** – in other words, only a certain number of digits are **precisely stored** in the variable.
+
+For example, we expect that the value:
+
+
+```cpp
+1111111111111111111.111111111111111111111
+```
+
+will be stored by a specific type of computer as:
+
+```cpp
+1111111131851653120.000000
+```
+
+We say that the variable saves (only) **8 precise digits**. This is within the expected accuracy of 32-bit long `float`s. Using a `double` (which is usually 64 bits long) guarantees that the variable will save a more significant number of digits – about **15-17**. This is where the name `double` comes from – its accuracy is **doubled** compared to `float`.
 
 ---
 
 ### 🟣 2.1.3 Floats and their traits
 
+We told you some time ago that computer addition is not always commutative. Do you know why? Imagine that you have to add a large number of floating-point values – some of them are very large, some very small (close to zero). If a very small float value is added to another that’s very large, the result can be quite surprising.
+
+Let’s go back to the previous example – we’ll assume that our computer only saves 8 precise digits of any float. If we add these two floats, we’ll probably get:
+
+
+```cpp
+11111110656.000000
+```
+
+as the result. The lower value simply vanished without a trace.
+
+We can’t avoid these effects when we add/subtract the numbers of type float (and of double as well, because they’re also affected by this issue). The phenomenon described here is what we call a **numerical anomaly**.
+
+![alt text](image-2.png)
+
+> - #GOTCHA:  ??? So what do we do about numerical anomalies?
 
 ---
 
 ### 🟣 2.1.4 In memory of George Boole
+
+**George Boole** (1815 –1864) was an English mathematician, philosopher and logician and we’re talking about him for a very important reason. One of his most important achievements was **algebraic logic**, referred to by Boole himself as “the laws of thought”. Algebraic logic does not operate on numbers but only on **two truth values**, and doesn’t use standard arithmetic operations like addition and multiplication, but **conjunction, disjunction** and **negation**.
+
+Taking into account the fact that virtually all modern computers are built using Boole’s theorems, we can say without exaggeration that Boole was actually one of the founders of IT.
+
+There is a type in the C++ language whose name commemorates George Boole – **the type `bool`**.
+
+It’s a very intriguing type. Variables of this type are able to store only two distinct values: `true` and `false`. Note: all these new words (`bool`, `true` and `false`) are keywords. Don’t forget that.
+
+Take a look at the example below:
+
+
+```cpp
+bool developer_is_hungry = false;
+```
+
+We’ve declared a variable there. Neither its name nor its value requires additional comments. There are many contexts where this variable may be useful. One of the most spectacular is the following:
+
+```cpp
+if(developer_is_hungry) {
+	have_lunch();
+	developer_is_hungry = !developer_is_hungry;
+}
+```
+
+The exclamation mark we’ve used in the assignment is a negation operator. It’s a **unary prefix operator** that changes the logical value of its arguments: because of the operator, true becomes false and vice versa. As you see, having lunch changes the logical state of one of the most important factors of a programmer’s well-being.
+
+To be honest, the `bool` type is only a very special variant of the `int` type. It’s very short (variables of this type occupy only 8 bits, which is still too much, because one bit would be enough). It behaves like an int inside expressions (**true is equivalent to 1 while false is equivalent to `0`**).
+
+We’ll return to this type and its values soon, and to George Boole’s algebra and logical operators, too.
+
+
 
 
 ---
 
 
 ## 📖 2.2. Looping Constructs: Iterating Through Code Blocks
+
+
+```cpp
+
+```
+
+
+```cpp
+
+```
+
 
 
 
