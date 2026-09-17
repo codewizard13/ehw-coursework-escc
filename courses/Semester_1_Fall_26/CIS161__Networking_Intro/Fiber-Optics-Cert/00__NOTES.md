@@ -15,8 +15,6 @@
 
 ---
 
-> ✍🏼 THIS WEEK: 
-> - Module 12, 13, 14, Checkpoint Exam 4: Communication Between Networks
 
 ![alt text](image-2.png)
 
@@ -104,7 +102,7 @@ Test out the various types of knowledge checks below.
 
 # 🧰 Module 1 | The Basics of Fiber
 
-##  [1.1 - Keys to Success](#/lessons/OuiZp8fOM2HfnoZmceKbouNYJThNkbBI)
+## 🟣  1.1 - Keys to Success
 
 - **Untayus Taylor** - Alabama Power
 
@@ -114,7 +112,7 @@ Test out the various types of knowledge checks below.
 - Embrace not knowing and wanting to learn it; be ready to learn
 - If you want to learn it you will
 
-##  1.2 - Broadband Connections
+## 🟣  1.2 - Broadband Connections
     
 Let's take a look at how broadband is expanding throughout Alabama. Use the arrows to click through the slides below.  
 
@@ -174,7 +172,7 @@ Alabamians want and need practical access to data. Below you will find common us
 ---
 
 
-##  1.3 - Old Technology vs. New Technology
+## 🟣  1.3 - Old Technology vs. New Technology
     
 In this lesson, we are going to look at the old and new technology found in Alabama networks. Click through the slides to learn more.
 
@@ -397,7 +395,7 @@ The main differences between ethernet and fiber are shown in the table below. 
 
 ---
 
-##  1.4 - Dissecting an Ethernet Cable
+## 🟣  1.4 - Dissecting an Ethernet Cable
 
 
 Now that you’re familiar with the basics of ethernet and fiber cables, let’s take a closer look at how both are put together. First, let’s look at a basic ethernet cable. **Use the arrows to click through the slides below.**  
@@ -486,7 +484,7 @@ Now that you are familiar with the T-568A and T-568B, let's practice the color s
 ![alt text](image-22.png)
 
 
-##  1.5 - Dissecting a Fiber Cable
+## 🟣  1.5 - Dissecting a Fiber Cable
     
 Now let’s look at a fiber optic cable. Remember, **the core is the only part of this cable that carries data**. It is as tiny as a hair, but inside of it, data travels at super high speeds over really long distances. This glass core is delicate and requires the protection of several layers of coating. If you cut into a fiber cable, you’ll find the core at the center, surrounded by multiple protective layers. Click on each part to learn more.
 
@@ -509,7 +507,7 @@ Now let’s look at a fiber optic cable. Remember, **the core is the only part o
 
 
     
-##  1.6 - Single Mode and Multi Mode
+## 🟣  1.6 - Single Mode and Multi Mode
     
 ![alt text](image-31.png)
 
@@ -520,7 +518,7 @@ There are **two kinds of optical fiber**: **multi mode** and **single mode**. **
 | *   the outer jacket color is **yellow**<br>*   can transmit up to **6.2 miles**<br>*   used for running Internet to homes  and businesses | *   the outer jacket color is **blue**<br>*   will only work at a max of **1800 feet**<br>*   used inside of buildings to tie equipment together |
 
 
-##  1.7 - Spectrum of Light
+## 🟣  1.7 - Spectrum of Light
     
 
 One question you might have at this point is, “Will I be able to see these pulses of light that are pushing data through the core?” The answer is, “No.” There are two reasons you will not be able to see the light in the core:
@@ -582,7 +580,7 @@ There are **specific wavelengths** within the infrared zone that **produce the h
 ---
 
 
-# 2.1 - Data and Networks
+# 🧰 Module 2.1 - Data and Networks
 
 Everyone wants fast internet, but do you know the story of how far and how fast that data has to travel to reach you. Let’s say you’re at home and you click on a website that’s hosted in the United Kingdom. How does that data get to you? To find out, use the arrows to click through the slides below.  
 
@@ -631,7 +629,7 @@ Getting from the main network to your home is called  “**the last mile**.” W
 > - **Fiber Optics Technicians** do most of their work in the **last mmile**
 
 
-## 2.2 - Passive Optical Networks
+## 🟣 2.2 - Passive Optical Networks
 
 
 Trunk Cables
@@ -672,12 +670,536 @@ The most common type of network that serves Alabama communities is a Passive Opt
 (STOPPED HERE 9/11/26: https://alabama.instructure.com/courses/208537/assignments/6638279?module_item_id=20286509)
 
 
+![alt text](image-52.png)
+
+**Optical Line Terminal (OLT)**
+
+OLT stands for Optical Line Terminal. 
+
+  
+
+**O** \- Optical (the action of light)
+
+**L -** Line (a length of material)
+
+**T** \- Terminal (one end of something)
+
+  
+
+The OLT is a piece of hardware at the beginning of the network. You may also hear it called the Head End. It's the translator and manager of data traffic on a network. Cable, phone, and internet providers send electrical data to the OLT, and the OLT converts the electrical data into light signals. It then manages the sending and receiving of these light signals to the rest of the network.
+
+> - **OLT:** another term for `head end`
+
+---
+
+
+**Single Mode Fiber**
+
+Single mode fiber cable is the “backbone” of the network. It’s the fastest type of fiber, and it’s used over long distances with very little attenuation, or signal loss. Fiber cables can be installed underground or strung across power poles. **Aerial cables** are quick to install and easy to access for techs. These are the lower lines on a power pole. The lines above it are electrical. Underground cables are blown through sturdy tubes, and protected from storm damage and harsh weather. Empty tubes can be  laid during trenching to make it easy to add more fiber in the future.
+
+
+---
+
+
+**Splitters / Multiport Service Terminal (MST)**
+
+This part of a PON is a Multiport Service Terminal (MST) or more commonly called a splitter.  Splitters take a single light pulse of data and separate it into multiple beams of light. In this picture, one cable goes in, and 3 cables go out, all sending the same signal. ***Mirrors are used to split the light signal and send it on without the need for electricity.*** Splitters are housed in weatherproof boxes. These boxes have many different names, including splice enclosures, distribution panels, taps, house boxes, etc. You’ll quickly learn what names your company uses for all of their equipment.
+
+
+---
+
+
+**Optical Network Terminal (ONT)**
+
+**O** - Optical (the action of light)
+
+**N** - Network (a group of interconnected things)
+
+**T** \- Terminal (the end of something)
+
+  
+
+The ONT is hardware at the end of the data’s journey on the PON. It is a box connected to the outside or inside of the home, and it translates light pulses back into electrical data for phones, cable, internet data. The ONT can also translate electrical pulses coming from a customer’s device into light pulses to send back to the central office ONT. Devices used in the home are connected to this ONT physically with a cable or using Wi-Fi.
+
+
+---
+
+#PROOF
+
+![alt text](image-53.png)
+
+![alt text](image-54.png)
+
+
+---
+
+# 🧰 Module 3 - Anatomy of a Cable
 
 
 
 
+## 🟣 3.1 - Cutting Fiber
+
+Cutting a fiber optic cable is a common task required for many jobs. There are several tips to keep in mind when performing this task:
+
+1.  Always make sure you have the correct length and location.
+    
+2.  Too much fiber is always better than coming up short.
+    
+3.  Handle the fiber with care when preparing the fiber for cutting.
+    
+4.  Do not bend the fiber too tightly when replacing the cable after cutting.
 
 
+![Job Site Example](image-55.png)
+
+**Job Site Example**
+
+This is a picture of a Network Interface Device (NID) located outside of a customer’s home. Bending the fiber too tightly inside can cause the fiber optic cable to break. This is a common mistake. Therefore, it is important to take care and caution when bending fiber. 
+
+Also notice the several wraps of extra fiber stored in the middle of the NID. When completing the job of running fiber to the home, the technician made sure not to "come up short" by having a few feet of extra fiber. The extra fiber was then wrapped and tucked. This is a great illustration of having extra fiber and not coming up short on a job site. 
+
+---
+
+**VIDEO NOTES:**
+
+- David Thompson Alabama Power
+- Measure twice, cut once
+- If you don't cut the fiber the right way/ place it can be thousands of dollars mistake
+- you can take down a bank, aburn university, a whole city if you are not careful by cutting the wrong thing
+
+
+---
+
+
+
+## 🟣 3.2 - History of Fiber and Color
+
+Scroll through the timeline below, to learn the story of the Fiber Optic industry.
+
+- **1800s**: Since the 1800s, inventors have experimented with communications using light and reflection.
+
+- **1970s**: In the 1970s, researchers discovered that extremely pure forms of glass tubing allowed light signals to travel much faster and farther than metal wires. This discovery began our fiber optics adventure.
+
+- **1980s**: In the 1980s, the first large fiber backbones were placed in the United States. This laid the foundation for a more interconnected world. 
+
+- **1990s**: In the 1990s, the use of Ethernet cables and PONs emerged and the Internet became available to the public.
+
+- **2000s**: In the 2000s, Fiber to the Home networks emerged using PONs and fiber to connect multiple homes with splitters. 
+
+- **2010s**: In the 2010s, high count cables were introduced. 
+
+- **Today**: Today, fiber optic technology provides the backbone for broadband connections and has a wide impact on society.  
+
+
+---
+
+
+## 
+
+**Color**
+
+Color has been important throughout the history of fiber. As fiber optic technologies have become more complex, color has become increasingly critical for identifying fibers. A fiber’s **color can indicate its type**, **number in a cable**, etc. Each color in a collection of fibers provides Fiber Optics Technicians critical insight to what they are working with.
+
+In this module, you will learn about the three main categories of color code that Fiber Optics Technicians use today:
+
+1. Outer Jacket Color Code
+
+2. Inner Fiber Color Code
+
+3. High Count Cable Ring Marks
+
+#PROOF
+
+![alt text](image-56.png)
+
+## 🟣 3.3 - Outer Jackets
+
+The first category of color code to learn is the outer jacket color. This is your first piece of information about the fiber in front of you. 
+
+![Single mode yellow jacket](image-57.png)
+
+**Single Mode | Yellow Jacket**
+
+Yellow is the jacket color for single mode fiber. **Single mode is the fastest and most widely used today.**
+
+![Multimode (aqua jacket)](image-58.png)
+
+**Multi Mode | Aqua or Orange Jacket**
+
+You may encounter some multimode fiber with orange or aqua jackets, but this is older technology. You should know it exists, but you won’t see it much.
+
+**Color Based on Location**
+
+In addition to single mode and multi mode, you need to know the terms premise cable and outside plant cable (OSP). 
+
+
+
+**Premise Cables | Bright Colors**
+
+Premise cables are used to connect devices inside a building. Their jackets have bright colors, like yellow. (or orange, or aqua, or green)
+
+![alt text](image-59.png)
+
+**Outside Plant Cable (OSP) | Black Jacket**
+
+Like the name states, outside plant cables are used outside of buildings. They have more protection from the elements, and are covered in a black jacket. This black jacket helps protect the cables from moisture and sun exposure.
+
+![alt text](image-60.png)
+
+The outer jacket will also have a full description of the cable printed along its length. Everything you need to know is written on the jacket. Click on the hotspots below to learn more. 
+
+![alt text](image-61.png)
+
+
+- **Manufacturer:** the company who made the fiber optic cable
+- **Fiber type:** MMF = multi-mode fiber; SM = single-mode
+- **Fiber grade:** grade of the fiber optical glass inside
+- **Construction:** type of cable construction
+- **Rating:** cable rating; gives installers info on where this type of fiber optic cable can be safely installed
+
+---
+
+
+## 🟣 3.4 - Inner Fiber
+
+**Inner Fiber Color Code**
+
+The next color code to memorize is the **inner fiber code**. It’s incredible how many fibers can fit inside a fiber cable. It would be chaos without a predictable order! Optical fiber strands inside a cable are sectioned into **groups of 12 colors**, and these colors repeat in a predictable pattern for easy identification. The color pattern helps techs splice the correct fibers together. Blue coated fibers connect to blue, green to green, pink to pink, and so on.
+
+![alt text](image-62.png)
+
+#MNEMONIC
+
+A quick way to memorize these is to **break them into chunks**, like a phone number.  It also helps to have an image to link to each chunk of colors. Below is one idea, but feel free to create your own associations. 
+
+5-GROUPS
+
+![alt text](image-63.png)
+
+> The orange basketball is about to hit my green plan sitting on top of that red firetruck
+
+![alt text](image-64.png)
+
+Now there's a bumblebee near my plant and a mermaid sitting on the firetruck
+
+
+---
+
+
+
+## 🟣 3.5 - High Count Cable
+
+Now that you've memorized the 12-color system, let's see what happens when there are more than 12 fibers in a cable! For example, a 48-fiber cable is made up of four sets of 12 fibers each. If there are four blue fibers, how do you know which blue is Fiber 1?
+
+**Binder Units**
+
+When you first enter a high count cable, each set of 12 is grouped as a **binder unit**. Binder units can be wrapped in **binder yarn** or a **buffer tube**. These groupings follow the same 12-color system you learned for individual fibers.
+
+Just like the first fiber in a 12-fiber set is blue, the first binder unit is also blue. Second is orange, third is green, and so on.
+
+![alt text](image-65.png)
+
+There are lots of different ways to organize the fibers within a cable. They **vary by manufacturer and type of cable**. But one thing is always the same: The 12-color system.
+
+
+Binder units can contain individual fibers or multiple 12-fiber sets. When each binder unit contains individual fibers, you can use the table below to look up fiber numbers. This table shows the number of each fiber in a 144-fiber cable. It is **arranged by binder unit color (columns) and fiber coating color (rows)**.
+
+
+![alt text](image-66.png)
+
+---
+
+
+If there are multiple 12-fiber sets within each binder unit, each set can be in another binder unit or joined together as a ribbon.
+
+In the image shown here, there are six binder units held together by binder yarn. Within each binder unit, there are 12 ribbons of 12 fibers each.
+
+6 x 6 x 12 = 432 fibers!
+
+![alt text](image-67.png)
+
+**Did you know high count cables can have more than 12 binder units?**
+
+The **largest cables have 3456 fibers**! That's 24 binder units, with 12 sets of 12 fibers in each.
+
+When binder yarn is used, **each set is wrapped with two strands of yarn**. Binder Units 1-12 have two strands of the same color. Binder Units 13-24 have one colored strand and one clear strand.
+
+For example, Binder Unit 1  will have two blue strands and Binder Unit 13 will have one blue strand and one clear strand.
+
+---
+
+**Ring Markings**
+
+Ring markings are also used to tell fibers apart when there are more than 12. These are especially important when fibers have been removed from their binder units for splicing. Ring markings are also used to number ribbons within a binder unit.
+
+Read through the slides below to learn how ring markings are used.
+
+![alt text](image-68.png)
+
+Fibers are added to high-count cables in sets of 12. **Ring markings** are used to tell those sets apart. This code might look complicated, but it's actually really easy if you think of it like tally marks!
+
+![alt text](image-69.png)
+
+The small black marks are called bars. **Each bar = 1.** When you have 5 of them together, they form a block. **Each block = 5.** To get the number of the set, add up the bars and blocks, just like you would tally marks.
+
+![alt text](image-70.png)
+
+For example, 12 is coded as two blocks and two bars. 5 + 5 + 2 = 12!
+
+
+---
+
+
+## 🟣 3.6 - Cable Construction
+
+All fiber cables will have the same basic parts (core, cladding, strength members, etc.), but there are lots of ways for manufacturers to arrange these parts. Click through the slides to learn more about a few common arrangements. 
+
+![alt text](image-71.png)
+
+Some cables have a loose design, which means the individual fibers are loose inside a rigid jacket. Sometimes a gel is inserted into the cable to protect the fibers from water and weather.
+
+
+![alt text](image-72.png)
+
+In a ribbon cable, individual fibers are attached together, side-by-side, in sets that look like ribbons, and then placed inside the protective jacket.  
+
+![alt text](image-73.png)
+
+You may also encounter SpiderWeb ribbon cables. Inside these cables, groups of 12 fibers are wound together and attached to create a web.  This **web expands easily** so techs can **grab the fiber they need, and then collapse the rest back into the cable**.
+
+**Evolving Technology**
+
+Fiber technology is always evolving, getting faster and more efficient. Therefore, keeping up to date on new equipment, manufacturers, and changes to color standards and processes is important. Learning about the basic technology and color standards in this course is just the beginning of your journey.
+
+
+---
+
+
+## 🟣 3.7 - Simplex and Duplex Fiber Cables
+
+Fiber cables are made in two forms: Simplex and Duplex. 
+
+
+**Simplex Cables**
+
+Simplex cables contain a single strand of fiber, and are used to send a signal in one direction. Simplex fiber is like a one-way street. 
+
+![alt text](image-74.png)
+
+**Duplex Cables** 
+
+Duplex fiber cables have two fibers, held together in a zipcord style. ***Duplex cables are used with devices that require separate send and receive fibers.***
+
+![alt text](image-75.png)
+
+
+#PROOF
+
+![alt text](image-76.png)
+
+---
+
+
+# 🧰 Module 4 - Connector Types
+
+## 🟣 4.1 - Fiber Optic Connectors
+
+A fiber optic cable is not complete without its connector. When you think about a connector, you probably envision an ethernet plug - they’re everywhere. A fiber connector is the same thing in the fiber world, it just looks a little different. You have this incredibly fast fiber cable sending data at lightning speeds to customers, but you can’t plug a bare fiber into your equipment. You need a connector to correctly align the fiber and then hold it in place snugly. 
+
+Like all technologies, connectors have evolved over time. Each generation of connectors retains more and more signal strength as light travels through the connector to the device. If you search for fiber connectors on the internet, you’ll be overwhelmed by the variety of connectors available. To be a successful tech, though, you can focus on the three most common connectors: LC, SC and ST. Each of these styles comes in simplex (single fiber) or duplex (double fibers). Let’s take a quick look at these three styles.
+
+![alt text](image-77.png)
+
+LC 
+
+Lucent Connector
+
+Little Connector
+
+
+
+An LC is half the size of an SC Connector. Therefore, you can fit twice as many ports on the same size device.
+SC Connector
+SC 
+
+Standard Connector
+
+Square Connector
+
+
+
+An SC is a snap-in connector. 
+It is popular because it is easy to use.
+ST Connector
+ST
+
+Straight Tip
+
+Bayonet Connector
+
+
+
+An ST is an older connector style. It is typically found in networks built in the late 1990s - early 2000s. 
+It is now swapped out for newer SC and LC connectors. 
+
+
+![alt text](image-78.png)
+
+---
+
+
+## 🟣 4.2 - Parts of a Fiber Optic Connector
+
+It’s important to be able to identify different kinds of connectors, because each one fits into a specific receptor. Just like you can’t plug an ethernet cable into a fiber port, you can’t plug an SC connector into an ST port. So how do you know which connector to use? 
+
+Most of the time, your company will give you the exact equipment you need to make a connection. Though you won’t have to make that decision often, understanding your equipment will help you be a more successful fiber tech.
+
+![alt text](image-79.png)
+
+**Boot / Bare Buffer**
+
+Covers the joint where the fiber and the connector meet. Gives extra strength to the fiber and keeps the cable from bending too sharply near the connection.
+
+**Crimp Eyelet**
+
+Holds the fiber in place, and transfers any pulling or pushing force from the fiber to the connector.
+
+**Connector Sub Assembly**
+
+Holds ferrule in place
+
+
+**Ferrule**
+
+A tube made of ceramic or metal with a precise hole drilled through the middle. A bare fiber is inserted into the ferrule, and is held in proper alignment.
+
+**Connector Housing**
+
+Covers the sub assembly and has the mechanism that clicks the connector into a receptor.
+
+**Dust Cap**
+
+Keeps dust and debris out of the connector when it is not plugged in.
+
+
+---
+
+Great job learning about the parts of a fiber optic connector! Now let's take a look at what each of these parts may look like when coming out of packaging from a manufacturer. The interactive below includes the three types of connectors that you learned about earlier in this course: ST, SC, and LC. As you click through, notice that the look of the dust cap and boot vary slightly in appearance for ST, SC, and LC. 
+
+
+![alt text](image-80.png)
+
+
+**End Faces**
+
+When you hear fiber techs talk about connectors like LC and SC, you’re also going to hear them say ‘LC APC connector,’ or ‘SC UPC connector.’ What do these additional letters stand for and what do they mean? They are describing the shape of the ferrule’s **end face**. The end face is where the ferrules touch one another.
+
+![alt text](image-81.png)
+
+
+PC
+
+Physical Contact
+
+APC Angled Physical Contact
+ APC
+
+Angled Physical Contact
+
+UPC Ultra Physical Contact
+UPC
+
+Ultra Physical Contact
+
+Remember, the goal is to reduce the amount of signal loss in every connection. Curved and angled end faces create less back reflection when they touch than flat end faces. This is important to know because you have to match adapters with the correct connector style (LC, SC, ST), and also with the correct type of endface (UPC, APC). For example, an ***LC- UPC connector paired with an LC-APC connector will not work together.***
+
+> - goal is to reduce the amount of signal loss in every connection
+
+---
+
+
+![alt text](image-82.png)
+
+**Adapters**
+
+Connectors are used to plug fibers directly into devices, and they can also join two fibers together. To do this, they need something like a bridge to hold two male connectors together. This bridge is called an adapter. Adapters can join two similar connectors (LC to LC), and they can also join two different connectors (LC to SC). You simply need to know what kind of connectors you’re joining, and there’s an adapter that will make that happen!
+
+> - #TIP:  Adapters can not only adapt between genders, but also between connector typs (SC, ST, etc.)
+
+---
+
+
+## 🟣 4.3 - Naming Connectors
+
+Wow! You have learned a lot about fiber so far in this course! Let's take a minute to review and practice some concepts. Click on the card to flip and check your answer. 
+
+Great job reviewing several concepts covered so far in the course. Now let's practice combining these concepts together.  
+
+Practice One
+
+Looking at the picture below and decide:
+
+Is the cable Duplex or Simplex?
+Is the cable Single Mode or Multi Mode? 
+What is the connector type on each side: LC, SC, or ST? 
+Check your answer by clicking on the hotspots.
+
+
+![alt text](image-83.png)
+
+
+Great job! This is a LC to LC Duplex Multi Mode Fiber Optic Cable!
+
+---
+
+
+Practice Two
+
+Looking at the picture below and decide:
+
+Is the cable Duplex or Simplex?
+Is the cable Single Mode or Multi Mode? 
+What is the connector type on each side: LC, SC, or ST? 
+Check your answer by clicking on the hotspots.
+
+![alt text](image-84.png)
+
+Great job! This is a SC to SC Simplex Single Mode Fiber Optic Cable!
+
+
+---
+
+#PROOF
+
+![alt text](image-85.png)
+
+
+---
+
+
+# 🧰 Module 5 - Preparing
+
+## 🟣 5.1 - Preparing for the Workday
+
+
+
+---
+
+## 🟣 5.2 - Safety Procedures
+
+
+---
+
+## 🟣 5.3 - Professional Perspective
+
+
+---
+
+## 🟣 5.4 - Typical Workday
+
+
+---
 
 
 
