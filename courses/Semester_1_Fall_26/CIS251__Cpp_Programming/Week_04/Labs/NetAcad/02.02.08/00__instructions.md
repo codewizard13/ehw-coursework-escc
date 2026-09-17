@@ -30,7 +30,9 @@ Here you are:
 > *   you need to add a number of fractions – the sum will show you an approximate value of a quarter of π;
 > *   some of the fractions are positive, some are negative – can you see the regularity?
 
-Leibniz's formula needs a very large number of fractions to achieve good accuracy (you'll see this soon), but that's not a problem – we don't actually want to discover the value of π. We just want to check if we can find it.
+Leibniz's formula needs a very large number of fractions to achieve good accuracy (you'll see this soon), but that's not a problem – ***we don't actually want to discover the value of π. We just want to check if we can find it.***
+
+> - That's a weird thing to say
 
 Your task is to complete the code below. The code should ask the user to enter a number of totaled fractions (in other words, the number of iterations) and to print the computed value of π. As we need good accuracy and a very large number of iterations, we use a **double** instead of a **float** and a **long** instead of an **int**.
 
