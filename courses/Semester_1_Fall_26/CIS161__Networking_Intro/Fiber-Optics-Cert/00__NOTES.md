@@ -1182,34 +1182,190 @@ Great job! This is a SC to SC Simplex Single Mode Fiber Optic Cable!
 
 ## 🟣 5.1 - Preparing for the Workday
 
+We’re finally jumping into the big fiber story and going to work! Before we start spooling fiber off our trucks and splicing, we need to talk about how important it is to be prepared each day. Arriving prepared for the day will make you a valuable member of your fiber team.  Let’s learn **how successful fiber techs prepare for the job each day**.
+
+---
+
+
+
+- [x] Wear appropriate, clean work clothes.
+- [x] Know where the crew is meeting. A central office or a location in the field?
+- [x] Factor in travel time and traffic, so you don’t feel rushed.
+- [x] Arrive on time. Each day is scheduled in time slots. If you’re late, it affects the entire day.
+- [x] Take care of personal needs like food before work.
+- [x] Check personal equipment in your toolbox or belt to be sure it is clean and ready.
+- [x] Inventory equipment on your truck or splice trailer.
+
+---
+
+## Workspace Scenarios: #CASE_STUDY
+
+![alt text](image-86.png)
+
+![alt text](image-87.png)
+
+![alt text](image-88.png)
+
+> - #TIP: Build the habit of checking your tool belt or box after each job, and again before work begins each day.
 
 
 ---
 
 ## 🟣 5.2 - Safety Procedures
 
+#VIDEO - Alabama Power Skills for Success
+
+- David Thompson
+- Saftety is first concern
+- Diff applications depending on where you are workintg
+- Put out cones, traffic control, signs
+- Alabama Power gives you all the safety equipment you need
+- They give you a blank check to buy cones saftey glasses hard hats (PPE - personal protective equipment)
+- They give all that to you
+- training, manuals on traffic control, lockout tagout, the training is phenomenal
+- they want you to go home to your family safely at night
+
+---
+
+Safety is extremely important. Like David said in the video, your company will have ongoing training sessions on best practices and safety equipment, and they will teach you exactly how to use their equipment. Click through the slide deck below, to learn safety basics for working with fiber.
+
+![alt text](image-89.png)
+
+**Cones**
+
+bucket truck with orange cone placed near the back
+Anytime you are on location to complete a job, **place orange safety cones around your truck and your work space**. These will alert the public that you are at work, and will keep them at a safe distance. Big trucks look like fun toys to children. As you collect your cones at the end of a job, inspect all angles of your truck to make sure it is free of people, pets, and foreign objects.
+
+![alt text](image-90.png)
+
+**Safety Harness**
+
+technician in bucket of truck wearing a safety harness
+**Always wear a safety harness when you’re working in a bucket truck.** Clip it on before you raise the bucket, and leave it on while you work on aerial installations.
+
+![alt text](image-91.png)
+
+**Hard Hat**
+
+technician in bucket of truck wearing a hard hat
+For Fiber Techs and Electricians, a hard hat is used for insulation. You’re not likely to have something large fall on your head, and fiber cables carry no electricity. However, electrical cables typically run above fiber cables on power poles. The hard hat is there to protect you if you accidentally touch your head on an electrical cable hung above you.
+
+**Ladders**
+
+***Climbing a tall ladder and working up high can take some getting used to.*** Always wear a climbing harness when you’re on a ladder. It allows you to free both hands to do your work, and it keeps you tethered securely to the pole while you’re working.
+
+> - ⚠️ #GOTCHA: Always wear a climbing harness when you’re on a ladder!
+
+
 
 ---
 
 ## 🟣 5.3 - Professional Perspective
+
+#VIDEO
+
+- David Thompson
+- he started as a telecommunications electrician power delivery
+- everything was analog, now all converted to VOIP to digital
+- Everything has been converted from Tandy portable suitcase computer to Worldwide WEb
+- our tech is in the middle if not leading in a lot of tech
+- on leading edge of tech, getting trained, every day something new
+- he graduated in 82 in a degree in electronic theory
+- he thinks the job he does now probably makes more than a computer science role
 
 
 ---
 
 ## 🟣 5.4 - Typical Workday
 
+The roles and responsibilities of a Fiber Optic Installer can vary based on company. Below you will find the description of three different typical workdays. For some small companies, a Fiber Optic Installer may be required to perform the tasks included on all three tabs. Where larger companies may have the work divided out to specialized roles: Installer Technician, Lineman, and Underground Installer.
+
+![alt text](image-92.png)
+
+
+A typical workday for an Installer may include:
+
+1.  Looking at the schedule to see how many jobs are on the list and planning the day based on time.
+2.  Contacting the customer to let them know you are on the way to work on the install.
+3.  Meeting with the customer to discuss the location the of modem and how to get a fiber to that location.
+4.  Installing fiber from the outside NID box to the modem/ONT location.
+5.  Installing the ONT/modem.
+6.  Educating the customer on how equipment works and how to connect devices.
+
+![alt text](image-93.png)
+
+A typical workday for a Lineman may include:
+
+1.  Looking at the schedule to see what needs to be done.
+2.  Reading maps to determine where the splitter is located to feed the new location.
+3.  Determining an appropriate route for the fiber, starting at splitter and moving through each pole.
+4.  Hanging the fiber from the splitter to the house or from the pole NID.
+5.  Wearing a harness and using bucket trucks and extension ladders to reach poles.
+
+![alt text](image-94.png)
+
+
+A typical workday for an Underground Installer may include: 
+
+1.  Looking at the schedule to see what is needed for future installs.
+2.  Reading maps to see which splitter location to feed the fiber from.
+3.   Contacting the home owner to see if any pipes or wires are buried in the yard.
+4.  Locating anything underground that could get cut by machines while burying the fiber to the home.
+5.  Burying the wire.
+6.  Mounting needed boxes.
+
+Depending on location, some companies separate the Installer Technician role into Outside and Inside Installers. Outside Installers place the fiber into the outside NID box and run the fiber into the home. The Inside Installers then pick up the remaining in-home parts of the installation.
+
+
+
+
+> ## 🧭 Definition: NID
+> 
+> **NID = Network Interface Device.** In fiber work, it is a protected enclosure/connection point for fiber—used to terminate, splice, manage slack, and protect the connection from weather and strain. [corning](https://www.corning.com/optical-communications/asean/en/home/products/network-interface-devices-nids.html)
+> 
+> ## In the described job
+> 
+> The likely path is:
+> 
+> **Splitter → fiber distribution cable/terminal on poles → pole NID or terminal → fiber drop cable → house-side NID → indoor ONT/router** 🌐➡️🏠
+> 
+> - A **splitter** divides one optical signal to serve multiple customer drops; it can be housed in a pole-mounted or other outdoor enclosure. [weunionfiber](https://www.weunionfiber.com/how-does-a-fiber-optic-splitter-work-a-comprehensive-guide/)
+> - A **pole NID** is an enclosure on a utility pole where a technician may access or connect the fiber drop. 📍
+> - A **house NID** is the exterior box at the customer location where the aerial drop cable terminates and is protected. From there, fiber continues toward the ONT inside. 🏠🔧
+> - The **ONT** is generally the powered device that converts the fiber’s optical signal into usable Ethernet/Internet service—not the NID. 💡➡️🖧
+
+
 
 ---
 
+![alt text](image-95.png)
+
+1.  ▶️ Interacting with Customers
+    ◀️You represent your company! Customers getting internet for their homes are excited to see you. Customers with service outages will be stressed and need understanding.
+   
+2.  ▶️ Assessing a job site  
+    ◀️You’ll begin making decisions based on what you see as you arrive at each location.
+    
+3.  ▶️ Operating high-tech and low-tech equipment
+    ◀️For some job tasks, you’ll use equipment worth thousands of dollars. Other tasks will require you to use wire strippers and pliers.
+    
+4.  ▶️ Working in all kinds of environments
+    ◀️Some tasks can be completed in an air conditioned trailer. Others are outside on the side of a truck. Fiber Optic work continues in all seasons, even in the rain!
+    
+5.  ▶️ Asking questions builds trust with your crew 
+    ◀️It’s always better to ask questions than pretend to know something you don’t. Your crew is there to support you.
+    
+6.  ▶️ Leaving the job site better than you found it
+    ◀️Clean up all trash, organize your equipment, inform the customer of the work you’ve completed and how that work benefits them.
 
 
 
+#PROOF
 
+![alt text](image-96.png)
 
-
-
-
-
+#PROOF #GRADES thru Quiz 5
+![alt text](image-97.png)
 
 
 
