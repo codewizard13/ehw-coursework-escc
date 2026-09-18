@@ -1594,6 +1594,7 @@ Let's take a closer look at how to create ribbon fusion splices.
 
 https://www.youtube.com/watch?v=trYr_Gfr3J4
 
+## 1️⃣ PREPARE/CLEAN TOOLS AND WORK ENVIRONMENT
 
 ### 🛠️ Tools needed:
    - Fujikura 70R fusion splidcer
@@ -1623,6 +1624,8 @@ CLEANLINESS OF EQUIPMENT
 
 CREATE a snag-free ENVIRONMENT
 
+## 2️⃣ PREPARE FIBER FOR SPLICING
+
 - fIBER nees to be prepared to be spliced
 - When working with SPIDERWEB RIBBON, avoid OVERHANDLING the bundles and strands
 - Spiderweb ribbon can be secured with foam retention pad in a splicing tray, or possibly transition tube
@@ -1640,8 +1643,13 @@ CREATE a snag-free ENVIRONMENT
 
 ![Splice ribbon fiber exercise - first attempt (wrong)](image-118.png)
 
+## 3️⃣ MEASURE AND CUT FIRST RIBBON
+
 - measure and cut the first fiber to be spliced 
 - possible to store at least one service loop in the tray
+
+## 4️⃣ SLIDE PROTECTIVE SLEEVE ONTO FIBER GROUPS TO BE SPLICED
+
 - slice protection sleeve (heat shrink tubing) on the fiber to be spliced
 - before aligning fibers make sure hands free of dirt/contamination
 - take 18-20" of fiber and align the length by sliding fingers up the fibers slowly to ensure correct orientation and none are crossed.
@@ -1652,6 +1660,7 @@ CREATE a snag-free ENVIRONMENT
 
 ![Install fiber holder into fusion splicer with the hinge to the heater](image-119.png)
 
+## 5️⃣ LOAD FIBERS IN FIBER HOLDER
 
 - install fibers into fiber holder with about 4 inches exposed
 - make sure the blue fiber is to the hinge
@@ -1662,14 +1671,23 @@ CREATE a snag-free ENVIRONMENT
 - keep the amojnt of fiber displayed to a minimum
 - inspect the thermal stripper to be sure it is clean and ready for use
   - incl. checking the stripping channel, the slide, blades, friction pad (use brush to clean)
+
+## 6️⃣ INSERT FIBER HOLDER INTO THERMAL STRIPPER
+
 - insert loaded fiber holder into the thermal stripper and ensure it is fully seated
 - confirm all fibers are lying flat in the stripping channel and they are not crossed
 - verify proper length of fiber to be stripped is ready and slowly close the cover of the thermal stripper
 - once cover is closed, firm pressure needs to be applied at the thumb locations on each side of the blades, it must continue  during the entire stripping process
+
+## 7️⃣ STRIP FIBERS WITH THERMAL STRIPPER
+
 - after ready light turns from red to green, open slide in steady/firm motion maintaining pressure on each thumb location, continue to slide the stripper to open position
 - open carrier cover and confirm that all coating has been removed - if any coating remains, this step will need to be completed
 - once all coating has been removed slide the fiber holder out being careful not to damage the exposed 125 micron fibers
 - inspect the holder to confirm that all 12 fibers are present and not damaged
+
+## SET FIBER HOLDER WITH STRIPPED FIBER IN SAFE LOCATION
+
 - set the fiber holder with stripped fiber in a safe location
 - clean all debris from thermal stripper
 
@@ -1677,13 +1695,18 @@ CREATE a snag-free ENVIRONMENT
 
 @6:49 - https://youtu.be/trYr_Gfr3J4?si=ilZeiXCi9QppsiYc&t=409 CLEANING
 
+## CLEAN FIBERS WITH CLEANING FLUID
+
 - dampen a lint-free wipe with AFL fiber prep fluid or approved cleaner
 - clean a group of fibers until a squeak is heard
 - use a clean surface on the fibers for each pass
-- lick the fibers to align them and remove any adhesion from the cleaning fluids
+- **Flick** the fibers to align them and remove any adhesion from the cleaning fluids
 - inspect the fibers and ensure all are free of cleaning fluid
 - ensure no broken or crossed fibers
 - should not be splayed excessively
+
+## PREPARE A HIGH-PRECISION CLEAVER
+
 - a high-precision cleaver is needed when splicing ribbon fiber (AFL CT30 in this case) 
 
 
@@ -1710,10 +1733,13 @@ CREATE a snag-free ENVIRONMENT
 - depress top of CT30 firmly to activate the cleave action
 - advance the fiber chard collection wheel if applicable
 
+## REMOVE CLEAVED FIBERS AND FIBER HOLDER FOR INSPECTION
 
 - remove the fiber holder for inspection
 - examine for damaged or missing fibers
 - DO NOT RE-CLEAN AFTER CLEAVING
+
+## SET FIBER HOLDER INTO SPLICER
 
 - Set the fiber holder into the splicer with the hinge side toward the heater
 
@@ -1725,23 +1751,43 @@ CREATE a snag-free ENVIRONMENT
 
 ![alt text](image-125.png)
 
-- if fibers not aligned properly, remove fiber holder and place it again
+- ***if fibers not aligned properly, remove fiber holder and place it again***
 - if still not aligned, a lint-free swab or similar may be used to manually manipulate the fibers to help seat them
 - repeat this process on the fibers to be spliced to
 
+## INSTALL SECOND FIBER HOLDER IN SPLICER TO INITIATE SPLICING
+
 - once the second fiber holder has been installed the 70R will activate automatically closing the splice chamber covers and initiating the splice process
+
+## COVER AUTOMATICALLY OPENS ONCE SPLICE COMPLETED
+
 - once splice is completed the 70R automatically opens the splice cover
+
+## INSPECT SPLICE AND COMPUTER RESULTS
+
 - compare the splice results to local requirements
 - mechanical strength of the splice has been tested by proof test
+
+## BREAK AND RESPLICE IF NEEDED
+
 - if splice has defects or doesn't meet the minimum loss requirements it will have to be broken and the process repeated
+
+## POSITION SPLICE SLEEVE ON ONE SIDE AND CAREFULLY LIFT OUT
+
 - position splice sleeve close to the fiber holder and lift the clamp on the opposite side to release the tension from the proof-test 
 - support splice sleeve and release the second fiber holder clamp
-- holding fibers taut, use the positioning ribs on the heater to center to splice sleeve over the splice
+- holding fibers taut, use the positioning ribs on the heater to **center to splice sleeve over the splice**
+
+## LOWER SPLICE INTO THE HEATER
+
 - keep tension on the fibers and lower the centered splice sleeve into the heater
 - this will trigger the 70R's heater cover to close and initiate the heater
 - remove the heated sleeve and inspect for defects
 - it is common for SWR to appear rolled in the sleeve - this is not a defect
 - set splice sleeve to cool prior to installing into a splice tray
+
+
+## REVIEW
 
 > - #GOTCHA: Cleaning is essential to succesful splicing
 > - Splicing should be conducted in a snag-free, well-organized work area
@@ -1756,16 +1802,47 @@ CREATE a snag-free ENVIRONMENT
 - SWR should not be overhandled at the point you wish to splice
 
 
+#PROOF
+
+![Splice ribbon fiber exercise - SECOND attempt - 100%](image-127.png)
+
+#PROOF
+
+![alt text](image-128.png)
+
+
 ---
 
 
 ## 🟣  6.6 - Mid Sheath Splicing
 
+#VIDEO
 
+- David Thompson
+- main backbone cable that comes around the road
+- lateral cable runs off into the buildings
+- you have to open the cable up and expose or express all the tubes 
+- express the fibers you need
+- cut the ones you need and weld them together with a splicing machine
+- $14-15K Fujikora splicing machines
+- all equipment is very expensive
+- OTDRs to troubleshoot the fiber, light sources, power meters, fusion splicers
+- single fiber splice is what they do, but he knows that with ribbon fiber you can do 12 at a time
 
 ---
 
+As you become more advanced, you'll be able to make a **mid sheath splice**. Your job print may require pulling a couple of fibers from a larger cable, and you don’t want to cut the entire cable and have to resplice all of the remaining cables back together. ***Mid sheath splicing is a method to access these few fibers in the middle of the cable without cutting the whole thing.***
 
+![alt text](image-129.png)
+
+![alt text](image-130.png)
+
+
+#PROOF
+
+![Grades through Module 6](image-131.png)
+
+---
 
 
 
