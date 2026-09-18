@@ -1367,6 +1367,301 @@ Depending on location, some companies separate the Installer Technician role int
 #PROOF #GRADES thru Quiz 5
 ![alt text](image-97.png)
 
+---
+
+
+# 🧰 Module 6 - Splicing
+
+## 🟣  6.1 - Tools of the Trade
+
+Fiber Optics Technicians complete many tasks during a workday. Watch the video below to learn about the first skill Eric learned in the field.  
+
+#VIDEO
+
+- Eric Smith - C Spire
+- First skil he used wsas splicing fiber, cleaning, cleaving, wrapping
+- You can do it in your sleep after awhile
+- Give everyone about a year to get comfortable with it. A year and a half
+
+---
+
+**Splicing**
+
+Welcome to the action part of the story: splicing! In this part of the course, you’ll watch fiber techs perform the surgical skills needed to splice (join) two fiber optic cables together.
+
+Splicing happens thousands of times a day in Alabama, but you’re needed to do even more! As a Fiber Tech, you’ll work in air conditioned splice trailers, on the side of a truck out in the country, or even in the air in a bucket truck!
+
+Whether you’re connecting two large 288-count fiber cables together near a commercial data center or a single fiber to a home, you’ll work with both very high-tech and very old school tools to complete your splices. During the hands-on lab, you’ll get to practice splicing fibers hundreds of times, doing exactly what the techs in these videos are doing. Your splicing skills will connect your Alabama neighbors to the fiber optic story. Let’s take a look at some industry professionals in the field using tools.
+
+---
+
+#VIDEO
+
+- Alabam Power
+- Fujikure 90s: 
+  - single fibers, use to do actual splicing and to heat the tubes up
+  - Cleave with CT50 cleavers
+  - 3 degrees is the max that it will splice at
+  - Use corning fiber gel cleaner and fiber-clean
+  - even a small particle can cause a disruption in traffic from micro bends
+  - 3 different types of strippers - clean everything off the fiber, then wipe it down, then cleave it
+
+---
+
+
+## 🟣  6.2 - Splicing a Fiber Cable
+
+As you learn more about splicing, you will find there are several splicing methods used in the field. **Fusion splicing** is a common splicing method used **for connecting single mode fiber**. This method permanently binds the ends of two fibers together using the heat of an electric arc. The table below shows the pros and cons of fusion splicing. 
+
+![alt text](image-98.png)
+
+| Pros | Cons |
+| --- | --- |
+| *   The two fiber ends are permanently joined. This allows for the least amount of signal loss possible (between 0.05dB and 0.02dB of loss).  <br>    <br>*   The fusion splicer does all of the work to align, create, and test each splice. | *   The equipment used to fusion splice is very expensive ($8,000+). |
+
+**TOOLS:**
+
+
+**Fiber Cutters**
+
+This tool is used to cut the fiber through all parts before stripping.
+
+![alt text](image-99.png)
+
+**Fiber Stripper**
+
+This tool is used to cut off the buffer tube without damaging the fiber. Next, it is used to remove the cladding. 
+
+![alt text](image-100.png)
+
+
+**Needle Nose Pliers**
+
+This tool is used to pull away the outer jackets to get to the fiber. 
+
+![alt text](image-101.png)
+
+
+**Optical Cleaning Wipes**
+
+This tool is used to remove the weather gel from the fiber.  It is also used to clean the fiber before it is cleaved and terminated. 
+
+![Optical Cleaning Wipes](image-102.png)
+
+
+**One Click Cleaner**
+
+This tool is used to clean the end of the fiber connector, before plugging it into any equipment. 
+
+![One-Click Cleaner](image-103.png)
+
+
+**Cleaver**
+
+This tool is used to cut the stripped fiber to the exact length needed for a splice. 
+
+![Cleaver](image-104.png)
+
+
+**Fusion Splicer**
+
+This tool is used to "weld" or terminate the fibers together for a more pure connection. 
+
+![Fusion Splicer](image-105.png)
+
+
+**OTDR**
+
+This tool is used to test the performance of newly installed fiber links and to detect problems that may exist in them.  Its purpose is to detect, locate, and measure elements at a location on a fiber optic link. **OTDR works like radar**.  It sends a pulse down the fiber and looks for a return signal.  Simply by connecting one end of the fiber, an OTDR can calculate **fiber attenuation, uniformity, splice and connector**.  In simple terms, it will test a fiber to make sure the signal is good or detect the location of a break or a bad termination. 
+
+![OTDR](image-106.png)
+
+
+---
+
+Read and answer each question.  Check your answer by flipping the card. 
+
+1.  ▶️ What is a fusion splice?
+    ◀️ A connection of two fibers using heat to join them
+    
+2.  ▶️ What does a fusion splice do?
+    ◀️ Permanently binds two fibers together via the heat of an electric arc.
+    
+3.  ▶️ What tools are required for fusion splicing?
+    ◀️ Fiber stripper, pliers, optical cleaning wipes, cleaning alcohol, cleaver, heat shrink sleeves, fusion splicer, and OTDR.
+    
+4.  ▶️ What’s great about a fusion splice?
+    ◀️ The machine does all of the work to align, create, and test each splice. It is a permanent joining with the least amount of signal loss, 0.05 - 0.2dB.
+    
+5.  ▶️ Any drawbacks to fusion splicing?
+    ◀️ The equipment is very expensive ($8000+).
+    
+6.  ▶️ On which type of fiber is fusion splicing used? 
+    ◀️ When splicing single mode fiber.
+
+---
+
+> - #TIP: The fusion splicer will test the fiber after fusing
+
+
+
+---
+
+
+## 🟣  6.3 - Fusion Splicing
+
+
+Now let’s look at a fusion splice, step by step. Remember, you’ll get hands-on practice with these steps over and over in the lab portion of this course. You’ll also have lots of help on the job as you learn this new skill.
+
+#VIDEO
+
+- insert one side of the fiber in the splice protective sleeve
+- Strip the fiber's coating
+- Clean the fiber with alcohol wipes removing any dirt or coating particles
+- Cleave the ends of the fibers precisely at a 90degree angle
+- Brace the fibers in the fusion splicing device
+- Start the fusion splicing process
+- Heat shrink the protective sleeve around the splice (**shrink wrap tube**)
+
+![alt text](image-107.png)
+
+![alt text](image-108.png)
+
+---
+
+#PROOF
+
+![alt text](image-109.png)
+
+Let's review the tools needed for fusion splicing. 
+
+Take a look at each picture and identify the name of the tool. Click on the card to flip and check your answer.
+
+![alt text](image-110.png)
+
+
+
+---
+
+
+## 🟣  6.4 - Fusion Splicer Readings
+
+
+Fusion splicers are expensive and powerful tools for Fiber Optics Technicians. The image below shows the readings for a successful splice. Click on the hot spots to learn more about what is shown on screen.
+
+![Readings for successful fusion splice](image-111.png)
+
+**Fiber Image**
+
+A visual of each fiber is shown on screen. 
+
+**User Prompt**
+
+Statuses appear at the top providing information to the technician.
+
+**Loss Column**
+
+This column provides the amount of loss for each fiber.
+
+**Error Column**
+
+This column provides error messages for each fiber.  
+
+---
+
+
+What if the splice doesn’t work? The fusion splicer will tell you exactly what went wrong. The image below shows the screen reading for an unsuccessful splice. Click on the hotspot to learn more about what is shown on screen.
+
+![Readings for an UNSUCCESSFUL fusion splice](image-112.png)
+
+
+
+---
+
+
+## 🟣  6.5 - Ribbon Splicing
+
+
+Some jobs are going to call for **splicing huge cables with hundreds of fibers inside**. An example of this is when a tech extends a main trunk line farther into a rural area.  A cable with 288 fibers in it will be attached to another cable with 288 fibers. That’s a lot of splicing!  In these cases, some companies choose to create RIBBON fusion splices with a special **ribbon fusion splicer**.  This splicer **can join up to 12 fibers at a time** in a ribbon splicer. It looks like a colorful ribbon.
+
+#CASE_STUDY
+
+> when a tech extends a main trunk line farther into a rural area
+
+Let's take a closer look at how to create ribbon fusion splices. 
+
+![alt text](image-113.png)
+
+https://www.youtube.com/watch?v=trYr_Gfr3J4
+
+
+### 🛠️ Tools needed:
+   - Fujikura 70R fusion splidcer
+
+
+![alt text](image-114.png)
+
+- RSO3 thermal stripper
+- CT30 high precision cleaver
+- (optional) AFL vgroove cleaning kit
+- Lint free chem wipes
+- AFL FCC cleaning fluid
+- 12MM ribbon splicer sleeve
+
+SETTINGS: FUSION SPLICER
+- 12 fibers
+- 40mm max protection sleeve
+- single or multi-mode
+
+HIGH HEAT ON THERMAL STRIPPER
+- on RS03 - setting 4 is correct
+
+CLEANLINESS OF EQUIPMENT
+- Splicer and vgroove must be free of dust and debris
+- thermal stripper - ensure no dust/debris on fiber holder channel, blades, stripping channel
+- clean retention pads and rollers
+
+CREATE a snag-free ENVIRONMENT
+
+- fIBER nees to be prepared to be spliced
+- When working with SPIDERWEB RIBBON, avoid OVERHANDLING the bundles and strands
+- Spiderweb ribbon can be secured with foam retention pad in a splicing tray, or possibly transition tube
+
+![Splicing tray](image-116.png)
+
+![Foam retention pads](image-115.png)
+
+- binders should be tied and cut at the tray entrance to maintain traceability
+- measure and cut
+
+![Binders should cut at the tray entrance](image-117.png)
+
+#### @3:05 - TOOLS PART OVER - NOW  
+
+![Splice ribbon fiber exercise - first attempt (wrong)](image-118.png)
+
+- measure and cut the first fiber to be spliced 
+- possible to store at least one service loop in the tray
+- slice protection sleeve (heat shrink tubing) on the fiber to be spliced
+- before aligning fibers make sure hands free of dirt/contamination
+- take 18-20" of fiber and align the length by sliding fingers up the fibers slowly to ensure correct orientation and none are crossed.
+- repeat on last 6 inches to be spliced
+- consistent method of loading fibers into fiber holders helps prevent transposition
+- always install with blue fiber twoard the hinge of the fiber holder
+- always install fiber holder into fusion splicer with the hinge to the heater
+
+![Install fiber holder into fusion splicer with the hinge to the heater](image-119.png)
+
+
+---
+
+
+## 🟣  6.6 - Mid Sheath Splicing
+
+
+
+---
+
 
 
 
