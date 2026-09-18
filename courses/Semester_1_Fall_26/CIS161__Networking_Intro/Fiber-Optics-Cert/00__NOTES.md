@@ -1653,6 +1653,109 @@ CREATE a snag-free ENVIRONMENT
 ![Install fiber holder into fusion splicer with the hinge to the heater](image-119.png)
 
 
+- install fibers into fiber holder with about 4 inches exposed
+- make sure the blue fiber is to the hinge
+- maintain the fibers in the holder channel and slowly draw them back until aprox 1" exposed 1 inch
+- examine for any cross fibers or debris, can cause broken fibers - the fiber should be removed and reset into the fiber-holder
+- slowly secure the clamps of the fiber holder in place
+- make sure all 12 fibers are seated in the fiber holder and in the correct orientation
+- keep the amojnt of fiber displayed to a minimum
+- inspect the thermal stripper to be sure it is clean and ready for use
+  - incl. checking the stripping channel, the slide, blades, friction pad (use brush to clean)
+- insert loaded fiber holder into the thermal stripper and ensure it is fully seated
+- confirm all fibers are lying flat in the stripping channel and they are not crossed
+- verify proper length of fiber to be stripped is ready and slowly close the cover of the thermal stripper
+- once cover is closed, firm pressure needs to be applied at the thumb locations on each side of the blades, it must continue  during the entire stripping process
+- after ready light turns from red to green, open slide in steady/firm motion maintaining pressure on each thumb location, continue to slide the stripper to open position
+- open carrier cover and confirm that all coating has been removed - if any coating remains, this step will need to be completed
+- once all coating has been removed slide the fiber holder out being careful not to damage the exposed 125 micron fibers
+- inspect the holder to confirm that all 12 fibers are present and not damaged
+- set the fiber holder with stripped fiber in a safe location
+- clean all debris from thermal stripper
+
+> - clean fibers are essential to successful splicing and maintaining proper equipment performance
+
+@6:49 - https://youtu.be/trYr_Gfr3J4?si=ilZeiXCi9QppsiYc&t=409 CLEANING
+
+- dampen a lint-free wipe with AFL fiber prep fluid or approved cleaner
+- clean a group of fibers until a squeak is heard
+- use a clean surface on the fibers for each pass
+- lick the fibers to align them and remove any adhesion from the cleaning fluids
+- inspect the fibers and ensure all are free of cleaning fluid
+- ensure no broken or crossed fibers
+- should not be splayed excessively
+- a high-precision cleaver is needed when splicing ribbon fiber (AFL CT30 in this case) 
+
+
+![alt text](image-121.png)
+
+
+
+![alt text](image-120.png)
+
+-  be sure ct30 is activated and ready to cleave
+
+![AFL CT30 high precison fiber cleaver](image-122.png)
+
+-  inspect the cleaver blade region to be sure it is free of fiber shards
+-  install loaded fiber holder in the cleaver
+-  make sure its fully seated and snapped down
+-  ensure all 12 fibers are long enough to be resting on the rubber roller
+
+![Fibers in cleaver are long enough to rest on rubber roller](image-123.png)
+
+
+- make sure the fibers are not too long or bowed and that they are flat and not crossed
+- there should be no debris
+- depress top of CT30 firmly to activate the cleave action
+- advance the fiber chard collection wheel if applicable
+
+
+- remove the fiber holder for inspection
+- examine for damaged or missing fibers
+- DO NOT RE-CLEAN AFTER CLEAVING
+
+- Set the fiber holder into the splicer with the hinge side toward the heater
+
+![alt text](image-124.png)
+
+- helps prevent transposition while ribbon splicing
+- ensure its firmly seated and that fiber exiting splicer won't pinch or bind when covers are closed
+- confirm all 12 fibers are properly seated in the appropriate v-groove and no visible debris
+
+![alt text](image-125.png)
+
+- if fibers not aligned properly, remove fiber holder and place it again
+- if still not aligned, a lint-free swab or similar may be used to manually manipulate the fibers to help seat them
+- repeat this process on the fibers to be spliced to
+
+- once the second fiber holder has been installed the 70R will activate automatically closing the splice chamber covers and initiating the splice process
+- once splice is completed the 70R automatically opens the splice cover
+- compare the splice results to local requirements
+- mechanical strength of the splice has been tested by proof test
+- if splice has defects or doesn't meet the minimum loss requirements it will have to be broken and the process repeated
+- position splice sleeve close to the fiber holder and lift the clamp on the opposite side to release the tension from the proof-test 
+- support splice sleeve and release the second fiber holder clamp
+- holding fibers taut, use the positioning ribs on the heater to center to splice sleeve over the splice
+- keep tension on the fibers and lower the centered splice sleeve into the heater
+- this will trigger the 70R's heater cover to close and initiate the heater
+- remove the heated sleeve and inspect for defects
+- it is common for SWR to appear rolled in the sleeve - this is not a defect
+- set splice sleeve to cool prior to installing into a splice tray
+
+> - #GOTCHA: Cleaning is essential to succesful splicing
+> - Splicing should be conducted in a snag-free, well-organized work area
+
+- equipment should be calibrated and cleaned
+- fusion splicers should be properly ARC-calibrated
+
+![Fusion Splicer ARC calibration menu option](image-126.png)
+
+- accurate counts of cleaves should be noted before rotating or replacing blades
+- thermal strippers should be cleaned a properly adjusted
+- SWR should not be overhandled at the point you wish to splice
+
+
 ---
 
 
