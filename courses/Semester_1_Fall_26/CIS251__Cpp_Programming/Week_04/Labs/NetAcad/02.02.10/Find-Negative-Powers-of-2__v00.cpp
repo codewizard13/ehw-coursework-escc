@@ -4,11 +4,13 @@
     2.2.10 LAB:  Finding negative powers of 2
 
     Student: Eric Hepperle
-    Created: 2026-09-18
+    Created: 2026-09-20
 
-    VERSION: 1.0
+    VERSION: 0.0
 
     STATUS: FULLY WORKING
+
+    PURPOSE: This is the sample solution from the course.
 
     Instructions:
      We want you to modify your previous program (Lab 2.2.9) to make it able to
@@ -26,7 +28,7 @@
     - Full instructions: ./00_instructions.md
 
     📝 Lessons Learned:
-    - #GOTCHA: `unsigned long long` only allows integers, so any decimal portion is discarded. The solution was using `double` instead.
+    - ...
 
     - Full lessons learned: ./01__lessons-learned.md
 
@@ -45,40 +47,23 @@
 */
 
 #include <iostream>
-#include <iomanip>
+
 using namespace std;
 
-int main()
-{
+int main(void) {
+	int n;
 
-    // DEFINE VARIABLES
-    double result = 1;
-    int pow;
+	// 2 to the power of 0 is 1
+	double pow = 1;
 
-    // GET POWER NUBMER FROM USER
-    cout << endl;
-    cout << "Enter the negative power of 2 to calculate: ";
+	cout << "n? ";
+	cin >> n;
+	for(int i = 0; i < n; i++) 
 
-    // RECEIVE & VALIDATE INPUT
-    if (!(cin >> pow))
-    {
-        cout << "Invalid input: Must be a positive or negative integer\n\n";
-        return 0;
-    }
-
-    // CALCULATE RESULT BASED ON NEGATIVE EXPONENT
-    // NOTE: we'll need this value if negative exponent also
-    for (int i = 0; i < pow; i++)
-    {
-
-        result /= 2.0;
-
-    }
-
-
-    cout.precision(20);
-
-    cout << result << endl;
-    cout << "\n\n";
-    return 0;
+		// evaluate next negative power of 2
+		pow /= 2.0;
+	
+	cout.precision(20);
+	cout << pow << endl;
+	return 0;
 }
