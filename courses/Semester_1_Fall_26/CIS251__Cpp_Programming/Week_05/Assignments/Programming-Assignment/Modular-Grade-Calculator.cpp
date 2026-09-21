@@ -15,6 +15,7 @@
         coordinate the program rather than contain all logic.
 
     Lessons Learned:
+    - Seemed like this would be a perfect case for switch statement, but because switch doesn't natively handle ranges well, if-else was better in this case
     - Returning `0` for invalid input fails because `0` is also a valid score. `calcGradeLetter(0)` correctly returns `F`, so the program cannot distinguish “invalid input” from a real zero-grade. Use an out-of-range sentinel like `-1.0` instead.
 
     GitHub: https://github.com/codewizard13
@@ -72,10 +73,10 @@
 #include <iomanip>
 using namespace std;
 
-const double INVALID_SCORE = -1.0;
+const double INVALID_SCORE = -1.0; // sentinel value
 
 // FUNCTION PROTOTYPES
-double readScore(double score);
+double readScore();
 char calcGradeLetter(double score);
 void displayGrade(char grade_ltr);
 
@@ -83,31 +84,32 @@ int main(void)
 {
 
     // Declare Variables
-    double score = 0;
+    double score = readScore();
     char grade_ltr;
 
-    cout << "*******************\n";
-
-    grade_ltr = calcGradeLetter( readScore(score) );
-
-    if (!(grade_ltr == '\0')) {
-        displayGrade( grade_ltr );
+    if (score != INVALID_SCORE)
+    {
+        cout << "*******************\n";
+        grade_ltr = calcGradeLetter(score);
+        displayGrade(grade_ltr);
+        cout << "*******************\n\n";
     }
-    
 
-    cout << "*******************\n\n";
     return 0;
 }
 
 /*** CUSTOM FUNCTIONS  ***/
 
-double readScore(double score)
+double readScore()
 {
+    double score;
+
     cout << "Enter the score (0-100, decimals allowed): ";
 
-    if (!(cin >> score) || score < 0 || score > 100) {
-        cout << "Invalid input: score must be a positive double or int 0-100." << endl;
-        return 0;
+    if (!(cin >> score) || score < 0.0 || score > 100.0)
+    {
+        cout << "Invalid input: score must be a positive number from 0-100." << endl;
+        return INVALID_SCORE;
     }
 
     return score;
@@ -116,31 +118,37 @@ double readScore(double score)
 char calcGradeLetter(double score)
 {
 
-    if (score < 0.0 || score > 100.0) {
+    if (score < 0.0 || score > 100.0)
+    {
         return '?';
     }
-    else if (score >= 90.0) {
+    else if (score >= 90.0)
+    {
         return 'A';
     }
-    else if (score >= 80.0) {
+    else if (score >= 80.0)
+    {
         return 'B';
     }
-    else if (score >= 70.0) {
+    else if (score >= 70.0)
+    {
         return 'C';
     }
-    else if (score >= 60.0) {
+    else if (score >= 60.0)
+    {
         return 'D';
     }
-    else {
+    else
+    {
         return 'F';
     }
-
 };
 
-void displayGrade(char grade_ltr) {
+void displayGrade(char grade_ltr)
+{
 
-    if (!(grade_ltr == '\0')) {
+    if (!(grade_ltr == '\0'))
+    {
         cout << "Your grade = " << grade_ltr << endl;
     }
-
 };
