@@ -42,33 +42,33 @@ By the end of this week, you should be able to explain and apply:
 
 ### 2\. Required W3Schools / Google reading
 
-1.  **[W3Schools — C++ FunctionsLinks to an external site.](https://www.w3schools.com/cpp/cpp_functions.asp)**  
+1.  **[W3Schools — C++ Functions](https://www.w3schools.com/cpp/cpp_functions.asp)**  
     Study declaration, definition, calling, and placing prototypes before `main()`.
-2.  **[W3Schools — Function ParametersLinks to an external site.](https://www.w3schools.com/cpp/cpp_function_param.asp)**  
+2.  **[W3Schools — Function Parameters](https://www.w3schools.com/cpp/cpp_function_param.asp)**  
     Study parameters versus arguments and multiple parameters.
-3.  **[W3Schools — Return ValuesLinks to an external site.](https://www.w3schools.com/cpp/cpp_function_return.asp)**  
+3.  **[W3Schools — Return Values](https://www.w3schools.com/cpp/cpp_function_return.asp)**  
     Study non-`void` functions and using returned values.
-4.  **[W3Schools — Pass by ReferenceLinks to an external site.](https://www.w3schools.com/cpp/cpp_function_reference.asp)**  
+4.  **[W3Schools — Pass by Reference](https://www.w3schools.com/cpp/cpp_function_reference.asp)**  
     Read and type the reference-parameter example; use only where the assignment directions call for it.
-5.  **[W3Schools — Function OverloadingLinks to an external site.](https://www.w3schools.com/cpp/cpp_function_overloading.asp)**  
+5.  **[W3Schools — Function Overloading](https://www.w3schools.com/cpp/cpp_function_overloading.asp)**  
     Study how functions can share a name with different parameter lists.
-6.  **[W3Schools — C++ ScopeLinks to an external site.](https://www.w3schools.com/cpp/cpp_scope.asp)**  
+6.  **[W3Schools — C++ Scope](https://www.w3schools.com/cpp/cpp_scope.asp)**  
     Study local and global scope. Prefer local variables for the graded assignment.
 
 ### 3\. Required TutorialsPoint reading
 
-1.  **[TutorialsPoint — C++ FunctionsLinks to an external site.](https://www.tutorialspoint.com/cplusplus/cpp_functions.htm)**  
+1.  **[TutorialsPoint — C++ Functions](https://www.tutorialspoint.com/cplusplus/cpp_functions.htm)**  
     Study declaration, definition, call, parameters, and return values.
-2.  **[TutorialsPoint — C++ Variable ScopeLinks to an external site.](https://www.tutorialspoint.com/cplusplus/cpp_variable_scope.htm)**  
+2.  **[TutorialsPoint — C++ Variable Scope](https://www.tutorialspoint.com/cplusplus/cpp_variable_scope.htm)**  
     Review local versus global scope and lifetime.
 
 ### Assigned Videos
 
 ### 4\. Required video study
 
-1.  **[Bro Code — C++ user defined functions](https://www.youtube.com/watch?v=vKTYM-DJDiw)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=vKTYM-DJDiw)**  
+1.  **[Bro Code — C++ user defined functions (#15)](https://www.youtube.com/watch?v=vKTYM-DJDiw)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=vKTYM-DJDiw)**  
     Type the function examples and identify return type, function name, parameters, and body.
-2.  **[Bro Code — C++ overloaded functions.](https://www.youtube.com/watch?v=Mfyt_x9MjiY)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=Mfyt_x9MjiY)**  
+2.  **[Bro Code — C++ overloaded functions (#16)](https://www.youtube.com/watch?v=Mfyt_x9MjiY)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=Mfyt_x9MjiY)**  
     Watch for concept mastery; overloading is practiced but not required unless stated.
 
 **How to study the videos:** Do not watch passively. Pause before the instructor runs each short example, predict the output, type the example yourself, compile it, then change one value or condition and run it again.

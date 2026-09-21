@@ -1,4 +1,4 @@
-# 2.2.10 LAB  Finding negative powers of 2
+# 3.2.10 LAB  ???
 
 > https://www.netacad.com/launch?id=4e9bfae1-812a-47b1-9052-43a5f27db6ff&tab=curriculum&view=8d0e2ef3-bb8c-59d0-9575-c0b091be46e8
 

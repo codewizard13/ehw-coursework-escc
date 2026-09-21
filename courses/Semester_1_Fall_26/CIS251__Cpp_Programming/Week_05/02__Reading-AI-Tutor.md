@@ -7,100 +7,94 @@
 > [🏚️ README](../../../README.md) | [📁 Courses](../../index.md) | [📚 Vocabulary](../../Vocabulary.md) | [🗓️ Assignments Schedule](../Assignments_Schedule.md) | [🔖 Bookmark](#bookmark)
 
 
-# CIS 251 - C++ Programming:  <br> Week 4 Overview - Loops, Repetition, and Algorithmic Tracing
+# CIS 251 - C++ Programming:  <br>  Week 5 Reading Tutorial & AI Tutor
 
 CIS 251: C++ Programming · Fall 2026 · Dr. Rosalyn Warren
 
-# Week 4: Loops and Repetition
+# Week 5: Functions, Parameters, Return Values, and Program Decomposition
 
 **Purpose:** This page is your primary weekly tutorial. The external resources are supplemental. If you cannot reach every external site, study this page carefully, type and run the examples, complete the practice tasks, and use the AI Tutor for explanations.
 
 ## Learning Objectives
 
-*   Explain initialization, condition, and update in a loop.
-*   Use while, do-while, and for loops.
-*   Build counters, accumulators, and sentinel loops.
-*   Avoid common infinite-loop and off-by-one errors.
-*   Trace loop execution manually.
+*   Explain why functions improve program organization.
+*   Write function prototypes and definitions.
+*   Pass information with parameters.ZZ
+*   Return a value from a function.
+*   Distinguish local scope from broader scope.
 
 **How to study this page:** Read one section at a time. Before running each code example, predict what it will do. Then type it yourself rather than copying it. Modify at least one value or condition and observe the effect.
 
-## 1\. Why Loops Matter
+## 1\. Decomposing a Problem
 
-A loop repeats a block of code while a condition remains true. Without loops, a program that processes 100 values might require 100 nearly identical statements. Loops let the algorithm describe repetition once.
+A function is a named block of code that performs one focused task. Instead of placing every operation inside `main()`, divide a program into meaningful units such as `getInput()`, `calculateTotal()`, and `displayResults()`.
 
-## 2\. while and do-while
+## 2\. Functions That Return Values
 
 ```
-int count = 1;
-while (count <= 5) {
-    cout << count << endl;
-    count++;
+double calculateTax(double subtotal, double rate) {
+    return subtotal * rate;
 }
 ```
 
-A `while` loop checks the condition before each iteration, so it may execute zero times. A `do-while` checks after the body, so it executes at least once.
+The return type is `double`. The parameters receive values supplied by the caller. The `return` statement sends one value back.
 
 ```
-int choice;
-do {
-    cout << "Enter 1 to continue or 0 to stop: ";
-    cin >> choice;
-} while (choice != 0);
+double tax = calculateTax(100.0, 0.09);
 ```
 
-## 3\. for Loops
+## 3\. void Functions
 
 ```
-for (int i = 0; i < 5; i++) {
-    cout << "Iteration " << i << endl;
+void printHeading() {
+    cout << "CIS 251 Calculator" << endl;
 }
 ```
 
-A `for` loop places initialization, condition, and update together and is especially useful when the number of repetitions is known.
+A `void` function performs an action but does not return a value.
 
-## 4\. Counters and Accumulators
+## 4\. Prototypes and Scope
 
 ```
-double total = 0.0;
-for (int i = 1; i <= 3; i++) {
-    double value;
-    cin >> value;
-    total += value;
+double calculateTax(double subtotal, double rate);
+
+int main() {
+    double tax = calculateTax(50.0, 0.09);
 }
-cout << "Total: " << total;
+
+double calculateTax(double subtotal, double rate) {
+    return subtotal * rate;
+}
 ```
 
-A **counter** tracks how many events occurred. An **accumulator** stores a running total.
+A prototype tells the compiler about the function before it is called. Variables declared inside a function are local to that function.
 
 ## Guided Practice Before Graded Work
 
-1.  Trace a for loop from i=0 through i<4 on paper.
-2.  Write a loop that prints 1 through 10.
-3.  Write a loop that totals five entered prices.
-4.  Write a sentinel loop that stops when the user enters -1.
-5.  Create a menu that repeats until Exit is selected.
+1.  Convert a repeated calculation into a function.
+2.  Write a void function that prints a menu.
+3.  Write a function that accepts two numbers and returns the larger.
+4.  Add prototypes above main() and definitions below main().
+5.  Trace which values are local to each function.
 
 ## Optional/Supplemental External Readings
 
 The tutorial above contains the required conceptual explanation. Use these resources for another explanation and additional examples:
 
-*   [W3Schools — C++ While Loop](https://www.w3schools.com/cpp/cpp_while_loop.asp)
-*   [W3Schools — C++ For Loop](https://www.w3schools.com/cpp/cpp_for_loop.asp)
-*   [W3Schools — C++ Break and Continue](https://www.w3schools.com/cpp/cpp_break.asp)
-*   [TutorialsPoint — C++ Loops](https://www.tutorialspoint.com/cplusplus/cpp_loop_types.htm)
+*   [W3Schools — C++ Functions.](https://www.w3schools.com/cpp/cpp_functions.asp)
+*   [W3Schools — C++ Function Parameters.](https://www.w3schools.com/cpp/cpp_function_param.asp)
+*   [W3Schools — C++ Function Return Values.](https://www.w3schools.com/cpp/cpp_function_return.asp)
+*   [TutorialsPoint — C++ Functions.](https://www.tutorialspoint.com/cplusplus/cpp_functions.htm)
 
 ## Instructional Videos
 
 For the embedded Bro Code playlist, focus on the following lesson topics this week:
 
-> https://www.youtube.com/watch?v=-TkoO8Z07hI
+*   user-defined functions
+*   return values
+*   parameters / arguments
 
-
-*   while loops
-*   do-while loops
-*   for loops
-*   break and continue
+### Bro Code — C++ User-Defined Functions (#15)
 
 ### Bro Code — C++ Tutorial Playlist
 
@@ -108,7 +102,7 @@ Use this playlist as a second explanation of the week's concepts. Watch the less
 
 ## Preparing for This Week's Programming Assignment
 
-The Week 4 program should use repetition, counters/accumulators, and previously learned decisions. No functions or arrays are required unless the assignment explicitly states otherwise.
+> Your Week 5 program should reorganize previously learned input, calculations, decisions, and/or loops into clear functions. Functions are the new concept; the underlying calculations should already be familiar.
 
 **Readiness rule:** You should be able to complete the guided-practice tasks without copying a finished solution before beginning the graded programming assignment.
 
@@ -116,10 +110,11 @@ The Week 4 program should use repetition, counters/accumulators, and previously 
 
 Answer these in your own words before moving to graded work. If you cannot answer one, return to the relevant section or ask the AI Tutor for an explanation.
 
-1.  Which loop is guaranteed to execute at least once?
-2.  What three parts control a typical for loop?
-3.  What causes an infinite loop?
-4.  What is the difference between a counter and an accumulator?
+1.  What is the difference between a parameter and an argument?
+2.  When should a function return a value?
+3.  What does void mean?
+4.  Why might a prototype be needed?
+5.  What is local scope?
 
 ## CIS 251 AI Tutor
 
