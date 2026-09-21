@@ -10,7 +10,7 @@ Ungraded, 100 Possible Points
 
 ### Programming Task
 
-Modular Grade Calculator: create separate functions to read/validate a score, calculate a letter grade, and display the result. main() must coordinate the program rather than contain all logic.
+**Modular Grade Calculator:** create separate functions to read/validate a score, calculate a letter grade, and display the result. main() must coordinate the program rather than contain all logic.
 
 ### Required Process
 
