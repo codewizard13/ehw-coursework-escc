@@ -3,4 +3,4 @@
 
 ### **Perplexity**
 
-- Used to troubleshoot integer division issues.
+- Used to help debug issues in my code and explain sentinel values.
