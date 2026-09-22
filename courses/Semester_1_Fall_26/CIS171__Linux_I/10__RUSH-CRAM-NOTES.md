@@ -320,7 +320,7 @@ Cannot update group file.
 
 
 D
-Invalid command syntax. #CORRECT
+Invalid command syntax. #MY_GUESS
 
 
 #PROOF
@@ -415,7 +415,7 @@ exec val
 
 
 D
-export val=5000  #CORRECT
+export val=5000  #MY_GUESS
 
 
 ---
@@ -1497,6 +1497,827 @@ grpconv marketing sales
 ![alt text](image-17.png)
 
 ![alt text](image-18.png)
+
+
+
+---
+
+
+## 🟣 3.1.8 Live Lab: Configure Standard Linux Permissions (CompTIA)
+
+
+## Scenario
+
+Linux system administrators are concerned about how to protect files and directories on a Linux server. In this lab, you will interpret the existing permissions of a few files and then configure permissions for the file owner, the group, and all others for files and directories.
+
+> **Your Mission:**
+> 
+> *   Identify permissions
+> *   Create a test directory and file
+> *   Select permissions mode
+> *   Modifying Default Permissions
+> *   Modify File and Directory Ownership
+> *   Create a directory, populate it with files, and then manage its ownership values
+> *   Change the owner and group values of a directory and its contents (recursive)
+> *   Set the Immutable Flag on a file
+
+## Exam Objectives
+
+This activity is designed to test your understanding of and ability to apply content examples in the following CompTIA Linux+ objectives:
+
+*   2.2 Given a scenario, perform local account management in a Linux environment
+*   3.3 Given a scenario, apply operating system (OS) hardening techniques on a Linux system
+
+
+---
+
+
+## Identify Permissions
+
+In this section, you will identify permissions on existing system files.
+
+> This lab is designed for you to type in the commands to learn **syntax and spacing**, so ensure you double-check the command before entering.
+
+1.   Become the **student1** user with the full user environment to perform the tasks in this section.
+    
+    `su - student1`
+    
+2.   View the permissions string for all files and directories in the **student1** home directory.
+    
+    `ls -al`
+    
+    > Review the permissions assigned to the listed files and directories, identifying which bits are configured for the owner, the group, and all others.
+    
+3.   View the permissions for the **/etc/passwd** file.
+    
+    `ls -l /etc/passwd`
+    
+4.   Identify the permissions for the **owner**, **group**, and **others**.
+    
+5.   Verify the permissions below. You **must** type your answers in all lowercase and include the dash `-` character for any unassigned permission. For example, if the permission is Read/Write/Unassigned, type `rw-`
+    
+    Owner
+    
+    Group
+    
+    Other
+    
+6.   View the permissions for the **/var/log/lastlog** file.
+    
+    `ls -l /var/log/lastlog`
+    
+7.   Identify the permissions for the **owner**, **group**, and **others**.
+    
+    Owner
+    
+    Group
+    
+    Other
+
+---
+
+
+## Create a Test Directory and File
+
+In this section, you will create a directory, a file and set permissions. Then, perform all of the following tasks as **student1**. If you are not logged in as **student1**, become **student1** with the user's full environment.
+
+1.   Create the **permissions-demo** directory in **student1's** home directory.
+    
+    `mkdir permissions-demo`
+    
+2.   Change into the **permissions-demo** directory.
+    
+    `cd permissions-demo`
+    
+3.   Create a permissions demonstration directory named **DirA**.
+    
+    `mkdir DirA`
+    
+4.   Create a permissions demonstration file named **file1**.
+    
+    `touch file1`
+    
+5.   Display the current permissions on both objects.
+    
+    `ls -l`
+    
+    Confirm that you created the **permissions-demo** directory, **DirA**, and **file1**.
+
+
+---
+
+## Select Permissions Mode
+
+> Permissions are applied using the `chmod` command and either **absolute** mode or **symbolic** mode settings.
+> 
+> *   **Absolute mode** relies on octal (Base 8) values to represent access levels.
+> *   **Symbolic** mode uses letters to represent these levels.
+> *   Linux users should understand both modes.
+
+### Use Absolute Mode
+
+In this section, you will use `chmod` (change mode) to set permissions with absolute mode. Perform all of the following tasks as **student1**.
+
+> Absolute mode assigns octal (Base 8) values to the three access levels: **read = 4, write = 2, execute = 1**.
+> 
+> *   If the file owner has `rwx` access, the absolute mode value is `7` (the sum of 4+2+1).
+> *   The leftmost octal value is the user's permission, the middle value is the group's permission, and the rightmost value is the others permission.
+
+1.   Enter `chmod 755 DirA` to set permissions on **DirA** to **drwxr-xr-x**.
+    
+2.   Display permissions to see how they have changed on the directory.
+    
+    `ls -l`
+    
+3.   Set permissions on **file1** to **\-r--r-----**.
+    
+    `chmod 440 file1`
+    
+4.   Check to see how the permissions have changed on **file1**.
+    
+    `ls -l`
+    
+5.   Assign new permissions on **DirA** as **drwxr-x---**.
+    
+    `chmod 750 DirA`
+    
+6.   Check to see how the permissions have changed on **DirA**.
+    
+    `ls -l`
+    
+7.   Set the permissions on **file1** to **\-rwxr--r--**.
+    
+    `chmod 744 file1`
+    
+8.   Check to see how the permissions changed on **file1**.
+    
+    `ls -l`
+    
+> *   The final permissions state of the directory **DirA** should be: **`drwxr-x---`**.
+> *   The final permissions state of the file **file1** should be: **`-rwxr--r--`**.
+> *   Confirm that you created the correct permissions for **DirA** and **file1**.
+
+---
+
+
+### Use Symbolic Mode
+
+You will use the `chmod` command to set permissions using symbolic mode. Perform all of the following tasks as **student1**.
+
+> Symbolic mode assigns a letter to each of the three access levels (read, write, execute).
+> 
+> *   **Read = r, write = w, execute = x.** Operators such as `+`, `-`, and `=` are used to add or remove levels of access.
+
+1.   Set permissions on **DirA** for **others** as **read-only**.
+    
+    `chmod o=r DirA`
+    
+2.   Check how the permissions have changed on **DirA**.
+    
+    `ls -l`
+    
+3.   Change the permissions on **file1** to **read/write** for the **group owner** and **others**.
+    
+    `chmod go+rw file1`
+    
+4.   Check to see how the permissions have changed on **file1**.
+    
+    `ls -l`
+    
+5.   Remove all permissions on **DirA** from the **group owner** and **others**.
+    
+    `chmod go-rwx DirA`
+    
+6.   View the permissions changes on **DirA**.
+    
+    `ls -l`
+    
+7.   Remove the **write** permission for the **group owner** and **others** on **file1**.
+    
+    `chmod go-w file1`
+    
+8.   Note the permissions changes on **file1**.
+    
+    `ls -l`
+    
+    > *   The final permissions state of the directory **DirA** should be: **`drwx------`**.
+    > *   The final permissions state of the file **file1** should be: **`-rwxr--r--`**.
+    > *   Confirm that you created the correct permissions for **DirA** and **file1**.
+    
+    DirA, file1 permissions check
+
+---
+
+
+## Modifying Default Permissions with umask
+
+> In this section, you will be using **umask (user file creation mode mask)**.
+> 
+> *   umask is a _default system setting_ that controls permissions assigned to files and directories when created by a user or a process.
+> *   It essentially "masks out" (removes) certain permissions from default permissions, enhancing system security and file sharing protocols.
+> *   umask value is subtracted from default permissions to determine the final permission of new files/directories.  
+>     
+
+Perform all of the following tasks as **student1**.
+
+1.   Display the current **umask** value that defines default permissions for newly-created files and directories.
+    
+    `umask`
+    
+> How to calculate umask permissions.
+> 
+> *   **umask permission calculation:**  
+>     
+>     *   **final permission = default permission - umask**  
+>         
+>     *   For example, if your umask is 022:  
+>         
+>     *   Files: 666 - 022 = 644 (rw-r--r--)  
+>         
+>     *   Directories: 777 - 022 = 755 (rwxr-xr-x)  
+>         
+>     
+>     Common umask values
+>     
+>     | umask | Files | Dirs | Description |
+>     | --- | --- | --- | --- |
+>     | 022 | 644 | 755 | Default for many systems |
+>     | 027 | 640 | 750 | More restrictive |
+>     | 077 | 600 | 700 | Most restrictive (private) |
+>     |     |     |     |     |
+>     
+    
+    What is the current umask value?
+    
+    0644
+    
+    0640
+    
+    777
+    
+    0022
+    
+    > For standard users, no advanced permissions are set by default (the first 0), owner and group permissions aren't masked, and other user permissions are masked by 2. On the system we've been working on, the umask is not standard.
+
+
+---
+
+
+## Set umask in the .bashrc File
+
+In this section, you will configure **student1's** `.bashrc` file with a non-standard umask value. Perform all of the following tasks as **student1**.
+
+1.   Return to **student1's** home directory to perform this task.
+    
+    `cd`
+    
+2.   Open the **.bashrc** file in the **Vim** text editor.
+    
+    `vim .bashrc`
+    
+3.   Press **Page Down** to move the cursor to the bottom of the file.
+    
+4.   Press **i** to enter Insert mode.
+    
+    > You could use the built-in Vim commands **Go** to jump to the bottom of the file and switch to Insert mode with a new line.
+    
+5.   Press **End** to move to the end of the current text line, then press **Enter** to create a new line.
+    
+6.   Add the following text on the new line:
+    
+    `umask 002`
+    
+7.   Press **Esc** to exit Insert mode.
+    
+8.   Type **:wq** then press **Enter** to save and close the file.
+    
+9.   Execute the **.bashrc** file.
+    
+    `source .bashrc`
+    
+    > Executing the **.bashrc** file forces your shell to reread it to activate changes that you've made to it.
+    
+    Confirm that you successfully edited **student1's .bashrc** file and added the new **umask** value.
+
+---
+
+
+## Test New Default Permissions
+
+1.   Display the current **umask** settings.
+    
+    `umask`
+    
+    What is the new mask value?
+    
+    0640
+    
+    0002
+    
+    777
+    
+    0777
+    
+2.   Create a new file named **test-file**.
+    
+    `touch test-file`
+    
+3.   Verify that the permissions for **test-file** match the newly configured umask value.
+    
+    `ls -l`
+    
+    > *   The permissions should be: **`-rw-rw-r--`**
+    
+    Confirm that you successfully created a file with the new **umask** value.
+
+
+---
+
+## Modify File and Directory Ownership
+
+> In this section, you will:
+> 
+> *   Create a Graphics department directory where department members can store content.
+> *   Configure ownership and group associations of the directory and files.
+
+Display the current ownership and group associations for files and directories.
+
+1.   Make sure you are the `root` user. You may have to type `exit` and press `Enter` to return to root.
+    
+2.   Type the `mkdir /Graphics` command to create a new directory.
+    
+3.   Type the `touch /Graphics/README.md` command to create a new file in the directory.
+    
+4.   Type the `ls -ld /Graphics` command to display ownership information for the new directory.
+    
+5.   Type the `chown -R student1:graphicsdept /Graphics` command to change the user and group ownership for the directory and its contents.
+    
+6.   Repeat the above **ls** command to confirm the ownership change.
+    
+    Confirm student1 owns the /Graphics directory.
+    
+    Confirm that the graphicsdept groups owns the /Graphics directory.
+
+---
+
+
+## Create and Modify a Directory
+
+In this section, you will create a directory, populate it with files, and then manage its ownership values.
+
+1.   As the `root` user, create a file named **file1** in the **Graphics** directory.
+    
+    `touch /Graphics/file1`
+    
+2.   Repeat this command with **file2** and **file3** to create two additional empty files inside the directory.
+    
+    Confirm that you created **file1, file2, and file3** in the **/Graphics** directory.
+    
+3.   Display the ownership information for the **/Graphics** directory contents.
+    
+    `ls -l /Graphics`
+    
+    The owner is the creator; in this case, that is the `root` account.
+    
+4.   Set the permissions on the **/Graphics** directory and its contents to **drwxrwxr--**.
+    
+    `chmod -R 774 /Graphics`
+    
+5.   View the new permissions on the **/Graphics** directory.
+    
+    `ls -ld /Graphics`
+    
+    > The **`ls -ld`** command uses the **\-d** switch to display the directory's permissions rather than the permissions of the directory's contents. Be sure to specify the directory for which you want to view permissions.
+    
+    [more...](#)
+    
+    Confirm that you set the correct permissions on the **/Graphics** directory.
+
+---
+
+
+## Modify Ownership and Group Values
+
+Change the owner and group values of the **/Graphics** directory and its contents
+
+1.   As the root user, set the group ownership of the /Graphics directory to the **graphicsdept** group.
+    
+    `chown -R :graphicsdept /Graphics`
+    
+2.   Display the permission changes you made to the **/Graphics** directory.
+    
+    `ls -ld /Graphics`
+    
+3.   Change the ownership of **file2** to **student1**.
+    
+    `chown student1 /Graphics/file2`
+    
+4.   Confirm that **student1** is now the owner of **file2**.
+    
+    `ls -l /Graphics`
+    
+    Confirm that you changed ownership permissions on the **/Graphics** directory and for **/Graphics/file2**.
+
+
+---
+
+
+## Review lab
+
+1.  What three absolute mode digits represent the following level of access: user = rwx, group = rw, others = read
+    
+    777
+    
+    764
+    
+    rwxrw-r--
+    
+    640
+    
+2.  Which of the following best describes the purpose of the umask value?
+    
+    umask sets full access for the user, group, and others identities.
+    
+    umask clears custom permission settings from directories and files.
+    
+    umask sets no access for the user, group, and others identities.
+    
+    umask defines default permissions for newly-created directories and files.  #MY_GUESS_VERIFIED
+    
+3.  Which of the following answers best describes the effect of the following command: chown user1:sales file1
+    
+    Sets user1 as the group, sales as the owner for file1.
+    
+    Sets user1 as the owner, sales as the group for file1.
+    
+    Sets rwx for the user and the group for file1.
+    
+    Sets no access for the user and the group for file1.
+
+---
+
+
+## Grade Lab
+
+> You have completed the following tasks:
+> 
+> *   Identify permissions
+> *   Create a test directory and file
+> *   Select permissions mode
+> *   Modifying Default Permissions
+> *   Modify File and Directory Ownership
+> *   Create a directory, populate it with files, and then manage its ownership values
+> *   Change the owner and group values of a directory and its contents (recursive)
+> *   Set the Immutable Flag on a file
+
+That concludes this lab. Please ensure you check your work to submit for a grade:
+
+1.  Select check boxes to mark all tasks complete.
+2.  Submit responses to all questions/activities.
+
+> Select:
+> 
+> *   **Submit** in the bottom right corner, then **Yes, end my lab** to score and record your grade. You can relaunch again at any time.
+> *   **Save & Exit** in the top corner to save your progress and return. You will seven (7) days to complete your progress.
+
+
+--- ---- ---- END LAB
+
+
+#PROOF
+
+
+## 🟣 3.1.9 Lesson Review
+
+![alt text](image-19.png)
+
+---
+
+A user, ljenkins, contacts the help desk about an error received while removing a file from their home directory with the `rm` command. When prompted to remove the write-protected file, ljenkins entered **yes** and received an "Operation not permitted" error message:
+
+> `[ljenkins@fileserver]$ rm report.txt rm: remove write-protected regular empty file 'myfile2.txt'? **y** rm: cannot remove 'myfile2.txt': Operation not permitted`
+
+While troubleshooting the issue, you list files in the directory to see if you can discover the issue:`[ljenkins@fileserver]$ ls -al total 4 drwxr-xr-x. 2 ljenkins ljenkins 24 Feb 25 12:04 . drwx 15 ljenkins ljenkins 4096 Feb 25 11:04 .. -rw-rw-r--. 1 ljenkins ljenkins 346 Feb 25 11:32 report.txt`
+
+As the help desk technician, you attempt to remove the file with root privileges and receive the same error message. You decide to view the file attributes and receive the following output:`[helpdesk@fileserver]$ lsattr ----I----------- ./report.txt`
+
+Which of the following commands would resolve the problem and allow the file to be deleted?
+
+answer
+
+A
+
+`sudo rm -vR report.txt`
+
+B
+
+`sudo lsattr report.txt | rm report.txt`
+
+C
+
+`sudo rm --force report.txt`
+
+D
+
+`sudo chattr -i report.txt && rm report.txt`
+
+
+> #ERRATTA #GOTCHA: The capital `I` in the `lsattr` result almost certainly was meant to be a lower-case `i`, because the capital I means the file is indexed, which has nothing to do with whether it is deleteable or not
+
+---
+
+
+> lsattr lowercase i = immutable
+> - Cannot modify, rename, or delete the file.
+> - Clear it: sudo chattr -i filename
+> 
+> lsattr uppercase I = indexed directory
+> - Filesystem metadata for a directory using an htree index.
+> - Informational/read-only; not a deletion lock.
+
+
+
+---
+
+The Human Resources director for your company has been given an expanded role that covers internal training courses for the company. All the internal training course files are located in the /training/int directory.
+
+The director, whose username is pmadison, has requested ownership of all these files.
+
+Which of the following commands would you use to make pmadison the owner of all the files and directories within the /training/int directory?
+
+answer
+
+A
+chown pmadison /training/int
+
+
+B
+chown -v pmadison /training/int
+
+
+C
+chown -f pmadison /training/int
+
+
+D
+chown -R pmadison /training/int   #MY_GUESS
+
+
+---
+
+Roberto, a help desk technician, receives a call from Alex, an employee who is not able to change to a directory that they own. The following is the output from the commands that Alex entered:
+
+```sh
+[alex@linux ~]$ ls -al 
+drw-rw-rw-. 2 alex alex 6 Mar 24 16:08 Reports 
+[alex@linux ~]$ cd Reports/
+bash: cd: Reports/: Permission denied 
+[alex@linux -]$
+```
+
+Based on the output, which of the following describes the problem?
+
+answer
+
+A
+
+Alex requires administrative privileges to access their own directory.
+
+B
+
+Alex does not have the execute permission as owner of the directory. #MY_GUESS
+
+C
+
+Alex needs to view the directory's ACL for more details.
+
+D
+
+Alex needs to retype the command `cd Reports` without the forward slash (`/`) character.
+
+
+---
+
+A newly hired manager has brought a file from their previous employer and copied it to their new Linux workstation. Each time the manager tries to open or edit the file, they receive an "access denied" error. The manager is neither the owner of the file nor a member of its group
+
+Which of the following represents the LEAST set of file permissions needed for the manager to be able to read and write to the file?
+
+answer
+
+A
+111
+
+
+B
+222
+
+
+C
+444
+
+
+D
+666  #MY_GUESS
+
+
+---
+
+
+
+The following are the permissions currently assigned to the customer\_list file:
+
+`-rwxr-xr-x 1 mfoote finance 8045 July 24 2022 customer_list`
+
+You want to add the write permission for the finance group and remove all permissions for others.
+
+Which of the following commands would accomplish this task?
+
+answer
+
+A
+
+`chmod 750`
+
+B
+
+`chmod g+w,o-w customer_list`
+
+C
+
+`chmod g+w,o-r,o-x customer_list`   #MY_GUESS
+
+D
+
+`chmod 760`
+
+
+
+---
+
+
+
+Which of the following sets of permissions represent the minimal permissions required to allow a user to list the contents of a directory?
+
+answer
+
+A
+r-- #MY_GUESS
+
+
+B
+rw-
+
+
+C
+rwx
+
+
+D
+r-x   
+
+
+
+
+> - #GOTCHA:  **Newbie permission trap:** On directories, `r` lets you list names (like reading a building kiosk), but `x` lets you traverse/enter it (like badge access to the elevator). Even the owner cannot `cd` into a directory without `x`; ownership only selects the owner permission bits and allows `chmod` changes.
+
+> NOTE: Based on this gotcha, I originally would have chose `r-x` as the answer, but now I'm choosing `r--`. I also verified it in an Ubuntu VM
+
+
+
+---
+
+
+A system administrator is troubleshooting a permissions issue with a file named customer\_list. The administrator runs the following command:`setfacl -m u:gsmith:r customer_list` After this, a user named gsmith attempts to access the file.
+
+What is the impact of this command on the customer\_list file?
+
+answer
+
+A
+
+It grants the group to which gsmith belongs read access to the customer\_list file.
+
+B
+
+It removes read access for the group to which gsmith belongs to the customer\_list file.
+
+C
+
+It removes read access to the customer\_list file for the gsmith user.
+
+D
+
+It grants the user gsmith read access to the customer\_list file.  #MY_GUESS
+
+
+
+---
+
+
+
+You recently learned that by default, newly created files on Linux are assigned permissions of `rw-rw-rw-` (666), and new directories are assigned `rwxrwxrwx` (777).
+
+However, when creating a new file in the /data directory, you notice its permissions are `rw-r--r--` (644).
+
+Which of the following BEST explains why this occurs?
+
+answer
+
+A
+
+There are more restrictive permissions assigned to the /data directory, and any new files created inside that directory will inherit the more restrictive permissions. #MY_CHOICE
+
+B
+
+You are logged in as the root user, and all files created by the root user are assigned these permissions. Only normal users get `rwxrwxrwx` (777 octal) permissions on newly created files.
+
+C
+
+Because you are logged in as a normal user and not the root user, all files that you create will be created with a more restrictive set of permissions.
+
+D
+
+The umask must be set to 0022 and, therefore, block the write permission for the group owner and everyone else. #PERPLEXITY_ANSWER
+
+
+
+
+![alt text](image-20.png)
+
+
+---
+
+
+#PROOF
+
+#ERRATA: The quiz is wrong on this one -- I thought it was r-x originally, but I tested it in Ubuntu and it doesn't need x but it absolutely needs r and I can list directory contents just fine with 400 permissions
+
+![alt text](image-21.png)
+
+![alt text](image-22.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- --- --- END LESSON REVIEW ---
+
+
+
+
+
+
+
 
 
 
