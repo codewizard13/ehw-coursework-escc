@@ -13,10 +13,11 @@
 > The represent sparse notes thrown together, not perfectly organizized while cramming to complete assignments
 > It seems it will be better to complete the assignments and then go take notes later based on the format the labs are given in (it gives you the instructions and)
 
-## 📖 ??? - Live Lab: Manage Group Accounts
+# 📖 ??? - Live Lab: Manage Group Accounts
 
 
-Scenario
+## Scenario
+
 You are a junior Linux systems administrator at a mid-sized software development company. The company recently reorganized its departments, and your manager has tasked you with updating the group accounts and user memberships on the Linux server to reflect the new structure.
 
 This task is critical to ensure that team members have the correct access permissions and that the server remains organized and secure.
@@ -35,16 +36,17 @@ This activity is designed to test your understanding of and ability to apply con
 
 ---
 
-Implementing Access Control
+## Implementing Access Control
+
 As a Linux administrator, it is your job to implement a role-based access control (RBAC) system that is organized and auditable.
 
-Administrators use RBAC because it assigns permissions to groups instead of individual users, which makes managing access easier.
-This process keeps things organized, secure, and easier to track and update as needed.
+Administrators use RBAC because it assigns permissions to groups instead of individual users, which makes managing access easier. This process keeps things organized, secure, and easier to track and update as needed.
 The /etc directory is an important directory that contains nearly all of the system configuration files in Linux.
 Because the company reorganized, you need to maintain security by making sure only those who need access have the appropriate permissions.
 
-Using the /etc Directory
-In this section, you will be configuring account membership in the /etc/group file.
+## Using the /etc Directory
+
+In this section, you will be configuring account membership in the `/etc/group` file.
 
 REMEMBER: This lab is designed for you to learn syntax and spacing by typing in the commands. Ensure you double-check the command before entering.
 
@@ -56,33 +58,34 @@ Display the contents of the /etc/group file with the command cat /etc/group.
 
 Observe the structure of the file. Each line represents a group and follows this format:
 
-group_name:x:group_id:group_members
+`group_name:x:group_id:group_members`
 
-group_name: The name of the group.
-x: Placeholder for the group password (usually not used).
-group_id: The unique numeric ID assigned to the group.
-group_members: A comma-separated list of users in the group.
+- **group_name**: The name of the group.
+- **x**: Placeholder for the group password (usually not used).
+- **group_id**: The unique numeric ID assigned to the group.
+- **group_members**: A comma-separated list of users in the group.
 
 Answer the following question to check your understanding:
 
-What is the GID of the root group?
+> What is the GID of the root group?
 
 ---
 
-Create and Rename Group Accounts
+## Create and Rename Group Accounts
+
 You will create group accounts for the engineering and operations teams. By creating groups such as "engineering" and "operations," you can assign permissions and access rights to specific roles rather than individual users. This simplifies the management of permissions and ensures that users in the same role have consistent access to resources.
 
-Create the engineering group with a numeric group ID of 8000 by using the groupadd command: groupadd -g 8000 engineering.
+Create the engineering group with a numeric group ID of 8000 by using the groupadd command: `groupadd -g 8000 engineering`.
 
-The -g option in the groupadd command is used to specify the numeric Group ID (GID) for the group being created. This allows you to assign a specific GID to the group instead of letting the system automatically generate one.
+The -g option in the `groupadd` command is used to specify the numeric Group ID (GID) for the group being created. This allows you to assign a specific GID to the group instead of letting the system automatically generate one.
 
-Now, create an operations group with a numeric group ID of 8001: groupadd -g 8001 operations.
+Now, create an operations group with a numeric group ID of 8001: `groupadd -g 8001 operations`.
 
-Verify both groups were created by using the tail command again to display the last few lines of the /etc/group file: tail /etc/group.
+Verify both groups were created by using the tail command again to display the last few lines of the /etc/group file: `tail /etc/group`.
 
 The tail command is used to display the last few lines of the /etc/group file. This is helpful for quickly verifying recent changes, such as renaming a group, without having to scroll through the entire file.
 
-Next, with the groupmod command, rename the operations group to devops: groupmod -n devops operations
+Next, with the `groupmod` command, rename the operations group to devops: `groupmod -n devops operations`
 
 The -n option in the groupmod command is used to rename an existing group. This allows you to change the group's name while keeping its Group ID (GID) and other settings intact.
 
@@ -92,7 +95,8 @@ Confirm that you created the engineering group and renamed the devops group
 
 ---
 
-Add Users to Groups
+## Add Users to Groups
+
 You will create user accounts and add them to the groups you created.
 
 Create two user accounts with the useradd command: useradd testuser1.
@@ -109,18 +113,19 @@ usermod -aG devops testuser1
 
 The -aG options will append the user to the group in case the user is a member to other groups. Check out man usermod for more information.
 
-Without the -a option, the user would be removed from all other groups and only added to the specified group, which could cause unintended permission issues.
+> #GOTCHA: Without the -a option, the user would be removed from all other groups and only added to the specified group, which could cause unintended permission issues.
 
 Repeat the above steps, but this time add testuser2 to the engineering and devops groups.
 
-Verify the group memberships for both users by using the grep command: grep testuser /etc/group.
+Verify the group memberships for both users by using the grep command: `grep testuser /etc/group`.
 
 Confirm that you added both users to the engineering and devops groups.
 
 ---
 
 
-Verify Group Memberships
+## Verify Group Memberships
+
 You will display group memberships for users.
 
 Change your account to the testuser1 user with the su command: su - testuser1.
@@ -143,14 +148,15 @@ Confirm that you checked group memberships for testuser1 and testuser2.
 
 ---
 
-Remove a User from a Group
-It is important to always keep role-based access control (RBAC) in mind when managing users in an organization. In the event that a user no longer requires access to a group, you should remove them. You will remove the testuser2 account from the devops group.
+## Remove a User from a Group
 
-First, display the testuser2's group memberships again using the groups command: groups testuser2.
+It is important to always keep **role-based access control** (RBAC) in mind when managing users in an organization. In the event that a user no longer requires access to a group, you should remove them. You will remove the testuser2 account from the devops group.
 
-Next, remove testuser2 from the devops group with the gpasswd command: gpasswd -d testuser2 devops.
+First, display the testuser2's group memberships again using the groups command: `groups testuser2`.
 
-The gpasswd command is used to administer a group's membership. The -d option specifically removes a user from a group, ensuring they no longer have access to the permissions associated with that group.
+Next, remove testuser2 from the devops group with the gpasswd command: `gpasswd -d testuser2 devops`.
+
+The gpasswd command is used to administer a group's membership. ***The -d option specifically removes a user from a group***, ensuring they no longer have access to the permissions associated with that group.
 
 Use the groups command to verify that testuser2 is no longer a member of the devops group: groups testuser2.
 
@@ -160,7 +166,8 @@ Confirm that you removed testuser2 from the devops group.
 ---
 
 
-Automate Group Management with a Shell Script
+## Automate Group Management with a Shell Script
+
 Create a simple shell script to automate creating groups and adding users. Automating repetitive tasks like managing users and groups saves time and effort, especially in environments with many users and groups.
 
 Create a script named group_manager.sh: vi /etc/group_manager.sh
@@ -1503,7 +1510,7 @@ grpconv marketing sales
 ---
 
 
-## 🟣 3.1.8 Live Lab: Configure Standard Linux Permissions (CompTIA)
+# 🟣 3.1.8 Live Lab: Configure Standard Linux Permissions (CompTIA)
 
 
 ## Scenario
@@ -1987,7 +1994,7 @@ That concludes this lab. Please ensure you check your work to submit for a grade
 #PROOF
 
 
-## 🟣 3.1.9 Lesson Review
+# 🟣 3.1.9 Lesson Review
 
 ![alt text](image-19.png)
 
@@ -2257,6 +2264,1067 @@ The umask must be set to 0022 and, therefore, block the write permission for the
 ![alt text](image-22.png)
 
 
+---
+
+# 🟣 3.2.3 Lab: Set the SUID Bit
+
+You have a Linux workstation, which you use at home for browsing the internet, playing music, and writing letters. When you run your MP3 player, it sometimes pauses in playback. You have heard that you might be able to alleviate the problem by raising the priority of the program. You decide to set the SUID bit to automatically run the program as root and, thereby, raise its priority. Complete this lab from the Terminal.
+
+In this lab, your task is to:
+
+*   Set the **SUID bit** for the /usr/bin/xmms program.
+    *   From the Terminal, type **chmod u+s /usr/bin/xmms** and press **Enter**.
+*   Do not change any other permissions on the file.
+
+
+---
+
+
+# 🟣 3.2.4 Lab: Remove SUID and SGID Permissions
+
+You have a Linux workstation that you use at home. You are the only person that uses this computer. You want to improve security by removing the SUID and SGID from some files. Complete this lab from the Terminal.
+
+In this lab, your task is to:
+
+*   Remove the SUID from the following files:
+    
+    *   **/usr/bin/gpasswd**
+    *   **/usr/bin/newgrp**
+    
+    1.  From a Terminal, type **chmod u-s /usr/bin/gpasswd** and press **Enter**. Do the same for **/usr/bin/newgrp**.
+*   Remove the SGID from the following files:
+    
+    *   **/usr/bin/wall**
+    *   **/usr/bin/write**
+    
+    1.  Type **chmod g-s /usr/bin/wall** and press **Enter**. Do the same for **/usr/bin/write**.
+*   Leave permissions on the files as they are.
+
+
+---
+
+
+# 🟣 3.2.5 The Sticky Bit
+
+The sticky bit is a special permission bit that protects files in a directory. It ensures that only the file or directory owner or root can delete the file or directory. Without the sticky bit, any user with write and execute permissions on the resource could delete it. The sticky bit ensures that these users do not have delete privileges but still have the rest of the privileges that come with the write and execute permissions on files and directories.
+
+> - #TIP: sticky bit prevents users from having DELETE privileges to specific files; it is applied to the directory though — only the user who OWNS a file is able to DELETE that file in this specific directory; this is basically file protection
+
+Like SUID and SGID, you set a sticky bit using the `chmod` command. The octal value for the sticky bit is 1. The `ls -l` command displays the sticky bit in the execute position for other users (the last position) as the lowercase letter `t` or the uppercase letter `T` if the execute permission is not set for others.
+
+> - #HISTORY: The sticky bit originally was used to tell the OS that file would be executed frequently, so would essentially cache it in system memory; modern versions of Linux ignore this aspect "on files"
+
+In older versions of the kernel, a sticky bit could force a program or file to remain in memory so that the system wouldn't need to reload it when it was invoked again. A sticky bit on a file informed the operating system that the file would be executed frequently. Modern versions of the Linux kernel ignore this aspect of the sticky bit on files; if you want to protect specific files, you must apply the sticky bit on the directory containing them.
+
+In absolute mode, set the sticky bit using this syntax: `chmod 1--- {directoryname}`.
+
+In symbolic mode, set the sticky bit using this syntax: `chmod +t {directoryname}`.
+
+As with SUID and SGID, use `-` or `0` to clear the sticky bit.
+
+---
+
+
+# #VIDEO 3.2.6 Set the Sticky Bit Permissions
+
+
+![alt text](image-23.png)
+
+- The `T` tells us the sticky bit has been enabled
+
+---
+
+# 🟣 3.2.7 Troubleshooting Special Permissions Access
+
+Troubleshooting special permissions is more difficult than finding issues with standard permissions, but the steps are similar. First, confirm any identities and group memberships. Next, ensure permissions are set correctly by using `ls -l`, and make any updates with `chmod`.
+
+*   Confirm the SUID permission is set correctly for executable files.
+*   Confirm the SGID permission is set correctly for directories to permit files created in the directory to inherit the group association.
+*   Confirm the sticky bit permission is set correctly.
+
+Suppose a user submits a ticket indicating that when they create a file in the sales department's /sales-tools directory, the file shows the user's account as the owner and the user's group as the associated group. Both you and the user expected the sales group to be associated with the new file. What is the likely problem?
+
+Chances are, you haven't set the SGID special permission yet. Do so by typing the `chmod g+s /sales-tools` command, then have the user create a new file to test the access levels.
+
+Other possible problems include making accidental changes to existing permissions when updating standard permissions. Consider the following examples.
+
+Be careful not to misconfigure the standard permissions for the user, group, and others when adjusting the SUID or SGID special permissions, especially in absolute mode. You must define all four sets of permissions, even if you're only adjusting the special permission value in the first field.
+
+Be sure to use the `ls -l` command before and after setting special permissions to ensure you haven't inadvertently changed the standard permissions.
+
+Don't forget the proper syntax for setting SUID and SGID special permissions. Use the `u+s` setting for SUID and the `g+s` setting for SGID.
+
+
+---
+
+
+# 🟣 4.1.6 Lab: Create a Hard Link
+
+Will Adams (wadams) owns and maintains a database file in the /home/wadams directory called contacts.db. The file holds contact information for prospective clients. Brenda Cassini (bcassini) and Vera Edwards (vedwards) want to access and add contact information to the file to share the data among the three users. You have decided to meet their request using a hard link.
+
+In this lab, your task is to create hard link files to /home/wadams/contacts.db as follows:
+
+*   Create the file in the following directories:
+    
+    *   **/home/bcassini**
+    *   **/home/vedwards**
+    
+    1.  From a Terminal, type **ln /home/wadams/contacts.db /home/bcassini/contacts\_link** and press **Enter**.
+    2.  Perform similar steps for the **/home/vedwards** directory.
+*   Use **contacts\_link** as the name for the new hard links.
+
+---
+
+
+# 🟣 4.1.7 Lab: Create a Symbolic Link
+
+Your company uses a proprietary graphics program called Imitator. This program is stored in the /root directory. Maggie Brown (mbrown) needs to create and modify images using the Imitator program.
+
+In this lab, your task is to create a symbolic link file to /root/imitator as follows:
+
+*   Use **imitator\_link** as the symbolic link name.
+*   Create the link file in **/home/mbrown**.
+    1.  From a Terminal, type **ln -s /root/imitator /home/mbrown/imitator\_link** and press **Enter**.
+
+
+
+
+---
+
+# 🟣 4.2.3 Lab: Create Directories
+
+You are preparing to manage a new project, which is code-named White Horse. You need to prepare directories for White Horse documents. You are logged in as the wadams user.
+
+In this lab, your task is to complete the following:
+
+*   From the command line, create a directory called **wh** in /home/wadams.
+    1.  From a Terminal, type **mkdir wh**
+*   Also, from the command line, create the following directories in /home/wadams/wh:
+    
+    *   **implement**
+    *   **plan**
+    *   **research**
+    
+    1.  Use the **cd** command to change into the **wh** directory: **cd wh**.
+    2.  Type **mkdir implement** and press **Enter**.
+    3.  Use similar commands for the **plan** and **research** directories.
+*   Use the **ls** command to verify the creation of the directories.
+
+
+---
+
+# 🟣 4.2.5 Lab: Move Files
+
+Peter Lacy (placy) has taken an extended leave from the company for personal reasons. However, he was working on a critical project code named White Horse with several other employees. The project leader requested that you move any White Horse documents in Peter Lacy's home directory to Brenda Cassini's (bcassini's) home directory. You're logged on as wadams. Complete this lab from the Terminal.
+
+In this lab, your task is to:
+
+*   Switch to the root user using **1worm4b8** for the root user password.  
+    You must have root user permissions to move other people's files.
+*   Move the following files from Peter's home directory (placy) to Brenda's home directory (bcassini).
+    
+    *   **confid\_wh**
+    *   **projplan\_wh**
+    
+    1.  Use the **cd** command to switch to the **/home/placy** directory.
+    2.  Type **mv confid\_wh ../bcassini** and press **Enter**.
+    3.  Use a similar command to move the **projplan\_wh** file.
+*   Use the **ls** command to verify the files' new location.
+
+
+---
+
+# 🟣 4.2.7 Lab: Delete Files
+
+Someone created duplicate versions of three project documents. To avoid version control problems, you need to delete the duplicate files. When deleting the files, use the switch that will allow you to delete a file without any promptings. Complete this lab from the Terminal.
+
+In this lab, your task is to:
+
+*   Delete the following files from the /projects directory:
+    *   **darkhorse1**
+    *   **camouflage1**
+    *   **endgame1**
+
+1.  From a Terminal, use the **cd** command to change to the **/projects** folder.
+2.  Type **rm -f darkhorse1** and press **Enter**.
+3.  Use similar commands to remove the **camouflage1** and **endgame1** files.
+
+*   When you are finished, use the **ls** command to verify the deletion.
+
+
+
+---
+
+# 🟣 4.2.8 Lab: Delete Directories
+
+Your company recently changed directions and decided to terminate three products. All the necessary files have been backed up, archived, and deleted. Now, you need to clean up your system by removing the directories that were used to hold the product files.
+
+In this lab, your task is to complete the following:
+
+*   From the command line, delete the following directories from the /projects directory:
+    *   **heartbt**
+    *   **heartmon**
+    *   **heartstrng**
+
+1.  From a Terminal, type **cd /projects** and press **Enter**.
+2.  Use the following command to remove all of the directories: **rmdir heartbt heartmon heartstrng**.
+
+*   Use the **ls** command to verify the deletion of the directories.
+
+
+
+---
+
+# 🟣 4.2.11 Lab: Use grep
+
+Vera Edwards (vedwards) was recently hired as a new salesperson for your company. She cannot access the files in the sales folder and has asked for your help. Although you thought you had added her to the group, you want to verify this on her system. When you arrive to help her, she tells you that she cannot find a proposal file she has written, and she would like you to help her find it. Complete this lab from the Terminal.
+
+In this lab, your task is to use **grep** to:
+
+*   Find the current members of the **/etc/group** named **sales**.
+    *   From a Terminal, type **grep sales /etc/group** and press **Enter**.
+*   From the top right, select **Questions** and answer Question 1.
+*   Find which proposal file contains the phrase _The Fluid Data_. The file is either in her home directory or in one of her sub-directories.
+    *   Type **grep -r "The Fluid Data" \*** and press **Enter**.
+*   Answer Question 2.
+
+
+---
+---
+
+
+# 🟣 3.2.8 Live Lab: Set Special Linux Permissions
+
+> In this lab, you will configure special Linux permissions, including SGID, the sticky bit, and the immutable flag.
+
+# Live Lab: Configure Special Linux Permissions
+
+You are a Linux administrator for a large party supply company. Your role is to manage a shared Linux server for multiple departments within your company. Each department has its own directory for storing files, and these directories are shared among team members. Recently there has been some confusion and conflict regarding which files belong to which department.
+
+In order to keep the collaboration running smoothly, and to follow best security practices, your manager has tasked you with configuring **SGID (Set Group ID)** permissions on the department directories. This way, files created within those directories will inherit the group ownership of the directory.
+
+> **Your Mission:**
+> 
+> *   Understand the purpose and functionality of SGID permissions and Sticky Bits.
+> *   Configure SGID permissions on directories to enforce group ownership inheritance.
+> *   Apply the Sticky Bit to restrict file deletion for non-owners.
+> *   Verify the correct configuration of SGID and Sticky Bits using command-line tools.
+
+## Exam Objectives
+
+This activity is designed to test your understanding of and ability to apply content examples in the following CompTIA Linux+ objectives:
+
+*   3.3 Given a scenario, apply operating systerm (OS) hardening techniques on a Linux system
+
+> This lab only implements the local network, so adapters will display a _No Internet access_ tooltip. This is not an error.
+
+---
+
+## Use (Set Group ID) SGID
+
+In this section, you will use SGID to automatically set group associations.
+
+Login instructions
+
+Use [Ctrl+Alt+Delete](#) to start, sign in and authenticate.  
+
+| Host | User | Passwd |
+| --- | --- | --- |
+| linux01, linux02 | `rocky` | `toor` |
+| linux01, linux02 | `user1` | `Pa55w0rd!` |
+| linux01, linux02 | `user2` | `Pa55w0rd!` |
+| linux01, linux02 | `root` | `toor` |
+
+> NOTE: the entire lab series is designed for you to type in the **commands to learn syntax and spacing**, so ensure you double-check what you have typed before entering.
+
+1.   Log into [linux01](#) system as **rocky** using `toor` as the password.
+    
+2.   From the **_Activities_** menu, select **_Terminal_**.
+    
+3.   Use the `su -` command to gain root privileges. The root password is `toor`.
+    
+4.   Check the default permissions on the **/Images** directory. `ls -ld /Images`
+    
+    The permissions are: **drwxrwxr--**
+    
+5.   Apply the SGID on **/Images** so that newly created files will get the group association. `chmod g+s /Images`
+    
+    Confirm that you applied the SGID on the /Images directory.
+    
+6.   Display the new permissions on the **/Images** directory. `ls -ld /Images`
+    
+7.   Switch to Rose Stanley's user account. `su - rstanley`
+    
+8.   Make the **/Images** directory your current directory. `cd /Images`
+    
+9.   Create a new file named **file4** with `touch file4`, then view the permissions on the contents of the current directory. `ls -l`
+    
+    Confirm that rstanley is the owner and the group is graphicsdept for file4.
+    
+10.   Exit to return to the **root** login. `exit`
+
+
+---
+
+## Use Sticky Bit to Protect Files from Deletion
+
+1.   Assign the sticky bit to the **/Images** directory. `chmod +t /Images`
+    
+    Confirm that you set the sticky bit on the /Images directory.
+    
+2.   Switch to the **jrobinson** user account. `su - jrobinson`
+    
+3.   Make the **/Images** your current directory. `cd /Images`
+    
+4.   Attempt to remove **file4**, which is owned by **rstanley**. `rm file4`
+    
+    When prompted, reply with a **y** to attempt to remove file4.
+    
+
+> Note that you receive an "Operation not permitted" response. If this were a permissions issue, you would receive an "access denied" response instead. Even though jrobinson is a member of the graphicsdept group, and that group has permission to delete a file in this directory, the sticky bit prevents file deletion from a non-owner.
+
+1.   Exit to return to the **root** login. `exit`
+    
+    Confirm that you attempted to remove file4 from the /Images directory.
+
+
+---
+
+## Set the Immutable Flag on a File
+
+You have created a README text file stored in the **/Images** directory to help guide users on the proper use of the content. You will set the immutable attribute to ensure that no one, not even the root user, can accidentally delete the file.
+
+1.   Create a file named **README** in the **/Images** directory.`touch /Images/README`
+    
+2.   View the current permissions settings for the **README** file.`ls -l /Images`
+    
+3.   Set the immutable attribute on the **README** file.`chattr +i /Images/README`
+    
+4.   View the current standard permissions on the **/Images** directory and verify that they have not changed.`ls -ld /Images`
+    
+5.   Display the immutable attribute on the **/Images/README** file.`lsattr /Images/README`
+    
+    Confirm that you set the immutable flag on the /Images/README file.
+    
+6.   Attempt to delete the **README** file from the **/Images** directory.`rm /Images/README`
+    
+    When prompted, reply with a **y** to attempt to remove the /Images/README file.
+    
+    > You cannot remove the **README** file due to the immutable attribute. Note the **Operation not permitted** response rather than the "access denied" response that indicates a permissions issue.
+
+
+---
+
+## Remove Immutable Flag and Delete File
+
+You can remove the immutable flag so that the file can then be removed.
+
+1.   Unset the immutable attribute on the **README** file.`chattr -i /Images/README`
+    
+2.   Remove the **README** file.`rm /Images/README`
+    
+    When prompted, reply with a **y** to attempt to remove the `/Images/README` file.
+    
+    Confirm that you removed the /Images/README file.
+
+---
+
+## Review Lab
+
+1.  Who can delete a file with the immutable flag set?
+    
+    Only root and the owner
+    
+    No one
+    
+    Any user with the execute permission
+    
+    Only root
+    
+2.  Who can delete a file with the sticky bit set? (Select 2)
+    
+    Anyone with the execute permission
+    
+    others
+    
+    owner #CORRECT
+    
+    root #CORRECT
+    
+    group
+    
+3.  If the SGID is set on a directory, and the directory's associated group is sales, what group will be assigned to new files created in the directory?
+    
+    The sales group.
+    
+    The creator's primary group.
+    
+    The root group.
+    
+    No group will be assigned.
+
+
+---
+
+## Grade Lab
+
+> You have completed the following tasks:
+> 
+> *   Understand the purpose and functionality of SGID permissions and Sticky Bits.
+> *   Configure SGID permissions on directories to enforce group ownership inheritance.
+> *   Apply the Sticky Bit to restrict file deletion.
+> *   Verify the correct configuration of SGID and Sticky Bits using command-line tools.
+
+That concludes this lab. Please ensure you check your work to submit for a grade:
+
+1.  Select check boxes to mark all tasks complete.
+2.  Submit responses to all questions/activities.
+
+> Select:
+> 
+> *   **Submit** in the bottom right corner, then **Yes, end my lab** to score and record your grade. You can relaunch again at any time.
+> *   **Save & Exit** in the top corner to save your progress and return. You will seven (7) days to complete your progress.
+
+---
+
+#PROOF
+
+![alt text](image-24.png)
+
+
+
+---
+
+# 🟣 3.3.4 Live Lab: Configure Access Control Lists
+
+> In this activity, you will display and configure Linux access control lists (ACLs).
+
+## Scenario
+
+You are a systems administrator at a medium-sized printing company. The Graphics department has requested that you give read-only access to the Marketing department for the **/Projects** directory. With standard permissions, only one group association can exist.
+
+> - #GOTCHA:  *With standard permissions, only one group association can exist.*
+
+You will use access control lists (ACLs) to ensure that the Graphics and Marketing departments have access. You will set an ACL on one file in the **/Projects** directory for a single user.
+
+> **Your Mission** is to:
+> 
+> *   Display ACLs
+> *   Set a recursive directory ACL
+> *   Set an ACL for a user, modify an ACL
+
+## Exam Objectives
+
+This activity is designed to test your understanding of and ability to apply content examples in the following CompTIA Linux+ objectives:
+
+*   2.1 Given a scenario, manage files and directories on a Linux system
+*   2.2 Given a scenario, perform local account management in a Linux environment
+*   3.3 Given a scenario, apply operating system (OS) hardening techniques on a Linux system
+
+## Lab environment
+
+The Linux+ lab environment consists of one Rocky Linux 9.5 VM.
+
+---
+
+## Set a Directory ACL
+
+In this section, you will learn how to set an ACL on a directory for the marketing department.
+
+> You are already logged in as the **root** user.
+
+1.   Type the `getfacl /Projects` command to display the current ACL on the **/Projects** directory.
+    
+    > This lab is designed for you to type in the commands to learn syntax and spacing, so ensure you double-check the command before entering.
+    
+2.   Type the `setfacl -R -m g:MarketingDept:rx /Projects` command to grant read and execute permissions to the **MarketingDept** to the **/Projects** directory and its contents.
+    
+    > The execute permission is required to `cd` into a directory.
+    
+3.   Recheck the ACL to view the new level of access you set for the **MarketingDept**.
+    
+    Confirm that you created the ACL for the **MarketingDept** on the **/Projects** directory.
+    
+4.   Type the `usermod -a -G MarketingDept bsmith` command to add the user **bsmith** to the **MarketingDept** group.
+    
+5.   Type the `getent group MarketingDept` command to verify that **bsmith** is a member of the **MarketingDept** group.
+
+
+---
+
+## Set a File ACL
+
+You can set ACLs on specific files. In this section, you will set an ACL on a file for an individual user.
+
+1.   Type the `ls -l /Projects/Client_Profiles.txt` command to display the current standard permissions on the **/Projects/Client\_Profiles.txt** file.
+    
+2.   Type the `getfacl /Projects/Client_Profiles.txt` command to display the current ACL on the **/Projects/Client\_Profiles.txt** file.
+    
+3.   Type the `setfacl -m u:bsmith:rw /Projects/Client_Profiles.txt` command to grant read and write permissions to **Betty Smith (bsmith)** to the **/Projects/Client\_Profiles.txt** file using an ACL.
+    
+4.   Display the ACL to review the new level of access you set for **bsmith**.
+    
+5.   Type the `su - bsmith` command to switch to the **bsmith** user account.
+    
+6.   Type the `echo "ABC Client contacted 03/01/2022" >> /Projects/Client_Profiles.txt` command to add the text into the **/Projects/Client\_Profiles.txt** file, demonstrating that user **bsmith** can write to the **/Projects/Client\_Profiles.txt** file.
+    
+7.   Type the `exit` command to return to the **root** user account.
+    
+8.   Type the `ls -l /Projects/Client_Profiles.txt` command to display the standard permissions on the **/Projects/Client\_Profiles.txt** file and confirm that the **root** user owns the file. **Betty Smith** was able to write to the file because of the ACL applied to it.
+    
+    Confirm that you created the ACL for user **Betty Smith** on the **/Projects/Client\_Profiles.txt** file.
+
+---
+
+## Review lab
+
+1.  Which of the following best describe how ACLs are more flexible than standard permissions? (Select two.)
+    
+    ACLs can grant multiple permissions to multiple users.
+    
+    ACLs can grant multiple permissions to multiple groups.
+    
+    Standard permissions can grant multiple permissions to multiple groups.
+    
+    Standard permissions can grant multiple permissions to multiple users.
+    
+2.  What is the purpose of the execute (x) permission for directories.
+    
+    The execute (x) permission on a directory allows a user to use cd to access a directory.
+    
+    The execute (x) permission on a directory prevents a user from using cd to access a directory.
+    
+    The execute (x) permission prevents both read and write privileges to the directory.
+    
+    The execute (x) permission allows both read and write privileges to the directory.
+    
+3.  What command displays currently configured ACLs?
+    
+    getacl
+    
+    ls -l
+    
+    getfacl
+    
+    setfacl
+    
+    setacl
+
+---
+
+## Grade Lab
+
+> You have completed the following tasks:
+> 
+> *   Display ACLs
+> *   Set a recursive directory ACL
+> *   Set and modify an ACL for a user
+
+That concludes this lab. Please ensure you check your work to submit for a grade:
+
+1.  Select check boxes to mark all tasks complete.
+2.  Submit responses to all questions/activities.
+
+> Select:
+> 
+> *   **Submit** in the bottom right corner, then **Yes, end my lab** to score and record your grade. You can relaunch again at any time.
+> *   **Save & Exit** in the top corner to save your progress and return. You will have seven (7) days to complete your progress.
+
+---
+
+#PROOF
+
+![alt text](image-25.png)
+
+
+
+
+---
+
+# 🟣 3.3.7 Applied Live Lab: Manage Identity And Access Control
+
+> In this applied lab you will manage identities, both users and groups, and access control.
+
+## Scenario
+
+You are a Linux Systems Administrator, and have been given a Rocky Linux system on which to perform configuration tasks that include creating, modifying, removing user and group accounts and seting and modifying file and directory permissions.
+
+> **Your Mission:**
+> 
+> *   Manage user and group accounts.
+> *   Set standard Linux permissions.
+> *   Use and manage privilege escalation.
+> *   Work with the umask command and settings.
+> *   Set the sticky bit on files and directories.
+
+## Exam Objectives
+
+This activity is designed to test your understanding of and ability to apply content examples in the following CompTIA Linux+ objectives:
+
+*   3.3 Given a scenario, apply operating systerm (OS) hardening techniques on a Linux system
+
+> This is an **applied lab**, and is designed for you to recall previous efforts and strive to complete tasks without guided steps and hints. If guidance is required, click on the **Enable Hints** button to reveal. You can only achieve the maximum score without hints.
+
+
+---
+
+## TASK 1: Manage User Accounts
+
+> NOTE: the entire lab series is designed for you to type in the **commands to learn syntax and spacing**, so ensure you double-check what you have typed before entering.
+
+1.   Sign in to [linux01](#) as `rocky` using password `toor`.
+    
+2.   Create and configure the following user accounts:
+    
+    | User | Name | Default Shell |
+    | --- | --- | --- |
+    | `sam` | `Sam Sales` |     |
+    | `rene` | `Rene HR` | `zsh` |
+    | `temp` |     |     |
+    
+3.   Set all accounts to use the password `Pa55w0rd!`
+    
+4.   When you have created and configured the accounts, delete the temp account, while leaving the home directory intact. This simulates the idea that it was used as a contractor account for a single project.
+    
+
+> Make sure you complete all the steps and create any objects you subsequently delete. If steps are not followed exactly, the task will be evaluated as incomplete.
+
+## Choose Guided Steps and Hints
+
+You can work independently to complete the task or you can choose to show guided steps and hints. You can only achieve the maximum score if you keep hints hidden.
+
+1.  To create the sam account and set a password, run the following commands, responding with the password `toor` when prompted to authenticate the use of sudo:
+    
+    `sudo useradd sam`
+    
+2.  To set the password, run the following command and respond with `Pa55w0rd!`
+    
+    `sudo passwd sam`
+    
+3.  Use the following commands to create the next two users:
+    
+    `sudo useradd rene`
+    
+    `sudo useradd temp`
+    
+4.  To set the passwords, run the following commands and respond with with `Pa55w0rd!`
+    
+    `sudo passwd rene`
+    
+    `sudo passwd temp`
+    
+5.  To add the names, use the following commands:
+    
+    `sudo usermod -c "Sam Sales" sam`
+    
+    `sudo usermod -c "Rene HR" rene`
+    
+6.  Run `cat /etc/shells` to verify that the zsh is available, then run the following command to configure it as the default for rene's account:
+    
+    `sudo usermod -s /bin/zsh rene`
+    
+7.  Run the following command to remove the temp account _without_ deleting the associated home directory:
+    
+    `sudo userdel temp`
+    
+
+- - -
+
+Check your work
+
+*   Run `cat /etc/passwd` and verify the following:
+    *   That the sam and rene accounts and names are present.
+    *   That rene is set to use /bin/zsh by default.
+    *   That the temp account is NOT present.
+*   Run `ls /home` and verify that the temp directory is still present.
+
+Select the **Evaluate** button to assess and score the task:
+
+Checking task completion …
+
+Checking for hint use …
+
+Checking for retries …
+
+> You may retry evaluation as many times as you like, but you will only receive maximum marks if your first scoring attempt is successful.
+
+---
+
+## TASK 2: Manage Group Accounts
+
+1.   Create groups to manage users on the on the [linux01](#) VM.
+    
+    | Group | GID | 2ndary Group Members |
+    | --- | --- | --- |
+    | `recruiting` | `8000` | `rene`  <br>`user1` |
+    | `medical` | `8050` |     |
+    | `multimedia` | `8100` | `sam`  <br>`user2` |
+    
+2.   Create the following directories and files:
+    
+    *   `/opt/recruiting/`
+    *   `/opt/socialmedia/`
+    *   `/opt/socialmedia/favorites/`
+3.   Create the following files:
+    
+    *   `/opt/recruiting/hrpolicy.txt`
+    *   `/opt/socialmedia/README`
+    
+    Perform the following operations implementing changes to the inital setup:
+    
+4.   Remove `user1` from the `recruiting` group.
+    
+5.   Rename the `multimedia` group to `socialmedia`.
+    
+6.   Remove the `medical` group.
+    
+
+## Choose Guided Steps and Hints
+
+You can work independently to complete the task or you can choose to show guided steps and hints. You can only achieve the maximum score if you keep hints hidden.
+
+1.  Run the following commands to create the groups, responding with `toor` if prompted to authenticate use of sudo:
+    
+    `sudo groupadd -g 8000 recruiting`
+    
+    `sudo groupadd -g 8050 medical`
+    
+    `sudo groupadd -g 8100 multimedia`
+    
+2.  Run the following commands to add the groups to user accounts:
+    
+    `sudo usermod -aG recruiting rene`
+    
+    `sudo usermod -aG recruiting user1`
+    
+    `sudo usermod -aG multimedia sam`
+    
+    `sudo usermod -aG multimedia user2`
+    
+3.  Create the required directories:
+    
+    `sudo mkdir /opt/recruiting`
+    
+    `sudo mkdir -p /opt/socialmedia/favorites`
+    
+4.  Create the required files:
+    
+    `sudo touch /opt/recruiting/hrpolicy.txt`
+    
+    `sudo touch /opt/socialmedia/README`
+    
+5.  Run `sudo gpasswd -d user1 recruiting` to remove the account from the group.
+    
+6.  Run `sudo groupmod -n socialmedia multimedia` to rename the group.
+    
+7.  Run `sudo groupdel medical` to delete the group.
+    
+
+- - -
+
+Check your work
+
+*   Run `cat /etc/group` and verify the following:
+    *   The recruiting group has GID 8000 and rene as a member.
+    *   The socialmedia group has GID 8100 and sam and user2 as members.
+    *   The medical account is NOT present.
+*   Run `ls /opt/recruiting && ls /opt/socialmedia` and verify the hrpolicy.txt, README files and favorites subdirectory are present.
+
+Select the **Evaluate** button to assess and score the task:
+
+Checking task completion …
+
+Checking for hint use …
+
+Checking for retries …
+
+> You may retry evaluation as many times as you like, but you will only receive maximum marks if your first scoring attempt is successful.
+
+---
+
+## TASK 3: Configure Permissions
+
+Now that you have users and groups, you can control access to the resources you create by using permissions.
+
+1.   Configure the group owners for the recruiting and social media directories:
+    
+    1.   Assign the **recruiting** group to `/opt/recruiting` and all its children.
+    2.   Assign the **socialmedia** group to `/opt/socialmedia` and all children.
+2.   Configure recursive permissions for the `/opt/recruiting` directory:
+    
+    1.   Add **write** permission for the **recruiting** group.
+    2.   Remove all permissions for **others**.
+3.   Configure recursive permissions for the `/opt/socialmedia` directory:
+    
+    1.   Add **write** permission for the **socialmedia** group.
+    2.   On `/opt/socialmedia/README`, set only **read** permission for the **owner, group, and others**.
+
+## Choose Guided Steps and Hints
+
+You can work independently to complete the task or you can choose to show guided steps and hints. You can only achieve the maximum score if you keep hints hidden.
+
+1.  Set the group owners as specified, responding with `toor` if prompted to authenticate use of sudo:
+    
+    `sudo chgrp -R recruiting /opt/recruiting`
+    
+    `sudo chgrp -R socialmedia /opt/socialmedia`
+    
+2.  Run `ls -ld /opt/recruiting` to verify the current permissions.
+    
+3.  Configure recursive permissions for the /opt/recruiting directory to achieve the required configuration:
+    
+    `sudo chmod -R g+w,o-r,o-x /opt/recruiting`
+    
+4.  Run `ls -l /opt/socialmedia` to verify the current permissions.
+    
+5.  Configure recursive permissions for the /opt/socialmedia directory and README file to achieve the required configuration:
+    
+    `sudo chmod -R g+w /opt/socialmedia`
+    
+    `sudo chmod g-w,u-w /opt/socialmedia/README`
+    
+
+- - -
+
+Check your work
+
+*   Run `sudo ls -Rl /opt | grep 'recruiting\|socialmedia`
+*   Verify the configuration:
+    *   /opt/recruitment and its child objects should be owned by root:recruiting
+    *   /opt/recruitment should have the permission string drwxrwx---
+    *   /opt/recruitment/hrpolicy.txt should have the permission string \-rw-rw----
+    *   /opt/socialmedia and its child objects should be owned by root:socialmedia
+    *   /opt/socialmedia and /opt/socialmedia/favorites should have the permission string drwxrwxr-x
+    *   /opt/recruitment/README should have the permission string \-r--r--r--
+
+Select the **Evaluate** button to assess and score the task:
+
+Checking task completion …
+
+Checking for hint use …
+
+Checking for retries …
+
+> You may retry evaluation as many times as you like, but you will only receive maximum marks if your first scoring attempt is successful.
+
+---
+
+## TASK 4: Manage Privilege Escalation
+
+Elevate administrative privileges to user accounts.
+
+1.   Grant administrative privileges to **rene** by adding the account to the **wheel** group as a secondary group.
+    
+2.   Configure _/etc/sudoers_ so the **rocky** user does not have to supply a password when using a shutdown or reboot command.
+    
+    Shutdown commands `Cmnd_Alias SHUTDOWN=/sbin/poweroff, /sbin/reboot, /sbin/shutdown, /usr/sbin/reboot, /usr/sbin/poweroff, /usr/sbin/shutdown, /usr/bin/systemctl poweroff, /usr/bin/systemctl reboot`
+    
+
+## Choose Guided Steps and Hints
+
+You can work independently to complete the task or you can choose to show guided steps and hints. You can only achieve the maximum score if you keep hints hidden.
+
+1.  Add rene to the wheel account:
+    
+    `sudo usermod -aG wheel rene`
+    
+2.  Run `sudo visudo` to edit the /etc/sudoers file.
+    
+3.  Type `Go` to insert a new line at the end of the file, then type **BACKSPACE** to remove the autogenerated comment marker.
+    
+4.  Add the following line to the bottom of the file to create an alias representing the shutdown/reboot commands:
+    
+    `Cmnd_Alias SHUTDOWN=/sbin/poweroff, /sbin/reboot, /sbin/shutdown, /usr/sbin/reboot, /usr/sbin/poweroff, /usr/sbin/shutdown, /usr/bin/systemctl poweroff, /usr/bin/systemctl reboot`
+    
+5.  Press **ENTER**, and type the following line to allocate permission to use these commands without authenticating:
+    
+    `rocky ALL=(ALL) NOPASSWD:SHUTDOWN`
+    
+6.  Press **ESC**, then enter `:wq` to write changes and exit.
+    
+
+- - -
+
+Check your work
+
+*   Run `cat /etc/group | grep wheel` and verify that the rene user is listed.
+*   `sudo -l` and verify that NOPASSWD permission is set for the shutdown/reboot commands.
+
+Select the **Evaluate** button to assess and score the task:
+
+Checking task completion …
+
+Checking for hint use …
+
+Checking for retries …
+
+> You may retry evaluation as many times as you like, but you will only receive maximum marks if your first scoring attempt is successful.
+
+---
+
+## TASK 5: Apply the umask Command
+
+1.   Change the _rocky_ user's **umask** permanently to **027**.
+
+## Choose Guided Steps and Hints
+
+You can work independently to complete the task or you can choose to show guided steps and hints. You can only achieve the maximum score if you keep hints hidden.
+
+1.  Run `echo "umask 027" >> ~/.bashrc` to add the umask value to the shell initialization file.
+    
+2.  To load the new **umask** value, run `source ~/.bashrc`
+    
+
+- - -
+
+Check your work
+
+*   Create a new file `touch umask-test`
+*   Create a new directory named `mkdir umask-dir`
+*   Run `ls -l` to verify that file and the directory have the permission string rw-r-----.
+
+Select the **Evaluate** button to assess and score the task:
+
+Checking task completion …
+
+Checking for hint use …
+
+Checking for retries …
+
+> You may retry evaluation as many times as you like, but you will only receive maximum marks if your first scoring attempt is successful.
+
+---
+
+## TASK 6: Set Special Permissions
+
+Configure an /opt/shared directory with special permissions.
+
+1.   Create a new directory /opt/shared.
+    
+2.   Change the group owner of the directory to **rocky**.
+    
+3.   Set the SGID and sticky bits on /opt/shared
+    
+4.   Set permissions on the /opt/shared directory to : **world read, writable, and executable**.
+    
+5.   Open a new terminal tab, sign in as _rene_ with `Pa55w0rd!` and create a new file in the /opt/shared/rene.txt.
+    
+6.   Return to the previous tab, and set **group writable** permissions on the files in /opt/shared.
+    
+
+## Choose Guided Steps and Hints
+
+You can work independently to complete the task or you can choose to show guided steps and hints. You can only achieve the maximum score on your first attempt.
+
+1.  Create a new directory /opt/shared.
+    
+    `sudo mkdir /opt/shared`
+    
+2.  Change the group owner of the directory to **rocky**.
+    
+    `sudo chgrp -R rocky /opt/shared`
+    
+3.  Configure the specified permissions /opt/shared
+    
+    `sudo chmod -R o+r,o+w,o+x,g+s,+t /opt/shared`
+    
+4.  Open a new terminal tab, run `su - rene` and respond with `Pa55w0rd!`
+    
+5.  Create a new file in the `touch /opt/shared/rene.txt`
+    
+6.  Return to the previous tab, and set **group writable** permissions on the files in /opt/shared:
+    
+    `sudo chmod -R g+w /opt/shared`
+    
+
+- - -
+
+Check your work
+
+*   Run `ls -ld /opt/shared` and verify that the permission string is drwxrwsrwt
+    *   The owner is root with rwx permissions.
+    *   The group is rocky with rw and setgid permissions.
+    *   Other has rw and sticky permissions.
+*   Verify permissions on rene.txt `ls -l /opt/shared` .
+    *   The owner is rene with rw permissions.
+    *   The group is rocky with rw permissions.
+*   Run `rm /opt/shared/rene.txt` to verify rocky cannot modify or delete rene's file in /opt/shared, even though the rocky group has write permission.
+
+Select the **Evaluate** button to assess and score the task:
+
+Checking task completion …
+
+Checking for hint use …
+
+Checking for retries …
+
+> You may retry evaluation as many times as you like, but you will only receive maximum marks if your first scoring attempt is successful.
+
+---
+
+## Grade Lab
+
+> You have completed the following tasks:
+> 
+> *   Manage user and group accounts.
+> *   Set standard Linux permissions.
+> *   Use and manage privilege escalation.
+> *   Work with the umask command and settings.
+> *   Set the sticky bit on files and directories.
+
+That concludes this lab. Please ensure you Check Your Work to submit for a grade:
+
+1.  Select check boxes to mark all tasks complete.
+2.  Submit responses to all questions/activities.
+
+> Select:
+> 
+> *   **Submit** in the bottom right corner, then **Yes, end my lab** to score and record your grade. You can relaunch again at any time.
+> *   **Save & Exit** in the top corner to save your progress and return. You will seven (7) days to complete your progress.
+
+---
+
+#PROOF
+
+![alt text](image-26.png)
+
+> #TIP: Use `tail /etc/group` after assigning users to groups with `usermod`
+
+> #TIP: Delete group with `sudo groupdel [groupname]`
+
+![alt text](image-27.png)
+
+    
+> - #TIP: To change group ownership: `sudo chgrp -R recruiting /opt/recruiting`
+
+![alt text](image-28.png)
+
+![alt text](image-29.png)
+
+![alt text](image-30.png)
+
+
+![alt text](image-31.png)
+
+![alt text](image-32.png)
+
+![alt text](image-33.png)
+
+---
+
+# 🟣 
+
+---
+
+# 🟣 
+
+---
+
+# 🟣 
+
+---
+
+# 🟣 
 
 
 
@@ -2310,7 +3378,72 @@ The umask must be set to 0022 and, therefore, block the write permission for the
 
 
 
---- --- --- END LESSON REVIEW ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- --- --- END  --- --- ---
 
 
 
