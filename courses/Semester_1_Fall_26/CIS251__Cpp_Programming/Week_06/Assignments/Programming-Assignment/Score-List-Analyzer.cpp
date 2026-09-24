@@ -4,67 +4,46 @@
 
     Student: Eric Hepperle
     Created: 2026-09-23
+    Updated: 2026-09-24
 
     VERSION: 1.0
 
-    STATUS: WIP
+    STATUS: Fully Working
 
     Instructions:
         Score List Analyzer: store a fixed set of quiz scores in an array,
         use loops to calculate total/average and locate highest/lowest, and use
         std::string for the student's name and report heading.
 
+    Notes:
+    - "Fixed set" to me implies hard-coded values and therefore I
+    didn't use any input statements for the scores
+    - Although not absolutely necessary, I created sentinel values for
+    highest/lowest
+    - Because the algorithm / pseudocode is so long, I moved it to
+    its own file ./02__Algorithm.md
+
     Lessons Learned:
-    -
+    - max and min must be reserved terms because I received compiler errors
+    when I had originally had the "highest" and "lowest" named "max" and "min".
 
     GitHub: https://github.com/codewizard13
     email: codewizard13@gmail.com
  ************************************************************ */
 
-/*
-    *** ALGORITHM: ***
 
-    DEFINE array of double as quiz_scores
-
-    LOOP through each score
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-
-*/
 
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
 // Declare Variables
-double quiz_scores[] = {90, 100, 100, 85.5, 46};
+double quiz_scores[] = {90, 100, 100, 85.5, 46}; // fixed set of scores
 
 double highest = -999;
 double lowest = 999;
 double total;
 double avg;
-
-
 
 int array_len = sizeof(quiz_scores) / sizeof(double);
 
@@ -105,6 +84,8 @@ int main(void)
 
     }
 
+    cout << "\n*********************************";
+
     // CALC AVG
     avg = total / array_len;
 
@@ -122,4 +103,3 @@ int main(void)
     return 0;
 }
 
-/*** CUSTOM FUNCTIONS  ***/
