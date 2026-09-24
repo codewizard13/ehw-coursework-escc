@@ -59,38 +59,63 @@ using namespace std;
 // Declare Variables
 double quiz_scores[] = {90, 100, 100, 85.5, 46};
 
-double highest = 9999.0;
-double lowest = -9999.0;
+double highest = -999;
+double lowest = 999;
 double total;
 double avg;
 
-string student_name = "Joe Blo";
-string report_heading;
+
 
 int array_len = sizeof(quiz_scores) / sizeof(double);
 
 int main(void)
 {
 
+    string student_name = "Eric Hepperle";
+    string report_heading = "Grade Report for: ";
+    report_heading.append(student_name);
+
     cout << "*********************************\n";
-    cout << "Grade Report for: " << student_name << "\n";
+    cout << report_heading << "\n";
+    cout << "Scores: ";
 
     for (int i = 0; i < array_len; i++)
     {
 
-        // DEBUG OUT QUIZ SCORES
-        cout << quiz_scores[i] << "\n";
+        // PRINT QUIZ SCORES HORIZONTALLY FOR REFERENCE
+        cout << quiz_scores[i];
+
+        // Separate scores by commas except after the last one
+        if (i < array_len-1) {
+            cout << ", ";
+        }
 
         // UPDATE TOTAL
         total += quiz_scores[i];
+
+        // UPDATE HIGHEST
+        if (quiz_scores[i] > highest) {
+            highest = quiz_scores[i];
+        }
+
+        // UPDATE LOWEST
+        if (quiz_scores[i] < lowest) {
+            lowest = quiz_scores[i];
+        }
+
     }
 
     // CALC AVG
     avg = total / array_len;
 
+    cout << setprecision(2) << fixed;
+
     // OUTPUT STATS
+    cout << endl;
     cout << "Total: " << total << "\n";
     cout << "Average: " << avg << "\n";
+    cout << "Lowest Score: " << lowest << "\n";
+    cout << "Highest Score : " << highest << "\n";
 
     cout << "*********************************\n";
 
