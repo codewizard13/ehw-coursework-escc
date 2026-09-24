@@ -1,22 +1,21 @@
 /* ************************************************************
     Course: ESCC, CIS-251 - C++ Programming
-    WEEK 5 PROGRAMMING ASSIGNMENT — Functions, Scope, Decomposition, and Reuse
+    WEEK 6 PROGRAMMING ASSIGNMENT — Arrays, Strings, and Sequential Data Processing
 
     Student: Eric Hepperle
-    Created: 2026-09-20
+    Created: 2026-09-23
 
     VERSION: 1.0
 
     STATUS: WIP
 
     Instructions:
-        Modular Grade Calculator: create separate functions to read/validate a
-        score, calculate a letter grade, and display the result. main() must
-        coordinate the program rather than contain all logic.
+        Score List Analyzer: store a fixed set of quiz scores in an array,
+        use loops to calculate total/average and locate highest/lowest, and use
+        std::string for the student's name and report heading.
 
     Lessons Learned:
-    - Seemed like this would be a perfect case for switch statement, but because switch doesn't natively handle ranges well, if-else was better in this case
-    - Returning `0` for invalid input fails because `0` is also a valid score. `calcGradeLetter(0)` correctly returns `F`, so the program cannot distinguish “invalid input” from a real zero-grade. Use an out-of-range sentinel like `-1.0` instead.
+    -
 
     GitHub: https://github.com/codewizard13
     email: codewizard13@gmail.com
@@ -25,47 +24,31 @@
 /*
     *** ALGORITHM: ***
 
-    DEFINE FUNCTION PROTOTYPES:
-    - readScore(double score) - return score if valid else, end program with error
-    - calcGradeLetter(double score) - return char
-    - displayGrade() - return void; display grade_ltr char
+    DEFINE array of double as quiz_scores
 
-    // MAIN
-
-    DEFINE double score = 0;
-    DEFINE char grade_ltr;
-
-    readScore()
-    calcGradeLetter()
-    displayGrade()
+    LOOP through each score
 
 
 
-    // READSCORE
-
-    Ask user for the number score - double type grade_score
-        if not a double then exit program with error
-
-    ASSIGN double score_num to result of readScore()
 
 
 
-    // CALC GRADE LETTER
-
-    Use switch statement to determine grade letter
-
-    CASE score < 100 && score >=90, A
-    CASE score < 90 && >=80, B
-    CASE score < 80 && >=70, C
-    CASE score < 70 && >=60, D
-    CASS score <60, F
-
-    RETURN grade_ltr
 
 
-    // DISPLAY GRADE LETTER
 
-    Display grade letter
+
+
+
+
+
+
+
+
+
+
+
+---
+
 
 */
 
@@ -73,82 +56,45 @@
 #include <iomanip>
 using namespace std;
 
-const double INVALID_SCORE = -1.0; // sentinel value
+// Declare Variables
+double quiz_scores[] = {90, 100, 100, 85.5, 46};
 
-// FUNCTION PROTOTYPES
-double readScore();
-char calcGradeLetter(double score);
-void displayGrade(char grade_ltr);
+double highest = 9999.0;
+double lowest = -9999.0;
+double total;
+double avg;
+
+string student_name = "Joe Blo";
+string report_heading;
+
+int array_len = sizeof(quiz_scores) / sizeof(double);
 
 int main(void)
 {
 
-    // Declare Variables
-    double score = readScore();
-    char grade_ltr;
+    cout << "*********************************\n";
+    cout << "Grade Report for: " << student_name << "\n";
 
-    if (score != INVALID_SCORE)
+    for (int i = 0; i < array_len; i++)
     {
-        cout << "*******************\n";
-        grade_ltr = calcGradeLetter(score);
-        displayGrade(grade_ltr);
-        cout << "*******************\n\n";
+
+        // DEBUG OUT QUIZ SCORES
+        cout << quiz_scores[i] << "\n";
+
+        // UPDATE TOTAL
+        total += quiz_scores[i];
     }
+
+    // CALC AVG
+    avg = total / array_len;
+
+    // OUTPUT STATS
+    cout << "Total: " << total << "\n";
+    cout << "Average: " << avg << "\n";
+
+    cout << "*********************************\n";
 
     return 0;
 }
 
 /*** CUSTOM FUNCTIONS  ***/
-
-double readScore()
-{
-    double score;
-
-    cout << "Enter the score (0-100, decimals allowed): ";
-
-    if (!(cin >> score) || score < 0.0 || score > 100.0)
-    {
-        cout << "Invalid input: score must be a positive number from 0-100." << endl;
-        return INVALID_SCORE;
-    }
-
-    return score;
-};
-
-char calcGradeLetter(double score)
-{
-
-    if (score < 0.0 || score > 100.0)
-    {
-        return '?';
-    }
-    else if (score >= 90.0)
-    {
-        return 'A';
-    }
-    else if (score >= 80.0)
-    {
-        return 'B';
-    }
-    else if (score >= 70.0)
-    {
-        return 'C';
-    }
-    else if (score >= 60.0)
-    {
-        return 'D';
-    }
-    else
-    {
-        return 'F';
-    }
-};
-
-void displayGrade(char grade_ltr)
-{
-
-    if (!(grade_ltr == '\0'))
-    {
-        cout << "Your grade = " << grade_ltr << endl;
-    }
-};
