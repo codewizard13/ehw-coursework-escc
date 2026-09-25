@@ -692,5 +692,171 @@ Before the ISP can forward this packet, it must translate the source IPv4 addres
 
 ## 📖 CHECKPOINT EXAM: The Internet Protocol
 
+![alt text](image-100.png)
+
+What are two reasons a network administrator might want to create subnets? (Choose two.)
+
+reduction in number of switches needed   1 of 5
+
+easier to implement security policies   2 of 5  #MY_CHOICE
+
+simplifies network design   3 of 5
+
+improves network performance   4 of 5 #MY_CHOICE
+
+reduction in number of routers needed   5 of 5
+
+---
+
+![alt text](image-101.png)
+
+---
+
+![alt text](image-102.png)
+
+![alt text](image-103.png)
+
+- Link local addresses are 169.254.0.0/16 and are used primarily for automatic address configuration; a device can automatically assign itself an address when it connects to the network; if it can't obtain an IP advice from a DHCP server, it may assign itself a link-local address; Automatic private IP addressing (APIPA) -- devices on the network can assign themselves IPs and communicate even in the absence of a DHCP SERVER! IPv6 link-local addresses use the prefix FE80::/10 and are mandatory for network functions like discovery and communication, but many modern systems use privacy-focused methods for added security; easy setup, but can't reach outside the local network. (also see SLAAC and NDP)
+
+
+![alt text](image-104.png)
+https://www.youtube.com/watch?v=9JNzXOECq8A
+
+---
+
+![alt text](image-105.png)
+
+![alt text](image-106.png)
+
+
+![alt text](image-107.png)
+
+
+> ## 💡 Exactly — that’s the rule
+> 
+> `0000` becomes `0` because you remove **leading zeroes within each individual 16-bit hextet**.
+> 
+> So:
+> 
+> - `0000` → `0`
+> - `0001` → `1`
+> - `00ab` → `ab`
+> - `0db8` → `db8`
+> - `ab00` stays `ab00` because its zeroes are **trailing**, not leading
+> 
+> Then, separately, a consecutive sequence of hextets that are all zero—such as `0:0:0`—can be compressed once as `::`.
+> 
+> So it really is like two stages:
+> 
+> 1. **Shrink each group:** `0000` → `0`
+> 2. **Collapse one consecutive all-zero group:** `0:0:0` → `::`
+> 
+> That distinction makes IPv6 shortening much easier.
+
+---
+
+> [IT Exam Items Repository](https://itexamanswers.net/it-exam-items-repository) › [Category: CCNA](https://itexamanswers.net/exam-item-category/ccna-question-bank) › If more than one DHCP server is available on the local network, in which order will DHCP messages be sent between a host and a DHCP server?
+> 
+> **If more than one DHCP server is available on the local network, in which order will DHCP messages be sent between a host and a DHCP server?**
+> 
+> *   request, discover, offer, acknowledgment
+> *   discover, offer, request, acknowledgment
+> *   request, acknowledgment, discover, offer
+> *   acknowledgment, request, offer, discover
+> 
+> **Explanation:** A DHCP host broadcasts a DHCP discover message to locate available servers. If more than one DHCP server is available, each server will respond to the host with a unicast DHCP offer message, which offers a lease to the client. The client then broadcasts a DHCP request message that identifies the specific server and offer that the client will accept. The identified server will unicast a DHCP acknowledgment message to finalize the offer.
+> 
+> **Related exam: [Networking Essentials (Version 2) - Modules 9 - 12: Data Communications and Network Services Pre-Test Exam](https://itexamanswers.net/networking-essentials-version-2-modules-9-12-data-communications-and-network-services-pre-test-exam.html "Networking Essentials (Version 2) - Modules 9 - 12: Data Communications and Network Services Pre-Test Exam Answers")**  
+> **Related exam: [7.4.4 Module Quiz - DHCPv4 Answers](https://itexamanswers.net/7-4-4-module-quiz-dhcpv4-answers.html "7.4.4 Module Quiz - DHCPv4 Answers")**  
+> **Related exam: [9.3.2 Module 9 - Dynamic Addressing with DHCP Quiz](https://itexamanswers.net/module-9-dynamic-addressing-with-dhcp-quiz-answers.html "9.3.2 Module 9 - Dynamic Addressing with DHCP Quiz Answers")**  
+> **Related exam: [Networking Essentials 3.0 Checkpoint Exam: The Internet Protocol](https://itexamanswers.net/checkpoint-exam-the-internet-protocol-answers.html "Networking Essentials 3.0 Checkpoint Exam: The Internet Protocol Answers")**
+> 
+> ## Post navigation
+> 
+> [← Previous
+> 
+> Which two types of devices are typically assigned static IP addresses? (Choose two.)
+> 
+> ](https://itexamanswers.net/exam-item/which-two-types-of-devices-are-typically-assigned-static-ip-addresses-choose-two)
+> 
+> [](https://itexamanswers.net/exam-item/which-two-types-of-devices-are-typically-assigned-static-ip-addresses-choose-two)
+> 
+> [Next →
+> 
+> Which destination IPv4 address does a DHCPv4 client use to send the initial DHCP Discover packet when the client is looking for a DHCP server?
+> 
+> ](https://itexamanswers.net/exam-item/which-destination-ipv4-address-does-a-dhcpv4-client-use-to-send-the-initial-dhcp-discover-packet-when-the-client-is-looking-for-a-dhcp-server)
+> 
+> [](https://itexamanswers.net/exam-item/which-destination-ipv4-address-does-a-dhcpv4-client-use-to-send-the-initial-dhcp-discover-packet-when-the-client-is-looking-for-a-dhcp-server)
+
+![alt text](image-108.png)
+
+---
+
+> ## ✅ Validation: Mostly correct
+> 
+> Your explanation is **correct for initial DHCP address assignment**:
+> 
+> - In the normal **DORA** sequence, the client broadcasts **DHCPDISCOVER**; servers may reply with **DHCPOFFER**; the client then broadcasts **DHCPREQUEST** to select one offer; and the chosen server replies with **DHCPACK**.
+> - Broadcasting the initial DHCPREQUEST lets all DHCP servers know which offer the client accepted, so non-selected servers can stop holding their offered addresses.
+> - The DHCPREQUEST identifies the selected DHCP server through the **Server Identifier** option.
+> 
+> ## ⚠️ Important nuance
+> 
+> “DHCPREQUEST is typically broadcast” is a little too broad. Its delivery method depends on the DHCP client state:
+> 
+> | DHCP situation | DHCPREQUEST delivery |
+> |---|---|
+> | Initial address selection after DHCPOFFERs | **Broadcast** |
+> | Lease renewal at **T1** (normally 50% of lease time) | **Usually unicast** to the original DHCP server |
+> | Rebinding at **T2** (normally 87.5% of lease time), if the original server did not reply | **Broadcast** to any available DHCP server |
+> | Client rebooting and attempting to reuse a remembered address | **Broadcast** |
+> 
+> ## ✍️ Cleaner version
+> 
+> > During the initial DHCP address-assignment process, the client normally sends its DHCPREQUEST as a broadcast. Although it has received one or more DHCPOFFER messages, broadcasting informs every DHCP server which offer it accepted, allowing unselected servers to return their offered addresses to their available pools. The request includes the selected server’s identifier so that server can send the DHCPACK.  
+> >
+> > During renewal, the client normally unicasts a DHCPREQUEST to the DHCP server that issued its lease at T1. If that server does not respond by T2, the client broadcasts a DHCPREQUEST to seek renewal from any available DHCP server.
+> 
+> Your key idea is right; just add the **T2 rebinding broadcast** exception so the explanation is complete.
+
+![alt text](image-109.png)
+
+---
+
+#PROOF
+
+![alt text](image-110.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---
 

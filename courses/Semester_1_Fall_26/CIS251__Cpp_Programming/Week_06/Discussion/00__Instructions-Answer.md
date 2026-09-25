@@ -13,6 +13,8 @@ Why is array-bound reasoning a systems-programming concern, and how should AI su
 
 # MY ANSWER (DRAFT):
 
+What is 'array-bound reasoning'?
+What is 'systems-programming'
 
 
 ### References:
