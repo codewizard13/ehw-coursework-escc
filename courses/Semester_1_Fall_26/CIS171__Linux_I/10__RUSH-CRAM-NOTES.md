@@ -2331,6 +2331,7 @@ As with SUID and SGID, use `-` or `0` to clear the sticky bit.
 ![alt text](image-23.png)
 
 - The `T` tells us the sticky bit has been enabled
+- The sticky bit makes sure only the owner who owns the file is able to delete the file, not Zoey the ultra-tidy person who likes to delete files in a directory in the name of cleanup
 
 ---
 
@@ -3312,7 +3313,389 @@ That concludes this lab. Please ensure you Check Your Work to submit for a grade
 
 ---
 
-# 🟣 
+# 🟣 3.3.8 Lesson Review
+
+An administrator wants to remove all existing entries from an Access Control List (ACL). Recommend an option for the administrator to add to the setfacl command to accomplish this task.
+
+answer
+
+A
+-R
+
+
+B
+-s
+
+
+C
+-m
+
+
+D
+-b   #MY_CHOICE
+
+---
+
+A directory named "shared" contains multiple subdirectories and files. You need to ensure that all new files and subdirectories created within "shared" inherit specific ACL permissions for the "team" group.
+
+Which command would you use?
+
+answer
+
+A
+setfacl -m g:team:rwx shared   #MY_ORIGINAL_CHOICE
+
+
+B
+setfacl -x g:team shared
+
+
+C
+chmod 777 shared
+
+
+D
+setfacl -m d:g:team:rwx shared #PERPLEXITYS_CHOICE
+
+
+
+> ## ✅ Great catch — both forms are valid
+> 
+> You correctly found the `-d` option, and you are also correct that the command in the answer uses `d:` **inside the ACL entry**. These are two different ways to tell `setfacl` that you are working with a **default ACL**.
+> 
+> The quiz answer is still **D**:
+> 
+> ```bash
+> setfacl -m d:g:team:rwx shared
+> ```
+> 
+> The `d:` prefix is valid ACL-entry syntax. The manual page defines ACL entries in the form:
+> 
+> ```text
+> [d[efault]:] g[roup]:gid:perms
+> ```
+> 
+> So `d:g:team:rwx` expands conceptually to:
+> 
+> ```text
+> default:group:team:rwx
+> ```
+> 
+> That tells `setfacl` to create a default named-group ACL entry for the `team` group. [man7](https://man7.org/linux/man-pages/man1/setfacl.1.html)
+> 
+> ## 🔄 Equivalent commands
+> 
+> These commands have the same intended effect:
+> 
+> ```bash
+> setfacl -m d:g:team:rwx shared
+> ```
+> 
+> ```bash
+> setfacl -d -m g:team:rwx shared
+> ```
+> 
+> ```bash
+> setfacl --default -m g:team:rwx shared
+> ```
+> 
+> The difference is where you declare “default”:
+> 
+> | Form | Where “default” is specified | Meaning |
+> |---|---|---|
+> | `-m d:g:team:rwx` | In the **ACL entry** | Modify the default ACL entry for group `team` |
+> | `-d -m g:team:rwx` | As a **command option** | Treat the supplied regular ACL entry as a default ACL entry |
+> | `--default -m g:team:rwx` | Long-form command option | Same as `-d` |
+> 
+> The `setfacl` documentation says `-d`/`--default` applies operations to the Default ACL and that ordinary ACL entries in its input are promoted to Default ACL entries. It separately documents the optional `d[efault]:` prefix as part of the ACL-entry format. [man7](https://man7.org/linux/man-pages/man1/setfacl.1.html)
+> 
+> ## 🧠 Why the question uses `d:`
+> 
+> Quiz writers often prefer:
+> 
+> ```bash
+> setfacl -m d:g:team:rwx shared
+> ```
+> 
+> because the ACL type is visible right beside the group and permissions:
+> 
+> ```text
+> d: g:team : rwx
+> │   │        └─ permissions
+> │   └────────── named group
+> └────────────── default ACL
+> ```
+> 
+> That makes it easy to distinguish from option A:
+> 
+> ```bash
+> setfacl -m g:team:rwx shared
+> ```
+> 
+> Option A changes the **access ACL of the existing `shared` directory**. It does not establish inheritance for subsequently created contents.
+> 
+> ## 🧪 Verify the result
+> 
+> After using either valid form, run:
+> 
+> ```bash
+> getfacl shared
+> ```
+> 
+> You should see entries similar to:
+> 
+> ```text
+> default:user::rwx
+> default:group::r-x
+> default:group:team:rwx
+> default:mask::rwx
+> default:other::---
+> ```
+> 
+> The key line is:
+> 
+> ```text
+> default:group:team:rwx
+> ```
+> 
+> That confirms that new children created within `shared` will inherit the default ACL framework. New **subdirectories** also inherit a default ACL, allowing inheritance to continue farther down the directory tree. [man7](https://man7.org/linux/man-pages/man1/setfacl.1.html)
+
+---
+
+
+You are working helpdesk and a user submits a ticket stating that they cannot access a file in a shared directory. You review the ACLs using the getfacl command and confirm that the user has explicit read and write permissions. However, the user still cannot access the file. You also check the standard permissions using the ls -l command and notice that the file's group permissions are set to read-only.
+
+What is the most likely cause of the issue?
+
+answer
+
+A
+The standard Linux permissions are overriding the ACL settings.
+
+
+B
+The ACLs were not applied recursively to the file.
+
+
+C
+The file is located in a directory with restrictive parent directory permissions.
+
+
+D
+The user is not part of the correct group for the file.
+
+
+> ## ✅ Correct answer: **C — The file is located in a directory with restrictive parent directory permissions**
+> 
+> A user needs more than read/write permission on the file itself. They must also have **execute (`x`) permission on every directory in the path** leading to that file—especially the shared directory that contains it.
+> 
+> For example, even if an ACL gives `alice` `rw-` on:
+> 
+> ```text
+> /shared/reports/budget.txt
+> ```
+> 
+> she still cannot open it if she lacks directory traversal/search permission on `/shared` or `/shared/reports`, such as:
+> 
+> ```text
+> drwx------ root root /shared
+> ```
+> 
+> Without `x` on the directory, Linux will not let her traverse into it to reach the file.
+> 
+> ## 🔍 Why the other choices are wrong
+> 
+> | Choice | Why it is not the best answer |
+> |---|---|
+> | **A** | Not quite. When extended ACLs exist, the group permission field shown by `ls -l` is closely related to the ACL **mask**, not simply a separate standard-permission rule that overrides a named-user ACL. A mask can limit ACL permissions, but the question says the user has explicit read/write ACL permissions and emphasizes a shared directory access failure. |
+> | **B** | Recursive ACL application matters when permissions must be applied to many files and subdirectories, but it does not explain why this particular file has already been confirmed to grant the user explicit permissions. |
+> | **C** | Correct. The enclosing directory may deny the necessary `x` permission, preventing the user from accessing the file path at all. |
+> | **D** | A named-user ACL entry applies directly to that user; the user does not need membership in the file’s owning group if their ACL entry grants access. |
+> 
+> ## 🧠 Important ACL detail
+> 
+> There is one subtle rule worth remembering for Linux quizzes:
+> 
+> - An ACL **mask** can restrict the *effective* permissions of named users and groups.
+> - In a file with extended ACLs, the group-mode bits reported by `ls -l` commonly represent that ACL mask rather than merely the owning group’s independent permissions.
+> - `getfacl` can reveal this by showing an annotation such as `#effective:r--` next to an ACL entry. [documentation.suse](https://documentation.suse.com/sles/12-SP5/html/SLES-all/cha-security-acls.html)
+> 
+> But among these answer choices, the most likely practical cause is still a restrictive parent directory: **C**.
+
+
+---
+
+
+A user reports they cannot access a specific directory on a Linux server, even though their user account is listed in the ACL for that directory. Upon investigation, you find that the user is part of a group that has been explicitly denied access to the directory. Policy mandates all shared directories are to be managed through group membership and that individual access control list entries are granted only in rare instances.
+
+What should you do to resolve the issue?
+
+answer
+
+A
+Use the setfacl command to explicitly grant the user access to the directory.
+
+
+B
+Adjust the group membership of the user to remove them from the group that is denied access.  #MY_GUESS
+
+
+C
+Modify the standard Linux permissions using the chmod command to override the ACL.
+
+
+D
+Reapply the ACL using the -R option to ensure permissions are inherited correctly.
+
+
+> ## ✅ Quiz answer: **B — Adjust the user’s group membership**
+> 
+> Yes, **B is the intended answer**, because the stated organizational policy says shared directories must be managed through **group membership**, while individual ACL entries should be used only rarely.
+> 
+> So the best corrective action is to remove the user from the group that is not permitted to access that directory—assuming that group membership is incorrect for the user’s current job role. That returns access control to the approved group-based model.
+> 
+> ## ⚠️ Important Linux ACL correction
+> 
+> The quiz wording is technically sloppy: traditional Linux **POSIX ACLs do not have explicit “deny” entries** in the Windows-ACL sense. You cannot normally configure something like:
+> 
+> ```text
+> group:Contractors:DENY
+> ```
+> 
+> Instead, a group can be given **no relevant permissions**, for example:
+> 
+> ```text
+> group:contractors:---
+> ```
+> 
+> or it may lack the required directory permission, especially `x` for traversing/searching the directory.
+> 
+> Also, if the user has a matching named-user ACL entry, Linux checks that named-user entry before group entries. In ordinary POSIX ACL evaluation, an individual entry such as `user:alex:rwx` is evaluated ahead of the user’s group matches; it is also subject to the ACL mask. Membership in a group with no permission does not operate as a Windows-style explicit deny that automatically overrides the user ACL. [usenix](https://www.usenix.org/legacyurl/posix-access-control-lists-linux)
+> 
+> So read the question as a **policy and identity-management scenario**, not as a perfectly accurate technical representation of POSIX ACL behavior.
+> 
+> ## 🔐 Your security instinct is correct
+> 
+> You are absolutely right to pause before making any access change.
+> 
+> A user reporting “I can’t access the folder” does **not** by itself prove they should have access. A helpdesk technician should avoid simply granting permission because the requester asks. This is exactly where social engineering risk matters: an attacker could claim they need access to payroll, HR, finance, customer records, backups, or administrative shares.
+> 
+> A good real-world response would be:
+> 
+> 1. Verify the directory owner, data classification, and relevant access-control policy.
+> 2. Determine whether the user’s current job role is entitled to access.
+> 3. Confirm the authorization through the established process—such as the data owner, authorized manager, IAM workflow, ticket approval, or membership request—not merely an informal claim.
+> 4. If access is authorized, correct the user’s group membership using least privilege.
+> 5. Document the approval, group change, scope of access, and reason in the ticket.
+> 
+> That security-first thought process is better than treating the quiz’s scenario as an automatic instruction to remove a restriction.
+> 
+> ## 🧩 Why B is best
+> 
+> | Answer | Quiz evaluation | Reason |
+> |---|---|---|
+> | **A. Add a user ACL entry** | Incorrect | It works against the stated policy. The policy says shared access should normally be controlled through groups, not one-off individual ACL rules. It also creates exceptions that are harder to audit and remove later. |
+> | **B. Remove from denied group** | **Correct** | It aligns the access configuration with the group-based policy and avoids relying on a rare, per-user ACL exception. |
+> | **C. Use `chmod`** | Incorrect | `chmod` changes traditional owner/group/other permissions. It is not a reliable way to “override” ACL evaluation and could unintentionally broaden or reduce access for other users. ACL mask behavior also means permission changes can affect effective ACL permissions.  [man7](https://www.man7.org/linux/man-pages/man5/acl.5.html) |
+> | **D. Reapply ACL recursively** | Incorrect | `-R` affects the target and its contents; it does not resolve an incorrect group-membership/access-policy situation. It could also make a larger, unintended permission change. |
+> 
+> ## 📝 Best exam mindset
+> 
+> For this question, use this rule:
+> 
+> > **When the policy explicitly says access is group-managed, solve the access issue through authorized group membership—not an individual ACL exception.**
+> 
+> But in a real support role, mentally insert this condition:
+> 
+> > **Only after verifying the user is authorized to have that access.**
+> 
+> That is the precise distinction you noticed. The test assumes the user’s intended authorization is already known; real-world support should verify it before changing membership.
+
+
+---
+
+
+#PROOF
+
+
+> You are working helpdesk and a user calls in reporting that they cannot access a shared directory on a Linux server. They mention that they are part of the group that should have access to the directory.
+> 
+> What would be the best first step to troubleshoot this issue?
+> 
+> answer
+> 
+> A
+> 
+> Use the `ls -l` command to check the standard permissions of the directory.
+> 
+> Incorrect answer:Incorrect
+> 
+> B
+> 
+> Use the `usermod` command to add the user to a different group.
+> 
+> C
+> 
+> Use the `getfacl` command to display the ACL entries for the directory.
+> 
+> Correct Answer:Correct
+> 
+> D
+> 
+> Use the `chmod` command to modify the directory's standard permissions.
+> 
+> ### Explanation
+> 
+> You would use the `getfacl` command because it allows you to view the ACL entries for the directory. This is the most efficient way to determine if there are specific ACL configurations that are preventing the user from accessing the directory, even if they are part of the correct group.
+> 
+> Using the `chmod` command is incorrect. This command works only for standard permissions and does not address ACL-related issues. If the problem lies in the ACL configuration, modifying standard permissions with chmod would not resolve the user's access issue.
+> 
+> Adjusting group memberships with the `usermod` command is incorrect. can sometimes resolve access problems, but it is not the best first step. Before making changes to group memberships, you need to confirm whether the ACLs are correctly configured.
+> 
+> Using `ls -l` is incorrect. While the `ls -l` command is useful for checking standard permissions, it does not provide information about ACLs. Since the issue might be related to ACLs, this command alone would not give you the necessary details to resolve the problem.
+
+![alt text](image-34.png)
+
+---
+
+![alt text](image-35.png)
+
+
+> You are working helpdesk and a user submits a ticket stating that they cannot access a file in a shared directory. You review the ACLs using the `getfacl` command and confirm that the user has explicit read and write permissions. However, the user still cannot access the file. You also check the standard permissions using the `ls -l` command and notice that the file's group permissions are set to read-only.
+> 
+> What is the most likely cause of the issue?
+> 
+> answer
+> 
+> A
+> 
+> The standard Linux permissions are overriding the ACL settings.
+> 
+> Correct Answer:Correct
+> 
+> B
+> 
+> The ACLs were not applied recursively to the file.
+> 
+> C
+> 
+> The file is located in a directory with restrictive parent directory permissions.
+> 
+> Incorrect answer:Incorrect
+> 
+> D
+> 
+> The user is not part of the correct group for the file.
+> 
+> ### Explanation
+> 
+> The most likely cause for this issue is that the standard Linux permissions are overriding the ACL settings because standard permissions and ACLs can conflict. If the standard permissions are more restrictive than the ACLs, the standard permissions take precedence, which could explain why the user cannot access the file.
+> 
+> Group membership would not be the root cause of the problem since the user already has explicit permissions through the ACL.
+> 
+> While ACLs can be applied recursively, this is not relevant here because the getfacl command confirmed that the user has explicit permissions on the file itself. The issue lies elsewhere.
+> 
+> Parent directory permissions can affect access, but in this scenario, the problem is specifically tied to the file's permissions. The parent directory's permissions would not override the ACLs or standard permissions on the file.
 
 ---
 
