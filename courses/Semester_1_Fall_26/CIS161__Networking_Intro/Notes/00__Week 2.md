@@ -19,7 +19,7 @@
 
 
 
-# MODULE 3: Wireless and Mobile Networks
+# 🧩 MODULE 3: Wireless and Mobile Networks
 
 ## 📖 3.0 Introduction
 
@@ -261,7 +261,7 @@ Q2 bluetooth 3. bluetooth 4. a wireless lan 5. nfc 6. BLUETOOTH ? 7. cellular, w
 
 ---
 
-# MODULE 4: Build a Home Network
+# 🧩 MODULE 4: Build a Home Network
 
 ## 📖 4.1 Home network Basics
 
@@ -304,7 +304,7 @@ In addition to the wired ports, many home routers include a radio antenna and a 
 
 ---
 
-### 4.2.1 LAN Wireless Frequencies
+ ### 🟣 4.2.1 LAN Wireless Frequencies
 
 The wireless technologies most frequently used in home networks are in the unlicensed 2.4 GHz and 5 GHz frequency ranges.
 
@@ -344,7 +344,7 @@ Fiber-Optic Cable
 
 ---
 
-### 4.3.1 Wi-Fi Networks
+ ### 🟣 4.3.1 Wi-Fi Networks
 
 A number of standards have been developed to ensure that wireless devices can communicate. They specify the RF spectrum used, data rates, how the information is transmitted, and more. The main organization responsible for the creation of wireless technical standards is the Institute of Electrical and Electronics Engineers (IEEE).
 The IEEE 802.11 standard governs the WLAN environment. There are amendments to the IEEE 802.11 standard that describe characteristics for different standards of wireless communications. Wireless standards for LANs use the 2.4 GHz and 5 GHz frequency bands. Collectively these technologies are referred to as Wi-Fi.
@@ -357,7 +357,7 @@ Do you have a wireless network in your home? Do you know what standards are supp
 
 ---
 
-### 4.3.2 Wireless Settings
+ ### 🟣 4.3.2 Wireless Settings
 
 The Packet Tracer Basic Wireless Settings interface is shown in the figure. Wireless routers using the 802.11 standards have multiple settings that have to be configured. These settings include the following:
 
@@ -400,7 +400,7 @@ Disabling SSID broadcasting can make it more difficult for legitimate clients to
 
 ## 4.4 Set Up a Home Router
 
-### 4.4.1 First Time Setup
+ ### 🟣 4.4.1 First Time Setup
 
 Many wireless routers designed for home use have an automatic setup utility that can be used to configure the basic settings on the router. These utilities usually require a PC or laptop to be connected to a wired port on the router. If no device is available that has a wired connection, it may be necessary to configure the wireless client software on the laptop or tablet first.
 

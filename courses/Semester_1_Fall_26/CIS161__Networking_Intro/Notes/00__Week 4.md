@@ -528,6 +528,24 @@ Before the ISP can forward this packet, it must translate the source IPv4 addres
 
 ### 🟣 9.3.1 Video - Network Segmentation
 
+![alt text](image-112.png)
+
+>  In an ethernet LAN, devices use ethernet broadcast to contact all devices on the same local area network. For example, a device will send an ARP request on the local network to discover the associated MAC address. This is an ethernet broadcast searching for a known IPv4 address. Switches propagate broadcast out all interfaces except the interface on which it was received. Routers do not propagate broadcast. When a router receives a broadcast, it does not forward it out other interfaces. This is known as a layer to broadcast domain. Another example of an ethernet broadcast is a host sending a DHCP discover message to locate a DHCP server. The DHCP server provides an IPv4 address and other information to the client. Once again, switches propagate these broadcast out all interfaces except the interface on which it was received. The router will not propagate this ethernet broadcast out other interfaces. As you can see, this is a separate layer to broadcast domain. A router segments or separates layer to broadcast domains.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
 
 ### 🟣 9.3.2 Broadcast Domains and Segmentation
 
@@ -537,6 +555,24 @@ Before the ISP can forward this packet, it must translate the source IPv4 addres
 
 ### 🟣 9.3.4 Reasons for Segmenting Networks
 
+Subnetting reduces overall network traffic and improves network performance. It also enables an administrator to implement security policies such as which subnets are allowed or not allowed to communicate together. Another reason is that it reduces the number of devices affected by abnormal broadcast traffic due to misconfigurations, hardware/software problems, or malicious intent.
+
+There are various ways of using subnets to help manage network devices.
+
+![alt text](image-113.png)
+
+![alt text](image-114.png)
+
+![alt text](image-115.png)
+
+
+Network administrators can create subnets using any other division that makes sense for the network. Notice in each figure, the subnets use longer prefix lengths to identify networks.
+
+Understanding how to subnet networks is a fundamental skill that all network administrators must develop. Various methods have been created to help understand this process. Although a little overwhelming at first, pay close attention to the detail and, with practice, subnetting will become easier.
+
+
+
+---
 
 ### 🟣 9.3.5 Check Your Understanding - Network Segmentation
 
@@ -547,6 +583,40 @@ Before the ISP can forward this packet, it must translate the source IPv4 addres
 
 
 ### 🟣 9.4.1 What Did I Learn in this Module?
+
+**IPv4 Unicast, Broadcast, and Multicast**
+
+Unicast transmission refers to one device sending a message to one other device in one-to-one communications. A unicast packet has a destination IP address that is a unicast address which goes to a single recipient. A source IP address can only be a unicast address because the packet can only originate from a single source. This is regardless of whether the destination IP address is a unicast, broadcast or multicast. IPv4 unicast host addresses are in the address range of 1.1.1.1 to 223.255.255.255.
+
+Broadcast transmission refers to a device sending a message to all the devices on a network in one-to-all communications. A broadcast packet has a destination IP address with all ones (1s) in the host portion, or 32 one (1) bits. A broadcast packet must be processed by all devices in the same broadcast domain. A broadcast may be directed or limited. A directed broadcast is sent to all hosts on a specific network. A limited broadcast is sent to 255.255.255.255. By default, routers do not forward broadcasts.
+
+Multicast transmission reduces traffic by allowing a host to send a single packet to a selected set of hosts that subscribe to a multicast group. A multicast packet is a packet with a destination IP address that is a multicast address. IPv4 has reserved the 224.0.0.0 to 239.255.255.255 addresses as a multicast range. Each multicast group is represented by a single IPv4 multicast destination address. When an IPv4 host subscribes to a multicast group, the host processes packets addressed to this multicast address, and packets addressed to its uniquely allocated unicast address.
+
+**Types of IPv4 Addresses**
+
+Public IPv4 addresses are addresses which are globally routed between ISP routers. However, not all available IPv4 addresses can be used on the internet. There are blocks of addresses called private addresses that are used by most organizations to assign IPv4 addresses to internal hosts. Most internal networks, from large enterprises to home networks, use private IPv4 addresses for addressing all internal devices (intranet) including hosts and routers. However, private addresses are not globally routable. Before the ISP can forward this packet, it must translate the source IPv4 address, which is a private address, to a public IPv4 address using NAT.
+
+Loopback addresses (127.0.0.0 /8 or 127.0.0.1 to 127.255.255.254) are more commonly identified as only 127.0.0.1, these are special addresses used by a host to direct traffic to itself. Link-local addresses (169.254.0.0 /16 or 169.254.0.1 to 169.254.255.254) are more commonly known as the Automatic Private IP Addressing (APIPA) addresses or self-assigned addresses. They are used by a Windows DHCP client to self-configure in the event that there are no DHCP servers available.
+
+In 1981, IPv4 addresses were assigned using classful addressing as defined in RFC 790 ([https://tools.ietf.org/html/rfc790](https://datatracker.ietf.org/doc/html/rfc790)), Assigned Numbers. Customers were allocated a network address based on one of three classes, A, B, or C. The RFC divided the unicast ranges into specific classes as follows:
+
+*   **Class A (0.0.0.0/8 to 127.0.0.0/8)** - Designed to support extremely large networks with more than 16 million host addresses.
+*   **Class B (128.0.0.0 /16 - 191.255.0.0 /16)** - Designed to support the needs of moderate to large size networks with up to approximately 65,000 host addresses.
+*   **Class C (192.0.0.0 /24 - 223.255.255.0 /24)** - Designed to support small networks with a maximum of 254 hosts.
+
+There is also a Class D multicast block consisting of 224.0.0.0 to 239.0.0.0 and a Class E experimental address block consisting of 240.0.0.0 - 255.0.0.0.
+
+Public IPv4 addresses are addresses which are globally routed over the internet. Public IPv4 addresses must be unique. Both IPv4 and IPv6 addresses are managed by the IANA. The IANA manages and allocates blocks of IP addresses to the RIRs. RIRs are responsible for allocating IP addresses to ISPs who provide IPv4 address blocks to organizations and smaller ISPs. Organizations can also get their addresses directly from an RIR.
+
+**Network Segmentation**
+
+In an Ethernet LAN, devices use broadcasts and ARP to locate other devices. ARP sends Layer 2 broadcasts to a known IPv4 address on the local network to discover the associated MAC address. Devices on Ethernet LANs also locate other devices using services. A host typically acquires its IPv4 address configuration using DHCP which sends broadcasts on the local network to locate a DHCP server. Switches propagate broadcasts out all interfaces except the interface on which it was received.
+
+A large broadcast domain is a network that connects many hosts. A problem with a large broadcast domain is that these hosts can generate excessive broadcasts and negatively affect the network. The solution is to reduce the size of the network to create smaller broadcast domains in a process called subnetting. These smaller network spaces are called subnets. The basis of subnetting is to use host bits to create additional subnets. Subnetting reduces overall network traffic and improves network performance. It helps administrators to implement security policies such as which subnets are allowed or not allowed to communicate together. It reduces the number of devices affected by abnormal broadcast traffic due to misconfigurations, hardware/software problems, or malicious intent.
+
+
+
+---
 
 
 ### 🟣 9.4.2 Webster - Reflection Questions
@@ -603,6 +673,23 @@ Before the ISP can forward this packet, it must translate the source IPv4 addres
 
 ### 🟣 10.2.3 Video - IPv6 Formatting Rules
 
+![alt text](image-117.png)
+
+> IPv6 addresses are 128 bits in length and written as a string of hexadecimal values. IPv6 addresses are not case sensitive and can be written in either lower case or upper case. Every four bits is represented by a single hexadecimal digit for a total of 32 hexadecimal values. For example, the hexadecimal digit two is the equivalent in binary to the four bits 0010. Every four hexadecimal digits is 16 bits separated by a colon. Each hexadecimal digit is four bits, which makes it easy to represent the 128 bit IPv6 address. Each set of four hexadecimal segments is sometimes referred to as a hextet. When written with all 32 hexadecimal digits, this is known as the preferred format, which doesn't mean it is always the preferred way to display the address. There are two rules which can be used to reduce the number of hexadecimal digits used to represent an IPv6 address. The first rule to help reduce the notation of IPv6 addresses is to omit any leading zeros in any hextet. We are using spaces on each side of the colon to make it easier to read. In our first example, notice that only leading zeros have been omitted. Here is our next example. Once again you can see that only leading zeros have been omitted, not trailing zeros. And the same holds true for our last example. You will notice that in all three examples only leading zeros were omitted, not trailing zeros. Otherwise you can see that we wouldn't know which zeros were omitted, leading zeros, trailing zeros or both. Using this first rule we know that it is only leading zeros that are omitted. The second rule can be used to further reduce the representation of an IPv6 address. Any single contiguous string of one or more 16 bit segments consistent of all zeros can be represented with a double colon. In our first example, we begin by using the first rule to omit leading zeros. Then the second rule is applied, which shows two contiguous all zero hextets. Applying both of these rules gives us the following compressed address. We are using spaces to better demonstrate the differences. Here's what the address would actually look like. Here is our next example. Again, we begin by omitting the leading zeros. Then the second rule is applied, which shows three contiguous all zero hextets. Applying both of these rules gives us the following compressed address. And once again here's what the address would actually look like. And now for our last example we begin by omitting leading zeros. Then the second rule is applied, which shows four contiguous all zero hextets. Applying both of these rules gives us the following compressed address. And once again here's what the address would actually look like. Notice the double colon occurs at the end of our address. The all zeros at the end of an IPv6 address is associated with an IPv6 network address. The double colon can be used only within an address. Otherwise there would be more than one possible resulting address. If an address has more than one contiguous string of all zero hextets, the best practice is to use the double colon on the longest string and apply the omitting leading zeros to the shorter string. If the strings are equal the first string should use the double colon. But typically it comes down to personal preference.
+
+![alt text](image-118.png)
+
+![Second rule for IPv6 shortening](image-119.png)
+
+![Double colon (::) can be used only once in any address](image-120.png)
+
+#PROOF
+
+![alt text](image-121.png)
+
+
+
+---
 
 ### 🟣 10.2.4 Rule 1 – Omit Leading Zeros
 
@@ -621,13 +708,53 @@ Before the ISP can forward this packet, it must translate the source IPv4 addres
 
 ### 🟣 10.3.1 What Did I Learn in this Module?
 
+**IPv4 Issues**
+
+**The depletion of IPv4 address space** has been the motivating factor for moving to IPv6. IPv6 has a larger 128-bit address space, providing 340 undecillion possible addresses. When the IETF began its development of a successor to IPv4, it used this opportunity to fix the limitations of IPv4 and include enhancements. One example is ICMPv6, which includes address resolution and address autoconfiguration not found in ICMPv4.
+
+Both IPv4 and IPv6 coexist and the transition to only IPv6 will take several years. The IETF has created various protocols and tools to help network administrators migrate their networks to IPv6. The migration techniques can be divided into three categories: Dual Stack, Tunneling, and Translation. Dual stack devices run both IPv4 and IPv6 protocol stacks simultaneously. **Tunneling** is a method of transporting an IPv6 packet over an IPv4 network. The IPv6 packet is encapsulated inside an IPv4 packet, similar to other types of data. NAT64 allows IPv6-enabled devices to communicate with IPv4-enabled devices using a translation technique similar to NAT for IPv4. An IPv6 packet is translated to an IPv4 packet and an IPv4 packet is translated to an IPv6 packet.
+
+**IPv6 Addressing**
+
+IPv6 addresses are 128 bits in length and written as a string of hexadecimal values. Every four bits is represented by a single hexadecimal digit; for a total of 32 hexadecimal values. IPv6 addresses are not case-sensitive and can be written in either lowercase or uppercase. In IPv6, a hextet that refers to a segment of 16 bits, or four hexadecimal values. Each “x” is a single hextet, which is 16 bits or four hexadecimal digits. Preferred format means that you write IPv6 address using all 32 hexadecimal digits. Here is one example - fe80:0000:0000:0000:0123:4567:89ab:cdef.
+
+There are two rules that help to reduce the number of digits needed to represent an IPv6 address.
+
+**Rule 1 –** Omit Leading Zeros. You can only omit leading zeros, not trailing zeros.
+
+*   01ab can be represented as 1ab
+*   09f0 can be represented as 9f0
+*   0a00 can be represented as a00
+*   00ab can be represented as ab
+
+**Rule 2** – Double Colon. A double colon (::) can replace any single, contiguous string of one or more 16-bit hextets consisting of all zeros. For example, 2001:db8:cafe:1:0:0:0:1 (leading 0s omitted) could be represented as 2001:db8:cafe:1::1. The double colon (::) is used in place of the three all-0 hextets (0:0:0). The double colon (::) can only be used once within an address, otherwise there would be more than one possible resulting address. If an address has more than one contiguous string of all-0 hextets, best practice is to use the double colon (::) on the longest string. If the strings are equal, the first string should use the double colon (::).
+
+
 
 ### 🟣 10.3.2 Webster - Reflection Questions
 
 
 ### 🟣 10.3.3 IPv6 Addressing Formats and Rules Quiz
 
+![alt text](image-122.png)
 
+Q: What are two methods that can be used to shorten the IPv6 address notation? (Choose two.)
+
+- remove all trailing zeros contained in the IPv6 address   1 of 4
+
+- use of a double colon (::) to represent a string of all zero hextets    2 of 4
+
+- omit all leading zeros from all hextets in the address   3 of 4
+
+- use double colons to represent a string of the same non-zero value   4 of 4
+
+---
+
+![alt text](image-123.png)
+
+#PROOF
+
+![alt text](image-124.png)
 
 ---
 
@@ -828,14 +955,61 @@ https://www.youtube.com/watch?v=9JNzXOECq8A
 
 ![alt text](image-110.png)
 
+---
+
+### 🟣 8.1.3 Packet Tracer - Connect to a Web Server
+
+## Objectives
+
+Observe how packets are sent across the Internet using IP addresses.
+
+## Instructions
+
+## Part 1: Verify connectivity to the web server
+
+a.  Open the source host command prompt window. Select **PC0**.
+
+b.  Select the Desktop Tab > Command Prompt.
+
+c.  Verify connectivity to the web server. At the command prompt, ping the IP address of the web server by entering **ping 172.33.100.50**.
+
+```sh
+PC> **ping 172.33.100.50**
+
+Pinging 172.33.100.50 with 32 bytes of data:
+
+Reply from 172.33.100.50: bytes=32 time=0ms TTL=127
+Reply from 172.33.100.50: bytes=32 time=0ms TTL=127
+Reply from 172.33.100.50: bytes=32 time=0ms TTL=127
+Reply from 172.33.100.50: bytes=32 time=0ms TTL=127
+
+Ping statistics for 172.33.100.50:
+
+Packets: Sent = 4, Received = 3, Lost = 1 (25% loss),
+
+Approximate round trip times in milli-seconds:
+
+Minimum = 0ms, Maximum = 0ms, Average = 0ms
+```
+
+A reply verifies connectivity from the client to the destination web server. The reply may time out initially while devices load and ARP is performed.
+
+> - **#GOTCHA:** The reply may time out initially while devices load and ARP is performed.
+
+d.  Close the command prompt window only, by selecting the x within the command prompt window. Be sure to leave the PC0 configuration window open.
+
+## Part 2: Connect to the Web Server via the web client
+
+a.  In the Desktop tab on PC0, select **Web Browser**.
+
+b.  Enter **172.33.100.50** into the URL and click **Go**. The web client will connect to the web server via the IP address, and open the web page.
+
+#PROOF
+
+![alt text](image-111.png)
 
 
-
-
-
-
-
-
+---
 
 
 

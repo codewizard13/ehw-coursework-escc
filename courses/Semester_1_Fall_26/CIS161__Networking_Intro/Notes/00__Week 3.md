@@ -18,7 +18,7 @@
 > - Module 5, 6, 7, Checkpoint Exam 2: Network Access
 
 
-# MODULE 5:  Communication Principles
+# 🧩 MODULE 5: Communication Principles
 
 ## 5.0. Introduction
 
@@ -111,7 +111,7 @@ Networking protocols define many aspects of communication over the local network
 
 ---
 
-### 5.2.2 The Internet and Standards
+ ### 🟣 5.2.2 The Internet and Standards
 
 With the increasing number of new devices and technologies coming online, how is it possible to manage all the changes and still reliably deliver services such as email? The answer is internet standards.
 
@@ -167,7 +167,7 @@ Layers
 
 ---
 
-### 5.3.3 The TCP/IP Model
+ ### 🟣 5.3.3 The TCP/IP Model
 
 Layered models help us visualize how the various protocols work together to enable network communications. A layered model depicts the operation of the protocols occurring within each layer, as well as the interaction with the layers above and below it. The layered model has many benefits:
 
@@ -271,7 +271,7 @@ The key similarities are in the transport and network layers; however, the two m
 
 ---
 
-# MODULE 6: Network Media
+# 🧩 MODULE 6: Network Media
 
 ## 6.0 Introduction
 
@@ -396,7 +396,7 @@ The three most common network cables are twisted-pair, coaxial cable, and fiber-
 
 ---
 
-# MODULE 7: The Access Layer
+# 🧩 MODULE 7: The Access Layer
 
 ## 7.0 Introduction
 
@@ -421,7 +421,7 @@ The three most common network cables are twisted-pair, coaxial cable, and fiber-
 ## 7.1 Encapsulation and the Ethernet Frame
 
 
-### 7.1.1 Video - The Fields of the Ethernet Frame
+### 🟣 7.1.1 Video - The Fields of the Ethernet Frame
 
 Ethernet is technology commonly used in local area networks. Devices access the Ethernet LAN using an Ethernet Network Interface Card (NIC). Each Ethernet NIC has a unique address permanently embedded on the card known as a Media Access Control (MAC) address. The MAC address for both the source and destination are fields in an Ethernet frame.
 
@@ -440,7 +440,7 @@ Ethernet is technology commonly used in local area networks. Devices access the 
 
 ---
 
-### 7.1.2 Encapsulation
+### 🟣 7.1.2 Encapsulation
 
 
 When sending a letter, the letter writer uses an accepted format to ensure that the letter is delivered and understood by the recipient. In the same way, a message that is sent over a computer network follows specific format rules in order for it to be delivered and processed.
@@ -487,11 +487,15 @@ The animation shows an envelope with a stamp, a sender of 4085 SE Pine Street, O
 > [5] https://www.youtube.com/watch?v=v4sRKGarh5Q
 
 
+**Network:**
+
+![alt text](image-116.png)
+
 ---
 
 7.2 The Access Layer
 
-### 7.2.1 Video - Ethernet Switches
+### 🟣 7.2.1 Video - Ethernet Switches
 
 ![alt text](image-64.png)
 
@@ -502,7 +506,7 @@ The animation shows an envelope with a stamp, a sender of 4085 SE Pine Street, O
 
 ---
 
-### 7.2.2 Video - MAC Address Tables
+ ### 🟣 7.2.2 Video - MAC Address Tables
 
 - how a switch builds its MAC address table
 - makes decisions based on ethernet header of ethernet frame
