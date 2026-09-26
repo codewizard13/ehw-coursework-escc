@@ -13,8 +13,10 @@ Why is array-bound reasoning a systems-programming concern, and how should AI su
 
 # MY ANSWER (DRAFT):
 
-What is 'array-bound reasoning'?
-What is 'systems-programming'
+Array-bound reasoning is the process of proving that every array index stays within the valid range of the array. For an array with `𝑛` elements, valid indexes are `0` through `n - 1`. It's crucial in systems programming because C++ often gives programmers direct access to memory, and an **out-of-bounds** access can cause undefined behavior, memory corruption, crashes, or security vulnerabilities. Systems programming involves software that works closely with operating-system services, hardware, memory, files, networks, or other low-level resources. 
+
+AI suggestions involving array indexing should be verified by checking the array’s actual size, tracing the smallest and largest possible index, checking calculations such as i + 1, testing empty and one-element cases, and using compiler warnings, sanitizers, or checked access methods such as vector::at() during development.
+
 
 
 ### References:
