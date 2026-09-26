@@ -18,7 +18,7 @@
 > - Module 8, 9, 10, 11, Checkpoint Exam 3: The Internet Protocol
 
 
-# MODULE 8: The Internet Protocol
+# 🧩 MODULE 8: The Internet Protocol
 
 ## 📖 8.0 Introduction
 
@@ -351,7 +351,7 @@ Another example of a hierarchical network is the **telephone system**. With a te
 
 ---
 
-# MODULE 9: IPv4 and Network Segmentation
+# 🧩 MODULE 9: IPv4 and Network Segmentation
 
 ## 📖 9.0 Introduction
 
@@ -628,7 +628,7 @@ A large broadcast domain is a network that connects many hosts. A problem with a
 
 ---
 
-# MODULE 10: IPv6 Addressing Formats and Rules
+# 🧩 MODULE 10: IPv6 Addressing Formats and Rules
 
 ## 📖 10.0 Introduction
 
@@ -758,8 +758,9 @@ Q: What are two methods that can be used to shorten the IPv6 address notation? (
 
 ---
 
-# MODULE 11: Dynamic Addressing with DHCP
+# 🧩 MODULE 11: Dynamic Addressing with DHCP
 
+![alt text](image-125.png)
 
 ## 📖 11.0. Introduction
 
@@ -776,12 +777,61 @@ Q: What are two methods that can be used to shorten the IPv6 address notation? (
 
 ### 🟣 11.1.1 Static IPv4 Address Assignment
 
+IPv4 addresses can be assigned either statically or dynamically.
+
+With a static assignment, ***the network administrator must manually configure the network information for a host***. At a minimum, this includes the following:
+
+*   **IP address** - This identifies the host on the network.
+*   **Subnet mask** - This is used to identify the network on which the host is connected.
+*   **Default gateway** - This identifies the networking device that the host uses to access the internet or another remote network.
+
+Static addresses have some advantages. For instance, they are useful for printers, servers, and other networking devices that need to be accessible to clients on the network. If hosts normally access a server at a particular IPv4 address, it would not be good if that address changed.
+
+Static assignment of addressing information can provide increased control of network resources, but it can be time consuming to enter the information on each host. When IPv4 addresses are entered statically, the host only performs basic error checks on the IPv4 address. Therefore, errors are more likely to occur.
+
+When using static IPv4 addressing, it is important to maintain an accurate list of which IPv4 addresses are assigned to which devices. Additionally, these are permanent addresses and are not normally reused.
+
+![alt text](image-126.png)
+
+---
 
 ### 🟣 11.1.2 Dynamic IPv4 Address Assignment
 
+On local networks it is often the case that the user population changes frequently. New users arrive with laptops and need a connection. Others have new workstations that need to be connected. Rather than have the network administrator assign IPv4 addresses for each workstation, it is easier to have IPv4 addresses assigned automatically. This is done using a protocol known as Dynamic Host Configuration Protocol (DHCP).
+
+DHCP automatically assigns addressing information such as IPv4 address, subnet mask, default gateway, and other configuration information, as shown in the figure.
+
+DHCP is generally the **preferred method** of assigning IPv4 addresses to hosts on large networks because **it reduces the burden on network support staff and virtually eliminates entry errors**.
+
+Another benefit of DHCP is that an ***address is not permanently assigned to a host but is only leased for a period of time***. If the host is powered down or taken off the network, the address is returned to the pool for reuse. This is especially helpful with mobile users that come and go on a network.
+
+![alt text](image-127.png)
+
+> - Because DHCP addresses are only leased and not permanent, it is great for mobile devices because if the host is powered down or taken off the network, the address is **returned to the pool for reuse**.
+
+---
 
 ### 🟣 11.1.3 DHCP Servers
 
+If you enter an airport or coffee shop with a wireless hotspot, DHCP makes it possible for you to access the internet. As you enter the area, your laptop DHCP client contacts the local DHCP server via a wireless connection. The DHCP server assigns an IPv4 address to your laptop.
+
+Various types of devices can be DHCP servers as long as they are running DHCP service software. With most medium to large networks, the DHCP server is usually a local dedicated PC-based server.
+
+With home networks, the DHCP server may be located at the ISP and a host on the home network receives its IPv4 configuration directly from the ISP, as shown in the figure.
+
+![alt text](image-128.png)
+
+Many home networks and small businesses use a wireless router and modem. In this case, the wireless router is both a DHCP client and a server. The wireless router acts as a client to receive its IPv4 configuration from the ISP and then acts as a DHCP server for internal hosts on the local network. The router receives the public IPv4 address from the ISP, and in its role as a DHCP server, it distributes private addresses to internal hosts.
+
+In addition to PC-based servers and wireless routers, other types of networking devices such as dedicated routers can provide DHCP services to clients, although this is not as common.
+
+
+
+
+
+
+
+---
 
 ### 🟣 11.1.4 Check Your Understanding - Static and Dynamic Addressing
 
@@ -793,9 +843,36 @@ Q: What are two methods that can be used to shorten the IPv6 address notation? (
 
 ### 🟣 11.2.1 Video - DHCPv4 Operation
 
+- statically: someone sits down and manually configures the IP address
+- DHCP: dynamic host configuration protocol; describes a set of messages that goes between host wanting an IP address and DHCP server that gives out the IP address
+- **DHCPDISCOVER:** broacast packet; contains MAC address of device requesting the IP address; looking for a DHCP server
+- types of devices that can be a DHCP server: home router, wireless router; server with MS domain control, linux server that doubles as a web server
+- DHCP server responds with **DHCPOFFER** packet; contains IP address that the host device could use if it accepts it
+
+
+![alt text](image-129.png)
+
+![alt text](image-130.png)
+
+- DCPOFFER includes an available IP address, subnet mask, and the default gateway IP address
+- Once the host receive that it sends back a DHCP request packet that it will ACCEPT the offer
+- The device then takes this info from the OFFER and updates it IP config settings
+- SERVER send back a **DHCPACK** that the server is updating its MAC adress table accordingly
+
+
+
+---
 
 ### 🟣 11.2.2 Video - DHCP Service Configuration
 
+> There are two ways to get an IP address on a device. One way is to manually configure it, or statically configure it, as it's called in Microsoft Windows. And the other way to do it, is to get it automatically from a device that provides DHCP. In the little network here that we're showing in Packet Tracer, we have three PCs attached to a DHCP-enabled router. Basically, what this is, is a very similar device to what you would have at home. If you look here on the device itself, you'll notice that this device has a switch port, an antenna for wireless, and an internet connection. This type of configuration is available on almost every home wireless router. So basically, what we're going to do, is we're going to go in and we're going to look at how DHCP is configured on this device. Most home devices, home networking devices, have a GUI interface to make it easy to set them up. In the case of this device, you can see that I have some settings that are basic router settings. On this router, we are going to enable DHCP and as you can see by default, it's normally enabled. And you can see that an IP address has been already assigned to the router interface that faces the LAN. When the automatic configuration is received by the PCs, they're going to see this address as their default gateway. Now, the way that DHCP is configured, is a group of addresses are reserved on a particular network to be handed out to hosts, one by one. If you look here at the settings, it will say that the DHCP range will start at 172.16.0.100. So if we save this configuration, and then we go to our PCs and enable each PC to get their IP address via DHCP, rather than via the static configuration. So we're going to go to the desktop here, and we're going to look at our IP configuration, and then we're going to change it from the static configuration to getting it's IP address via DHCP. And you will notice that immediately, the device sent out a request for a DHCP address and received one from the DHCP server. You'll notice from the information that this, since this is the first PC to be configured for DHCP, it got the first available address. When we look at the other PCs, and look at their IP configurations, if we change them over to DHCP, they will also get addresses but it will not be the same address. It will be the next number up. Since we have our IP addresses set, now we can go out and test our network connectivity. So if I'm on PC zero, I'm going to go ahead and ping one of the other PCs. We know that since I have the address 100, the other two devices have the addresses 101 and 102. So we're going to try pinging both of those computers. And as you can see, we can reach that 101 computer, which is PC1 on our diagram. And then we will attempt to configure, I mean, to ping PC2. And you can see we can reach PC2 also. So the information that was on the router configuration for DHCP determined what IP addresses would be assigned to all of the PCs on the network.
+
+![alt text](image-131.png)
+
+
+
+
+---
 
 ### 🟣 11.2.3 Packet Tracer - Configure DHCP on a Wireless Router
 
@@ -807,11 +884,97 @@ Q: What are two methods that can be used to shorten the IPv6 address notation? (
 
 ### 🟣 11.3.1 What Did I Learn in this Module?
 
+**Static and Dynamic Addressing**
+
+With a static assignment, the network administrator must manually configure the network information for a host. At a minimum, this includes the host IPv4 address, subnet mask, and default gateway. Static assignment of addressing information can provide increased control of network resources, but it can be time consuming to enter the information on each host. When using static IPv4 addressing, it is important to maintain an accurate list of which IPv4 addresses are assigned to which devices.
+
+IPv4 addresses can be assigned automatically using a protocol known as DHCP. DHCP is generally the preferred method of assigning IPv4 addresses to hosts on large networks because it reduces the burden on network support staff and virtually eliminates entry errors. Another benefit of DHCP is that an address is not permanently assigned to a host but is only leased for a period of time. If the host is powered down or taken off the network, the address is returned to the pool for reuse.
+
+As you enter area with a wireless hotspot, your laptop DHCP client contacts the local DHCP server via a wireless connection. The DHCP server assigns an IPv4 address to your laptop. With home networks, the DHCP server may be located at the ISP and a host on the home network receives its IPv4 configuration directly from the ISP. Many home networks and small businesses use a wireless router and modem. In this case, the wireless router is both a DHCP client and a server.
+
+**DHCPv4 Configuration**
+
+The DHCP server is configured with a range, or pool, of IPv4 addresses that can be assigned to DHCP clients. A client that needs an IPv4 address will send a **DHCP Discover** message which is a broadcast with a destination IPv4 address of 255.255.255.255 (32 ones) and a destination MAC address of FF-FF-FF-FF-FF-FF (48 ones). All hosts on the network will receive this broadcast DHCP frame, but **only a DHCP server will reply**. The server will respond with a DHCP Offer, suggesting an IPv4 address for the client. The host then sends a DHCP Request asking to use the suggested IPv4 address. The server responds with a DHCP Acknowledgment.
+
+For most home and small business networks, a wireless router provides DHCP services to the local network clients. To configure a home wireless router, access its graphical web interface by opening the browser and entering the router default IPv4 address. The IPv4 address of 192.168.0.1 and subnet mask of 255.255.255.0 are the defaults for the internal router interface. This is the default gateway for all hosts on the local network and also the internal DHCP server IPv4 address. Most home wireless routers have DHCP Server enabled by default.
+
+
+---
 
 ### 🟣 11.3.2 Webster - Reflection Questions
 
 
 ### 🟣 11.3.3 Dynamic Addressing with DHCP Quiz
+
+![alt text](image-132.png)
+
+---
+
+ > **Which destination IPv4 address does a DHCPv4 client use to send the initial DHCP Discover packet when the client is looking for a DHCP server?**
+ > 
+ > *   the IP address of the default gateway
+ > *   255.255.255.255 #CORRECT
+ > *   127.0.0.1
+ > *   224.0.0.1
+ > 
+ > **Explanation:** Broadcast communications on a network may be directed or limited. A directed broadcast is sent to all hosts on a specific network. A limited broadcast is sent to 255.255.255.255. When a DHCP client needs to send a DHCP Discover packet in order to seek DHCP servers, the client will use this IP address of 255.255.255.255 as the destination in the IP header because it has no knowledge of the IP addresses of DHCP servers.
+ > 
+ > **Related exam: [Networking Essentials (Version 2) - Modules 9 - 12: Data Communications and Network Services Pre-Test Exam](https://itexamanswers.net/networking-essentials-version-2-modules-9-12-data-communications-and-network-services-pre-test-exam.html "Networking Essentials (Version 2) - Modules 9 - 12: Data Communications and Network Services Pre-Test Exam Answers")**  
+ > **Related exam: [7.4.4 Module Quiz - DHCPv4 Answers](https://itexamanswers.net/7-4-4-module-quiz-dhcpv4-answers.html "7.4.4 Module Quiz - DHCPv4 Answers")**  
+ > **Related exam: [Networking Basics - 11.3.3 Dynamic Addressing with DHCP Quiz](https://itexamanswers.net/11-3-3-dynamic-addressing-with-dhcp-quiz-answers.html "11.3.3 Dynamic Addressing with DHCP Quiz Answers. Networking Basics Module 11 quiz exam answers")**  
+ > **Related exam: [9.3.2 Module 9 - Dynamic Addressing with DHCP Quiz](https://itexamanswers.net/module-9-dynamic-addressing-with-dhcp-quiz-answers.html "9.3.2 Module 9 - Dynamic Addressing with DHCP Quiz Answers")**  
+ > **Related exam: [Networking Basics - My Knowledge Check Answers](https://itexamanswers.net/networking-basics-my-knowledge-check-answers.html "Networking Basics - My Knowledge Check Answers")**
+
+
+---
+
+Refer to the exhibit.  A home wireless router is configured to act as a DHCP server.  The IP address range is configured to be 192.168.0.100 - 149.  What IP address will be assigned automatically to the first device that connects to the wireless router?
+
+![Exhibit shows a portion of the GUI Network Setup configuration screen on a home wireless router. The router IP is set to 192.168.0.1 subnet mask 255.255.255.0.  Located below the router IP settings are the DHCP Server Settings. DHCP server is enabled. Start IP Address is 192.168.0.100. Maximum number of users is set to 50. IP Address Range is 192.168.0.100 - 149.](image-133.png)
+
+#MY_GUESS = 100
+
+
+---
+
+
+> Explanation: When a host boots and has been configured for dynamic IP addressing, the device tries to obtain a valid IP address. It sends a DHCPDISCOVER message. This is a broadcast message because the DHCP server address is unknown (by design). The destination IP address in the IP header is 255.255.255.255 and the destination MAC address is FF:FF:FF:FF:FF:FF.
+
+![alt text](image-134.png)
+
+---
+
+![alt text](image-135.png)
+
+---
+
+
+Q:  A host PC is attempting to lease an address through DHCP
+
+
+> **Explanation**: When a host uses DHCP to automatically configure an IP address, the typically sends two messages: the DHCPDISCOVER message and the DHCPREQUEST message. These two messages are usually sent as broadcasts to ensure that all DHCP servers receive them. The servers respond to these messages using DHCPOFFER, DHCPACK, and DHCPNACK messages, depending on the circumstance.
+
+![alt text](image-136.png)
+
+---
+
+Which message does an ipv4 host use to reply when it received a DHCPOFFER
+
+![Answer is DHCPREQUEST, but is marked wrong](image-137.png)
+
+![alt text](image-138.png)
+
+#PROOF
+
+![I actually scored 100%, but Cisco marked one answer wrong erroneously](image-139.png)
+
+> #GOTCHA: I've noticed there are few questions in the curriculum that mark you wrong even though you gave the best/correct answer. Has anyone run into this besides me? Here's the latest example. In the 11.3.3 quiz if you get answer DHCPREQUEST the quiz marks it wrong although that is the correct answer. This is a known issue and Cisco has not bothered to fix it as far as I can tell. Here's a Reddit thread about it: https://www.reddit.com/r/ccna/comments/1j2vlld/am_i_missing_something/?sort=new
+
+
+
+
+
+
 
 
 
@@ -891,7 +1054,7 @@ https://www.youtube.com/watch?v=9JNzXOECq8A
 > *   request, acknowledgment, discover, offer
 > *   acknowledgment, request, offer, discover
 > 
-> **Explanation:** A DHCP host broadcasts a DHCP discover message to locate available servers. If more than one DHCP server is available, each server will respond to the host with a unicast DHCP offer message, which offers a lease to the client. The client then broadcasts a DHCP request message that identifies the specific server and offer that the client will accept. The identified server will unicast a DHCP acknowledgment message to finalize the offer.
+> **Explanation:** A DHCP host broadcasts a DHCP discover message to locate available servers. If more than one DHCP server is available, each server will respond to the host with a **unicast DHCP offer message**, which **offers a lease** to the client. The client then broadcasts a **DHCP request message** that identifies the specific server and offer that the client will accept. The identified server will unicast a **DHCP acknowledgment** message to finalize the offer.
 > 
 > **Related exam: [Networking Essentials (Version 2) - Modules 9 - 12: Data Communications and Network Services Pre-Test Exam](https://itexamanswers.net/networking-essentials-version-2-modules-9-12-data-communications-and-network-services-pre-test-exam.html "Networking Essentials (Version 2) - Modules 9 - 12: Data Communications and Network Services Pre-Test Exam Answers")**  
 > **Related exam: [7.4.4 Module Quiz - DHCPv4 Answers](https://itexamanswers.net/7-4-4-module-quiz-dhcpv4-answers.html "7.4.4 Module Quiz - DHCPv4 Answers")**  
