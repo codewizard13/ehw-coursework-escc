@@ -4,7 +4,7 @@
 
     - Direct Link: https://youtu.be/-TkoO8Z07hI?si=byU0L9vjeg43j5gL&t=12372
 
-    **** Sort and Array ****
+    **** Sort an Array ****
 
     Student: Eric Hepperle
     Created: 2026-10-01

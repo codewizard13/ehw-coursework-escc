@@ -4,7 +4,7 @@
 
     - Direct Link: https://youtu.be/-TkoO8Z07hI?si=XN579bQOj8ZRZbSt&t=12045
 
-    **** Sort and Array ****
+    **** Sort an Array ****
 
     Student: Eric Hepperle
     Created: 2026-10-01
@@ -27,6 +27,8 @@
         - repeat until last element reached
     - Foreach loop uses colon, eg: `for (int element : array)`
     - #TIP: Reason the sort() condition is `size - 1` is because once we don't need to compare the last element to anything because the largest value will naturally float to the right (???)
+
+    - #GOTCHA: Bubble sort is easy to write for beginners, but not as efficient and some other algorithms
     
     GitHub: https://github.com/codewizard13
     email: codewizard13@gmail.com
