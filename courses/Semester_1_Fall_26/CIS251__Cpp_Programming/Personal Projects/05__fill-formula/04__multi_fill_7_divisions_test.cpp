@@ -55,6 +55,7 @@
  * @author Eric Hepperle
  * @date 2026-10-03
  * @version 1.0
+ * @Status: Fully working.
  * @copyright 2026 Eric Hepperle
  *
  * @see Bro Code, “C++ Full Course for Free,” lesson 39: `fill()` function:

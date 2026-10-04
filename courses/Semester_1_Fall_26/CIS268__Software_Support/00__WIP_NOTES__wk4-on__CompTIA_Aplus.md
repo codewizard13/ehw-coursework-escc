@@ -228,7 +228,7 @@ Play Speed
 
 Interactive Script
 
-## Transcript
+### 🎬Video Transcript
 
 close interactive script
 
