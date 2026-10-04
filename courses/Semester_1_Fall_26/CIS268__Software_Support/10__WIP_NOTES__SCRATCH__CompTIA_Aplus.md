@@ -713,24 +713,6 @@ Disable and re-enable the mouse in the Bluetooth & Devices Settings page.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 
 # 📖 Lesson 12.3 Install and Configure Applications
@@ -939,26 +921,102 @@ After you study this lesson, answer the following questions:
 
 ---
 
-## 🟣 
+## 🟣 12.4.1 Email Systems
+
+Online or cloud based email programs have existed since the dawn of the internet. From the early years to today, many personal email accounts are considered cloud-based since they are accessed and managed through an internet browser. While many enterprise organizations may still have an on premises email server using Microsoft Exchange or another email server application, some have moved their email operations into the cloud.
+
+Examples of enterprise cloud-based email systems include Outlook Web through the Microsoft 365 portal and Gmail accounts from Google's Workspace environment. The email accounts are able to be accessed through their respective web portals by users, as long as they have an internet connection available. This connection allows the email system to not only be accessed from any web browser but also ensures the account syncs the email and folders across many devices. Many organizations have chosen cloud based email solutions as a way to handle synchronization and collaboration between employees.
+
+---
+
+## 🟣 12.4.2 Storage
+
+Cloud storage solutions are very popular today. From iCloud from Apple to Google Drive or even Microsoft's OneDrive, being able to easily store documents and files that can be accessed from any location and any device with internet access is very convenient.
+
+Some storage providers also include a file management application that makes the access and management of the storage solution very easy. From simple file storage for your resume to personal pictures and videos, the ease of sharing and accessing these files is increased by having them located in a cloud environment.
+
+You can also select certain files and folders from your personal computer or device to synchronize any changes to the cloud storage solution. This ensures that files are up to date and can be easily accessed from other locations. You also have the option to pause or suspend synchronization. This can be helpful when utilizing a metered connection in which there is limited bandwidth or an increased monetary cost for the network connection and data throughput.
+
+Figure 1. Microsoft OneDrive­® folder in File Explorer. Note the green check mark symbol showing the files are synchronized to the cloud. . ![A screenshot of a OneDrive folder named Nicholas - Personal showing synchronized files and folders.](https://cdn.testout.com/a-plus-220-120x-en-us/materials/resources/text/s_cloud_based_applications/OneDriveSync.png)
+
+Screenshot courtesy of Microsoft.
+
+Description
+
+Files are listed with sync statuses, including green checkmarks for completed synchronization and timestamps for last modifications. The files instructor PowerPoint presentations for A plus core 1 (220 - 1101) and instructor PowerPoint presentations for A plus core 2 (220 - 1102) is highlighted.
+
+---
+
+## 🟣 12.4.3 Collaboration Tools
+
+Collaboration tools allow multiple users to work together simultaneously or allows users to connect remotely to work together on projects and have meetings.
+
+Documents such as spreadsheets and presentations may require multiple users to be working within the same file. By using a cloud-based application suite such as Microsoft Office 365 or Google's Google Docs and Slides applications, users across the globe can edit and manage the same document in real-time. These applications can also track which user made edits within the document. This ensures that while users may not be located in the same location, they can still work together to accomplish their work or personal tasks easily.
+
+Videoconferencing software such as Microsoft Teams, Slack, and Zoom provides an easy way to connect via video and audio calls. This allows users to meet, discuss, and work together as if they were sitting in the same office or conference room. Over the last several years, remote work opportunities have expanded due to the widespread use of videoconferencing software. Teams and Slack also include the ability to instant message users when asking questions or needing quick updates on the status of a task or project. Other programs may include the ability to provide reactions to emails such as a thumbs up or an OK emoji.
+
+These additional software packages and installs may need to have permissions adjusted to access files from your local computer to allow for synchronization, access the web camera and microphone for video and audio calls, or other hardware resources to support their functionality.
+
+Some cloud based collaboration tools are used directly in the web browser and may have an option to switch to the desktop version of the application. For example, when using Office 365 in the web portal a user can switch to their desktop installed version of the application. This is useful as there may be a feature that is available on the desktop version and not available in the cloud-based application.
+
+Figure 1. Outlook reactions menu![A screenshot showing a reaction bar with emojis.](https://cdn.testout.com/a-plus-220-120x-en-us/materials/resources/text/s_cloud_based_applications/Reaction.png)
+
+Screenshot courtesy of Microsoft.
+
+Description
+
+The emojis are thumbs up, heart, party, face with tears of joy, surprised face, panic face above a chat timestamp. Arrows are marked at the bottom.
+
+---
+
+## 🟣 12.4.4 User Licensing
+
+Licensing of cloud-based applications may be similar to the locally installed application license agreements in that they provide the terms and conditions of the use of the software application and its limitations. For example, when you purchase a single installation, single-user license for an application, you are normally authorized to install it on one system and it is to be used by a single user. If you were to buy this type of license and then install it on several systems and/or allow multiple users to use the application, this could be considered a violation of the terms of the license. Many applications have both individual licenses and also commercial or business license terms, depending on the desired use.
+
+When it comes to cloud-based applications, there may be some differences such as who owns the works created by the software, and that may be further complicated if you are using a cloud-based storage solution as well to store the completed works. You must read and understand the terms and conditions of any software licenses you purchase for personal or commercial use. Problems can be minimized by ensuring the appropriate license types are utilized by the organization. If the wrong license is assigned, this should be corrected by changing the license or going through an uninstall and re-installation with the correct license.
+
+This includes the assignment of licenses to cloud applications for employees. This can easily be managed through an administrative portal such as the Microsoft Entra admin center.
+
+Figure 1. Microsoft Entra administration center license assignment window![A screenshot of the Microsoft Entra admin center page.](https://cdn.testout.com/a-plus-220-120x-en-us/materials/resources/text/s_cloud_based_applications/LicenseAssignments.png)
+
+Screenshot courtesy of Microsoft.
+
+Description
+
+The identify and Licenses options from the menu on the left is highlighted. The center is titled, Licenses, all products. All product option on the left is selected. The lists of licenses is to its right. The Enterprise Mobility plus Security E 3, Office 365 E 3, and Rights Management Adhoc licenses options are checked in. The review license options are checked in on the right.
 
 
 ---
 
-## 🟣 
+## 🟣 12.4.5 Identity Synchronization
 
----
+The use of an online or cloud-based identity provider can simplify how users sign in and access resources in an enterprise environment. Having a single set of credentials to log into a cloud resource and then being able to use those same credentials to access an on-premise resource, such as their workstation, decreases the number of credentials a user must remember. It also reduces how an organization will manage the rights and permissions in the two environments. The same control policies of access to resources can be synchronized across the cloud and on-premise systems, ensuring a cohesive environment is maintained and the same permissions are applied across the entire environment.
 
-## 🟣 
+You can also synchronize access between cloud service providers such as Google Cloud and Microsoft's Azure environment. Instead of having two sets of credentials for each service provider, synchronization of permissions and rights can easily be configured. This reduces the management and administrative burden when troubleshooting issues with permissions as well.
+
+Figure 1. Microsoft Entra Connect synchronization ![Microsoft Entra Connect synchronization. On-premises A D connects via Microsoft Entra Connector Account to Microsoft Entra I D.](https://cdn.testout.com/a-plus-220-120x-en-us/materials/resources/text/s_cloud_based_applications/aplus_fig12_04_04.png)
+
+Screenshot courtesy of Microsoft.
+
+Description
+
+The left section represents On-premises A D and contains Active Directory connected to A D Sync Service Account, Microsoft Entra Connect, and S Q L by a double sided arrow labeled A D D S connector account.
 
 
----
 
-## 🟣 
+## Transcript
 
----
+### 1. Traveling Across Borders: 
 
-## 🟣 
+Imagine that you're traveling to multiple countries on a trip. You arrive at the first border, and you have to provide tons of personal information to prove your identity. Next border, and you have to do it all again. Next border, again. Wouldn't that be exhausting? But luckily, passports simplify things. Your passport serves as an up-to-date proof of your identity and eligibility for travel. Simply present this one document at each country's border, and instantly your entry is granted without the hassle of reproving who you are.
 
+### 2. Identity Synchronization in Tech:  
+
+In tech, identity synchronization works in similar ways. It allows you to use one login, like a tech passport, to grant you access to different apps and systems within your organization. If information about you changes, like your password or access permissions, there's no need to update it in multiple places. Update it once, and identity synchronization will update the information across resources for you. How easy is that?
+
+![alt text](image-4.png)
+
+![Identity synchronization diagram](image-5.png)
 
 ---
 
