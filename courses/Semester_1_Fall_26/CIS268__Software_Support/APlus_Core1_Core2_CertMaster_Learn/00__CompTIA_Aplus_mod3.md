@@ -11,91 +11,21 @@
 
 # ➡️ MODULE 3
 
+## 🟣 12.1.13 Lesson Review
 
 
+![alt text](12.1.13_less-rev_q_01.png)
 
+![alt text](12.1.13_less-rev_q_02.png)
 
-
-
----
-
-### 🟣 12.1.13 Lesson Review
-
-
-![alt text](image-17.png)
-
-![alt text](image-18.png)
-
-![alt text](image-19.png)
+![alt text](12.1.13_less-rev_q_03.png)
 
 
 #PROOF - 100%
 
-![alt text](image-20.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![alt text](12.1.13_lesson-rev-results-01.png)
 
 ---
-
-### 🟣 
-
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
 
 
 

@@ -40,7 +40,7 @@ To set a screensaver:
 
 #PROOF
 
-![alt text](image.png)
+![alt text](12.1.3_lab_results.png)
 
 
 

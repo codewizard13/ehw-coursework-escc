@@ -29,13 +29,13 @@
 
 > The following are part of the **CompTIA: A+ Core 1 and Core 2 CertMaster Learn** V15 learning platform
 
-### 🟣 1.1 - The Hero of Problem Solving
+# 📖 1.1 - The Hero of Problem Solving
 
 #CASE_STUDY:
 
 > It's your first day walking into the office, and you've already had three problems to solve. The receptionist, Aurora, is asking for help connecting their laptop to their email account. Two other colleagues are asking why the database server will not connect to their desktop systems. "The Internet must be down," Jim from accounting says. These are just a few examples of issues that you may be asked to solve for your company. Understanding what your role is as an IT specialist and how you can provide timely solutions that ultimately enable the company to continue to move forward with their projects can be time-consuming but also rewarding.
 
-#### 1.1.1 Role of an IT Specialist
+## 🟣 1.1.1 Role of an IT Specialist
 
 **Types of tasks IT specialists do:**
 
@@ -105,7 +105,7 @@ MOST IT SUPPORT JOBS REQUIRE COMPTIA IT SUPPORT CERT
 ---
 
 
-#### 1.1.2 Skills & Abilities
+## 🟣 1.1.2 Skills & Abilities
 
 - Very broad skillset
 - Can be specific to the company you work for
@@ -150,7 +150,7 @@ MOST IT SUPPORT JOBS REQUIRE COMPTIA IT SUPPORT CERT
 - IT specialists require a lot of different skills to be great in their role. From understanding the technical content and infrastructure to effective oral and written communication, a great technician must obtain these skills and abilities to ensure they are both effective and efficient at solving the IT issues that organizations face today.
 
 
-### 🟣 1.2 - The Troubleshooting Methodology
+# 📖 1.2 - The Troubleshooting Methodology
 
 To some extent, being an effective troubleshooter simply involves having a detailed knowledge of how something is supposed to work and the sort of things that typically go wrong. However, the more complex a system is, the less likely it is that this sort of information will be at hand. Consequently, it is **important to develop general troubleshooting skills to approach new and unexpected situations confidently.**
 
@@ -163,7 +163,7 @@ As you study this lesson, answer the following questions:
 - What is the troubleshooting methodology?
 - Why would a technician want to utilize a process to troubleshoot?
 
-#### 1.2.1 Best Practice Methodology
+## 🟣 1.2.1 Best Practice Methodology
 
 
 - Troubleshooting **starts** with a **process of problem solving** 
@@ -212,7 +212,7 @@ These issues mean that the troubleshooting procedures should be developed in the
 6. 🔎 Document the findings, lessons learned, actions, and outcomes.
 
 
-#### 1.2.2 Identify the Problem
+## 🟣 1.2.2 Identify the Problem
 
 🚀 The troubleshooting process starts by **identifying the problem**. Identifying the problem means establishing the consequence or impact of the issue and listing symptoms. The consequence can be used to prioritize each support case within the overall process of problem management.
 
@@ -238,7 +238,7 @@ Consider the importance of data stored on the local computer when you open a sup
 ---
 
 
-#### 1.2.3 Establish and Test a Theory
+## 🟣 1.2.3 Establish and Test a Theory
 
 
 > - **severity**: how many users are affected
@@ -271,7 +271,7 @@ You cannot always rely on the user to describe the problem accurately or compreh
 ---
 
 
-#### 1.2.4 Question the Obvious
+## 🟣 1.2.4 Question the Obvious
 
 
 As you identify symptoms and diagnose causes, take care not to overlook the obvious; sometimes seemingly intractable problems are caused by the simplest things. Diagnosis requires both attention to detail and a willingness to be systematic.
@@ -302,7 +302,7 @@ If this approach does not work, break the troubleshooting process into compartme
 > - 📌 #TIP: Diagnosis requires **attention to detail** and willingness to be **systematic**
 
 
-#### 1.2.5 Establish a New Theory or Escalate
+## 🟣 1.2.5 Establish a New Theory or Escalate
 
 #BUSINESS_NEEDS
 
@@ -335,7 +335,7 @@ Choosing whether to escalate a problem is complex because you must balance the n
 > - 📌 #TIP: When you escalate a problem, make sure that what you have found out or attempted so far is **documented**
 
 
-#### 1.2.6 Implement a Plan of Action
+## 🟣 1.2.6 Implement a Plan of Action
 
 When you have a reliable theory of probable cause, you then need to determine the **next steps to solve the problem**.
 
@@ -378,7 +378,7 @@ If you are completing troubleshooting steps **under instruction** from another t
 
 ---
 
-#### 1.2.7 Verify and Document
+## 🟣 1.2.7 Verify and Document
 
 When you apply a solution, test that it fixes the reported problem and that the **system as a whole continues to function normally**. Tests could involve any of the following:
 
@@ -414,7 +414,7 @@ The other value of a log is that it **demonstrates what the support department i
 
 > - 📌 #TIP: Replacing a user's device with a loaner can often be part of a good plan of action
 
-![](../../../_pix/screen-cis-268_comptia-A+__01_troubleshooting-model.jpg)
+![Vid Screen: CompTIA Troubleshooting Model](1.3.1_vid-scn_troubleshooting-model.jpg)
 
 ### 1. Identify the problem
 

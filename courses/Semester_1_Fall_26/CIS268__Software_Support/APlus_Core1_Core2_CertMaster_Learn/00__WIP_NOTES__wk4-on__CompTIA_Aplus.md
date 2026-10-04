@@ -39,7 +39,7 @@
 
 
 
-## 📖 Lesson 12.1 Windows User Settings
+ # 📖 Lesson 12.1 Windows User Settings
 
 
 > Core 2 Exam Objectives Covered
@@ -64,7 +64,7 @@ As you study this lesson, answer the following questions:
 
 ---
 
-### 🟣 12.1.1 Windows Interfaces
+## 🟣 12.1.1 Windows Interfaces
 
 
 An OS is made up of **kernel files** and **device drivers** to interface with the hardware plus programs to provide a user interface and configuration tools. The **earliest operating systems for PCs**, such as Microsoft's Disk Operating System (**DOS**), used a **command-line user interface or simple menu systems**. Windows and software applications for Windows were marked by the use of a **graphical user interface (GUI)**. This helped to make computers easier to use by non-technical staff and home users.
@@ -96,7 +96,10 @@ As well as the Start button, the taskbar contains the **instant search box**, Ta
 > 
 > It is worth learning the keyboard shortcuts to navigate the desktop and program windows quickly. A complete list is published at [support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec](https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec).
 
-![Screenshot of Windows Shorcuts sample (by Eric Hepperle, 2026)](image.png)
+![Screenshot of Windows Shorcuts sample (by Eric Hepperle, 2026)](12.1.1_sla-rule-of-nines_01.png)
+
+
+![Screenshot of Windows Shorcuts sample (by Eric Hepperle, 2026)](12.1.1_win-keyboard-shortcuts.png)
 
 ## Windows 11 Desktop
 
@@ -111,7 +114,7 @@ Screenshot courtesy of Microsoft.
 
 ---
 
-### 🟣 12.1.2 Windows Settings and Control Panel
+## 🟣 12.1.2 Windows Settings and Control Panel
 
 The **Windows Settings app and Control Panel are the two main interfaces for administering Windows**. Administering an OS means configuring options, setting up user accounts, and adding and removing devices and software. All Windows configuration data is ultimately held in a database called the registry. Windows Settings and Control Panel contain graphical pages and applets for modifying these configuration settings.
 
@@ -163,14 +166,14 @@ The options are as follows: Autoplay Backup and Restore (Window 7) Color Managem
 
 ---
 
-### 🟣 12.1.3 Lab: Explore Windows Settings
+## 🟣 12.1.3 Lab: Explore Windows Settings
 
 See [Lab 12.01.03 Instructions](./../Labs/Week_04/12.01.03/00__Lab-Instructions.md)
 
 
 ---
 
-### 🟣 12.1.4 Accounts Settings
+## 🟣 12.1.4 Accounts Settings
 
 A **user account** controls access to the computer. Each account can be assigned rights or privileges to make OS configuration changes. Accounts can also be assigned permissions on files, folders, and printers.
 
@@ -212,182 +215,36 @@ At the left are the links to control panel home, manage your credentials, manage
 
 ---
 
-> NOTE: I didn't watch the video yet!!!
+> #NOTE: I didn't watch the video yet!!!
 
 
-
-Previous ChapterPlay VideoNext Chapter
-
-*   Video Previous Segment
-*   Video Control Resume Play
-*   Video Next Segment
-
-Mute/Unmute
-
-Play Speed
-
-Interactive Script
 
 ### 🎬Video Transcript
 
-close interactive script
 
-- - -
+### 1. Introduction: 
 
-Click one of the buttons to take you to that part of the video.
+00:06 In this video, we'll learn how to change the password on a Windows 11 machine.
 
-### 1\. Introduction
+### 2. Navigating to Password Settings:  
 
-00:06 In this video, we'll learn how to change
+We'll go to Start, then Settings. On the left, we'll select Accounts, and then we'll choose Sign-in options. From here, we'll select Password.
 
-00:08 the password on a Windows 11 machine.
+### 3. Changing the Password:  
 
-### 2\. Navigating to Password Settings
+We can see that this account already has a password set up, and we want to change it. So, we'll select Change. The first thing we need to do is enter our current password. Next, we'll enter and confirm our new password.
 
-00:10 We'll go to Start, then Settings.
+### 4. Adding a Password Hint:  
 
-00:14 On the left, we'll select Accounts,
+If you want, you can add a hint to remind you of what your password is. Don't make it too obvious, like in this example.
 
-00:17 and then we'll choose Sign-in options.
+### 5. Finalizing the Change:  
 
-00:20 From here, we'll select Password.
+When we select Next, we can see that our password has been changed.
 
-### 3\. Changing the Password
-
-00:23 We can see that this account already has a
-
-00:25 password set up, and we want to change it.
-
-00:27 So, we'll select Change.
-
-00:29 The first thing we need to do is enter our current password.
-
-00:38 Next, we'll enter and confirm our new password.
-
-### 4\. Adding a Password Hint
-
-00:45 If you want, you can add a hint to
-
-00:47 remind you of what your password is.
-
-00:49 Don't make it too obvious, like in this example.
-
-### 5\. Finalizing the Change
-
-00:57 When we select Next, we can see
-
-00:59 that our password has been changed.
-
-Resume Auto-Scroll
 
 
 ---
-
-### 🟣 
-
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
-
----
-
-### 🟣 
-
----
-
-### 🟣 
-
-
-
 
 
 

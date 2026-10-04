@@ -203,7 +203,7 @@ The text reads, 78,121 items indexed. Indexing complete. Index these locations: 
 
 #PROOF 100%
 
-![alt text](image.png)
+![12.1.13 Lesson Review: #GOTCHA: Although I got 100% on this lesson review already, I accidentally retook and got 100% again!](12.1.13_lesson-rev_try2.png)
 
 ---
 
@@ -706,7 +706,7 @@ Disable and re-enable the mouse in the Bluetooth & Devices Settings page.
 
 #PROOF 100%
 
-![alt text](image-1.png)
+![alt text](12.2.13_os-ticketing-system.png)
 
 
 
@@ -717,7 +717,7 @@ Disable and re-enable the mouse in the Bluetooth & Devices Settings page.
 
 # 📖 Lesson 12.3 Install and Configure Applications
 
-![alt text](image-2.png)
+![alt text](12.3_escalation-levels.png)
 
 > Core 2 Exam Objectives Covered
 >
@@ -892,7 +892,7 @@ As well as overt malware threats, **software could impact the stability and perf
 
 #PROOF 100%
 
-![alt text](image-3.png)
+![alt text](12.3.5_lesson-rev_proof.png)
 
 
 
@@ -1014,9 +1014,9 @@ Imagine that you're traveling to multiple countries on a trip. You arrive at the
 
 In tech, identity synchronization works in similar ways. It allows you to use one login, like a tech passport, to grant you access to different apps and systems within your organization. If information about you changes, like your password or access permissions, there's no need to update it in multiple places. Update it once, and identity synchronization will update the information across resources for you. How easy is that?
 
-![alt text](image-4.png)
+![Indentity sync illustration](12.4.5_id-sync_01.png)
 
-![Identity synchronization diagram](image-5.png)
+![Identity synchronization diagram](12.4.5_id-sync_02.png)
 
 ---
 
