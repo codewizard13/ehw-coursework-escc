@@ -81,3 +81,6 @@ A copy-paste symbol and style library for markdown docs, expecially documenting 
 🧩
 
 # ➡️ MODULE 3
+
+
+### 🎬 Video Transcript
