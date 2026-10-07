@@ -56,7 +56,7 @@ int main()
 {
 
   string *pFoods = nullptr;
-  int size; // number of elements allocated
+  int size;                // number of elements allocated
   int itemsAddedCount = 0; // actual number of elements added
 
   cout << "*****************************\n";
@@ -180,6 +180,12 @@ void printGroceryItems(string *pFoods, int itemsAddedCount)
     return;
   }
 
+  if (itemsAddedCount <= 0)
+  {
+    cout << "Sorry, no items were found!\n";
+    return;
+  }
+
   // Print out the stored foods
   cout << "******* GROCERY LIST ********\n";
 
@@ -188,10 +194,3 @@ void printGroceryItems(string *pFoods, int itemsAddedCount)
     cout << "Item # " << i + 1 << ": " << pFoods[i] << '\n';
   }
 }
-
-
-
-//  if (itemsAddedCount <= 0) {
-//     cout << "Sorry, no items were found!\n";
-//     return;
-//   }
