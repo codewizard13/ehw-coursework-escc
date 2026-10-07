@@ -50,14 +50,14 @@ using namespace std;
 
 bool getDesiredFoodsCount(int &size);
 bool getGroceryItems(string *pFoods, int size, int &itemsAddedCount);
-void printGroceryItems(string *foods, int size);
+void printGroceryItems(string *pFoods, int size);
 
 int main()
 {
 
   string *pFoods = nullptr;
-  int size;                // number of elements allocated
-  int itemsAddedCount = 0; // actual number of elements added
+  int size;                // requested number of array elements to allocate
+  int itemsAddedCount = 0; // number of successfully entered foods
 
   cout << "*****************************\n";
   cout << "*    Grocery List Program   *\n";
@@ -84,10 +84,10 @@ int main()
   }
   else
   {
-    printGroceryItems(pFoods, size);
+    printGroceryItems(pFoods, itemsAddedCount);
   }
 
-  // Delete array to prevent memory leak
+  // Delete array to prevent memory leak:
   // new[] requires matching delete[] to release the array.
   // Without this, the allocated memory is not explicitly released.
   delete[] pFoods;
@@ -107,7 +107,7 @@ bool getDesiredFoodsCount(int &size)
 {
   bool try_again = true;
 
-  // Keep trying until they enter something valid
+  // Retry out-of-range integers; stop on failed integer input.
   do
   {
     cout << "How many foods to enter in?: ";
@@ -119,7 +119,7 @@ bool getDesiredFoodsCount(int &size)
     }
     if (size < 1 || size > 10)
     {
-      // Loop around and check again if its and int but out of range
+      // Retry if the input is an integer but outside the allowed range.
       cout << "Invalid input: size must be between 1 and 10.\n";
       continue;
     }
@@ -139,7 +139,7 @@ bool getGroceryItems(string *pFoods, int size, int &itemsAddedCount)
 {
 
   // nullptr means the pointer points to no object.
-  // Check before attempting to access any foods, to help avoid a memory leaks.
+  // Check before accessing foods to avoid invalid memory access, and potential memory leaks
   if (pFoods == nullptr)
   {
     cout << "Sorry, no grocery list is available.\n";
@@ -159,8 +159,7 @@ bool getGroceryItems(string *pFoods, int size, int &itemsAddedCount)
       return false;
     }
 
-    // Increment the items recored tally by 1, only after
-    //  input succeeds.
+    // Increment the recorded-item count by 1 only after input succeeds.
     itemsAddedCount++;
   }
   cout << "-------------------------------\n";
