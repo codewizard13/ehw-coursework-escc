@@ -1,0 +1,1 @@
+Pointers, References, Memory, and C++ Essentials 1 Synthesis

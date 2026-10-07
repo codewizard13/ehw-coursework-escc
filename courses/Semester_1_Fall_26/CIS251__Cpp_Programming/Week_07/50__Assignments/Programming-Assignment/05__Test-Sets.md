@@ -1,0 +1,10 @@
+| Test                   | Input/setup                                                    | Expected result                                           | Actual result      | Pass/fail |
+| ---------------------- | -------------------------------------------------------------- | --------------------------------------------------------- | ------------------ | --------- |
+| Normal list            | 3, then milk, bread, red apples on separate lines              | Stores 3; first food is milk; prints all three full names | Fill after running | —         |
+| Lower boundary         | 1, then eggs                                                   | Stores and prints exactly 1 item                          | Fill after running | —         |
+| Upper boundary         | 10, then ten food names                                        | Stores and prints exactly 10 items                        | Fill after running | —         |
+| Below range            | 0                                                              | Rejects count before allocation                           | Fill after running | —         |
+| Above range            | 11                                                             | Rejects count before allocation                           | Fill after running | —         |
+| Non-numeric count      | abc                                                            | Reports invalid integer input                             | Fill after running | —         |
+| Interrupted food input | Request 3; supply one food, then end input                     | Prints only the one stored food; reports incomplete list  | Fill after running | —         |
+| Null-pointer guard     | Temporarily call printGroceryList(pFoods, 0) before allocation | Prints “No grocery list is available.”                    | Fill after running | —         |

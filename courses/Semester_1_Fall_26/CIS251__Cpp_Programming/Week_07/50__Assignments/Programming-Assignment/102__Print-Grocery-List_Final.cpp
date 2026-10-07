@@ -175,7 +175,8 @@ void printGroceryItems(string *pFoods, int itemsAddedCount)
   // Check for nullptr before dereferencing pFoods
   if (pFoods == nullptr)
   {
-    cout << "Sorry, no grocery list is available.\n";
+    cout << "Retrieving grocery list...\n";
+    cout << "Sorry, no grocery list was found.\n\n";
     return;
   }
 
