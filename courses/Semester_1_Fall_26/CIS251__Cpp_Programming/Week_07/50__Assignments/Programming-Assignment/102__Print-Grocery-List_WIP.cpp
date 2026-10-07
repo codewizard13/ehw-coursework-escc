@@ -56,8 +56,8 @@ int main()
 {
 
   string *pFoods = nullptr;
-  int size;
-  int itemsAddedCount = 0;
+  int size; // number of elements allocated
+  int itemsAddedCount = 0; // actual number of elements added
 
   cout << "*****************************\n";
   cout << "*    Grocery List Program   *\n";
@@ -163,15 +163,15 @@ bool getGroceryItems(string *pFoods, int size, int &itemsAddedCount)
     //  input succeeds.
     itemsAddedCount++;
   }
-  cout << "-----------------------------\n";
-  cout << "* Successfully added " << itemsAddedCount << " items!\n";
-  cout << "-----------------------------\n";
+  cout << "-------------------------------\n";
+  cout << "* Successfully added " << itemsAddedCount << " items! *\n";
+  cout << "-------------------------------\n";
 
   return true;
 }
 
 // Inspect the grocery items through a pointer without changing them.
-void printGroceryItems(string *pFoods, int size)
+void printGroceryItems(string *pFoods, int itemsAddedCount)
 {
   // Check for nullptr before dereferencing pFoods
   if (pFoods == nullptr)
@@ -183,8 +183,15 @@ void printGroceryItems(string *pFoods, int size)
   // Print out the stored foods
   cout << "******* GROCERY LIST ********\n";
 
-  for (int i = 0; i < size; i++)
+  for (int i = 0; i < itemsAddedCount; i++)
   {
     cout << "Item # " << i + 1 << ": " << pFoods[i] << '\n';
   }
 }
+
+
+
+//  if (itemsAddedCount <= 0) {
+//     cout << "Sorry, no items were found!\n";
+//     return;
+//   }
