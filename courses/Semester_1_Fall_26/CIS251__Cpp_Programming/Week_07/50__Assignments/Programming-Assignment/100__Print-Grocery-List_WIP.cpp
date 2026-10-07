@@ -59,7 +59,7 @@ using namespace std;
 
 int main () {
 
-  string *pFoods = nullptr;
+    string *pFoods = nullptr;
   int size;
 
   cout << "How many foods to enter in?: ";
