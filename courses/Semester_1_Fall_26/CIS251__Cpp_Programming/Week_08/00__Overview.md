@@ -7,67 +7,75 @@
 > [🏚️ README](../../../README.md) | [📁 Courses](../../index.md) | [📚 Vocabulary](../../Vocabulary.md) | [🗓️ Assignments Schedule](../Assignments_Schedule.md) | [🔖 Bookmark](#bookmark)
 
 
-# CIS 251 - C++ Programming:  <br> Week 7 Overview - Pointers, References, Memory, and C++ Essentials 1 Synthesis
+### CIS 251 - C++ Programming:
+# Week 8 Overview - Object-Oriented Programming: Classes, Objects, and Encapsulation
 
-**Due date:** Sunday, October 4, 2026 at 11:59 PM Central.
+
+**Due date:** Sunday, October 11, 2026 at 11:59 PM Central.
 
 ### Learning Objectives
 
 By the end of this week, you should be able to explain and apply:
 
-*   addresses and pointers
-*   dereferencing
-*   references
-*   dynamic memory concepts
-*   nullptr
-*   memory safety
+*   class design
+*   objects
+*   private/public access
+*   constructors
+*   getters/setters
+*   invariants
 
 ## Required Learning Before Graded Work
 
 **Complete every reading and video listed below before the discussion, programming assignment, or quiz.** The programming work for this week is based only on concepts introduced in these resources and earlier weeks.
 
-## Assigned Readings
+### Assigned Readings
 
 ### Learning targets
 
-*   distinguish values from addresses
-*   create/use references
-*   create/dereference pointers
-*   compare pass-by-value and pass-by-reference
-*   recognize null-pointer and lifetime risks
+*   explain class versus object
+*   define data members and methods
+*   use constructors
+*   apply public/private access
+*   demonstrate encapsulation
 
 ### 1\. C++ Institute assignment
 
-**C++ Essentials 1 — Module 3: pointers, passing parameters by value/reference, and dynamic memory management. Complete the Module 3 practice before the Canvas assignment.**
+**C++ Essentials 2 — Module 1: OOP foundations, anatomy of classes, objects, class components, and objects inside objects. Complete the class/object labs assigned in the course.**
 
 ### 2\. Required W3Schools / Google reading
 
-1.  **[W3Schools — C++ References.](https://www.w3schools.com/cpp/cpp_references.asp)**  
-    Study reference variables and aliases.
-2.  **[W3Schools — C++ Pointers.](https://www.w3schools.com/cpp/cpp_pointers.asp)**  
-    Study addresses, the address-of operator `&`, pointer declaration `*`, dereferencing, and pointer safety basics.
-3.  **[W3Schools — Pass by Reference (review).](https://www.w3schools.com/cpp/cpp_function_reference.asp)**  
-    Connect references to functions learned in Week 5.
+1.  **[W3Schools — C++ OOP](https://www.w3schools.com/cpp/cpp_oop.asp)**  
+    Read the OOP overview and relate classes/objects to data plus behavior.
+2.  **[W3Schools — Classes/Objects](https://www.w3schools.com/cpp/cpp_classes.asp)**  
+    Study class declaration, members, object creation, and member access.
+3.  **[W3Schools — Class Methods](https://www.w3schools.com/cpp/cpp_class_methods.asp)**  
+    Study methods defined inside and outside a class.
+4.  **[W3Schools — Constructors](https://www.w3schools.com/cpp/cpp_constructors.asp)**  
+    Study constructor purpose, automatic invocation, and parameters.
+5.  **[W3Schools — Access Specifiers](https://www.w3schools.com/cpp/cpp_access_specifiers.asp)**  
+    Study `public` and `private`.
+6.  **[W3Schools — Encapsulation](https://www.w3schools.com/cpp/cpp_encapsulation.asp)**  
+    Study private data with controlled public access.
 
 ### 3\. Required TutorialsPoint reading
 
-1.  **[TutorialsPoint — C++ References.](https://www.tutorialspoint.com/cplusplus/cpp_references.htm)**  
-    Study how a reference aliases an existing variable.
-2.  **[TutorialsPoint — C++ Pointers.](https://www.tutorialspoint.com/cplusplus/cpp_pointers.htm)**  
-    Study addresses, pointer values, dereferencing, and null-pointer concepts.
-3.  **[TutorialsPoint — Dynamic Memory.](https://www.tutorialspoint.com/cplusplus/cpp_dynamic_memory.htm)**  
-    Read `new`/`delete` for conceptual understanding and complete only the guided example; the graded assignment does not require a dynamic array unless explicitly stated.
+1.  **[TutorialsPoint — C++ Classes and Objects](https://www.tutorialspoint.com/cplusplus/cpp_classes_objects.htm)**  
+    Study class syntax, access specifiers, objects, and member functions.
+2.  **[TutorialsPoint — Constructors and Destructors](https://www.tutorialspoint.com/cplusplus/cpp_constructor_destructor.htm)**  
+    Focus on constructors; destructors are introduced for awareness but are not required in the assignment unless explicitly stated.
 
 ### Assigned Videos
 
 ### 4\. Required video study
 
-1.  **[Bro Code playlist — “Memory addresses”.](https://www.youtube.com/playlist?list=PLZPZq0r_RZOMHoXIcxze_lP97j2Ase2on)**  
-    Select the lesson titled **Memory addresses**. Write down the difference between a variable value and its address.
-2.  **[Bro Code playlist — “Pass by VALUE vs pass by REFERENCE”.](https://www.youtube.com/playlist?list=PLZPZq0r_RZOMHoXIcxze_lP97j2Ase2on)**  
-    Select this exact lesson and reproduce the example with two small variables.
-3.  **[Bro Code playlist — “Pointers” and “Null pointers”.](https://www.youtube.com/playlist?list=PLZPZq0r_RZOMHoXIcxze_lP97j2Ase2on)**  
-    Watch both exact lessons. Practice declaring a pointer, storing an address, dereferencing, and initializing a pointer safely.
+1.  **[Bro Code playlist — “Object Oriented Programming”](https://www.youtube.com/playlist?list=PLZPZq0r_RZOMHoXIcxze_lP97j2Ase2on)**  
+    Select the exact OOP lesson and identify class, object, attributes/data, and methods/behavior.
+2.  **[Bro Code — C++ CONSTRUCTORS explained easy](https://www.youtube.com/watch?v=5z3KEX9AZEQ)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=5z3KEX9AZEQ)**  
+    Reproduce the constructor example and change its parameter values.
+3.  **[Bro Code — C++ CONSTRUCTOR OVERLOADING explained easy](https://www.youtube.com/watch?v=uAVj1cLktyU)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=uAVj1cLktyU)**  
+    Watch for understanding; overloaded constructors are optional unless the assignment specifies them.
+4.  **[Bro Code playlist — “Getters & setters”](https://www.youtube.com/playlist?list=PLZPZq0r_RZOMHoXIcxze_lP97j2Ase2on)**  
+    Select the exact lesson and practice a private field with getter/setter methods.
 
 **How to study the videos:** Do not watch passively. Pause before the instructor runs each short example, predict the output, type the example yourself, compile it, then change one value or condition and run it again.
 
@@ -75,9 +83,8 @@ By the end of this week, you should be able to explain and apply:
 
 | Activity | Points |
 | --- | --- |
-| Week 7 Discussion | 20  |
-| Week 7 Programming Assignment | 100 |
-| Week 7 Quiz | 20  |
+| Week 8 Discussion | 20  |
+| Week 8 Programming Assignment | 100 |
+| Week 8 Quiz | 20  |
 
 Readiness requirement: finish the readings, videos, and guided practice above before beginning the graded activities.
-
