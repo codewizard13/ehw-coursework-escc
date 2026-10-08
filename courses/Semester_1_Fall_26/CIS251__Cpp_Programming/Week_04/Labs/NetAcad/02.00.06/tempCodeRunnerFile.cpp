@@ -1,1 +1,0 @@
-(cin >> year) && (year > 0)
