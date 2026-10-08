@@ -8,7 +8,7 @@
 
     VERSION: 1.02
 
-    STATUS: WIP
+    STATUS: Fully Working
 
     Instructions:
       Reference and Pointer Practice: write small, clearly labeled functions
