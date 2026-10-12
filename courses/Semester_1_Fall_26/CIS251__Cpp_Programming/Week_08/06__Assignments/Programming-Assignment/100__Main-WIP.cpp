@@ -7,7 +7,7 @@
 
     VERSION: 1.0
 
-    STATUS: Fully Working
+    STATUS: WIP - Algorithm in progress; CODE to come
 
     Instructions:
       BankAccount Class: define a class with private account holder/balance
@@ -16,7 +16,7 @@
       in main().
 
     Notes:
-    - Replaces `size` in the printGroceryItems() function with `itemsAddedCount`
+    - FIRST crack at figuring out the algorithm without using AI
 
     Lessons Learned:
     -
@@ -26,170 +26,75 @@
  ************************************************************ */
 
 /*
-ALGORITHM:
+******************** ALGORITHM: *********************
 
-1. Initialize the food pointer to nullptr and the entry counter to zero.
-2. Ask how many grocery items the user wants to enter.
-   Stop on failed integer input.
-   Retry integer counts outside 1-10.
-3. Allocate a string array of the requested size.
-4. For each requested item:
-   Read the food name.
-   Stop collecting if input fails.
-   Otherwise, update the entry counter through a reference parameter.
-5. If collection failed, report how many items were stored.
-6. Print successfully stored entries through a pointer function.
-7. Release the array with delete[] and set its pointer to nullptr.
-8. End the program.
+INCLUDE iostream
+INCLUDE string
+
+USING NAMESPACE STD
+
+Define CLASS BankAccount:
+- Constructor: STRING account_holder, DOUBLE balance
+
+Declare Functions:
+- void showBalance( double balance )
+- double deposit()
+- double withdraw( double balance )
+
+## MAIN: -----------------------
+
+
+Declare Variables:
+  - double balance = 0
+  - int menu_choice = 0
+
+[DO]
+
+  Show pretty banking menu with numbered choices:
+  Welcome user to the program and identify the program as Banking ATM simulator
+
+    1. Show Balance
+    2. Deposit Money
+    3. Withdraw Money
+    4. Exit
+
+  SWITCH menu_choice
+    CASE 1 (Show Balance): showBalance(balance) then BREAK
+    CASE 2 (Deposit Money): Add deposit amount to current balance
+    CASE 3 (Withdraw Money): 
+    CASE 4 (Exit): Print "Thanks for visiting - come back again!"
+    DEFAULT: Print "Invalid Choice."
+
+[WHILE menu_choice NOT 4 (the exit option)]
+
+## SHOW BALANCE: ---------------
+
+## MAKE DEPOSIT: ---------------
+
+## WITHDRAW: -------------------
+
+---
+1. Create BankAccount class
+  - private: username, password, account name, last transaction, balance
+  - constructor: username
+
+Show Balance
+Make Deposit
+Withdraw
 
 */
 
 #include <iostream>
 using namespace std;
 
-bool getDesiredFoodsCount(int &size);
-bool getGroceryItems(string *pFoods, int size, int &itemsAddedCount);
-void printGroceryItems(string *pFoods, int size);
 
-int main()
-{
+class BankAccount {
 
-  string *pFoods = nullptr;
-  int size;                // requested number of array elements to allocate
-  int itemsAddedCount = 0; // number of successfully entered foods
+};
 
-  cout << "*****************************\n";
-  cout << "*    Grocery List Program   *\n";
-  cout << "*****************************\n\n";
 
-  if (!getDesiredFoodsCount(size))
-  {
-    cout << "Unable to get desired grocery count from user.\n";
-    cout << "*****************************\n";
-    return 1;
-  }
+int main() {
 
-  // new[] creates an array and returns its starting address.
-  pFoods = new string[size];
-
-  if (!getGroceryItems(pFoods, size, itemsAddedCount))
-  {
-    cout << "Input stopped. Recorded " << itemsAddedCount
-         << " of " << size << " items.\n";
-    if (itemsAddedCount > 0)
-    {
-      printGroceryItems(pFoods, itemsAddedCount);
-    }
-  }
-  else
-  {
-    printGroceryItems(pFoods, itemsAddedCount);
-  }
-
-  // Delete array to prevent memory leak:
-  // new[] requires matching delete[] to release the array.
-  // Without this, the allocated memory is not explicitly released.
-  delete[] pFoods;
-
-  // Clear the now-invalid address. This does not free memory;
-  // delete[] above already did that.
-  pFoods = nullptr;
-
-  cout << "*****************************\n";
 
   return 0;
-}
-
-// & declares a reference to main's size variable.
-// Changing size here changes the original variable, not a copy.
-bool getDesiredFoodsCount(int &size)
-{
-  bool try_again = true;
-
-  // Retry out-of-range integers; stop on failed integer input.
-  do
-  {
-    cout << "How many foods to enter in?: ";
-    if (!(cin >> size))
-    {
-      // Stop checking on non-numeric input
-      cout << "Invalid input: size must be an integer (1-10)\n";
-      return false;
-    }
-    if (size < 1 || size > 10)
-    {
-      // Retry if the input is an integer but outside the allowed range.
-      cout << "Invalid input: size must be between 1 and 10.\n";
-      continue;
-    }
-    cout << endl;
-
-    try_again = false;
-
-  } while (try_again);
-
-  return true;
-}
-
-// * in string *pFoods declares a pointer to a string.
-// pFoods[i] accesses an array entry through that pointer.
-// & lets this function update main's itemsAddedCount.
-bool getGroceryItems(string *pFoods, int size, int &itemsAddedCount)
-{
-
-  // nullptr means the pointer points to no object.
-  // Check before accessing foods to avoid invalid memory access, and potential memory leaks
-  if (pFoods == nullptr)
-  {
-    cout << "Sorry, no grocery list is available.\n";
-    return false;
-  }
-
-  // receive the requested quantity of foods
-  for (int i = 0; i < size; i++)
-  {
-    cout << "Enter the next grocery item # " << i + 1 << ": ";
-
-    // Validate the current food item
-    // - ws skips leftover newlines and leading whitespace.
-    if (!getline(cin >> ws, pFoods[i]))
-    {
-      cout << "Input failed.\n";
-      return false;
-    }
-
-    // Increment the recorded-item count by 1 only after input succeeds.
-    itemsAddedCount++;
-  }
-  cout << "-------------------------------\n";
-  cout << "* Successfully added " << itemsAddedCount << " items! *\n";
-  cout << "-------------------------------\n";
-
-  return true;
-}
-
-// Inspect the grocery items through a pointer without changing them.
-void printGroceryItems(string *pFoods, int itemsAddedCount)
-{
-  // Check for nullptr before dereferencing pFoods
-  if (pFoods == nullptr)
-  {
-    cout << "Retrieving grocery list...\n";
-    cout << "Sorry, no grocery list was found.\n\n";
-    return;
-  }
-
-  if (itemsAddedCount <= 0)
-  {
-    cout << "Sorry, no items were found!\n";
-    return;
-  }
-
-  // Print out the stored foods
-  cout << "******* GROCERY LIST ********\n";
-
-  for (int i = 0; i < itemsAddedCount; i++)
-  {
-    cout << "Item # " << i + 1 << ": " << pFoods[i] << '\n';
-  }
 }
