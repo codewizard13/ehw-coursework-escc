@@ -1,20 +1,19 @@
 /* ************************************************************
     Course: ESCC, CIS-251 - C++ Programming
-    WEEK 7 PROGRAMMING ASSIGNMENT — Pointers, References, Memory, and C++ Essentials 1 Synthesis
+    WEEK 8 PROGRAMMING ASSIGNMENT — Object-Oriented Programming: Classes, Objects, and Encapsulation
 
     Student: Eric Hepperle
-    Created: 2026-10-06
-    Updated: 2026-10-07
+    Created: 2026-10-11
 
-    VERSION: 1.02
+    VERSION: 1.0
 
     STATUS: Fully Working
 
     Instructions:
-      Reference and Pointer Practice: write small, clearly labeled functions
-      that modify values by reference, inspect values through pointers, and
-      demonstrate one safe new/delete pair. Include comments
-      explaining &, *, nullptr, and why delete is required.
+      BankAccount Class: define a class with private account holder/balance
+      data, a constructor, getters, and deposit/withdraw methods that
+      preserve a nonnegative balance. Create and test multiple objects
+      in main().
 
     Notes:
     - Replaces `size` in the printGroceryItems() function with `itemsAddedCount`

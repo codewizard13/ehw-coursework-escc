@@ -1,14 +1,13 @@
-Due: Sun Oct 4, 2026 11:59pm
+Due: Sun Oct 11, 2026 11:59pm
+100 Points Possible
 
-100 Possible Points
+## Week 8 Programming Assignment - Object-Oriented Programming: Classes, Objects, and Encapsulation
 
-# Week 7 Programming Assignment - Pointers, References, Memory, and C++ Essentials 1 Synthesis
-
-**Preparation requirement:** Complete the Week 7 readings, videos, [C++ Institute practice](https://www.netacad.com/courses/c-plus-plus-essentials-1?courseLang=en-US&instance_id=4e9bfae1-812a-47b1-9052-43a5f27db6ff), and guided examples before starting. This assignment intentionally requires only concepts taught in those materials.
+**Preparation requirement:** Complete the Week 8 readings, videos, [C++ Institute practice](https://www.netacad.com/courses/c-plus-plus-essentials-2?courseLang=en-US&instance_id=c9801f54-4d0c-44f9-b4ee-3f2d9c6306bf), and guided examples before starting. This assignment intentionally requires only concepts taught in those materials.
 
 ### Programming Task
 
-> Reference and Pointer Practice: write small, clearly labeled functions that modify values by reference, inspect values through pointers, and demonstrate one safe new/delete pair. Include comments explaining &, \*, nullptr, and why delete is required.
+> BankAccount Class: define a class with private account holder/balance data, a constructor, getters, and deposit/withdraw methods that preserve a nonnegative balance. Create and test multiple objects in main().
 
 ### Required Process
 
@@ -20,17 +19,17 @@ Due: Sun Oct 4, 2026 11:59pm
 
 ### Submit
 
-- Your `.cpp` source file(s) (and header files only if your design uses them).
-- A short test table with **at least five test cases**: input, expected result, actual result, pass/fail.
-- Screenshot or text evidence showing the program compiled and ran.
-- AI Assistance Log if AI was used. AI may explain/review concepts already taught, but it may not introduce unassigned libraries, frameworks, or C++ features.
+*   Your `.cpp` source file(s) (and header files only if your design uses them).
+*   A short test table with at least five test cases: input, expected result, actual result, pass/fail.
+*   Screenshot or text evidence showing the program compiled and ran.
+*   AI Assistance Log if AI was used. AI may explain/review concepts already taught, but it may not introduce unassigned libraries, frameworks, or C++ features.
 
 ### 100-Point Rubric
 
-| Criterion                                                           | Points |
-| ------------------------------------------------------------------- | ------ |
-| Program meets the stated requirements and produces correct results  | 40     |
-| Correct use of C++ concepts taught in the week's learning materials | 25     |
-| Testing, validation, and correction of errors                       | 20     |
-| Readability, organization, naming, and appropriate comments         | 10     |
-| Required submission evidence / AI transparency                      | 5      |
+| Criterion | Points |
+| --- | --- |
+| Program meets the stated requirements and produces correct results | 40  |
+| Correct use of C++ concepts taught in the week's learning materials | 25  |
+| Testing, validation, and correction of errors | 20  |
+| Readability, organization, naming, and appropriate comments | 10  |
+| Required submission evidence / AI transparency | 5   |
