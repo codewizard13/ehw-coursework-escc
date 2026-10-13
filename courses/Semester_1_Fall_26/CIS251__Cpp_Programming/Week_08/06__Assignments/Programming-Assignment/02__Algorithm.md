@@ -1,23 +1,63 @@
-### 📊 Pseudocode Algorithm
+## 📊 Pseudocode Algorithm
 
-# Week 7 Programming Assignment - Pointers, References, Memory, and C++ Essentials 1 Synthesis
+# WEEK 8 PROGRAMMING ASSIGNMENT — Object-Oriented Programming: Classes, Objects, and Encapsulation
 
-/*
 
-ALGORITHM:
 
-1. Initialize the food pointer to nullptr and the entry counter to zero.
-2. Ask how many grocery items the user wants to enter.
-   Stop on failed integer input.
-   Retry integer counts outside 1-10.
-3. Allocate a string array of the requested size.
-4. For each requested item:
-   Read the food name.
-   Stop collecting if input fails.
-   Otherwise, update the entry counter through a reference parameter.
-5. If collection failed, report how many items were stored.
-6. Print successfully stored entries through a pointer function.
-7. Release the array with delete[] and set its pointer to nullptr.
-8. End the program.
+## BANKACCOUNT CLASS: ----------
 
-*/
+      Private Data:
+      - account holder
+      - balance
+
+      Constructor:
+      - Set the account holder and starting balance
+      - ??? Do not allow a negative starting balance (not sure if this is necessary?)
+
+      Getters:
+      - Return the account holder
+      - Return the balance
+
+      Methods:
+      - Deposit money
+      - Withdraw money
+
+
+## MAIN: -----------------------
+
+      Create two BankAccount objects
+
+      Display each account's holder and starting balance
+
+      Deposit money into the first account
+      Withdraw money from the second account
+
+      Attempt a withdrawal greater than the available balance
+
+      Display both accounts' final balances
+      Check that the results are correct
+
+
+## SHOW BALANCE: ---------------
+
+      Return the account's balance through its getter
+
+
+## MAKE DEPOSIT: ---------------
+
+      Receive the deposit amount
+
+      If the amount is positive:
+      Add it to the account's balance
+      Otherwise:
+      Leave the balance unchanged
+
+
+## WITHDRAW: -------------------
+
+      Receive the withdrawal amount
+
+      If the amount is positive and does not exceed the balance:
+      Subtract it from the account's balance
+      Otherwise:
+      Leave the balance unchanged
