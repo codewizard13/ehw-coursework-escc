@@ -22,7 +22,7 @@
  * @version 1.04
  *
  * @par Notes
- * - Convert file and class comments to better align with Doxygen style
+ * - CONVERT file and class comments to better align with Doxygen style
  *
  * @par Lessons Learned
  * -
