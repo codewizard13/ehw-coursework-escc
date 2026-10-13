@@ -14,6 +14,8 @@
  * This program creates multiple BankAccount objects, displays their
  * balances, and tests valid and invalid deposits and withdrawals.
  *
+ * @status WIP - Successfully migrated showBalance() into class method
+ *
  * @author Eric L. Hepperle
  * @date 2026-10-11
  * @updated 2026-10-13
@@ -44,9 +46,9 @@ using namespace std;
  * Public getters provide read-only access, while deposit() and withdraw()
  * are the only operations that change the balance.
  *
- * Successful deposits and withdrawals preserve a nonnegative balance.
+ * - showBalance() displays the account number, holder, and current balance.
  *
- * @warning The constructor currently accepts a negative opening balance.
+ * - Successful deposits and withdrawals preserve a nonnegative balance.
  */
 class BankAccount
 {
@@ -72,11 +74,21 @@ public:
     this->balance = balance;
   }
 
+  /**
+   * @brief Gets the account holder's name
+   *
+   * @return The account holder's name
+   */
   string getAccountHolder()
   {
     return account_holder;
   }
 
+  /**
+   * @brief Gets the account's current balance
+   *
+   * @return The current balance in USD
+   */
   double getBalance()
   {
     return balance;
@@ -84,7 +96,7 @@ public:
 
   /**
    * @brief Deposits money into the account.
-   * 
+   *
    * @param amount Deposit amount in USD; must be greater than zero.
    * @return true if the deposit succeeded; false otherwise
    * @note A rejected deposit leaves the balance unchanged
@@ -111,8 +123,8 @@ public:
   }
 
   /**
-   * @brief Withdraws money from the account without overloading it.
-   * 
+   * @brief Withdraws money from the account without overdrawing it.
+   *
    * @param amount Withdrawal amount in USD; must be positive and no greater
    *               than the current balance.
    * @return true if the withdrawal succeeded; false otherwise.
@@ -149,9 +161,21 @@ public:
 
     return true;
   }
-};
 
-void showBalance(BankAccount account);
+  /**
+   * @brief Displays the account number, holder, and current balance.
+   *
+   * @note This method writes to standard output and does not change the account.
+   */
+  void showBalance()
+  {
+    cout << "Account #";
+    cout << setfill('0') << setw(3) << this->acct_no << setfill(' ');
+    cout << " belongs to " << this->getAccountHolder();
+    cout << " and has a balance of $" << getBalance() << endl;
+  }
+
+};
 
 int main()
 {
@@ -172,8 +196,8 @@ int main()
 
   cout << "\n************ SHOW START BALANCE ******\n\n";
 
-  showBalance(jen_acct);
-  showBalance(eric_acct);
+  jen_acct.showBalance();
+  eric_acct.showBalance();
 
   cout << "\n************ MAKE DEPOSITS************\n";
 
@@ -194,13 +218,4 @@ int main()
 
   cout << "\n_________________ END PROGRAM _______________\n\n";
   return 0;
-}
-
-void showBalance(BankAccount account)
-{
-
-  cout << "Account #";
-  cout << setfill('0') << setw(3) << account.acct_no << setfill(' ');
-  cout << " belongs to " << account.getAccountHolder();
-  cout << " and has a balance of $" << account.getBalance() << endl;
 }
