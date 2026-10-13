@@ -8,7 +8,8 @@
 
     VERSION: 1.03
 
-    STATUS: WIP
+    STATUS: WIP — OOP bank accounts with private data, validated
+      deposits/withdrawals, overdraft protection, and multiple-object tests.
 
     Instructions:
       BankAccount Class: define a class with private account holder/balance
@@ -17,7 +18,33 @@
       in main().
 
     Notes:
-    -
+    - CONVERT account_holder and balance to private variables
+    - CREATE getters for private variables
+    - ADD a public account number variable
+    - USE setfill('0') << setw(3) to display the account number as 3 digits
+    - USE setfill(' ') to reset setfill() back to default
+    - CREATE more descriptive account names, eg, `jen_acct` instead
+        of `account_01`
+    - METHOD deposit() works! Also, correctly rejects negative values
+    - Adds success/failure return values to `deposit()` and `withdraw()`, 
+        and captures the prior balance in `old_bal` for
+        before-and-after reporting.
+    - Validates transaction amounts before modifying `balance`, so rejected
+        deposits and withdrawals leave the account unchanged.
+    - Prevents overdrafts by rejecting withdrawals that exceed the
+        current balance.
+    - Adds transaction tests in `main()` and passes `BankAccount` objects to
+       `showBalance()` by value, creating copies of the accounts.
+
+    Future Improvements (suggested by AI):
+    - Move `showBalance()` into `BankAccount` as a public method so the class 
+        owns its display behavior.
+    - Make `acct_no` private and expose it through a getter, matching the
+        encapsulation used for account holder and balance.
+    - Validate the constructor’s opening balance so an account cannot be 
+        created with a negative starting balance.
+    - Replace hard-coded transaction amounts with a menu or user-input flow so
+        the program can accept interactive transactions.
 
     Lessons Learned:
     -
@@ -37,7 +64,7 @@ Private Data:
 
 Constructor:
   - Set the account holder and starting balance
-  - Do not allow a negative starting balance
+  - ??? Do not allow a negative starting balance (not sure if this is necessary?)
 
 Getters:
   - Return the account holder
@@ -96,16 +123,83 @@ using namespace std;
 
 class BankAccount
 {
+private:
+  string account_holder = "";
+  double balance = 0.0;
+
 public:
+  int acct_no = 0;
+
   // Constructor
-  BankAccount(string account_holder, double balance)
+  BankAccount(int acct_no, string account_holder, double balance)
   {
+    this->acct_no = acct_no;
     this->account_holder = account_holder;
     this->balance = balance;
   }
 
-  string account_holder;
-  double balance;
+  string getAccountHolder()
+  {
+    return account_holder;
+  }
+
+  double getBalance()
+  {
+    return balance;
+  }
+
+  bool deposit(double amount)
+  {
+    double old_bal = balance; // temp var to store current balance
+
+    cout << "Depositing $" << amount << " in " << account_holder << "'s account ...\n";
+    if (amount <= 0)
+    {
+      cout << " - Invalid input: deposit amount must be at least $1.\n";
+      cout << " - " << account_holder << "'s balance of $" << balance << " is unchanged.\n";
+      return false;
+    }
+
+    balance += amount;
+
+    cout << " - Success: Deposited $" << amount << ".\n";
+    cout << " - Old Balance: $" << old_bal << " | New balance: $" << balance;
+    cout << "\n";
+
+    return true;
+  }
+
+  bool withdraw(double amount)
+  {
+    double old_bal = balance; // temp var to store current balance
+
+    cout << "Withdrawing $" << amount << " from " << account_holder << "'s account ...\n";
+
+    // Reject if amount is negative or zero
+    if (amount <= 0)
+    {
+      cout << " - Invalid input: withdrawal amount cannot be negative. ";
+      cout << account_holder << "'s balance of $" << balance << " is unchanged.\n";
+      cout << endl;
+      return false;
+    }
+
+    // Reject if (balance minus amount) is negative
+    if (balance - amount < 0)
+    {
+      cout << " - Insufficient Funds. ";
+      cout << account_holder << "'s balance of $" << balance << " is unchanged.\n";
+      cout << endl;
+      return false;
+    }
+    balance -= amount;
+
+    cout << " - Success: Withdrew $" << amount << ".\n";
+    cout << " - Old Balance: $" << old_bal << " | New balance: $" << balance << "\n";
+    cout << "\n";
+
+    return true;
+  }
 };
 
 void showBalance(BankAccount account);
@@ -113,27 +207,51 @@ void showBalance(BankAccount account);
 int main()
 {
 
-  // DECLARE ACOUNT NUMBERS
+  string bar = "**************************************";
 
-  BankAccount account_01("Jennifer", 250);
-  BankAccount account_02("Eric", 100);
+  // DEFINE BANK ACCOUNTS
+  BankAccount jen_acct(001, "Jennifer", 250);
+  BankAccount eric_acct(002, "Eric", 100);
 
   // Ensure 2 decimal point precision from here on
+  //  so dollar amounts display correctly
   cout << setprecision(2) << fixed;
 
-  cout << "\n**************************************\n";
+  // cout << "\n************ SHOW BALANCE ************\n";
 
-  showBalance(account_01);
-  showBalance(account_02);
+  cout << "\n_________BANK ACCOUNT SIMULATOR _____________\n";
 
-  cout << "**************************************\n\n";
+  cout << "\n************ SHOW START BALANCE ******\n\n";
 
+  showBalance(jen_acct);
+  showBalance(eric_acct);
+
+  cout << "\n************ MAKE DEPOSITS************\n";
+
+  cout << "\n## Testing: Negative deposit\n";
+  jen_acct.deposit(-200.00);
+
+  cout << "\n## Testing: Positive deposit\n";
+  jen_acct.deposit(70.50);
+
+  cout << "\n\n************ MAKE WITHDRAWaLS *********\n\n";
+
+  jen_acct.withdraw(200.00);
+  eric_acct.withdraw(500.00);
+
+  cout << "\n************ SHOW END BALANCE ********\n\n";
+
+  // jen_acct.showBalance()
+
+  cout << "\n_________________ END PROGRAM _______________\n\n";
   return 0;
 }
 
 void showBalance(BankAccount account)
 {
 
-  cout << account.account_holder;
-  cout << " has a balance of $" << account.balance << endl;
+  cout << "Account #";
+  cout << setfill('0') << setw(3) << account.acct_no << setfill(' ');
+  cout << " belongs to " << account.getAccountHolder();
+  cout << " and has a balance of $" << account.getBalance() << endl;
 }
