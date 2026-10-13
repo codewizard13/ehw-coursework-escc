@@ -1,8 +1,6 @@
 /**
- * @file 104__Main-WIP.cpp
- *
- * @brief Week 8 C++ programming assignment: BankAccount class, objects,
- *        and encapsulation.
+* @brief Simple Bank Account Simulator — Week 8 C++ programming assignment:
+*        BankAccount class, objects, and encapsulation.
  *
  * @course ESCC, CIS-251 - C++ Programming
  * @assignment Week 8 Programming Assignment
@@ -13,33 +11,24 @@
  * that preserve a nonnegative balance. Create and test multiple objects
  * in main().
  *
- * This program defines a BankAccount class with private account-holder
- * and balance data. Public getters provide controlled read access, while
- * deposit() and withdraw() validate transactions and preserve a nonnegative
- * balance.
- *
- * The program creates multiple BankAccount objects in main(), displays
- * their initial balances, tests valid and invalid deposits, tests valid
- * and excessive withdrawals, and displays the resulting balances.
+ * This program creates multiple BankAccount objects, displays their
+ * balances, and tests valid and invalid deposits and withdrawals.
  *
  * @author Eric L. Hepperle
  * @date 2026-10-11
  * @updated 2026-10-13
  * @version 1.04
- * @copyright Eric L. Hepperle
- *
- * @note This implementation uses hard-coded transaction values for testing.
- *       It does not implement PIN authentication, an interactive ATM menu,
- *       or transaction history.
- *
- * @warning The constructor does not currently reject a negative opening balance.
+ * 
+ * @par Notes
+ * - Convert file and class comments to better align with Doxygen style
  * 
  * @par Lessons Learned
  * - 
  *
- * @par Bug Reports
- * Please report issues through GitHub:
- * https://github.com/codewizard13
+ * @note Uses hard-coded transaction values for testing; does not implement
+ *       authentication, an interactive ATM menu, or transaction history.
+ *
+ * @link https://github.com/codewizard13
  */
 
 #include <iostream>
@@ -48,22 +37,16 @@
 using namespace std;
 
 /**
- * @brief Models a simple bank account for the Week 8 OOP assignment.
+ * @class BankAccount
+ * @brief Models a bank account with an account holder and balance.
  *
- * BankAccount demonstrates encapsulation by keeping the account holder's
- * name and balance private. Public getters provide read-only access to
- * that data, while deposit() and withdraw() control all balance changes.
+ * Each BankAccount object owns its own private account holder and balance.
+ * Public getters provide read-only access, while deposit() and withdraw()
+ * are the only operations that change the balance.
  *
- * A deposit is accepted only when its amount is positive. A withdrawl is
- * accepted only when its amount is positive and does not exceed the
- * current balance, preserving a nonnegative balance.
- *
- * @note This class does not implement authentication , PIN entry, or an
- *       interactive ATM menu; main() creates and tests multiple
- *       account objects.
+ * Successful deposits and withdrawals preserve a nonnegative balance.
  *
  * @warning The constructor currently accepts a negative opening balance.
- *          Future work should validate it during object construction.
  */
 class BankAccount
 {
