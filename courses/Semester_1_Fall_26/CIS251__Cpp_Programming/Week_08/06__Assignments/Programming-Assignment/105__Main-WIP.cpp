@@ -23,6 +23,7 @@
  *
  * @par Notes
  * - TODO: Convert hard-code values to validated inputs
+ * - MIGRATED main() code to chooseMenuOption() method - MAYBE revert later?
  *
  * @par Lessons Learned
  * -
