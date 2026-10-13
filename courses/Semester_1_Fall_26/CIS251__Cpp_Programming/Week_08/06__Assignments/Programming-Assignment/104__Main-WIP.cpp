@@ -1,6 +1,6 @@
 /**
-* @brief Simple Bank Account Simulator — Week 8 C++ programming assignment:
-*        BankAccount class, objects, and encapsulation.
+ * @brief Simple Bank Account Simulator — Week 8 C++ programming assignment:
+ *        BankAccount class, objects, and encapsulation.
  *
  * @course ESCC, CIS-251 - C++ Programming
  * @assignment Week 8 Programming Assignment
@@ -18,12 +18,12 @@
  * @date 2026-10-11
  * @updated 2026-10-13
  * @version 1.04
- * 
+ *
  * @par Notes
  * - Convert file and class comments to better align with Doxygen style
- * 
+ *
  * @par Lessons Learned
- * - 
+ * -
  *
  * @note Uses hard-coded transaction values for testing; does not implement
  *       authentication, an interactive ATM menu, or transaction history.
@@ -57,7 +57,14 @@ private:
 public:
   int acct_no = 0;
 
-  // Constructor
+  /**
+   * @brief Constructor: Constructs a bank account.
+   *
+   * @param acct_no Account number.
+   * @param account_holder Name of the account holder.
+   * @param balance Opening balance in USD.
+   * @warning A negative opening balance is currently accepted.
+   */
   BankAccount(int acct_no, string account_holder, double balance)
   {
     this->acct_no = acct_no;
@@ -75,6 +82,13 @@ public:
     return balance;
   }
 
+  /**
+   * @brief Deposits money into the account.
+   * 
+   * @param amount Deposit amount in USD; must be greater than zero.
+   * @return true if the deposit succeeded; false otherwise
+   * @note A rejected deposit leaves the balance unchanged
+   */
   bool deposit(double amount)
   {
     double old_bal = balance; // temp var to store current balance
@@ -96,6 +110,14 @@ public:
     return true;
   }
 
+  /**
+   * @brief Withdraws money from the account without overloading it.
+   * 
+   * @param amount Withdrawal amount in USD; must be positive and no greater
+   *               than the current balance.
+   * @return true if the withdrawal succeeded; false otherwise.
+   * @note A rejected withdrawal leaves the balance unchanged.
+   */
   bool withdraw(double amount)
   {
     double old_bal = balance; // temp var to store current balance
@@ -182,5 +204,3 @@ void showBalance(BankAccount account)
   cout << " belongs to " << account.getAccountHolder();
   cout << " and has a balance of $" << account.getBalance() << endl;
 }
-
-
