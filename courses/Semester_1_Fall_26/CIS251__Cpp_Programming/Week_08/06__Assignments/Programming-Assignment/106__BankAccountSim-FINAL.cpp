@@ -22,14 +22,17 @@
  * @version 1.06
  *
  * @par Notes
- * -
+ * - Uses hard-coded transaction values for testing.
+ * - Negative opening balances are rejected and set to zero.
+ * - Does not implement authentication, an interactive ATM menu, or
+ *   transaction history; those are beyond the assignment scope.
  *
  * @par Lessons Learned
- * -
- *
- * @note Uses hard-coded transaction values for testing; does not implement
- *       authentication, an interactive ATM menu, or transaction history,
- *       as those are beyond the scope of the assignment.
+ * - A constructor cannot prevent object creation by returning early;
+ *   invalid initialization must either be corrected, throw an exception,
+ *   or be handled by the caller.
+ * - Keep user-interface/menu logic separate from account behavior so the
+ *   BankAccount class remains focused on encapsulation and balance rules.
  *
  * @see https://github.com/codewizard13
  */
@@ -63,23 +66,30 @@ public:
    *
    * @param account_holder Name of the account holder.
    * @param balance Opening balance in USD.
-   * @warning A negative opening balance is currently accepted.
+   * @note A negative opening balance is rejected and set to zero.
    */
   BankAccount(string account_holder, double balance)
   {
+
+    this->account_holder = account_holder;
+
+    // Only allow non-negative starting balance
     if (balance < 0)
     {
+      this->balance = 0.0;
       cout << "Invalid Input: Starting balance cannot be negative.\n";
-      return;
+      cout << " - " << this->account_holder << "'s account created | Starting Balance: $0.00\n";
     }
-    this->account_holder = account_holder;
-    this->balance = balance;
+    else
+    {
+      this->balance = balance;
+    }
   }
 
   /**
-   * @brief Gets the account holder's name
+   * @brief Gets the account holder's name.
    *
-   * @return The account holder's name
+   * @return The account holder's name.
    */
   string getAccountHolder()
   {
@@ -225,7 +235,19 @@ int main()
   eric_acct.showBalance();
 
   // TEST CASE 8: Negative starting balance
+  cout << "\n************ TEST CASE: 8 ************\n\n";
   BankAccount mike_acct("Mike", -10);
+
+  // Get balance - it should be zero
+  cout << " - Verifying ... ";
+  mike_acct.showBalance();
+
+  // TEST CASE 9: Zero dollar starting balance
+  cout << "\n************ TEST CASE: 9 ************\n\n";
+  BankAccount zero_acct("Zero", 0);
+
+  // Get balance - it should be zero
+  zero_acct.showBalance();
 
   cout << "_________________ END PROGRAM _______________\n\n";
 
