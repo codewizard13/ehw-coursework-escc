@@ -18,7 +18,7 @@
  *
  * @author Eric L. Hepperle
  * @date 2026-10-11
- * @updated 2026-10-13
+ * @updated 2026-10-14
  * @version 1.06
  *
  * @par Notes
@@ -31,7 +31,7 @@
  *       authentication, an interactive ATM menu, or transaction history,
  *       as those are beyond the scope of the assignment.
  *
- * @link https://github.com/codewizard13
+ * @see https://github.com/codewizard13
  */
 
 #include <iostream>
@@ -138,7 +138,7 @@ public:
 
     cout << "Withdrawing $" << amount << " from " << account_holder << "'s account ...\n";
 
-    // Reject if amount is negative or zero
+    // Reject if amount is negative or zero.
     if (amount <= 0)
     {
       cout << " - Invalid input: withdrawal amount cannot be negative. ";
@@ -146,7 +146,7 @@ public:
       return false;
     }
 
-    // Reject if (balance minus amount) is negative
+    // Reject if (balance minus amount) is negative.
     if (balance - amount < 0)
     {
       cout << " - Insufficient Funds. ";
@@ -188,9 +188,9 @@ int main()
   cout << "___________ BASIC BANK ACCOUNTS SIM _________\n";
 
   // TEST CASE 1: Initial balances
-  // - Validates that multiple bank accounts can be created with account owner
-  //     and balance as required, and that both ints and decimals are
-  //     acceptable for initial balances.
+  // - Validates that multiple accounts can be created with an account holder
+  //   and opening balance; integer literals are implicitly converted
+  //   to double.
   cout << "\n************ TEST CASE: 1 ************\n\n";
   BankAccount jen_acct("Jennifer", 250);
   BankAccount eric_acct("Eric", 100.00);
