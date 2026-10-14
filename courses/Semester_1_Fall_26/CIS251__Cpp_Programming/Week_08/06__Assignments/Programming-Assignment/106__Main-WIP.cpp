@@ -22,14 +22,14 @@
  * @version 1.06
  *
  * @par Notes
- * - TODO: Convert hard-code values to validated inputs
- * - MIGRATED main() code to chooseMenuOption() method - MAYBE revert later?
+ * -
  *
  * @par Lessons Learned
  * -
  *
  * @note Uses hard-coded transaction values for testing; does not implement
- *       authentication, an interactive ATM menu, or transaction history.
+ *       authentication, an interactive ATM menu, or transaction history,
+ *       as those are beyond the scope of the assignment.
  *
  * @link https://github.com/codewizard13
  */
@@ -58,7 +58,6 @@ private:
   double balance = 0.0;
 
 public:
-
   /**
    * @brief Constructor: Constructs a bank account.
    *
@@ -167,77 +166,61 @@ public:
    */
   void showBalance()
   {
-    cout << this->getAccountHolder(); 
+    cout << this->getAccountHolder();
     cout << "'s balance is $" << getBalance() << endl;
   }
-
-  bool chooseMenuOption()
-  {
-
-    int choice;
-
-    // Choose Option
-    cout << "----------- MENU ----------\n";
-    cout << "1. Show Balance\n";
-    cout << "2. Deposit Money\n";
-    cout << "3. Withdraw Money\n";
-    cout << "4. Exit\n";
-
-    cout << "Welcome, " << account_holder << "!\n";
-    cout << "Please choose an option from the menu: ";
-
-    // Validate choice
-    if (!(cin >> choice))
-    {
-      cout << "Invalid Input: Must be an integer (1-4)\n";
-      return 1;
-    }
-
-    switch (choice)
-    {
-    case 1:
-      cout << "Showing balance\n";
-      break;
-    case 2:
-      cout << "Depositing Money\n";
-      break;
-    case 3:
-      cout << "Withdrawing Money\n";
-      break;
-    case 4:
-      cout << "Exiting program\n";
-      break;
-    default:
-      cout << "Invalid Choice!\n";
-    }
-
-    return true;
-  }
 };
-
-
 
 int main()
 {
 
-  // Define account values
+  /**
+   * NOTE: We’ll use Jen’s account for most of the test cases, then we’ll test
+   *       independence between multiple accounts with Eric’s account at the end.
+   */
+
+  cout << "________________ START PROGRAM ______________\n\n";
+
+  // TEST CASE 1: Initial balances
+  // Create jen_acct with balance 250 and eric_acct with balance 100.00; call showBalance() on both
+  // - Validates that multiple bank accounts can be created with account owner and balance as
+  //   required, and that both ints and decimals are acceptable for initial balances.
+  cout << "\n************ TEST CASE: 1 ************\n\n";
   BankAccount jen_acct("Jennifer", 250);
-  BankAccount eric_acct("Eric", 100);
+  BankAccount eric_acct("Eric", 100.00);
 
-  // We'll 
-  // jen_acct.chooseMenuOption();
+  jen_acct.showBalance();
+  eric_acct.showBalance();
 
-float x;
-cin >> x;
-cout << scientific << x;
+  // TEST CASE 2: Invalid deposit
+  // Call jen_acct.deposit(-200.00)
+  cout << "\n************ TEST CASE: 2 ************\n\n";
 
-    // double num = 1234567.89;
-    // cout << scientific << num << endl; 
-    // return 0;
+  // TEST CASE 3: Valid deposit
+  // Call jen_acct.deposit(70.50)
+  cout << "\n************ TEST CASE: 3 ************\n\n";
 
+  // TEST CASE 4: Valid withdrawal
+  // Call jen_acct.withdraw(200.00)
+  cout << "\n************ TEST CASE: 4 ************\n\n";
 
+  // TEST CASE 5: Insufficient funds
+  // Call eric_acct.withdraw(500.00)
+  cout << "\n************ TEST CASE: 5 ************\n\n";
 
-  // cout << "_________________ END PROGRAM _______________\n\n";
+  // TEST CASE 6: Exact-balance withdrawal
+  // Temporarily call eric_acct.withdraw(100.00)
+  cout << "\n************ TEST CASE: 6 ************\n\n";
+
+  // TEST CASE 7: Object independence
+  // After Run 3, call showBalance() on both accounts
+  cout << "\n************ TEST CASE: 7 ************\n\n";
+
+  // TEST CASE 8: Display formatting
+  // Call showBalance() on an account with number 1
+  cout << "\n************ TEST CASE: 8 ************\n\n";
+
+  cout << "_________________ END PROGRAM _______________\n\n";
 
   return 0;
 }
