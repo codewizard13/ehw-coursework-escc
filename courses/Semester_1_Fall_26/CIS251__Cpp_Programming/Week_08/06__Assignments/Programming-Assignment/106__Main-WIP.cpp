@@ -14,7 +14,7 @@
  * This program creates multiple BankAccount objects, displays their
  * balances, and tests valid and invalid deposits and withdrawals.
  *
- * @status WIP - BUILDING Test Cases
+ * @status Fully Working
  *
  * @author Eric L. Hepperle
  * @date 2026-10-11
@@ -47,7 +47,7 @@ using namespace std;
  * Public getters provide read-only access, while deposit() and withdraw()
  * are the only operations that change the balance.
  *
- * - showBalance() displays the account number, holder, and current balance.
+ * - showBalance() displays the holder and current balance.
  *
  * - Successful deposits and withdrawals preserve a nonnegative balance.
  */
@@ -67,6 +67,11 @@ public:
    */
   BankAccount(string account_holder, double balance)
   {
+    if (balance < 0)
+    {
+      cout << "Invalid Input: Starting balance cannot be negative.\n";
+      return;
+    }
     this->account_holder = account_holder;
     this->balance = balance;
   }
@@ -157,7 +162,7 @@ public:
   }
 
   /**
-   * @brief Displays the account number, holder, and current balance.
+   * @brief Displays the holder and current balance.
    *
    * @note This method writes to standard output and does not change the account.
    */
@@ -171,9 +176,6 @@ public:
 int main()
 {
 
-  // Clear the output console
-  system("cls");
-
   /**
    * NOTE: We’ll use Jen’s account for most of the test cases, then we’ll test
    *       independence between multiple accounts with Eric’s account at the end.
@@ -186,8 +188,6 @@ int main()
   cout << "___________ BASIC BANK ACCOUNTS SIM _________\n";
 
   // TEST CASE 1: Initial balances
-  // - Create jen_acct with balance 250 and eric_acct with balance 100.00; call
-  //     showBalance() on both.
   // - Validates that multiple bank accounts can be created with account owner
   //     and balance as required, and that both ints and decimals are
   //     acceptable for initial balances.
@@ -199,27 +199,22 @@ int main()
   eric_acct.showBalance();
 
   // TEST CASE 2: Invalid deposit -> negative deposit
-  // - Call jen_acct.deposit(-200.00)
   cout << "\n************ TEST CASE: 2 ************\n\n";
   jen_acct.deposit(-200.00);
 
   // TEST CASE 3: Valid deposit
-  // - Call jen_acct.deposit(70.50)
   cout << "\n************ TEST CASE: 3 ************\n\n";
   jen_acct.deposit(70.50);
 
   // TEST CASE 4: Valid withdrawal
-  // - Call jen_acct.withdraw(200.00)
   cout << "\n************ TEST CASE: 4 ************\n\n";
   jen_acct.withdraw(200.00);
 
   // TEST CASE 5: Insufficient funds
-  // - Call eric_acct.withdraw(500.00)
   cout << "\n************ TEST CASE: 5 ************\n\n";
   eric_acct.withdraw(500.00);
 
   // TEST CASE 6: Exact-balance withdrawal
-  // - Call eric_acct.withdraw(100.00)
   cout << "\n************ TEST CASE: 6 ************\n\n";
   eric_acct.withdraw(100.00);
 
@@ -228,6 +223,9 @@ int main()
   cout << "\n************ TEST CASE: 7 ************\n\n";
   jen_acct.showBalance();
   eric_acct.showBalance();
+
+  // TEST CASE 8: Negative starting balance
+  BankAccount mike_acct("Mike", -10);
 
   cout << "_________________ END PROGRAM _______________\n\n";
 
