@@ -224,10 +224,20 @@ int main()
   BankAccount jen_acct("Jennifer", 250);
   BankAccount eric_acct("Eric", 100);
 
-  // Chose menu option
-  jen_acct.chooseMenuOption();
+  // We'll 
+  // jen_acct.chooseMenuOption();
 
-  cout << "_________________ END PROGRAM _______________\n\n";
+float x;
+cin >> x;
+cout << scientific << x;
+
+    // double num = 1234567.89;
+    // cout << scientific << num << endl; 
+    // return 0;
+
+
+
+  // cout << "_________________ END PROGRAM _______________\n\n";
 
   return 0;
 }
