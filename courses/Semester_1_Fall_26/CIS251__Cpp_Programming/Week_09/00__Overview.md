@@ -48,7 +48,7 @@ By the end of this week, you should be able to explain and apply:
     Study the effect of access levels; graded work emphasizes straightforward public inheritance.
 3.  **[W3Schools — C++ Polymorphism](https://www.w3schools.com/cpp/cpp_polymorphism.asp)**  
     Study method overriding and the conceptual purpose of polymorphism.
-4.  **[W3Schools — Virtual Functions](https://www.w3schools.com/cpp/cpp_virtual.asp)**  
+4.  **[W3Schools — Virtual Functions](https://www.w3schools.com/cpp/cpp_virtual_functions.asp)**  
     Study `virtual`, overriding, and base-pointer/reference behavior at the introductory level.
 
 ### 3\. Required TutorialsPoint reading
