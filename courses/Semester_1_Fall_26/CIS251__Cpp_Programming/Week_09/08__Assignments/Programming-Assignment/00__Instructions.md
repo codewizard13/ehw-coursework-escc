@@ -1,13 +1,14 @@
-Due: Sun Oct 11, 2026 11:59pm
+# Week 9 Programming Assignment - Inheritance, Composition, and Polymorphic Design
+
+Due: Sun Oct 18, 2026 11:59pm
+
 100 Points Possible
 
-## Week 8 Programming Assignment - Object-Oriented Programming: Classes, Objects, and Encapsulation
-
-**Preparation requirement:** Complete the Week 8 readings, videos, [C++ Institute practice](https://www.netacad.com/courses/c-plus-plus-essentials-2?courseLang=en-US&instance_id=c9801f54-4d0c-44f9-b4ee-3f2d9c6306bf), and guided examples before starting. This assignment intentionally requires only concepts taught in those materials.
+**Preparation requirement:** Complete the Week 9 readings, videos,[C++ Institute practice](https://www.netacad.com/courses/c-plus-plus-essentials-2?courseLang=en-US&instance_id=c9801f54-4d0c-44f9-b4ee-3f2d9c6306bf "Link"), and guided examples before starting. This assignment intentionally requires only concepts taught in those materials.
 
 ### Programming Task
 
-> BankAccount Class: define a class with private account holder/balance data, a constructor, getters, and deposit/withdraw methods that preserve a nonnegative balance. Create and test multiple objects in main().
+> **Employee Hierarchy:** create an Employee base class and two derived employee types that override a virtual display/pay-description method. Demonstrate polymorphic calls using the exact pattern practiced in the readings/videos. Include one has-a/composition relationship only if demonstrated in your study examples.
 
 ### Required Process
 
