@@ -10,121 +10,108 @@
 > ### CIS 251 - C++ Programming:
 > Fall 2026 · Dr. Rosalyn Warren
 
-# Week 8: Classes, Objects, Encapsulation, Constructors, and Methods
+
+# Week 9: Inheritance, Overriding, and Polymorphism
 
 **Purpose:** This page is your primary weekly tutorial. The external resources are supplemental. If you cannot reach every external site, study this page carefully, type and run the examples, complete the practice tasks, and use the AI Tutor for explanations.
 
 ## Learning Objectives
 
-*   Explain the relationship between a class and an object.
-*   Define data members and member functions.
-*   Use private data to support encapsulation.
-*   Create constructors that initialize objects.
-*   Create and use multiple objects.
+*   Explain is-a relationships.
+*   Create a derived class from a base class.
+*   Use protected/public inheritance appropriately.
+*   Override inherited behavior.
+*   Explain runtime polymorphism at an introductory level.
 
 **How to study this page:** Read one section at a time. Before running each code example, predict what it will do. Then type it yourself rather than copying it. Modify at least one value or condition and observe the effect.
 
-## 1\. From Procedural to Object-Oriented Design
+## 1\. Inheritance
 
-Object-oriented programming groups related data and behavior together. A **class** is a blueprint; an **object** is one instance created from that blueprint.
-
-For a bank account, data might include owner and balance, while behavior might include deposit, withdraw, and display.
-
-## 2\. Defining a Class
+Inheritance lets a new class reuse and specialize another class. If `Student` is a kind of `Person`, then `Student` may derive from `Person`.
 
 ```cpp
-class BankAccount {
-private:
-    string owner;
-    double balance;
-
+class Person {
 public:
-    void setOwner(string name) {
-        owner = name;
+    string name;
+    void introduce() const {
+        cout << "I am " << name << endl;
     }
+};
 
-    double getBalance() const {
-        return balance;
+class Student : public Person {
+public:
+    string major;
+};
+```
+
+## 2\. Overriding Behavior
+
+A derived class can provide its own version of inherited behavior. For true runtime polymorphism, the base function is declared `virtual`.
+
+```cpp
+class Shape {
+public:
+    virtual void describe() const {
+        cout << "Generic shape" << endl;
+    }
+};
+
+class Circle : public Shape {
+public:
+    void describe() const override {
+        cout << "Circle" << endl;
     }
 };
 ```
 
-`private` members cannot be accessed directly from outside the class. Public methods provide a controlled interface.
-
-## 3\. Constructors
+## 3\. Polymorphism
 
 ```cpp
-class BankAccount {
-private:
-    string owner;
-    double balance;
-
-public:
-    BankAccount(string name, double startingBalance) {
-        owner = name;
-        balance = startingBalance;
-    }
-
-    void display() const {
-        cout << owner << ": $" << balance << endl;
-    }
-};
-
-BankAccount account("Jordan", 250.00);
+Shape* s = new Circle();
+s->describe();
+delete s;
 ```
 
-A constructor has the same name as the class and no return type. It runs automatically when an object is created.
+Because `describe()` is virtual, the `Circle` version executes even though the pointer type is `Shape*`. For this introductory course, focus on the idea: one common interface can represent different specialized objects.
 
-## 4\. Designing Responsibilities
+## 4\. Inheritance vs Composition
 
-A good class protects its own valid state. For example, a deposit method can reject a negative deposit rather than allowing outside code to edit the balance directly.
-
-```cpp
-void deposit(double amount) {
-    if (amount > 0) {
-        balance += amount;
-    }
-}
-```
+Use inheritance for a genuine **is-a** relationship. Use composition for a **has-a** relationship. A `Car` has an `Engine`; a `Car` is not an `Engine`.
 
 ## Guided Practice Before Graded Work
 
-1.  Create a Student class with private name and score fields.
-2.  Add a constructor.
-3.  Add getters and a display method.
-4.  Create two Student objects in main().
-5.  Add one validation rule inside a method.
+1.  Create Person and Student classes using public inheritance.
+2.  Add a field specific to Student.
+3.  Override a virtual display/describe method.
+4.  Use a base-class pointer or reference to call an overridden function.
+5.  Write one is-a example and one has-a example from everyday life.
 
 ## Optional/Supplemental External Readings
 
 The tutorial above contains the required conceptual explanation. Use these resources for another explanation and additional examples:
 
-*   [W3Schools — C++ Classes and Objects](https://www.w3schools.com/cpp/cpp_classes.asp)
-*   [W3Schools — C++ Class Methods](https://www.w3schools.com/cpp/cpp_class_methods.asp)
-*   [W3Schools — C++ Constructors](https://www.w3schools.com/cpp/cpp_constructors.asp)
-*   [W3Schools — C++ Encapsulation](https://www.w3schools.com/cpp/cpp_encapsulation.asp)
-*   [TutorialsPoint — C++ Classes and Objects](https://www.tutorialspoint.com/cplusplus/cpp_classes_objects.htm)
+*   [W3Schools — C++ Inheritance](https://www.w3schools.com/cpp/cpp_inheritance.asp)
+*   [W3Schools — C++ Polymorphism](https://www.w3schools.com/cpp/cpp_polymorphism.asp)
+*   [TutorialsPoint — C++ Inheritance](https://www.tutorialspoint.com/cplusplus/cpp_inheritance.htm)
+*   [TutorialsPoint — C++ Polymorphism](https://www.tutorialspoint.com/cplusplus/cpp_polymorphism.htm)
 
 ## Instructional Videos
 
 For the embedded Bro Code playlist, focus on the following lesson topics this week:
 
-*   classes and objects
-*   constructors
-*   getters and setters / encapsulation
+*   inheritance
+*   method overriding
+*   virtual functions / polymorphism
+
+### C++ Inheritance — Constructors and Destructors in Base/Derived Classes
 
 ### Bro Code — C++ Tutorial Playlist
 
 Use this playlist as a second explanation of the week's concepts. Watch the lessons named in the checklist below; pause frequently and type the examples yourself.
 
-- https://www.youtube.com/watch?v=S3nx34WFXjI
-
-### C++ Programming All-in-One — OOP Section (supplemental)
-- https://www.youtube.com/watch?v=_bYFu9mBnr4&t=29938s
-
 ## Preparing for This Week's Programming Assignment
 
-The Week 8 assignment should be your first class-based program. Its problem domain may be new, but every required programming technique—private fields, constructors, methods, validation, objects—has been practiced here.
+Week 9 should extend an already familiar class design into a base/derived relationship. The assignment should not require unfamiliar GUI, database, networking, or external libraries.
 
 **Readiness rule:** You should be able to complete the guided-practice tasks without copying a finished solution before beginning the graded programming assignment.
 
@@ -132,10 +119,10 @@ The Week 8 assignment should be your first class-based program. Its problem doma
 
 Answer these in your own words before moving to graded work. If you cannot answer one, return to the relevant section or ask the AI Tutor for an explanation.
 
-1.  What is the difference between a class and an object?
-2.  Why keep data members private?
-3.  When is a constructor executed?
-4.  What is the purpose of a getter?
+1.  What does an is-a relationship mean?
+2.  What keyword enables runtime polymorphism in a base class?
+3.  What does override communicate?
+4.  When is composition a better relationship than inheritance?
 
 ## CIS 251 AI Tutor
 
