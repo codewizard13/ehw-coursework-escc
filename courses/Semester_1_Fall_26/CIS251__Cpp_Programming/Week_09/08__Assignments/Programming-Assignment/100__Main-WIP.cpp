@@ -41,7 +41,10 @@ using namespace std;
  * @brief ...
  */
 class Employee {
+  public: 
 
+
+  
 };
 
 int main()
