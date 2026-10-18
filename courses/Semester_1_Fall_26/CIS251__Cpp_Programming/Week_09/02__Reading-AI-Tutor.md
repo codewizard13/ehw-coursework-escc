@@ -104,6 +104,7 @@ For the embedded Bro Code playlist, focus on the following lesson topics this we
 *   virtual functions / polymorphism
 
 ### C++ Inheritance — Constructors and Destructors in Base/Derived Classes
+- https://www.youtube.com/watch?v=vuz6ezCN7uM
 
 ### Bro Code — C++ Tutorial Playlist
 
