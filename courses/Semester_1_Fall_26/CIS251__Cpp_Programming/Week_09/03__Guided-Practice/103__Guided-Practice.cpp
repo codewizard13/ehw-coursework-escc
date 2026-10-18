@@ -77,6 +77,26 @@ public:
     }
 };
 
+class Teacher : public Person
+{
+private:
+    string courseITeach;
+
+public:
+    virtual void introduce() const override
+    {
+        cout << "Hi, I'm " << name;
+        cout << " and I'm a teacher.\n";
+    }
+
+    void setCourseITeach(string course) {
+        courseITeach = course;
+    }
+    string getCourseITeach() {
+        return courseITeach;
+    }
+};
+
 int main()
 {
 
@@ -98,12 +118,22 @@ int main()
 
     student1->printCourseload();
 
+    // Create pointer to teacher object
+    Teacher *teacher1 = new Teacher;
+
+    teacher1->name = "Consuela";
+    teacher1->setCourseITeach("Spanish 101");
+
+    cout << "\n\n******** teacher1 **********************************************\n";
+    teacher1->introduce();
+    cout << "I teach " << teacher1->getCourseITeach() << "\n";
+
     // Release the Student object
     delete student1;
     student1 = nullptr;
     pStudent = nullptr;
 
-    cout << "\n\n******** END PROGRAM ******************************************\n";
+    cout << "\n\n******** END PROGRAM *******************************************\n";
 
     return 0;
 }
