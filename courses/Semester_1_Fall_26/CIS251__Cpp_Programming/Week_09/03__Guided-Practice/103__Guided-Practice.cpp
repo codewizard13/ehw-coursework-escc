@@ -9,7 +9,7 @@
 
     VERSION: 1.03
 
-    STATUS: WIP
+    STATUS: Fully Working!
 
     Instructions:
     1. Create Person and Student classes using public inheritance.
@@ -39,6 +39,8 @@ public:
     virtual void introduce() const { cout << "Hi, I'm " << name << "\n"; }
 };
 
+// Is-a: A Student is a Person.
+// Has-a: A Student has a courseload.
 class Student : public Person
 {
 public:
@@ -65,13 +67,9 @@ public:
             cout << courseload[i];
 
             // Create intelligent comma-separated and-list
-            if (i < size - 2)
+            if (i < size - 1)
             {
-                cout << ", ";
-            }
-            if (i == size - 2)
-            {
-                cout << ", and ";
+                cout << (i == size - 2 ? ", and " : ", ");
             }
         }
     }
@@ -89,10 +87,12 @@ public:
         cout << " and I'm a teacher.\n";
     }
 
-    void setCourseITeach(string course) {
+    void setCourseITeach(string course)
+    {
         courseITeach = course;
     }
-    string getCourseITeach() {
+    string getCourseITeach()
+    {
         return courseITeach;
     }
 };
@@ -112,7 +112,7 @@ int main()
     cout << "\n******** student1 is a pointer to Student **********************\n";
     student1->introduce(); // Calls Student::introduce()
 
-    cout << "\n******** pStudent is a pointer to the student1 pointer? ********\n";
+    cout << "\n******** pStudent is a base-class pointer **********************\n";
     Person *pStudent = student1; // Points to the same Student object
     pStudent->introduce();       // Calls Student::introduce() via polymorphism
 
@@ -132,6 +132,9 @@ int main()
     delete student1;
     student1 = nullptr;
     pStudent = nullptr;
+
+    delete teacher1;
+    teacher1 = nullptr;
 
     cout << "\n\n******** END PROGRAM *******************************************\n";
 
