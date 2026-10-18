@@ -9,7 +9,10 @@
 
     VERSION: 1.01
 
-    STATUS: WIP
+    STATUS: Fully Working - Displays courseload as comma-separated list.
+      - NEXT: Add Teacher version and test creating a collection
+        of different types of Person objects
+      - NEXT: Migrate the courselist printing code to class function
 
     Instructions:
     1. Create Person and Student classes using public inheritance.
@@ -19,11 +22,10 @@
     5. Write one is-a example and one has-a example from everyday life.
 
     Lessons Learned:
-    - 
+    -
 
     GitHub: https://github.com/codewizard13
  ************************************************************ */
-
 
 #include <iostream>
 #include <string>
@@ -31,7 +33,6 @@ using namespace std;
 
 /*
     @class Person
-
 */
 class Person
 {
@@ -56,16 +57,26 @@ public:
     //   2) With `override`, the compiler stops and tells you that no base
     //      virtual function was overridden.
     //
-    virtual void introduce() const override { cout << "Hi, I'm " << name;
-        cout << " and I'm a student.\n"; }
-
+    virtual void introduce() const override
+    {
+        cout << "Hi, I'm " << name;
+        cout << " and I'm a student.\n";
+    }
 };
 
 int main()
 {
 
+
+    Student test_student;
+    test_student.name = "Fiona";
+    test_student.courseload[0] = "Artillery";
+
+    cout << "\n******** test_student is a direct Student object **************\n";
+    test_student.introduce();
+
     // Create pointer to a student object
-    Student* student = new Student;
+    Student *student = new Student;
 
     // Populate student values
     student->name = "Michael";
@@ -73,15 +84,37 @@ int main()
     student->courseload[1] = "History";
     student->courseload[2] = "English";
 
+    cout << "\n******** student is a pointer to Student **********************\n";
     student->introduce(); // this works
 
-    Person* pStudent = student; // this also works
+    cout << "\n******** pStudent is a pointer to the student pointer? ********\n";
+    Person *pStudent = student; // this also works
     pStudent->introduce();
+
+    // Calculate courseload array size as if it was unknown
+    int size = sizeof(student->courseload) / sizeof(string); // should equal 3
+
+    cout << "My courseload is ";
+    for (int i = 0; i < size; i++)
+    {
+        cout << student->courseload[i];
+
+        // Create intelligent comma-separated and-list
+        if (i < size-2) {
+            cout << ", ";
+        }
+        if (i == size-2) {
+            cout << ", and ";
+        }
+    }
 
     // Release memory
     delete student;
     student = nullptr;
-    pStudent = nullptr;  
+    pStudent = nullptr;
+
+    cout << "\n\n******** END PROGRAM ******************************************\n";
 
     return 0;
 }
+
