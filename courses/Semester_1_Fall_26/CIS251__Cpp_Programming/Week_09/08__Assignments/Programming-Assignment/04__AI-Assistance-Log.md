@@ -2,14 +2,8 @@
 
 I used **Perplexity** to,
 
-- Clarify the likely scope of the Week 8 OOP assignment after initially envisioning an overly large ATM-style program.
+- Clarify Week 9 concepts and requirements, including inheritance, overriding, polymorphism through `Employee*` pointers, composition, and virtual destructors.
 
-- Research file-header comment formatting best practices and implement Doxygen-style file header comments based on that research.
-
-- Evaluate the time cost of hard-coded versus input-based test-case demonstrations.
-
-- Proofread and validate code, comments, test results, and documentation for grammar, factual accuracy, and formatting consistency.
-
-- Brainstorm additional boundary and validation test cases.
+- Review my code for alignment with the assignment, including minor spelling, cleanup, and readability considerations.
 
 I independently verified all results and performed all code implementation, compilation, testing, and final decisions.

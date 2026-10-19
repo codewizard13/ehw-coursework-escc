@@ -1,69 +1,115 @@
 /**
- * @brief Employee child classes? — Week 9 C++ programming assignment:
+ * @brief Employee child classes — Week 9 C++ programming assignment:
  *        Inheritance, Overriding, and Polymorphism.
  *
  * @course ESCC, CIS-251 - C++ Programming
  * @assignment Week 9 Programming Assignment
  * @lesson_focus OOP: Inheritance, Overriding, and Polymorphism.
  *
- * @instructions **Employee Hierarchy:** create an Employee base class and
+ * @instructions Employee Hierarchy: create an Employee base class and
  *   two derived employee types that override a virtual display/pay-description
  *   method. Demonstrate polymorphic calls using the exact pattern practiced in
  *   the readings/videos. Include one has-a/composition relationship only if
  *   demonstrated in your study examples.
  *
- * This program ...
- *
- * @status WIP
+ * @status Fully Working
  *
  * @author Eric L. Hepperle
  * @date 2026-10-16
- * @updated --
- * @version 1.06
- *
- * @par Notes
- * - 
- *
- * @par Lessons Learned
- * - 
+ * @updated 2026-10-18
+ * @version 1.0
  *
  * @see https://github.com/codewizard13
  */
 
 #include <iostream>
-#include <iomanip>
 #include <string>
 using namespace std;
 
+/*
+    @class Employee - parent class
+*/
+class Employee
+{
+public:
+  string name;
+  string employeePayType;
 
-/**
- * @class Employee
- * @brief ...
- */
-class Employee {
-  public: 
+  // Use the normal automatic cleanup, but make destruction polymorphic.
+  virtual ~Employee() = default;
 
+  virtual void displayPayDescription() const
+  {
+    cout << "Hi, I'm " << name << " and I'm a " << employeePayType << " employee.\n";
+  }
+};
 
-  
+class Intern : public Employee
+{
+public:
+  void displayPayDescription() const override
+  {
+    cout << "Hi, I'm " << name << " and I'm an intern. My pay type is " << employeePayType << ".\n";    
+  }
+};
+
+class Manager : public Employee {
+public:
+  void displayPayDescription() const override {
+    cout << "Hi, I'm " << name << " and I'm a manager. My pay type is " << employeePayType << ".\n";        
+  }
+
 };
 
 int main()
 {
 
-  /**
-   * NOTE: We’ll use Jen’s account for most of the test cases, then we’ll test
-   *       independence between multiple accounts with Eric’s account at the end.
-   */
+  cout << "\n***************** TEST 1 ******************\n";
+  // Create pointer to an Employee object
+  Employee *employee1 = new Employee;
 
-  // Ensure 2 decimal point precision from here on
-  //  so dollar amounts display correctly
-  cout << setprecision(2) << fixed;
+  // Populate employee1 values
+  employee1->name = "Michael";
+  employee1->employeePayType = "salaried";
+  employee1->displayPayDescription();
 
-  cout << "___________ BASIC BANK ACCOUNTS SIM _________\n";
+  // Create intern
+  cout << "\n***************** TEST 2 ******************\n";
+  Intern *intern1 = new Intern;
+  Employee *pIntern1 = intern1;
+  intern1->name = "Fiona";
+  intern1->employeePayType = "W-2 minimum wage";
+  pIntern1->displayPayDescription();
+
+  // Create Manager
+  cout << "\n***************** TEST 3 ******************\n";
+  Manager *manager1 = new Manager;
+  Employee *pManager1 = manager1;
+  manager1->name = "Chuck";
+  manager1->employeePayType = "salaried with stock options";
+  pManager1->displayPayDescription();
+
+  // TEST 4: 
+  cout << "\n***************** TEST 4 ******************\n";
+  pIntern1->displayPayDescription();
+
+  // TEST 5: 
+  cout << "\n***************** TEST 5 ******************\n";
+  pManager1->displayPayDescription();
 
 
+  // Cleanup Employee objects
+  delete employee1;
+  employee1 = nullptr;
 
-  cout << "_________________ END PROGRAM _______________\n\n";
+  delete intern1;
+  intern1 = nullptr;
+
+  delete manager1;
+  manager1 = nullptr;
+
+
+  cout << "\n******** END PROGRAM *******************************************\n";
 
   return 0;
 }
