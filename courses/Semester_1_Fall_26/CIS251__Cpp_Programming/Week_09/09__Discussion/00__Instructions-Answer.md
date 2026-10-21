@@ -64,7 +64,7 @@ Here, `Car` exposes the operation it needs while keeping the engine as an intern
 
 My main question would be: “Does this object genuinely need to behave as a specialized version of the proposed base class, or does it just need some of that class’s functionality?” Inheritance can be appropriate for a true, substitutable subtype. If the goal is simply to reuse functionality, I would prefer composition rather than accept the AI’s recommendation just because the generated code compiles.
 
-
+🤖 AI transparency: I used **Perplexity** to draft my answer, then independently verified the concepts by reviewing several websites and videos discussing when to prefer composition over inheritance. The `Car` and `Engine` example matched one I saw in a video and helped me understand why a “has-a” relationship is better represented through composition.
 
 ### References:
 
