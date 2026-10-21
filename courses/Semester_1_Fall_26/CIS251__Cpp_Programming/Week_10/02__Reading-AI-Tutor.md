@@ -97,6 +97,9 @@ For the embedded Bro Code playlist, focus on the following lesson topics this we
 
 Use this playlist as a second explanation of the week's concepts. Watch the lessons named in the checklist below; pause frequently and type the examples yourself.
 
+- ENUMS in C++ explained easy: https://www.youtube.com/watch?v=Fqn4pSRH6Ec
+- C++ overloaded functions explained: https://www.youtube.com/watch?v=LZd5LhfnYsk&t=9s (not operator overloading)
+
 ## Preparing for This Week's Programming Assignment
 
 Week 10 should use enums and one straightforward overloaded operator. You are not expected to overload many operators or learn template metaprogramming.
