@@ -1,28 +1,25 @@
-/* ************************************************************
-    Course: ESCC, CIS-251 - C++ Programming
-    Source: CISCO NETWORKING ACADEMY C++ Essentials 1
-    Module 3.0: Pointers: Another Dimension of Data in C++
-    Submodule: 3.0.4: sizeof operator
+/* ==========================================================================
+    Course:     ESCC, CIS-251 - C++ Programming
+    Source:     CISCO NETWORKING ACADEMY C++ Essentials 1
+    Module:     3.0: Pointers: Another Dimension of Data in C++
+    Submodule:  3.0.4: sizeof operator
 
     **** SUGGESTED EXERCISE ****
 
+    Student:    Eric Hepperle
+    Created:    2026-10-31
 
-    Student: Eric Hepperle
-    Created: 2026-10-31
-
-    VERSION: 1.0
-
-    STATUS: Fully Working!
+    Version:    1.0
+    
+    Status:     Fully Working!
 
     Description:
-    Can be used as a utility
-    We think it would be a good exercise for you to compile and run the following program on your computer. By doing this, you’ll learn how your computer and compiler use the memory.
+    Simple utility to display the size in bytes of several C++ types and pointers on the
+    current system. Compile and run it to see how the compiler and platform
+    represent these types in memory.
 
-    The program is perhaps a bit simplistic, but its role is to identify interesting features of your environment, and it’s good enough for this.
-
-
-    GitHub: https://github.com/codewizard13
- ************************************************************ */
+    GitHub:     https://github.com/codewizard13
+   ========================================================================== */
 
 #include <iostream>
 
