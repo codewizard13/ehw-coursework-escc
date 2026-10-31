@@ -10,7 +10,7 @@
 > CIS 251 - C++ Programming | (Fall 2026 · *Dr. Rosalyn Warren*)   
 > 📝 Eric Hepperle's Notes on — **Cisco Netacad C++ Essentials 2** course   
 >
-> 🧠 CPPE2: Module 4: Operators and Enumerated Types  
+> 🧠 CPPE1: Module 4: Operators and Enumerated Types  
 
 # 🧩 4.0.2 What do we want to achieve?
 
