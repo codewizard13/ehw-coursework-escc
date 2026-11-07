@@ -23,37 +23,73 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 using namespace std;
 
 class Distance
 {
 private:
+  // Private properties go here
+
 public:
-  double start;
-  double end;
-  enum Unit {inch, foot, mile};
-  double dist;
+  enum Unit
+  {
+    inch,
+    foot,
+    mile
+  };
 
-  Distance () {
-    start = 0.0f;
-    end = 0.0f;
-    Unit unit = inch;
+  double start = 0.0;
+  double end = 0.0;
+  Unit unit = inch;
+  double dist = 0.0;
+
+  Distance()
+  {
+    // Default member initializers above supply the values
   }
 
-  void display() {
-    cout << "Distance: " << abs(end - start) << " " << "unit" << "s.\n";
+  Distance(double start, double end)
+  {
+    this->start = start;
+    this->end = end;
+    this->dist = abs(end - start);
   }
 
+  void display()
+  {
+    cout << "Distance: ABS (" << end << " - " << start << ") = ";
+    cout << dist << " ";
+
+    switch (unit) {
+      case inch:
+        cout << (dist == 1.0 ? "inch" : "inches");
+        break;
+      case foot:
+        cout << (dist == 1.0 ? "foot" : "feet");
+        break;
+      case mile:
+        cout << (dist == 1.0 ? "mile" : "miles");
+        break;
+    }
+
+    cout << endl;
+    
+  }
 };
 
 int main()
 {
 
   // cout << "\n***************** TEST 1 ******************\n";
-  cout << "\n******** START PROGRAM *****************************************\n";
+  cout << "\n******** START DISTANCE CALC PROGRAM *****************************************\n";
 
-  Distance d;
-  d.display();
+  cout << setprecision(2) << fixed;
+
+  Distance d1;
+  d1.display();
+  Distance d2(2.0, 10.0);
+  d2.display();
 
   cout << "\n******** END PROGRAM *******************************************\n";
 
