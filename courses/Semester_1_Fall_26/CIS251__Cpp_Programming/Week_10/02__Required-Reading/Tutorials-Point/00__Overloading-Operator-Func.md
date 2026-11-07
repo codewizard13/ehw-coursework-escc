@@ -30,7 +30,7 @@ class printData {
       void print(double  f) {
         cout << "Printing float: " << f << endl;
       }
-      void print(char\* c) {
+      void print(char* c) {
         cout << "Printing character: " << c << endl;
       }
 };
@@ -84,7 +84,7 @@ using namespace std;
 class Box {
    public:
       double getVolume(void) {
-         return length \* breadth \* height;
+         return length * breadth * height;
       }
       void setLength( double len ) {
          length = len;
@@ -99,9 +99,9 @@ class Box {
       // Overload + operator to add two Box objects.
       Box operator+(const Box& b) {
          Box box;
-         box.length = this\->length + b.length;
-         box.breadth = this\->breadth + b.breadth;
-         box.height = this\->height + b.height;
+         box.length = this->length + b.length;
+         box.breadth = this->breadth + b.breadth;
+         box.height = this->height + b.height;
          return box;
       }
       
@@ -161,19 +161,19 @@ Following is the list of operators which can be overloaded −
 
 |     |     |     |     |     |     |
 | --- | --- | --- | --- | --- | --- |
-| +   | \-  | \*  | /   | %   | ^   |
+| +   | -  | *  | /   | %   | ^   |
 | &   | \|  | ~   | !   | ,   | =  |
-| <   | \>  | <=  | \>= | ++  | \-- |
+| <   | \>  | <=  | \>= | ++  | -- |
 | <<  | \>> | == | !=  | &&  | \|  |
-| +=  | \-= | /=  | %=  | ^=  | &=  |
-| \|= | \*= | <<= | \>>= | \[\] | ()  |
-| \-> | \->\* | new | new \[\] | delete | delete \[\] |
+| +=  | -= | /=  | %=  | ^=  | &=  |
+| \|= | *= | <<= | \>>= | \[\] | ()  |
+| -> | ->* | new | new \[\] | delete | delete \[\] |
 
 Following is the list of operators, which can not be overloaded −
 
 |     |     |     |     |
 | --- | --- | --- | --- |
-| ::  | .\* | .   | ?:  |
+| ::  | .* | .   | ?:  |
 
 ## Operator Overloading Examples
 
