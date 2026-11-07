@@ -61,20 +61,30 @@ public:
     cout << "Distance: ABS (" << end << " - " << start << ") = ";
     cout << dist << " ";
 
-    switch (unit) {
-      case inch:
-        cout << (dist == 1.0 ? "inch" : "inches");
-        break;
-      case foot:
-        cout << (dist == 1.0 ? "foot" : "feet");
-        break;
-      case mile:
-        cout << (dist == 1.0 ? "mile" : "miles");
-        break;
+    switch (unit)
+    {
+    case inch:
+      cout << (dist == 1.0 ? "inch" : "inches");
+      break;
+    case foot:
+      cout << (dist == 1.0 ? "foot" : "feet");
+      break;
+    case mile:
+      cout << (dist == 1.0 ? "mile" : "miles");
+      break;
     }
 
     cout << endl;
-    
+  }
+
+  // Overloading + operator to add 2 Distance objects.
+  Distance operator+(const Distance &d)
+  {
+    Distance temp;
+    temp.start = this->start + d.start;
+    temp.end = this->end + d.end;
+    temp.dist = this->dist + d.dist;
+    return temp;
   }
 };
 
@@ -86,10 +96,35 @@ int main()
 
   cout << setprecision(2) << fixed;
 
+  // TEST 1: Empty constructor
+  cout << "\n***************** TEST 1 ******************\n";
   Distance d1;
-  d1.display();
+  d1.display(); // 0.00 inches
+
+  // TEST 2: 2 floats
+  cout << "\n***************** TEST 2 ******************\n";
   Distance d2(2.0, 10.0);
-  d2.display();
+  d2.display(); // 8.00 inches
+
+  // TEST 3: 2 more floats
+  cout << "\n***************** TEST 3 ******************\n";
+  Distance d3(4.0, 20.0);
+  d3.display(); // 16.00 inches
+
+  // TEST 4: Add 2 Distances objects
+  cout << "\n***************** TEST 4 ******************\n";
+  Distance d4 = d2 + d3;
+  d4.display(); // 24.00 inches
+
+  // TEST 5: Add 1 new distance object with 2 args inline -- is this legal??
+  cout << "\n***************** TEST 5 ******************\n";
+  Distance d5 = d2 + Distance(3, 6);
+  d5.display(); // 11.00 inches
+
+  // TEST 5: Add 1 new distance object with 2 args inline -- is this legal??
+  cout << "\n***************** TEST 5 ******************\n";
+  Distance d6(-3, 10.5);
+  d6.display(); // 13.50 inches
 
   cout << "\n******** END PROGRAM *******************************************\n";
 
