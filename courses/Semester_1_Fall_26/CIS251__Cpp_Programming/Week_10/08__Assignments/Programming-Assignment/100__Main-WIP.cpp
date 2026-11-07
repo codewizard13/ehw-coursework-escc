@@ -23,15 +23,37 @@
 
 #include <iostream>
 #include <string>
-#include <cmath>
 using namespace std;
 
+class Distance
+{
+private:
+public:
+  double start;
+  double end;
+  enum Unit {inch, foot, mile};
+  double dist;
+
+  Distance () {
+    start = 0.0f;
+    end = 0.0f;
+    Unit unit = inch;
+  }
+
+  void display() {
+    cout << "Distance: " << abs(end - start) << " " << "unit" << "s.\n";
+  }
+
+};
 
 int main()
 {
 
   // cout << "\n***************** TEST 1 ******************\n";
+  cout << "\n******** START PROGRAM *****************************************\n";
 
+  Distance d;
+  d.display();
 
   cout << "\n******** END PROGRAM *******************************************\n";
 
