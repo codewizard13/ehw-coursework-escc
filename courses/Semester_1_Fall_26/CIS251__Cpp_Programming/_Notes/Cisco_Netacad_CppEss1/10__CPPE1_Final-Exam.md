@@ -17,7 +17,7 @@
 
 ---
 
-![alt text](image-1.png)
+![alt text](CPPE1_Final_02_static-cast.png)
 
 ---
 
@@ -30,3 +30,8 @@
 
 
 ![alt text](CPPE1_Become-Certified-Sec-Locked.png)
+
+
+#PROOF: #COURSE_COMPLETE
+
+![alt text](EH_EDU_CPPE1_Completion-Cert.png)
