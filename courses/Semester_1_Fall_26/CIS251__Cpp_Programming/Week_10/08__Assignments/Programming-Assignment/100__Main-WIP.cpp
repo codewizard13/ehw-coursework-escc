@@ -116,15 +116,15 @@ int main()
   Distance d4 = d2 + d3;
   d4.display(); // 24.00 inches
 
-  // TEST 5: Add 1 new distance object with 2 args inline -- is this legal??
+  // TEST 5: Add 1 new distance object with 2 inline int args
   cout << "\n***************** TEST 5 ******************\n";
   Distance d5 = d2 + Distance(3, 6);
   d5.display(); // 11.00 inches
 
-  // TEST 5: Add 1 new distance object with 2 args inline -- is this legal??
-  cout << "\n***************** TEST 5 ******************\n";
-  Distance d6(-3, 10.5);
-  d6.display(); // 13.50 inches
+  // TEST 6: Add 3 Distance objects
+  cout << "\n***************** TEST 6 ******************\n";
+  Distance d6 = d2 + d3 + d4;
+  d6.display(); // 48.00 inches
 
   cout << "\n******** END PROGRAM *******************************************\n";
 
