@@ -1,9 +1,13 @@
 # 🤖 AI Assistance Log:
 
-I used **Perplexity** to,
+I created the initial `Distance` class and chose to calculate distance as the absolute value of `end - start`, and added the + operator overload functionality. I used **Perplexity** to:
 
-- Clarify Week 9 concepts and requirements, including inheritance, overriding, polymorphism through `Employee*` pointers, composition, and virtual destructors.
+- Refine unit display using `switch` and singular/plural labels.
 
-- Review my code for alignment with the assignment, including minor spelling, cleanup, and readability considerations.
+- Review `operator+` against the required `Box` example and identify corrections for recalculating distance from summed endpoints and preserving the left operand’s unit.
+
+- Review assignment requirements, test coverage, and console results against expected output.
+
+- Tighten code comments, correct expected-result descriptions, draft Git commit messages, and organize the pseudocode algorithm.
 
 I independently verified all results and performed all code implementation, compilation, testing, and final decisions.
