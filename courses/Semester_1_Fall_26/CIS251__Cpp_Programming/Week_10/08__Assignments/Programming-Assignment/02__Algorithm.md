@@ -1,14 +1,21 @@
 ## 📊 Pseudocode Algorithm
 
-# WEEK 9 PROGRAMMING ASSIGNMENT — Object-Oriented Programming: Inheritance, Composition, and Polymorphic Design
+# WEEK 10 PROGRAMMING ASSIGNMENT — Operator Overloading, Enumerations, and Interface Design
 
-1. Start the program.
-2. Create the `Employee` parent class.
-3. Create `Intern` and `Manager` child classes.
-4. Give each employee a name and pay type.
-5. Display Michael’s employee information.
-6. Use an `Employee*` pointer to display Fiona’s intern information.
-7. Use an `Employee*` pointer to display Chuck’s manager information.
-8. Delete the employee objects from memory.
-9. Display the end-program message.
-10. End the program.
+### 🏗️ Define the Class and Units
+
+1. Define a `Unit` enum with inch, foot, and mile choices.
+2. Create the `Distance` class with private endpoints, unit, and distance members; default numeric values to zero and the unit to inches.
+3. Provide constructors for default values or supplied endpoints and an optional unit; calculate distance as the absolute endpoint difference.
+4. Provide a display method for the endpoint calculation, distance, and singular or plural unit label.
+5. Overload `+` to add corresponding endpoints, recalculate distance, retain the left operand’s unit, and return the result.
+
+### 🧪 Run and Display Tests
+
+6. Start the program, display the opening message, and set numeric output to two decimal places.
+7. Create and display tests for default construction, supplied endpoints, two-object addition, temporary-object addition, and chained addition.
+8. Create and display tests for reversed and negative endpoints, singular and plural unit labels, opposite endpoint differences, and addition retaining feet.
+
+### 🏁 Finish
+
+9. Display the end-program message and end the program.
