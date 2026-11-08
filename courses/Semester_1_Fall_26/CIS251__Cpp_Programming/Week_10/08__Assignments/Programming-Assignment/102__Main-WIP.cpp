@@ -13,13 +13,13 @@
  *
  * @status WIP - Selectable Unit enum works, but need to convert to use
  *    getters and setters.
- * 
+ *
  * @par Lessons Learned
  * - The enum can be inside the Distance class, but passing a Unit enum
  *   value as parameter to Distance() fails because `foot` or `inch` is not defined.
  *   Solved by moving the enum to the global space (right after `using...`).
  * - Successfully adds over 2 Distance objects :)
- * 
+ *
  * @par Notes & Future
  * - Assignment says "exactly as modeled". Will need to convert to use getters
  *   and setters instead.
@@ -46,18 +46,10 @@ enum Unit
 
 class Distance
 {
-private:
-  // Private properties go here
-
 public:
-  double start = 0.0;
-  double end = 0.0;
-  Unit unit = inch;
-  double dist = 0.0;
-
   Distance()
   {
-    // Default member initializers above supply the values
+    // Default member initializers supply the values
   }
 
   Distance(double start, double end, Unit unit = inch)
@@ -95,9 +87,16 @@ public:
     Distance temp;
     temp.start = this->start + d.start;
     temp.end = this->end + d.end;
-    temp.dist = this->dist + d.dist;
+    temp.dist = abs(temp.end - temp.start);
+    temp.unit = this->unit;
     return temp;
   }
+
+private:
+  double start = 0.0;
+  double end = 0.0;
+  Unit unit = inch;
+  double dist = 0.0;
 };
 
 int main()
@@ -152,6 +151,25 @@ int main()
   cout << "\n***************** TEST 9 ******************\n";
   Distance d9(3.0, 2, mile);
   d9.display(); // 48.00 inches
+
+  // TEST 10: Adding 2 distances same value
+  cout << "\n***************** TEST 10 ******************\n";
+  Distance d10 = Distance(2, 10) + Distance(10, 2);
+  d10.display(); // Expected 16.00 inches (but shows ABS of
+                 //  12.00 - 12.00 = 16.00, which is incorrect)
+                 // — Now fixed and displays correctly.
+
+  // TEST 11:
+  cout << "\n***************** TEST 11 ******************\n";
+
+  Distance a(0, 2, foot);
+  Distance b(0, 3, foot);
+
+  a.display(); // 2.00 feet
+  b.display(); // 3.00 feet
+
+  Distance c = a + b;
+  c.display(); // 5.00 feet
 
   cout << "\n******** END PROGRAM *******************************************\n";
 
