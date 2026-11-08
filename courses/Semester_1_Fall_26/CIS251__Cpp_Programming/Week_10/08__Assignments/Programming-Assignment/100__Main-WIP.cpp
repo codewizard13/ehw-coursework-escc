@@ -11,7 +11,7 @@
  *    material. Add an enum or enum class for a display/unit choice. Do not
  *    implement operators not covered in the examples.
  *
- * @status Fully Working
+ * @status WIP - Distance addition works, but doesn't handle differnet units
  *
  * @author Eric L. Hepperle
  * @date 2026-11-07
