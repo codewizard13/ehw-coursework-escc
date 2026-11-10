@@ -1,5 +1,5 @@
 /**
- * @brief Distance class with endpoint addition and unit display.
+ * @brief Distance class with travel-distance addition and unit display.
  *
  * @course ESCC, CIS-251 - C++ Programming
  * @assignment Week 10 Programming Assignment
@@ -18,12 +18,16 @@
  * - Chained addition returns intermediate Distance objects.
  *
  * @par Notes & Limitations
- * - The sample `Box` program used getters/setters, but that seemed beyond the
+ * - Rationale: The sample `Box` program used getters/setters, but that seemed beyond the
  *   scope of this assignment, and would add unnecessary complexity.
  *   Setting the member properties as private ensures the values
  *   can't be changed except upon initilizing a new Distance object.
- * - Addition sums endpoints, then recalculates their absolute difference;
- *   it does not independently sum the original distance magnitudes.
+ * 
+ * - Public constructors and methods provide the needed interface without
+ *   getters/setters; private members prevent direct access from main().
+ * - Addition sums travel distances regardless of endpoint direction.
+ * - Result endpoints run from zero to the total distance; they do not
+ *   represent the original trip positions.
  * - Addition assumes matching units and retains the left operand's unit;
  *   no unit conversion or mixed-unit validation is performed.
  *
@@ -36,7 +40,7 @@
  */
 
 #include <iostream>
-#include <string>
+#include <cmath> // Provides floating-point std::abs.
 #include <iomanip>
 using namespace std;
 
