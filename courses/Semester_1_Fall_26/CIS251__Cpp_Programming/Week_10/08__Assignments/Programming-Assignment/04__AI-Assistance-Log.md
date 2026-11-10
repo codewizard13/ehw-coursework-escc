@@ -10,4 +10,6 @@ I created the initial `Distance` class and chose to calculate distance as the ab
 
 - Tighten code comments, correct expected-result descriptions, draft Git commit messages, and organize the pseudocode algorithm.
 
+- Perplexity initially recommended endpoint-based addition, which produced an inappropriate zero-distance result for opposite-direction trips. I identified and challenged that mismatch with the intended travel-distance meaning. After reviewing alternatives, I selected magnitude addition with result endpoints from zero to the total.
+
 I independently verified all results and performed all code implementation, compilation, testing, and final decisions.
