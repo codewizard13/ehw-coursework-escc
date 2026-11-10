@@ -10,19 +10,21 @@
 > ### CIS 251 - C++ Programming:
 > Fall 2026 · Dr. Rosalyn Warren
 
-# Week 10 Overview - Operator Overloading, Enumerations, and Interface Design
+# Week 11 Overview - Exceptions, Error Handling, and Robust Programs
 
-**Due date:** Sunday, October 25, 2026 at 11:59 PM Central.
+## Week 11: Exceptions, Error Handling, and Robust Programs
+
+**Due date:** Sunday, November 1, 2026 at 11:59 PM Central.
 
 ### Learning Objectives
 
 By the end of this week, you should be able to explain and apply:
 
-*   operator overloading
-*   meaningful interfaces
-*   enum/enum class
-*   const-correctness
-*   readability
+*   try/catch
+*   throw
+*   exception safety
+*   validation vs exceptions
+*   failure reporting
 
 ## Required Learning Before Graded Work
 
@@ -32,38 +34,40 @@ By the end of this week, you should be able to explain and apply:
 
 ### Learning targets
 
-*   define and use an enum
-*   explain operator overloading conceptually
-*   implement one modeled overloaded operator
-*   avoid changing an operator’s basic semantic intent
-*   test object/operator behavior
+*   distinguish syntax/logic/runtime problems
+*   use a debugging process
+*   write `try/throw/catch`
+*   distinguish validation from exception handling
+*   test both normal and exceptional paths
 
-### 1. C++ Institute assignment
+### 1\. C++ Institute assignment
 
-**C++ Essentials 2 — Module 4: operator overloading and enumerated types. Complete the module examples before coding the assignment.**
+**C++ Essentials 2 — Module 3: introduction to exceptions, `throw`, exception categories, `catch`, and exceptions in action. Also review C++ Essentials 1 Module 4 exception-handling material.**
 
-### 2. Required W3Schools / Google reading
+### 2\. Required W3Schools / Google reading
 
-1.  **[W3Schools — C++ Enums](https://www.w3schools.com/cpp/cpp_enum.asp)**  
-    Study named integral choices and why an enum can improve readability compared with unexplained numeric codes.
-2.  **[W3Schools — Function Overloading (review)](https://www.w3schools.com/cpp/cpp_function_overloading.asp)**  
-    Review the earlier meaning of overloading before learning operator overloading; distinguish the two concepts.
+1.  **[W3Schools — C++ Exceptions](https://www.w3schools.com/cpp/cpp_exceptions.asp)**  
+    Study `try`, `throw`, and `catch`. Type the complete example before modifying it.
+2.  **[W3Schools — C++ Errors](https://www.w3schools.com/cpp/cpp_errors.asp)**  
+    Study syntax, logic, and runtime/error categories.
+3.  **[W3Schools — C++ Debugging](https://www.w3schools.com/cpp/cpp_debugging.asp)**  
+    Read the debugging workflow and relate it to compiler diagnostics.
+4.  **[W3Schools — C++ Input Validation](https://www.w3schools.com/cpp/cpp_input_validation.asp)**  
+    Study routine validation and how it differs from exceptional conditions.
 
-### 3. Required TutorialsPoint reading
+### 3\. Required TutorialsPoint reading
 
-1.  **[TutorialsPoint — C++ Overloading (Function and Operator)](https://www.tutorialspoint.com/cplusplus/cpp_overloading.htm)**  
-    Study the operator-overloading section carefully: syntax, member/non-member forms shown, and restrictions. Reproduce the smallest complete example.
-2.  **[TutorialsPoint — C++ Data Types (enum review)](https://www.tutorialspoint.com/cplusplus/cpp_data_types.htm)**  
-    Locate and review enumerated types as a named set of constants.
+1.  **[TutorialsPoint — C++ Exception Handling](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)**  
+    Study exception syntax and the flow from `throw` to a matching `catch`.
 
 ### Assigned Videos
 
-### 4. Required video study
+### 4\. Required video study
 
-1.  **[Bro Code playlist — “Enums”](https://www.youtube.com/playlist?list=PLZPZq0r_RZOMHoXIcxze_lP97j2Ase2on)**  
-    Select the exact lesson titled **Enums**. Create one enum for a menu/status choice and use it in a small `switch`.
-2.  **[Bro Code — C++ overloaded functions (#16) (prerequisite review)](https://www.youtube.com/watch?v=Mfyt_x9MjiY)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=Mfyt_x9MjiY)**  
-    Re-watch this lesson only to reinforce the general idea of multiple meanings selected by signature/context. The new operator-overloading syntax comes from C++ Essentials 2 and TutorialsPoint.
+1.  **[Bro Code — C++ if statements (#6) (validation review)](https://www.youtube.com/watch?v=ljEZlKU5XT4)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=ljEZlKU5XT4)**  
+    Re-watch the decision-structure lesson to distinguish ordinary validation from exceptions.
+2.  **[Bro Code — Logical operators (validation review)](https://www.youtube.com/watch?v=UiF-QgCBOhM)[![](/images/play_overlay.png)](https://www.youtube.com/watch?v=UiF-QgCBOhM)**  
+    Re-watch compound conditions used to detect routine invalid states. New exception syntax is taught in the readings and C++ Institute module.
 
 **How to study the videos:** Do not watch passively. Pause before the instructor runs each short example, predict the output, type the example yourself, compile it, then change one value or condition and run it again.
 
@@ -71,8 +75,8 @@ By the end of this week, you should be able to explain and apply:
 
 | Activity | Points |
 | --- | --- |
-| Week 10 Discussion | 20  |
-| Week 10 Programming Assignment | 100 |
-| Week 10 Quiz | 20  |
+| Week 11 Discussion | 20  |
+| Week 11 Programming Assignment | 100 |
+| Week 11 Quiz | 20  |
 
 Readiness requirement: finish the readings, videos, and guided practice above before beginning the graded activities.
