@@ -6,15 +6,14 @@
 - **Assignment:** Week 10 — Operator Overloading, Enumerations, and Interface Design
 - **Author:** Eric L. Hepperle
 - **Program:** Distance class, version 1.03
-- **Updated:** November 10, 2026
 
 ## 📋 Initial Design and Planning
 
 I created the initial `Distance` class and chose to calculate the distance traveled between two endpoints as `abs(end - start)`. My design included constructors, a display method, an enum for unit selection, and one overloaded arithmetic operator following the required **Tutorials Point** `Box` example.
 
-The intended meaning of addition is total travel distance: two trips of eight units should total sixteen units even when their endpoint directions differ.
+- The intended meaning of addition is **total travel distance**: two trips of eight units should total sixteen units even when their endpoint directions differ.
 
-The separate algorithm document describes the implementation approach.
+- The separate algorithm document describes the implementation approach.
 
 ## 🏗️ Incremental Implementation
 
@@ -87,52 +86,4 @@ The unit assignment also fixes the earlier behavior in which a default-construct
 - Replaced the unused `<string>` include with `<cmath>` to explicitly provide floating-point absolute-value support rather than rely on indirect inclusion.
 - Updated comments and test expectations to reflect travel-distance addition, zero-to-total result endpoints, and the same-unit assumption without conversion or validation.
 
-## 🧪 v1.03 Test Results
-
-All expected results match the latest console output. Entries omit the common `Distance: ` prefix.
-
-| Test | Input or operation | Expected and observed result | Status |
-| --- | --- | --- | --- |
-| 1 | Default construction: `Distance d1;` | `ABS (0.00 - 0.00) = 0.00 inches` | Pass |
-| 2 | `Distance d2(2.0, 10.0);` | `ABS (10.00 - 2.00) = 8.00 inches` | Pass |
-| 3 | `Distance d3(4.0, 20.0);` | `ABS (20.00 - 4.00) = 16.00 inches` | Pass |
-| 4 | `Distance d4 = d2 + d3;` | `ABS (24.00 - 0.00) = 24.00 inches` | Pass |
-| 5 | `Distance d5 = d2 + Distance(3, 6);` | `ABS (11.00 - 0.00) = 11.00 inches` | Pass |
-| 6 | `Distance d6 = d2 + d3 + d4;` | `ABS (48.00 - 0.00) = 48.00 inches` | Pass |
-| 7 | `Distance d7(2, 1);` | `ABS (1.00 - 2.00) = 1.00 inch` | Pass |
-| 8 | `Distance d8(4.0, -10.0, foot);` | `ABS (-10.00 - 4.00) = 14.00 feet` | Pass |
-| 9 | `Distance d9(3.0, 2, mile);` | `ABS (2.00 - 3.00) = 1.00 mile` | Pass |
-| 10 | `Distance d10 = Distance(2, 10) + Distance(10, 2);` | `ABS (16.00 - 0.00) = 16.00 inches` | Pass |
-| 11a | `Distance a(0, 2, foot);` | `ABS (2.00 - 0.00) = 2.00 feet` | Pass |
-| 11b | `Distance b(0, 3, foot);` | `ABS (3.00 - 0.00) = 3.00 feet` | Pass |
-| 11c | `Distance c = a + b;` | `ABS (5.00 - 0.00) = 5.00 feet` | Pass |
-
-Test 11 contains three displayed results, so the 11 numbered tests produce 13 result rows.
-
-### Coverage and Evidence Limits
-
-- Cases cover default zero distance, ordinary distances, reversed and negative endpoints, temporary objects, chained addition, and selected unit labels.
-- Test 10 now checks that opposite travel directions do not cancel accumulated distance.
-- Test 11 checks that same-unit addition retains feet.
-- Fractional endpoints, singular foot, plural miles, and mixed-unit behavior were not exercised in the recorded run.
-- The program uses hard-coded constructor arguments, not interactive input.
-
-## 📌 Design Decisions and Limitations
-
-- Individual trip distance is the absolute endpoint difference.
-- Addition sums distance magnitudes and represents the result with endpoints from zero to the total.
-- Addition assumes matching operand units, retains the left operand's unit, and performs no unit conversion or mixed-unit validation.
-- Public constructors and methods provide the interface; private members prevent direct access from `main()`.
-- No additional operators, getters/setters, frameworks, or defensive validation were added.
-
-## 🤖 AI Assistance and Independent Decisions
-
-I created the initial class and absolute-difference calculation. I used Perplexity to clarify scope and access rules, refine unit display, review the required operator model, identify targeted corrections, and organize comments, commit messages, and documentation.
-
-AI initially recommended endpoint-based addition, which produced an inappropriate zero-distance result for opposite-direction trips. I identified and challenged that mismatch with the intended travel-distance meaning. After reviewing alternatives, I selected magnitude addition with result endpoints from zero to the total.
-
-I compiled and ran the earlier recorded revision and checked its console results. Final implementation and submission decisions are mine.
-
-## 📎 Documentation Basis
-
-This retrospective log is based on the drafts, decisions, corrections, and console output recorded in this chat. It follows Dr. Rosalyn Warren's November 9 clarification that concise development notes, implementation order, testing, and correction history are sufficient; intermediate screenshots are optional. It accompanies rather than replaces the source, algorithm, test table, and compilation/execution evidence.
+---
