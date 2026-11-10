@@ -9,7 +9,7 @@
  *    operator overloaded as modeled in the required material. Include an
  *    enum or enum class for a display/unit choice. Use only modeled operators.
  *
- * @status WIP - Private data, unit display, and endpoint addition implemented.
+ * @status Fully Working.
  *
  * @par Lessons Learned
  * - The global Unit enum allows unqualified names such as foot and mile.
@@ -18,6 +18,11 @@
  * - Chained addition returns intermediate Distance objects.
  *
  * @par Notes & Limitations
+ * - The sample `Box` program used getters/setters, but that seemed beyond the
+ *   scope of this assignment, and would add unnecessary complexity.
+ *   Setting the member properties as private ensures the values
+ *   can't be changed except upon initilizing a new Distance object. 
+ * 
  * - Addition sums endpoints, then recalculates their absolute difference;
  *   it does not independently sum the original distance magnitudes.
  * - Results retain the left operand's unit; no unit conversion is performed.
