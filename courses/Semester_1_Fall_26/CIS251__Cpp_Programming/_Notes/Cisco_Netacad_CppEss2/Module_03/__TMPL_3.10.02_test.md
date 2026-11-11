@@ -1,0 +1,755 @@
+<!-- Custom stylesheet -->
+<link rel="stylesheet" href="../../_css/main.css">
+
+<!-- Site logo -->
+![Site Logo](/_pix/logos/logo-ehw-kb-h32.png)
+
+> [🏚️ README](../../../README.md) | [📁 Courses](../../index.md) | [📚 Vocabulary](../../Vocabulary.md) | [🗓️ Assignments Schedule](../Assignments_Schedule.md) | [🔖 Bookmark](#bookmark)
+
+
+> CIS 251 - C++ Programming | (Fall 2026 · *Dr. Rosalyn Warren*)   
+> 📝 Eric Hepperle's Notes on — **Cisco Netacad C++ Essentials 1** course   
+>
+> 🧠 CPPE1: Module 3: Functions, Pointers, and Memory Management  
+
+# 🎒 3.10.2 MODULE 3 Test
+
+## ❓ Question 1
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+int main() {
+    int t[3] = { 3, 2, 1 }, *ptr = t + 1;
+    (*(ptr + 1))++;
+    *ptr++;
+    cout << t[1] << t[2];
+    return 0;
+}
+```
+
+**Showing my work:**
+
+```cpp
+int main() {
+
+
+    int t[3] = { 3, 2, 1 }
+    
+    // NOTE: 
+    //  - ptr = is a pointer to an address
+    //  - *ptr = the value at that address (dereferenced)
+    
+    int* ptr = t + 1;
+    
+    //  - t reads as &t[0]
+    //  - the `+ 1' means move the pointer one element to the right
+
+    // t + 1 = &t[0] + 1
+    // = &t[1]
+
+
+    (*(ptr + 1))++;
+    // ptr + 1 = &t[1] + 1 = &t[2] = point to the address of element t[2], the 3rd element (last) in the array t
+    // - since postfix ++ has a higher precedence (order of operations) than unary * (dereference),
+    //    but in this case, the parentheses trump that order by specific grouping.
+    // - adds 1 to the value at t[2] (1) = 1 + 1 = 2
+    // t[2] = 2
+
+    *ptr++;
+
+    // Parsed as *(ptr++).
+    // ptr starts at &t[1].
+    // The dereference refers to t[1] using the OLD pointer value.
+    // That result is unused.
+    // The single ++ advances ptr to &t[2].
+    // No array element changes, and ptr never reaches &t[3].
+
+    cout << t[1] << t[2];
+    return 0;
+}
+```
+
+- 33
+- 23
+- 22 #MY_CHOICE
+- 32
+
+
+---
+
+## ❓ Question 2
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+int main() {
+    float x = 3.14, *p = &x;
+    p[0] = ++x;
+    cout << x;
+    return 0;
+}
+```
+
+- 6.28
+- 0.0
+- 3.14
+- 4.14  #MY_CHOICE
+
+
+---
+
+## ❓ Question 3
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+int main() {
+    int tab[5] = { 1, 2, 4, 8, 16 };
+    int *p1 = tab, *p2 = tab + 4;
+    for(int *p = p1 + 1; p < p2; p++)
+        *p = p[-1] * 2;
+    cout << tab[1] << tab[2];
+    return 0;
+}
+```
+
+- 12
+- 48
+- 24   #MY_CHOICE
+- 01
+
+
+---
+
+## ❓ Question 4
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+int main() {
+    float f[2];
+    float *p1 = f, *p2 = p1 + 1;
+    cout << (p2 - p1) / sizeof(float);
+    return 0;
+}
+```
+
+- 2
+- 3
+- 1
+- 0 #MY_CHOICE
+
+
+---
+
+## ❓ Question 5
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+int main() {
+    float fun(float arg) {
+    return arg * arg + arg + 1;
+}
+   
+int main() {
+    cout << fun(fun(1.0));
+    return 0;
+}
+```
+
+- 16
+- 7
+- 13    #MY_CHOICE
+- 10
+
+
+---
+
+## ❓ Question 6
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+int fun(float a, float b) {
+    return a / b;
+}
+   
+int main() {
+    cout << fun(fun(1.0,2.0),fun(2.0,1.0));
+    return 0;
+}
+```
+
+- 2
+- 1
+- -1
+- 0    #MY_CHOICE
+
+
+---
+
+## ❓ Question 7
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+float Float(float x) {
+    return 2 * x / (.5 * x);
+}
+   
+void Void(int n) {
+    float v = n;
+    while(n) {
+        v = Float(v);
+        n >>= 1;
+    }
+    cout << v;
+}
+    
+int main() {
+    Void(4);
+    return 0;
+}
+```
+
+- 6
+- 10
+- 8
+- 4
+
+> 💡 “Lesson learned: **cout controls the display, not the data type.** Its default formatting omits unnecessary decimal points and trailing zeros, so a float holding `4.0` prints as `4`. 🔍 An integer-looking output doesn’t mean the value is stored as an `int`.”
+
+---
+
+## ❓ Question 8
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+int f1(int a) {
+    return ++a;
+}
+   
+int f2(int &a) {
+    return ++a;
+}
+    
+int f3(int *a) {
+    return *a + 1;
+}
+    
+int main() {
+    int value = 2;
+    cout << f1(value);
+    cout << f2(value);
+    cout << f3(&value);
+    return 0;
+}
+```
+
+- 456
+- 333
+- 334   #MY_CHOICE
+- 445
+
+
+---
+
+## ❓ Question 9
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+int f1(int *a) {
+    return *a;
+}
+   
+int *f2(int *a) {
+    return a;
+}
+   
+int *f3(int &a) {
+    return &a;
+}
+    
+int main() {
+    int value = 2;
+    cout << f1(f2(f3(value)));
+    return 0;
+}
+```
+
+- 1
+- 3
+- 0
+- 2    #MY_CHOICE
+
+---
+
+## ❓ Question 10
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+int f1(int *a) {
+    return *a + 1;
+}
+   
+int *f2(int *a) {
+    return a + 1;
+}
+    
+int *f3(int &a) {
+    return &a + 1;
+}
+    
+int main() {
+    int t[] = {0, 1, 2, 3};
+    cout << f1(f3(*f2(t)));
+    return 0;
+}
+```
+
+- 1
+- 0
+- 2
+- 3    #MY_CHOICE
+
+
+---
+
+## ❓ Question 11
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+int fun(int p1 = 1, int p2 = 1) {
+    return p2 << p1;
+}
+    
+int main() {
+    cout << fun(fun(),fun(2));
+    return 0;
+}
+```
+
+- 8
+- 4
+- 16      #MY_CHOICE
+- 32
+
+
+---
+
+## ❓ Question 12
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+    
+string fun(string &t, string s = "", int r = 2) {
+    while(--r)
+        s += s;
+    t = t + s;
+    return s;
+}
+    
+int main() {
+    string name = "x";
+    cout << fun(name, name);
+    cout << name;
+    return 0;
+}
+```
+
+- xxxx
+- xxxxxx
+- xxx    #MY_CHOICE
+- xxxxx
+
+---
+
+## ❓ Question 13
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+    
+string fun(string t, string s = "x", int r = 1) {
+    while(--r)
+        s += s;
+    t = t + s;
+    return s;
+}
+    
+int main() {
+    string name = "a";
+    cout << fun(name);
+    cout << name;
+    return 0;
+}
+
+
+```
+
+- xxxaaa
+- xxaa
+- xxxxaaaa
+- xa    #MY_CHOICE
+
+
+---
+
+## ❓ Question 14
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+int fun(int a, int b) {
+    return a + b;
+}
+    
+int fun(int a, char b) {
+    return b - a;
+}
+    
+int fun(float a, float b) {
+    return a * b;
+}
+    
+int main() {
+    cout << fun(1,0) << fun('a','c') << fun(2.f,2.f);
+    return 0;
+}
+```
+
+- 012
+- 124   #MY_CHOICE
+- 248
+- 481
+
+---
+
+## ❓ Question 15
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+int fun(long a, long b = 1) {
+    return a << b;
+}
+    
+int fun(int a, char b = 'z') {
+    return b - a;
+}
+    
+int fun(float a, float b = 0) {
+    return a * b;
+}
+    
+int main() {
+    cout << fun(1L) << fun('x') << fun(2e0f);
+    return 0;
+}
+```
+
+- 121
+- 220      #MY_CHOICE
+- 112
+- 234
+
+
+---
+
+## ❓ Question 16
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+int fun(long a) {
+    return a / a;
+}
+   
+int fun(int a) {
+    return 2 * a;
+}
+    
+int fun(double a = 3.0) {
+    return a;
+}
+    
+int main() {
+    cout << fun(1000000000L) << fun (1L) << fun(1.f);
+    return 0;
+}
+```
+
+- 111      #MY_CHOICE
+- 222
+- 333
+- 444
+
+
+---
+
+## ❓ Question 17
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+int fun(int t[]) {
+    t[0] += t[1];
+    return t[0];
+}
+    
+int main() {
+    int t[] = { 5,6,7 };
+    cout << fun(t);
+    cout << t[0];
+    return 0;
+}
+```
+
+- 115
+- 56
+- 1111     #MY_CHOICE
+- 116
+
+
+---
+
+## ❓ Question 18
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+int *make(int v) {
+    int *p = new int;
+    *p = v + 1;
+    return p;
+}
+int *play(int &v) {
+    cout << ++v;
+    return &v;
+}
+    
+void remove(int *v) {
+    delete v;
+}
+    int main() {
+    remove(play(*make(3)));
+    return 0;
+}
+```
+
+- 2
+- 3
+- 5     #MY_CHOICE
+- 4
+
+
+---
+
+## ❓ Question 19
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+   
+int main() {
+    int *val = new int;
+    *val = sizeof(val) / sizeof(int *);
+    int *tab = new int[*val];
+    tab[0] = *val;
+    delete val;
+    cout << *tab;
+    delete [] tab;
+    return 0;
+}
+```
+
+- 4
+- 2
+- 1     #MY_CHOICE
+- 0
+
+
+---
+
+## ❓ Question 20
+
+
+
+
+What is the output of the following snippet?
+
+```cpp
+#include <iostream>
+using namespace std;
+    
+struct s {
+    float *f;
+};
+    
+void make(s *p, float x = 10) {
+    float *f = new float;
+    *f = sizeof(*f) / sizeof(float) * 10;
+    p->f = f;
+}
+    
+int main() {
+    s *ss = new s;
+    make(ss);
+    cout << *(*ss).f;
+    delete ss->f;
+    delete ss;
+    return 0;
+}
+```
+
+- 10    #MY_CHOICE
+- 80
+- 20
+- 40
+
+
+---- -------------------- END TEST ---------------------- ----
+
+#PROOF
+
+![alt text](../_pix/3.10.2_mod-1-test_01.png)
+
+
+![alt text](../_pix/3.10.2_mod-1-test_02.png)
+
+
+> The output of the snippet is 'xxxxx'. Let's break it down:
+> 
+> The fun() function takes a reference to a string t, a string s, and an integer r.
+> 
+> In the main() function, the string name is initialized with the value "x".
+> 
+> fun(name, name) is called, passing name as both t and s. The default value of r is 2.
+> 
+> Inside fun(), the while loop concatenates s with itself r-1 times. In this case, s initially has the value "x", so after the loop, s becomes "xx".
+> 
+> Then, t is appended with s, making t equal to "xxx".
+> 
+> Finally, s ("xx") is returned.
+> 
+> The first cout statement in main() prints the returned value from fun(), which is "xx".
+> 
+> The second cout statement in main() prints the updated value of name, which is "xxxxx" (the concatenation of "x" and "xx").
+> 
+> Therefore, the output of the snippet is 'xxxxx'.
