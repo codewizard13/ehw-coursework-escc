@@ -8,7 +8,8 @@
 
     VERSION: 1.0
 
-    STATUS: WIP
+    STATUS: WIP - Throws / Catches custom divide by zero exception;
+                But sample solution uses `const int DivideByZero = 111`
 
     Instructions:
      - Improve this simple program so that it prints a message when the user
@@ -22,35 +23,43 @@
     ...
 
     Lessons Learned & Notes:
-    - 
+    -
 
     FUTURE IMPROVEMENTS:
-    - 
+    -
 
     GitHub: https://github.com/codewizard13
  ************************************************************ */
 
 #include <iostream>
+#include <string>
 using namespace std;
-const int DivideByZero = 111;
+
+int divTwoNums(int a, int b)
+{
+    if (b == 0)
+        throw string("division by zero not allowed");
+    return a / b;
+}
+
 int main(void)
 {
+
+    cout << "****************** LAB START *************\n";
+
     int a = 8, b = 0, c = 0;
     cin >> b;
     try
     {
-        if (b == 0)
-        {
-            throw DivideByZero;
-        }
-        c = a / b;
+        c = divTwoNums(a, b);
+        cout << c << endl;
     }
-    catch (int ex)
+    catch (string problem)
     {
-        if (ex == DivideByZero)
-            cout << "Your input is not valid, you can't divide by zero." << endl;
+        cout << "Exception caught: " << problem << endl;
     }
 
-    cout << c << endl;
+    cout << "****************** LAB END ***************\n";
+
     return 0;
 }
