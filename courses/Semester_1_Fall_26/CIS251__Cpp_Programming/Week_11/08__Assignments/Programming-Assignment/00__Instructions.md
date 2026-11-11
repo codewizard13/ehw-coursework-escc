@@ -1,10 +1,12 @@
-## Week 10 Programming Assignment - Operator Overloading, Enumerations, and Interface Design
+# Week 11 Programming Assignment - Exceptions, Error Handling, and Robust Programs
 
-**Preparation requirement:** Complete the Week 10 readings, videos, [C++ Institute practice](https://www.netacad.com/courses/c-plus-plus-essentials-2?courseLang=en-US&instance_id=c9801f54-4d0c-44f9-b4ee-3f2d9c6306bf), and guided examples before starting. This assignment intentionally requires only concepts taught in those materials.
+Due: Sun Oct 25, 2026 11:59pmDue: Sun Oct 25, 2026 11:59pm10/25/2026
+
+**Preparation requirement:** Complete the Week 11 readings, videos, [C++ Institute practice](https://www.netacad.com/courses/c-plus-plus-essentials-2?courseLang=en-US&instance_id=c9801f54-4d0c-44f9-b4ee-3f2d9c6306bf), and guided examples before starting. This assignment intentionally requires only concepts taught in those materials.
 
 ### Programming Task
 
-> **Distance Class**: create a small Distance class and overload one arithmetic/comparison operator exactly as modeled in the required material. Add an enum or enum class for a display/unit choice. Do not implement operators not covered in the examples.
+> **Safe Division/Transaction Processor:** validate routine input with decisions and use try/throw/catch for one exceptional condition specified in the assignment (such as division by zero or an invalid transaction). Explain why the exception is appropriate.
 
 ### Required Process
 
@@ -30,3 +32,4 @@
 | Testing, validation, and correction of errors | 20  |
 | Readability, organization, naming, and appropriate comments | 10  |
 | Required submission evidence / AI transparency | 5   |
+
