@@ -8,8 +8,7 @@
 
     VERSION: 1.0
 
-    STATUS: WIP - Throws / Catches custom divide by zero exception;
-                But sample solution uses `const int DivideByZero = 111`
+    STATUS: Fully Working
 
     Instructions:
      - Improve this simple program so that it prints a message when the user
@@ -23,10 +22,10 @@
     ...
 
     Lessons Learned & Notes:
-    -
-
-    FUTURE IMPROVEMENTS:
-    -
+    - The sample’s arbitrary integer (`111`) identifies the error, while my
+      function detects the error and throws a descriptive string; these are
+      separate choices—what to throw versus where to throw it—not
+      competing requirements.
 
     GitHub: https://github.com/codewizard13
  ************************************************************ */
