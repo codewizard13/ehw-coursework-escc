@@ -3,17 +3,19 @@
 ## 📘 Assignment Information
 
 - **Course:** CIS-251 — C++ Programming
-- **Assignment:** Week 10 — Operator Overloading, Enumerations, and Interface Design
+- **Assignment:** Week 11 — Exceptions, Error Handling, and Robust Programs
 - **Author:** Eric L. Hepperle
-- **Program:** Distance class, version 1.03
+- **Program:** Divide By Zero Error Handling, version 1.01
 
 ## 📋 Initial Design and Planning
 
-I created the initial `Distance` class and chose to calculate the distance traveled between two endpoints as `abs(end - start)`. My design included constructors, a display method, an enum for unit selection, and one overloaded arithmetic operator following the required **Tutorials Point** `Box` example.
+I used Perplexity to help me unstand the scope of the program, and what was being asked. After independently testing and verifying his implementation, I decided it would be better for me rebuild the program from scratch to ensure I understood what it was doing. ... That's where I'm currently at.
 
-- The intended meaning of addition is **total travel distance**: two trips of eight units should total sixteen units even when their endpoint directions differ.
+My analysis reveaals THAT we include iostream like normal, but we also include a class/module/header we've never seen before caleed <stdexcept> -- this is necessary to be able to reference and use standard ready-made exception subclasses. Since we aren't creating custom exceptions we don't need <exception>.
 
-- The separate algorithm document describes the implementation approach.
+We'll ask for and receive the numerator and output an error message and return the failure code '1' to exit the program if the input is not a number. Otherwise, we'll do a similar input validation for denominator. if the both validated, then we'll open a try block where we'll throw a runtime_error() with a custom message "Cannot divide by zero.", if the denominator is zero. Otherwise/we'll assign and output the quotient. We'll set up matching catch block that expects a const reference to a runtime_error() object - we use ref because the object is 'heavy' and it helps us work agile-ly with it. We use const to ensure the original object referenced is not changed. It's really a neat trick.
+
+When the runtime_error is thrown it is caught in the catch block which will display a message saying "Division error: " and the what() details of the caught errorf, referenced as `e`. We then make sure to return error code 1 for failure. If nothign fails, the main function is terminated without error with a code of zero.
 
 ## 🏗️ Incremental Implementation
 

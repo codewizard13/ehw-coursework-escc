@@ -26,9 +26,26 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
 
+    cout << "\n******** START DIVIDE BY ZERO ERROR HANDLING DEMO ****************************\n";
+
+    double numerator = 0.0;
+    double denominator = 0.0;
+
+    // Validate that numerator is a number
+    cout << "Enter a numerator: ";
+    if (!(cin >> numerator))
+    {
+        cout << "Input error: numerator must be a number.\n";
+        cout << "\n******** END PROGRAM *******************************************\n";
+        return 1;
+    }
+
+    cout << "The numerator is: " << numerator << endl;
+
+    cout << "\n******** END PROGRAM *******************************************\n";
 
     return 0;
 }
-
