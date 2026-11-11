@@ -54,7 +54,7 @@ int main(void)
         c = divTwoNums(a, b);
         cout << c << endl;
     }
-    catch (string problem)
+    catch (const string& problem)
     {
         cout << "Exception caught: " << problem << endl;
     }
