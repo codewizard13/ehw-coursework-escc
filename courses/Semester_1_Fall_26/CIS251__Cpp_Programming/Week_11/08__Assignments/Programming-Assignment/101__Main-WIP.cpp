@@ -45,6 +45,18 @@ int main()
 
     cout << "The numerator is: " << numerator << endl;
 
+
+    // Validate that denominator is a number
+    cout << "Enter a denominator: ";
+    if (!(cin >> denominator))
+    {
+        cout << "Input error: denominator must be a number.\n";
+        cout << "\n******** END PROGRAM *******************************************\n";
+        return 1;
+    }
+
+    cout << "The denominator is: " << denominator << endl;    
+
     cout << "\n******** END PROGRAM *******************************************\n";
 
     return 0;
