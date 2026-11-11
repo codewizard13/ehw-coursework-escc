@@ -11,7 +11,9 @@
  *    exception is appropriate. Plan with pseudocode, compile incrementally,
  *    and test normal, boundary, and invalid inputs.
  *
- * @status WIP - Implementation written; compilation and testing pending.
+ * @status WIP - THE CODE BELOW WAS 100% created by Perplexity.
+ *    - Implementation written; compilation and testing pending.
+ *    - Will rebuild from scratch, or create a different example.
  *
  * @author Eric L. Hepperle
  * @date 2026-11-11
