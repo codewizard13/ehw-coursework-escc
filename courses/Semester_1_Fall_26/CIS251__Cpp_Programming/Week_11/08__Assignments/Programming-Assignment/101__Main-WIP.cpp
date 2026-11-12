@@ -11,7 +11,7 @@
  *    exception is appropriate. Plan with pseudocode, compile incrementally,
  *    and test normal, boundary, and invalid inputs.
  *
- * @status WIP - Creating and implementing the code incrementally
+ * @status Fully Working
  *
  * @author Eric L. Hepperle
  * @date 2026-11-11
@@ -43,9 +43,6 @@ int main()
         return 1;
     }
 
-    // cout << "The numerator is: " << numerator << endl;
-
-
     // Validate that denominator is a number
     cout << "Enter a denominator: ";
     if (!(cin >> denominator))
@@ -54,8 +51,6 @@ int main()
         cout << "\n******** END PROGRAM *******************************************\n";
         return 1;
     }
-
-    // cout << "The denominator is: " << denominator << endl;    
 
     try {
         if (denominator == 0.0)
@@ -67,7 +62,6 @@ int main()
     catch (const runtime_error& e) {
         cout << "\nRuntime Error: " << e.what() << endl;
     }
-
 
     cout << "\n******** END PROGRAM *******************************************\n";
 
