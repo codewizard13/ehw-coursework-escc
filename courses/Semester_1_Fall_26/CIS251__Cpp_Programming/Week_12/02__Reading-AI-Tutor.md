@@ -47,6 +47,30 @@ if (outputFile) {
 }
 ```
 
+> - **#GOTCHA:** The above is technically ***illegal*** in C++. You have to encapsulate the if statement in `int main()` for it to work. Here is the minimum correct MVP version:
+
+```cpp
+// Eric Hepperle - Working Example
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+ofstream outputFile("scores.txt");
+
+int main()
+{
+
+    if (outputFile)
+    {
+        outputFile << "Jordan 92" << endl;
+        outputFile << "Taylor 88" << endl;
+        outputFile.close();
+    }
+
+    return 0;
+}
+```
+
 An `ofstream` is an output file stream. Always verify that the stream opened successfully before relying on it.
 
 ## 3\. Reading Files
