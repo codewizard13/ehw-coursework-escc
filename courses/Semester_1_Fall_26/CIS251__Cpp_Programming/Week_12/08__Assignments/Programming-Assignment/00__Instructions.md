@@ -1,10 +1,10 @@
-## Week 10 Programming Assignment - Operator Overloading, Enumerations, and Interface Design
+## Week 12 Programming Assignment - Files, Streams, Persistence, and Program Testing
 
-**Preparation requirement:** Complete the Week 10 readings, videos, [C++ Institute practice](https://www.netacad.com/courses/c-plus-plus-essentials-2?courseLang=en-US&instance_id=c9801f54-4d0c-44f9-b4ee-3f2d9c6306bf), and guided examples before starting. This assignment intentionally requires only concepts taught in those materials.
+**Preparation requirement:** Complete the Week 12 readings, videos, [C++ Institute practice](https://www.netacad.com/courses/c-plus-plus-essentials-2?courseLang=en-US&instance_id=c9801f54-4d0c-44f9-b4ee-3f2d9c6306bf), and guided examples before starting. This assignment intentionally requires only concepts taught in those materials.
 
 ### Programming Task
 
-> **Distance Class**: create a small Distance class and overload one arithmetic/comparison operator exactly as modeled in the required material. Add an enum or enum class for a display/unit choice. Do not implement operators not covered in the examples.
+> **Persistent Contact List:** write several contact records to a text file and read them back for display. Check that the file opened successfully and submit a five-case test table covering normal and failure-oriented cases already demonstrated in the readings.
 
 ### Required Process
 
