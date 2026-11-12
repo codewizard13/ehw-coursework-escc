@@ -2,11 +2,9 @@ Due Oct 18 11:59pm
 
 20 points possible
 
-# Discussion Topic: Week 10 Discussion - Operator Overloading, Enumerations, and Interface Design
+# Discussion Topic: Week 11 Discussion - Exceptions, Error Handling, and Robust Programs
 
-## Week 10 Discussion - Operator Overloading, Enumerations, and Interface Design
-
-> What criteria determine whether an overloaded operator makes code clearer rather than surprising?
+> Ask AI to propose an exception strategy, then critique whether each proposed exception is truly exceptional or should be normal validation.
 
 **Requirements:** Post a substantive response of approximately 200-300 words by Thursday and reply constructively to at least two classmates by Sunday. When code is relevant, use a small code example and explain it in your own words. Cite/link any external source used.
 
@@ -17,66 +15,60 @@ Due Oct 18 11:59pm
 
 # MY ANSWER (DRAFT):
 
-Operator overloading can be critical to ensure that mathematical object representations (eg, `Distance`, `Hypotenuse`, `Cosine`, `Accrued Interest`, etc.) can be used in a common sense and intuitive way, WRT mathematical operations. Adding, subtracting, rounding up, etc are easy on scalar numerical variables like ints and floats. But objects that represent numbers require operator overloading for statements like `First_Quarter_Net = Jan_Net + Feb_Net + Mar_Net` where the signature for net is `Net(double gross, double tax_percent)`.
+I provided the following prompt to perplexity:
 
-Operators can only be overloaded in a similar way to to the symbol for the opertator. For instance, the plus sign `+` must be use for addition opperations. In the case of strings, `+` is even used for concatenation, a type of add.
+> For a small C++ program that registers students for courses, propose an exception-handling strategy. Identify several possible errors and recommend which should throw exceptions and which should use normal validation. Explain each choice so I can critique it.
 
-What would be wrong is if you were to use the + operator overloading to subtract or divide for instance.
+The result was this:
 
-Those implementations would certainly make it unpleasantly surprising!
+> I would use normal validation for expected mistakes and exceptions when the program cannot complete an operation.
+> 
+> - Normal validation: Invalid input, unknown student IDs, full courses, duplicate registrations, and missing prerequisites. These are expected problems, so display a clear message and let the student correct the request.
+> - Exceptions: A required file cannot be opened, registration data is corrupted, or saving fails. These failures prevent the program from completing its task and should be handled by a higher-level `try`/`catch` block. [isocpp.github](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
+> 
+> If saving fails, the program should not report success or leave a partial registration. The main point to critique is the boundary: a full course is a normal rejection, while a failed save is a system failure.
 
+My Critique:
 
-
+Makes sense. Using normal validation on invalid data input and other predictable problems including various user errors that can be displayed to the user. Exceptions are appropriate when a failure prevents the program from completing its task.
 
 # AI-ASSISTED DRAFT:
 
-## 📝 Week 10 Discussion: Operator Overloading and Clear Interfaces
+## 📝 Prompt and AI Recommendation
 
-Operator overloading makes code clearer when it preserves the operator’s familiar meaning and fits the objects being used. My main criterion is **predictability**: can someone understand the expression without opening the class implementation?
+I asked Perplexity to propose an exception-handling strategy for a small C++ course-registration program and explain which errors should use exceptions versus normal validation.
 
-For mathematical objects such as distances or financial amounts, overloaded operators can make calculations more intuitive. For example, a `Net` class could calculate a monthly net amount from gross income and a tax percentage, then support adding those amounts:
+Perplexity recommended normal validation for predictable problems, such as invalid input, unknown student IDs, full courses, duplicate registrations, and missing prerequisites. The program should explain the problem and allow the student to correct the request.
+
+Exceptions would handle failures such as an unreadable required file, corrupted registration data, or an unsuccessful save. This approach follows the C++ Core Guidelines’ recommendation to use exceptions when a function cannot perform its assigned task. [isocpp.github](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
+
+## 💻 Small Code Example
+
+A short `enum class` could represent expected outcomes without throwing exceptions:
 
 ```cpp
-class Net
-{
-public:
-    double amount;
+enum class Result { Success, Full, Duplicate };
 
-    Net(double gross, double tax_percent)
-        : amount(gross * (1.0 - tax_percent / 100.0)) {}
-
-    Net operator+(const Net &other) const
-    { return Net(amount + other.amount, 0.0); }
-
-    void display() { cout << this->amount; }
-};
-
-int main()
-{
-
-    Net Jan_Net(5000, 20);
-    Net Feb_Net(6000, 20);
-    Net Mar_Net(5500, 20);
-
-    Net First_Quarter_Net = Jan_Net + Feb_Net + Mar_Net;
-
-    First_Quarter_Net.display();
-
-    return 0;
+Result checkRegistration(bool full, bool enrolled) {
+    if (enrolled) return Result::Duplicate;
+    if (full) return Result::Full;
+    return Result::Success;
 }
 ```
 
-Here, `+` combines already-calculated net amounts without changing the original objects. The zero tax rate prevents the result from being taxed again. This simplified example makes the quarterly calculation read much like ordinary arithmetic.
+Here, `Success` means the checks passed—not that registration was saved.
 
-One important correction to my original understanding is that C++ does not require overloaded `+` to perform addition. ***The language permits other behavior, but conventional meanings are strongly expected. Using `+` to subtract or divide would therefore be legal but unpleasantly surprising.*** Related operators, such as `+` and `+=`, should also behave consistently.
+## 🔎 My Critique
 
-Ultimately, a good overload **communicates intent** rather than merely shortening code. If an operation needs explanation because its meaning is unusual, a descriptive function name would be clearer.
+I agree with this distinction because an unsuccessful request does not necessarily mean the program malfunctioned. A full course is an expected registration outcome, so throwing an exception would unnecessarily complicate ordinary decision-making.
 
-**🤖 AI transparency:** I used Perplexity to organize my explanation, condense this response and expand my Net() object example. I independently verified that the 3 monthly net amounts add to 13,200 without taxing those amounts again.
+However, the recommendation needs a clearer recovery plan. If saving fails, catching the exception and displaying a message is not enough. The program should avoid reporting success and preserve the previous valid registration state. A higher-level `try`/`catch` block should handle the failure, but the registration logic must prevent partial updates. This makes the strategy more reliable than simply separating user errors from system failures.
+
+**🤖 AI transparency:** I used Perplexity to propose an exception-handling strategy, organize and condense my response, strengthen my critique, and create a short `enum class` example. I reviewed the distinction between normal validation and exceptions and explained why a failed save should not leave a partial registration.
 
 
 ### References:
--  [en.cppreference](https://en.cppreference.com/cpp/language/operators)
+-  
 
 ### #NOTES:
 - 
