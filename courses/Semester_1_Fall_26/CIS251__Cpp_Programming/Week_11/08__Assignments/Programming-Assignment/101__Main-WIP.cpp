@@ -43,7 +43,7 @@ int main()
         return 1;
     }
 
-    cout << "The numerator is: " << numerator << endl;
+    // cout << "The numerator is: " << numerator << endl;
 
 
     // Validate that denominator is a number
@@ -55,7 +55,19 @@ int main()
         return 1;
     }
 
-    cout << "The denominator is: " << denominator << endl;    
+    // cout << "The denominator is: " << denominator << endl;    
+
+    try {
+        if (denominator == 0.0)
+            throw runtime_error("Cannot divide by zero.");
+
+        double quotient = numerator / denominator;
+        cout << "Quotient: " << quotient << endl;
+    }
+    catch (const runtime_error& e) {
+        cout << "\nRuntime Error: " << e.what() << endl;
+    }
+
 
     cout << "\n******** END PROGRAM *******************************************\n";
 
