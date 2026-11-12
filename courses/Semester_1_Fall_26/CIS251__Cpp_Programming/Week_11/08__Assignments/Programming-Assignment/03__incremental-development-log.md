@@ -13,6 +13,14 @@ Selected **safe division** to demonstrate routine numeric input validation with 
 
 The planned program reads a numerator and denominator, rejects nonnumeric input, and either displays the quotient or reports division by zero.
 
+## 🔎 Rationale for Appropriateness of Exception
+
+The business reason for handling division by zero is to avoid presenting an invalid calculation as usable information. For example, a cost-per-unit calculation cannot produce a meaningful result when the number of units is zero.
+
+I chose `std::runtime_error` because it provides a straightforward standard exception with a custom message that my catch block can display using `what()`. This lets me explain the failure without creating an additional exception class.
+
+I did not throw a plain `std::exception` because its standard constructors do not accept a custom error message. A custom `divideByZero` class would give the error a more specific type, but I did not need separate handling or additional information for this small, single-error demonstration.
+
 
 ## 🏗️ Incremental Implementation
 
