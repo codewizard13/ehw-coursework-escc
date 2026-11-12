@@ -9,13 +9,13 @@
 
     VERSION: 1.01
 
-    STATUS: WIP
+    STATUS: Fully Working
 
     Purpose:
     - Demonstrate reading files in C++
 
     Lessons Learned:
-    - 
+    -
 
     GitHub: https://github.com/codewizard13
  ************************************************************ */
@@ -24,16 +24,19 @@
 #include <fstream>
 using namespace std;
 
-ofstream outputFile("scores.txt");
+ifstream inputFile("scores.txt");
 
 int main()
 {
 
-    if (outputFile)
-    {
-        outputFile << "Jordan 92" << endl;
-        outputFile << "Taylor 88" << endl;
-        outputFile.close();
+    string name;
+    int score;
+
+    if (inputFile) {
+        while (inputFile >> name >> score) {
+            cout << name << ": " << score << endl;
+        }
+        inputFile.close();
     }
 
     return 0;
