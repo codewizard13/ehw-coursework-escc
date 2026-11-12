@@ -10,7 +10,32 @@
  *    and use try/throw/catch to handle division by zero. Explain why the
  *    exception is appropriate. Plan with pseudocode, compile incrementally,
  *    and test normal, boundary, and invalid inputs.
+ * 
+ * @par Lessons Learned
+ * - An if condition requires parentheses, even when braces are omitted
+ *   around a single-statement body.
+ * - A try block requires a matching catch handler.
+ * - Catching runtime_error by const reference avoids copying the exception
+ *   and prevents modification through that reference.
+ * - The exception's what() method supplies the message passed when the
+ *   runtime_error object was created.
+ * - Zero divided by zero is undefined; the rule that a number divided
+ *   by itself equals one applies only to nonzero numbers.
  *
+ * @par Notes & Limitations
+ * - Rationale: Rejecting division by zero prevents an invalid calculation
+ *   from being presented as usable information.
+ * - runtime_error supplies a custom message without requiring a custom
+ *   exception class, keeping this demonstration focused and simple.
+ * - Input validation checks whether numeric extraction succeeds; it does
+ *   not perform strict whole-line validation.
+ * - The program processes one division request per run; invalid numeric
+ *   input ends the program without prompting again.
+ * - A zero denominator triggers the exception before division occurs.
+ * - Quotients use default stream formatting, including scientific notation
+ *   when applicable; no fixed decimal precision is specified.
+ * - Input-validation failures return 1. A caught division-by-zero exception
+ *   displays its message, then reaches the end banner and returns 0.
  * @status Fully Working
  *
  * @author Eric L. Hepperle
