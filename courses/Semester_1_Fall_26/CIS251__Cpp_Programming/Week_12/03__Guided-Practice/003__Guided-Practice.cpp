@@ -47,7 +47,20 @@ WRITE VALUES TO OUTPUT STREAM
         Ask user if they want to enter another record
 
 
+    ... MORE TO COME ...
 
 
-        
 */
+
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <fstream>
+using namespace std;
+
+
+int main() {
+
+    return 0;
+}
