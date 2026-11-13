@@ -6,6 +6,7 @@
 
     Student: Eric Hepperle
     Created: 2026-11-12
+    Updated: 2026-11-13
 
     VERSION: 0.03
 
@@ -23,7 +24,13 @@
         actually testing myself and writing a whole program from scratch.
 
     Lessons Learned:
-    -
+    - When switching from `>>` to `getline()`, remember `std::ws`: `std::getline(inputFile >> std::ws, line);` removes leftover whitespace, including newlines, before reading the line. Reminder: `ws` skips all leading whitespace and blank lines—omit it when those must be preserved.
+
+    - The programmer should distinguish file existence from stream-opening success: `ofstream` can create a missing file before an `if` checks its state, and its default opening mode erases existing contents. An initial `ifstream` check avoids creating the file, while `ios::app` protects existing contents when opening for output.
+
+    - The programmer can test file-opening failure by specifying a nonexistent parent folder; a missing filename alone does not trigger failure because `ofstream` can create the file.
+
+    - Single quotes represent a character (`'Y'`), while double quotes represent a string literal (`"Y"`). Character-conversion functions such as `tolower()` require an individual character value rather than a string.
 
     GitHub: https://github.com/codewizard13
  ************************************************************ */
@@ -56,6 +63,7 @@ WRITE VALUES TO OUTPUT STREAM
 #include <string>
 #include <iomanip>
 #include <fstream>
+#include <cctype>
 using namespace std;
 
 string recordsFilename = "payment-records.txt";
@@ -93,17 +101,36 @@ int main()
         // Otherwise, print success message
         cout << "File " << recordsFilename << " opened or created sucessfully.\n"
              << "Ready for writing in append mode.\n\n";
-
     }
 
     string line;
 
     // Otherwise records file exists, so lets do something with it
     // first, let's read the current contents, line by line
-    while (getline(existingRecords, line)) {
+    while (getline(existingRecords, line))
+    {
         cout << line << endl;
     }
     cout << "- - - Reached End of file.\n";
+
+    char choice = 'y';
+    int count = 0;
+
+    /* WRITE TO OUT FILE */
+    do
+    {
+        count++;
+        cout << "Ran do loop " << count << " times.\n";
+        cout << "Add another? (y, n): ";
+
+        if (!(cin >> choice))
+        {
+            cout << "Please enter either 'y' or 'n'.\n";
+        }
+
+    } while (tolower(choice) != 'n');
+
+    cout << "*********** End Program ************\n\n";
 
     return 0;
 }
