@@ -95,3 +95,128 @@
     - Ends with `;` instead of a body → declaration/prototype.
     - Includes `{ ... }` → definition, even when the body is only placeholder code.
     - Adding `{ return true; }` makes it a definition with a placeholder body—not a prototype waiting to be completed.
+
+---
+
+
+## 📖 Reading Lines and Skipping Blank Input
+
+- `std::getline(inputFile, line)` reads one complete line into a string. An empty line can be skipped with `if (line.empty()) continue;`.
+  - 🪝 Gotcha: `getline()` removes the newline delimiter instead of storing it in the string. Test `line.empty()`, not `line == "\n"`.
+
+- An empty string and a whitespace-only string are different. `line.empty()` detects a string containing no characters; it does not detect a line containing spaces or tabs. To skip both, use:
+
+  ```cpp
+  if (line.find_first_not_of(" \t\r\n\v\f") == std::string::npos)
+  {
+      continue;
+  }
+  ```
+
+  - 🪝 Gotcha: `find_first_not_of()` searches for a character outside the supplied whitespace set. Returning `std::string::npos` means no such character exists, so the line is empty or contains only those whitespace characters.
+
+- `continue` skips the remaining statements in the current loop iteration. In a `while (std::getline(inputFile, line))` loop, the next condition check attempts to read the next line.
+  - 🪝 Gotcha: Place the blank-line check before conversion, accumulation, and counting so skipped lines do not reach those operations.
+
+
+## 🔢 Converting Text to Integers
+
+- `std::stoi(line)` converts text to an `int` and is declared in `<string>`. When input is expected to contain valid integers, conversion can be as simple as:
+
+  ```cpp
+  int number = std::stoi(line);
+  ```
+
+  - 🪝 Gotcha: Do not add elaborate validation unless the program needs it. Converting expected numeric input and verifying that an entire line contains exactly one integer are different requirements.
+
+- `stoi()` accepts leading whitespace and an optional sign, then converts the numeric beginning of the string.
+  - 🪝 Gotcha: Successful conversion does not prove the entire string is an integer. `stoi("42abc")` returns `42`, and `stoi("3.14")` returns `3`.
+
+- `stoi()` throws `std::invalid_argument` when no conversion is possible and `std::out_of_range` when the converted value cannot fit in an `int`.
+  - 🪝 Gotcha: Skipping empty strings does not eliminate all conversion failures. Text such as `"hello"` or a whitespace-only string still cannot be converted, and an oversized integer can also fail.
+
+- When strict whole-line validation is required, `std::istringstream` from `<sstream>` can extract an integer, consume trailing whitespace with `std::ws`, and check whether the stream has reached its end:
+
+  ```cpp
+  std::istringstream lineStream(line);
+  int number;
+
+  if (!(lineStream >> number))
+  {
+      continue;  // Conversion failed
+  }
+
+  lineStream >> std::ws;
+
+  if (!lineStream.eof())
+  {
+      continue;  // Non-whitespace content remains
+  }
+  ```
+
+  - 🪝 Gotcha: Integer extraction alone can accept a numeric prefix. Checking the remaining input is what rejects `"42abc"`, `"3.14"`, and `"42 99"` while allowing surrounding whitespace.
+
+
+## ➗ Integer Division and Average Calculations
+
+- Dividing two integers performs integer division. Assigning the result to a `double` afterward does not restore the discarded fractional part.
+
+  ```cpp
+  double average = 7 / 2;  // Stores 3.0, not 3.5
+  ```
+
+  - 🪝 Gotcha: The destination variable’s type does not determine how the division on the right-hand side is performed.
+
+- Multiplication and division have equal precedence and group left to right. Therefore:
+
+  ```cpp
+  double calcAvg = calcTotal / lineCount * 1.0;
+  ```
+
+  groups as:
+
+  ```cpp
+  double calcAvg = (calcTotal / lineCount) * 1.0;
+  ```
+
+  - 🪝 Gotcha: Multiplying by `1.0` after integer division is too late. The fractional part has already been discarded.
+
+- Make either operand a floating-point value before division. Parenthesizing the denominator multiplication works:
+
+  ```cpp
+  double calcAvg = calcTotal / (lineCount * 1.0);
+  ```
+
+  An explicit conversion also works:
+
+  ```cpp
+  double calcAvg = static_cast<double>(calcTotal) / lineCount;
+  ```
+
+  - 🪝 Gotcha: The important distinction is not merely whether `1.0` appears somewhere in the expression. It must affect an operand before the division occurs.
+
+- Check that the count is nonzero before calculating an average:
+
+  ```cpp
+  if (lineCount == 0)
+  {
+      cerr << "No numbers to average.\n";
+      return 1;
+  }
+  ```
+
+  - 🪝 Gotcha: An empty file—or a file whose entries are all skipped—leaves no numbers to average. Handle that case before dividing.
+
+
+## 🛠️ Code Runner and Stale Temporary Files
+
+- In this debugging session, the stale temporary Code Runner file caused the displayed result not to reflect the updated source.
+  - 🪝 Gotcha: A correct source-code change can appear ineffective when a different or outdated file is being compiled or run. Verify the active source and execution target before repeatedly changing valid code.
+
+- This statement was valid in the shown location inside `main()`:
+
+  ```cpp
+  double calcAvg = calcTotal / (lineCount * 1.0);
+  ```
+
+  - 🪝 Gotcha: The reported “`lineCount` does not name a type” error did not match the valid statement being discussed. That mismatch was a clue to check the actual compilation target rather than assume the parentheses were wrong.
