@@ -32,6 +32,10 @@
 
     - Single quotes represent a character (`'Y'`), while double quotes represent a string literal (`"Y"`). Character-conversion functions such as `tolower()` require an individual character value rather than a string.
 
+    - A single character becomes a string through construction, such as `string(1, choice)`, rather than `static_cast<string>(choice)`. Formatted character input with `>>` skips whitespace, so detecting blank input requires a different input approach.
+
+    - `continue` skips the remaining statements in the current loop iteration, but the next step depends on the loop: a `do...while` checks its bottom condition, a `while` checks its top condition, and a conventional `for` executes its update expression before checking its condition. The loop body runs again only if the condition permits it.
+
     GitHub: https://github.com/codewizard13
  ************************************************************ */
 
@@ -113,44 +117,33 @@ int main()
     }
     cout << "- - - Reached End of file.\n";
 
-    char choice = 'y';
-    int count = 0;
+    string choice;
+    int count = 1;
 
-    /* WRITE TO OUT FILE */
+    cout << "  - Iteration number: " << count << endl;
+
     do
     {
-        // Increment count at the beginning of the do loop
-        count++;
-        cout << "Ran do loop " << count << " times.\n";
-
-        // TODO: Code goes here ********************
-
-        // Let user add another row or quit
         cout << "Add another? (y, n): ";
 
-        cout << "Choice was: " << (choice == ' ' ? "blank" : static_cast<string>(choice));
-
-        // If input ends or reading fails, stop
-        if (!(cin >> choice))
+        if (!getline(cin, choice))
         {
-            cout << "Error: input ended or reading failed.\n";
-            break;
+            break; // Exit if input cannot be read.
         }
 
-        // Safely ensure char is cast to a char? and tolower() -- Multiple nested static_casts doesn't make sense!??
-        choice = static_cast<char>( tolower(static_cast<unsigned char>(choice)) );
-        
-        if (choice == 'y')
+        // Only increment record count if choice was yes
+        if (choice == "y" || choice == "Y")
+        {
             cout << "Yes selected. Looping again.\n";
-        else if (choice != 'n')
+            count++;
+            cout << "  - Iteration number: " << count << endl;
+        }
+        else if (choice != "n" && choice != "N")
+        {
             cout << "Invalid choice. Please enter y or n.\n";
-        
+        }
 
-        // cout << "Please enter either 'y' or 'n'.\n";
+    } while (choice != "n" && choice != "N");
 
-    } while (tolower(choice) != 'n');
-
-    cout << "*********** End Program ************\n\n";
-
-    return 0;
+    cout << "You chose No and the program ended\n";
 }
