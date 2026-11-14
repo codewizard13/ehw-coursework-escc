@@ -119,14 +119,34 @@ int main()
     /* WRITE TO OUT FILE */
     do
     {
+        // Increment count at the beginning of the do loop
         count++;
         cout << "Ran do loop " << count << " times.\n";
+
+        // TODO: Code goes here ********************
+
+        // Let user add another row or quit
         cout << "Add another? (y, n): ";
 
+        cout << "Choice was: " << (choice == ' ' ? "blank" : static_cast<string>(choice));
+
+        // If input ends or reading fails, stop
         if (!(cin >> choice))
         {
-            cout << "Please enter either 'y' or 'n'.\n";
+            cout << "Error: input ended or reading failed.\n";
+            break;
         }
+
+        // Safely ensure char is cast to a char? and tolower() -- Multiple nested static_casts doesn't make sense!??
+        choice = static_cast<char>( tolower(static_cast<unsigned char>(choice)) );
+        
+        if (choice == 'y')
+            cout << "Yes selected. Looping again.\n";
+        else if (choice != 'n')
+            cout << "Invalid choice. Please enter y or n.\n";
+        
+
+        // cout << "Please enter either 'y' or 'n'.\n";
 
     } while (tolower(choice) != 'n');
 
