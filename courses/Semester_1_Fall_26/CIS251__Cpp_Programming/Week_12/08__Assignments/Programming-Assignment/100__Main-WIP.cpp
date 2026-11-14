@@ -21,12 +21,58 @@
  * @see https://github.com/codewizard13
  */
 
+/*
+ALGORITHM
+
+Create output filename
+
+Create output file stream
+  if fails, show error and return 1 (failure code)
+
+Write 5 contact records to ouput file
+
+Read the records back in the console
+
+*/
+
 #include <fstream>
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main()
 {
+
+  // Filename variables
+  string outputFilename = "records.txt";
+
+  ofstream oFile(outputFilename);
+
+  if (!oFile)
+  {
+    cerr << "Error: File " << outputFilename << " failed to open.\n";
+    return 1;
+  }
+
+  oFile << "Michael Jackson, mjackson@gmail.com" << endl;
+  oFile << "Scottie Pippin, greatscott91@yahoo.com" << endl;
+
+  ifstream iFile(outputFilename);
+
+  if (!iFile)
+  {
+    cerr << "Error: File " << outputFilename << " could not be read.\n";
+    return 1;
+  }
+
+  string fullName;
+  string email;
+
+  while ( getline(iFile, fullName, ',') &&
+          getline(iFile, email))
+  {
+    cout << "Name: " << fullName << " | Email: " << email << endl;
+  }
 
   return 0;
 }
