@@ -65,3 +65,11 @@
   The loop body runs again only if the condition permits it.
 
   - 🪝 Gotcha: `continue` does not jump directly to the first statement in the loop body. In a `do...while`, the bottom condition is still evaluated. If no statements remain before that condition, `continue` is unnecessary.
+
+
+- - - - - - - -
+
+## UNSORTED
+
+- File-output streams should be passed to functions by reference, such as `ofstream& file`, so the function uses the existing stream.
+  - 🪝 Gotcha: `ofstream file` attempts to copy the stream, but `ofstream` cannot be copied. The `&` belongs in the function parameter; the call remains `addRecord(name, amount, recordsFile)`.
