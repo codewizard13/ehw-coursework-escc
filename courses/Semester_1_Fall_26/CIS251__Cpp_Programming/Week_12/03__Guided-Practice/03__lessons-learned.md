@@ -12,5 +12,5 @@
 >
 > Week 12 Overview - Files, Streams, Persistence, and Program Testing
 
-# 🎓 Lessons Learned
+# 🎓 Lessons Learned > Guided Practice
 
