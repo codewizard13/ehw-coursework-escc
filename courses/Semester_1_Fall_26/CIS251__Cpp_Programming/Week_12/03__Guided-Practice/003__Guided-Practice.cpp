@@ -60,6 +60,7 @@ WRITE VALUES TO OUTPUT STREAM
 #include <cctype>
 using namespace std;
 
+bool openFileForRead(string filename, ifstream &file);
 bool readFileLineByLine(ifstream &file);
 bool addRecord(string full_name, double amount, ofstream &file);
 
@@ -83,25 +84,7 @@ int main()
 
     cout << "\n******** START PROGRAM *****************************************\n";
 
-    // Try to open file for read -- if that fails, give an error that the file couldn't be found
-    if (!existingRecords)
-    {
-        cout << "\nFile " << recordsFilename
-             << " could not be opened for reading, or may not exist.\n"
-             << "... attempting to create it ...\n\n";
-
-        // Print an error if we can't open or create the file and exit program
-        if (!recordsFile)
-        {
-            cerr << "Could not open or create "
-                 << recordsFilename << endl;
-            return 1;
-        }
-
-        // Otherwise, print success message
-        cout << "File " << recordsFilename << " opened or created sucessfully.\n"
-             << "Ready for writing in append mode.\n\n";
-    }
+    openFileForRead(recordsFilename, existingRecords);
 
     string line;
 
@@ -151,6 +134,32 @@ int main()
     return 0;
 }
 
+bool openFileForRead(string filename, ifstream &file)
+{
+
+    // Try to open file for read -- if that fails, give an error that the file couldn't be found
+    if (!file)
+    {
+        cout << "\nFile " << filename
+             << " could not be opened for reading, or may not exist.\n"
+             << "... attempting to create it ...\n\n";
+
+        // Print an error if we can't open or create the file and exit program
+        if (!recordsFile)
+        {
+            cerr << "Could not open or create "
+                 << filename << endl;
+            return false;
+        }
+
+        // Otherwise, print success message
+        cout << "File " << filename << " opened or created sucessfully.\n"
+             << "Ready for writing in append mode.\n\n";
+    }
+
+    return true;
+}
+
 bool readFileLineByLine(ifstream &file)
 {
 
@@ -169,7 +178,8 @@ bool addRecord(string full_name, double amount, ofstream &file)
 {
     cout << "Adding new record ...\n";
 
-    file << "\n" << full_name << " | " << amount << endl;
+    file << "\n"
+         << full_name << " | " << amount << endl;
 
     return true;
 }
