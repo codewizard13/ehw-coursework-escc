@@ -27,12 +27,8 @@
     - The steps were followed, but the topic and business domain concept
         were created by Eric Hepperle
 
-    Lessons Learned:
-    - Lesson learned: Include `<fstream>` and use `std::ofstream` so the compiler recognizes the file-output stream type; use `std::ios::app` when you want to append rather than overwrite.
-    
-    - getline() is necessary when reading values with space, and/or a different delimiter like `|`
-
-    - Lesson learned: When switching from `>>` to `getline()`, remember `std::ws`: `std::getline(inputFile >> std::ws, line);` removes leftover whitespace, including newlines, before reading the line. Reminder: `ws` skips all leading whitespace and blank lines—omit it when those must be preserved.
+    Lessons Learned: ./03__lessons-learned.md
+ 
 
     GitHub: https://github.com/codewizard13
  ************************************************************ */

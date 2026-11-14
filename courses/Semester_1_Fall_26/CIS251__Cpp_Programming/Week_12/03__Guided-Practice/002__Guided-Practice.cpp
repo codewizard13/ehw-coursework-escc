@@ -22,8 +22,8 @@
     - The steps were followed, but the topic and business domain concept
         were created by Eric Hepperle
 
-    Lessons Learned:
-    -
+    Lessons Learned: ./03__lessons-learned.md
+
 
     GitHub: https://github.com/codewizard13
  ************************************************************ */

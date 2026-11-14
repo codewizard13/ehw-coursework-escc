@@ -27,10 +27,8 @@
     - The steps were followed, but the topic and business domain concept
         were created by Eric Hepperle
 
-    Lessons Learned:
-    - `getline(stream >> ws, destination)` still requires a string destination; **`ws`** skips leading whitespace—it does not convert text to a number. It also skips blank lines, so use it only when that is intended.
+    Lessons Learned: ./03__lessons-learned.md
 
-    - `clear()` resets stream flags, `seekg()` repositions an open stream, and `open()` opens a file. You cannot rewind a closed file without reopening it. Your existing `ws` usage can stay—it skips the space after `|` before reading the amount.
 
     GitHub: https://github.com/codewizard13
  ************************************************************ */
