@@ -60,11 +60,7 @@ WRITE VALUES TO OUTPUT STREAM
 #include <cctype>
 using namespace std;
 
-bool addRecord(string full_name, double amount, ofstream& file)
-{
-
-    return true;
-}
+bool addRecord(string full_name, double amount, ofstream& file);
 
 string recordsFilename = "payment-records.txt";
 string missingFilename = "apples/missing-file.txt";
@@ -156,4 +152,11 @@ int main()
     cout << "\n******** END PROGRAM *******************************************\n";
 
     return 0;
+}
+
+
+bool addRecord(string full_name, double amount, ofstream& file)
+{
+
+    return true;
 }
