@@ -60,8 +60,8 @@ WRITE VALUES TO OUTPUT STREAM
 #include <cctype>
 using namespace std;
 
-bool readFileLineByLine(ifstream& file);
-bool addRecord(string full_name, double amount, ofstream& file);
+bool readFileLineByLine(ifstream &file);
+bool addRecord(string full_name, double amount, ofstream &file);
 
 string recordsFilename = "payment-records.txt";
 string missingFilename = "apples/missing-file.txt";
@@ -111,11 +111,6 @@ int main()
 
     cout << "\n======== READING existing records line by line ====\n";
 
-    // while (getline(existingRecords, line))
-    // {
-    //     cout << line << endl;
-    // }
-    // cout << "\nDone reading file.\n";
     readFileLineByLine(existingRecords);
 
     string choice;
@@ -156,7 +151,8 @@ int main()
     return 0;
 }
 
-bool readFileLineByLine(ifstream& file) {
+bool readFileLineByLine(ifstream &file)
+{
 
     string line;
 
@@ -169,10 +165,11 @@ bool readFileLineByLine(ifstream& file) {
     return true;
 }
 
-bool addRecord(string full_name, double amount, ofstream& file)
+bool addRecord(string full_name, double amount, ofstream &file)
 {
+    cout << "Adding new record ...\n";
 
-    // cout << "ofstream: " << file;
+    file << "\n" << full_name << " | " << amount << endl;
 
     return true;
 }
