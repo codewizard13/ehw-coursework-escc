@@ -60,17 +60,31 @@ WRITE VALUES TO OUTPUT STREAM
 #include <cctype>
 using namespace std;
 
+bool addRecord(string full_name, double amount, ofstream& file)
+{
+
+    return true;
+}
+
 string recordsFilename = "payment-records.txt";
 string missingFilename = "apples/missing-file.txt";
+
+/* DEFINE STREAMS */
+// Define filename where existing records should exist as a read stream
+ifstream existingRecords(recordsFilename);
+
+// Create file as ofstream with append to prevent erasing entire file.
+// - Append mode preserves existing contents if file exists.
+ofstream recordsFile(recordsFilename, ios::app);
+
+// Creat missing file by adding a nonexistent parent folder path
+//  for testing.
+ofstream missingFile(missingFilename);
 
 int main()
 {
 
     cout << "\n******** START PROGRAM *****************************************\n";
-
-
-    // Define filename where existing records should exist as a read stream
-    ifstream existingRecords(recordsFilename);
 
     // Try to open file for read -- if that fails, give an error that the file couldn't be found
     if (!existingRecords)
@@ -78,14 +92,6 @@ int main()
         cout << "\nFile " << recordsFilename
              << " could not be opened for reading, or may not exist.\n"
              << "... attempting to create it ...\n\n";
-
-        // Create file as ofstream with append to prevent erasing entire file.
-        // - Append mode preserves existing contents if file exists.
-        ofstream recordsFile(recordsFilename, ios::app);
-
-        // Creat missing file by adding a nonexistent parent folder path
-        //  for testing.
-        ofstream missingFile(missingFilename);
 
         // Print an error if we can't open or create the file and exit program
         if (!recordsFile)
@@ -104,11 +110,15 @@ int main()
 
     // Otherwise records file exists, so lets do something with it
     // first, let's read the current contents, line by line
+    cout << "File " << recordsFilename << " opened sucessfully.\n";
+
+    cout << "\n======== READING existing records line by line ====\n";
+
     while (getline(existingRecords, line))
     {
         cout << line << endl;
     }
-    cout << "- - - Reached End of file.\n";
+    cout << "\nDone reading file.\n";
 
     string choice;
     int count = 1;
@@ -130,6 +140,9 @@ int main()
             cout << "Yes selected. Looping again.\n";
             count++;
             cout << "  - Iteration number: " << count << endl;
+
+            // ADD THE RECORD
+            addRecord("Appleby Johsnon", 42.50, recordsFile);
         }
         else if (choice != "n" && choice != "N")
         {
@@ -141,7 +154,6 @@ int main()
     cout << "You chose No and the program ended\n";
 
     cout << "\n******** END PROGRAM *******************************************\n";
-
 
     return 0;
 }
