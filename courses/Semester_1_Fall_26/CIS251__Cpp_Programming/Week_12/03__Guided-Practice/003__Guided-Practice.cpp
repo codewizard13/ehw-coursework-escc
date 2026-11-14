@@ -66,6 +66,9 @@ string missingFilename = "apples/missing-file.txt";
 int main()
 {
 
+    cout << "\n******** START PROGRAM *****************************************\n";
+
+
     // Define filename where existing records should exist as a read stream
     ifstream existingRecords(recordsFilename);
 
@@ -136,4 +139,9 @@ int main()
     } while (choice != "n" && choice != "N");
 
     cout << "You chose No and the program ended\n";
+
+    cout << "\n******** END PROGRAM *******************************************\n";
+
+
+    return 0;
 }
