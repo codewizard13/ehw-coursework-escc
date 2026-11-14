@@ -22,27 +22,31 @@
  */
 
 /*
-ALGORITHM
+ALGORITHM — CONTACT LIST
 
-Set the contact filename.
+Set the output and input filenames.
 
-Open the file for writing.
+Open the output file.
 If opening fails:
-    Display an error.
-    End with failure status.
+    Display an output-opening error.
+    Return failure.
 
-Write five contact records.
+Write the contact records.
 Close the output file.
+If writing or closing failed:
+    Display an output error.
+    Return failure.
 
-Open the same file for reading.
+Open the input file.
 If opening fails:
-    Display an error.
-    End with failure status.
+    Display an input-opening error.
+    Return failure.
 
-While both a comma-delimited name and the remaining email can be read:
+While a comma-delimited name and its email can be read:
     Display the name and email.
 
-End with success status.
+Close the input file.
+Return success.
 
 */
 
@@ -51,10 +55,12 @@ End with success status.
 #include <string>
 using namespace std;
 
+bool writeRecord(ofstream &file, string fullName, string email);
+bool readFile(ifstream &file, string filename);
+
 int main()
 {
 
-  // Filename variables
   string outputFilename = "records.txt";
 
   ofstream oFile(outputFilename);
@@ -69,13 +75,29 @@ int main()
   oFile << "Michael Jackson, mjackson@gmail.com" << endl;
   oFile << "Scottie Pippin, greatscott91@yahoo.com" << endl;
 
+  writeRecord(oFile, "Janet Jackson", "imjanet@aol.com");
+
   oFile.close();
 
   ifstream iFile(outputFilename);
 
-  if (!iFile)
+  readFile(iFile, outputFilename);
+
+  return 0;
+}
+
+bool writeRecord(ofstream &file, string fullName, string email)
+{
+  file << fullName << ", " << email << endl;
+  return true;
+}
+
+bool readFile(ifstream &file, string filename = "")
+{
+
+  if (!file)
   {
-    cerr << "Error: File " << outputFilename
+    cerr << "Error: File " << filename
          << " could not be opened for reading.\n";
     return 1;
   }
@@ -83,13 +105,13 @@ int main()
   string fullName;
   string email;
 
-  while ( getline(iFile, fullName, ',') &&
-          getline(iFile, email))
+  while (getline(file, fullName, ',') &&
+         getline(file, email))
   {
     cout << "Name: " << fullName << " | Email: " << email << endl;
   }
-  
-  iFile.close();
 
-  return 0;
+  file.close();
+
+  return true;
 }
