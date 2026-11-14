@@ -24,14 +24,25 @@
 /*
 ALGORITHM
 
-Create output filename
+Set the contact filename.
 
-Create output file stream
-  if fails, show error and return 1 (failure code)
+Open the file for writing.
+If opening fails:
+    Display an error.
+    End with failure status.
 
-Write 5 contact records to ouput file
+Write five contact records.
+Close the output file.
 
-Read the records back in the console
+Open the same file for reading.
+If opening fails:
+    Display an error.
+    End with failure status.
+
+While both a comma-delimited name and the remaining email can be read:
+    Display the name and email.
+
+End with success status.
 
 */
 
@@ -50,18 +61,22 @@ int main()
 
   if (!oFile)
   {
-    cerr << "Error: File " << outputFilename << " failed to open.\n";
+    cerr << "Error: File " << outputFilename
+         << " could not be written or closed successfully.\n";
     return 1;
   }
 
   oFile << "Michael Jackson, mjackson@gmail.com" << endl;
   oFile << "Scottie Pippin, greatscott91@yahoo.com" << endl;
 
+  oFile.close();
+
   ifstream iFile(outputFilename);
 
   if (!iFile)
   {
-    cerr << "Error: File " << outputFilename << " could not be read.\n";
+    cerr << "Error: File " << outputFilename
+         << " could not be opened for reading.\n";
     return 1;
   }
 
@@ -73,6 +88,8 @@ int main()
   {
     cout << "Name: " << fullName << " | Email: " << email << endl;
   }
+  
+  iFile.close();
 
   return 0;
 }
