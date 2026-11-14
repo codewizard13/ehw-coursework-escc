@@ -73,3 +73,25 @@
 
 - File-output streams should be passed to functions by reference, such as `ofstream& file`, so the function uses the existing stream.
   - 🪝 Gotcha: `ofstream file` attempts to copy the stream, but `ofstream` cannot be copied. The `&` belongs in the function parameter; the call remains `addRecord(name, amount, recordsFile)`.
+
+
+
+- **Declaration / prototype**: A declaration introduces the function’s name, return type, and parameter types to the compiler; tells the compiler **how the function can be called**, but does not provide its implementation, A standalone declaration like this is commonly called a **function prototype**:
+
+    ```cpp
+    bool addRecord(string full_name, double amount, ofstream& file);
+    ```
+
+- A **function definition** supplies the function body—the code executed when the function is called. Your current body simply returns `true`; it does not yet add a record.
+
+    ```cpp
+    bool addRecord(string full_name, double amount, ofstream& file)
+    {
+        // Record-writing code will go here.
+        return true;
+    }
+    ```
+  - 🪝 Gotcha: An unfinished body is still a body. “Not implemented yet” does not mean “only a prototype.”
+    - Ends with `;` instead of a body → declaration/prototype.
+    - Includes `{ ... }` → definition, even when the body is only placeholder code.
+    - Adding `{ return true; }` makes it a definition with a placeholder body—not a prototype waiting to be completed.
