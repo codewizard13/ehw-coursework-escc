@@ -62,15 +62,41 @@ int main()
 {
   cout << "******** START PROGRAM *****************************************\n";
 
+  // Filename Variables
   string outputFilename = "contacts-list.txt";
+  string backupFilename = "bkp_contacts.txt";
 
-  // Open output file in append mode to prevent overwriting existing records
-  ofstream oFile(outputFilename, ios::app);
+  // Stream Variables
+  ifstream iFile;
+  ofstream oFile;
+
+  string answer;
+
+  // Let user choose whether to reset the contact-list.txt file or continue
+  //   with the existing data.
+  cout << "Clear all data in " << outputFilename << " before testing starts? (y, n): ";
+
+  while (!(cin >> answer) ||
+         (answer != "y" && answer != "n"))
+  {
+    cerr << "You must enter y (yes) or n (no) to continue: ";
+  }
+
+  if (answer == "y")
+  {
+    cout << "Clearing/deleting the contents of " << outputFilename << " to start fresh." << endl;
+    ofstream oFile(outputFilename);
+  }
+  else
+  {
+    // Open output file in append mode to prevent overwriting existing records
+    ofstream oFile(outputFilename, ios::app);
+  }
 
   if (!oFile)
   {
     cerr << "Error: File " << outputFilename
-         << " could not be written or closed successfully.\n";
+         << " could not be opened for writing.\n";
     return 1;
   }
 
@@ -85,20 +111,60 @@ int main()
 
   // TEST 2: Print the contacts from the file to the console
   cout << "\n============ TEST CASE: 2 ============\n";
+  cout << "... Reading " << outputFilename << ": " << endl;
 
   ifstream iFile(outputFilename);
 
-  readFile(iFile, outputFilename);
+  if (!readFile(iFile, outputFilename))
+  {
+    iFile.close();
+    return 1;
+  }
 
   iFile.close();
 
-  // TEST 3: Write a single record - it should append to the end and not
-  //    blank out the existing records.
+  // TEST 3: Attempt to write a single record in append mode, without
+  //   resetting / opening the file for write (remember we closed
+  //   oFile earlier).
+  //
+  // Expect: Errors for outfile not open and file couldnt be opened
+  //   for reading.
   cout << "\n============ TEST CASE: 3 ============\n";
-
+  cout << "... This test expects several failures: " << endl;
   writeRecord(oFile, "James Brown", "funkfather@gmail.com");
 
   readFile(iFile, outputFilename);
+
+  // TEST 4: Write a single record - it should append to the end and not
+  //    blank out the existing records.
+  cout << "\n============ TEST CASE: 4 ============\n";
+  cout << "This test appends a single record to the end of the existing list,\n";
+  cout << " demonstating data persistence.\n";
+  oFile.open(outputFilename, ios::app);
+
+  writeRecord(oFile, "James Brown", "funkfather@gmail.com");
+  oFile.close();
+
+  // Q: Do I have to close oFile here before I can open iFiel? NOPE!
+
+  iFile.open(outputFilename);
+  readFile(iFile, outputFilename);
+  iFile.close();
+
+  // TEST 5: Clone the output file using binary mode and rdbuf()
+  cout << "\n============ TEST CASE: 5 ============\n";
+  cout << "Cloning " << outputFilename << " to " << backupFilename << endl;
+
+  iFile.open(outputFilename, ios::binary);
+  ofstream dest(backupFilename, ios::binary);
+
+  // Copy entire stream buffer in one line
+  dest << iFile.rdbuf();
+  dest.close();
+  iFile.close();
+
+  // TEST 6: Make the file blank to reset for next run
+  cout << "\n============ TEST CASE: 6 ============\n";
 
   cout << "\n******** END PROGRAM *******************************************\n";
 
@@ -107,33 +173,41 @@ int main()
 
 bool writeRecord(ofstream &file, string fullName, string email)
 {
-    if (!file.is_open())
-    {
-        cerr << "Error: Output file is not open.\n";
-        return false;
-    }
+  if (!file.is_open())
+  {
+    cerr << "Error: Output file could not be opened.\n";
+    return false;
+  }
 
-    if (!file)
-    {
-        cerr << "Error: Output stream is in a failure state.\n";
-        return false;
-    }
+  if (!file)
+  {
+    cerr << "Error: Output stream is in a failure state.\n";
+    return false;
+  }
 
-    file << fullName << ", " << email << endl;
+  file << fullName << ", " << email << endl;
 
-    if (!file)
-    {
-        cerr << "Error: Contact could not be written.\n";
-        return false;
-    }
+  if (!file)
+  {
+    cerr << "Error: Contact could not be written.\n";
+    return false;
+  }
 
-    cout << "... wrote record for: " << fullName << endl;
+  cout << "... wrote record for: " << fullName << endl;
 
-    return true;
+  return true;
 }
 
 bool readFile(ifstream &file, string filename = "")
 {
+
+  if (!file.is_open())
+  {
+    cerr << "Error: Input file " << filename
+         << " is not open.\n";
+    return false;
+  }
+
   // Check whether the stream reports any failures.
   if (!file)
   {
@@ -150,8 +224,6 @@ bool readFile(ifstream &file, string filename = "")
   {
     cout << "Name: " << fullName << " | Email: " << email << endl;
   }
-
-  file.close();
 
   return true;
 }
