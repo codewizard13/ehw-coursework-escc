@@ -9,7 +9,7 @@
 
 ## 📋 Initial Design and Planning
 
-I planned a program that writes hard-coded contact records to a text file, closes the file, and reads the records back for display. I figured some operations should be converted to reusablefunction, but I didn't know what to encapsulate until I had written the first draft. Ultimately I created helper functions for write file and read file functions because of all the validations needed, for better code organization.
+I planned a program that writes hard-coded contact records to a text file, closes the file, and reads the records back for display. I figured some operations should be converted to reusable functions, but I didn't know what to encapsulate until I had written the first draft. Ultimately I created helper functions for write/read file operations, as well as a yes-no choice picker because of all the validations needed, for better code organization.
 
 - Used a comma to separate each contact’s name and email.
 - Chose hard-coded test operations so the instructor could run the demonstrations without editing the source.
@@ -60,7 +60,6 @@ I planned a program that writes hard-coded contact records to a text file, close
 - Added checks for backup file opening and output completion.
 - Created `test_empty.txt` to exercise reading a file containing zero contacts.
 - Displayed PASS or FAIL based on the empty-file reading function’s returned value.
-- Replaced the unused cleanup-test placeholder with the empty-file case.
 
 ## 🔧 Troubleshooting and Lessons Learned
 
@@ -94,8 +93,6 @@ Actual results and pass/fail decisions belong in the test table after running th
 ## 🧹 Documentation and Remaining Cleanup
 
 - Updated the algorithm to include the startup choice, helper functions, backup, and empty-file demonstration.
-- Kept algorithm descriptions consistent with implemented checks rather than proposed improvements.
-- Identified that the empty-file “Verified” message is unconditional and should not be treated as an automated check of console output.
-- Retained manual inspection for contact contents and backup equality.
+
 
 ---
