@@ -1,10 +1,10 @@
 # C++ Reading From File
 
-[Previous](/cplusplus/cpp_files_streams.htm) | 
-[Quiz](/cplusplus/quiz_on_cpp_reading_from_file.htm "Practice Quiz on C++ Reading From File") | 
-[Next](/cplusplus/cpp_exceptions_handling.htm)
+[Previous](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm) | 
+[Quiz](https://www.tutorialspoint.com/cplusplus/quiz_on_cpp_reading_from_file.htm "Practice Quiz on C++ Reading From File") | 
+[Next](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)
 
-File I/O (Input/Output) in C++ is the process of reading and writing to files. C++ provides this for handling files through the standard library with <fstream> header file. [File I/O](/cplusplus/cpp_files_streams.htm) allows programs to persist data, interact with external resources, and store/retrieve information beyond the scope of program execution.
+File I/O (Input/Output) in C++ is the process of reading and writing to files. C++ provides this for handling files through the standard library with `<fstream>` header file. [File I/O](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm) allows programs to persist data, interact with external resources, and store/retrieve information beyond the scope of program execution.
 
 ## Types of File Streams
 
@@ -12,7 +12,7 @@ There are three primary types of file streams, where each is associated with dif
 
 *   **ifstream (Input File Stream)** − This is used for reading data from a file.
 *   **ofstream (Output File Stream)** − This is used for writing data to a file.
-*   [**fstream (File Stream)**](/cpp_standard_library/fstream.htm) − This is used for both input and output operations on a file. It combines the functionality of both ifstream and ofstream.
+*   [**fstream (File Stream)**](https://www.tutorialspoint.com/cpp_standard_library/fstream.htm) − This is used for both input and output operations on a file. It combines the functionality of both ifstream and ofstream.
 
 ## Basic Steps in File I/O
 
@@ -28,16 +28,17 @@ You can read from or write to a file using the appropriate methods.
 
 ### Closing the File
 
-After the file operations are completed, you should close the file to make sure that all data is flushed and the file is properly released.
+After the file operations are completed, ***you should close the file to make sure that all data is flushed and the file is properly released.***
 
 ## Reading with ifstream (Stream Extraction Operator)
 
-Using stream extraction operator (>>) is the simplest way to read data from a file in C++. This operator reads formatted data from a file, similar to how data is read from standard input.
+Using stream extraction operator (`>>`) is the simplest way to read data from a file in C++. This operator reads formatted data from a file, similar to how data is read from standard input.
 
 ### Example
 
 Heres the given example for Reading with ifstream −
 
+```cpp
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -57,19 +58,21 @@ int main() {
    inputFile.close();  // Close the file when done
    return 0;
 }
+```
 
-Here, The >> operator reads data word by word, stopping at whitespace (spaces, newlines, etc.).
+Here, The `>>` operator reads data word by word, stopping at whitespace (spaces, newlines, etc.).
 
 But it doesn't handle reading lines of text (as it stops at whitespace), and it can be tricky for reading complex data formats (like lines containing spaces).
 
 ## Using getline() to Read Lines
 
-If you want to read an entire line or text, including steps you can use the getline() function. This function will read characters from the file until a newline character ('\\n') is encountered.
+If you want to read an entire line or text, including steps you can use the getline() function. This function will read characters from the file until a newline character ('`\n`') is encountered.
 
 ### Example
 
-Heres the given example for using getline() to read lines −
+Heres the given example for using `getline()` to read lines −
 
+```cpp
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -89,15 +92,17 @@ int main() {
    inputFile.close();  // Close the file when done
    return 0;
 }
+```
 
 ## Reading Binary Files (using read())
 
-The above discussed methods are for text files, for binary files you can use the read() function to read raw binary data from a file.
+The above discussed methods are for text files, for binary files you can use the `read()` function to read raw binary data from a file.
 
 ### Example
 
-Heres the given example for Reading Binary Files (using [read()](/cpp_standard_library/cpp_basic_ios_read.htm)) −
+Heres the given example for Reading Binary Files (using [read()](https://www.tutorialspoint.com/cpp_standard_library/cpp_basic_ios_read.htm)) −
 
+```cpp
 #include <iostream>
 #include <fstream>
 
@@ -128,6 +133,7 @@ int main() {
    file.close();
    return 0;
 }
+```
 
 ## Handling Errors in File I/O
 
@@ -143,7 +149,7 @@ C++ provides several member functions of the ifstream/ofstream objects to check 
 
 ### Handling End-of-File (EOF)
 
-When reading from a file, it's important to handle the case when you reach the end of the file. The standard approach is to use **[eof()](/cpp_standard_library/cpp_ios_event_eof.htm) or [std::getline()](/cpp_standard_library/cpp_basic_ios_getline.htm)** operators, which automatically stop when the end of the file is reached.
+When reading from a file, it's important to handle the case when you reach the end of the file. The standard approach is to use **[eof()](https://www.tutorialspoint.com/cpp_standard_library/cpp_ios_event_eof.htm) or [std::getline()](https://www.tutorialspoint.com/cpp_standard_library/cpp_basic_ios_getline.htm)** operators, which automatically stop when the end of the file is reached.
 
 ### Handling I/O Errors Gracefully
 

@@ -33,9 +33,9 @@ Use `cout` to print values at different points in your code to see what's going 
 
 int x = 10;  
 int y = 0;  
-cout << "Before division\\n"; // Debug output  
+cout << "Before division\n"; // Debug output  
 int z = x / y; // Crashes!  
-cout << "After division\\n"; // Never runs
+cout << "After division\n"; // Never runs
 
 If you don't see "After division", the program crashed at `x / y`.
 
@@ -48,7 +48,7 @@ Print variables to see if they are what you expect:
 int x = 10;  
 int y = 5;  
 int result = x - y;  
-cout << "Result: " << result << "\\n"; // Result: 5
+cout << "Result: " << result << "\n"; // Result: 5
 
 Expected 15? That means the logic is wrong: try using `x + y` instead.
 

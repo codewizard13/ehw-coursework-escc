@@ -57,7 +57,7 @@ try {
   }  
 }  
 catch (int myNum) {  
-  cout << "Access denied - You must be at least 18 years old.\\n";  
+  cout << "Access denied - You must be at least 18 years old.\n";  
   cout << "Age is: " << myNum;  
 }
 
@@ -90,7 +90,7 @@ try {
   }  
 }  
 catch (int myNum) {  
-  cout << "Access denied - You must be at least 18 years old.\\n";  
+  cout << "Access denied - You must be at least 18 years old.\n";  
   cout << "Error number: " << myNum;  
 }
 
@@ -119,7 +119,7 @@ try {
   }  
 }  
 catch (...) {  
-  cout << "Access denied - You must be at least 18 years old.\\n";  
+  cout << "Access denied - You must be at least 18 years old.\n";  
 }
 
 [Try it Yourself »](trycpp.asp?filename=demo_try_catch_dots)
