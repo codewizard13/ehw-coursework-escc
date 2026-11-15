@@ -41,9 +41,11 @@ You can combine two or more of these values by **OR**ing them together. For exam
 ```cpp
 ofstream outfile;
 outfile.open("file.dat", ios::out | ios::trunc );
+```
 
 Similar way, you can open a file for reading and writing purpose as follows −
 
+```cpp
 fstream  afile;
 afile.open("file.dat", ios::out | ios::in );
 ```
@@ -76,7 +78,7 @@ Following is the C++ program which opens a file in reading and writing mode. Aft
 using namespace std;
  
 int main () {
-   char data\[100\];
+   char data[100];
 
    // open a file in write mode.
    ofstream outfile;
