@@ -66,7 +66,7 @@ But it doesn't handle reading lines of text (as it stops at whitespace), and it 
 
 ## Using getline() to Read Lines
 
-If you want to read an entire line or text, including steps you can use the getline() function. This function will read characters from the file until a newline character ('`\n`') is encountered.
+If you want to read an entire line or text, including steps you can use the **`getline()`** function. This function will read characters from the file until a newline character ('`\n`') is encountered.
 
 ### Example
 
@@ -117,15 +117,15 @@ int main() {
 
    // Get the length of the file
    file.seekg(0, std::ios::end);
-   std::streamsize size \= file.tellg();
+   std::streamsize size = file.tellg();
    file.seekg(0, std::ios::beg);
 
    // Read the entire file content into a buffer
-   char* buffer \= new char[size];
+   char* buffer = new char[size];
    file.read(buffer, size);
 
    // Print raw data (optional, for demonstration)
-   for (std::streamsize i \= 0; i < size; ++i) {
+   for (std::streamsize i = 0; i < size; ++i) {
       std::cout << std::hex << (0xFF & buffer[i]) << " ";  // Print byte in hex
    }
 
