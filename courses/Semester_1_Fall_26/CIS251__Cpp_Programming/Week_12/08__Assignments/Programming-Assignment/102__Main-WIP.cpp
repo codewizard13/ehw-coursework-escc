@@ -149,23 +149,22 @@ int main()
   readFile(iFile, outputFilename);
   iFile.close();
 
-
-
-
   // TEST 5: Clone the output file using binary mode and rdbuf()
   cout << "\n============ TEST CASE: 5 ============\n";
   cout << "Cloning " << outputFilename << " to " << backupFilename << endl;
 
   iFile.open(outputFilename, ios::binary);
 
-  if (!iFile) {
+  if (!iFile)
+  {
     cerr << "Error: Could not open the source file for backup.\n";
     return 1;
   }
 
   ofstream dest(backupFilename, ios::binary);
 
-  if (!dest) {
+  if (!dest)
+  {
     cerr << "Error: Could not open the backup file.\n";
     return 1;
   }
@@ -176,14 +175,11 @@ int main()
   dest.close();
   iFile.close();
 
-  if (!dest) {
+  if (!dest)
+  {
     cerr << "Error: Backup output did not complete successfully.\n";
     return 1;
   }
-
-
-
-
 
   // TEST 6: Read an empty file.
   //   - Verify that an empty file opens successfully, produces no contact
@@ -224,14 +220,13 @@ int main()
   if (result)
   {
     cout << "PASS: readFile accepted the empty file.\n";
+    cout << "Verified: " << emptyFilename << " opened successfully, produced "
+         << " no contact output, and let readFile() return normally.\n";
   }
   else
   {
     cout << "FAIL: readFile rejected the empty file.\n";
   }
-
-  cout<< "Verified: " << emptyFilename << " opened successfully, produced "
-      << " no contact output, and let readFile() return normally.\n";
 
   cout << "\n******** END PROGRAM *******************************************\n";
 
