@@ -57,6 +57,7 @@ using namespace std;
 
 bool writeRecord(ofstream &file, string fullName, string email);
 bool readFile(ifstream &file, string filename);
+bool getYesNo(string prompt, string &answer);
 
 int main()
 {
@@ -74,23 +75,20 @@ int main()
 
   // Let user choose whether to reset the contact-list.txt file or continue
   //   with the existing data.
-  cout << "Clear all data in " << outputFilename << " before testing starts? (y, n): ";
-
-  while (!(cin >> answer) ||
-         (answer != "y" && answer != "n"))
-  {
-    cerr << "You must enter y (yes) or n (no) to continue: ";
+  if (!getYesNo("Clear existing contacts before testing (y, n):", answer)) {
+    cerr << "Error: Could not read your response\n";
+    return 1;
   }
 
   if (answer == "y")
   {
     cout << "Clearing/deleting the contents of " << outputFilename << " to start fresh." << endl;
-    ofstream oFile(outputFilename);
+    oFile.open(outputFilename);
   }
   else
   {
     // Open output file in append mode to prevent overwriting existing records
-    ofstream oFile(outputFilename, ios::app);
+    oFile.open(outputFilename, ios::app);
   }
 
   if (!oFile)
@@ -113,7 +111,7 @@ int main()
   cout << "\n============ TEST CASE: 2 ============\n";
   cout << "... Reading " << outputFilename << ": " << endl;
 
-  ifstream iFile(outputFilename);
+ iFile.open(outputFilename);
 
   if (!readFile(iFile, outputFilename))
   {
@@ -226,4 +224,21 @@ bool readFile(ifstream &file, string filename = "")
   }
 
   return true;
+}
+
+bool getYesNo(string prompt, string &answer)
+{
+    cout << prompt;
+
+    while (cin >> answer)
+    {
+        if (answer == "y" || answer == "n")
+        {
+            return true;
+        }
+
+        cerr << "Please enter y or n: ";
+    }
+
+    return false;
 }
