@@ -1,14 +1,8 @@
 # C++ Files and Streams
 
-- - -
-
-- - -
-
-[Previous(https://www.tutorialspoint.com/cplusplus/cpp_behavioural_design_patterns.htm)
-
-[Quiz(https://www.tutorialspoint.com/cplusplus/quiz_on_cpp_files_streams.htm "Practice Quiz on C++ Files and Streams")
-
-[Next(https://www.tutorialspoint.com/cplusplus/cpp_reading_from_file.htm)
+[Previous](https://www.tutorialspoint.com/cplusplus/cpp_behavioural_design_patterns.htm) | 
+[Quiz](https://www.tutorialspoint.com/cplusplus/quiz_on_cpp_files_streams.htm "Practice Quiz on C++ Files and Streams") | 
+[Next](https://www.tutorialspoint.com/cplusplus/cpp_reading_from_file.htm)
 
 So far, we have been using the **iostream** standard library, which provides **cin** and **cout** methods for reading from standard input and writing to standard output respectively.
 
@@ -18,17 +12,19 @@ This tutorial will teach you how to read and write from a file. This requires an
 | --- | --- |
 | 1   | **ofstream**<br><br>This data type represents the output file stream and is used to create files and to write information to files. |
 | 2   | **ifstream**<br><br>This data type represents the input file stream and is used to read information from files. |
-| 3   | [**fstream**](/cpp_standard_library/fstream.htm)<br><br>This data type represents the file stream generally, and has the capabilities of both ofstream and ifstream which means it can create files, write information to files, and read information from files. |
+| 3   | [**fstream**](https://www.tutorialspoint.com/cpp_standard_library/fstream.htm)<br><br>This data type represents the file stream generally, and has the capabilities of both ofstream and ifstream which means it can create files, write information to files, and read information from files. |
 
-To perform file processing in C++, header files <iostream> and <fstream> must be included in your C++ source file.
+To perform file processing in C++, header files `<iostream>` and `<fstream>` must be included in your C++ source file.
 
 ## Opening a File
 
 A file must be opened before you can read from it or write to it. Either **ofstream** or **fstream** object may be used to open a file for writing. And ifstream object is used to open a file for reading purpose only.
 
-Following is the standard syntax for [open() function](/cpp_standard_library/cpp_fstream_open.htm), which is a member of fstream, ifstream, and ofstream objects.
+Following is the standard syntax for [open() function](https://www.tutorialspoint.com/cpp_standard_library/cpp_fstream_open.htm), which is a member of fstream, ifstream, and ofstream objects.
 
+```cpp
 void open(const char \*filename, ios::openmode mode);
+```
 
 Here, the first argument specifies the name and location of the file to be opened and the second argument of the **open()** member function defines the mode in which the file should be opened.
 
@@ -42,6 +38,7 @@ Here, the first argument specifies the name and location of the file to be opene
 
 You can combine two or more of these values by **OR**ing them together. For example if you want to open a file in write mode and want to truncate it in case that already exists, following will be the syntax −
 
+```cpp
 ofstream outfile;
 outfile.open("file.dat", ios::out | ios::trunc );
 
@@ -49,27 +46,31 @@ Similar way, you can open a file for reading and writing purpose as follows −
 
 fstream  afile;
 afile.open("file.dat", ios::out | ios::in );
+```
 
 ## Closing a File
 
 When a C++ program terminates it automatically flushes all the streams, release all the allocated memory and close all the opened files. But it is always a good practice that a programmer should close all the opened files before program termination.
 
-Following is the standard syntax for [close() function](/cpp_standard_library/cpp_fstream_close.htm), which is a member of fstream, ifstream, and ofstream objects.
+Following is the standard syntax for [close() function](https://www.tutorialspoint.com/cpp_standard_library/cpp_fstream_close.htm), which is a member of fstream, ifstream, and ofstream objects.
 
+```cpp
 void close();
+```
 
 ## Writing to a File
 
-While doing C++ programming, you write information to a file from your program using the stream insertion operator (<<) just as you use that operator to output information to the screen. The only difference is that you use an **ofstream** or **fstream** object instead of the **cout** object.
+While doing C++ programming, you write information to a file from your program using the **stream insertion operator** (`<<`) just as you use that operator to output information to the screen. The only difference is that you use an **ofstream** or **fstream** object instead of the **cout** object.
 
 ## Reading from a File
 
-You read information from a file into your program using the stream extraction operator (>>) just as you use that operator to input information from the keyboard. The only difference is that you use an **ifstream** or **fstream** object instead of the **cin** object.
+You read information from a file into your program using the **stream extraction operator** (`>>`) just as you use that operator to input information from the keyboard. The only difference is that you use an **ifstream** or **fstream** object instead of the **cin** object.
 
 ## Read and Write Example
 
 Following is the C++ program which opens a file in reading and writing mode. After writing information entered by the user to a file named afile.dat, the program reads information from the file and outputs it onto the screen −
 
+```cpp
 #include <fstream>
 #include <iostream>
 using namespace std;
@@ -117,9 +118,11 @@ int main () {
 
    return 0;
 }
+```
 
 When the above code is compiled and executed, it produces the following sample input and output −
 
+```sh
 $./a.out
 Writing to the file
 Enter your name: Zara
@@ -127,17 +130,19 @@ Enter your age: 9
 Reading from the file
 Zara
 9
+```
 
-Above examples make use of additional functions from cin object, like getline() function to read the line from outside and ignore() function to ignore the extra characters left by previous read statement.
+Above examples make use of additional functions from cin object, like `getline()` function to read the line from outside and `ignore()` function to ignore the extra characters left by previous read statement.
 
 ## File Position Pointers
 
-Both **istream** and **ostream** provide member functions for repositioning the file-position pointer. These member functions are **seekg** ("seek get") for istream and **seekp** ("seek put") for ostream.
+Both **istream** and **ostream** provide member functions for repositioning the **file-position pointer**. These member functions are **`seekg`** ("seek get") for istream and **`seekp`** ("seek put") for ostream.
 
 The argument to seekg and seekp normally is a long integer. A second argument can be specified to indicate the seek direction. The seek direction can be **ios::beg** (the default) for positioning relative to the beginning of a stream, **ios::cur** for positioning relative to the current position in a stream or **ios::end** for positioning relative to the end of a stream.
 
 The file-position pointer is an integer value that specifies the location in the file as a number of bytes from the file's starting location. Some examples of positioning the "get" file-position pointer are −
 
+```cpp
 // position to the nth byte of fileObject (assumes ios::beg)
 fileObject.seekg( n );
 
@@ -149,3 +154,4 @@ fileObject.seekg( n, ios::end );
 
 // position at end of fileObject
 fileObject.seekg( 0, ios::end );
+```
