@@ -6,8 +6,10 @@ To use the `fstream` library, include both the standard `<iostream>` **AND** the
 
 ### Example
 
+```cpp
 #include <iostream>  
 #include <fstream>
+```
 
 There are three classes included in the `fstream` library, which are used to create, write or read files:
 
@@ -27,6 +29,7 @@ To write to the file, use the insertion operator (`<<`).
 
 ### Example
 
+```cpp
 #include <iostream>  
 #include <fstream>  
 using namespace std;  
@@ -41,18 +44,11 @@ int main() {
   // Close the file  
   MyFile.close();  
 }
+```
 
 #### Why do we close the file?
 
-It is considered good practice, and it can clean up unnecessary memory space.
-
-- - -
-
-Ad
-
-[REMOVE ADS](https://order.w3schools.com/plans)
-
-- - -
+It is considered **good practice**, and it can **clean up unnecessary memory space**.
 
 ## Read a File
 
@@ -62,6 +58,7 @@ Note that we also use a `while` loop together with the `getline()` function (whi
 
 ### Example
 
+```cpp
 // Create a text string, which is used to output the text file  
 string myText;  
   
@@ -76,34 +73,9 @@ while (getline (MyReadFile, myText)) {
   
 // Close the file  
 MyReadFile.close();
+```
 
-[Run example »](showcpp.asp?filename=demo_files_read)
-
-- - -
-
-## Exercise?**What is this?**  
-Test your skills by answering a few questions about the topics of this page
-
-Which C++ library allows us to work with files?
-
-  
-
-filestreams
-
-fstream
-
-string
-
-vector
-
-  
-Submit Answer »
-
-- - -
-
-## Complete <fstream> Reference
-
-For a complete reference of <fstream> classes and functions, go to our [C++ fstream Reference](cpp_ref_fstream.asp).
+For a complete reference of <fstream> classes and functions, go to our [C++ fstream Reference](https://w3schools.com/cpp/cpp_ref_fstream.asp).
 
 - - -
 

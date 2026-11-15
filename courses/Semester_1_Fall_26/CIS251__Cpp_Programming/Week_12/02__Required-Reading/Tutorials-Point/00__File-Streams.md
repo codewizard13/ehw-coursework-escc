@@ -90,7 +90,7 @@ int main () {
    outfile << data << endl;
 
    cout << "Enter your age: "; 
-   cin \>> data;
+   cin >> data;
    cin.ignore();
    
    // again write inputted data into the file.
@@ -104,13 +104,13 @@ int main () {
    infile.open("afile.dat"); 
  
    cout << "Reading from the file" << endl; 
-   infile \>> data; 
+   infile >> data; 
 
    // write the data at the screen.
    cout << data << endl;
    
    // again read the data from the file and display it.
-   infile \>> data; 
+   infile >> data; 
    cout << data << endl; 
 
    // close the opened file.

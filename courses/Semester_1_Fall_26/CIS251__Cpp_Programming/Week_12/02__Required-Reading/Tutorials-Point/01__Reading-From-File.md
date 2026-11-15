@@ -51,7 +51,7 @@ int main() {
    }
 
    std::string word;
-   while (inputFile \>> word) {  // Reads until a whitespace is encountered
+   while (inputFile >> word) {  // Reads until a whitespace is encountered
       std::cout << word << std::endl;  // Print each word from the file
    }
 
