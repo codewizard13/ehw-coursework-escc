@@ -60,10 +60,12 @@ bool readFile(ifstream &file, string filename);
 
 int main()
 {
+  cout << "******** START PROGRAM *****************************************\n";
 
-  string outputFilename = "records.txt";
+  string outputFilename = "contacts-list.txt";
 
-  ofstream oFile(outputFilename);
+  // Open output file in append mode to prevent overwriting existing records
+  ofstream oFile(outputFilename, ios::app);
 
   if (!oFile)
   {
@@ -72,24 +74,62 @@ int main()
     return 1;
   }
 
-  oFile << "Michael Jackson, mjackson@gmail.com" << endl;
-  oFile << "Scottie Pippin, greatscott91@yahoo.com" << endl;
+  // TEST 1: Write 3 records to outfile
+  cout << "\n============ TEST CASE: 1 ============\n";
 
+  writeRecord(oFile, "Michael Jackson", "mjackson@gmail.com");
+  writeRecord(oFile, "Scottie Pippin", "greatscott91@yahoo.com");
   writeRecord(oFile, "Janet Jackson", "imjanet@aol.com");
 
   oFile.close();
 
+  // TEST 2: Print the contacts from the file to the console
+  cout << "\n============ TEST CASE: 2 ============\n";
+
   ifstream iFile(outputFilename);
 
   readFile(iFile, outputFilename);
+
+  iFile.close();
+
+  // TEST 3: Write a single record - it should append to the end and not
+  //    blank out the existing records.
+  cout << "\n============ TEST CASE: 3 ============\n";
+
+  writeRecord(oFile, "James Brown", "funkfather@gmail.com");
+
+  readFile(iFile, outputFilename);
+
+  cout << "\n******** END PROGRAM *******************************************\n";
 
   return 0;
 }
 
 bool writeRecord(ofstream &file, string fullName, string email)
 {
-  file << fullName << ", " << email << endl;
-  return true;
+    if (!file.is_open())
+    {
+        cerr << "Error: Output file is not open.\n";
+        return false;
+    }
+
+    if (!file)
+    {
+        cerr << "Error: Output stream is in a failure state.\n";
+        return false;
+    }
+
+    file << fullName << ", " << email << endl;
+
+    if (!file)
+    {
+        cerr << "Error: Contact could not be written.\n";
+        return false;
+    }
+
+    cout << "... wrote record for: " << fullName << endl;
+
+    return true;
 }
 
 bool readFile(ifstream &file, string filename = "")
