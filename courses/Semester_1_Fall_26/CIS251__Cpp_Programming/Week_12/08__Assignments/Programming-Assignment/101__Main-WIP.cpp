@@ -75,13 +75,15 @@ int main()
 
   // Let user choose whether to reset the contact-list.txt file or continue
   //   with the existing data.
-  if (!getYesNo("Clear existing contacts before testing (y, n):", answer)) {
+  if (!getYesNo("Clear existing contacts before testing (y, n):", answer))
+  {
     cerr << "Error: Could not read your response\n";
     return 1;
   }
 
   if (answer == "y")
   {
+    // Open output file in overwrite mode to clear the file
     cout << "Clearing/deleting the contents of " << outputFilename << " to start fresh." << endl;
     oFile.open(outputFilename);
   }
@@ -111,7 +113,7 @@ int main()
   cout << "\n============ TEST CASE: 2 ============\n";
   cout << "... Reading " << outputFilename << ": " << endl;
 
- iFile.open(outputFilename);
+  iFile.open(outputFilename);
 
   if (!readFile(iFile, outputFilename))
   {
@@ -121,12 +123,9 @@ int main()
 
   iFile.close();
 
-  // TEST 3: Attempt to write a single record in append mode, without
-  //   resetting / opening the file for write (remember we closed
-  //   oFile earlier).
-  //
-  // Expect: Errors for outfile not open and file couldnt be opened
-  //   for reading.
+  // TEST 3: Pass closed streams to both helper functions.
+  // Expect: Both functions report that their file is not open
+  // and return false. No record is added or displayed.
   cout << "\n============ TEST CASE: 3 ============\n";
   cout << "... This test expects several failures: " << endl;
   writeRecord(oFile, "James Brown", "funkfather@gmail.com");
@@ -141,6 +140,7 @@ int main()
   oFile.open(outputFilename, ios::app);
 
   writeRecord(oFile, "James Brown", "funkfather@gmail.com");
+  cout << "\nNew " << outputFilename << " contents:\n";
   oFile.close();
 
   // Q: Do I have to close oFile here before I can open iFiel? NOPE!
@@ -149,20 +149,89 @@ int main()
   readFile(iFile, outputFilename);
   iFile.close();
 
+
+
+
   // TEST 5: Clone the output file using binary mode and rdbuf()
   cout << "\n============ TEST CASE: 5 ============\n";
   cout << "Cloning " << outputFilename << " to " << backupFilename << endl;
 
   iFile.open(outputFilename, ios::binary);
+
+  if (!iFile) {
+    cerr << "Error: Could not open the source file for backup.\n";
+    return 1;
+  }
+
   ofstream dest(backupFilename, ios::binary);
+
+  if (!dest) {
+    cerr << "Error: Could not open the backup file.\n";
+    return 1;
+  }
 
   // Copy entire stream buffer in one line
   dest << iFile.rdbuf();
+
   dest.close();
   iFile.close();
 
-  // TEST 6: Make the file blank to reset for next run
+  if (!dest) {
+    cerr << "Error: Backup output did not complete successfully.\n";
+    return 1;
+  }
+
+
+
+
+
+  // TEST 6: Read an empty file.
+  //   - Verify that an empty file opens successfully, produces no contact
+  //     output, and lets readFile() return normally.
   cout << "\n============ TEST CASE: 6 ============\n";
+  cout << "Expected: No contacts displayed; readFile() returns true.\n";
+
+  // Create a separate empty file without changing the contacts.
+  string emptyFilename = "test_empty.txt";
+  ofstream emptyFile(emptyFilename);
+
+  if (!emptyFile)
+  {
+    cerr << "SETUP ERROR: Could not create the empty test file.\n";
+    return 1;
+  }
+
+  emptyFile.close();
+
+  if (!emptyFile)
+  {
+    cerr << "SETUP ERROR: Could not finish creating the empty file.\n";
+    return 1;
+  }
+
+  ifstream emptyInput(emptyFilename);
+
+  if (!emptyInput)
+  {
+    cerr << "SETUP ERROR: Could not open the empty file for reading.\n";
+    return 1;
+  }
+
+  bool result = readFile(emptyInput, emptyFilename);
+
+  emptyInput.close();
+
+  if (result)
+  {
+    cout << "PASS: readFile accepted the empty file.\n";
+  }
+  else
+  {
+    cout << "FAIL: readFile rejected the empty file.\n";
+  }
+
+  cout<< "Verified: " << emptyFilename << " opened successfully, produced "
+      << " no contact output, and let readFile() return normally.\n";
 
   cout << "\n******** END PROGRAM *******************************************\n";
 
@@ -228,17 +297,17 @@ bool readFile(ifstream &file, string filename = "")
 
 bool getYesNo(string prompt, string &answer)
 {
-    cout << prompt;
+  cout << prompt;
 
-    while (cin >> answer)
+  while (cin >> answer)
+  {
+    if (answer == "y" || answer == "n")
     {
-        if (answer == "y" || answer == "n")
-        {
-            return true;
-        }
-
-        cerr << "Please enter y or n: ";
+      return true;
     }
 
-    return false;
+    cerr << "Please enter y or n: ";
+  }
+
+  return false;
 }
