@@ -1,18 +1,8 @@
-# 
-
-C++ Exceptions
-
-[❮ Previous](cpp_debugging.asp) [Next ❯](cpp_input_validation.asp)
-
-- - -
-
-Share Link Copied
-
-/\* One delegated listener for every bar on the page, bound once even if the include is pulled in twice. The markup above is static, so the bar is part of the cached HTML and needs no script to appear - this only wires the clicks. \*/ (function(){ if(window.wsShareBar)return; window.wsShareBar=1; function pageUrl(){return location.href.split('#')\[0\];} document.addEventListener('click',function(e){ var btn=e.target&&e.target.closest?e.target.closest('.ws-share-btn'):null; if(!btn)return; var net=btn.getAttribute('data-ws-net'); if(net==='copy'){ if(!navigator.clipboard)return; var toast=btn.querySelector('.ws-copied-toast'); navigator.clipboard.writeText(pageUrl()).then(function(){ btn.classList.add('copied'); if(toast)toast.classList.add('show'); clearTimeout(btn.\_wsT); btn.\_wsT=setTimeout(function(){ btn.classList.remove('copied'); if(toast)toast.classList.remove('show'); },1600); }); return; } var url=encodeURIComponent(pageUrl()),s=''; if(net==='x'){ var title=document.title.replace(/\\s\*\[-|\]\\s\*W3Schools.\*$/i,'').trim(); s='https://twitter.com/intent/tweet?url='+url+'&text='+encodeURIComponent(title+' - W3Schools'); } else if(net==='facebook')s='https://www.facebook.com/sharer/sharer.php?u='+url; else if(net==='linkedin')s='https://www.linkedin.com/sharing/share-offsite/?url='+url; if(s)window.open(s,'\_blank','noopener,width=600,height=540'); }); })();
+# C++ Exceptions
 
 ## Exceptions
 
-As mentioned in the [C++ Errors](cpp_errors.asp) chapter, different types of errors can occur while running a program - such as coding mistakes, invalid input, or unexpected situations.
+As mentioned in the [C++ Errors](https://w3schools.com/cpp/cpp_errors.asp) chapter, different types of errors can occur while running a program - such as coding mistakes, invalid input, or unexpected situations.
 
 When an error occurs, C++ will normally stop and generate an error message. The technical term for this is: C++ will throw an **exception** (throw an error).
 
@@ -30,6 +20,7 @@ It uses three keywords:
 
 ### Example
 
+```cpp
 try {  
   // Code that may throw an exception  
   throw 505;  
@@ -37,6 +28,7 @@ try {
 catch (int errorCode) {  
   cout << "Error occurred: " << errorCode;  
 }
+```
 
 Here, the program throws an exception with the value `505`, which is caught and handled in the `catch` block.
 
@@ -48,6 +40,7 @@ We can use exception handling to check if a user is old enough:
 
 ### Example
 
+```cpp
 try {  
   int age = 15;  
   if (age >= 18) {  
@@ -60,8 +53,7 @@ catch (int myNum) {
   cout << "Access denied - You must be at least 18 years old.\n";  
   cout << "Age is: " << myNum;  
 }
-
-[Try it Yourself »](trycpp.asp?filename=demo_try_catch)
+```
 
 #### Example explained
 
@@ -73,14 +65,15 @@ If no error occurs (e.g. if `age` is `20` instead of `15`, meaning it will be be
 
 ### Example
 
+```cpp
 int age = 20;  
-
-[Try it Yourself »](trycpp.asp?filename=demo_try_catch2)
+```
 
 You can also use the `throw` keyword to output a reference number, like a custom error number/code for organizing purposes (`505` in our example):
 
 ### Example
 
+```cpp
 try {  
   int age = 15;  
   if (age >= 18) {  
@@ -93,14 +86,7 @@ catch (int myNum) {
   cout << "Access denied - You must be at least 18 years old.\n";  
   cout << "Error number: " << myNum;  
 }
-
-[Try it Yourself »](trycpp.asp?filename=demo_try_catch3)
-
-- - -
-
-Ad
-
-[REMOVE ADS](https://order.w3schools.com/plans)
+```
 
 - - -
 
@@ -110,6 +96,7 @@ If you do not know the `throw` **type** used in the `try` block, you can use the
 
 ### Example
 
+```cpp
 try {  
   int age = 15;  
   if (age >= 18) {  
@@ -121,35 +108,9 @@ try {
 catch (...) {  
   cout << "Access denied - You must be at least 18 years old.\n";  
 }
-
-[Try it Yourself »](trycpp.asp?filename=demo_try_catch_dots)
-
-- - -
-
-## Exercise?**What is this?**  
-Test your skills by answering a few questions about the topics of this page
-
-What is the purpose of exception handling in C++?
-
-  
-
-To execute code faster
-
-To handle errors and execute code when an error occurs
-
-To ignore errors during execution
-
-To organize code into classes and objects
-
-  
-Submit Answer »
+```
 
 - - -
 
-  
 
-[❮ Previous](cpp_debugging.asp) [Next ❯](cpp_input_validation.asp)
-
-[★ +1](https://profile.w3schools.com/log-in?redirect_url=https%3A%2F%2Fwww.w3schools.com%2Fcpp%2Fcpp_exceptions.asp "Your W3Schools Profile")
-
-[Sign in to track progress](https://profile.w3schools.com/log-in?redirect_url=https%3A%2F%2Fpathfinder.w3schools.com&origin=https%3A%2F%2Fwww.w3schools.com%2Fcpp%2Fcpp_exceptions.asp "Sign in to track your progress")
+[❮ Previous](https://w3schools.com/cpp/cpp_debugging.asp) [Next ❯](https://w3schools.com/cpp/cpp_input_validation.asp)
