@@ -23,7 +23,7 @@ A file must be opened before you can read from it or write to it. Either **ofstr
 Following is the standard syntax for [open() function](https://www.tutorialspoint.com/cpp_standard_library/cpp_fstream_open.htm), which is a member of fstream, ifstream, and ofstream objects.
 
 ```cpp
-void open(const char \*filename, ios::openmode mode);
+void open(const char *filename, ios::openmode mode);
 ```
 
 Here, the first argument specifies the name and location of the file to be opened and the second argument of the **open()** member function defines the mode in which the file should be opened.

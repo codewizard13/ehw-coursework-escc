@@ -121,7 +121,7 @@ int main() {
    file.seekg(0, std::ios::beg);
 
    // Read the entire file content into a buffer
-   char\* buffer \= new char\[size\];
+   char* buffer \= new char\[size\];
    file.read(buffer, size);
 
    // Print raw data (optional, for demonstration)
