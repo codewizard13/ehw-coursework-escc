@@ -29,11 +29,11 @@ CIS 251: C++ Programming · Fall 2026 · Dr. Rosalyn Warren
 
 **How to study this page:** Read one section at a time. Before running each code example, predict what it will do. Then type it yourself rather than copying it. Modify at least one value or condition and observe the effect.
 
-## 1\. Persistence
+## 1. Persistence
 
 Variables disappear when a program ends. A file allows information to persist so it can be used during a later run.
 
-## 2\. Writing Files
+## 2. Writing Files
 
 ```cpp
 #include <fstream>
@@ -73,7 +73,7 @@ int main()
 
 An `ofstream` is an output file stream. Always verify that the stream opened successfully before relying on it.
 
-## 3\. Reading Files
+## 3. Reading Files
 
 ```cpp
 ifstream inputFile("scores.txt");
@@ -90,7 +90,7 @@ if (inputFile) {
 
 The extraction expression itself becomes false when the expected data can no longer be read, making it suitable as the loop condition.
 
-## 4\. File Locations and Testing
+## 4. File Locations and Testing
 
 Relative file names such as `scores.txt` are interpreted relative to the program's working directory. If a file appears to be missing, verify where the program is running. Test with an existing file, a missing file, and multiple records.
 
