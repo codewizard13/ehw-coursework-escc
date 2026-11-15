@@ -94,12 +94,12 @@ bool writeRecord(ofstream &file, string fullName, string email)
 
 bool readFile(ifstream &file, string filename = "")
 {
-
+  // Check whether the stream reports any failures.
   if (!file)
   {
     cerr << "Error: File " << filename
          << " could not be opened for reading.\n";
-    return 1;
+    return false;
   }
 
   string fullName;
