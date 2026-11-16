@@ -11,7 +11,7 @@
  *    successfully and submit a five-case test table covering normal and
  *    failure-oriented cases already demonstrated in the readings.
  *
- * @status WIP
+ * @status Fully Working
  *
  * @author Eric L. Hepperle
  * @date 2026-11-15
@@ -20,35 +20,6 @@
  *
  * @see https://github.com/codewizard13
  */
-
-/*
-ALGORITHM — CONTACT LIST
-
-Set the output and input filenames.
-
-Open the output file.
-If opening fails:
-    Display an output-opening error.
-    Return failure.
-
-Write the contact records.
-Close the output file.
-If writing or closing failed:
-    Display an output error.
-    Return failure.
-
-Open the input file.
-If opening fails:
-    Display an input-opening error.
-    Return failure.
-
-While a comma-delimited name and its email can be read:
-    Display the name and email.
-
-Close the input file.
-Return success.
-
-*/
 
 #include <fstream>
 #include <iostream>
@@ -232,6 +203,9 @@ int main()
 
   return 0;
 }
+
+
+// ######### HELPER FUNCTIONS ########
 
 bool writeRecord(ofstream &file, string fullName, string email)
 {
