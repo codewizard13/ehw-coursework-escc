@@ -21,7 +21,7 @@ vector<string>::iterator it;
   
 // Loop through the vector with the iterator  
 for (it = cars.begin(); it != cars.end(); ++it) {  
-  cout << \*it << "\\n";  
+  cout << *it << "\n";  
 }  
 ```
 
@@ -47,7 +47,7 @@ for (it = cars.begin(); it != cars.end(); ++it) {
 To understand how they work, let's continue to use vectors as an example:
 
 ```cpp
-vector<string> cars \= {"Volvo", "BMW", "Ford", "Mazda"};  
+vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};  
   
 vector<string>::iterator it;  
 ```
@@ -105,7 +105,7 @@ Iterators are like "[pointers](https://w3schools.com/cpp/cpp_pointers.asp)" in t
 it = cars.begin();  
   
 // Modify the value of the first element  
-\*it = "Tesla";  
+*it = "Tesla";  
   
 // Volvo is now Tesla  
 ```
@@ -136,7 +136,7 @@ The `auto` keyword works in `for` loops as well:
 
 ```cpp
 for (auto it = cars.begin(); it != cars.end(); ++it) {  
-  cout << \*it << "\\n";  
+  cout << *it << "\n";  
 }  
 ```
 
@@ -153,7 +153,7 @@ vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
   
 // Print vector elements  
 for (string car : cars) {  
-  cout << car << "\\n";  
+  cout << car << "\n";  
 }  
 ```
 
@@ -165,11 +165,11 @@ However, when you need to add, modify, or remove elements **during iteration**, 
 
 ```cpp
 // Create a vector called cars that will store strings  
-vector<string> cars \= {"Volvo", "BMW", "Ford", "Mazda"};  
+vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};  
   
 // Loop through vector elements  
 for (auto it = cars.begin(); it != cars.end(); ) {  
-  if (\*it == "BMW") {  
+  if (*it == "BMW") {  
     it = cars.erase(it); // Remove the BMW element  
   } else {  
     ++it;  
@@ -178,7 +178,7 @@ for (auto it = cars.begin(); it != cars.end(); ) {
   
 // Print vector elements  
 for (const string& car : cars) {  
-  cout << car << "\\n";  
+  cout << car << "\n";  
 }  
 ```
 
@@ -191,7 +191,7 @@ To iterate in reverse order, you can use `rbegin()` and `rend()` instead of `beg
 ```cpp
 // Iterate in reverse order  
 for (auto it = cars.rbegin(); it != cars.rend(); ++it) {  
-  cout << \*it << "\\n";  
+  cout << *it << "\n";  
 }  
 ```
 
@@ -209,7 +209,7 @@ list<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
   
 // Loop through the list with an iterator  
 for (auto it = cars.begin(); it != cars.end(); ++it) {  
-  cout << \*it << "\\n";  
+  cout << *it << "\n";  
 }  
 ```
 
@@ -221,7 +221,7 @@ deque<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
   
 // Loop through the deque with an iterator  
 for (auto it = cars.begin(); it != cars.end(); ++it) {  
-  cout << \*it << "\\n";  
+  cout << *it << "\n";  
 }  
 ```
 
@@ -233,7 +233,7 @@ set<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
   
 // Loop through the set with an iterator  
 for (auto it = cars.begin(); it != cars.end(); ++it) {  
-  cout << \*it << "\\n";  
+  cout << *it << "\n";  
 }  
 ```
 
@@ -241,11 +241,11 @@ for (auto it = cars.begin(); it != cars.end(); ++it) {
 
 ```cpp
 // Create a map that will store strings and integers  
-map<string, int\> people = { {"John", 32}, {"Adele", 45}, {"Bo", 29} };  
+map<string, int> people = { {"John", 32}, {"Adele", 45}, {"Bo", 29} };  
   
 // Loop through the map with an iterator  
 for (auto it = people.begin(); it != people.end(); ++it) {  
-  cout << it->first << " is: " << it->second << "\\n";  
+  cout << it->first << " is: " << it->second << "\n";  
 }  
 ```
 
@@ -280,7 +280,7 @@ int main() {
   
   // Print cars in alphabetical order  
   for (string car : cars) {  
-    cout << car << "\\n";  
+    cout << car << "\n";  
   }  
   
   return 0;  
@@ -299,13 +299,13 @@ using namespace std;
   
 int main() {  
   // Create a vector called numbers that will store integers  
-  vector<int\> numbers = {1, 7, 3, 5, 9, 2};  
+  vector<int> numbers = {1, 7, 3, 5, 9, 2};  
   
   // Sort numbers numerically  
   sort(numbers.begin(), numbers.end());  
   
   for (int num : numbers) {  
-    cout << num << "\\n";  
+    cout << num << "\n";  
   }  
   
   return 0;  
@@ -324,13 +324,13 @@ using namespace std;
   
 int main() {  
   // Create a vector called numbers that will store integers  
-  vector<int\> numbers = {1, 7, 3, 5, 9, 2};  
+  vector<int> numbers = {1, 7, 3, 5, 9, 2};  
   
   // Sort numbers numerically in reverse order  
   sort(numbers**.rbegin()**, numbers**.rend()**);  
   
   for (int num : numbers) {  
-    cout << num << "\\n";  
+    cout << num << "\n";  
   }  
   
   return 0;  
