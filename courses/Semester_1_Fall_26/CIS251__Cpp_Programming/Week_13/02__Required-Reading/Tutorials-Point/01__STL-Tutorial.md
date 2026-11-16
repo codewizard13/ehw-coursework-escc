@@ -28,29 +28,29 @@ using namespace std;
 int main() {
 
    // create a vector to store int
-   vector<int\> vec; 
+   vector<int> vec; 
    int i;
 
    // display the original size of vec
    cout << "vector size = " << vec.size() << endl;
 
    // push 5 values into the vector
-   for(i \= 0; i < 5; i++) {
-      vec.push\_back(i);
+   for(i = 0; i < 5; i++) {
+      vec.push_back(i);
    }
 
    // display extended size of vec
    cout << "extended vector size = " << vec.size() << endl;
 
    // access 5 values from the vector
-   for(i \= 0; i < 5; i++) {
-      cout << "value of vec \[" << i << "\] = " << vec\[i\] << endl;
+   for(i = 0; i < 5; i++) {
+      cout << "value of vec [" << i << "] = " << vec[i] << endl;
    }
 
    // use iterator to access the values
-   vector<int\>::iterator v \= vec.begin();
+   vector<int>::iterator v = vec.begin();
    while( v != vec.end()) {
-      cout << "value of v = " << \*v << endl;
+      cout << "value of v = " << *v << endl;
       v++;
    }
 
@@ -63,11 +63,11 @@ When the above code is compiled and executed, it produces the following result �
 ```sh
 vector size = 0
 extended vector size = 5
-value of vec \[0\] = 0
-value of vec \[1\] = 1
-value of vec \[2\] = 2
-value of vec \[3\] = 3
-value of vec \[4\] = 4
+value of vec [0] = 0
+value of vec [1] = 1
+value of vec [2] = 2
+value of vec [3] = 3
+value of vec [4] = 4
 value of v = 0
 value of v = 1
 value of v = 2
@@ -77,7 +77,7 @@ value of v = 4
 
 Here are following points to be noted related to various functions we used in the above example −
 
-*   The push\_back() member function inserts value at the end of the vector, expanding its size as needed.
+*   The push_back() member function inserts value at the end of the vector, expanding its size as needed.
 *   The size() function displays the size of the vector.
 *   The function begin() returns an iterator to the start of the vector.
 *   The function end() returns an iterator to the end of the vector.
@@ -119,10 +119,10 @@ It stores elements in a sorted order which allows fast retrieval based on keys. 
 
 It stores elements in an unordered manner allowing for efficient access, insertion, and deletion based on keys. Instead of maintaining a sorted order of elements they use hashing to organize data.
 
-*   [**unordered\_set**](https://tutorialspoint.com/cpp_standard_library/unordered_set.htm) − It is a collection of unique elements, without any specific order.
-*   [**unordered\_map**](https://tutorialspoint.com/cpp_standard_library/unordered_map.htm) − It is a collection of key-value pairs without a specific order.
-*   **unordered\_multiset** − It allows duplicate elements without a specific order.
-*   [**unordered\_multimap**](https://tutorialspoint.com/cpp_standard_library/cpp_unordered_multimap_cend_bucket.htm) − It allows duplicate keys without a specific order.
+*   [**unordered_set**](https://tutorialspoint.com/cpp_standard_library/unordered_set.htm) − It is a collection of unique elements, without any specific order.
+*   [**unordered_map**](https://tutorialspoint.com/cpp_standard_library/unordered_map.htm) − It is a collection of key-value pairs without a specific order.
+*   **unordered_multiset** − It allows duplicate elements without a specific order.
+*   [**unordered_multimap**](https://tutorialspoint.com/cpp_standard_library/cpp_unordered_multimap_cend_bucket.htm) − It allows duplicate keys without a specific order.
 
 ### 4\. Container Adapters
 
@@ -138,23 +138,23 @@ Algorithms in the C++ Standard Template Library (STL) is a big collection of fun
 
 ### Non-modifying Sequence Algorithms
 
-*   [**for\_each**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_for_each.htm) − It applies in a function to find out each element in a range.
+*   [**for_each**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_for_each.htm) − It applies in a function to find out each element in a range.
 *   [**count**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_count.htm) − It counts the number of occurrences of a value in a range.
 *   [**find()**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_find.htm) − It finds the first occurrence of a value in a range.
-*   [**find\_if**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_find_if.htm) − It finds the first element satisfying a predicate.
-*   [**find\_if\_not**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_find_if_not.htm) − It finds the first element not satisfying a predicate.
+*   [**find_if**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_find_if.htm) − It finds the first element satisfying a predicate.
+*   [**find_if_not**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_find_if_not.htm) − It finds the first element not satisfying a predicate.
 *   [**equal**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_equal_predicate.htm) − It checks if two ranges are equal.
 *   **search** − It searches for a subsequence within a sequence.
 
 ### 1\. Modifying Sequence Algorithms
 
 *   [**copy()**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_copy.htm) − It copies elements from one range to another.
-*   [**copy\_if**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_copy_if.htm) − It copies elements satisfying a predicate to another range.
-*   [**copy\_n**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_copy_n.htm) − It copies a specific number of elements from one range to another.
+*   [**copy_if**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_copy_if.htm) − It copies elements satisfying a predicate to another range.
+*   [**copy_n**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_copy_n.htm) − It copies a specific number of elements from one range to another.
 *   [**move**](https://tutorialspoint.com/cpp_standard_library/cpp_utility_move.htm) − it moves elements from one range to another.
 *   **transform()** − It applies a function to a range and stores the result.
 *   **remove** − It removes elements with a specific value from a range.
-*   **remove\_if** − It removes elements satisfying a predicate.
+*   **remove_if** − It removes elements satisfying a predicate.
 *   **unique** − It removes consecutive duplicate elements.
 *   **reverse()** − It reverses the order of elements in a range.
 *   **swap()** − It swaps elements.
@@ -162,40 +162,40 @@ Algorithms in the C++ Standard Template Library (STL) is a big collection of fun
 ### 2\. Sorting Algorithms
 
 *   **sort** − It sorts elements in a range.
-*   **stable\_sort** − It sorts elements while maintaining the relative order of equivalent elements.
-*   **partial\_sort** − It sorts a portion of a range.
-*   **nth\_element** − It partitions the range such that the nth element is in its final position.
+*   **stable_sort** − It sorts elements while maintaining the relative order of equivalent elements.
+*   **partial_sort** − It sorts a portion of a range.
+*   **nth_element** − It partitions the range such that the nth element is in its final position.
 
 ### 3\. Searching Algorithms
 
-*   **binary\_search** − It checks if an element exists in a sorted range.
-*   **lower\_bound** − It searches for the first position where an element can be inserted to maintain order.
-*   **upper\_bound** − It searches for the position of the first element greater than a specified value.
-*   **binary\_search** − It checks if an element exists in a sorted range.
-*   **lower\_bound** − It finds the first position where an element can be inserted to maintain order.
-*   **upper\_bound** − It searches for the position of the first element greater than a specified value.
-*   **equal\_range** − It returns the range of equal elements.
+*   **binary_search** − It checks if an element exists in a sorted range.
+*   **lower_bound** − It searches for the first position where an element can be inserted to maintain order.
+*   **upper_bound** − It searches for the position of the first element greater than a specified value.
+*   **binary_search** − It checks if an element exists in a sorted range.
+*   **lower_bound** − It finds the first position where an element can be inserted to maintain order.
+*   **upper_bound** − It searches for the position of the first element greater than a specified value.
+*   **equal_range** − It returns the range of equal elements.
 
 ### 4\. Heap Algorithms
 
-*   **make\_heap** − It creates a heap from a range.
-*   **push\_heap** − It adds an element to a heap.
-*   **pop\_heap** − It removes the largest element from a heap.
-*   **sort\_heap** − It sorts elements in a heap.
+*   **make_heap** − It creates a heap from a range.
+*   **push_heap** − It adds an element to a heap.
+*   **pop_heap** − It removes the largest element from a heap.
+*   **sort_heap** − It sorts elements in a heap.
 
 ### 5\. Set Algorithms
 
-*   **set\_union** − It computes the union of two sets.
-*   **set\_intersection** − It computes the intersection of two sets.
-*   **set\_difference** − It computes the difference between two sets.
-*   **set\_symmetric\_difference** − It computes the symmetric difference between two sets.
+*   **set_union** − It computes the union of two sets.
+*   **set_intersection** − It computes the intersection of two sets.
+*   **set_difference** − It computes the difference between two sets.
+*   **set_symmetric_difference** − It computes the symmetric difference between two sets.
 
 ### 6\. Numeric Algorithms
 
 *   **accumulate** − it computes the sum (or other operations) of a range.
-*   **inner\_product** − It computes the inner product of two ranges.
-*   **adjacent\_difference** − It computes the differences between adjacent elements.
-*   **Partial\_sum** − it computes the partial sums of a range.
+*   **inner_product** − It computes the inner product of two ranges.
+*   **adjacent_difference** − It computes the differences between adjacent elements.
+*   **Partial_sum** − it computes the partial sums of a range.
 
 ### 7\. Other Algorithms
 
@@ -225,7 +225,7 @@ In C++, arithmetic operators are used to perform basic mathematical operations. 
 
 *   **Addition (+)** − it combines two values to produce their sum.
 *   **Subtraction (-)** − It calculates the difference between two values.
-*   **Multiplication (\*)** − It multiplies two values to produce their product.
+*   **Multiplication (*)** − It multiplies two values to produce their product.
 *   **Division (/)** − It divides one value by another, resulting in a quotient.
 *   **Modulus (%)** − It returns the remainder of the division of one value by another.
 *   **Negate ()** − It returns the negated value of a parameter.
@@ -251,9 +251,9 @@ Logical functors perform logical operations and can be useful in scenarios invol
 
 ### 4\. Bitwise Functors
 
-*   **bit\_and** − This performs a bitwise AND operation on two operands,
-*   **bit\_or** − This performs a bitwise OR operation on two operands,
-*   **Bit\_xor** − This performs a bitwise exclusive OR (XOR) operation on two operands and returns the output corresponding to it.
+*   **bit_and** − This performs a bitwise AND operation on two operands,
+*   **bit_or** − This performs a bitwise OR operation on two operands,
+*   **Bit_xor** − This performs a bitwise exclusive OR (XOR) operation on two operands and returns the output corresponding to it.
 
 ## Utilities
 
@@ -266,9 +266,9 @@ Utility refers to a collection of general-purpose components which provide basic
 
 ### 2\. Smart Pointers
 
-*   **unique\_ptr** − it's a smart pointer that owns a dynamically allocated object, which automatically deallocates it when the pointer goes out of scope.
-*   **Shared\_ptr** − It's a smart pointer that allows multiple pointers to share ownership of a dynamically allocated object by using reference counting to manage lifetime.
-*   **Weak\_ptr** − It's a smart pointer that provides a non-owning reference to an object managed by std::shared\_ptr which prevents circular references.
+*   **unique_ptr** − it's a smart pointer that owns a dynamically allocated object, which automatically deallocates it when the pointer goes out of scope.
+*   **Shared_ptr** − It's a smart pointer that allows multiple pointers to share ownership of a dynamically allocated object by using reference counting to manage lifetime.
+*   **Weak_ptr** − It's a smart pointer that provides a non-owning reference to an object managed by std::shared_ptr which prevents circular references.
 
 ### 3\. Optional, Variant, and Any Type (C++17)
 
@@ -279,16 +279,16 @@ Utility refers to a collection of general-purpose components which provide basic
 ### 4\. Memory Management and Numeric Limits
 
 *   **allocator** − This is used for managing dynamic memory.
-*   **numeric\_limits** − It provides information about the properties of fundamental data types.
+*   **numeric_limits** − It provides information about the properties of fundamental data types.
 
 ### 5\. Type Traits
 
 It's a set of templates that allow you to perform compile-time type checks.
 
-*   **is\_same** − It's a type trait that checks if two types are the same, results true if they are else false.
-*   **is\_integral** − It's a type trait that determines if a given type is an integral type (e.g., int, char, long), returning true for integral types and false for others.
-*   **is\_floating\_point** − It's a type trait that checks if a given type is a floating-point type (e.g., float, double, long double), returning true for floating-point types and false for non-floating-point types.
-*   **enable\_if** − It's a utility that enables or disables template instantiation based on a compile-time condition which is often used for SFINAE (Substitution Failure Is Not An Error).
+*   **is_same** − It's a type trait that checks if two types are the same, results true if they are else false.
+*   **is_integral** − It's a type trait that determines if a given type is an integral type (e.g., int, char, long), returning true for integral types and false for others.
+*   **is_floating_point** − It's a type trait that checks if a given type is a floating-point type (e.g., float, double, long double), returning true for floating-point types and false for non-floating-point types.
+*   **enable_if** − It's a utility that enables or disables template instantiation based on a compile-time condition which is often used for SFINAE (Substitution Failure Is Not An Error).
 
 ## Basic STL Features: Simple Example
 
@@ -300,7 +300,7 @@ Here's a simple example demonstrating some basic STL features
 #include <algorithm>
 
 int main() {
-   std::vector<int\> vec \= {5, 2, 8, 1, 3};
+   std::vector<int> vec = {5, 2, 8, 1, 3};
 
    // Sorting the vector
    std::sort(vec.begin(), vec.end());
@@ -313,7 +313,7 @@ int main() {
    std::cout << std::endl;
 
    // Finding an element
-   auto it \= std::find(vec.begin(), vec.end(), 3);
+   auto it = std::find(vec.begin(), vec.end(), 3);
    if (it != vec.end()) {
       std::cout << "Element 3 found at position: " 
          << std::distance(vec.begin(), it) << std::endl;
