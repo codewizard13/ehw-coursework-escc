@@ -40,7 +40,7 @@ vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
   
 // Print vector elements  
 for (string car : cars) {  
-  cout << car << "\\n";  
+  cout << car << "\n";  
 }  
 ```
 
@@ -61,10 +61,10 @@ Vectors, like arrays, are 0-indexed, meaning that `[0]` is the first element, `[
 vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};  
   
 // Get the first element  
-cout << cars\[0\];  // Outputs Volvo  
+cout << cars[0];  // Outputs Volvo  
   
 // Get the second element  
-cout << cars\[1\];  // Outputs BMW  
+cout << cars[1];  // Outputs BMW  
 ```
 
 One advantage of using the vector library, is that it includes many useful functions. For example, you can access the first or the last element of a vector with the `.front()` and `.back()` functions:
@@ -105,7 +105,7 @@ For example if the element is out of range:
 
 ```cpp
 // Create a vector called cars that will store strings  
-vector<string> cars \= {"Volvo", "BMW", "Ford", "Mazda"};  
+vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};  
   
 // Try to access an element that does not exist (throws an error message)  
 cout << cars.at(6);  
@@ -121,9 +121,9 @@ To change the value of a specific element, you can refer to the index number:
 vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};  
   
 // Change the value of the first element  
-cars\[0\] = "Opel";  
+cars[0] = "Opel";  
   
-cout << cars\[0\];  // Now outputs Opel instead of Volvo  
+cout << cars[0];  // Now outputs Opel instead of Volvo  
 ```
 
 However, it is safer to use the `.at()` function:
@@ -149,7 +149,7 @@ To add an element to the vector, you can use the `.push_back()` function, which 
 
 ```cpp
 vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};  
-cars.push\_back("Tesla");  
+cars.push_back("Tesla");  
 ```
 
 You can add as many elements as you want:
@@ -158,10 +158,10 @@ You can add as many elements as you want:
 
 ```cpp
 vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};  
-cars.push\_back("Tesla");  
-cars.push\_back("VW");  
-cars.push\_back("Mitsubishi");  
-cars.push\_back("Mini");  
+cars.push_back("Tesla");  
+cars.push_back("VW");  
+cars.push_back("Mitsubishi");  
+cars.push_back("Mini");  
 ```
 
 - - -
@@ -174,7 +174,7 @@ To remove an element from the vector, you can use the `.pop_back()` function, wh
 
 ```cpp
 vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};  
-cars.pop\_back();  
+cars.pop_back();  
 ```
 
 > **📌 #TIP:** Elements are usually only added and removed from the end of the vector. If you need to add or remove elements from both ends, it is often better to use a [deque](https://w3schools.com/cpp/cpp_deque.asp) instead of a vector.
@@ -226,7 +226,7 @@ You can loop through the vector elements by using a `for` loop combined with the
 vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};  
   
 for (int i = 0; i < cars.size(); i++) {  
-  cout << cars\[i\] << "\\n";  
+  cout << cars[i] << "\n";  
 }  
 ```
 
@@ -238,7 +238,7 @@ You can also use a **for-each loop** (introduced in C++ version 11 (2011), which
 vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};  
   
 for (string car : cars) {  
-  cout << car << "\\n";  
+  cout << car << "\n";  
 }  
 ```
 
