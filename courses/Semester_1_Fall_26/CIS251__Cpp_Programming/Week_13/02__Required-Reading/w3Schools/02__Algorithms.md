@@ -12,8 +12,10 @@ The `<algorithm>` library provides many useful functions to perform these tasks 
 
 To use these functions, you must include the `<algorithm>` header file:
 
+```cpp
 // Include the algorithm library  
 #include <algorithm>  
+```
 
 - - -
 
@@ -25,6 +27,7 @@ The `sort()` function takes [iterators](https://w3schools.com/cpp/cpp_iterators.
 
 ### Example
 
+```cpp
 // Create a vector called cars that will store strings  
 vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};  
   
@@ -38,6 +41,7 @@ If we had a vector of integers, they would be sorted numerically:
 
 ### Example
 
+```cpp
 // Create a vector called numbers that will store integers  
 vector<int\> numbers = {1, 7, 3, 5, 9, 2};  
   
@@ -49,6 +53,7 @@ To reverse the order, you can use `rbegin()` and `rend()` instead of `begin()` a
 
 ### Example
 
+```cpp
 // Create a vector called numbers that will store integers  
 vector<int\> numbers = {1, 7, 3, 5, 9, 2};  
   
@@ -60,6 +65,7 @@ To only sort specific elements, you could write:
 
 ### Example
 
+```cpp
 // Create a vector called numbers that will store integers  
 vector<int\> numbers = {1, 7, 3, 5, 9, 2};  
   
@@ -77,6 +83,7 @@ It takes three parameters: `_start_iterator_, _end_iterator_, _value_`, where _v
 
 Seach for the number **3** in "numbers":
 
+```cpp
 // Create a vector called numbers that will store integers  
 vector<int\> numbers = {1, 7, 3, 5, 9, 2};  
   
@@ -90,6 +97,7 @@ To search for the first element that is **greater than** a specific value, you c
 
 Find the first value greater than **5** in "numbers":
 
+```cpp
 // Create a vector called numbers that will store integers  
 vector<int\> numbers = {1, 7, 3, 5, 9, 2};  
   
@@ -106,6 +114,7 @@ To find the smallest element in a vector, use the `min_element()` function:
 
 ### Example
 
+```cpp
 // Create a vector called numbers that will store integers  
 vector<int\> numbers = {1, 7, 3, 5, 9, 2};  
   
@@ -117,6 +126,7 @@ To find the largest element, use the `max_element()` function:
 
 ### Example
 
+```cpp
 // Create a vector called numbers that will store integers  
 vector<int\> numbers = {1, 7, 3, 5, 9, 2};  
   
@@ -134,6 +144,7 @@ To copy elements from one vector to another, you can use the `copy()` function:
 
 Copy elements from one vector to another:
 
+```cpp
 // Create a vector called numbers that will store integers  
 vector<int\> numbers = {1, 7, 3, 5, 9, 2};  
   
@@ -150,6 +161,7 @@ To fill all elements in a vector with a value, you can use the `fill()` function
 
 Fill all elements in the numbers vector with the value 35:
 
+```cpp
 // Create a vector called numbers that will store 6 integers  
 vector<int\> numbers(6);  
   
