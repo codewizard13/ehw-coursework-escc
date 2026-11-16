@@ -95,7 +95,7 @@ At the core of the C++ Standard Template Library are following four well-structu
 
 Containers are data structures that are used to store and manage collections of data or objects such as vectors, lists, sets, and maps. Here we will see several types of Containers.
 
-### 1\. Sequence Containers
+### 1. Sequence Containers
 
 They are containers that store elements in a specific linear order. They allow for direct access to elements and functionalities to manage the order and arrangement of elements.
 
@@ -106,7 +106,7 @@ They are containers that store elements in a specific linear order. They allow f
 *   [**Forward List**](https://tutorialspoint.com/cpp_standard_library/forward_list.htm) − It's a singly linked list that allows efficient insertion and deletion but only traversal in one direction.
 *   [**String**](https://tutorialspoint.com/cpp_standard_library/string.htm) − In C++ string is also considered a sequential container, it is implemented as a dynamic array of characters that behaves similarly to other sequential containers.
 
-### 2\. Associative Containers
+### 2. Associative Containers
 
 It stores elements in a sorted order which allows fast retrieval based on keys. These containers work in a key-value pair structure, where each element is associated with a unique key. This key is used for quick access to the corresponding value.
 
@@ -115,7 +115,7 @@ It stores elements in a sorted order which allows fast retrieval based on keys. 
 *   **Multiset** − It is similar to a set, but allows duplicate elements.
 *   [**Multimap**](https://tutorialspoint.com/cpp_standard_library/cpp_multimap_range_constructor.htm) − It is similar to a map, but allows duplicate keys.
 
-### 3\. Unordered Associative Containers
+### 3. Unordered Associative Containers
 
 It stores elements in an unordered manner allowing for efficient access, insertion, and deletion based on keys. Instead of maintaining a sorted order of elements they use hashing to organize data.
 
@@ -124,7 +124,7 @@ It stores elements in an unordered manner allowing for efficient access, inserti
 *   **unordered_multiset** − It allows duplicate elements without a specific order.
 *   [**unordered_multimap**](https://tutorialspoint.com/cpp_standard_library/cpp_unordered_multimap_cend_bucket.htm) − It allows duplicate keys without a specific order.
 
-### 4\. Container Adapters
+### 4. Container Adapters
 
 It provides a different interface for existing containers.
 
@@ -146,7 +146,7 @@ Algorithms in the C++ Standard Template Library (STL) is a big collection of fun
 *   [**equal**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_equal_predicate.htm) − It checks if two ranges are equal.
 *   **search** − It searches for a subsequence within a sequence.
 
-### 1\. Modifying Sequence Algorithms
+### 1. Modifying Sequence Algorithms
 
 *   [**copy()**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_copy.htm) − It copies elements from one range to another.
 *   [**copy_if**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_copy_if.htm) − It copies elements satisfying a predicate to another range.
@@ -159,14 +159,14 @@ Algorithms in the C++ Standard Template Library (STL) is a big collection of fun
 *   **reverse()** − It reverses the order of elements in a range.
 *   **swap()** − It swaps elements.
 
-### 2\. Sorting Algorithms
+### 2. Sorting Algorithms
 
 *   **sort** − It sorts elements in a range.
 *   **stable_sort** − It sorts elements while maintaining the relative order of equivalent elements.
 *   **partial_sort** − It sorts a portion of a range.
 *   **nth_element** − It partitions the range such that the nth element is in its final position.
 
-### 3\. Searching Algorithms
+### 3. Searching Algorithms
 
 *   **binary_search** − It checks if an element exists in a sorted range.
 *   **lower_bound** − It searches for the first position where an element can be inserted to maintain order.
@@ -176,28 +176,28 @@ Algorithms in the C++ Standard Template Library (STL) is a big collection of fun
 *   **upper_bound** − It searches for the position of the first element greater than a specified value.
 *   **equal_range** − It returns the range of equal elements.
 
-### 4\. Heap Algorithms
+### 4. Heap Algorithms
 
 *   **make_heap** − It creates a heap from a range.
 *   **push_heap** − It adds an element to a heap.
 *   **pop_heap** − It removes the largest element from a heap.
 *   **sort_heap** − It sorts elements in a heap.
 
-### 5\. Set Algorithms
+### 5. Set Algorithms
 
 *   **set_union** − It computes the union of two sets.
 *   **set_intersection** − It computes the intersection of two sets.
 *   **set_difference** − It computes the difference between two sets.
 *   **set_symmetric_difference** − It computes the symmetric difference between two sets.
 
-### 6\. Numeric Algorithms
+### 6. Numeric Algorithms
 
 *   **accumulate** − it computes the sum (or other operations) of a range.
 *   **inner_product** − It computes the inner product of two ranges.
 *   **adjacent_difference** − It computes the differences between adjacent elements.
 *   **Partial_sum** − it computes the partial sums of a range.
 
-### 7\. Other Algorithms
+### 7. Other Algorithms
 
 *   **generate** − It fills a range with values generated by a function.
 *   **shuffle** − It randomly shuffles the elements in a range.
@@ -219,7 +219,7 @@ A functor (or function object) in C++ is an object that can be called as if it w
 
 Here you will explore different types of functors based on the operations they perform.
 
-### 1\. Arithmetic Functors
+### 1. Arithmetic Functors
 
 In C++, arithmetic operators are used to perform basic mathematical operations. Here are the common arithmetic operators along with examples.
 
@@ -230,7 +230,7 @@ In C++, arithmetic operators are used to perform basic mathematical operations. 
 *   **Modulus (%)** − It returns the remainder of the division of one value by another.
 *   **Negate ()** − It returns the negated value of a parameter.
 
-### 2\. Comparison Functors
+### 2. Comparison Functors
 
 Comparison Functors are used for comparing values, especially for sorting or searching in containers.
 
@@ -241,7 +241,7 @@ Comparison Functors are used for comparing values, especially for sorting or sea
 *   **Equal To (=)** − It compares and returns true if they are equal.
 *   **Not Equal To (≠)** − It compares and returns true if they are not equal.
 
-### 3\. Logical Functors
+### 3. Logical Functors
 
 Logical functors perform logical operations and can be useful in scenarios involving boolean logic.
 
@@ -249,7 +249,7 @@ Logical functors perform logical operations and can be useful in scenarios invol
 *   **Logical OR Functor (||)** − It returns true if at least one of the two boolean arguments or both is true.
 *   **Logical NOT Functor (!)** − Returns true if the boolean argument is false and vice versa, it returns the opposite to the provided boolean.
 
-### 4\. Bitwise Functors
+### 4. Bitwise Functors
 
 *   **bit_and** − This performs a bitwise AND operation on two operands,
 *   **bit_or** − This performs a bitwise OR operation on two operands,
@@ -259,29 +259,29 @@ Logical functors perform logical operations and can be useful in scenarios invol
 
 Utility refers to a collection of general-purpose components which provide basic functionalities in programming, and allow for efficient operations on data and types.
 
-### 1\. Pair and Tuple
+### 1. Pair and Tuple
 
 *   **pair** − It's a container that holds two values of potentially different types, as first and second members.
 *   **tuple** − A fixed-size collection that can store multiple values of different types, with access to each element via std::get.
 
-### 2\. Smart Pointers
+### 2. Smart Pointers
 
 *   **unique_ptr** − it's a smart pointer that owns a dynamically allocated object, which automatically deallocates it when the pointer goes out of scope.
 *   **Shared_ptr** − It's a smart pointer that allows multiple pointers to share ownership of a dynamically allocated object by using reference counting to manage lifetime.
 *   **Weak_ptr** − It's a smart pointer that provides a non-owning reference to an object managed by std::shared_ptr which prevents circular references.
 
-### 3\. Optional, Variant, and Any Type (C++17)
+### 3. Optional, Variant, and Any Type (C++17)
 
 *   **Optional** − It's a wrapper that represents an optional value, indicating whether a value is present or absent.
 *   **variant** − It's a type-safe union that can hold one of several specified types, providing a way to handle multiple types without ambiguity.
 *   **any** − It's a type-safe container for storing values of any type, allowing for dynamic type erasure and runtime type checks.
 
-### 4\. Memory Management and Numeric Limits
+### 4. Memory Management and Numeric Limits
 
 *   **allocator** − This is used for managing dynamic memory.
 *   **numeric_limits** − It provides information about the properties of fundamental data types.
 
-### 5\. Type Traits
+### 5. Type Traits
 
 It's a set of templates that allow you to perform compile-time type checks.
 
