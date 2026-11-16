@@ -1,7 +1,7 @@
-# C++ Library - <vector>
+# C++ Library - `<vector>`
 
 [Previous](https://tutorialspoint.com/cpp_standard_library/unordered_multiset.htm) | 
-[Quiz](https://tutorialspoint.com/cpp_standard_library/quiz_on_vector.htm "Practice Quiz on C++ Library - <vector>") | 
+[Quiz](https://tutorialspoint.com/cpp_standard_library/quiz_on_vector.htm "Practice Quiz on C++ Library - `<vector>`") | 
 [Next](https://tutorialspoint.com/cpp_standard_library/algorithm.htm)
 
 ## Introduction
@@ -16,9 +16,11 @@ Zero sized vectors are also valid. In that case vector.begin() and vector.end() 
 
 ## Definition
 
-Below is definition of std::vector from <vector> header file
+Below is definition of std::vector from `<vector>` header file
 
+```cpp
 template < class T, class Alloc = allocator<T> > class vector;
+```
 
 ## Parameters
 
@@ -50,9 +52,9 @@ Following member types can be used as parameters or return type by member functi
 | 11  | size\_type | size\_t |
 | 12  | difference\_type | ptrdiff\_t |
 
-## Functions from <vector>
+## Functions from `<vector>`
 
-Below is list of all methods from <vector> header.
+Below is list of all methods from `<vector>` header.
 
 ### Constructors
 

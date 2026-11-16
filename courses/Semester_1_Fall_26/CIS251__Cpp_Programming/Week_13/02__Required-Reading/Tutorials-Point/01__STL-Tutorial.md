@@ -336,11 +336,11 @@ Element 3 found at position: 2
 
 This code provides the use of STL in various places,
 
-*   **std::vector<int> vec** − This above program used std::vector, which is an STL container that allows dynamic array management.
-*   **std::sort(vec.begin(), vec.end())** − This function is a part of STL algorithms which operate on containers, which sorts the elements of the vector in ascending order.
-*   **std::find(vec.begin(), vec.end(), 3)** − This function searches for the value 3 in the vector and returns an iterator to it if found.
-*   **begin() and vec.end()** − These functions return iterators that point to the beginning and just past the end of the vector, respectively.
-*   **std::distance(vec.begin(), it)** − This function calculates the number of elements between two iterators (in this case, from the beginning of the vector to the found iterator), effectively giving the index of the found element.
+*   **`std::vector<int> vec`** − This above program used std::vector, which is an STL container that allows dynamic array management.
+*   **`std::sort(vec.begin(), vec.end())`** − This function is a part of STL algorithms which operate on containers, which sorts the elements of the vector in ascending order.
+*   **`std::find(vec.begin(), vec.end(), 3)`** − This function searches for the value 3 in the vector and returns an iterator to it if found.
+*   **`begin() and vec.end()`** − These functions return iterators that point to the beginning and just past the end of the vector, respectively.
+*   **`std::distance(vec.begin(), it)`** − This function calculates the number of elements between two iterators (in this case, from the beginning of the vector to the found iterator), effectively giving the index of the found element.
 
 ## Benefits of Using STL
 
