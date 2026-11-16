@@ -12,6 +12,7 @@ To iterate through a vector, look at the following example:
 
 ### Example
 
+```cpp
 // Create a vector called cars that will store strings  
 vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};  
   
@@ -45,9 +46,11 @@ for (it = cars.begin(); it != cars.end(); ++it) {
 
 To understand how they work, let's continue to use vectors as an example:
 
+```cpp
 vector<string> cars \= {"Volvo", "BMW", "Ford", "Mazda"};  
   
 vector<string>::iterator it;  
+```
 
 ### Begin Examples
 
@@ -55,6 +58,7 @@ vector<string>::iterator it;
 
 ### Example
 
+```cpp
 // Point to the first element in the vector  
 it = cars.begin();  
 ```
@@ -63,6 +67,7 @@ To point to the second element (BMW), you can write `cars.begin() + 1`:
 
 ### Example
 
+```cpp
 // Point to the second element  
 it = cars.begin() + 1;  
 ```
@@ -71,6 +76,7 @@ And of course, that also means you can point to the third element with `cars.beg
 
 ### Example
 
+```cpp
 // Point to the third element  
 it = cars.begin() + 2;  
 ```
@@ -83,6 +89,7 @@ So, to use `end()` to point to the last element in the cars vector (Mazda), you 
 
 ### Example
 
+```cpp
 // Point to the last element  
 it = cars.end() - 1;  
 ```
@@ -93,6 +100,7 @@ Iterators are like "[pointers](https://w3schools.com/cpp/cpp_pointers.asp)" in t
 
 ### Example
 
+```cpp
 // Point to the first element in the vector  
 it = cars.begin();  
   
@@ -112,10 +120,13 @@ The `auto` keyword allows the compiler to automatically determine the correct da
 
 Instead of this:
 
+```cpp
 vector<string>::iterator it = cars.begin();  
+```
 
 You can simply write this:
 
+```cpp
 auto it = cars.begin();  
 ```
 
@@ -123,6 +134,7 @@ In the example above, the compiler knows the type of `it` based on the return ty
 
 The `auto` keyword works in `for` loops as well:
 
+```cpp
 for (auto it = cars.begin(); it != cars.end(); ++it) {  
   cout << \*it << "\\n";  
 }  
@@ -135,6 +147,7 @@ You can use a **for-each** loop to just loop through elements of a data structur
 
 ### Example
 
+```cpp
 // Create a vector called cars that will store strings  
 vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};  
   
@@ -150,6 +163,7 @@ However, when you need to add, modify, or remove elements **during iteration**, 
 
 ### Example
 
+```cpp
 // Create a vector called cars that will store strings  
 vector<string> cars \= {"Volvo", "BMW", "Ford", "Mazda"};  
   
@@ -174,6 +188,7 @@ To iterate in reverse order, you can use `rbegin()` and `rend()` instead of `beg
 
 ### Example
 
+```cpp
 // Iterate in reverse order  
 for (auto it = cars.rbegin(); it != cars.rend(); ++it) {  
   cout << \*it << "\\n";  
@@ -188,6 +203,7 @@ Iterators are great for code reusability since you can use the same syntax for i
 
 ### List Example
 
+```cpp
 // Create a list called cars that will store strings  
 list<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};  
   
@@ -199,6 +215,7 @@ for (auto it = cars.begin(); it != cars.end(); ++it) {
 
 ### Deque Example
 
+```cpp
 // Create a deque called cars that will store strings  
 deque<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};  
   
@@ -210,6 +227,7 @@ for (auto it = cars.begin(); it != cars.end(); ++it) {
 
 ### Set Example
 
+```cpp
 // Create a set called cars that will store strings  
 set<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};  
   
@@ -221,6 +239,7 @@ for (auto it = cars.begin(); it != cars.end(); ++it) {
 
 ### Map Example
 
+```cpp
 // Create a map that will store strings and integers  
 map<string, int\> people = { {"John", 32}, {"Adele", 45}, {"Bo", 29} };  
   
@@ -246,6 +265,7 @@ In this example, the elements are sorted alphabetically since they are strings:
 
 ### Example
 
+```cpp
 #include <iostream>  
 #include <vector>  
 **#include <algorithm>**  // Include the <algorithm> library  
@@ -271,6 +291,7 @@ And in this example, the elements are sorted numerically since they are integers
 
 ### Example
 
+```cpp
 #include <iostream>  
 #include <vector>  
 #include <algorithm>  
@@ -295,6 +316,7 @@ To reverse the order, you can use `rbegin()` and `rend()` instead of `begin()` a
 
 ### Example
 
+```cpp
 #include <iostream>  
 #include <vector>  
 #include <algorithm>  
@@ -314,8 +336,5 @@ int main() {
   return 0;  
 }  
 ```
-
-
-  
 
 [❮ Previous](https://w3schools.com/cpp/cpp_unordered_set.asp) [Next ❯](https://w3schools.com/cpp/cpp_algorithms.asp)
