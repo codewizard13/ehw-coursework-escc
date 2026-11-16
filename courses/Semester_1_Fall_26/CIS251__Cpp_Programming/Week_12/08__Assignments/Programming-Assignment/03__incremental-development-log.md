@@ -5,7 +5,7 @@
 - Course: CIS-251 — C++ Programming
 - Assignment: Week 12 — Files, Streams, Persistence, and Program Testing
 - Author: Eric L. Hepperle
-- Program: Persistent Contact List, version 1.01
+- Program: Persistent Contact List, version 1.02
 
 ## 📋 Initial Design and Planning
 
