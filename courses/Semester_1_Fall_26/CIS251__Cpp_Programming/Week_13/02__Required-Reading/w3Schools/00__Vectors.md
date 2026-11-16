@@ -2,17 +2,13 @@
 
 C++ Vectors
 
-[❮ Previous](cpp_data_structures.asp) [Next ❯](cpp_list.asp)
+[❮ Previous](https://w3schools.com/cpp/cpp_data_structures.asp) [Next ❯](https://w3schools.com/cpp/cpp_list.asp)
 
-- - -
 
-Share Link Copied
-
-/\* One delegated listener for every bar on the page, bound once even if the include is pulled in twice. The markup above is static, so the bar is part of the cached HTML and needs no script to appear - this only wires the clicks. \*/ (function(){ if(window.wsShareBar)return; window.wsShareBar=1; function pageUrl(){return location.href.split('#')\[0\];} document.addEventListener('click',function(e){ var btn=e.target&&e.target.closest?e.target.closest('.ws-share-btn'):null; if(!btn)return; var net=btn.getAttribute('data-ws-net'); if(net==='copy'){ if(!navigator.clipboard)return; var toast=btn.querySelector('.ws-copied-toast'); navigator.clipboard.writeText(pageUrl()).then(function(){ btn.classList.add('copied'); if(toast)toast.classList.add('show'); clearTimeout(btn.\_wsT); btn.\_wsT=setTimeout(function(){ btn.classList.remove('copied'); if(toast)toast.classList.remove('show'); },1600); }); return; } var url=encodeURIComponent(pageUrl()),s=''; if(net==='x'){ var title=document.title.replace(/\\s\*\[-|\]\\s\*W3Schools.\*$/i,'').trim(); s='https://twitter.com/intent/tweet?url='+url+'&text='+encodeURIComponent(title+' - W3Schools'); } else if(net==='facebook')s='https://www.facebook.com/sharer/sharer.php?u='+url; else if(net==='linkedin')s='https://www.linkedin.com/sharing/share-offsite/?url='+url; if(s)window.open(s,'\_blank','noopener,width=600,height=540'); }); })();
 
 ## C++ Vector
 
-A vector in C++ is like a resizable [array](cpp_arrays.asp).
+A vector in C++ is like a resizable [array](https://w3schools.com/cpp/cpp_arrays.asp).
 
 Both vectors and arrays are data structures used to store multiple elements of the same data **type**.
 
@@ -193,7 +189,7 @@ cars.pop\_back();
 
 [Try it Yourself »](trycpp.asp?filename=demo_vectors_remove)
 
-**Note:** Elements are usually only added and removed from the end of the vector. If you need to add or remove elements from both ends, it is often better to use a [deque](cpp_deque.asp) instead of a vector.
+**Note:** Elements are usually only added and removed from the end of the vector. If you need to add or remove elements from both ends, it is often better to use a [deque](https://w3schools.com/cpp/cpp_deque.asp) instead of a vector.
 
 - - -
 
@@ -258,7 +254,7 @@ for (string car : cars) {
 
 [Try it Yourself »](trycpp.asp?filename=demo_vectors_loop2)
 
-**Tip:** It is also possible to loop through vectors with an [iterator](cpp_iterators.asp), which you will learn more about in a later chapter.
+**Tip:** It is also possible to loop through vectors with an [iterator](https://w3schools.com/cpp/cpp_iterators.asp), which you will learn more about in a later chapter.
 
 - - -
 
@@ -284,10 +280,10 @@ Submit Answer »
 
 ## Complete Vector Reference
 
-For a complete reference of Vector functions, go to our [C++ Vector Reference](cpp_ref_vector.asp).
+For a complete reference of Vector functions, go to our [C++ Vector Reference](https://w3schools.com/cpp/cpp_ref_vector.asp).
 
 - - -
 
   
 
-[❮ Previous](cpp_data_structures.asp) [Next ❯](cpp_list.asp)
+[❮ Previous](https://w3schools.com/cpp/cpp_data_structures.asp) [Next ❯](https://w3schools.com/cpp/cpp_list.asp)

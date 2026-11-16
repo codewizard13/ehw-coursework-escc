@@ -1,11 +1,7 @@
 # C++ STL Tutorial
 
-- - -
-
-[Previous](/cplusplus/cpp_language_cheatsheet.htm)
-
-[Quiz](/cplusplus/quiz_on_cpp_stl_tutorial.htm "Practice Quiz on C++ STL Tutorial")
-
+[Previous](/cplusplus/cpp_language_cheatsheet.htm) | 
+[Quiz](/cplusplus/quiz_on_cpp_stl_tutorial.htm "Practice Quiz on C++ STL Tutorial") | 
 [Next](/cplusplus/cpp_standard_library.htm)
 
 Hope you have already understood the concept of C++ Template which we have discussed earlier. The C++ STL (Standard Template Library) is a powerful set of C++ template classes to provide general-purpose classes and functions with templates that implement many popular and commonly used algorithms and data structures like vectors, lists, queues, and stacks.
@@ -24,6 +20,7 @@ We will discuss about all the three C++ STL components in next chapter while dis
 
 Let us take the following program that demonstrates the vector container (a C++ Standard Template) which is similar to an array with an exception that it automatically handles its own storage requirements in case it grows −
 
+```cpp
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -59,9 +56,11 @@ int main() {
 
    return 0;
 }
+```
 
 When the above code is compiled and executed, it produces the following result −
 
+```sh
 vector size = 0
 extended vector size = 5
 value of vec \[0\] = 0
@@ -74,6 +73,7 @@ value of v = 1
 value of v = 2
 value of v = 3
 value of v = 4
+```
 
 Here are following points to be noted related to various functions we used in the above example −
 
@@ -99,37 +99,37 @@ Containers are data structures that are used to store and manage collections of 
 
 They are containers that store elements in a specific linear order. They allow for direct access to elements and functionalities to manage the order and arrangement of elements.
 
-*   [**Array**](/cpp_standard_library/array.htm) − These are fixed-size collections of elements.
-*   [**Vector**](/cpp_standard_library/vector.htm) − It's a dynamic array that can resize its size as per requirement.
-*   [**Deque**](/cpp_standard_library/deque.htm) − Double-ended queue that allows fast insertion and deletion at both ends.
-*   [**List**](/cpp_standard_library/list.htm) − A doubly linked list that allows bidirectional iteration.
-*   [**Forward List**](/cpp_standard_library/forward_list.htm) − It's a singly linked list that allows efficient insertion and deletion but only traversal in one direction.
-*   [**String**](/cpp_standard_library/string.htm) − In C++ string is also considered a sequential container, it is implemented as a dynamic array of characters that behaves similarly to other sequential containers.
+*   [**Array**](https://tutorialspoint.com/cpp_standard_library/array.htm) − These are fixed-size collections of elements.
+*   [**Vector**](https://tutorialspoint.com/cpp_standard_library/vector.htm) − It's a dynamic array that can resize its size as per requirement.
+*   [**Deque**](https://tutorialspoint.com/cpp_standard_library/deque.htm) − Double-ended queue that allows fast insertion and deletion at both ends.
+*   [**List**](https://tutorialspoint.com/cpp_standard_library/list.htm) − A doubly linked list that allows bidirectional iteration.
+*   [**Forward List**](https://tutorialspoint.com/cpp_standard_library/forward_list.htm) − It's a singly linked list that allows efficient insertion and deletion but only traversal in one direction.
+*   [**String**](https://tutorialspoint.com/cpp_standard_library/string.htm) − In C++ string is also considered a sequential container, it is implemented as a dynamic array of characters that behaves similarly to other sequential containers.
 
 ### 2\. Associative Containers
 
 It stores elements in a sorted order which allows fast retrieval based on keys. These containers work in a key-value pair structure, where each element is associated with a unique key. This key is used for quick access to the corresponding value.
 
-*   [**Set**](/cpp_standard_library/set.htm) − It is a collection of unique elements sorted in a specific order.
-*   [**Map**](/cpp_standard_library/map.htm) − It is a collection of key-value pairs, where keys are unique.
+*   [**Set**](https://tutorialspoint.com/cpp_standard_library/set.htm) − It is a collection of unique elements sorted in a specific order.
+*   [**Map**](https://tutorialspoint.com/cpp_standard_library/map.htm) − It is a collection of key-value pairs, where keys are unique.
 *   **Multiset** − It is similar to a set, but allows duplicate elements.
-*   [**Multimap**](/cpp_standard_library/cpp_multimap_range_constructor.htm) − It is similar to a map, but allows duplicate keys.
+*   [**Multimap**](https://tutorialspoint.com/cpp_standard_library/cpp_multimap_range_constructor.htm) − It is similar to a map, but allows duplicate keys.
 
 ### 3\. Unordered Associative Containers
 
 It stores elements in an unordered manner allowing for efficient access, insertion, and deletion based on keys. Instead of maintaining a sorted order of elements they use hashing to organize data.
 
-*   [**unordered\_set**](/cpp_standard_library/unordered_set.htm) − It is a collection of unique elements, without any specific order.
-*   [**unordered\_map**](/cpp_standard_library/unordered_map.htm) − It is a collection of key-value pairs without a specific order.
+*   [**unordered\_set**](https://tutorialspoint.com/cpp_standard_library/unordered_set.htm) − It is a collection of unique elements, without any specific order.
+*   [**unordered\_map**](https://tutorialspoint.com/cpp_standard_library/unordered_map.htm) − It is a collection of key-value pairs without a specific order.
 *   **unordered\_multiset** − It allows duplicate elements without a specific order.
-*   [**unordered\_multimap**](/cpp_standard_library/cpp_unordered_multimap_cend_bucket.htm) − It allows duplicate keys without a specific order.
+*   [**unordered\_multimap**](https://tutorialspoint.com/cpp_standard_library/cpp_unordered_multimap_cend_bucket.htm) − It allows duplicate keys without a specific order.
 
 ### 4\. Container Adapters
 
 It provides a different interface for existing containers.
 
-*   [**Stack**](/cpp_standard_library/stack.htm) − It is a data structure that follows the Last In, First Out (LIFO) principle.
-*   [**Queue**](/cpp_standard_library/queue.htm) − It is a data structure that follows the First In, First Out (FIFO) principle.
+*   [**Stack**](https://tutorialspoint.com/cpp_standard_library/stack.htm) − It is a data structure that follows the Last In, First Out (LIFO) principle.
+*   [**Queue**](https://tutorialspoint.com/cpp_standard_library/queue.htm) − It is a data structure that follows the First In, First Out (FIFO) principle.
 *   **Priority Queue** − It is a special type of queue where elements are removed based on priority.
 
 ## Algorithms
@@ -138,20 +138,20 @@ Algorithms in the C++ Standard Template Library (STL) is a big collection of fun
 
 ### Non-modifying Sequence Algorithms
 
-*   [**for\_each**](/cpp_standard_library/cpp_algorithm_for_each.htm) − It applies in a function to find out each element in a range.
-*   [**count**](/cpp_standard_library/cpp_algorithm_count.htm) − It counts the number of occurrences of a value in a range.
-*   [**find()**](/cpp_standard_library/cpp_algorithm_find.htm) − It finds the first occurrence of a value in a range.
-*   [**find\_if**](/cpp_standard_library/cpp_algorithm_find_if.htm) − It finds the first element satisfying a predicate.
-*   [**find\_if\_not**](/cpp_standard_library/cpp_algorithm_find_if_not.htm) − It finds the first element not satisfying a predicate.
-*   [**equal**](/cpp_standard_library/cpp_algorithm_equal_predicate.htm) − It checks if two ranges are equal.
+*   [**for\_each**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_for_each.htm) − It applies in a function to find out each element in a range.
+*   [**count**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_count.htm) − It counts the number of occurrences of a value in a range.
+*   [**find()**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_find.htm) − It finds the first occurrence of a value in a range.
+*   [**find\_if**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_find_if.htm) − It finds the first element satisfying a predicate.
+*   [**find\_if\_not**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_find_if_not.htm) − It finds the first element not satisfying a predicate.
+*   [**equal**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_equal_predicate.htm) − It checks if two ranges are equal.
 *   **search** − It searches for a subsequence within a sequence.
 
 ### 1\. Modifying Sequence Algorithms
 
-*   [**copy()**](/cpp_standard_library/cpp_algorithm_copy.htm) − It copies elements from one range to another.
-*   [**copy\_if**](/cpp_standard_library/cpp_algorithm_copy_if.htm) − It copies elements satisfying a predicate to another range.
-*   [**copy\_n**](/cpp_standard_library/cpp_algorithm_copy_n.htm) − It copies a specific number of elements from one range to another.
-*   [**move**](/cpp_standard_library/cpp_utility_move.htm) − it moves elements from one range to another.
+*   [**copy()**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_copy.htm) − It copies elements from one range to another.
+*   [**copy\_if**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_copy_if.htm) − It copies elements satisfying a predicate to another range.
+*   [**copy\_n**](https://tutorialspoint.com/cpp_standard_library/cpp_algorithm_copy_n.htm) − It copies a specific number of elements from one range to another.
+*   [**move**](https://tutorialspoint.com/cpp_standard_library/cpp_utility_move.htm) − it moves elements from one range to another.
 *   **transform()** − It applies a function to a range and stores the result.
 *   **remove** − It removes elements with a specific value from a range.
 *   **remove\_if** − It removes elements satisfying a predicate.
@@ -209,9 +209,9 @@ Iterators in the C++ Standard Template Library (STL) are objects that act as poi
 
 *   **Input Iterators** − They allow read-only access to elements.
 *   **Output Iterators** − They allow write-only access to elements.
-*   [**Forward Iterators**](/cpp_standard_library/cpp_iterator_forward_iterator_tag.htm) − They allow reading and writing, which can be incremented.
+*   [**Forward Iterators**](https://tutorialspoint.com/cpp_standard_library/cpp_iterator_forward_iterator_tag.htm) − They allow reading and writing, which can be incremented.
 *   **Bidirectional Iterators** − They can be incremented and decremented.
-*   [**Random Access Iterators**](/cpp_standard_library/cpp_iterator_random_access_iterator_tag.htm) − They support arithmetic operations and can access elements directly.
+*   [**Random Access Iterators**](https://tutorialspoint.com/cpp_standard_library/cpp_iterator_random_access_iterator_tag.htm) − They support arithmetic operations and can access elements directly.
 
 ## Function Objects (Functors)
 
@@ -294,6 +294,7 @@ It's a set of templates that allow you to perform compile-time type checks.
 
 Here's a simple example demonstrating some basic STL features
 
+```cpp
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -322,11 +323,14 @@ int main() {
 
    return 0;
 }
+```
 
 ### Output
 
+```sh
 Sorted vector: 1 2 3 5 8 
 Element 3 found at position: 2
+```
 
 ### Explanation
 

@@ -1,18 +1,10 @@
-# 
+# C++ Iterator
 
-C++ Iterator
-
-[❮ Previous](cpp_unordered_set.asp) [Next ❯](cpp_algorithms.asp)
-
-- - -
-
-Share Link Copied
-
-/\* One delegated listener for every bar on the page, bound once even if the include is pulled in twice. The markup above is static, so the bar is part of the cached HTML and needs no script to appear - this only wires the clicks. \*/ (function(){ if(window.wsShareBar)return; window.wsShareBar=1; function pageUrl(){return location.href.split('#')\[0\];} document.addEventListener('click',function(e){ var btn=e.target&&e.target.closest?e.target.closest('.ws-share-btn'):null; if(!btn)return; var net=btn.getAttribute('data-ws-net'); if(net==='copy'){ if(!navigator.clipboard)return; var toast=btn.querySelector('.ws-copied-toast'); navigator.clipboard.writeText(pageUrl()).then(function(){ btn.classList.add('copied'); if(toast)toast.classList.add('show'); clearTimeout(btn.\_wsT); btn.\_wsT=setTimeout(function(){ btn.classList.remove('copied'); if(toast)toast.classList.remove('show'); },1600); }); return; } var url=encodeURIComponent(pageUrl()),s=''; if(net==='x'){ var title=document.title.replace(/\\s\*\[-|\]\\s\*W3Schools.\*$/i,'').trim(); s='https://twitter.com/intent/tweet?url='+url+'&text='+encodeURIComponent(title+' - W3Schools'); } else if(net==='facebook')s='https://www.facebook.com/sharer/sharer.php?u='+url; else if(net==='linkedin')s='https://www.linkedin.com/sharing/share-offsite/?url='+url; if(s)window.open(s,'\_blank','noopener,width=600,height=540'); }); })();
+[❮ Previous](https://w3schools.com/cpp/cpp_unordered_set.asp) [Next ❯](https://w3schools.com/cpp/cpp_algorithms.asp)
 
 ## C++ Iterators
 
-Iterators are used to access and iterate through elements of data structures ([vectors](cpp_vectors.asp), [sets](cpp_sets.asp), etc.), by "[pointing](cpp_pointers.asp)" to them.
+Iterators are used to access and iterate through elements of data structures ([vectors](https://w3schools.com/cpp/cpp_vectors.asp), [sets](https://w3schools.com/cpp/cpp_sets.asp), etc.), by "[pointing](https://w3schools.com/cpp/cpp_pointers.asp)" to them.
 
 It is called an "iterator" because "iterating" is the technical term for **looping**.
 
@@ -30,8 +22,7 @@ vector<string>::iterator it;
 for (it = cars.begin(); it != cars.end(); ++it) {  
   cout << \*it << "\\n";  
 }  
-
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_vector)
+```
 
 #### Example explained
 
@@ -47,7 +38,7 @@ for (it = cars.begin(); it != cars.end(); ++it) {
 
 ## What is `begin()` and `end()`?
 
-`begin()` and `end()` are **functions** that **belong to data structures**, such as [vectors](cpp_vectors.asp) and [lists](cpp_list.asp). They **do not belong to the iterator** itself. Instead, they are used with iterators to access and iterate through the elements of these data structures.
+`begin()` and `end()` are **functions** that **belong to data structures**, such as [vectors](https://w3schools.com/cpp/cpp_vectors.asp) and [lists](https://w3schools.com/cpp/cpp_list.asp). They **do not belong to the iterator** itself. Instead, they are used with iterators to access and iterate through the elements of these data structures.
 
 *   `begin()` returns an iterator that points to the first element of the data structure.
 *   `end()` returns an iterator that points to one position after the last element.
@@ -66,8 +57,7 @@ vector<string>::iterator it;
 
 // Point to the first element in the vector  
 it = cars.begin();  
-
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_begin)
+```
 
 To point to the second element (BMW), you can write `cars.begin() + 1`:
 
@@ -75,8 +65,7 @@ To point to the second element (BMW), you can write `cars.begin() + 1`:
 
 // Point to the second element  
 it = cars.begin() + 1;  
-
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_begin2)
+```
 
 And of course, that also means you can point to the third element with `cars.begin() + 2`:
 
@@ -84,8 +73,7 @@ And of course, that also means you can point to the third element with `cars.beg
 
 // Point to the third element  
 it = cars.begin() + 2;  
-
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_begin3)
+```
 
 ### End Example
 
@@ -97,12 +85,11 @@ So, to use `end()` to point to the last element in the cars vector (Mazda), you 
 
 // Point to the last element  
 it = cars.end() - 1;  
-
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_end)
+```
 
 **Why do we say "point"?**
 
-Iterators are like "[pointers](cpp_pointers.asp)" in that they "point" to elements in a data structure rather than returning values from them. They refer to a specific position, providing a way to access and modify the value when needed, without making a copy of it. For example:
+Iterators are like "[pointers](https://w3schools.com/cpp/cpp_pointers.asp)" in that they "point" to elements in a data structure rather than returning values from them. They refer to a specific position, providing a way to access and modify the value when needed, without making a copy of it. For example:
 
 ### Example
 
@@ -113,14 +100,13 @@ it = cars.begin();
 \*it = "Tesla";  
   
 // Volvo is now Tesla  
-
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_modify)
+```
 
 - - -
 
 ## The `auto` Keyword
 
-In C++ 11 and later versions, you can use the [`auto`](cpp_auto.asp "Read More About The auto Keyword") keyword instead of explicitly declaring and specifying the type of the iterator.
+In C++ 11 and later versions, you can use the [`auto`](https://w3schools.com/cpp/cpp_auto.asp "Read More About The auto Keyword") keyword instead of explicitly declaring and specifying the type of the iterator.
 
 The `auto` keyword allows the compiler to automatically determine the correct data type, which simplifies the code and makes it more readable:
 
@@ -131,8 +117,7 @@ vector<string>::iterator it = cars.begin();
 You can simply write this:
 
 auto it = cars.begin();  
-
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_begin_auto)
+```
 
 In the example above, the compiler knows the type of `it` based on the return type of `cars.begin()`, which is `vector<string>::iterator`.
 
@@ -141,14 +126,8 @@ The `auto` keyword works in `for` loops as well:
 for (auto it = cars.begin(); it != cars.end(); ++it) {  
   cout << \*it << "\\n";  
 }  
+```
 
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_auto)
-
-- - -
-
-[REMOVE ADS](https://order.w3schools.com/plans)
-
-- - -
 
 ## For-Each Loop vs. Iterators
 
@@ -163,8 +142,7 @@ vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
 for (string car : cars) {  
   cout << car << "\\n";  
 }  
-
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_loop)
+```
 
 When you are just reading the elements, and don't need to modify them, the for-each loop is much simpler and cleaner than iterators.
 
@@ -188,12 +166,7 @@ for (auto it = cars.begin(); it != cars.end(); ) {
 for (const string& car : cars) {  
   cout << car << "\\n";  
 }  
-
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_loop2)
-
-[REMOVE ADS](https://order.w3schools.com/plans)
-
-- - -
+```
 
 ## Iterate in Reverse
 
@@ -205,8 +178,7 @@ To iterate in reverse order, you can use `rbegin()` and `rend()` instead of `beg
 for (auto it = cars.rbegin(); it != cars.rend(); ++it) {  
   cout << \*it << "\\n";  
 }  
-
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_reverse)
+```
 
 - - -
 
@@ -223,8 +195,7 @@ list<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
 for (auto it = cars.begin(); it != cars.end(); ++it) {  
   cout << \*it << "\\n";  
 }  
-
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_list)
+```
 
 ### Deque Example
 
@@ -235,8 +206,7 @@ deque<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
 for (auto it = cars.begin(); it != cars.end(); ++it) {  
   cout << \*it << "\\n";  
 }  
-
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_deque)
+```
 
 ### Set Example
 
@@ -247,8 +217,7 @@ set<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
 for (auto it = cars.begin(); it != cars.end(); ++it) {  
   cout << \*it << "\\n";  
 }  
-
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_set)
+```
 
 ### Map Example
 
@@ -259,12 +228,11 @@ map<string, int\> people = { {"John", 32}, {"Adele", 45}, {"Bo", 29} };
 for (auto it = people.begin(); it != people.end(); ++it) {  
   cout << it->first << " is: " << it->second << "\\n";  
 }  
-
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_map)
+```
 
 #### Iterator Support
 
-The examples above shows how to iterate through different data structures that support iterators ([vector](cpp_vectors.asp), [list](cpp_list.asp), [deque](cpp_deque.asp), [map](cpp_maps.asp) and [set](cpp_sets.asp) support iterators, while **[stacks](cpp_stacks.asp) and [queues](cpp_queues.asp) do not**).
+The examples above shows how to iterate through different data structures that support iterators ([vector](https://w3schools.com/cpp/cpp_vectors.asp), [list](https://w3schools.com/cpp/cpp_list.asp), [deque](https://w3schools.com/cpp/cpp_deque.asp), [map](https://w3schools.com/cpp/cpp_maps.asp) and [set](https://w3schools.com/cpp/cpp_sets.asp) support iterators, while **[stacks](https://w3schools.com/cpp/cpp_stacks.asp) and [queues](https://w3schools.com/cpp/cpp_queues.asp) do not**).
 
 - - -
 
@@ -297,8 +265,7 @@ int main() {
   
   return 0;  
 }  
-
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_sort)
+```
 
 And in this example, the elements are sorted numerically since they are integers:
 
@@ -322,8 +289,7 @@ int main() {
   
   return 0;  
 }  
-
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_sort2)
+```
 
 To reverse the order, you can use `rbegin()` and `rend()` instead of `begin()` and `end()`:
 
@@ -347,36 +313,9 @@ int main() {
   
   return 0;  
 }  
+```
 
-[Try it Yourself »](trycpp.asp?filename=demo_iterator_sort3)
-
-- - -
-
-## Exercise?**What is this?**  
-Test your skills by answering a few questions about the topics of this page
-
-What will the following code output?  
-`vector<string> cars = {"Volvo", "BMW", "Ford"};   for (auto it = cars.begin(); it != cars.end(); ++it) {     cout << *it << " ";   }`
 
   
 
-Volvo BMW Ford
-
-BMW Ford Volvo
-
-Ford BMW Volvo
-
-Random order
-
-  
-Submit Answer »
-
-- - -
-
-  
-
-[❮ Previous](cpp_unordered_set.asp) [Next ❯](cpp_algorithms.asp)
-
-[★ +1](https://profile.w3schools.com/log-in?redirect_url=https%3A%2F%2Fwww.w3schools.com%2Fcpp%2Fcpp_iterators.asp "Your W3Schools Profile")
-
-[Sign in to track progress](https://profile.w3schools.com/log-in?redirect_url=https%3A%2F%2Fpathfinder.w3schools.com&origin=https%3A%2F%2Fwww.w3schools.com%2Fcpp%2Fcpp_iterators.asp "Sign in to track your progress")
+[❮ Previous](https://w3schools.com/cpp/cpp_unordered_set.asp) [Next ❯](https://w3schools.com/cpp/cpp_algorithms.asp)
