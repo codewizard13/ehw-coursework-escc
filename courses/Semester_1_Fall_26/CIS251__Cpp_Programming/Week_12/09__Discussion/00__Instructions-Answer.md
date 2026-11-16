@@ -26,11 +26,39 @@ GOOD TEST DAT EX here:
 
 [Show a tiny MVP of what a sample test harness of c++ code would be ]
 
-# AI-ASSISTED DRAFT:
-
-
+[AI TRANSPARENCY TEMPLATE:
 
 **🤖 AI transparency:** I used Perplexity to organize my explanation, condense this response and expand my Net() object example. I independently verified that the 3 monthly net amounts add to 13,200 without taxing those amounts again.
+]
+
+# AI-ASSISTED DRAFT:
+
+AI can save time when generating test data, but it needs clear requirements instead of making assumptions about what a program accepts. I would provide the assignment instructions, a sample input file, and a list of allowed and prohibited values and output formats. I would also tell AI to ask about missing requirements rather than fill in the gaps.
+
+For example, if a budgeting app should accept whole numbers and amounts with one or two decimal places, then `12`, `12.5`, and `12.35` are valid, while `12.25234` is not. Saying “two-decimal precision” could be misunderstood as requiring exactly two digits after the decimal point. That would incorrectly classify `12.5` and `12` as invalid.
+
+### ❌ Incorrectly labeled test data
+
+| Index | Input | Expected result | Problem |
+|---|---|---|---|
+| 1 | `12.5` | Reject | One decimal place is allowed |
+| 2 | `12.25234` | Accept | Exceeds two decimal places |
+
+### ✅ Useful test data
+
+| Index | Input | Expected result | Purpose |
+|---|---|---|---|
+| 1 | `12` | Accept | Tests a whole number |
+| 2 | `12.35` | Accept | Tests two decimal places |
+| 3 | `12.4` | Accept | Tests one decimal place |
+
+I would also require AI to follow the actual file structure without inventing headers, separators, or extra fields. Generated tests should include expected results so I can compare them with my program’s output.
+
+This conversation demonstrated the problem: AI initially required exactly two decimal places and introduced `stringstream`, which we have not covered. Both choices went beyond my requirements. Clear instructions help, but I still need to review the output rather than assume it is correct.
+
+### 🤖 AI transparency
+
+I used Perplexity to organize my explanation and draft the test tables. I independently checked each table entry against my stated rule allowing whole numbers and amounts with one or two decimal places.
 
 
 ### References:
