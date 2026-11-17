@@ -32,6 +32,22 @@ I plan to use my **Assignment 6 Score List Analyzer** as the starting point and 
 
 ---
 
+Learnings & Challenges ...
+
+-  // Naming note: Scores are the numeric values, grades are the letter values they correspond with in the A-F grading system
+
+- Originally I had this:
+
+  total = accumulate(scores.begin(), scores.end(), 0);
+
+  and it was truncating the total from 421.50 to 421
+
+  I added setprecision(2) fixed and it was now displaying  2 decimal places, but it still had truncated the decimal part. Then I read the Fluen{C++} blog and found the actual solution. -- the `0` in the 3rd parameter is sort of like a seed -- by starting it as `0.0`, you tell the accumulate() function that you want to do decimal division.
+
+-   // Loop through and display each score in single horizontal line
+  //  - #GOTCHA: Apparently C++ doesn't have any sort of `join()` one-liner
+  - I tried to use accumulate() as a join function, and it will join strings, but there's no built-in way to add a custom delimiter.
+---
 
 ## 🧪 Planned Test Coverage
 
