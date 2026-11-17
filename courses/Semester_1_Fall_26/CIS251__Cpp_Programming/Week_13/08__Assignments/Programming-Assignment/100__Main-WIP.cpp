@@ -15,7 +15,8 @@
  * - The main advantage of vectors over arrays is that vectors automatically
  *   resize and do their own memory management.
  *
- * @status WIP
+ * @status WIP - WORKS, but doesn't implement a range-based loop.
+ *    NEXT: Implement foreach loop in test harness.
  *
  * @author Eric L. Hepperle
  * @date 2026-11-17
@@ -55,6 +56,8 @@ int main()
   double lowest = 999;
   double total = 0.0;
   double avg = 0.0;
+
+
 
   // Display program start in console
   cout << "******** START PROGRAM *********************************\n\n";
