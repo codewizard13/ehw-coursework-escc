@@ -10,12 +10,12 @@
  *     analyzer to use std::vector. Use a range-based loop or iterator pattern
  *     and one standard algorithm shown in the readings. Compare the array and
  *     vector versions in comments.
- * 
+ *
  * @par Notes:
  * - The main advantage of vectors over arrays is that vectors automatically
  *   resize and do their own memory management.
  *
- * @status WIP
+ * @status WIP -
  *
  * @author Eric L. Hepperle
  * @date 2026-11-17
@@ -43,7 +43,13 @@ int main()
 
   // Naming note: Scores are the numeric values, grades are the letter values they correspond with in the A-F grading system
   // Define & init scores vector
-  vector<double> scores = {90, 100, 98.25, 85.5, 46};
+  // vector<double> scores = {90, 100, 98.25, 85.5, 46};
+
+  vector<vector<double>> testHarness = {
+      {85, 90, 98.5, 98.5, 76.5},
+      {90, 62.5, 38, 38, 98}};
+
+  cout << testHarness[0][0] << endl;
 
   // Define & init report string variables
   string student_name = "Eric Hepperle";
@@ -56,42 +62,46 @@ int main()
   double total = 0.0;
   double avg = 0.0;
 
+  for (auto test : testHarness)
+  {
+    printGradeReport(test, total, avg, highest, lowest);
+  }
 
-  
-  // Display program start in console
-  cout << "******** START PROGRAM *********************************\n\n";
-  cout << report_heading << endl;
+  // printGradeReport(testHarness[0], total, avg, highest, lowest);
 
-  // TEST 1: Mixed decimal and int values
-  cout << "\n============ TEST CASE: 1 ============\n";
-  cout << "#   Mixed decimal and int values\n";
-  cout << "--------------------------------------\n";
-  printGradeReport(scores, total, avg, highest, lowest);
+  //   // Display program start in console
+  //   cout << "******** START PROGRAM *********************************\n\n";
+  //   cout << report_heading << endl;
 
-  // TEST 2: Tied high score
-  cout << "\n============ TEST CASE: 2 ============\n";
-  cout << "#   Tied high score\n";
-  cout << "--------------------------------------\n";
-  printGradeReport({85, 90, 98.5, 98.5, 76.5}, total, avg, highest, lowest);
+  //   // TEST 1: Mixed decimal and int values
+  //   cout << "\n============ TEST CASE: 1 ============\n";
+  //   cout << "#   Mixed decimal and int values\n";
+  //   cout << "--------------------------------------\n";
+  //   printGradeReport(scores, total, avg, highest, lowest);
 
-  // TEST 3: Tied low score
-  cout << "\n============ TEST CASE: 3 ============\n";
-  cout << "#   Tied low score\n";
-  cout << "--------------------------------------\n";
-  printGradeReport({90, 62.5, 38, 38, 98}, total, avg, highest, lowest);
+  //   // TEST 2: Tied high score
+  //   cout << "\n============ TEST CASE: 2 ============\n";
+  //   cout << "#   Tied high score\n";
+  //   cout << "--------------------------------------\n";
+  //   printGradeReport({85, 90, 98.5, 98.5, 76.5}, total, avg, highest, lowest);
 
-  // TEST 4: Score set contains both boundaries (0 & 100)
-  cout << "\n============ TEST CASE: 4 ============\n";
-  cout << "#   Score set contains both boundaries (0 & 100)\n";
-  cout << "--------------------------------------\n";
-  printGradeReport({0, 76, 2, 100, 98.5}, total, avg, highest, lowest);
+  //   // TEST 3: Tied low score
+  //   cout << "\n============ TEST CASE: 3 ============\n";
+  //   cout << "#   Tied low score\n";
+  //   cout << "--------------------------------------\n";
+  //   printGradeReport({90, 62.5, 38, 38, 98}, total, avg, highest, lowest);
 
-// TEST 5: Mixed decimal and int values
-  cout << "\n============ TEST CASE: 5 ============\n";
-  cout << "#   All scores identical\n";
-  cout << "--------------------------------------\n";
-  printGradeReport({100, 100, 100, 100, 100}, total, avg, highest, lowest);
+  //   // TEST 4: Score set contains both boundaries (0 & 100)
+  //   cout << "\n============ TEST CASE: 4 ============\n";
+  //   cout << "#   Score set contains both boundaries (0 & 100)\n";
+  //   cout << "--------------------------------------\n";
+  //   printGradeReport({0, 76, 2, 100, 98.5}, total, avg, highest, lowest);
 
+  // // TEST 5: Mixed decimal and int values
+  //   cout << "\n============ TEST CASE: 5 ============\n";
+  //   cout << "#   All scores identical\n";
+  //   cout << "--------------------------------------\n";
+  //   printGradeReport({100, 100, 100, 100, 100}, total, avg, highest, lowest);
 
   // Display program end in console
   cout << "\n******** END PROGRAM ***********************************\n";
@@ -143,3 +153,4 @@ void printGradeReport(const vector<double> &scores,
   // Restore the saved precision and notation
   cout << defaultfloat << setprecision(saved_precision);
 }
+
