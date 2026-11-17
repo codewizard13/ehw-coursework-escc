@@ -23,39 +23,87 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
 #include <iomanip>
+
+#include <vector>
+#include <numeric>
+#include <algorithm>
 
 // #include <ranges>
 // #include <string_view>
 
 using namespace std;
 
-void printGradeReport(const vector<double>& grades);
+void printGradeReport(const vector<double> &scores);
 
 int main()
 {
 
-  // Define grades vector
-  vector<double> grades;
+  // Naming note: Scores are the numeric values, grades are the letter values they correspond with in the A-F grading system
+  // Define & init scores vector
+  vector<double> scores = {90, 100, 100, 85.5, 46};
 
-  grades = {90, 100, 100, 85.5, 46};
+  // Define & init report string variables
+  string student_name = "Eric Hepperle";
+  string report_heading = "Grade Report for: ";
+  report_heading.append(student_name);
+
+  // Initialize report stats
+  double highest = -999;
+  double lowest = 999;
+  double total = 0.0;
+  double avg = 0.0;
+
+  // Display program start in console
+  cout << "******** START PROGRAM *********************************\n";
+  cout << report_heading << endl;
+
+  // Display the label for the scores
+  cout << "Scores: ";
+
+  // Loop through and display each score in single horizontal line
+  //  - #GOTCHA: Apparently C++ doesn't have any sort of `join()` one-liner
+  for (int i = 0; i < scores.size(); i++)
+  {
+    cout << scores[i];
+    cout << (i == scores.size() - 1 ? "\n" : ", ");
+  }
+
+  cout << "=================================\n";
+
+  // Calculate sum with accumulate algorithm
+  total = accumulate(scores.begin(), scores.end(), 0.0);
+
+  // Calculate avg
+  avg = total / scores.size();
+
+  // Get highest with algorithm
+  highest = *min_element(scores.begin(), scores.end());
+
+  // Grade Report for: Eric Hepperle
+  // Scores: 90, 100, 100, 85.5, 46
+  // =================================
 
   // Call helper function
-  printGradeReport(grades);
-
-  // cout << *grades.begin();
-
-  cout << grades.at(3);
+  // printGradeReport(scores);
 
 
+  // cout << *scores.begin();
+  // cout << scores.at(3);
 
+  // Set precision to 2 decimal places
+  cout << setprecision(2) << fixed;
+
+  // Print stats to console
+  cout << "Total: " << total << "\n";
+  cout << "Average: " << avg << "\n";
+  cout << "Highest Score: " << highest << "\n";
 
   return 0;
 }
 
-void printGradeReport(const vector<double>& grades) {
+void printGradeReport(const vector<double> &scores)
+{
 
-  cout << "End printGradeReport()\n";
+  // cout << "--- End printGradeReport()\n";
 }
-
