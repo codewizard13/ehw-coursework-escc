@@ -31,7 +31,8 @@
 
 using namespace std;
 
-void printGradeReport(const vector<double> &scores);
+void printGradeReport(const vector<double> &scores,
+                      double &ttl, double &avg, double &max, double &min);
 
 int main()
 {
@@ -52,8 +53,19 @@ int main()
   double avg = 0.0;
 
   // Display program start in console
-  cout << "******** START PROGRAM *********************************\n";
+  cout << "******** START PROGRAM *********************************\n\n";
   cout << report_heading << endl;
+
+  printGradeReport(scores, total, avg, highest, lowest);
+
+  cout << "\n******** END PROGRAM ***********************************\n";
+
+  return 0;
+}
+
+void printGradeReport(const vector<double> &scores,
+                      double &ttl, double &avg, double &max, double &min)
+{
 
   // Display the label for the scores
   cout << "Scores: ";
@@ -69,43 +81,23 @@ int main()
   cout << "=================================\n";
 
   // Calculate sum with accumulate algorithm
-  total = accumulate(scores.begin(), scores.end(), 0.0);
+  ttl = accumulate(scores.begin(), scores.end(), 0.0);
 
   // Calculate avg
-  avg = total / scores.size();
+  avg = ttl / scores.size();
 
   // Get highest with algorithm
-  highest = *max_element(scores.begin(), scores.end());
+  max = *max_element(scores.begin(), scores.end());
 
   // Get lowest with algorithm
-  lowest = *min_element(scores.begin(), scores.end());
-
-  // Grade Report for: Eric Hepperle
-  // Scores: 90, 100, 100, 85.5, 46
-  // =================================
-
-  // Call helper function
-  // printGradeReport(scores);
-
-  // cout << *scores.begin();
-  // cout << scores.at(3);
+  min = *min_element(scores.begin(), scores.end());
 
   // Set precision to 2 decimal places
   cout << setprecision(2) << fixed;
 
   // Print stats to console
-  cout << "Total: " << total << "\n";
+  cout << "Total: " << ttl << "\n";
   cout << "Average: " << avg << "\n";
-  cout << "Highest Score: " << highest << "\n";
-  cout << "Lowest Score: " << lowest << "\n";
-
-  cout << "******** END PROGRAM ***********************************\n";
-
-  return 0;
-}
-
-void printGradeReport(const vector<double> &scores)
-{
-
-  // cout << "--- End printGradeReport()\n";
+  cout << "Highest Score: " << max << "\n";
+  cout << "Lowest Score: " << min << "\n";
 }
