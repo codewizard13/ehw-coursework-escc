@@ -64,6 +64,47 @@ Learnings & Challenges ...
   cout << defaultfloat << setprecision(saved_precision);
   ```
 
+- #GOTCHA: I tried creating a mixed elmenent 2-dimensional vector to no avail -- though a 2-dim vector is definitely valid, not with mixed types, ex:
+
+```
+  vector<vector<double>> testHarness = {
+      {{85, 90, 98.5, 98.5, 76.5}, "Test 1"},
+      {{90, 62.5, 38, 38, 98}, "Test 2"}
+
+  };
+
+... 
+
+  for (auto test : testHarness)
+  {
+    printGradeReport(test, total, avg, highest, lowest);
+  }
+  ```
+
+Google Gemini provided this suggestion:
+
+Using a struct is the cleanest way to bundle each test's label, description, and score set together into a single std::vector.
+Defining a custom struct lets you use the range-based for loop required by your assignment while keeping all test metadata in one place.
+
+-- Seems promising -- I'll let you know if it works
+
+  // Naming note: Scores are the numeric values, grades are the letter values they correspond with in the A-F grading system ( I may have already noted this earlier)
+
+- 
+3. Loop Through With a Range-Based for Loop
+
+Using const auto &test avoids copying each vector of scores on every iteration and directly satisfies your assignment's range-based loop requirement:
+cpp
+for (const auto &test : testHarness) {
+    cout << "\n============ " << test.title << " ============\n";
+    cout << "# " << test.description << "\n";
+    cout << "--------------------------------------\n";
+    printGradeReport(test.scores, total, avg, highest, lowest);
+}
+
+- Added .0 to highest and lowest sentinel values to be consistent about float usage
+- CONFIRMING: Yes - the custom struct solved the mixed values issue!
+
 ---
 
 ## 🧪 Planned Test Coverage

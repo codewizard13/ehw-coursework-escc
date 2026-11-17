@@ -35,6 +35,13 @@
 
 using namespace std;
 
+struct TestCase
+{
+  string title;
+  string description;
+  vector<double> scores;
+};
+
 void printGradeReport(const vector<double> &scores,
                       double &ttl, double &avg, double &max, double &min);
 
@@ -44,12 +51,12 @@ int main()
   // Naming note: Scores are the numeric values, grades are the letter values they correspond with in the A-F grading system
   // Define & init scores vector
   // vector<double> scores = {90, 100, 98.25, 85.5, 46};
-
-  vector<vector<double>> testHarness = {
-      {85, 90, 98.5, 98.5, 76.5},
-      {90, 62.5, 38, 38, 98}};
-
-  cout << testHarness[0][0] << endl;
+  vector<TestCase> testHarness = {
+      {"TEST CASE: 1", "Mixed decimal and int values", {90, 100, 98.25, 85.5, 46}},
+      {"TEST CASE: 2", "Tied high score", {85, 90, 98.5, 98.5, 76.5}},
+      {"TEST CASE: 3", "Tied low score", {90, 62.5, 38, 38, 98}},
+      {"TEST CASE: 4", "Score set contains both boundaries (0 & 100)", {0, 76, 2, 100, 98.5}},
+      {"TEST CASE: 5", "All scores identical", {100, 100, 100, 100, 100}}};
 
   // Define & init report string variables
   string student_name = "Eric Hepperle";
@@ -57,51 +64,18 @@ int main()
   report_heading.append(student_name);
 
   // Initialize report stats
-  double highest = -999;
-  double lowest = 999;
+  double highest = -999.0;
+  double lowest = 999.0;
   double total = 0.0;
   double avg = 0.0;
 
-  for (auto test : testHarness)
+  for (const auto &test : testHarness)
   {
-    printGradeReport(test, total, avg, highest, lowest);
+    cout << "\n============ " << test.title << " ============\n";
+    cout << "# " << test.description << "\n";
+    cout << "--------------------------------------\n";
+    printGradeReport(test.scores, total, avg, highest, lowest);
   }
-
-  // printGradeReport(testHarness[0], total, avg, highest, lowest);
-
-  //   // Display program start in console
-  //   cout << "******** START PROGRAM *********************************\n\n";
-  //   cout << report_heading << endl;
-
-  //   // TEST 1: Mixed decimal and int values
-  //   cout << "\n============ TEST CASE: 1 ============\n";
-  //   cout << "#   Mixed decimal and int values\n";
-  //   cout << "--------------------------------------\n";
-  //   printGradeReport(scores, total, avg, highest, lowest);
-
-  //   // TEST 2: Tied high score
-  //   cout << "\n============ TEST CASE: 2 ============\n";
-  //   cout << "#   Tied high score\n";
-  //   cout << "--------------------------------------\n";
-  //   printGradeReport({85, 90, 98.5, 98.5, 76.5}, total, avg, highest, lowest);
-
-  //   // TEST 3: Tied low score
-  //   cout << "\n============ TEST CASE: 3 ============\n";
-  //   cout << "#   Tied low score\n";
-  //   cout << "--------------------------------------\n";
-  //   printGradeReport({90, 62.5, 38, 38, 98}, total, avg, highest, lowest);
-
-  //   // TEST 4: Score set contains both boundaries (0 & 100)
-  //   cout << "\n============ TEST CASE: 4 ============\n";
-  //   cout << "#   Score set contains both boundaries (0 & 100)\n";
-  //   cout << "--------------------------------------\n";
-  //   printGradeReport({0, 76, 2, 100, 98.5}, total, avg, highest, lowest);
-
-  // // TEST 5: Mixed decimal and int values
-  //   cout << "\n============ TEST CASE: 5 ============\n";
-  //   cout << "#   All scores identical\n";
-  //   cout << "--------------------------------------\n";
-  //   printGradeReport({100, 100, 100, 100, 100}, total, avg, highest, lowest);
 
   // Display program end in console
   cout << "\n******** END PROGRAM ***********************************\n";
@@ -153,4 +127,3 @@ void printGradeReport(const vector<double> &scores,
   // Restore the saved precision and notation
   cout << defaultfloat << setprecision(saved_precision);
 }
-
