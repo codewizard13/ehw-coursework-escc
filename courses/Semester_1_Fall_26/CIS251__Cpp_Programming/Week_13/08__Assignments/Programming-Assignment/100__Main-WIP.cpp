@@ -29,9 +29,6 @@
 #include <numeric>
 #include <algorithm>
 
-// #include <ranges>
-// #include <string_view>
-
 using namespace std;
 
 void printGradeReport(const vector<double> &scores);
@@ -78,7 +75,10 @@ int main()
   avg = total / scores.size();
 
   // Get highest with algorithm
-  highest = *min_element(scores.begin(), scores.end());
+  highest = *max_element(scores.begin(), scores.end());
+
+  // Get lowest with algorithm
+  lowest = *min_element(scores.begin(), scores.end());
 
   // Grade Report for: Eric Hepperle
   // Scores: 90, 100, 100, 85.5, 46
@@ -86,7 +86,6 @@ int main()
 
   // Call helper function
   // printGradeReport(scores);
-
 
   // cout << *scores.begin();
   // cout << scores.at(3);
@@ -98,6 +97,9 @@ int main()
   cout << "Total: " << total << "\n";
   cout << "Average: " << avg << "\n";
   cout << "Highest Score: " << highest << "\n";
+  cout << "Lowest Score: " << lowest << "\n";
+
+  cout << "******** END PROGRAM ***********************************\n";
 
   return 0;
 }

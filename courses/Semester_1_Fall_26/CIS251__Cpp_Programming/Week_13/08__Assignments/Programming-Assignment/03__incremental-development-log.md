@@ -46,7 +46,11 @@ Learnings & Challenges ...
 
 -   // Loop through and display each score in single horizontal line
   //  - #GOTCHA: Apparently C++ doesn't have any sort of `join()` one-liner
-  - I tried to use accumulate() as a join function, and it will join strings, but there's no built-in way to add a custom delimiter.
+  - I tried to use accumulate() as a join function, and it will join strings, but there's no built-in way to add a custom delimiter. Considered including headers for // #include <ranges>
+// #include <string_view> to build a custom join() function, but it seemed like too much extra code and beyond the immedate scope of this assignment, so I didn't.
+
+
+
 ---
 
 ## 🧪 Planned Test Coverage
