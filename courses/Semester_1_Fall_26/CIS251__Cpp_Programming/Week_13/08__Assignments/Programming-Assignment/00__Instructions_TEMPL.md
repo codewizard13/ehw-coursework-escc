@@ -1,10 +1,10 @@
-## Week 10 Programming Assignment - Operator Overloading, Enumerations, and Interface Design
+## Week 13 Programming Assignment - C++ Integration: STL Containers, Algorithms, and Design Refactoring
 
-**Preparation requirement:** Complete the Week 10 readings, videos, [C++ Institute practice](https://www.netacad.com/courses/c-plus-plus-essentials-2?courseLang=en-US&instance_id=c9801f54-4d0c-44f9-b4ee-3f2d9c6306bf), and guided examples before starting. This assignment intentionally requires only concepts taught in those materials.
+**Preparation requirement:** Complete the Week 13 readings, videos, [C++ Institute practice](https://www.netacad.com/courses/c-plus-plus-essentials-2?courseLang=en-US&instance_id=c9801f54-4d0c-44f9-b4ee-3f2d9c6306bf), and guided examples before starting. This assignment intentionally requires only concepts taught in those materials.
 
 ### Programming Task
 
-> **Distance Class**: create a small Distance class and overload one arithmetic/comparison operator exactly as modeled in the required material. Add an enum or enum class for a display/unit choice. Do not implement operators not covered in the examples.
+> **Vector-Based Score Analyzer:** refactor the Week 6 score analyzer to use std::vector. Use a range-based loop or iterator pattern and one standard algorithm shown in the readings. Compare the array and vector versions in comments.
 
 ### Required Process
 
