@@ -77,10 +77,10 @@ value of v = 4
 
 Here are following points to be noted related to various functions we used in the above example −
 
-*   The push_back() member function inserts value at the end of the vector, expanding its size as needed.
-*   The size() function displays the size of the vector.
-*   The function begin() returns an iterator to the start of the vector.
-*   The function end() returns an iterator to the end of the vector.
+*   The `push_back()` member function inserts value at the end of the vector, expanding its size as needed.
+*   The `size()` function displays the size of the vector.
+*   The function `begin()` returns an iterator to the start of the vector.
+*   The function `end()` returns an iterator to the end of the vector.
 
 ## C++ Standard Template Library Components
 
