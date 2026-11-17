@@ -21,3 +21,41 @@
  * @see https://github.com/codewizard13
  */
 
+#include <iostream>
+#include <string>
+#include <vector>
+#include <iomanip>
+
+// #include <ranges>
+// #include <string_view>
+
+using namespace std;
+
+void printGradeReport(const vector<double>& grades);
+
+int main()
+{
+
+  // Define grades vector
+  vector<double> grades;
+
+  grades = {90, 100, 100, 85.5, 46};
+
+  // Call helper function
+  printGradeReport(grades);
+
+  // cout << *grades.begin();
+
+  cout << grades.at(3);
+
+
+
+
+  return 0;
+}
+
+void printGradeReport(const vector<double>& grades) {
+
+  cout << "End printGradeReport()\n";
+}
+

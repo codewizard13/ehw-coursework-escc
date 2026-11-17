@@ -5,9 +5,10 @@
 ### 🏗️ Overview:
 
 1. Include input-output (I/O) stream and I/O manipulation libraries
-2. Declare an array of quiz scores
-3. Create a function `getGradeReport()` to calculate and report the grade values
-4. Foreach test set, get/print grade report
+2. Declare the standard namespace using
+3. Declare an array of quiz scores
+4. Create a function `getGradeReport()` to calculate and report the grade values
+5. Foreach test set, get/print grade report
 
 
 
