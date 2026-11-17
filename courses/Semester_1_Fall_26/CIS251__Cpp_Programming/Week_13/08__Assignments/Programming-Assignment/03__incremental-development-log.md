@@ -49,7 +49,20 @@ Learnings & Challenges ...
   - I tried to use accumulate() as a join function, and it will join strings, but there's no built-in way to add a custom delimiter. Considered including headers for // #include <ranges>
 // #include <string_view> to build a custom join() function, but it seemed like too much extra code and beyond the immedate scope of this assignment, so I didn't.
 
+- In my printGradeReport() func, I noticed the first row of scores prints correctly (mixed decimals and ints), but every subsequent iteration has all numeric values as decimals. I decided to fix it by storing the current precision before I change precision to 2 (it is 6 by default, but I'm trying to account for if it might  been changed to something else at some point. Whatever value it is, this restores it correctly):
 
+```
+  // Store current precision
+  streamsize saved_precision = cout.precision();
+
+  // Set precision to 2 decimal places
+  cout << setprecision(2) << fixed;
+
+  // DO STUFF ...
+
+  // Restore the saved precision and notation
+  cout << defaultfloat << setprecision(saved_precision);
+  ```
 
 ---
 
@@ -60,7 +73,6 @@ Learnings & Challenges ...
 3. Identify a tied lowest score: `90, 62.5, 38, 38, 98`.
 4. Process scores containing both boundary values, 0 and 100: `0, 76, 2, 100, 98.5`.
 5. Calculate statistics when all scores are identical: `100, 100, 100, 100, 100`.
-6. Identify a single highest and lowest score: `92.6, 73, 79, 78.5, 90.5`.
 
 
 
