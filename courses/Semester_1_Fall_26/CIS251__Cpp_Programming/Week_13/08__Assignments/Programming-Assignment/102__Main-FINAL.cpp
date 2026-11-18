@@ -14,23 +14,23 @@
  * @par Comparing Wk 6 (array) version to this (vector) version:
  * - The main advantage of vectors over arrays is that vectors automatically
  *   resize and do their own memory management.
- * 
+ *
  * - Both versions scale linearly, (O(n)), with the number of scores.
  *   The original combines display, summation, and highest/lowest comparisons
  *   in one loop. The refactored version uses four passes: one for display and
  *   one each for `accumulate()`, `max_element()`, and `min_element()`. These
  *   extra passes add work but do not change the overall complexity. They also
  *   do not imply the program runs four times slower.
- * 
+ *
  * - Vectors add storage-management overhead, not inherently slower indexing.
  *   Like arrays, vectors store elements contiguously and provide constant-time
  *   indexed access. My vectors are initialized once and never resized, so
  *   repeated growth and reallocation are not a concern in this program.
- * 
+ *
  * - For five-score datasets, the additional work is small; the refactor
  *   prioritizes clarity and reusable testing rather than speed.
  *
- * @status WIP - Works. Versioning to 1.02 to finalize comments
+ * @status Fully Working
  *
  * @author Eric L. Hepperle
  * @date 2026-11-17
@@ -63,11 +63,10 @@ void printGradeReport(const vector<double> &scores,
 int main()
 {
 
-    // Display program START in console
+  // Display program START in console
   cout << "\n******** START PROGRAM *********************************\n";
 
-  // Naming note: Scores are the numeric values, grades are the letter values they correspond with in the A-F grading system
-  // Define & init scores vector
+  // Define test datasets; the original single-dataset approach is below.
   // vector<double> scores = {90, 100, 98.25, 85.5, 46};
   vector<TestCase> testHarness = {
       {"TEST CASE: 1", "Mixed decimal and int values", {90, 100, 98.25, 85.5, 46}},
@@ -101,6 +100,14 @@ int main()
   return 0;
 }
 
+/**
+ * @brief Calculate and display scores and summary statistics.
+ * @param[in] scores Nonempty vector of quiz scores.
+ * @param[out] ttl Total score.
+ * @param[out] avg Average score.
+ * @param[out] max Highest score.
+ * @param[out] min Lowest score.
+ */
 void printGradeReport(const vector<double> &scores,
                       double &ttl, double &avg, double &max, double &min)
 {
@@ -108,8 +115,8 @@ void printGradeReport(const vector<double> &scores,
   // Display the label for the scores
   cout << "Scores: ";
 
-  // Loop through and display each score in single horizontal line
-  //  - #GOTCHA: Apparently C++ doesn't have any sort of `join()` one-liner
+  // Display scores on one line, separated by commas.
+  // Keep delimiter handling simple rather than building a custom join().
   for (int i = 0; i < scores.size(); i++)
   {
     cout << scores[i];
@@ -118,10 +125,12 @@ void printGradeReport(const vector<double> &scores,
 
   cout << "======================================\n";
 
-  // Calculate sum with accumulate algorithm
+  // Replace manual summation with accumulate() algorithm;
+  //  0.0 preserves decimals.
   ttl = accumulate(scores.begin(), scores.end(), 0.0);
 
-  // Calculate avg
+  // Calculate avg.
+  //  Use size() instead of the original array's sizeof-based length.
   avg = ttl / scores.size();
 
   // Get highest with algorithm
