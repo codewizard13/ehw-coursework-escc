@@ -34,8 +34,8 @@
  *
  * @author Eric L. Hepperle
  * @date 2026-11-17
- * @updated --
- * @version 1.01
+ * @updated 2026-11-18
+ * @version 1.02
  *
  * @see https://github.com/codewizard13
  */
