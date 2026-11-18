@@ -15,7 +15,7 @@
  * - The main advantage of vectors over arrays is that vectors automatically
  *   resize and do their own memory management.
  *
- * @status WIP -
+ * @status WIP - Works. Versioning to 1.02 to finalize comments
  *
  * @author Eric L. Hepperle
  * @date 2026-11-17
