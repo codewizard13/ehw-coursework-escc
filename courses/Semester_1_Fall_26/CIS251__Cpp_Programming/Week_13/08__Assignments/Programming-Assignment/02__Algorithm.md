@@ -1,69 +1,112 @@
 ## 📊 Pseudocode Algorithm
 
-# WEEK 13 PROGRAMMING ASSIGNMENT — Integration: STL Containers, Algorithms, & Design Refactoring.
+# WEEK 13 PROGRAMMING ASSIGNMENT — Integration: STL Containers, Algorithms, & Design Refactoring
 
-### 🏗️ Overview:
+### 🏗️ Overview
 
-1. Include input-output (I/O) stream and I/O manipulation libraries
-2. Declare the standard namespace using
-3. Declare an array of quiz scores
-4. Create a function `getGradeReport()` to calculate and report the grade values
-5. Foreach test set, get/print grade report
+1. Include libraries for console output, strings, formatting, vectors, numeric operations, and algorithms.
+2. Declare use of the standard namespace.
+3. Define a `TestCase` structure containing a title, description, and score vector.
+4. Declare `printGradeReport()` to calculate and display each dataset’s statistics.
+5. Run five labeled tests through the same reporting function.
 
+### 🧩 FUNCTION: `main()`
 
+1. Display a blank line followed by the opening banner:
 
-### 🧩 FUNCTION: `main()`:
-5. Define a `quiz_scores` vector with five scores:
-   - `90, 100, 100, 85.5, 46`
+   ```text
+   ** START PROGRAM **
+   ```
 
-6. Declare four doubles in the `main()` scope: two sentinel values and two values initialized to `0.0`
-   - double highest = -999;
-   - double lowest = 999;
-   - double total = 0.0;
-   - double avg = 0.0;
-7. Define strings for `student_name` and `report_heading`
-8. Use `.append()` to concatenate the student name at the end of the report_heading
+2. Initialize a `vector<TestCase>` containing five test records:
 
-### 🧩 FUNCTION: Define `getGradeReport()`:
+   | Test | Description | Scores |
+   |---|---|---|
+   | 1 | Mixed decimal and int values | `90, 100, 98.25, 85.5, 46` |
+   | 2 | Tied high score | `85, 90, 98.5, 98.5, 76.5` |
+   | 3 | Tied low score | `90, 62.5, 38, 38, 98` |
+   | 4 | Score set contains both boundaries (0 & 100) | `0, 76, 2, 100, 98.5` |
+   | 5 | All scores identical | `100, 100, 100, 100, 100` |
 
-8.5 Print all quiz scores. the program intro in console should look like this, SO FAR, with basic program decoration:
+3. Define the report strings:
+   - Set `student_name` to `"Eric Hepperle"`.
+   - Set `report_heading` to `"Grade Report for: "`.
+   - Append the student’s name to the report heading.
+   - Retain these strings from the original program; the current harness does not display them.
 
-```
-******** START PROGRAM *********************************
-Grade Report for: Eric Hepperle
-Scores: 90, 100, 100, 85.5, 46
-=================================
-```
+4. Initialize local statistics:
+   - `highest = -999.0`
+   - `lowest = 999.0`
+   - `total = 0.0`
+   - `avg = 0.0`
 
-
-9. Foreach quiz score in the `quiz_scores` vector (use range based for loop),
-   - total += current quiz score
-   - // do I need to dereference, because vector iterators are pointers, right??
-   - Calculate `highest` as if current score greater than highest, then set highest to current score
-   - Calculate `lowest` as if current score lower than lowest, then set lowest to current score
-- END LOOP
-
-10. Display a divider decoration
-
-11. Calculate `avg` as total / length of vector
-
-12. Set precision to 2 decimals fixed
-
-13. Display output stats for total, avg, lowest, highest
-
-
-14. END function
+5. Execute the test harness as described below.
 
 ### 🧪 Initialize and Run Tests
 
-6. Start the program, display the opening message, and configure numeric output to use two decimal places. Before each numbered test, display its test-number heading.
+1. Use a range-based loop to access each test by constant reference: `const auto &test`.
 
+2. For each test:
+   - Display a blank line, its title, its description, and a divider.
+   - Call `printGradeReport(test.scores, total, avg, highest, lowest)`.
 
+   Example heading:
+
+   ```text
+   ============ TEST CASE: 1 ============
+   # Mixed decimal and int values
+   --------------------------------------
+   ```
+
+3. End the loop after all five tests have been processed.
+
+### 🧩 FUNCTION: `printGradeReport()`
+
+1. Receive:
+   - A nonempty score vector by constant reference.
+   - References to the total, average, highest, and lowest variables.
+
+2. Display `Scores: `.
+
+3. Use an indexed loop to display the scores on one line:
+   - Print the current score.
+   - Print a comma and space unless it is the last score.
+   - After the last score, print a newline.
+
+4. Display a divider.
+
+5. Calculate the total using `accumulate()`:
+   - Process the range from `scores.begin()` to `scores.end()`.
+   - Use `0.0` as the initial accumulator value.
+   - Assign the result to `ttl`.
+
+6. Calculate the average:
+   - `avg = ttl / scores.size()`
+
+7. Determine the highest and lowest scores:
+   - Use `max_element()` and dereference its returned iterator to assign `max`.
+   - Use `min_element()` and dereference its returned iterator to assign `min`.
+
+8. Save the current console precision.
+
+9. Set output to fixed notation with two decimal places.
+
+10. Display:
+    - Total.
+    - Average.
+    - Highest score.
+    - Lowest score.
+
+11. Restore the saved precision and reset floating-point notation with `defaultfloat`.
+
+12. Return control to the test loop in `main()`.
 
 ### 🏁 Finish
 
-18. Display the end-program message and end the program.
+1. After the test loop, display a blank line followed by the closing banner:
 
-```
-******** END PROGRAM ***********************************
-```
+   ```text
+   ** END PROGRAM **
+   ```
+
+2. Return `0` to end the program.
