@@ -53,11 +53,11 @@ It printed `Winter is Coming.` However, the spaces were already inside the strin
 
 While tired, I initially mistook `string("")` for a delimiter argument. It actually supplies the initial accumulated value and determines the accumulator’s type. `accumulate()` has no dedicated delimiter parameter, although its custom-operation overload can insert separators.
 
-The **conventional advice** is to check documentation for headers, version support, parameters, return types, and preconditions. That matters, but my preferred starting point is visual: a YouTube explanation or an AI walkthrough, followed by examining its sources. Fluent C++ was one text resource I found helpful. For me, documentation works best alongside a concrete experiment.
+The conventional advice is to check documentation for headers, version support, parameters, return types, and preconditions. That matters, but my preferred starting point is visual: a YouTube explanation or an AI walkthrough, followed by examining its sources. Fluent C++ was one text resource I found helpful. For me, documentation works best alongside a concrete experiment.
 
 Before adopting a delimiter-based replacement, I would also test empty input, one element, and empty strings. Ultimately, I retained my original loop because I could not find a solution that used fewer lines, and writing a custom `join` template just to display five comma-separated scores would have been overkill for this assignment.
 
-**🤖 AI transparency:** I used Perplexity to organize and condense my explanation and clarify the initializer-versus-delimiter distinction. I independently verified that the experiment concatenated strings and that its spaces came from the original string values.
+🤖 AI transparency: I used Gemini to suggest an STL feature for joining values with a delimiter, and Perplexity to refine my explanation and clarify the initializer-versus-delimiter distinction. I independently verified that the experiment concatenated strings and that its spaces came from the original string values.
 
 ### References:
 - https://www.fluentcpp.com/2017/10/17/stdaccumulate-your-knowledge-on-algorithms/
