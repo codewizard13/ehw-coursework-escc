@@ -20,7 +20,7 @@ Welcome to the **AI Career Readiness module**.
 
 Your LinkedIn profile is more than an online résumé. It is your **professional presence** and may be one of the first places employers, recruiters, internship coordinators, or professional contacts learn about you.
 
-> - **#VOCAB:** *professional presence*
+> - **📖 #VOCAB:** *professional presence*
 
 In this activity, you will use **Macaly AI** and the **embedded LinkedIn transformation guide** to review, improve, and transform your LinkedIn profile.
 

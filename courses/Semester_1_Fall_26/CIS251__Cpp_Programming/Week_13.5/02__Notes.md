@@ -39,7 +39,7 @@ Here's her initial prompt text:
 Act as a front-end web developer and marketing agent. You are to convert my linkedin profile at https://www.linkedin.com/in/rosalyn-warren-a2758917/?isSelfProfile=true to professional marketing website. I am a computer information science major looking for an entry level job in technology. Make the website professional and innovative.
 ```
 
-> **📌 #TIP:** Although there is no `ai` or `prompt` markdown codefence flavor, using `markdown` or `md` is better than plain blocks because they highlight structure like heading levels and therefore are more human-readable.
+> - **📌 #TIP:** Although there is no `ai` or `prompt` markdown codefence flavor, using `markdown` or `md` is better than plain blocks because they highlight structure like heading levels and therefore are more human-readable.
 
 Then she said if you you don't have any graphics, you can append something like,
 
@@ -49,7 +49,13 @@ Add images from pixabay or pexels.com as needed to make it stand out without bei
 
 Then she said you'll start off with 3 Million credits every month for free, but there was an error when she ran the prompt. It offered to "retry loading" LinkedIn profile data at a steep cost of 500K credits.
 
-> #GOTCHA: Running a prompt that scans your LinkedIn profile cost 500K credits!
+> - ⚠️ #GOTCHA: Running a prompt that scans your LinkedIn profile cost 500K credits!
+
+### 🟠 How to submit
+
+- [ ] The instructor wants you to publish it in Macaly
+
+- [ ] Submit assignment by inviting her or just taking a screenshot.
 
 ## 🟣 Reviewing & Documenting My Current LinkedIn Profile
 
@@ -57,9 +63,9 @@ Here's a screenshot of my current LinkedIn profile, as seen from a dummy profile
 
 ![Eric Hepperle LinkedIn profile viewed from dummy (2026-11-19)](linkedin-macaly-ai_02.png "Eric Hepperle LinkedIn profile viewed from dummy (2026-11-19)")
 
-> #GOTCHA: Nobody can see my profile image! 
+> - ⚠️ #GOTCHA: Nobody can see my profile image! 
 
-### How to View LinkedIn Profile as Public
+### 🟠 How to View LinkedIn Profile as Public
 
 I found this [demandbird article](https://demandbird.com/resources/linkedin-profile-as-others-see-it/) on how to view your LinkedIn profile as the public
 
@@ -83,4 +89,30 @@ This is what my profile looks like when I follow those instructions on my own pr
 By changing my "Profile Photo" setting to "Public", it is now viewable to everyone (it auto saves),
 
 ![Eric Hepperle LinkedIn profile - profile pic now publically visible](linkedin-macaly-ai_04.png "Eric Hepperle LinkedIn profile - profile pic now publically visible")
+
+### 🟠 Changing My Profile Pic with Copilot
+
+Rather than risk eating my some of my Macaly credits I used Microsoft Copilot to generate a new profile pic for my. I told it to reference my current LinkedIn profile pic with my in a gray suit on a yacht. Here's the exact prompt I used:
+
+#PROMPT:
+
+```md
+Act as a career coach and marketing agent. You are to create a realistic photo for my LinkedIn profile of me that says without being obnoxious that I work with computers, and preferrably, that I write code. The image should be 512 x 512 pixels and should be based on the attached image. I'm an experienced WordPress web application developer who has recently upskilled by learning C++ and Python fundamentals. I'm copacetic with AI tools, not beginner, not expert.  Don't ask any questions and don't waste my tokens.
+```
+
+Here's the result Copilot provided — I love it!
+
+![Copilot result after generating a new Sr. Dev profile pic](linkedin-macaly-ai_05.png "Copilot result after generating a new Sr. Dev profile pic")
+
+
+> - **📖 #VOCAB:** *contextual clues* 
+
+If you want to get inspiration for how you can use Macaly, click **Browse Community** button for examples.
+
+
+---
+
+
+
+---
 
