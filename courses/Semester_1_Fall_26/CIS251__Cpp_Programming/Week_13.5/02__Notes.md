@@ -149,6 +149,128 @@ If you want to get inspiration for how you can use Macaly, click **Browse Commun
 
 ---
 
+# 🧩 Prompt Mastery ebook
+
+
+> - **📌 #TIP:** you must write precise prompts to get useful AI outputs
+
+> - **📖 #VOCAB:** *issuing specifications*
+
+
+## 🟣 Essential Vocabulary
+
+- **Prompt**: The input (text, code, or image) you feed the AI to generate a response.
+
+- **Context Window**: The amount of information the AI can "remember" in the current conversation. If a conversation gets too long, it forgets the beginning.
+  
+- **Hallucination**: When the AI confidently generates false information or code libraries that do not exist. *Always verify syntax and facts.*
+
+- **Zero-Shot Prompting**: Asking the AI to do something without giving examples (e.g., "Explain recursion").
+
+- **Few-Shot Prompting**: Giving the AI examples of what you want before asking it to do it (e.g., giving 3 examples of SQL queries before asking for the 4th).
+
+- **Chain of Thought**: Asking the AI to "think step-by-step" to improve logic, especially in math or debugging.
+
+- **System/Persona**: Assigning a specific role to the AI (e.g., "Act as a Senior Network Administrator").
+
+## 🟣 The "Perfect Prompt" Framework — **RCTF**
+
+1. **R - Role:** Who should the AI be? (Tutor, Senior Dev, Data Analyst, Security Auditor)
+
+2. **C - Context:** What is the background? (Language, proficiency level, specific constraints)
+
+3. **T - Task:** What exactly do you need done? (Generate code, explain a concept, debug)
+
+4. **F - Format:** How do you want the output? (Code block, bullet points, table,
+JSON)
+
+## 🟣 Roles AI Can Play & Sample Prompts
+
+A. The "Code Buddy" (Debugging)
+
+```md
+#PROMPT: 
+
+I am getting a SyntaxError on line 42 of this
+Python script. Below is my code. Act as a coding tutor:
+Identify the error, explain why it is happening, and
+suggest the fix."
+```
+
+B. The "Translator" (Concept Explanation)
+
+```md
+#PROMPT: 
+
+I am a first-year CIS student. Explain the concept of 'Object-Oriented
+Inheritance' using an analogy of a car factory. Then, show a simple Java code example
+demonstrating a Parent class and a Child class.
+```
+
+C. The "Documentation Generator" (Refactoring)
+
+```md
+#PROMPT: 
+
+Here is a raw SQL query I wrote. Please add
+comments explaining what each JOIN is doing, and
+reformat the code to standard readability conventions
+(indentation)."
+```
+
+D. The "Socratic Method" (Study Prep)
+
+```md
+#PROMPT: 
+
+I am studying for my CompTIA A+ certification. Please ask me 5 multiple-
+choice questions about printer troubleshooting. Do not give me the answers
+immediately. Wait for my response, then grade me.
+```
+
+E. Advanced Techniques: "Few-Shot" Prompting
+
+> - **📌 #TIP:** If the AI isn't following your style, give it examples first. This is **crucial** for formatting data.
+
+```md
+#PROMPT: 
+
+I need to convert raw names into a standard JSON format. Follow this pattern:
+
+Input: John Smith (Admin) Output: {"name": "John Smith", "role": "admin"}
+
+Input: Sarah Jones (User) Output: {"name": "Sarah Jones", "role": "user"}
+
+Input: Mike Ross (Guest) Output: ...
+```
+
+
+## 🟣 The Golden Rules of AI in Academia
+
+1. **Trust but Verify:** AI is a probabilistic engine, not a knowledge database. If it gives you a command line  instruction (especially sudo commands), Google it before you run it.
+
+2. **Privacy First:** Never put personal data (PII), passwords, API keys, or proprietary server IP addresses into a public AI chat.
+
+3. **It Can't Read Your Mind:** If the output is wrong, assume your prompt was ambiguous. Iterate and refine.
+
+4. **Attribution:** If you use AI to generate a significant portion of code for an assignment, comment it: // Code generated with assistance from [AI Model].
+
+
+Troublshooting: When the AI Gets Stuck
+
+If the AI gives you generic or wrong answers, try adding these "magic phrases" to your
+prompt:
+
+
+- "_Let's take this step-by-step._" (Forces logical sequencing).
+
+ - "_Are there any edge cases this code misses?_" (Improves security/robustness).
+
+- "_Critique your previous answer._" (Forces the AI to review its own work).
+
+- "_Explain this as if I'm 12 years old._" (Simplifies dense jargon).
+
+
 
 
 ---
