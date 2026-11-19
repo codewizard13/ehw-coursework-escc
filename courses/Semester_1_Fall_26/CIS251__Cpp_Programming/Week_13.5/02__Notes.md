@@ -90,6 +90,43 @@ By changing my "Profile Photo" setting to "Public", it is now viewable to everyo
 
 ![Eric Hepperle LinkedIn profile - profile pic now publically visible](linkedin-macaly-ai_04.png "Eric Hepperle LinkedIn profile - profile pic now publically visible")
 
+I subsequently toggle some other settings and here is what I finally came up with.
+
+#### Final Enabled LinkedIn Profile Visibility Settings:
+
+**Basic (required)**
+
+- [x] Name, number of connections, number of followers, and region
+
+**Profile Photo**
+
+- [x] Public: All LinkedIn members on or off LinkedIn. Your content could be visible in search results (Google, Bing, etc.).
+
+**Other Toggles**
+
+- [x] Background photo
+- [x] Headline
+- [x] Summary
+- [x] Articles & Activity (not sure if I want to leave this on or not)
+- [x] Certifications
+- [x] Projects
+- [x] Honors and Awards
+- [x] Organizations
+- [x] Recommendations
+
+- [x] **Public visibility limits**: Even when your profile’s public visibility is on, we may not display all profile fields. Turning this off may make it easier for unauthorized third parties to collect your public profile data.
+
+After updating those settings, the dummy profile shows this:
+
+![LinkedIn profile after updating settings (from dummy)](linkedin-macaly-ai_06.png "LinkedIn profile after updating settings (from dummy)")
+
+
+For good measure, logged into Chrome in **incognito mode** — simulates a not logged-in user — shows this:
+
+![LinkedIn profile after updating settings (from Chrome incognito)](linkedin-macaly-ai_07.png "LinkedIn profile after updating settings (from Chrome incognito)")
+
+> - **⚠️ #GOTCHA:** headline is missing, my about is truncated, top skills don't show and activity is floated into the above-fold area.
+
 ### 🟠 Changing My Profile Pic with Copilot
 
 Rather than risk eating my some of my Macaly credits I used Microsoft Copilot to generate a new profile pic for my. I told it to reference my current LinkedIn profile pic with my in a gray suit on a yacht. Here's the exact prompt I used:
