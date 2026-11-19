@@ -32,7 +32,7 @@ The goal is **not** to have AI create a fake professional identity for you. The 
 
 The **LinkedIn Transformation Guide** is your roadmap for completing this activity.
 
-- [(textbook) Prompt Mastery - by Dr. Rosalyn Warren](./(ebook%20AI)%20Rosalyn%20Warren%20-%20CIS%20Student%20Guide%20to%20Prompt%20Engineering.pdf)
+- [(textbook) Prompt Mastery - by Dr. Rosalyn Warren](00__Docs/ebook-AI_CIS-Student-Guide-to-Prompt-Engineering_Warren.pdf "Prompt Mastery PDF")
 
 ### What is it?
 
