@@ -80,4 +80,7 @@ This is what my profile looks like when I follow those instructions on my own pr
 
 ![Eric Hepperle LinkedIn profile - public profile settings](linkedin-macaly-ai_03.png "Eric Hepperle LinkedIn profile - public profile settings")
 
+By changing my "Profile Photo" setting to "Public", it is now viewable to everyone (it auto saves),
+
+![Eric Hepperle LinkedIn profile - profile pic now publically visible](linkedin-macaly-ai_04.png "Eric Hepperle LinkedIn profile - profile pic now publically visible")
 
