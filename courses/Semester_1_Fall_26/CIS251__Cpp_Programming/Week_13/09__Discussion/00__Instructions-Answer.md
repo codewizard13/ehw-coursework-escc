@@ -51,7 +51,7 @@ cout << sentence << endl;
 
 It printed `Winter is Coming.` However, the spaces were already inside the strings—not supplied by `accumulate()`.
 
-While tired, I initially mistook `string("")` for a delimiter argument. It actually supplies the initial accumulated value and determines the accumulator’s type. `accumulate()` has no dedicated delimiter parameter, although its custom-operation overload can insert separators.
+While tired, I initially mistook `string("")` for a delimiter argument. It actually supplies the initial accumulated value and determines the accumulator’s type. `accumulate()` has no built-in delimiter parameter. Its four-argument overload accepts a custom operation, so I could write additional logic to insert separators—but that was the extra code I was trying to avoid.
 
 The conventional advice is to check documentation for headers, version support, parameters, return types, and preconditions. That matters, but my preferred starting point is visual: a YouTube explanation or an AI walkthrough, followed by examining its sources. Fluent C++ was one text resource I found helpful. For me, documentation works best alongside a concrete experiment.
 
