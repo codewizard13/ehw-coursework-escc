@@ -18,7 +18,9 @@
 
 Welcome to the **AI Career Readiness module**.
 
-Your LinkedIn profile is more than an online résumé. It is your professional presence and may be one of the first places employers, recruiters, internship coordinators, or professional contacts learn about you.
+Your LinkedIn profile is more than an online résumé. It is your **professional presence** and may be one of the first places employers, recruiters, internship coordinators, or professional contacts learn about you.
+
+> - **#VOCAB:** *professional presence*
 
 In this activity, you will use **Macaly AI** and the **embedded LinkedIn transformation guide** to review, improve, and transform your LinkedIn profile.
 
@@ -65,9 +67,9 @@ Read through the guide before making changes to your LinkedIn profile. Pay atten
 
 ## 2. Use Macaly AI as Your Career Assistant 🤖
 
-You will use [Macaly AI](https://macaly.com "Link")to help transform your LinkedIn profile.
+You will use [Macaly AI](https://macaly.com "Macaly.com") to help transform your LinkedIn profile.
 
-Think of Macaly as a professional assistant—not a replacement for your judgment.
+Think of Macaly as a **professional assistant**—not a replacement for your judgment.
 
 Use the prompts and instructions in the embedded guide to help you:
 
