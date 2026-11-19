@@ -30,24 +30,54 @@ I actually had an instance like that in this weeks assignment. I was asking AI i
 
 ## 📝 Week 13 Discussion: C++ Integration: STL Containers, Algorithms, and Design Refactoring
 
-## 💬 Week 13 Discussion Response
+I actually encountered this situation in this week’s assignment. I consulted both Perplexity and Gemini as to whether C++ had a simple way to join values with a custom delimiter like javascript (example backticked incline code here) or PHP (example backticked code here). One suggestion was `std::accumulate()`. I tested it and confirmed that it could concatenate strings, but the suggested approaches required more logic than I wanted for displaying five scores delimited by commas. Clarifying - I had already developed the for loop and was trying to refactor it to minimize the code for readability and less chance of introducing bugs.
 
-I actually encountered this situation in this week’s assignment. I asked Perplexity and Gemini whether C++ had a simple way to join values with a custom delimiter. One suggestion was `std::accumulate()`. I tested it and confirmed that it could concatenate strings, but the suggested approaches required more logic than I wanted for displaying five scores.
+Before adopting an unfamiliar feature, many AI's would advise to consult documentation such as cppreference. They'd have you check the required header, supported C++ version, parameter and return types, preconditions, and examples. And maybe that's what's good for most peopel, but honestly I'm a highly visual learner, so I either search for a YouTube tutorial/explainer, or I as Perplexity, then I examine the answer she gives and her sources. One good text source I found helpful was fluentcpp.com. But, AI tells us that ... [somehow indicate this might be the preferred approach for most people, but not for me - maybe im weird?] For `std::accumulate()`, the documentation identifies `<numeric>` as the required header and describes both the default addition operation and an overload accepting a custom binary operation. That corrected an important distinction: it has no dedicated delimiter parameter, but a custom operation can insert delimiters.
 
-Before adopting an unfamiliar feature, I would consult documentation such as cppreference. I would check the required header, supported C++ version, parameter and return types, preconditions, and examples. For `std::accumulate()`, the documentation identifies `<numeric>` as the required header and describes both the default addition operation and an overload accepting a custom binary operation. That corrected an important distinction: it has no dedicated delimiter parameter, but a custom operation can insert delimiters. [en.cppreference](https://en.cppreference.com/cpp/algorithm/accumulate)
+My first experiment would isolate the basic behavior (this should actually be in 'not potential first person' but actual 'i did this' past tense first person. I'm describing something I actually did, not something I'm guessing about):
 
-My first experiment would isolate the basic behavior:
+[This is the loop I actually wrote and was trying to replace with accumulate:]
 
 ```cpp
-std::vector<std::string> words{"C++", "STL", "practice"};
+  for (int i = 0; i < scores.size(); i++)
+  {
+    cout << scores[i];
+    cout << (i == scores.size() - 1 ? "\n" : ", ");
+  }
+  ```
 
-std::string result = std::accumulate(
-    words.begin(), words.end(), std::string{}
-);
-// Expected: "C++STLpractice"
+[and this is the actual demo experiment I built to test the actual application:]
+
+```cpp
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+#include <vector>
+#include <numeric>
+
+// #include <ranges>
+// #include <string_view>
+
+using namespace std;
+
+int main()
+{
+
+    // #GOTCHA: The only reason this prints with spaces is because spaces are manually included in some strings -- accumulate() doesn't have any built-in way to add a delimiter.
+    vector<string> words = {"Winter ", "is ", "Coming."};
+    string sentence = accumulate(begin(words), end(words), string(""));
+
+    cout << sentence << endl;
+
+    return 0;
+}
 ```
 
-This combines each string with the accumulated result, starting from an empty string. It does not automatically insert separators. [en.cppreference](https://en.cppreference.com/cpp/algorithm/accumulate)
+- A couple notes: I saw string("") and thought it might be passing a delimiter. I was tired at the time and mentally forgot that that's basically where you give an example init value so accumulate's template can infer your variable type.
+
+
+This combines each string with the accumulated result, starting from an empty string. It does not automatically insert separators.
 
 Next, I would test a delimiter-based version with an empty vector, one element, several elements, and empty strings. I would compare the actual output with results written beforehand, checking for missing, leading, or trailing delimiters.
 
@@ -56,6 +86,10 @@ Ultimately, adopting a library feature should improve clarity—not just shorten
 🤖 AI transparency: I used Perplexity to organize this response and clarify the distinction between a delimiter parameter and a custom operation. I independently verified through testing that `std::accumulate()` could concatenate strings.
 
 ### References:
--
+- https://www.fluentcpp.com/2017/10/17/stdaccumulate-your-knowledge-on-algorithms/
+-  [en.cppreference](https://en.cppreference.com/cpp/algorithm/accumulate)
+-  
+
+
 ### #NOTES:
 - 
