@@ -1,10 +1,10 @@
-## Week 10 Programming Assignment - Operator Overloading, Enumerations, and Interface Design
+## Week 14 Programming Assignment - AI-Assisted Software Engineering for C++: Prompting, Verification, and Responsible Use
 
-**Preparation requirement:** Complete the Week 10 readings, videos, [C++ Institute practice](https://www.netacad.com/courses/c-plus-plus-essentials-2?courseLang=en-US&instance_id=c9801f54-4d0c-44f9-b4ee-3f2d9c6306bf), and guided examples before starting. This assignment intentionally requires only concepts taught in those materials.
+**Preparation requirement:** Complete the Week 14 readings, videos, [C++ Institute practice](https://www.netacad.com/courses/c-plus-plus-essentials-2?courseLang=en-US&instance_id=c9801f54-4d0c-44f9-b4ee-3f2d9c6306bf), and guided examples before starting. This assignment intentionally requires only concepts taught in those materials.
 
 ### Programming Task
 
-> **Distance Class**: create a small Distance class and overload one arithmetic/comparison operator exactly as modeled in the required material. Add an enum or enum class for a display/unit choice. Do not implement operators not covered in the examples.
+> **AI-Assisted Review Lab:** choose one completed Weeks 5-13 program. In AI Studio, ask for (1) a plain-language explanation, (2) five test cases, and (3) a code review limited to concepts already covered in CIS 251. Verify every suggestion against course readings, reject/correct at least one questionable or unnecessary suggestion, and submit the revised program plus AI Assistance Log.
 
 ### Required Process
 
