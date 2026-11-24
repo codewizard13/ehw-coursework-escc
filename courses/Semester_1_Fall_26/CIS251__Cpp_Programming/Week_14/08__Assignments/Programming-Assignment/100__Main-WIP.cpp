@@ -63,13 +63,14 @@ public:
     // Use the default member initializers.
   }
 
-  // Initialize endpoints, calculate distance, and select a unit.
-  Distance(double start, double end, Unit unit = inch)
+  // Constructor: Initialize endpoints, calculate distance, and select a unit.
+  Distance(double start, double end, Unit unit = Unit::inch)
   {
     this->start = start;
     this->end = end;
     this->dist = abs(end - start);
     this->unit = unit;
+    this->unitTxt = setUnitText();
   }
 
   // Show the unit text
@@ -114,8 +115,8 @@ public:
 private:
   double start = 0.0;
   double end = 0.0;
-  Unit unit = inch;
-  string unitTxt = setUnitText();
+  Unit unit = Unit::inch;
+  string unitTxt = "inches";
   double dist = 0.0;
 };
 
