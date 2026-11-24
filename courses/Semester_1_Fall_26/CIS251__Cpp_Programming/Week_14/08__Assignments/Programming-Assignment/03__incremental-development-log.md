@@ -149,9 +149,15 @@ case Unit::mile:
 
 - **Note:** `unit` refers to the private member variable declared at the end of the class.
 
+### 3. Comparing against Wk 10 assignment - attempting to break the original
+
+I decided it would be a good idea to not just believe what AI told me, but to test it. First, I wanted to be able to quickly compare results between two different versions of the same file (Wk 10 Main.cpp, vs Wk 14). I knew from PHP and other languages that printing the name of the file that is running / being compiled / interpreted is a basic feature of many languages. I discovered from Perplexity that C++, like PHP, offers `__FILE__`. In PHP this is called a **magic constant**?
+
+I next evaluated whether it would be worth it to convert this program to use a test harness.
+
 ---
 
-### 2. Implementing unit conversion
+### ??. Implementing unit conversion
 
 Suggestion addressed:
 

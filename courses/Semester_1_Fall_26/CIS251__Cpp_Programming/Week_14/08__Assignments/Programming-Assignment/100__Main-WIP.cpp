@@ -118,6 +118,8 @@ int main()
 {
   cout << "\n******** START DISTANCE CALC PROGRAM *****************************************\n";
 
+  cout << "\nThe current file is:\t" << __FILE__ << endl;
+
   // Display numeric values with two decimal places.
   cout << setprecision(2) << fixed;
 

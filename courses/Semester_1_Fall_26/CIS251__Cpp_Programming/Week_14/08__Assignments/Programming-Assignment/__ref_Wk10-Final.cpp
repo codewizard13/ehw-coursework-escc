@@ -16,6 +16,7 @@
  * - Member functions access private data directly; getters and setters are
  *   not required for the current public interface.
  * - Chained addition returns intermediate Distance objects.
+ * - Easily print the current filename with `__FILE__`.
  *
  * @par Notes & Limitations
  * - Rationale: The sample `Box` program used getters/setters, but that seemed beyond the
