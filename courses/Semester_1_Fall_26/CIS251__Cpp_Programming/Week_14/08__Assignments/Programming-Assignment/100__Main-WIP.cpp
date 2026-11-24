@@ -1,26 +1,38 @@
 /**
- * @brief Distance class with travel-distance addition and unit display.
+ * @brief Distance class with travel-distance addition and unit display,
+ *    evaluated and refined through documented AI-assisted review.
  *
  * @course ESCC, CIS-251 - C++ Programming
- * @assignment Week 10 Programming Assignment
- * @lesson_focus Operator Overloading, Enumerations, and Interface Design.
+ * @assignment Week 14 Programming Assignment
+ * @lesson_focus AI-Assisted C++ Development, Constrained Prompting,
+ *    Output Verification, and AI Assistance Logging.
  *
- * @instructions Create a small Distance class with one arithmetic/comparison
- *    operator overloaded as modeled in the required material. Include an
- *    enum or enum class for a display/unit choice. Use only modeled operators.
+ * @instructions Evaluate and improve existing C++ code using Google AI Studio
+ *    as a documented tutor/reviewer rather than an answer generator. Limit all
+ *    analysis and suggestions to CIS 251 concepts (through classes, vectors,
+ *    file I/O, and exceptions), verify every suggestion independently, and
+ *    document substantial AI use in an AI Assistance Log.
  *
  * @status WIP
  *
  * @par Lessons Learned
- * - 
+ * - Strong prompts specify task, context, course constraints, and exact help
+ *   needed (e.g., explanation, tests, and logic-error clues without rewrites).
+ * - AI output can sound professional yet contain errors or out-of-scope C++,
+ *   so every suggestion must be checked for compilation and course alignment.
+ * - [Add specific findings you verified from testing the Distance class.]
  *
  * @par Notes & Limitations
- * - 
+ * - Extends the Week 10 Distance class baseline (v1.03) for Week 14 review.
+ * - Constrained strictly to CIS 251 topics; no new frameworks, unlearned
+ *   libraries, or wholesale AI rewrites permitted.
+ * - Substantial AI interactions must be logged (prompt, useful output,
+ *   accepted/rejected items, verification method, and self-authored edits).
  *
  * @author Eric L. Hepperle
- * @date 2026-11-07
- * @updated 2026-11-10
- * @version 1.03
+ * @date 2026-11-24
+ * @updated --
+ * @version 1.0
  *
  * @see https://github.com/codewizard13
  */
