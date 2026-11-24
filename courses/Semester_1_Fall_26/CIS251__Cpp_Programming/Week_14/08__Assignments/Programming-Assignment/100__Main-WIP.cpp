@@ -215,8 +215,9 @@ int main()
   cout << "INPUTS: Distance a(0, 2, Unit::foot); Distance b(0, 3, Unit::foot);\n";
   cout << "EXPECTED OUTPUT:\n";
   cout << "  - a.display() = 2.00 feet\n";
-  cout << "  - a.display() = 3.00 feet\n";
-  cout << "  - a.display() = 5.00 feet\n";
+  cout << "  - b.display() = 3.00 feet\n";
+  cout << "c = a + b\n";
+  cout << "  - c.display() = 5.00 feet\n";
   
   cout << "ACTUAL DISTANCE OUTPUT:\n";
   Distance a(0, 2, Unit::foot);
