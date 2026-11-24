@@ -489,6 +489,82 @@ This is my code attempt:
 
 refactor(courses/CIS251__Cpp): wk 14 assmt - Main.cpp - WIP - add convertUnit() stub and logic in Distance operator+() to determine if both operand units are equal or not; NOTE: This is a temporary debug cout, but it compile errors because of `<<`; Will fix that next
 
+
+VSCODE copilot fusion, my prompt:
+
+```md
+#PROMPT
+
+I'm trying to automatic unit conversion such that if two distances with different unit values are added, it automatically converts the units to match. If inches and feet are added, it should convert to inches, but, if after the addition there inches / 12 >=1, then it should display the result as feet. If feet and miles are added, similarly it should convert both measurements to the feet (the small unit), then if after the additon there is >=5280 feet, then it should display in miles, the the 2-decimal precision.
+
+Here's the error I'm getting at compile time (partial). I can obviously see that the plus overload function doesn't know what to do with the `<<`. I'm not trying to overload inside an overload, but I am confused on how to handle this:
+
+100__Main-WIP.cpp: In member function 'Distance Distance::operator+(const Distance&)':
+100__Main-WIP.cpp:116:12: error: no match for 'operator<<' (operand types are 'std::ostream' {aka 'std::basic_ostream<char>'} and 'Unit')
+  116 |       cout << this->unit << " is NOT THE SAME as " << d.unit << endl;
+      |       ~~~~ ^~ ~~~~~~~~~~
+      |       |             |
+      |       |             Unit
+      |       std::ostream {aka std::basic_ostream<char>}
+  • there are 55 candidates
+    100__Main-WIP.cpp:116:12:
+      116 |       cout << this->unit << " is NOT THE SAME as " << d.unit << endl;
+          |       ~~~~~^~~~~~~~~~~~~
+In file included from C:/msys64/ucrt64/include/c++/16.1.0/ostream:42,
+                 from C:/msys64/ucrt64/include/c++/16.1.0/iostream:43,
+                 from 100__Main-WIP.cpp:44:
+    • candidate 1: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(__ostream_type& (*)(__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]'
+      C:/msys64/ucrt64/include/c++/16.1.0/bits/ostream.h:116:7:
+        116 |       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+            |       ^~~~~~~~
+      • no known conversion for argument 1 from 'Unit' to 'std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&)' {aka 'std::basic_ostream<char>& (*)(std::basic_ostream<char>&)'}
+```
+
+```md
+#RESPONSE
+
+The compile error is just from this diagnostic line:
+
+    ```cpp
+    cout << this->unit << " is NOT THE SAME as " << d.unit << endl;
+    ```
+
+`Unit` is an `enum class`, so C++ doesn’t automatically know how to print it. You don’t need that diagnostic for addition; remove it rather than overloading `<<`.
+
+For the conversion, make your helper take a numeric distance and return the converted value:
+
+    ```cpp
+    static double unitInches(Unit unit)
+    {
+      switch (unit)
+      {
+      case Unit::inch: return 1.0;
+      case Unit::foot: return 12.0;
+      case Unit::mile: return 63360.0;
+          }
+          return 1.0;
+        }
+
+    static double convertUnit(double value, Unit from, Unit to)
+    {
+      return value * unitInches(from) / unitInches(to);
+    }
+    ```
+
+Then the simplest approach in `operator+` is:
+
+1. If the units match, add the values and keep that unit.
+2. Otherwise, convert both distances to inches and add them.
+3. Choose the display unit: miles at 63,360 inches or more, feet at 12 inches or more, otherwise inches. This gives you feet for a mixed feet/miles sum below one mile, and miles once it reaches a mile.
+4. After setting the result’s `dist` and `unit`, refresh `unitTxt` with `temp.unitTxt = temp.setUnitText();`. Otherwise, the result may keep its default `"inches"` label even when its unit is feet or miles.
+
+Your existing `fixed << setprecision(2)` in `main` already handles the two-decimal display.
+```
+
+
+
+
+
 ---
 
 
