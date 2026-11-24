@@ -72,14 +72,9 @@ public:
     this->unit = unit;
   }
 
-
-  
-  // Display the endpoint calculation and singular/plural unit label.
-  void display()
+  // Show the unit text
+  void printUnitText()
   {
-    cout << "Distance: ABS (" << end << " - " << start << ") = ";
-    cout << dist << " ";
-
     switch (unit)
     {
     case inch:
@@ -92,6 +87,15 @@ public:
       cout << (dist == 1.0 ? "mile" : "miles");
       break;
     }
+  }
+
+  // Display the endpoint calculation and singular/plural unit label.
+  void display()
+  {
+    cout << "Distance: ABS (" << end << " - " << start << ") = ";
+    cout << dist << " ";
+
+    this->printUnitText();
 
     cout << endl;
   }
@@ -117,14 +121,14 @@ private:
   double dist = 0.0;
 };
 
-struct TestCase {
+struct TestCase
+{
   string title;
   string descr;
   double start = 0.0;
   double end = 0.0;
   Unit myUnit = Unit::inch;
 };
-
 
 int main()
 {
@@ -135,15 +139,15 @@ int main()
   // Display numeric values with two decimal places.
   cout << setprecision(2) << fixed;
 
-
   // Define datasets
   vector<TestCase> testHarness = {
-    {"TEST CASE: 1", "Default construction (0, 0)"},
-    {"TEST CASE: 2", "Initialize two double endpoints; use default inches",2.0,10.0},
+      {"TEST CASE: 1", "Default construction (0, 0)"},
+      {"TEST CASE: 2", "Initialize two double endpoints; use default inches", 2.0, 10.0},
   };
 
   // Loop through test harness
-  for (const auto &test : testHarness) {
+  for (const auto &test : testHarness)
+  {
     cout << "\n============ " << test.title << " =============\n";
     cout << "Decription: " << test.descr << endl;
     cout << "INPUTS" << endl;
@@ -151,10 +155,6 @@ int main()
     cout << "- End:    " << test.end << endl;
     cout << "- Unit:   " << test.myUnit << endl;
   }
-
-
-
-
 
   // // TEST 1: Default construction with zero-valued endpoints.
   // cout << "\n***************** TEST 1 ******************\n";
