@@ -446,6 +446,49 @@ Suggestion addressed:
 
 > Implementing unit conversion to **Avoid silent failure on mismatched units**
 
+This is my code attempt:
+
+```cpp
+
+// ...
+
+  bool convertUnit(Unit orig, Unit final) {
+    return false;
+  }
+
+  // Display the endpoint calculation and singular/plural unit label.
+  void display()
+  {
+    cout << "Distance: ABS (" << end << " - " << start << ") = ";
+    cout << dist << " " << unitTxt << endl;
+  }
+
+  // Add travel distances and retain the left operand's unit.
+  // Assumes both operands use the same unit.
+  Distance operator+(const Distance &d)
+  {
+    Distance temp;
+
+    // if the units for both operands are not the same,
+    //  convert both units to inches
+    if (this->unit != d.unit) {
+      cout << this->unit << " is NOT THE SAME as " << d.unit << endl;
+      // convertUnit(this->unit);
+    }
+
+    temp.dist = this->dist + d.dist;
+    temp.start = 0.0;
+    temp.end = temp.dist;
+    temp.unit = this->unit;
+
+    return temp;
+  }
+
+  // ...
+  ```
+
+refactor(courses/CIS251__Cpp): wk 14 assmt - Main.cpp - WIP - add convertUnit() stub and logic in Distance operator+() to determine if both operand units are equal or not; NOTE: This is a temporary debug cout, but it compile errors because of `<<`; Will fix that next
+
 ---
 
 

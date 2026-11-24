@@ -91,6 +91,12 @@ public:
     return "Error: unit unknown";
   }
 
+  bool convertUnit(Unit orig, Unit final) {
+     
+
+    return false;
+  }
+
   // Display the endpoint calculation and singular/plural unit label.
   void display()
   {
@@ -103,6 +109,13 @@ public:
   Distance operator+(const Distance &d)
   {
     Distance temp;
+
+    // if the units for both operands are not the same,
+    //  convert both units to inches
+    if (this->unit != d.unit) {
+      cout << this->unit << " is NOT THE SAME as " << d.unit << endl;
+      // convertUnit(this->unit);
+    }
 
     temp.dist = this->dist + d.dist;
     temp.start = 0.0;
