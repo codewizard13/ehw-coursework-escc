@@ -209,6 +209,23 @@ As expected, good so far. Next — display more values from the two test cases, 
 
 ---
 
+### 4. Refactoring the Unit Display
+
+I needed to display the singular or plural label consistently, so I extracted
+that logic into a `Distance` member function named `setUnitText()`. In C++,
+functions that belong to a class are commonly called member functions or methods.
+
+One compiler error showed that `setUnitText()` initially returned `bool`, while
+`unitTxt` was declared as `string`. The return type was corrected to `string`.
+
+Test 8 exposed an initialization-order bug: `unitTxt` was initialized before the
+constructor stored the foot value and calculated the distance, so it incorrectly
+remained "inches." Moving `this->unitTxt = setUnitText();` into the constructor
+after `unit`, `dist`, and the endpoints are set makes the label match the object.
+This also changed the private member default to `string unitTxt = "inches";`.
+
+---
+
 ### ??. Implementing unit conversion
 
 Suggestion addressed:
