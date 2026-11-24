@@ -440,7 +440,7 @@ I added self-documenting output for better user experience indicating `DESCRIPTI
 > - #GOTCHA: Test 11 takes in two feet measurement and silently returns inches, but it should also be feet. Will resolve that next
 
 
-### ??. Implementing unit conversion
+### 6. Implementing unit conversion
 
 Suggestion addressed:
 

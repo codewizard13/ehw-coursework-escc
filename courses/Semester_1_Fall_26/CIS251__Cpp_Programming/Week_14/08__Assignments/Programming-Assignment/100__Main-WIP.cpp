@@ -91,10 +91,16 @@ public:
     return "Error: unit unknown";
   }
 
-  bool convertUnit(Unit orig, Unit final) {
-     
+  double unitToInch(Unit unit) {
+    if (unit == Unit::inch) return 1.0;
+    if (unit == Unit::foot) return 12.0;
+    
+    // I mile is 63,360 inches
+    return 63360.0;
+  }
 
-    return false;
+  double convertUnit(double value, Unit from, Unit to) {
+    return value * unitToInch(from) / unitToInch(to);
   }
 
   // Display the endpoint calculation and singular/plural unit label.
@@ -103,6 +109,8 @@ public:
     cout << "Distance: ABS (" << end << " - " << start << ") = ";
     cout << dist << " " << unitTxt << endl;
   }
+
+  
 
   // Add travel distances and retain the left operand's unit.
   // Assumes both operands use the same unit.
@@ -113,8 +121,7 @@ public:
     // if the units for both operands are not the same,
     //  convert both units to inches
     if (this->unit != d.unit) {
-      cout << this->unit << " is NOT THE SAME as " << d.unit << endl;
-      // convertUnit(this->unit);
+      convertUnit(this->unit);
     }
 
     temp.dist = this->dist + d.dist;
