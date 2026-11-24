@@ -119,6 +119,35 @@ price for compiler protection against sneaky bugs.
 
 Based on that advice, it seems safest to convert to enum class and use `::` a bunch (\*muffled-grumble\*)
 
+So, I converted the enum to an enum class like this:
+
+```cpp
+enum class Unit
+{
+  inch,
+  foot,
+  mile
+};
+```
+
+Pretty simple. Then I had to prefix all the references to `inch`, `foot`, and `mile` with `Unit::`, like this:
+
+```cpp
+switch (unit)
+{
+case Unit::inch:
+    cout << (dist == 1.0 ? "inch" : "inches");
+    break;
+case Unit::foot:
+    cout << (dist == 1.0 ? "foot" : "feet");
+    break;
+case Unit::mile:
+    cout << (dist == 1.0 ? "mile" : "miles");
+    break;
+}
+```
+
+- **Note:** `unit` refers to the private member variable declared at the end of the class.
 
 ---
 
