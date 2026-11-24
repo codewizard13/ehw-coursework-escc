@@ -48,7 +48,7 @@
 using namespace std;
 
 // Unit labels; selecting a unit does not convert endpoint values.
-enum Unit
+enum class Unit
 {
   inch,
   foot,
@@ -78,13 +78,13 @@ public:
   {
     switch (unit)
     {
-    case inch:
+    case Unit::inch:
       return (dist == 1.0 ? "inch" : "inches");
       break;
-    case foot:
+    case Unit::foot:
       return (dist == 1.0 ? "foot" : "feet");
       break;
-    case mile:
+    case Unit::mile:
       return (dist == 1.0 ? "mile" : "miles");
       break;
     }
@@ -155,26 +155,35 @@ int main()
 
   // TEST 4: Add travel distances from two existing objects.
   cout << "\n***************** TEST 4 ******************\n";
-    cout << "DESCRIPTION: Add travel distances from two existing objects\n";
+  cout << "DESCRIPTION: Add travel distances from two existing objects\n";
   cout << "INPUTS: d4 = d2 + d3 = 8.00 + 16.00\n";
   cout << "EXPECTED OUTPUT: " << "24.00 inches" << endl;
   Distance d4 = d2 + d3;
   d4.display(); // Expected distance: 24.00 inches
 
-  // // TEST 5: Add an existing object and a temporary object.
-  // cout << "\n***************** TEST 5 ******************\n";
-  // Distance d5 = d2 + Distance(3, 6);
-  // d5.display(); // Expected distance: 11.00 inches
+  // TEST 5: Add an existing object and a temporary object.
+  cout << "\n***************** TEST 5 ******************\n";
+  cout << "DESCRIPTION: Add an existing object and a temporary object\n";
+  cout << "INPUTS: d5 = d2 + Distance(3, 6) = 8.00 + 3.00 = 11.00\n";
+  cout << "EXPECTED OUTPUT: " << "11.00 inches" << endl;
+  Distance d5 = d2 + Distance(3, 6);
+  d5.display(); // Expected distance: 11.00 inches
 
-  // // TEST 6: Chain addition across three objects.
-  // cout << "\n***************** TEST 6 ******************\n";
-  // Distance d6 = d2 + d3 + d4;
-  // d6.display(); // Expected distance: 48.00 inches
+  // TEST 6: Chain addition across three objects.
+  cout << "\n***************** TEST 6 ******************\n";
+  cout << "DESCRIPTION: Chain addition across three objects\n";
+  cout << "INPUTS: d6 = d2 + d3 + d4 = 8.00 + 16.00 + 24.00 = 48.00\n";
+  cout << "EXPECTED OUTPUT: " << "48.00 inches" << endl;
+  Distance d6 = d2 + d3 + d4;
+  d6.display(); // Expected distance: 48.00 inches
 
-  // // TEST 7: Reversed endpoints and the singular inch label.
-  // cout << "\n***************** TEST 7 ******************\n";
-  // Distance d7(2, 1);
-  // d7.display(); // Expected distance: 1.00 inch
+  // TEST 7: Reversed endpoints and the singular inch label.
+  cout << "\n***************** TEST 7 ******************\n";
+    cout << "DESCRIPTION: Reversed endpoints and the singular inch label\n";
+  cout << "INPUTS: 2, 1\n";
+  cout << "EXPECTED OUTPUT: " << "1.00 inch" << endl;
+  Distance d7(2, 1);
+  d7.display(); // Expected distance: 1.00 inch
 
   // TEST 8: Negative endpoint and the plural feet label.
   cout << "\n***************** TEST 8 ******************\n";

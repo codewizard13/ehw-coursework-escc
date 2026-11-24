@@ -433,6 +433,8 @@ Distance: ABS (-10.00 - 4.00) = 14.00 feet
 
 After a minor test implementation of the test harness approach, I realized it was too complex for the scope of what I'm trying to do. Thus, I removed all the test-harness-ry but left the new `setUnitText()` member function.
 
+> - #GOTCHA: Somehow my `enum class Unit` got reverted back to `enum Unit`! Ugh. Spent 5 miutes fixing that. I suspect it was code I copied from the Perplexity or Copilot that was referencing an earlier state.
+
 
 
 
