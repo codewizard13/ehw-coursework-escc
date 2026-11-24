@@ -300,6 +300,132 @@ class Distance {
 
 Test 8 exposed an initialization-order bug. `unitTxt` was initialized before the constructor stored the foot value and calculated the distance, so it incorrectly stayed `"inches"`. I moved `this->unitTxt = setUnitText();` into the constructor, after `unit`, `dist`, and the endpoints are set, so the label now matches the object. The private member now has the default `string unitTxt = "inches";`.
 
+So, heres a code excerpt showing the main refactor states at this point:
+
+```cpp
+class Distance
+{
+public:
+  Distance()
+  {
+    // Use the default member initializers.
+  }
+
+  // Constructor: Initialize endpoints, calculate distance, and select a unit.
+  Distance(double start, double end, Unit unit = Unit::inch)
+  {
+    this->start = start;
+    this->end = end;
+    this->dist = abs(end - start);
+    this->unit = unit;
+    this->unitTxt = setUnitText(); // Unit text is set in the constructor
+  }
+
+  // Show the unit text
+  string setUnitText()
+  {
+    switch (unit)
+    {
+    case inch:
+      return (dist == 1.0 ? "inch" : "inches");
+      break;
+    case foot:
+      return (dist == 1.0 ? "foot" : "feet");
+      break;
+    case mile:
+      return (dist == 1.0 ? "mile" : "miles");
+      break;
+    }
+    return "Error: unit unknown";
+  }
+
+  // Display the endpoint calculation and singular/plural unit label.
+  void display()
+  {
+    cout << "Distance: ABS (" << end << " - " << start << ") = ";
+    cout << dist << " " << unitTxt << endl;
+  }
+
+  // ...
+
+private:
+  double start = 0.0;
+  double end = 0.0;
+  Unit unit = Unit::inch;
+  string unitTxt = "inches";
+  double dist = 0.0;
+};
+
+// ...
+
+int main()
+{
+  // ...
+
+  // Define datasets
+  vector<TestCase> testHarness = {
+      {"TEST CASE: 1", "Default construction (0, 0)"},
+      {"TEST CASE: 2", "Initialize two double endpoints; use default inches", 2.0, 10.0},
+  };
+
+  // Loop through test harness
+  for (const auto &test : testHarness)
+  {
+    cout << "\n============ " << test.title << " =============\n";
+    cout << "Decription: " << test.descr << endl;
+    cout << "INPUTS" << endl;
+    cout << "- Start:  " << test.start << endl;
+    cout << "- End:    " << test.end << endl;
+    cout << "- Unit:   " << test.myUnit << endl;
+  }
+
+  // TEST 1: Default construction with zero-valued endpoints.
+  cout << "\n***************** TEST 1 ******************\n";
+  Distance d1;
+  d1.display(); // Expected distance: 0.00 inches
+
+  // ...
+
+  // TEST 8: Negative endpoint and the plural feet label.
+  cout << "\n***************** TEST 8 ******************\n";
+  Distance d8(4.0, -10.0, Unit::foot);
+  d8.display(); // Expected distance: 14.00 feet
+
+  // ...
+
+  return 0;
+}
+```
+
+And here's the output showing that it correctly registers "feet" with the `Unit::foot` enum value:
+
+```sh
+******** START DISTANCE CALC PROGRAM *****************************************
+
+The current file is:    100__Main-WIP.cpp
+
+============ TEST CASE: 1 =============
+Decription: Default construction (0, 0)
+INPUTS
+- Start:  0.00
+- End:    0.00
+- Unit:   0
+
+============ TEST CASE: 2 =============
+Decription: Initialize two double endpoints; use default inches
+INPUTS
+- Start:  2.00
+- End:    10.00
+- Unit:   0
+
+***************** TEST 1 ******************
+Distance: ABS (0.00 - 0.00) = 0.00 inches
+
+***************** TEST 8 ******************
+Distance: ABS (-10.00 - 4.00) = 14.00 feet
+
+******** END PROGRAM *******************************************
+```
 
 ---
 
