@@ -12,16 +12,18 @@
 I chose week 10's distance assignment because it was complex enough and I remembered I didn't set it up to do unit conversions because it was out of scope. I thought it would be a perfect opportunity for this assignemnt 14 ai assisted challenge.
 
 
-
 ## 🏗️ Incremental Implementation
 
 ### 1. Evaluate the code with Google AI studio
 
 #### Inital Prompt:
 
-I signed up for **Google Ai studio**, then based on this week's tutorial, posted the following prompt:
+I signed up for **Google Ai studio (Gemini)**, then based on this week's tutorial, posted the following prompt:
+
 
 ```md
+#PROMPT:
+
 I am a beginning C++ student. My program uses only concepts through classes,
 vectors, file I/O, and exceptions. Do not introduce libraries or techniques
 outside those topics.
@@ -41,5 +43,17 @@ that would expose it. Do not rewrite the entire program.
 ```
 
 > 📌 #TIP ? iF I was starting over, I would merge the very last paragraph under the "Here is my requirement" section, possibly renamed as "REQUIREMENTS" and as a concise bullet list
+
+#### Results:
+
+
+
+Gemini gave the required plain language explanation, five test cases, and the appropriately limited code review.
+
+> - #GOTCHA: _While the programming task description says to submit a revised program and "reject/correct at least one questionable or unnecessary suggestion", it doesn't clearly say to what degree to revise the program. In other words, though it clearly says to reject at least one suggestion, it doesn't say whether to implement at least one suggestion, or whether it is required to implement ALL the non-questionalbe suggestions, or just one, or as many as I choose._
+>
+>   Therefore, I'm making an executive decision for time sake to only implement two suggestions, so as not to make this overly complex.
+
+Full prompt response [here](./05__AI-Gen-Review.md)
 
 ---
