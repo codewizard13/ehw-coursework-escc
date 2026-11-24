@@ -435,7 +435,9 @@ After a minor test implementation of the test harness approach, I realized it wa
 
 > - #GOTCHA: Somehow my `enum class Unit` got reverted back to `enum Unit`! Ugh. Spent 5 miutes fixing that. I suspect it was code I copied from the Perplexity or Copilot that was referencing an earlier state.
 
+I added self-documenting output for better user experience indicating `DESCRIPTION`, `INPUTS`, and `EXPECTED OUTPUT`. Enabled all tests through 11.
 
+> - #GOTCHA: Test 11 takes in two feet measurement and silently returns inches, but it should also be feet. Will resolve that next
 
 
 ### ??. Implementing unit conversion
