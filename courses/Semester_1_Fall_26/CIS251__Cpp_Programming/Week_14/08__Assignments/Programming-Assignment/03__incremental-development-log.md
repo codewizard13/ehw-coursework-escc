@@ -429,6 +429,13 @@ Distance: ABS (-10.00 - 4.00) = 14.00 feet
 
 ---
 
+### 5. Reversing Course: Removing the test harness and opting for the manual tests again
+
+After a minor test implementation of the test harness approach, I realized it was too complex for the scope of what I'm trying to do. Thus, I removed all the test-harness-ry but left the new `setUnitText()` member function.
+
+
+
+
 ### ??. Implementing unit conversion
 
 Suggestion addressed:

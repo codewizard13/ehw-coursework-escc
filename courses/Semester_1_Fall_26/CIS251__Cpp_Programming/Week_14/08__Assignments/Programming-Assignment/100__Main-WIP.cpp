@@ -113,20 +113,11 @@ public:
   }
 
 private:
-  double start = 0.0;
-  double end = 0.0;
+  double start = 0.00;
+  double end = 0.00;
   Unit unit = Unit::inch;
   string unitTxt = "inches";
-  double dist = 0.0;
-};
-
-struct TestCase
-{
-  string title;
-  string descr;
-  double start = 0.0;
-  double end = 0.0;
-  Unit myUnit = Unit::inch;
+  double dist = 0.00;
 };
 
 int main()
@@ -138,42 +129,37 @@ int main()
   // Display numeric values with two decimal places.
   cout << setprecision(2) << fixed;
 
-  // Define datasets
-  vector<TestCase> testHarness = {
-      {"TEST CASE: 1", "Default construction (0, 0)"},
-      {"TEST CASE: 2", "Initialize two double endpoints; use default inches", 2.0, 10.0},
-  };
-
-  // Loop through test harness
-  for (const auto &test : testHarness)
-  {
-    cout << "\n============ " << test.title << " =============\n";
-    cout << "Decription: " << test.descr << endl;
-    cout << "INPUTS" << endl;
-    cout << "- Start:  " << test.start << endl;
-    cout << "- End:    " << test.end << endl;
-    cout << "- Unit:   " << test.myUnit << endl;
-  }
-
   // TEST 1: Default construction with zero-valued endpoints.
   cout << "\n***************** TEST 1 ******************\n";
+  cout << "DESCRIPTION: Default construction (0.00, 0.00)\n";
+  cout << "INPUTS: none/defaults\n";
+  cout << "EXPECTED OUTPUT: " << "0.00 inches" << endl;
   Distance d1;
   d1.display(); // Expected distance: 0.00 inches
 
-  // // TEST 2: Initialize two double endpoints; use default inches.
-  // cout << "\n***************** TEST 2 ******************\n";
-  // Distance d2(2.0, 10.0);
-  // d2.display(); // Expected distance: 8.00 inches
+  // TEST 2: Initialize two double endpoints; use default inches.
+  cout << "\n***************** TEST 2 ******************\n";
+  cout << "DESCRIPTION: Initialize two double endpoints; use default inches\n";
+  cout << "INPUTS: 2.0, 10.0\n";
+  cout << "EXPECTED OUTPUT: " << "8.00 inches" << endl;
+  Distance d2(2.0, 10.0);
+  d2.display(); // Expected distance: 8.00 inches
 
-  // // TEST 3: Initialize a second nonzero distance.
-  // cout << "\n***************** TEST 3 ******************\n";
-  // Distance d3(4.0, 20.0);
-  // d3.display(); // Expected distance: 16.00 inches
+  // TEST 3: Initialize a second nonzero distance.
+  cout << "\n***************** TEST 3 ******************\n";
+  cout << "DESCRIPTION: Initialize a second nonzero distance\n";
+  cout << "INPUTS: 4.0, 20.0\n";
+  cout << "EXPECTED OUTPUT: " << "16.00 inches" << endl;
+  Distance d3(4.0, 20.0);
+  d3.display(); // Expected distance: 16.00 inches
 
-  // // TEST 4: Add travel distances from two existing objects.
-  // cout << "\n***************** TEST 4 ******************\n";
-  // Distance d4 = d2 + d3;
-  // d4.display(); // Expected distance: 24.00 inches
+  // TEST 4: Add travel distances from two existing objects.
+  cout << "\n***************** TEST 4 ******************\n";
+    cout << "DESCRIPTION: Add travel distances from two existing objects\n";
+  cout << "INPUTS: d4 = d2 + d3 = 8.00 + 16.00\n";
+  cout << "EXPECTED OUTPUT: " << "24.00 inches" << endl;
+  Distance d4 = d2 + d3;
+  d4.display(); // Expected distance: 24.00 inches
 
   // // TEST 5: Add an existing object and a temporary object.
   // cout << "\n***************** TEST 5 ******************\n";
