@@ -211,11 +211,59 @@ As expected, good so far. Next — display more values from the two test cases, 
 
 ### 4. Refactoring the Unit Display
 
-I needed to display the singular or plural label consistently, so I extracted that logic into a `Distance` member function (method) named `setUnitText()`. More specifically, I was originally only displaying the unit in the `display()` method, but determined I now needed to display it in the test harness loop as well. That's why I came up with the printUnitText() method, heres an example of how I used it in a code sampel:
+I needed to display the singular or plural unit label consistently. I first extracted the logic into a `Distance` member function named `printUnitText()` and called it from `display()`. That approach had three problems:
+
+- It returned nothing. It printed the label directly with `cout`, so I could not store, reuse, or combine the label as a string.
+- It split one output line across several statements in `display()`, which made the output order harder to follow.
+- After I changed it to return a `string`, calling it without sending the result to `cout` printed no label.
+
+I then refactored to a `setUnitText()` member function that sets a new private class variable, `unitTxt`. That fixed the compiler errors but introduced a logic error, described below.
+
+
+Here is my code for the `printUnitText()`
+
 
 ```cpp
-  // Show the unit text
-  string printUnitText()
+  // Return the unit text.
+  void printUnitText()
+  {
+    switch (unit)
+    {
+    case inch:
+      cout << (dist == 1.0 ? "inch" : "inches");
+      break;
+    case foot:
+      cout << (dist == 1.0 ? "foot" : "feet");
+      break;
+    case mile:
+      cout << (dist == 1.0 ? "mile" : "miles");
+      break;
+    }
+  }
+
+  // Display the endpoint calculation and singular/plural unit label.
+  void display()
+  {
+    cout << "Distance: ABS (" << end << " - " << start << ") = ";
+    cout << dist << " ";
+    cout << this->printUnitText();
+    cout << endl;
+  }
+```
+
+That refactor worked, but it always printed the units as `inches` no matter what. Then I decided to try a slightly different approach: using a setter for a private member property `unitTxt`.
+
+
+One compiler error showed that `setUnitText()` initially returned `bool` while `unitTxt` was declared as `string`. I corrected the return type to `string`.
+
+
+```cpp
+class Distance {
+
+  // ...
+
+  // Set the unit text
+  string setUnitText()
   {
     switch (unit)
     {
@@ -236,34 +284,22 @@ I needed to display the singular or plural label consistently, so I extracted th
   void display()
   {
     cout << "Distance: ABS (" << end << " - " << start << ") = ";
-    cout << dist << " ";
-
-    this->printUnitText();
-
-    cout << endl;
+    cout << dist << " " << unitTxt << endl;
   }
-  ```
 
-  You can see that I use the printUnitText() function in the display() method, and it worked, but it only printed inches for some reason. Then I decided to try converting it so it would instead setUnitText() on a new private member variable, like this:
+  // ...
 
-[Question to assistant — answer should be to me and not part of the deliverable dev log update: the dots are meant to show that this is an excerpt -- is there a better annotation, or is any even necessary??]
-```cpp
-...
-
-private:
-  double start = 0.0;
-  double end = 0.0;
-  Unit unit = inch;
-  string unitTxt = setUnitText();
-  double dist = 0.0;
+  private:
+    double start = 0.0;
+    double end = 0.0;
+    Unit unit = inch;
+    string unitTxt = setUnitText();
+    double dist = 0.0;
 };
-
-...
 ```
 
-One compiler error showed that `setUnitText()` initially returned `bool`, while `unitTxt` was declared as `string`. The return type was corrected to `string`.
+Test 8 exposed an initialization-order bug. `unitTxt` was initialized before the constructor stored the foot value and calculated the distance, so it incorrectly stayed `"inches"`. I moved `this->unitTxt = setUnitText();` into the constructor, after `unit`, `dist`, and the endpoints are set, so the label now matches the object. The private member now has the default `string unitTxt = "inches";`.
 
-Test 8 exposed an initialization-order bug: `unitTxt` was initialized before the constructor stored the foot value and calculated the distance, so it incorrectly remained "inches." Moving `this->unitTxt = setUnitText();` into the constructor after `unit`, `dist`, and the endpoints are set makes the label match the object. This also changed the private member default to `string unitTxt = "inches";`.
 
 ---
 
@@ -283,3 +319,8 @@ Suggestion addressed:
 
 
 ---
+
+
+
+TESTING ...
+
