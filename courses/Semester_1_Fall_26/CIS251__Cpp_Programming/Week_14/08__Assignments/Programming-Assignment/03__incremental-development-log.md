@@ -56,4 +56,85 @@ Gemini gave the required plain language explanation, five test cases, and the ap
 
 Full prompt response [here](./05__AI-Gen-Review.md)
 
+
+
+### 2. Converting to Enum class for typesafty
+
+Suggestion addressed:
+
+> Using enum class instead of ...
+
+I wanted more clarity, so I branched the response an asked the following followup prompt:
+
+```md
+#PROMPT:
+
+ELI-NOVICE: Use heading emoji. Explain why enum class is more appropriate here. Give your rationale and include tradeoffs -- I am not a fan of having to write :: a whole bunch. Can I just use a namespace? Be detailed, yet concise. No more than 300 words.
+```
+
+- **Note:** ELI-Novice is a derivative of "explain like I'm 5" directives. It sets the tone and knowledge level to communicate on to the prompter on. Novice is the level after "explain like I'm 18" and before "Explain like I'm a college student". It's the right amount of simplicity and technical concept accuracy without academically complex sentence structures.
+
+**Gemini Response**:
+
+```md
+#RESPONSE
+
+🚦 Why enum class Wins Here
+
+Your global enum Unit leaks inch, foot, and mile into the entire program. If you
+later create a variable like double foot = 12.0;, your code will not compile
+because the names collide. Worse, plain enums silently turn into integers (0, 1,
+2), so C++ lets you write bugs like if (inch == 0) or foot + 10 without any
+warning.
+
+Switching to enum class Unit solves both problems:
+
+  - Zero Name Clashes: Names stay locked inside Unit, so double foot works fine.
+  - Type Safety: It refuses to mix with numbers, catching logic mistakes before
+    the program runs.
+
+⚖️ The Tradeoff: All That :: Typing
+
+You trade a little convenience for safety. Writing Unit::inch, Unit::foot, and
+Unit::mile in constructors, main(), and switch statements feels repetitive. In
+small assignments, plain enum feels faster—until a name collision or sneaky
+integer conversion wastes 20 minutes of debugging.
+
+📦 Can You Just Use a namespace?
+
+You can wrap a plain enum inside a namespace, like namespace Measure { enum Unit
+{ inch, foot, mile }; }.
+
+  - What it fixes: It prevents global name collisions (Measure::foot). If you
+    dislike typing ::, you can write using namespace Measure; inside main() to
+    drop the prefix locally.
+  - What it misses: It is still a plain enum, meaning inch still secretly
+    behaves like the integer 0. You get cleaner scoping, not type safety.
+
+💡 Beginner Takeaway
+
+Make enum class your default habit. Typing Unit:: a few extra times is a small
+price for compiler protection against sneaky bugs.
+```
+
+Based on that advice, it seems safest to convert to enum class and use `::` a bunch (\*muffled-grumble\*)
+
+
+---
+
+### 2. Implementing unit conversion
+
+Suggestion addressed:
+
+> Implementing unit conversion to **Avoid silent failure on mismatched units**
+
+---
+
+
+
+
+
+
+
+
 ---
