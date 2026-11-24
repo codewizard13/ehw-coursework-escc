@@ -179,7 +179,7 @@ int main()
 
   // TEST 7: Reversed endpoints and the singular inch label.
   cout << "\n***************** TEST 7 ******************\n";
-    cout << "DESCRIPTION: Reversed endpoints and the singular inch label\n";
+  cout << "DESCRIPTION: Reversed endpoints and the singular inch label\n";
   cout << "INPUTS: 2, 1\n";
   cout << "EXPECTED OUTPUT: " << "1.00 inch" << endl;
   Distance d7(2, 1);
@@ -187,30 +187,46 @@ int main()
 
   // TEST 8: Negative endpoint and the plural feet label.
   cout << "\n***************** TEST 8 ******************\n";
+  cout << "DESCRIPTION: Negative endpoint and the plural feet label\n";
+  cout << "INPUTS: 4.0, -10.0, Unit::foot\n";
+  cout << "EXPECTED OUTPUT: " << "14.00 feet" << endl;
   Distance d8(4.0, -10.0, Unit::foot);
   d8.display(); // Expected distance: 14.00 feet
 
-  // // TEST 9: Reversed endpoints and the singular mile label.
-  // cout << "\n***************** TEST 9 ******************\n";
-  // Distance d9(3.0, 2, mile);
-  // d9.display(); // Expected distance: 1.00 mile
+  // TEST 9: Reversed endpoints and the singular mile label.
+  cout << "\n***************** TEST 9 ******************\n";
+  cout << "DESCRIPTION: Reversed endpoints and the singular mile label\n";
+  cout << "INPUTS: 3.0, 2, Unit::mile\n";
+  cout << "EXPECTED OUTPUT: " << "1.00 mile" << endl;
+  Distance d9(3.0, 2, Unit::mile);
+  d9.display(); // Expected distance: 1.00 mile
 
-  // // TEST 10: Add travel distances regardless of direction.
-  // cout << "\n***************** TEST 10 ******************\n";
-  // Distance d10 = Distance(2, 10) + Distance(10, 2);
-  // d10.display(); // Expected: ABS (16.00 - 0.00) = 16.00 inches
+  // TEST 10: Add travel distances regardless of direction.
+  cout << "\n***************** TEST 10 ******************\n";
+  cout << "DESCRIPTION: Add travel distances regardless of direction\n";
+  cout << "INPUTS: Distance(2, 10) + Distance(10, 2) = 8.00 + 8.00 = 16.00\n";
+  cout << "EXPECTED OUTPUT: " << "16.00 inches" << endl;
+  Distance d10 = Distance(2, 10) + Distance(10, 2);
+  d10.display(); // Expected: ABS (16.00 - 0.00) = 16.00 inches
 
-  // // TEST 11: Add two feet-labeled objects and retain that unit.
-  // cout << "\n***************** TEST 11 ******************\n";
+  // TEST 11: Add two feet-labeled objects and retain that unit.
+  cout << "\n***************** TEST 11 ******************\n";
+  cout << "DESCRIPTION: Add two feet-labeled objects and retain that unit\n";
+  cout << "INPUTS: Distance a(0, 2, Unit::foot); Distance b(0, 3, Unit::foot);\n";
+  cout << "EXPECTED OUTPUT:\n";
+  cout << "  - a.display() = 2.00 feet\n";
+  cout << "  - a.display() = 3.00 feet\n";
+  cout << "  - a.display() = 5.00 feet\n";
+  
+  cout << "ACTUAL DISTANCE OUTPUT:\n";
+  Distance a(0, 2, Unit::foot);
+  Distance b(0, 3, Unit::foot);
 
-  // Distance a(0, 2, foot);
-  // Distance b(0, 3, foot);
+  a.display(); // Expected distance: 2.00 feet
+  b.display(); // Expected distance: 3.00 feet
 
-  // a.display(); // Expected distance: 2.00 feet
-  // b.display(); // Expected distance: 3.00 feet
-
-  // Distance c = a + b;
-  // c.display(); // Expected distance: 5.00 feet
+  Distance c = a + b;
+  c.display(); // Expected distance: 5.00 feet
 
   cout << "\n******** END PROGRAM *******************************************\n";
 
