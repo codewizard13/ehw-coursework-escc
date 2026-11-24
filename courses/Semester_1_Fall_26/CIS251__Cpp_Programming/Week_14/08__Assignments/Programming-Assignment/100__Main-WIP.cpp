@@ -118,7 +118,9 @@ private:
 struct TestCase {
   string title;
   string descr;
-  vector<Distance> dist_test;
+  double start = 0.0;
+  double end = 0.0;
+  Unit myUnit = Unit::inch;
 };
 
 
@@ -131,67 +133,83 @@ int main()
   // Display numeric values with two decimal places.
   cout << setprecision(2) << fixed;
 
-  // TEST 1: Default construction with zero-valued endpoints.
-  cout << "\n***************** TEST 1 ******************\n";
-  Distance d1;
-  d1.display(); // Expected distance: 0.00 inches
 
-  // TEST 2: Initialize two double endpoints; use default inches.
-  cout << "\n***************** TEST 2 ******************\n";
-  Distance d2(2.0, 10.0);
-  d2.display(); // Expected distance: 8.00 inches
+  // Define datasets
+  vector<TestCase> testHarness = {
+    {"TEST CASE: 1", "Default construction (0, 0)",0.0,0.0},
+    {"TEST CASE: 2", "Initialize two double endpoints; use default inches",0.0,0.0},
+  };
 
-  // TEST 3: Initialize a second nonzero distance.
-  cout << "\n***************** TEST 3 ******************\n";
-  Distance d3(4.0, 20.0);
-  d3.display(); // Expected distance: 16.00 inches
+  // Loop through test harness
+  for (const auto &test : testHarness) {
+    cout << "\n============ " << test.title << " =============\n";
+  }
 
-  // TEST 4: Add travel distances from two existing objects.
-  cout << "\n***************** TEST 4 ******************\n";
-  Distance d4 = d2 + d3;
-  d4.display(); // Expected distance: 24.00 inches
 
-  // TEST 5: Add an existing object and a temporary object.
-  cout << "\n***************** TEST 5 ******************\n";
-  Distance d5 = d2 + Distance(3, 6);
-  d5.display(); // Expected distance: 11.00 inches
 
-  // TEST 6: Chain addition across three objects.
-  cout << "\n***************** TEST 6 ******************\n";
-  Distance d6 = d2 + d3 + d4;
-  d6.display(); // Expected distance: 48.00 inches
 
-  // TEST 7: Reversed endpoints and the singular inch label.
-  cout << "\n***************** TEST 7 ******************\n";
-  Distance d7(2, 1);
-  d7.display(); // Expected distance: 1.00 inch
 
-  // TEST 8: Negative endpoint and the plural feet label.
-  cout << "\n***************** TEST 8 ******************\n";
-  Distance d8(4.0, -10.0, foot);
-  d8.display(); // Expected distance: 14.00 feet
+  // // TEST 1: Default construction with zero-valued endpoints.
+  // cout << "\n***************** TEST 1 ******************\n";
+  // Distance d1;
+  // d1.display(); // Expected distance: 0.00 inches
 
-  // TEST 9: Reversed endpoints and the singular mile label.
-  cout << "\n***************** TEST 9 ******************\n";
-  Distance d9(3.0, 2, mile);
-  d9.display(); // Expected distance: 1.00 mile
+  // // TEST 2: Initialize two double endpoints; use default inches.
+  // cout << "\n***************** TEST 2 ******************\n";
+  // Distance d2(2.0, 10.0);
+  // d2.display(); // Expected distance: 8.00 inches
 
-  // TEST 10: Add travel distances regardless of direction.
-  cout << "\n***************** TEST 10 ******************\n";
-  Distance d10 = Distance(2, 10) + Distance(10, 2);
-  d10.display(); // Expected: ABS (16.00 - 0.00) = 16.00 inches
+  // // TEST 3: Initialize a second nonzero distance.
+  // cout << "\n***************** TEST 3 ******************\n";
+  // Distance d3(4.0, 20.0);
+  // d3.display(); // Expected distance: 16.00 inches
 
-  // TEST 11: Add two feet-labeled objects and retain that unit.
-  cout << "\n***************** TEST 11 ******************\n";
+  // // TEST 4: Add travel distances from two existing objects.
+  // cout << "\n***************** TEST 4 ******************\n";
+  // Distance d4 = d2 + d3;
+  // d4.display(); // Expected distance: 24.00 inches
 
-  Distance a(0, 2, foot);
-  Distance b(0, 3, foot);
+  // // TEST 5: Add an existing object and a temporary object.
+  // cout << "\n***************** TEST 5 ******************\n";
+  // Distance d5 = d2 + Distance(3, 6);
+  // d5.display(); // Expected distance: 11.00 inches
 
-  a.display(); // Expected distance: 2.00 feet
-  b.display(); // Expected distance: 3.00 feet
+  // // TEST 6: Chain addition across three objects.
+  // cout << "\n***************** TEST 6 ******************\n";
+  // Distance d6 = d2 + d3 + d4;
+  // d6.display(); // Expected distance: 48.00 inches
 
-  Distance c = a + b;
-  c.display(); // Expected distance: 5.00 feet
+  // // TEST 7: Reversed endpoints and the singular inch label.
+  // cout << "\n***************** TEST 7 ******************\n";
+  // Distance d7(2, 1);
+  // d7.display(); // Expected distance: 1.00 inch
+
+  // // TEST 8: Negative endpoint and the plural feet label.
+  // cout << "\n***************** TEST 8 ******************\n";
+  // Distance d8(4.0, -10.0, foot);
+  // d8.display(); // Expected distance: 14.00 feet
+
+  // // TEST 9: Reversed endpoints and the singular mile label.
+  // cout << "\n***************** TEST 9 ******************\n";
+  // Distance d9(3.0, 2, mile);
+  // d9.display(); // Expected distance: 1.00 mile
+
+  // // TEST 10: Add travel distances regardless of direction.
+  // cout << "\n***************** TEST 10 ******************\n";
+  // Distance d10 = Distance(2, 10) + Distance(10, 2);
+  // d10.display(); // Expected: ABS (16.00 - 0.00) = 16.00 inches
+
+  // // TEST 11: Add two feet-labeled objects and retain that unit.
+  // cout << "\n***************** TEST 11 ******************\n";
+
+  // Distance a(0, 2, foot);
+  // Distance b(0, 3, foot);
+
+  // a.display(); // Expected distance: 2.00 feet
+  // b.display(); // Expected distance: 3.00 feet
+
+  // Distance c = a + b;
+  // c.display(); // Expected distance: 5.00 feet
 
   cout << "\n******** END PROGRAM *******************************************\n";
 

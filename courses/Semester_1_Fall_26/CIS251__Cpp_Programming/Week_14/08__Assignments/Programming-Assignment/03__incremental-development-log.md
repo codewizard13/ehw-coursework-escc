@@ -155,6 +155,56 @@ I decided it would be a good idea to not just believe what AI told me, but to te
 
 I next evaluated whether it would be worth it to convert this program to use a test harness.
 
+I determined that I'd try it because I could use more practice in developing a test-harness loop approach. I found the example I build in Wk 13 and used that as a model. To Wk 14 Main.cpp I added `struct TestCase` like this:
+
+
+```cpp
+struct TestCase {
+  string title;
+  string descr;
+  double start = 0.0;
+  double end = 0.0;
+  Unit myUnit = Unit::inch;
+};
+```
+
+Note, I made sure to add the struct right before `main()` because it references the `Unit enum class` and could potentially carry a `Distance` object, so those need to be declared first.
+
+I then commented out all the previous "manual" tests and began building my test harness like this:
+
+```cpp
+// Define datasets
+vector<TestCase> testHarness = {
+    {"TEST CASE: 1", "Default construction (0, 0)",0.0,0.0},
+    {"TEST CASE: 2", "Initialize two double endpoints; use default inches",0.0,0.0},
+};
+```
+
+Finally, I added a basic `foreach` loop with const ref to check if my 'plumbing' was correct, like this:
+
+```cpp
+// Loop through test harness
+for (const auto &test : testHarness) {
+    cout << "\n============ " << test.title << " =============\n";
+}
+```
+
+This was the result:
+
+```sh
+******** START DISTANCE CALC PROGRAM *****************************************
+
+The current file is:    100__Main-WIP.cpp
+
+============ TEST CASE: 1 =============
+
+============ TEST CASE: 2 =============
+
+******** END PROGRAM *******************************************
+```
+
+As expected, good so far. Next — display more values from the two test cases, then do calculations with those numbers, then add the rest of the test cases.
+
 ---
 
 ### ??. Implementing unit conversion
