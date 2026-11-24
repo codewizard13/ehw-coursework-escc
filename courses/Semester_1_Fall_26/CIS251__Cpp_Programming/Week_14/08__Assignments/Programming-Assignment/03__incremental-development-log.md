@@ -205,6 +205,8 @@ The current file is:    100__Main-WIP.cpp
 
 As expected, good so far. Next — display more values from the two test cases, then do calculations with those numbers, then add the rest of the test cases.
 
+- **⏳ Metrics**: It took me about 10 minutes to add and test, and another 30 to document.
+
 ---
 
 ### ??. Implementing unit conversion

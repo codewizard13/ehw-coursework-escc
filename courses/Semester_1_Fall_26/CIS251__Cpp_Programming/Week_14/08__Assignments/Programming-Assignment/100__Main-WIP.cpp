@@ -72,6 +72,8 @@ public:
     this->unit = unit;
   }
 
+
+  
   // Display the endpoint calculation and singular/plural unit label.
   void display()
   {
@@ -136,13 +138,18 @@ int main()
 
   // Define datasets
   vector<TestCase> testHarness = {
-    {"TEST CASE: 1", "Default construction (0, 0)",0.0,0.0},
-    {"TEST CASE: 2", "Initialize two double endpoints; use default inches",0.0,0.0},
+    {"TEST CASE: 1", "Default construction (0, 0)"},
+    {"TEST CASE: 2", "Initialize two double endpoints; use default inches",2.0,10.0},
   };
 
   // Loop through test harness
   for (const auto &test : testHarness) {
     cout << "\n============ " << test.title << " =============\n";
+    cout << "Decription: " << test.descr << endl;
+    cout << "INPUTS" << endl;
+    cout << "- Start:  " << test.start << endl;
+    cout << "- End:    " << test.end << endl;
+    cout << "- Unit:   " << test.myUnit << endl;
   }
 
 
