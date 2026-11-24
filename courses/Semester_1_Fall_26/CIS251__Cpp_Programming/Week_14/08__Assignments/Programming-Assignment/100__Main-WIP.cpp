@@ -73,31 +73,28 @@ public:
   }
 
   // Show the unit text
-  void printUnitText()
+  string setUnitText()
   {
     switch (unit)
     {
     case inch:
-      cout << (dist == 1.0 ? "inch" : "inches");
+      return (dist == 1.0 ? "inch" : "inches");
       break;
     case foot:
-      cout << (dist == 1.0 ? "foot" : "feet");
+      return (dist == 1.0 ? "foot" : "feet");
       break;
     case mile:
-      cout << (dist == 1.0 ? "mile" : "miles");
+      return (dist == 1.0 ? "mile" : "miles");
       break;
     }
+    return "Error: unit unknown";
   }
 
   // Display the endpoint calculation and singular/plural unit label.
   void display()
   {
     cout << "Distance: ABS (" << end << " - " << start << ") = ";
-    cout << dist << " ";
-
-    this->printUnitText();
-
-    cout << endl;
+    cout << dist << " " << unitTxt << endl;
   }
 
   // Add travel distances and retain the left operand's unit.
@@ -118,6 +115,7 @@ private:
   double start = 0.0;
   double end = 0.0;
   Unit unit = inch;
+  string unitTxt = setUnitText();
   double dist = 0.0;
 };
 
@@ -156,10 +154,10 @@ int main()
     cout << "- Unit:   " << test.myUnit << endl;
   }
 
-  // // TEST 1: Default construction with zero-valued endpoints.
-  // cout << "\n***************** TEST 1 ******************\n";
-  // Distance d1;
-  // d1.display(); // Expected distance: 0.00 inches
+  // TEST 1: Default construction with zero-valued endpoints.
+  cout << "\n***************** TEST 1 ******************\n";
+  Distance d1;
+  d1.display(); // Expected distance: 0.00 inches
 
   // // TEST 2: Initialize two double endpoints; use default inches.
   // cout << "\n***************** TEST 2 ******************\n";
@@ -191,10 +189,10 @@ int main()
   // Distance d7(2, 1);
   // d7.display(); // Expected distance: 1.00 inch
 
-  // // TEST 8: Negative endpoint and the plural feet label.
-  // cout << "\n***************** TEST 8 ******************\n";
-  // Distance d8(4.0, -10.0, foot);
-  // d8.display(); // Expected distance: 14.00 feet
+  // TEST 8: Negative endpoint and the plural feet label.
+  cout << "\n***************** TEST 8 ******************\n";
+  Distance d8(4.0, -10.0, Unit::foot);
+  d8.display(); // Expected distance: 14.00 feet
 
   // // TEST 9: Reversed endpoints and the singular mile label.
   // cout << "\n***************** TEST 9 ******************\n";
