@@ -44,10 +44,11 @@
 #include <iostream>
 #include <cmath> // Provides floating-point std::abs.
 #include <iomanip>
+#include <vector>
 using namespace std;
 
 // Unit labels; selecting a unit does not convert endpoint values.
-enum class Unit
+enum Unit
 {
   inch,
   foot,
@@ -63,7 +64,7 @@ public:
   }
 
   // Initialize endpoints, calculate distance, and select a unit.
-  Distance(double start, double end, Unit unit = Unit::inch)
+  Distance(double start, double end, Unit unit = inch)
   {
     this->start = start;
     this->end = end;
@@ -79,13 +80,13 @@ public:
 
     switch (unit)
     {
-    case Unit::inch:
+    case inch:
       cout << (dist == 1.0 ? "inch" : "inches");
       break;
-    case Unit::foot:
+    case foot:
       cout << (dist == 1.0 ? "foot" : "feet");
       break;
-    case Unit::mile:
+    case mile:
       cout << (dist == 1.0 ? "mile" : "miles");
       break;
     }
@@ -110,9 +111,16 @@ public:
 private:
   double start = 0.0;
   double end = 0.0;
-  Unit unit = Unit::inch;
+  Unit unit = inch;
   double dist = 0.0;
 };
+
+struct TestCase {
+  string title;
+  string descr;
+  vector<Distance> dist_test;
+};
+
 
 int main()
 {
@@ -160,12 +168,12 @@ int main()
 
   // TEST 8: Negative endpoint and the plural feet label.
   cout << "\n***************** TEST 8 ******************\n";
-  Distance d8(4.0, -10.0, Unit::foot);
+  Distance d8(4.0, -10.0, foot);
   d8.display(); // Expected distance: 14.00 feet
 
   // TEST 9: Reversed endpoints and the singular mile label.
   cout << "\n***************** TEST 9 ******************\n";
-  Distance d9(3.0, 2, Unit::mile);
+  Distance d9(3.0, 2, mile);
   d9.display(); // Expected distance: 1.00 mile
 
   // TEST 10: Add travel distances regardless of direction.
@@ -176,8 +184,8 @@ int main()
   // TEST 11: Add two feet-labeled objects and retain that unit.
   cout << "\n***************** TEST 11 ******************\n";
 
-  Distance a(0, 2, Unit::foot);
-  Distance b(0, 3, Unit::foot);
+  Distance a(0, 2, foot);
+  Distance b(0, 3, foot);
 
   a.display(); // Expected distance: 2.00 feet
   b.display(); // Expected distance: 3.00 feet
