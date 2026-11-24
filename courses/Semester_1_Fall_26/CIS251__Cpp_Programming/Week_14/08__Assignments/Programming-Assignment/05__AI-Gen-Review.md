@@ -15,6 +15,7 @@ Give me (1) a plain-language explanation, (2) five test cases, and (3) a code re
 
 Here is my current code:
 
+```cpp
 /**
  * @brief Distance class with travel-distance addition and unit display.
  *
@@ -202,6 +203,7 @@ int main()
 
   return 0;
 }
+```
 
 Identify two likely logic errors. Explain each error and suggest a small
 test that would expose it. Do not rewrite the entire program.
