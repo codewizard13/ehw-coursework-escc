@@ -625,3 +625,11 @@ Distance: ABS (5.00 - 0.00) = 5.00 inches   # expected: 5.00 feet
 
 ---
 
+### 11. Why the `temp` Version of `operator+` Wasn't Needed
+
+- **Old approach:** The model example created an empty `Distance temp;` and set `dist`, `start`, `end`, and `unit` by hand.
+- **New approach:** `return Distance(0.0, this->dist + rightDist, this->unit);` builds the result through the constructor.
+- **Why it works:** The constructor sets `start`, `end`, and `unit`, calculates `dist` with `abs(end - start)`, and calls `setUnitText()`.
+- **Label bug avoided:** The old version never refreshed `unitTxt`, so a result could keep a stale `"inches"` label. The constructor does it automatically.
+- **Course fit:** A constructor with parameters creating a temporary object is standard class material. No untaught concepts are used.
+- **Result:** I kept the model's `temp` version commented out for reference. The constructor version is shorter and safer.
