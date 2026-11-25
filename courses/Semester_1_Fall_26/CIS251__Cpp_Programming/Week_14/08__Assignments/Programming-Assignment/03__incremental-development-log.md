@@ -718,3 +718,68 @@ INPUTS: Distance(0, 6, Unit::inch) + Distance(0, 1, Unit::foot)
 EXPECTED OUTPUT: 18.00 inches
 Distance: ABS (18.00 - 0.00) = 18.00 inches
 ```
+
+
+---
+
+
+---
+
+### 13. Testing Mile + Foot Addition (Test 14)
+
+- **Goal:** Confirm the conversion works across the largest and middle units, not just inch and foot.
+- **Test 14:** `Distance(1.5, 2.75, Unit::mile) + Distance(0, 6009, Unit::foot)` expects `2.39 miles`.
+- **Math:** The left distance is `ABS(2.75 - 1.5) = 1.25` miles. The right is 6009 feet, or about 1.14 miles (6009 ÷ 5280). Together, 1.25 + 1.14 is about 2.39 miles.
+- **Why it matters:** The result stays in miles because the left operand's unit wins, which is consistent with Tests 12 and 13.
+- **Fixed after review:** The printed `DESCRIPTION` was copied from Test 13 and said "inch then foot". It now describes the mile-then-foot case.
+
+```cpp
+  // TEST 14: Mixed units, mile then foot - expect result in miles.
+  Distance d14 = Distance(1.5, 2.75, Unit::mile) + Distance(0, 6009, Unit::foot);
+  d14.display(); // Expected: 2.39 miles
+```
+
+```sh
+# PREDICTED output (replace with captured run):
+** TEST 14 **
+EXPECTED OUTPUT: 2.39 miles
+Distance: ABS (2.39 - 0.00) = 2.39 miles
+```
+
+### 14. Floating-Point Singular Label (Test 15)
+
+- **Question I pushed back on:** An earlier review called the `dist == 1.0` check "out of scope". I challenged that. It's a logic bug in my own code, not a new concept, so I treated it as in scope.
+- **Risk:** `setUnitText()` compared a `double` to exactly `1.0`. Floating-point sums can land just below 1.0, which would print "feet" next to `1.00`.
+- **Test 15:** `0.2 + 0.7 + 0.1` feet, added left to right, is stored as `0.9999999999999999`. It should print `1.00 foot`.
+- **Fix:** I added `bool isOne = abs(dist - 1.0) < 0.005;` at the top of `setUnitText()` and used `isOne` in all three cases. The 0.005 tolerance matches the two-decimal display.
+- **Cleanup:** I removed the three `break` statements. Each `case` already returns, so they could never run.
+- **Side effect:** Values from 0.995 up to (but not including) 1.005 now use the singular label. I think that matches what the user sees on screen.
+
+```cpp
+  string setUnitText() const
+  {
+    // Treat values within 0.005 of 1.0 as singular (matches 2-decimal display).
+    bool isOne = abs(dist - 1.0) < 0.005;
+
+    switch (unit)
+    {
+    case Unit::inch:
+      return (isOne ? "inch" : "inches");
+    case Unit::foot:
+      return (isOne ? "foot" : "feet");
+    case Unit::mile:
+      return (isOne ? "mile" : "miles");
+    }
+    return "Error: unit unknown";
+  }
+```
+
+```sh
+# PREDICTED output before the fix (replace with captured run):
+Distance: ABS (1.00 - 0.00) = 1.00 feet    # expected: 1.00 foot
+
+# PREDICTED output after the fix:
+Distance: ABS (1.00 - 0.00) = 1.00 foot
+```
+
+> - **⚠️ #GOTCHA**: _The first Test 15 draft didn't use mixed units. I couldn't find a mixed-unit input that missed exactly 1.0, so I used three same-unit additions to isolate the rounding problem._
