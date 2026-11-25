@@ -508,7 +508,7 @@ This is my code attempt:
   // ...
   ```
 
-refactor(courses/CIS251__Cpp): wk 14 assmt - Main.cpp - WIP - add convertUnit() stub and logic in Distance operator+() to determine if both operand units are equal or not; NOTE: This is a temporary debug cout, but it compile errors because of `<<`; Will fix that next
+???refactor(courses/CIS251__Cpp): wk 14 assmt - Main.cpp - WIP - add convertUnit() stub and logic in Distance operator+() to determine if both operand units are equal or not; NOTE: This is a temporary debug cout, but it compile errors because of `<<`; Will fix that next
 
 
 VSCODE copilot fusion, my prompt:
@@ -624,12 +624,19 @@ Distance: ABS (7.00 - 0.00) = 7.00 inches   # b + a  (expected 18.00 inches)
 - **Label bug avoided:** Building the result through the constructor sets `unitTxt` correctly.
 - **Removed:** The old `temp`-based version is commented out in the file.
 
-Error before adding `const` (representative GCC wording; replace with my actual output):
+```cpp
+  // Final operator+() function
+  Distance operator+(const Distance &d) const
+  {
+    double rightDist = d.dist;
 
-```sh
-100__Main-WIP.cpp: In member function 'Distance Distance::operator+(const Distance&) const':
-100__Main-WIP.cpp:1xx:xx: error: passing 'const Distance' as 'this' argument discards qualifiers [-fpermissive]
-  note:   in call to 'double Distance::convertUnit(double, Unit, Unit)'
+    if (this->unit != d.unit)
+    {
+      rightDist = convertUnit(d.dist, d.unit, this->unit);
+    }
+
+    return Distance(0.0, this->dist + rightDist, this->unit);
+  }
 ```
 
 ### 10. Enabled Tests 5-11
@@ -652,5 +659,4 @@ Distance: ABS (5.00 - 0.00) = 5.00 inches   # expected: 5.00 feet
 - **New approach:** `return Distance(0.0, this->dist + rightDist, this->unit);` builds the result through the constructor.
 - **Why it works:** The constructor sets `start`, `end`, and `unit`, calculates `dist` with `abs(end - start)`, and calls `setUnitText()`.
 - **Label bug avoided:** The old version never refreshed `unitTxt`, so a result could keep a stale `"inches"` label. The constructor does it automatically.
-- **Course fit:** A constructor with parameters creating a temporary object is standard class material. No untaught concepts are used.
 - **Result:** I kept the model's `temp` version commented out for reference. The constructor version is shorter and safer.
