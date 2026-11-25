@@ -37,18 +37,19 @@
  *
  * @author Eric L. Hepperle
  * @date 2026-11-24
- * @updated 2026-11-24
- * @version 1.1
+ * @updated 2026-11-25
+ * @version 1.0
  *
  * @see https://github.com/codewizard13
  */
 
 #include <iostream>
+#include <string>
 #include <cmath> // Provides floating-point std::abs.
 #include <iomanip>
 using namespace std;
 
-// Unit labels; selecting a unit does not convert endpoint values.
+// Units
 enum class Unit
 {
   inch,
@@ -115,6 +116,7 @@ public:
     cout << dist << " " << unitTxt << endl;
   }
 
+  // Right operand converts to left operand's unit when units differ
   Distance operator+(const Distance &d) const
   {
     double rightDist = d.dist;
