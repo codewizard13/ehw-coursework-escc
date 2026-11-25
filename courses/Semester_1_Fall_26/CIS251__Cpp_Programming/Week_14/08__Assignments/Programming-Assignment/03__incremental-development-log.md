@@ -561,22 +561,67 @@ Then the simplest approach in `operator+` is:
 Your existing `fixed << setprecision(2)` in `main` already handles the two-decimal display.
 ```
 
+### 7. Pushing Back on the AI Advice
 
+- **Rejected `static`:** Copilot's helpers used `static`, which my C++ 101 course hasn't covered. I rewrote them as ordinary member functions.
+- **Replaced `switch` with `if`:** `unitToInch(Unit unit)` now uses simple `if` statements. It returns 1.0 for inch, 12.0 for foot, and 63,360.0 for mile.
+- **Kept `convertUnit`:** `convertUnit(double value, Unit from, Unit to)` returns `value * unitToInch(from) / unitToInch(to)`.
+- **Removed the diagnostic:** I deleted the `cout << this->unit` line. An `enum class` can't be printed with `<<` without an overload.
+- **Rejected the display-unit step:** Copilot's size-based unit choice (miles, feet, or inches) was more than I needed, so I didn't use it.
 
+The error that caused the removal:
 
+```sh
+100__Main-WIP.cpp: In member function 'Distance Distance::operator+(const Distance&)':
+100__Main-WIP.cpp:116:12: error: no match for 'operator<<' (operand types are 'std::ostream' {aka 'std::basic_ostream<char>'} and 'Unit')
+  116 |       cout << this->unit << " is NOT THE SAME as " << d.unit << endl;
+      |       ~~~~ ^~ ~~~~~~~~~~
+      |       |             |
+      |       |             Unit
+      |       std::ostream {aka std::basic_ostream<char>}
+```
+
+### 8. Documenting Logic Error 1
+
+- **Bug:** `operator+` added raw `dist` values and forced `temp.unit = this->unit`. `1 foot + 6 inches` gave `7.00 feet`, and `6 inches + 1 foot` gave `7.00 inches`.
+- **Design decision:** The instructor gave no spec for mixed units, so I chose to convert the right operand into the left operand's unit.
+- **Expected results:** `1 foot + 6 inches = 1.50 feet`, and `6 inches + 1 foot = 18.00 inches`. The result depends on operand order.
+
+Incorrect output before the fix (from my bug note, not a captured run):
+
+```sh
+Distance: ABS (7.00 - 0.00) = 7.00 feet     # a + b  (expected 1.50 feet)
+Distance: ABS (7.00 - 0.00) = 7.00 inches   # b + a  (expected 18.00 inches)
+```
+
+### 9. Fixing the `const` Compile Error
+
+- **Cause:** `operator+` is marked `const`, but `unitToInch()` and `convertUnit()` were not. A `const` function can only call other `const` functions.
+- **Fix:** I added `const` to both helpers. Neither one changes a member variable.
+- **Google AI Studio advice:** This `const` fix came from that advice, and it worked.
+- **Rewrote `operator+`:** It now converts `d.dist` only when the units differ. It returns `Distance(0.0, this->dist + rightDist, this->unit)`.
+- **Label bug avoided:** Building the result through the constructor sets `unitTxt` correctly.
+- **Removed:** The old `temp`-based version is commented out in the file.
+
+Error before adding `const` (representative GCC wording; replace with my actual output):
+
+```sh
+100__Main-WIP.cpp: In member function 'Distance Distance::operator+(const Distance&) const':
+100__Main-WIP.cpp:1xx:xx: error: passing 'const Distance' as 'this' argument discards qualifiers [-fpermissive]
+  note:   in call to 'double Distance::convertUnit(double, Unit, Unit)'
+```
+
+### 10. Enabled Tests 5-11
+
+- **Tests 5-11:** I enabled them. They cover a temporary object, chained addition, reversed endpoints, singular and plural labels, and same-unit feet addition.
+- **Test 11 fixed:** Adding two feet values now returns `5.00 feet`.
+- **Still to do:** I haven't added a mixed-unit test yet.
+
+Test 11 before the fix (silently returned inches, per my earlier note):
+
+```sh
+Distance: ABS (5.00 - 0.00) = 5.00 inches   # expected: 5.00 feet
+```
 
 ---
-
-
-
-
-
-
-
-
----
-
-
-
-TESTING ...
 
