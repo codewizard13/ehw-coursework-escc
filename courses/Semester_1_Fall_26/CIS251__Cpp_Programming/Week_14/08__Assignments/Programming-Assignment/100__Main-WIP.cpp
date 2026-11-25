@@ -247,7 +247,9 @@ int main()
   // TEST 12: Mixed units, foot then inch - expect result in feet.
   cout << "\n***************** TEST 12 ******************\n";
   cout << "DESCRIPTION: Mixed units, foot then inch - expect result in feet\n";
-  cout << "INPUTS: Distance(0, 1, Unit::foot) + Distance(0, 6, Unit::inch) = 12.00 inches + 6.00 inches = 18.00 inches = 1.50 feet\n";
+  cout << "INPUTS: Distance(0, 1, Unit::foot) + Distance(0, 6, Unit::inch)\n"
+       << "        = 12.00 inches + 6.00 inches\n"
+       << "        = 18.00 inches = 1.50 feet\n";
   cout << "EXPECTED OUTPUT: " << "1.50 feet" << endl;
   Distance d12 = Distance(0, 1, Unit::foot) + Distance(0, 6, Unit::inch);
   d12.display(); // Expected: 1.5 feet
@@ -255,7 +257,9 @@ int main()
   // TEST 13: Mixed units, inch then foot - expect result in inches.
   cout << "\n***************** TEST 13 ******************\n";
   cout << "DESCRIPTION: Mixed units, inch then foot - expect result in inches\n";
-  cout << "INPUTS: Distance(0, 6, Unit::inch) + Distance(0, 1, Unit::foot) = 6.00 inches + 12.00 inches = 18.00 inches\n";
+  cout << "INPUTS: Distance(0, 6, Unit::inch) + Distance(0, 1, Unit::foot)\n"
+       << "        = 6.00 inches + 12.00 inches\n"
+       << "        = 18.00 inches\n";
   cout << "EXPECTED OUTPUT: " << "18.00 inches" << endl;
   Distance d13 = Distance(0, 6, Unit::inch) + Distance(0, 1, Unit::foot);
   d13.display(); // Expected: 18.00 inches
