@@ -46,7 +46,6 @@
 #include <iostream>
 #include <cmath> // Provides floating-point std::abs.
 #include <iomanip>
-#include <vector>
 using namespace std;
 
 // Unit labels; selecting a unit does not convert endpoint values.
@@ -93,15 +92,19 @@ public:
     return "Error: unit unknown";
   }
 
-  double unitToInch(Unit unit) const {
-    if (unit == Unit::inch) return 1.0;
-    if (unit == Unit::foot) return 12.0;
-    
+  double unitToInch(Unit unit) const
+  {
+    if (unit == Unit::inch)
+      return 1.0;
+    if (unit == Unit::foot)
+      return 12.0;
+
     // I mile is 63,360 inches
     return 63360.0;
   }
 
-  double convertUnit(double value, Unit from, Unit to) const {
+  double convertUnit(double value, Unit from, Unit to) const
+  {
     return value * unitToInch(from) / unitToInch(to);
   }
 
@@ -113,16 +116,16 @@ public:
   }
 
   Distance operator+(const Distance &d) const
-{
-  double rightDist = d.dist;
-
-  if (this->unit != d.unit)
   {
-    rightDist = convertUnit(d.dist, d.unit, this->unit);
-  }
+    double rightDist = d.dist;
 
-  return Distance(0.0, this->dist + rightDist, this->unit);
-}
+    if (this->unit != d.unit)
+    {
+      rightDist = convertUnit(d.dist, d.unit, this->unit);
+    }
+
+    return Distance(0.0, this->dist + rightDist, this->unit);
+  }
 
 private:
   double start = 0.00;
@@ -230,7 +233,7 @@ int main()
   cout << "  - b.display() = 3.00 feet\n";
   cout << "c = a + b\n";
   cout << "  - c.display() = 5.00 feet\n";
-  
+
   cout << "ACTUAL DISTANCE OUTPUT:\n";
   Distance a(0, 2, Unit::foot);
   Distance b(0, 3, Unit::foot);
