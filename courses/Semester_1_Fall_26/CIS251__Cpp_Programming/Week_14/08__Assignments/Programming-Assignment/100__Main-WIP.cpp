@@ -82,13 +82,10 @@ public:
     {
     case Unit::inch:
       return (dist == 1.0 ? "inch" : "inches");
-      break;
     case Unit::foot:
       return (dist == 1.0 ? "foot" : "feet");
-      break;
     case Unit::mile:
       return (dist == 1.0 ? "mile" : "miles");
-      break;
     }
     return "Error: unit unknown";
   }
