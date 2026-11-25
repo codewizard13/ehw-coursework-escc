@@ -20,11 +20,13 @@
  *   needed (e.g., explanation, tests, and logic-error clues without rewrites).
  * - AI output can sound professional yet contain errors or out-of-scope C++,
  *   so every suggestion must be checked for compilation and course alignment.
- * - Replacing the global plain enum with enum class Unit prevents name clashes
+ * - Replacing the global plain enum with `enum class Unit` prevents name clashes
  *   and implicit integer conversions; qualified Unit::inch, Unit::foot, and
  *   Unit::mile values were verified in constructors and switch cases.
  * - Reversed endpoints are handled with ABS, and addition retains the left
  *   operand's unit label while assuming both operands use compatible units.
+ * - A const function can only call other const functions, because C++ assumes
+ *   a non-const function might change the object. (a type of promise)
  *
  * @par Notes & Limitations
  * - Extends the Week 10 Distance class baseline (v1.03) for Week 14 review.
@@ -91,7 +93,7 @@ public:
     return "Error: unit unknown";
   }
 
-  double unitToInch(Unit unit) {
+  double unitToInch(Unit unit) const {
     if (unit == Unit::inch) return 1.0;
     if (unit == Unit::foot) return 12.0;
     
@@ -99,7 +101,7 @@ public:
     return 63360.0;
   }
 
-  double convertUnit(double value, Unit from, Unit to) {
+  double convertUnit(double value, Unit from, Unit to) const {
     return value * unitToInch(from) / unitToInch(to);
   }
 
