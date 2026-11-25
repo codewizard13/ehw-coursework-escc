@@ -76,7 +76,7 @@ public:
   }
 
   // Show the unit text
-  string setUnitText()
+  string setUnitText() const
   {
     switch (unit)
     {
@@ -106,7 +106,7 @@ public:
   }
 
   // Display the endpoint calculation and singular/plural unit label.
-  void display()
+  void display() const
   {
     cout << "Distance: ABS (" << end << " - " << start << ") = ";
     cout << dist << " " << unitTxt << endl;
