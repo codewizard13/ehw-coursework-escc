@@ -112,28 +112,6 @@ public:
     cout << dist << " " << unitTxt << endl;
   }
 
-  
-
-  // Add travel distances and retain the left operand's unit.
-  // Assumes both operands use the same unit.
-  // Distance operator+(const Distance &d)
-  // {
-  //   Distance temp;
-
-  //   // if the units for both operands are not the same,
-  //   //  convert both units to inches
-  //   if (this->unit != d.unit) {
-  //     unitToInch(this->unit);
-  //   }
-
-  //   temp.dist = this->dist + d.dist;
-  //   temp.start = 0.0;
-  //   temp.end = temp.dist;
-  //   temp.unit = this->unit;
-
-  //   return temp;
-  // }
-
   Distance operator+(const Distance &d) const
 {
   double rightDist = d.dist;
