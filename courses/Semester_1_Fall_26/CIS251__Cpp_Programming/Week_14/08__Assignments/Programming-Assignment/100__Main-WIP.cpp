@@ -78,14 +78,17 @@ public:
   // Show the unit text
   string setUnitText() const
   {
+    // Treat values within 0.005 of 1.0 as singular (matches 2-decimal display).
+    bool isOne = abs(dist - 1.0) < 0.005;
+
     switch (unit)
     {
     case Unit::inch:
-      return (dist == 1.0 ? "inch" : "inches");
+      return (isOne ? "inch" : "inches");
     case Unit::foot:
-      return (dist == 1.0 ? "foot" : "feet");
+      return (isOne ? "foot" : "feet");
     case Unit::mile:
-      return (dist == 1.0 ? "mile" : "miles");
+      return (isOne ? "mile" : "miles");
     }
     return "Error: unit unknown";
   }
@@ -272,6 +275,16 @@ int main()
   cout << "EXPECTED OUTPUT: " << "2.39 miles" << endl;
   Distance d14 = Distance(1.5, 2.75, Unit::mile) + Distance(0, 6009, Unit::foot);
   d14.display(); // Expected: 2.39 miles
+
+  // TEST 15: Floating-point sum near 1.0 should use the singular label.
+  cout << "\n***************** TEST 15 ******************\n";
+  cout << "DESCRIPTION: Floating-point sum near 1.0 should use the singular label\n";
+  cout << "INPUTS: Distance(0, 0.2, Unit::foot) + Distance(0, 0.7, Unit::foot)\n"
+       << "        + Distance(0, 0.1, Unit::foot)\n"
+       << "        = 0.20 + 0.70 + 0.10 = 1.00 (stored as 0.9999999999999999)\n";
+  cout << "EXPECTED OUTPUT: " << "1.00 foot" << endl;
+  Distance d15 = Distance(0, 0.2, Unit::foot) + Distance(0, 0.7, Unit::foot) + Distance(0, 0.1, Unit::foot);
+  d15.display(); // Expected: 1.00 foot
 
   cout << "\n******** END PROGRAM *******************************************\n";
 
