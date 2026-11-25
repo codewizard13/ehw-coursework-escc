@@ -50,7 +50,7 @@ that would expose it. Do not rewrite the entire program.
 
 Gemini gave the required plain language explanation, five test cases, and the appropriately limited code review.
 
-> - #GOTCHA: _While the programming task description says to submit a revised program and "reject/correct at least one questionable or unnecessary suggestion", it doesn't clearly say to what degree to revise the program. In other words, though it clearly says to reject at least one suggestion, it doesn't say whether to implement at least one suggestion, or whether it is required to implement ALL the non-questionalbe suggestions, or just one, or as many as I choose._
+> - **⚠️ #GOTCHA:** _While the programming task description says to submit a revised program and "reject/correct at least one questionable or unnecessary suggestion", it doesn't clearly say to what degree to revise the program. In other words, though it clearly says to reject at least one suggestion, it doesn't say whether to implement at least one suggestion, or whether it is required to implement ALL the non-questionalbe suggestions, or just one, or as many as I choose._
 >
 >   Therefore, I'm making an executive decision for time sake to only implement two suggestions, so as not to make this overly complex.
 
@@ -58,7 +58,7 @@ Full prompt response [here](./05__AI-Gen-Review.md)
 
 
 
-### 2. Converting to Enum class for typesafty
+### 2. Converting to Enum class for typesafety
 
 Suggestion addressed:
 
@@ -72,7 +72,7 @@ I wanted more clarity, so I branched the response an asked the following followu
 ELI-NOVICE: Use heading emoji. Explain why enum class is more appropriate here. Give your rationale and include tradeoffs -- I am not a fan of having to write :: a whole bunch. Can I just use a namespace? Be detailed, yet concise. No more than 300 words.
 ```
 
-- **Note:** ELI-Novice is a derivative of "explain like I'm 5" directives. It sets the tone and knowledge level to communicate on to the prompter on. Novice is the level after "explain like I'm 18" and before "Explain like I'm a college student". It's the right amount of simplicity and technical concept accuracy without academically complex sentence structures.
+- **Note:** `ELI-Novice` is a derivative of "explain like I'm 5" directives. It sets the tone and knowledge level to communicate on to the prompter on. Novice is the level after "explain like I'm 18" and before "Explain like I'm a college student". It's the right amount of simplicity, plain english, and technical concept accuracy without academically complex sentence structures.
 
 **Gemini Response**:
 
@@ -119,7 +119,7 @@ price for compiler protection against sneaky bugs.
 
 Based on that advice, it seems safest to convert to enum class and use `::` a bunch (\*muffled-grumble\*)
 
-So, I converted the enum to an enum class like this:
+So, I converted the enum to an enum class simply by adding the keyword `class` like this:
 
 ```cpp
 enum class Unit
@@ -155,6 +155,8 @@ I decided it would be a good idea to not just believe what AI told me, but to te
 
 I next evaluated whether it would be worth it to convert this program to use a test harness.
 
+#### Implementing the Test Harness
+
 I determined that I'd try it because I could use more practice in developing a test-harness loop approach. I found the example I build in Wk 13 and used that as a model. To Wk 14 Main.cpp I added `struct TestCase` like this:
 
 
@@ -168,7 +170,7 @@ struct TestCase {
 };
 ```
 
-Note, I made sure to add the struct right before `main()` because it references the `Unit enum class` and could potentially carry a `Distance` object, so those need to be declared first.
+- **Note**: I made sure to add the struct right before `main()` because it references the `Unit enum class` and could potentially carry a `Distance` object, so those need to be declared first.
 
 I then commented out all the previous "manual" tests and began building my test harness like this:
 
@@ -206,6 +208,8 @@ The current file is:    100__Main-WIP.cpp
 As expected, good so far. Next — display more values from the two test cases, then do calculations with those numbers, then add the rest of the test cases.
 
 - **⏳ Metrics**: It took me about 10 minutes to add and test, and another 30 to document.
+
+- **Note**: Although I set out to try to break the original code, ultimately I decided that the orignal code was broken enough, and I just decided to proceed with fixing it. I didn't mean 'break' the code, when I actually meant was running tests on the original Wk 10 code to verify if it broke on the edge cases that AI told it would... clarification
 
 ---
 
@@ -254,7 +258,7 @@ Here is my code for the `printUnitText()`
 That refactor worked, but it always printed the units as `inches` no matter what. Then I decided to try a slightly different approach: using a setter for a private member property `unitTxt`.
 
 
-One compiler error showed that `setUnitText()` initially returned `bool` while `unitTxt` was declared as `string`. I corrected the return type to `string`.
+One VSCODE editor hover error showed that `setUnitText()` initially returned `bool` while `unitTxt` was declared as `string`. I corrected the return type to `string`.
 
 
 ```cpp
@@ -298,7 +302,7 @@ class Distance {
 };
 ```
 
-Test 8 exposed an initialization-order bug. `unitTxt` was initialized before the constructor stored the foot value and calculated the distance, so it incorrectly stayed `"inches"`. I moved `this->unitTxt = setUnitText();` into the constructor, after `unit`, `dist`, and the endpoints are set, so the label now matches the object. The private member now has the default `string unitTxt = "inches";`.
+Test 8 exposed an **initialization-order bug**. `unitTxt` was initialized before the constructor stored the foot value and calculated the distance, so it incorrectly stayed `"inches"`. I moved `this->unitTxt = setUnitText();` into the constructor, after `unit`, `dist`, and the endpoints are set, so the label now matches the object. The private member now has the default `string unitTxt = "inches";`.
 
 So, heres a code excerpt showing the main refactor states at this point:
 
@@ -352,7 +356,7 @@ private:
   double start = 0.0;
   double end = 0.0;
   Unit unit = Unit::inch;
-  string unitTxt = "inches";
+  string unitTxt = "inches"; // default unit text
   double dist = 0.0;
 };
 
@@ -433,11 +437,28 @@ Distance: ABS (-10.00 - 4.00) = 14.00 feet
 
 After a minor test implementation of the test harness approach, I realized it was too complex for the scope of what I'm trying to do. Thus, I removed all the test-harness-ry but left the new `setUnitText()` member function.
 
-> - #GOTCHA: Somehow my `enum class Unit` got reverted back to `enum Unit`! Ugh. Spent 5 miutes fixing that. I suspect it was code I copied from the Perplexity or Copilot that was referencing an earlier state.
+> - **⚠️ #GOTCHA**: Somehow my `enum class Unit` got reverted back to `enum Unit`! Ugh. Spent 5 miutes fixing that. I suspect it was code I copied from the Perplexity or Copilot that was referencing an earlier state.
 
-I added self-documenting output for better user experience indicating `DESCRIPTION`, `INPUTS`, and `EXPECTED OUTPUT`. Enabled all tests through 11.
+I added **self-documenting output** for better user experience indicating `DESCRIPTION`, `INPUTS`, and `EXPECTED OUTPUT`. Enabled all tests through 11.
 
-> - #GOTCHA: Test 11 takes in two feet measurement and silently returns inches, but it should also be feet. Will resolve that next
+```sh
+#SAMPLE OUTPUT FORMAT:
+
+***************** TEST 7 ******************
+DESCRIPTION: Reversed endpoints and the singular inch label
+INPUTS: 2, 1
+EXPECTED OUTPUT: 1.00 inch
+Distance: ABS (1.00 - 2.00) = 1.00 inch
+
+***************** TEST 8 ******************
+DESCRIPTION: Negative endpoint and the plural feet label
+INPUTS: 4.0, -10.0, Unit::foot
+EXPECTED OUTPUT: 14.00 feet
+Distance: ABS (-10.00 - 4.00) = 14.00 feet
+
+```
+
+> - **⚠️ #GOTCHA**: Test 11 takes in two feet measurement and silently returns inches, but it should also be feet. Will resolve that next
 
 
 ### 6. Implementing unit conversion
