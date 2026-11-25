@@ -263,6 +263,16 @@ int main()
   Distance d13 = Distance(0, 6, Unit::inch) + Distance(0, 1, Unit::foot);
   d13.display(); // Expected: 18.00 inches
 
+  // TEST 14: Mixed units, mile then foot - expect result in miles.
+  cout << "\n***************** TEST 14 ******************\n";
+  cout << "DESCRIPTION: Mixed units, inch then foot - expect result in inches\n";
+  cout << "INPUTS: Distance(1.5, 2.75, Unit::mile) + Distance(0, 6009, Unit::foot)\n"
+       << "        = 1.25 miles + 1.14 miles\n"
+       << "        = 2.39 miles\n";
+  cout << "EXPECTED OUTPUT: " << "2.39 miles" << endl;
+  Distance d14 = Distance(1.5, 2.75, Unit::mile) + Distance(0, 6009, Unit::foot);
+  d14.display(); // Expected: 2.39 miles
+
   cout << "\n******** END PROGRAM *******************************************\n";
 
   return 0;
