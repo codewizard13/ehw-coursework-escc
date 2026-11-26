@@ -5,7 +5,7 @@
 - **Course:** CIS-251 — C++ Programming
 - **Assignment:** Week 14 — AI-Assisted Software Engineering for C++: Prompting, Verification, and Responsible Use
 - **Author:** Eric L. Hepperle
-- **Program:** Distance class with AI-suggested updates, version 1.0 (WIP)
+- **Program:** Distance class with AI-suggested updates, version 1.0
 
 ## 📋 Initial Design and Planning
 
