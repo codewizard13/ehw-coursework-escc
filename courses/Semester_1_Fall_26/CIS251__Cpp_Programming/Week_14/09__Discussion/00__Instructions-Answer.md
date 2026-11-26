@@ -26,9 +26,38 @@ Blah ... for instance ?? ... both of the two likely logic errors he identified (
 
 .. The parts a human/I/the programmer must be responsible for are determining whether improvement suggestions are worth it — ie, the AI can Identify risks and rewards, but the human must be the one to make a final determination based on those facts (ex, does the feature overengineer or overcomplicate something such that it would no longer be single-job, doe the fix improve code cleanliness at the expense of performance, would performance be improved slightly with little ROI taking 9 hours to implement and costing 1 hr of downtime each time repair/maintenance is needed?, etc.)
 
-**🤖 AI transparency:** I used Perplexity to organize my explanation, condense this response and expand my Net() object example. I independently verified that the 3 monthly net amounts add to 13,200 without taxing those amounts again.
+[include relevant code snippet]
+
+[Conclusion here]
+
+**🤖 AI transparency:** I used Perplexity to organize my explanation, condense this response and expand my Net() object example. I independently verified that the 3 monthly net amounts add to 13,200 without taxing those amounts again.[decide to make this more well-structured if appropriate for the multiple ai sources used, and also consider that Perplexity wasn't the primary agent in this case]
+
 
 # AI-ASSISTED DRAFT:
+
+
+## 📝 Week 14 Discussion Post
+
+AI can speed up the mechanical, exploratory parts of programming: reading code quickly, proposing test cases, and flagging risks. This week, Google AI Studio (Gemini) found two logic errors in my Week 10 `Distance` class that I hadn't noticed. First, `operator+` added raw numbers without checking units, so 1 foot + 6 inches gave `7.00 feet`. Second, the singular/plural label used an exact floating-point comparison, `dist == 1.0`. A reviewer like this can catch defects before release, when they are cheapest to fix.
+
+But AI can only identify a risk. The programmer decides what is worth fixing and what fits the project's constraints. I made these calls myself:
+
+- **Course limits:** Copilot suggested `static` helper functions. My course hasn't covered `static`, so I rewrote them as ordinary member functions.
+- **Design choice:** The assignment gave no rule for mixed units, so I chose to convert the right operand into the left operand's unit. The trade-off is that operand order can change the result unit.
+- **Pushing back:** An AI called the floating-point issue out of scope. I disagreed, because it was a real bug in my own code, and I fixed it.
+
+```cpp
+// Treat values within 0.005 of 1.0 as singular (matches 2-decimal display).
+bool isOne = abs(dist - 1.0) < 0.005;
+return (isOne ? "foot" : "feet");
+```
+
+In my own words: floating-point sums can land just below 1.0, such as `0.2 + 0.7 + 0.1`, which is stored as `0.9999999999999999`. An exact `==` check would print "1.00 feet". The tolerance of 0.005 matches the two-decimal display, so the label follows what the user sees.
+
+AI accelerates finding problems and generating tests. The programmer stays responsible for verifying each suggestion, judging whether it is worth the complexity, and owning the final design.
+
+**🤖 AI transparency:** I used Google AI Studio (Gemini) as my primary code reviewer, Copilot for compile-error help, and Perplexity to organize this post and refine my wording. I independently verified the fixes by running Tests 12-15 and confirming that the mixed-unit sums and the `1.00 foot` label matched my expected output.
+
 
 
 
