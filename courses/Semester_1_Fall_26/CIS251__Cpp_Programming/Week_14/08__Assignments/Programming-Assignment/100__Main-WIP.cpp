@@ -7,19 +7,18 @@
  * @lesson_focus AI-Assisted C++ Development, Constrained Prompting,
  *    Output Verification, and AI Assistance Logging.
  *
- * @instructions Evaluate and improve existing C++ code using Google AI Studio
- *    as a documented tutor/reviewer rather than an answer generator. Limit all
- *    analysis and suggestions to CIS 251 concepts (through classes, vectors,
- *    file I/O, and exceptions), verify every suggestion independently, and
- *    document substantial AI use in an AI Assistance Log.
+ * @instructions AI-Assisted Review Lab: choose one completed Weeks
+ *    5-13 program. In AI Studio, ask for (1) a plain-language explanation,
+ *    (2) five test cases, and (3) a code review limited to concepts already
+ *    covered in CIS 251. Verify every suggestion against course readings,
+ *    reject/correct at least one questionable or unnecessary suggestion,
+ *    and submit the revised program plus AI Assistance Log.
  *
- * @status WIP
+ * @status Fully Working
  *
  * @par Lessons Learned
  * - Strong prompts specify task, context, course constraints, and exact help
  *   needed (e.g., explanation, tests, and logic-error clues without rewrites).
- * - AI output can sound professional yet contain errors or out-of-scope C++,
- *   so every suggestion must be checked for compilation and course alignment.
  * - Replacing the global plain enum with `enum class Unit` prevents name clashes
  *   and implicit integer conversions; qualified Unit::inch, Unit::foot, and
  *   Unit::mile values were verified in constructors and switch cases.
@@ -29,11 +28,8 @@
  *   a non-const function might change the object. (a type of promise)
  *
  * @par Notes & Limitations
- * - Extends the Week 10 Distance class baseline (v1.03) for Week 14 review.
- * - Constrained strictly to CIS 251 topics; no new frameworks, unlearned
- *   libraries, or wholesale AI rewrites permitted.
- * - Substantial AI interactions must be logged (prompt, useful output,
- *   accepted/rejected items, verification method, and self-authored edits).
+ * - Extends the Week 10 Distance class baseline (v1.03) for Week 14 refactor
+ *   based on AI review.
  *
  * @author Eric L. Hepperle
  * @date 2026-11-24
@@ -268,7 +264,7 @@ int main()
 
   // TEST 14: Mixed units, mile then foot - expect result in miles.
   cout << "\n***************** TEST 14 ******************\n";
-  cout << "DESCRIPTION: Mixed units, inch then foot - expect result in inches\n";
+  cout << "DESCRIPTION: Mixed units, mile then foot - expect result in miles\n";
   cout << "INPUTS: Distance(1.5, 2.75, Unit::mile) + Distance(0, 6009, Unit::foot)\n"
        << "        = 1.25 miles + 1.14 miles\n"
        << "        = 2.39 miles\n";
@@ -279,8 +275,8 @@ int main()
   // TEST 15: Floating-point sum near 1.0 should use the singular label.
   cout << "\n***************** TEST 15 ******************\n";
   cout << "DESCRIPTION: Floating-point sum near 1.0 should use the singular label\n";
-  cout << "INPUTS: Distance(0, 0.2, Unit::foot) + Distance(0, 0.7, Unit::foot)\n"
-       << "        + Distance(0, 0.1, Unit::foot)\n"
+  cout << "INPUTS: Distance(0, 0.2, Unit::foot) + Distance(0, 0.7, Unit::foot) "
+       << "+ Distance(0, 0.1, Unit::foot)\n"
        << "        = 0.20 + 0.70 + 0.10 = 1.00 (stored as 0.9999999999999999)\n";
   cout << "EXPECTED OUTPUT: " << "1.00 foot" << endl;
   Distance d15 = Distance(0, 0.2, Unit::foot) + Distance(0, 0.7, Unit::foot) + Distance(0, 0.1, Unit::foot);
